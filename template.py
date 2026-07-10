@@ -100,6 +100,12 @@ def render_article(data):
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title_html} — AI English Daily</title>
 	<link rel="stylesheet" href="../style.css?v={CSS_VERSION}">
+	<script>
+		window.MathJax = {{
+			tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }}
+		}};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
 <body>
 

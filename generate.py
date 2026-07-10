@@ -39,13 +39,19 @@ def fetch_feed(rss_url):
 	return feed.entries
 
 
-def pick_article(entries, done_dates):
-	random.shuffle(entries)
+def used_urls():
+	urls = set()
+	for path in DATA_DIR.glob("*.json"):
+		with open(path, encoding="utf-8") as f:
+			urls.add(json.load(f)["url"])
+	return urls
+
+
+def pick_article(entries, used):
 	for entry in entries:
-		date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-		if date_str not in done_dates:
+		if entry.get("link", "") not in used:
 			return entry
-	return entries[0] if entries else None
+	return None
 
 
 def fetch_article_content(url):
@@ -218,14 +224,16 @@ def main():
 		sys.exit(0)
 
 	random.shuffle(sources)
+	used = used_urls()
 	selected_entry = None
 	selected_source = None
 
 	for source in sources:
 		try:
 			entries = fetch_feed(source["rss"])
-			if entries:
-				selected_entry = entries[0]
+			entry = pick_article(entries, used)
+			if entry:
+				selected_entry = entry
 				selected_source = source
 				break
 		except Exception as e:
