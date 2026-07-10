@@ -259,7 +259,7 @@ h2.para-translation, h3.para-translation { font-size: 16px; font-weight: 400; }
 	line-height: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	body { font-size: 16px; }
 	.article-title { font-size: 21px; }
 
@@ -272,13 +272,13 @@ h2.para-translation, h3.para-translation { font-size: 16px; font-weight: 400; }
 
 	.vocab-grid { grid-template-columns: 1fr; gap: 8px; }
 
-	.popup-overlay { align-items: flex-end; }
-	.popup-card {
+	.popup-overlay { align-items: flex-end; justify-content: stretch; }
+	.popup-overlay .popup-card {
 		width: 100%;
 		max-width: 100%;
 		margin: 0;
 		border-radius: 16px 16px 0 0;
-		padding: 20px 20px 32px;
+		padding: 20px 20px 36px;
 	}
 
 	.container { padding: 0 16px; margin: 24px auto; }
