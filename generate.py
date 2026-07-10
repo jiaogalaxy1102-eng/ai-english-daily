@@ -142,9 +142,10 @@ def call_gemini(source_name, title, url, paragraphs):
 			text = re.sub(r"\s*```$", "", text)
 			return json.loads(text)
 		except Exception as e:
-			if "429" in str(e) and attempt < 2:
+			err = str(e)
+			if ("429" in err or "503" in err) and attempt < 2:
 				wait = 40 * (attempt + 1)
-				print(f"Rate limited, retrying in {wait}s...")
+				print(f"Transient error ({err[:20]}...), retrying in {wait}s...")
 				time.sleep(wait)
 			else:
 				raise
