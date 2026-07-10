@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Hugging Face Blog",
+		"rss": "https://huggingface.co/blog/feed.xml"
+	},
+	{
+		"name": "Andrej Karpathy",
+		"rss": "http://karpathy.github.io/feed.xml"
+	},
+	{
+		"name": "Anthropic",
+		"rss": "https://www.anthropic.com/rss.xml"
+	}
+]
