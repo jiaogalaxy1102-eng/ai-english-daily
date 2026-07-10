@@ -272,13 +272,15 @@ h2.para-translation, h3.para-translation { font-size: 16px; font-weight: 400; }
 
 	.vocab-grid { grid-template-columns: 1fr; gap: 8px; }
 
-	.popup-overlay { align-items: flex-end; justify-content: stretch; }
+	.popup-overlay {
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: stretch;
+	}
 	.popup-overlay .popup-card {
-		width: 100%;
-		max-width: 100%;
-		margin: 0;
 		border-radius: 16px 16px 0 0;
 		padding: 20px 20px 36px;
+		max-width: 100%;
 	}
 
 	.container { padding: 0 16px; margin: 24px auto; }

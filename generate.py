@@ -253,7 +253,7 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title} — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=3">
+	<link rel="stylesheet" href="../style.css?v=4">
 </head>
 <body>
 
