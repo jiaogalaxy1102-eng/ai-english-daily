@@ -21,8 +21,8 @@ ARTICLES_DIR = BASE_DIR / "articles"
 SOURCES_FILE = BASE_DIR / "sources.json"
 INDEX_FILE = BASE_DIR / "index.html"
 
-MAX_PARAGRAPHS = 12
-MAX_CHARS = 6000
+MAX_PARAGRAPHS = 25
+MAX_CHARS = 15000
 
 
 def load_sources():
@@ -70,6 +70,28 @@ def fetch_article_content(url):
 	images = []
 	char_count = 0
 
+	def is_avatar(img_tag, src, alt):
+		src_l = src.lower()
+		if any(k in src_l for k in ["avatar", "profile", "/user/", "/users/", "contributor", "headshot", "author"]):
+			return True
+		alt_l = alt.lower()
+		if any(k in alt_l for k in ["avatar", "profile photo", "author photo", "headshot"]):
+			return True
+		try:
+			w = int(img_tag.get("width", 0))
+			h = int(img_tag.get("height", 0))
+			if 0 < w < 200 and 0 < h < 200:
+				return True
+		except (ValueError, TypeError):
+			pass
+		for parent in img_tag.parents:
+			if parent.name in ["html", "body"]:
+				break
+			combined = " ".join(parent.get("class", [])) + " " + (parent.get("id", ""))
+			if any(k in combined.lower() for k in ["author", "avatar", "bio", "contributor", "sidebar", "profile"]):
+				return True
+		return False
+
 	for elem in content.find_all(["p", "h2", "h3", "img"], recursive=True):
 		if elem.name == "img":
 			src = elem.get("src", "")
@@ -81,7 +103,8 @@ def fetch_article_content(url):
 					from urllib.parse import urlparse
 					parsed = urlparse(url)
 					src = f"{parsed.scheme}://{parsed.netloc}{src}"
-				images.append({"src": src, "alt": alt, "after_paragraph": len(paragraphs)})
+				if not is_avatar(elem, src, alt):
+					images.append({"src": src, "alt": alt, "after_paragraph": len(paragraphs)})
 		elif elem.name in ["p", "h2", "h3"]:
 			text = elem.get_text(strip=True)
 			if len(text) < 20:
