@@ -270,31 +270,17 @@ h2.para-translation, h3.para-translation { font-size: 16px; font-weight: 400; }
 	.article-header { margin-top: 24px; }
 	.article-body { margin-bottom: 40px; }
 
-	.vocab-grid {
-		grid-template-columns: 1fr 1fr;
-		gap: 8px;
-	}
+	.vocab-grid { grid-template-columns: 1fr; gap: 8px; }
 
+	.popup-overlay { align-items: flex-end; }
 	.popup-card {
-		padding: 20px 18px;
+		width: 100%;
 		max-width: 100%;
-		width: calc(100% - 32px);
+		margin: 0;
 		border-radius: 16px 16px 0 0;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-	}
-	.popup-overlay.open {
-		align-items: flex-end;
+		padding: 20px 20px 32px;
 	}
 
 	.container { padding: 0 16px; margin: 24px auto; }
-
 	.site-header--nav { padding: 12px 16px; }
-}
-
-@media (max-width: 380px) {
-	.vocab-grid { grid-template-columns: 1fr; }
 }
