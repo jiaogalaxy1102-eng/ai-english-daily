@@ -1,3 +1,4 @@
+import html as htmllib
 import json
 import random
 import os
@@ -183,8 +184,8 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 	highfreq_words = {v["word"].lower() for v in vocab if v["type"] == "highfreq"}
 	term_words = {v["word"].lower() for v in vocab if v["type"] == "term"}
 
-	# escape JSON for embedding in HTML
-	vocab_json = json.dumps(vocab, ensure_ascii=False)
+	# escape JSON for embedding in HTML — prevent </script> from breaking the tag
+	vocab_json = json.dumps(vocab, ensure_ascii=False).replace("</script>", r"<\/script>")
 
 	# highlight words in a paragraph text
 	def highlight(text):
@@ -193,9 +194,10 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 		for word in all_words:
 			entry = vocab_map[word]
 			css_class = "word-highfreq" if entry["type"] == "highfreq" else "word-term"
+			word_attr = htmllib.escape(entry["word"], quote=True)
 			pattern = re.compile(re.escape(word), re.IGNORECASE)
-			escaped_word = lambda m: (
-				f'<span class="{css_class}" data-word="{entry["word"]}">'
+			escaped_word = lambda m, c=css_class, a=word_attr: (
+				f'<span class="{c}" data-word="{a}">'
 				f'{m.group()}</span>'
 			)
 			text = pattern.sub(escaped_word, text, count=1)
@@ -239,8 +241,9 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 	for v in vocab:
 		badge_class = "badge-highfreq" if v["type"] == "highfreq" else "badge-term"
 		badge_label = "高頻詞" if v["type"] == "highfreq" else "術語"
+		word_attr = htmllib.escape(v['word'], quote=True)
 		vocab_summary += f"""
-			<div class="vocab-card" onclick="showPopup('{v['word']}')">
+			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
 				<span class="vocab-word">{v['word']}</span>
 				<span class="badge {badge_class}">{badge_label}</span>
 				<span class="vocab-ipa">{v['ipa']}</span>
@@ -253,7 +256,7 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title} — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=4">
+	<link rel="stylesheet" href="../style.css?v=5">
 </head>
 <body>
 
