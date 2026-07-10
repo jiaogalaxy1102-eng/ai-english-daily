@@ -14,7 +14,7 @@ from google import genai
 
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 client = genai.Client(api_key=GEMINI_API_KEY)
-GEMINI_MODEL = "gemini-1.5-flash"
+GEMINI_MODEL = "gemini-3-flash-preview"
 
 BASE_DIR = Path(__file__).parent
 ARTICLES_DIR = BASE_DIR / "articles"
