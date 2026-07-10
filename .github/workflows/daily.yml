@@ -39,6 +39,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add articles/ index.html
+          git add data/ articles/ index.html
           git diff --cached --quiet || git commit -m "Daily article $(date -u +%Y-%m-%d)"
           git push

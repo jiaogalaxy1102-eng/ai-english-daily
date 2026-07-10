@@ -1,4 +1,3 @@
-import html as htmllib
 import json
 import random
 import os
@@ -13,12 +12,15 @@ import requests
 from bs4 import BeautifulSoup
 from google import genai
 
+from template import render_article, render_index
+
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 client = genai.Client(api_key=GEMINI_API_KEY)
 GEMINI_MODEL = "gemini-3-flash-preview"
 
 BASE_DIR = Path(__file__).parent
 ARTICLES_DIR = BASE_DIR / "articles"
+DATA_DIR = BASE_DIR / "data"
 SOURCES_FILE = BASE_DIR / "sources.json"
 INDEX_FILE = BASE_DIR / "index.html"
 
@@ -175,239 +177,38 @@ def call_gemini(source_name, title, url, paragraphs):
 				raise
 
 
-def build_article_html(source_name, title, url, date_str, paragraphs, images, gemini_data):
+def build_article_data(source_name, title, url, date_str, paragraphs, images, gemini_data):
 	translations = {p["index"]: p["translation"] for p in gemini_data["paragraphs"]}
-	vocab = gemini_data["vocab"]
-
-	# build lookup: word -> vocab entry
-	vocab_map = {v["word"].lower(): v for v in vocab}
-	highfreq_words = {v["word"].lower() for v in vocab if v["type"] == "highfreq"}
-	term_words = {v["word"].lower() for v in vocab if v["type"] == "term"}
-
-	# escape JSON for embedding in HTML — prevent </script> from breaking the tag
-	vocab_json = json.dumps(vocab, ensure_ascii=False).replace("</script>", r"<\/script>")
-
-	# highlight words in a paragraph text
-	def highlight(text):
-		# sort by length descending to match longer phrases first
-		all_words = sorted(vocab_map.keys(), key=len, reverse=True)
-		for word in all_words:
-			entry = vocab_map[word]
-			css_class = "word-highfreq" if entry["type"] == "highfreq" else "word-term"
-			word_attr = htmllib.escape(entry["word"], quote=True)
-			pattern = re.compile(re.escape(word), re.IGNORECASE)
-			escaped_word = lambda m, c=css_class, a=word_attr: (
-				f'<span class="{c}" data-word="{a}">'
-				f'{m.group()}</span>'
-			)
-			text = pattern.sub(escaped_word, text, count=1)
-		return text
-
-	# group images by after_paragraph index
-	images_by_para = {}
-	for img in images:
-		idx = img["after_paragraph"]
-		images_by_para.setdefault(idx, []).append(img)
-
-	# build paragraphs HTML
-	paras_html = ""
-	for i, para in enumerate(paragraphs):
-		tag = para["tag"]
-		original_highlighted = highlight(para["text"])
-
-		if tag in ["h2", "h3"]:
-			paras_html += f"""
-		<div class="para-block heading-block">
-			<{tag} class="para-original">{original_highlighted}</{tag}>
-			<{tag} class="para-translation">{translations.get(i, "")}</{tag}>
-		</div>"""
-		else:
-			paras_html += f"""
-		<div class="para-block">
-			<p class="para-original">{original_highlighted}</p>
-			<p class="para-translation">{translations.get(i, "")}</p>
-		</div>"""
-
-		# insert images after this paragraph
-		for img in images_by_para.get(i, []):
-			src_e = htmllib.escape(img['src'], quote=True)
-			alt_e = htmllib.escape(img['alt'], quote=True)
-			caption = f'<figcaption>{htmllib.escape(img["alt"])}</figcaption>' if img['alt'] else ''
-			paras_html += f"""
-		<figure class="article-image">
-			<img src="{src_e}" alt="{alt_e}" loading="lazy">
-			{caption}
-		</figure>"""
-
-	# build vocab summary
-	vocab_summary = ""
-	for v in vocab:
-		badge_class = "badge-highfreq" if v["type"] == "highfreq" else "badge-term"
-		badge_label = "高頻詞" if v["type"] == "highfreq" else "術語"
-		word_attr = htmllib.escape(v['word'], quote=True)
-		vocab_summary += f"""
-			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
-				<span class="vocab-word">{v['word']}</span>
-				<span class="badge {badge_class}">{badge_label}</span>
-				<span class="vocab-ipa">{v['ipa']}</span>
-				<span class="vocab-def">{v['definition_zh']}</span>
-			</div>"""
-
-	title_html = htmllib.escape(title)
-	source_html = htmllib.escape(source_name)
-	url_html = htmllib.escape(url, quote=True)
-
-	return f"""<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{title_html} — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=6">
-</head>
-<body>
-
-<header class="site-header site-header--nav">
-	<a href="../index.html">AI English Daily</a>
-	<span class="breadcrumb-date">/ {date_str}</span>
-</header>
-
-<div class="article-header content-block">
-	<div class="article-source">{source_html}</div>
-	<h1 class="article-title">{title_html}</h1>
-	<div class="article-meta">
-		{date_str} &nbsp;·&nbsp; <a href="{url_html}" target="_blank" rel="noopener">原文連結</a>
-	</div>
-</div>
-
-<div class="vocab-section content-block">
-	<button class="vocab-toggle" onclick="toggleVocab(this)">
-		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
-	</button>
-	<div class="vocab-grid" id="vocab-grid">
-		{vocab_summary}
-	</div>
-</div>
-
-<div class="article-body content-block">
-	{paras_html}
-</div>
-
-<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
-	<div class="popup-card" id="popup-card">
-		<button class="btn-close" onclick="closePopup()">×</button>
-		<div class="popup-word" id="popup-word"></div>
-		<div class="popup-ipa" id="popup-ipa"></div>
-		<div class="popup-badge" id="popup-badge"></div>
-		<div class="popup-def" id="popup-def"></div>
-		<div class="popup-example" id="popup-example"></div>
-		<div class="popup-actions">
-			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
-			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
-		</div>
-	</div>
-</div>
-
-<script>
-	const vocabData = {vocab_json};
-	const vocabMap = {{}};
-	vocabData.forEach(v => {{ vocabMap[v.word.toLowerCase()] = v; }});
-
-	const knownKey = "known-words";
-	function getKnown() {{
-		return JSON.parse(localStorage.getItem(knownKey) || "{{}}");
-	}}
-
-	let currentWord = null;
-
-	function showPopup(word) {{
-		const entry = vocabMap[word.toLowerCase()];
-		if (!entry) return;
-		currentWord = entry.word;
-
-		document.getElementById("popup-word").textContent = entry.word;
-		document.getElementById("popup-ipa").textContent = entry.ipa;
-		document.getElementById("popup-def").textContent = entry.definition_zh;
-		document.getElementById("popup-example").textContent = entry.example || "";
-
-		const badge = document.getElementById("popup-badge");
-		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
-
-		const known = getKnown();
-		const btn = document.getElementById("btn-known");
-		btn.classList.toggle("marked", !!known[entry.word]);
-
-		document.getElementById("popup-overlay").classList.add("open");
-	}}
-
-	function closePopup() {{
-		document.getElementById("popup-overlay").classList.remove("open");
-		currentWord = null;
-	}}
-
-	function closePopupOnOverlay(e) {{
-		if (e.target === document.getElementById("popup-overlay")) closePopup();
-	}}
-
-	function speakWord() {{
-		if (!currentWord) return;
-		speechSynthesis.cancel();
-		const utter = new SpeechSynthesisUtterance(currentWord);
-		utter.lang = "en-US";
-		speechSynthesis.speak(utter);
-	}}
-
-	function toggleKnown() {{
-		if (!currentWord) return;
-		const known = getKnown();
-		if (known[currentWord]) {{
-			delete known[currentWord];
-		}} else {{
-			known[currentWord] = true;
-		}}
-		localStorage.setItem(knownKey, JSON.stringify(known));
-		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
-	}}
-
-	function toggleVocab(btn) {{
-		const grid = document.getElementById("vocab-grid");
-		grid.classList.toggle("open");
-		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
-	}}
-
-	// wire up highlighted words
-	document.querySelectorAll(".word-highfreq, .word-term").forEach(el => {{
-		el.addEventListener("click", () => showPopup(el.dataset.word));
-	}});
-
-	// close on Escape
-	document.addEventListener("keydown", e => {{ if (e.key === "Escape") closePopup(); }});
-</script>
-
-</body>
-</html>"""
+	return {
+		"date": date_str,
+		"title": title,
+		"source_name": source_name,
+		"url": url,
+		"paragraphs": [
+			{"tag": p["tag"], "text": p["text"], "translation": translations.get(i, "")}
+			for i, p in enumerate(paragraphs)
+		],
+		"images": images,
+		"vocab": gemini_data["vocab"],
+	}
 
 
-def update_index(date_str, title, source_name, filename):
-	index_path = INDEX_FILE
-	title_escaped = htmllib.escape(title)
-	source_escaped = htmllib.escape(source_name)
-	entry_html = f'<li><a href="articles/{filename}">{date_str} — {title_escaped} <span class="source-tag">{source_escaped}</span></a></li>'
-
-	if not index_path.exists():
-		return  # initial index.html will be committed separately
-
-	content = index_path.read_text(encoding="utf-8")
-	content = re.sub(r'\s*<li class="empty-state">.*?</li>', '', content)
-	insert_after = '<ul id="article-list">'
-	content = content.replace(insert_after, insert_after + "\n\t\t\t" + entry_html, 1)
-	index_path.write_text(content, encoding="utf-8")
+def rebuild_index():
+	entries = []
+	for path in sorted(DATA_DIR.glob("*.json"), reverse=True):
+		with open(path, encoding="utf-8") as f:
+			d = json.load(f)
+		entries.append({
+			"date": d["date"],
+			"title": d["title"],
+			"source_name": d["source_name"],
+			"filename": f"{d['date']}.html",
+		})
+	INDEX_FILE.write_text(render_index(entries), encoding="utf-8")
 
 
 def main():
+	DATA_DIR.mkdir(exist_ok=True)
 	sources = load_sources()
 	done = existing_dates()
 	today = os.environ.get("DATE_OVERRIDE") or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
@@ -457,14 +258,18 @@ def main():
 		print(f"Gemini error: {e}")
 		sys.exit(1)
 
-	html = build_article_html(source_name, title, url, today, paragraphs, images, gemini_data)
+	data = build_article_data(source_name, title, url, today, paragraphs, images, gemini_data)
+
+	data_path = DATA_DIR / f"{today}.json"
+	data_path.write_text(json.dumps(data, ensure_ascii=False, indent="\t"), encoding="utf-8")
+	print(f"Written: {data_path}")
 
 	filename = f"{today}.html"
 	out_path = ARTICLES_DIR / filename
-	out_path.write_text(html, encoding="utf-8")
+	out_path.write_text(render_article(data), encoding="utf-8")
 	print(f"Written: {out_path}")
 
-	update_index(today, title, source_name, filename)
+	rebuild_index()
 	print("Done.")
 
 
