@@ -6,14 +6,15 @@ import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import time
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai
 
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-3-flash-preview")
+client = genai.Client(api_key=GEMINI_API_KEY)
+GEMINI_MODEL = "gemini-2.0-flash"
 
 BASE_DIR = Path(__file__).parent
 ARTICLES_DIR = BASE_DIR / "articles"
@@ -133,11 +134,20 @@ def call_gemini(source_name, title, url, paragraphs):
 - ipa 使用標準 IPA
 - 只輸出 JSON，不加任何說明"""
 
-	response = model.generate_content(prompt)
-	text = response.text.strip()
-	text = re.sub(r"^```json\s*", "", text)
-	text = re.sub(r"\s*```$", "", text)
-	return json.loads(text)
+	for attempt in range(3):
+		try:
+			response = client.models.generate_content(model=GEMINI_MODEL, contents=prompt)
+			text = response.text.strip()
+			text = re.sub(r"^```json\s*", "", text)
+			text = re.sub(r"\s*```$", "", text)
+			return json.loads(text)
+		except Exception as e:
+			if "429" in str(e) and attempt < 2:
+				wait = 40 * (attempt + 1)
+				print(f"Rate limited, retrying in {wait}s...")
+				time.sleep(wait)
+			else:
+				raise
 
 
 def build_article_html(source_name, title, url, date_str, paragraphs, images, gemini_data):
