@@ -36,8 +36,20 @@ def render_article(data):
 		idx = img["after_paragraph"]
 		images_by_para.setdefault(idx, []).append(img)
 
+	def image_figure(img):
+		src_e = htmllib.escape(img['src'], quote=True)
+		alt_e = htmllib.escape(img['alt'], quote=True)
+		caption = f'<figcaption>{htmllib.escape(img["alt"])}</figcaption>' if img['alt'] else ''
+		return f"""
+		<figure class="article-image">
+			<img src="{src_e}" alt="{alt_e}" loading="lazy">
+			{caption}
+		</figure>"""
+
 	# build paragraphs HTML
-	paras_html = ""
+	# after_paragraph == 0 means the image appeared before any paragraph
+	# (e.g. a lead image), so it goes before the loop below
+	paras_html = "".join(image_figure(img) for img in images_by_para.get(0, []))
 	for i, para in enumerate(data["paragraphs"]):
 		tag = para["tag"]
 		original_highlighted = highlight(para["text"], vocab_map)
@@ -60,14 +72,7 @@ def render_article(data):
 		# after_paragraph is recorded as "how many paragraphs collected so far"
 		# at scrape time, which is i+1 once this (i-th, 0-indexed) paragraph is added
 		for img in images_by_para.get(i + 1, []):
-			src_e = htmllib.escape(img['src'], quote=True)
-			alt_e = htmllib.escape(img['alt'], quote=True)
-			caption = f'<figcaption>{htmllib.escape(img["alt"])}</figcaption>' if img['alt'] else ''
-			paras_html += f"""
-		<figure class="article-image">
-			<img src="{src_e}" alt="{alt_e}" loading="lazy">
-			{caption}
-		</figure>"""
+			paras_html += image_figure(img)
 
 	# build vocab summary
 	vocab_summary = ""

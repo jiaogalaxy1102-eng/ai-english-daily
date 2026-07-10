@@ -10,12 +10,9 @@ import time
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-from google import genai
 
 from template import render_article, render_index
 
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-client = genai.Client(api_key=GEMINI_API_KEY)
 GEMINI_MODEL = "gemini-3-flash-preview"
 
 BASE_DIR = Path(__file__).parent
@@ -121,6 +118,9 @@ def fetch_article_content(url):
 
 
 def call_gemini(source_name, title, url, paragraphs):
+	from google import genai
+	client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+
 	article_text = "\n\n".join(
 		f"[{i}] {p['text']}" for i, p in enumerate(paragraphs)
 	)

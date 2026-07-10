@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data for Agents — AI English Daily</title>
+	<link rel="stylesheet" href="../style.css?v=6">
+</head>
+<body>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-07</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Hugging Face Blog</div>
+	<h1 class="article-title">Data for Agents</h1>
+	<div class="article-meta">
+		2026-07-07 &nbsp;·&nbsp; <a href="https://huggingface.co/blog/nvidia/open-data-for-agents" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="benchmark" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">benchmark</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˈbentʃ.mɑːrk/</span>
+				<span class="vocab-def">基準；標竿</span>
+			</div>
+			<div class="vocab-card" data-word="reproducibility" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reproducibility</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˌriː.prə.dʌk.təˈbɪl.ə.ti/</span>
+				<span class="vocab-def">可重現性</span>
+			</div>
+			<div class="vocab-card" data-word="curation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">curation</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/kjʊˈreɪ.ʃən/</span>
+				<span class="vocab-def">策展；篩選整理</span>
+			</div>
+			<div class="vocab-card" data-word="synthetic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">synthetic</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/sɪnˈθet.ɪk/</span>
+				<span class="vocab-def">合成的</span>
+			</div>
+			<div class="vocab-card" data-word="grounded" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">grounded</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˈɡraʊn.dɪd/</span>
+				<span class="vocab-def">有依據的；扎根的</span>
+			</div>
+			<div class="vocab-card" data-word="toxicity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">toxicity</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/tɒkˈsɪs.ə.ti/</span>
+				<span class="vocab-def">毒性；有害性</span>
+			</div>
+			<div class="vocab-card" data-word="demographic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">demographic</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˌdem.əˈɡræf.ɪk/</span>
+				<span class="vocab-def">人口統計的</span>
+			</div>
+			<div class="vocab-card" data-word="lineage" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">lineage</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˈlɪn.i.ɪdʒ/</span>
+				<span class="vocab-def">來源脈絡；血統</span>
+			</div>
+			<div class="vocab-card" data-word="intertwined" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">intertwined</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˌɪn.tərˈtwaɪnd/</span>
+				<span class="vocab-def">交織的</span>
+			</div>
+			<div class="vocab-card" data-word="fidelity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fidelity</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/fɪˈdel.ə.ti/</span>
+				<span class="vocab-def">保真度；精確度</span>
+			</div>
+			<div class="vocab-card" data-word="recovery" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">recovery</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/rɪˈkʌv.ər.i/</span>
+				<span class="vocab-def">復原；恢復</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<figure class="article-image">
+			<img src="https://cdn-uploads.huggingface.co/production/uploads/68d2fec8856b85d927e44d32/8LCrLMaVy8W-dX0j-OwQI.gif" alt="Nemotron Post-Training v3 Prompt Atlas" loading="lazy">
+			<figcaption>Nemotron Post-Training v3 Prompt Atlas</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Image: Nemotron Post-Training v3 Prompt Atlas</p>
+			<p class="para-translation">圖片：Nemotron Post-Training v3 提示詞圖譜</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">More Than Model Weights</h2>
+			<h2 class="para-translation">不只是模型權重</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Building AI agents is hard, because the real world does not behave like a <span class="word-term" data-word="benchmark">benchmark</span>.</p>
+			<p class="para-translation">打造 AI 代理人很困難，因為現實世界的運作方式並不像基準測試那樣。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">An agent that can't recover from a broken API call, or a workflow it has never seen, is not really an agent. It is an autocompleter with tools. Getting from one to the other is a data problem: software engineering traces, tool-use failures, multi-step reasoning, retrieval, safety, user simulation, workflow execution, and eventually physical world interaction. That is where NVIDIA Nemotron's open data products live.</p>
+			<p class="para-translation">一個無法從失敗的 API 呼叫中恢復、或無法應對從未見過的工作流程的代理人，並不能算是真正的代理人。它只是一個附加工具的自動完成器。要從後者走向前者，其實是一個資料問題：軟體工程追蹤紀錄、工具使用失敗、多步驟推理、檢索、安全性、使用者模擬、工作流程執行，最終還有與實體世界的互動。這正是 NVIDIA Nemotron 開放資料產品所著力的領域。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">NVIDIA recently highlightedhow open models are driving AI researchand showing up across the popular International Conference on Machine Learning (ICML), with nearly 145 papers citing Nemotron models and datasets. <span class="word-term" data-word="synthetic">Synthetic</span> data plays an important role across that ecosystem:</p>
+			<p class="para-translation">NVIDIA 最近強調了開放模型如何推動 AI 研究，並在熱門的國際機器學習大會（ICML）上大量出現，有將近 145 篇論文引用了 Nemotron 的模型與資料集。合成資料在這整個生態系中扮演著重要角色：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Part ofwhy NVIDIA releases open datasetsis to learn with the community to expand upon these various applications.</p>
+			<p class="para-translation">NVIDIA 釋出開放資料集的部分原因，是希望能與社群一起學習，進一步擴展這些各式各樣的應用。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Open weights matter. But for agents, weights are only part of the story. <span class="word-highfreq" data-word="reproducibility">Reproducibility</span> also depends on the datasets, <span class="word-highfreq" data-word="curation">curation</span> choices, training recipes, and evaluation methods behind the model.</p>
+			<p class="para-translation">開放權重固然重要，但對代理人而言，權重只是故事的一部分。可重現性同樣仰賴模型背後的資料集、篩選方式、訓練方法與評估方式。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Agent behavior needs to be inspectable. If a model calls tools, executes workflows, retrieves information, and acts across systems, developers need to understand the data that shaped those behaviors. Open data makes agent behavior inspectable and explainable. <span class="word-term" data-word="synthetic">Synthetic</span> data is a key piece of the puzzle to making that possible.</p>
+			<p class="para-translation">代理人的行為必須是可被檢視的。如果一個模型會呼叫工具、執行工作流程、檢索資訊，並跨系統採取行動，開發者就需要理解形塑這些行為背後的資料。開放資料讓代理人的行為變得可檢視、可解釋。合成資料則是實現這一點的關鍵拼圖之一。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Keep It Like a Secret</h2>
+			<h2 class="para-translation">把它當成一個秘密般守護</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">NVIDIA's VP of Applied Deep Learning Research Bryan Catanzaro recently noted:"every company is built around a secret"— a workflow, corpus, or customer pattern competitors don't have. Those secrets make AI useful, but companies shouldn't casually expose them. <span class="word-term" data-word="synthetic">Synthetic</span> data gives teams a way to preserve useful signals without exposing the underlying sources.</p>
+			<p class="para-translation">NVIDIA 應用深度學習研究部門副總裁 Bryan Catanzaro 最近提到：「每家公司都是圍繞著一個秘密而建立的」——可能是一套工作流程、一批語料，或是競爭對手沒有的客戶模式。這些秘密讓 AI 變得有用，但公司不應該輕易將它們曝光。合成資料讓團隊得以保留有用的訊號，同時不必揭露背後真正的資料來源。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Bryan also talks about cultivating a diverse and participatory AI ecosystem where many kinds of companies, researchers, governments, and communities can contribute. That is not just a value claim. It is a data claim.</p>
+			<p class="para-translation">Bryan 也談到要培養一個多元且可參與的 AI 生態系，讓各式各樣的公司、研究者、政府與社群都能夠貢獻其中。這不只是一種價值上的主張，更是一種關於資料的主張。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">If every model learns from the same narrow pool of data, we should not be surprised when the models start to feel the same. The hard part is that the most useful data often sits inside organizations that cannot or will not publish it directly. Everyone benefits from a richer shared data layer. No one wants to be the first to give away the thing that makes them special.</p>
+			<p class="para-translation">如果每個模型都是從同一個狹隘的資料池中學習，那麼當這些模型開始變得千篇一律時，我們也不該感到意外。困難之處在於，最有用的資料往往就藏在那些無法、或不願意直接公開的組織內部。每個人都能從更豐富的共享資料層中受益，但沒有人想成為第一個交出自己獨特之處的人。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-term" data-word="synthetic">Synthetic</span> data, released openly, is one way to change that math.</p>
+			<p class="para-translation">開放釋出合成資料，正是改變這個算計的方法之一。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Exploring Agent Data</h2>
+			<h2 class="para-translation">探索代理人資料</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As part of Nemotron open data, we've released over 10 trillion pre-training tokens and millions of post-training samples spanning many domains and data shapes. That's a lot to make sense of — and raw dataset tables don't help much.</p>
+			<p class="para-translation">身為 Nemotron 開放資料的一部分，我們已經釋出了超過 10 兆個預訓練 token，以及數百萬筆涵蓋眾多領域與資料型態的後訓練樣本。這是一大批難以消化的資料——而原始的資料集表格幫不上太多忙。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">To make it easier to explore what's actually in Nemotron post-training data, we built theNemotron Post-Training v3 Prompt Atlas: an interactive visual map where each point is a prompt sample, drawn from the Nemotron v3 post-training collection and volume-sampled to reflect the honest proportions of the data mixture.</p>
+			<p class="para-translation">為了讓大家更容易探索 Nemotron 後訓練資料裡實際包含了什麼，我們打造了 Nemotron Post-Training v3 提示詞圖譜：一張互動式視覺地圖，圖上每個點都是一筆提示詞樣本，取自 Nemotron v3 後訓練資料集，並依照資料混合比例的真實情況進行取樣。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Color overlays and filters let you reorganize the map by dataset, pipeline stage, domain, or tool use. Since semantically similar prompts cluster together, you can zoom into a region — coding algorithms, safety, math, agentic behavior — inspect representative examples, and use that signal to curate data, build evals, or understand why a model behaves the way it does.</p>
+			<p class="para-translation">透過顏色疊層與篩選器，你可以依照資料集、流程階段、領域或工具使用方式重新排列這張地圖。由於語意相近的提示詞會聚集在一起，你可以放大檢視某個特定區域——例如程式演算法、安全性、數學、代理人行為——查看具代表性的範例，並運用這個訊號來篩選資料、建立評測，或理解模型為何會有特定的行為表現。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Agents also need to understand people they are built to support, and this is where “data quality” becomes local, not universal. A <span class="word-term" data-word="toxicity">toxicity</span> classifier trained on English internet data can miss hostile messages in Korean or Japanese, where aggression is often encoded in politeness levels rather than obvious vocabulary. Same signal, different context. Teams are alreadygrounding agentsthis way.</p>
+			<p class="para-translation">代理人同時也需要理解它們被設計來服務的對象，而這正是「資料品質」變成一種在地性、而非普世性概念的地方。一個以英文網路資料訓練出來的毒性分類器，可能會漏掉韓文或日文中帶有敵意的訊息，因為在這些語言中，攻擊性往往是透過禮貌程度的變化來表達，而非明顯的詞彙。同樣的訊號，卻有著不同的脈絡。已經有團隊正以這樣的方式為代理人建立在地基礎。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Nemotron-Personasis one attempt at addressing that: locally <span class="word-highfreq" data-word="grounded">grounded</span> <span class="word-term" data-word="synthetic">synthetic</span> personas capturing the diversity and complexity of populations. Built usingNeMo Data Designer, NVIDIA’s state-of-the-art compound-AI tooling for synthetic data generation, Nemotron-Personas mirrors official regional <span class="word-term" data-word="demographic">demographic</span> and geographic statistics. The goal is not to recreate real people. In a way, it’s to help developers test whether their systems reflect the users, languages, regions, and occupations they claim to serve.Privasis, a derivative dataset built onNemotron-Personas-USA, shows one direction this could go, layering privacy-preserving synthetic records across medical, financial, legal, and social contexts.</p>
+			<p class="para-translation">Nemotron-Personas 是解決這個問題的其中一種嘗試：以在地為基礎的合成人物角色，捕捉人群的多樣性與複雜性。它是使用 NeMo Data Designer（NVIDIA 用於合成資料生成的最先進複合式 AI 工具）打造而成，並如實反映官方的地區人口統計與地理資料。它的目標並不是要重現真實的人，某種程度上，它是要幫助開發者測試自己的系統是否真的反映了他們聲稱要服務的使用者、語言、地區與職業。Privasis 是基於 Nemotron-Personas-USA 衍生出的資料集，展示了其中一種可能的發展方向：在醫療、金融、法律與社會等情境中，疊加具備隱私保護的合成紀錄。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Last month at VivaTech in Paris, we launched our tenth country in thecollection, which now represents more than 2.4B people.</p>
+			<p class="para-translation">上個月在巴黎的 VivaTech 上，我們在這個資料集中推出了第十個國家，目前已涵蓋超過 24 億人口。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://cdn-uploads.huggingface.co/production/uploads/68d2fec8856b85d927e44d32/Nu65bo-Tz_GI1ZyylUVN4.png" alt="Nemotron-Personas Global Footprint" loading="lazy">
+			<figcaption>Nemotron-Personas Global Footprint</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">When quality is local, only people who know that locality can build it — regional researchers, native speakers, subject-matter experts, stakeholders who can inspect and correct alongside you. That's learning in public: not releasing data in isolation, but building it collaboratively.</p>
+			<p class="para-translation">當品質是在地性的，就只有真正了解那個地方的人才能打造它——地區研究者、母語使用者、領域專家，以及能與你一起檢視、修正的利害關係人。這就是所謂的公開學習：不是孤立地釋出資料，而是協作地建構資料。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-term" data-word="synthetic">Synthetic</span> data needs to be integrated as part of a system of data sources. There are tradeoffs. It can reduce risk, but it does not remove the need for grounding, <span class="word-highfreq" data-word="lineage">lineage</span>, <span class="word-highfreq" data-word="curation">curation</span>, evaluation, and human judgment.</p>
+			<p class="para-translation">合成資料需要被整合為整套資料來源系統的一部分。這其中存在取捨：它能降低風險，但無法消除對基礎依據、來源脈絡、篩選、評估與人為判斷的需求。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">One useful way to think about this is with"<span class="word-term" data-word="synthetic">synthetic</span> thresholds": points where data can no longer be treated as purely real. That line is not always obvious. Real workflows, human feedback, model-generated traces, simulated users, and synthetic labels can all become <span class="word-highfreq" data-word="intertwined">intertwined</span>. The answer is not to pretend synthetic data is fake or harmless. It is to document what was generated, what was <span class="word-highfreq" data-word="grounded">grounded</span>, what was reviewed, and what the data is meant to test. As more AI systems are trained on artificial information, we need better shared habits for inspecting it, documenting it, and debating these technologies in public.</p>
+			<p class="para-translation">思考這個問題的一個有用方式，是引入「合成資料門檻」的概念：也就是資料不再能被單純視為真實資料的那個臨界點。這條界線並不總是那麼明顯。真實的工作流程、人類回饋、模型生成的紀錄、模擬使用者，以及合成標籤，都可能彼此交織在一起。答案並不是假裝合成資料是虛假或無害的，而是要記錄清楚：什麼是生成出來的、什麼有真實依據、什麼經過審查，以及這份資料原本是要用來測試什麼。隨著愈來愈多 AI 系統以人工生成的資訊進行訓練，我們需要建立更好的共同習慣，來檢視它、記錄它，並公開討論這些技術。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Quality also means different things in different contexts. Reasoning data needs harder problems and cleaner traces. Persona data needs distributional <span class="word-term" data-word="fidelity">fidelity</span> and local review. Agentic workflows need task diversity, failure coverage, and <span class="word-highfreq" data-word="recovery">recovery</span> paths. The field is still more craft than formula.</p>
+			<p class="para-translation">「品質」在不同情境下也代表著不同的意義。推理資料需要更難的問題與更乾淨的推理紀錄；人物角色資料需要分佈上的真實度與在地審查；代理人工作流程則需要任務多樣性、失敗案例的涵蓋範圍，以及復原路徑。這個領域目前仍然更像是一門手藝，而非一套公式。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That is why open methods matter. <span class="word-term" data-word="synthetic">Synthetic</span> data is not just about generating more examples. It is about asking better questions, and making it possible for parties who otherwise could not sit at the same table: companies without giving away their secrets, governments without compromising privacy, and researchers without waiting for permission that may never come.</p>
+			<p class="para-translation">這正是為什麼開放方法如此重要。合成資料不只是為了產生更多範例，而是為了提出更好的問題，並讓原本無法坐在同一張桌子上的各方得以合作：公司不必交出自己的秘密、政府不必犧牲隱私、研究者也不必苦等一個可能永遠不會到來的許可。</p>
+		</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "benchmark", "type": "term", "ipa": "/ˈbentʃ.mɑːrk/", "definition_zh": "基準；標竿", "example": "Building AI agents is hard, because the real world does not behave like a benchmark."}, {"word": "reproducibility", "type": "highfreq", "ipa": "/ˌriː.prə.dʌk.təˈbɪl.ə.ti/", "definition_zh": "可重現性", "example": "Reproducibility also depends on the datasets, curation choices, training recipes, and evaluation methods behind the model."}, {"word": "curation", "type": "highfreq", "ipa": "/kjʊˈreɪ.ʃən/", "definition_zh": "策展；篩選整理", "example": "It can reduce risk, but it does not remove the need for grounding, lineage, curation, evaluation, and human judgment."}, {"word": "synthetic", "type": "term", "ipa": "/sɪnˈθet.ɪk/", "definition_zh": "合成的", "example": "Synthetic data gives teams a way to preserve useful signals without exposing the underlying sources."}, {"word": "grounded", "type": "highfreq", "ipa": "/ˈɡraʊn.dɪd/", "definition_zh": "有依據的；扎根的", "example": "Nemotron-Personas is one attempt at addressing that: locally grounded synthetic personas capturing the diversity and complexity of populations."}, {"word": "toxicity", "type": "term", "ipa": "/tɒkˈsɪs.ə.ti/", "definition_zh": "毒性；有害性", "example": "A toxicity classifier trained on English internet data can miss hostile messages in Korean or Japanese."}, {"word": "demographic", "type": "term", "ipa": "/ˌdem.əˈɡræf.ɪk/", "definition_zh": "人口統計的", "example": "Nemotron-Personas mirrors official regional demographic and geographic statistics."}, {"word": "lineage", "type": "highfreq", "ipa": "/ˈlɪn.i.ɪdʒ/", "definition_zh": "來源脈絡；血統", "example": "It can reduce risk, but it does not remove the need for grounding, lineage, curation, evaluation, and human judgment."}, {"word": "intertwined", "type": "highfreq", "ipa": "/ˌɪn.tərˈtwaɪnd/", "definition_zh": "交織的", "example": "Real workflows, human feedback, model-generated traces, simulated users, and synthetic labels can all become intertwined."}, {"word": "fidelity", "type": "term", "ipa": "/fɪˈdel.ə.ti/", "definition_zh": "保真度；精確度", "example": "Persona data needs distributional fidelity and local review."}, {"word": "recovery", "type": "highfreq", "ipa": "/rɪˈkʌv.ər.i/", "definition_zh": "復原；恢復", "example": "Agentic workflows need task diversity, failure coverage, and recovery paths."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const knownKey = "known-words";
+	function getKnown() {
+		return JSON.parse(localStorage.getItem(knownKey) || "{}");
+	}
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = entry.type === "highfreq"
+			? '<span class="badge badge-highfreq">高頻詞</span>'
+			: '<span class="badge badge-term">術語</span>';
+
+		const known = getKnown();
+		const btn = document.getElementById("btn-known");
+		btn.classList.toggle("marked", !!known[entry.word]);
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleKnown() {
+		if (!currentWord) return;
+		const known = getKnown();
+		if (known[currentWord]) {
+			delete known[currentWord];
+		} else {
+			known[currentWord] = true;
+		}
+		localStorage.setItem(knownKey, JSON.stringify(known));
+		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+</script>
+
+</body>
+</html>

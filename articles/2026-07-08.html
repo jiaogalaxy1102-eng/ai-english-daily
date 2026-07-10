@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>microgpt — AI English Daily</title>
+	<link rel="stylesheet" href="../style.css?v=6">
+</head>
+<body>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-08</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Andrej Karpathy</div>
+	<h1 class="article-title">microgpt</h1>
+	<div class="article-meta">
+		2026-07-08 &nbsp;·&nbsp; <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="tokenizer" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">tokenizer</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˈtoʊ.kən.aɪ.zər/</span>
+				<span class="vocab-def">分詞器</span>
+			</div>
+			<div class="vocab-card" data-word="backpropagation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">backpropagation</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˌbæk.proʊ.pə.ɡeɪˈʃən/</span>
+				<span class="vocab-def">反向傳播</span>
+			</div>
+			<div class="vocab-card" data-word="gradient" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">gradient</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˈɡreɪ.di.ənt/</span>
+				<span class="vocab-def">梯度</span>
+			</div>
+			<div class="vocab-card" data-word="scalar" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">scalar</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˈskeɪ.lər/</span>
+				<span class="vocab-def">純量</span>
+			</div>
+			<div class="vocab-card" data-word="delimiter" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">delimiter</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/dɪˈlɪm.ɪ.tər/</span>
+				<span class="vocab-def">分隔符號</span>
+			</div>
+			<div class="vocab-card" data-word="derivative" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">derivative</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/dɪˈrɪv.ə.tɪv/</span>
+				<span class="vocab-def">導數</span>
+			</div>
+			<div class="vocab-card" data-word="overflow" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">overflow</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˈoʊ.vər.floʊ/</span>
+				<span class="vocab-def">溢位</span>
+			</div>
+			<div class="vocab-card" data-word="nudge" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">nudge</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/nʌdʒ/</span>
+				<span class="vocab-def">輕推；微調</span>
+			</div>
+			<div class="vocab-card" data-word="stateless" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">stateless</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˈsteɪt.ləs/</span>
+				<span class="vocab-def">無狀態的</span>
+			</div>
+			<div class="vocab-card" data-word="obsession" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">obsession</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/əbˈseʃ.ən/</span>
+				<span class="vocab-def">執念；著迷</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">This is a brief guide to my new art projectmicrogpt, a single file of 200 lines of pure Python with no dependencies that trains and inferences a GPT. This file contains the full algorithmic content of what is needed: dataset of documents, <span class="word-term" data-word="tokenizer">tokenizer</span>, autograd engine, a GPT-2-like neural network architecture, the Adam optimizer, training loop, and inference loop. Everything else is just efficiency. I cannot simplify this any further. This script is the culmination of multiple projects (micrograd, makemore, nanogpt, etc.) and a decade-long <span class="word-highfreq" data-word="obsession">obsession</span> to simplify LLMs to their bare essentials, and I think it is beautiful 🥹. It even breaks perfectly across 3 columns:</p>
+			<p class="para-translation">這是我的新藝術專案 microgpt 的簡短導覽，這是一個只有 200 行、不依賴任何外部套件的純 Python 檔案，能夠訓練並執行一個 GPT 模型的推論。這個檔案包含了所需的完整演算法內容：文件資料集、分詞器（tokenizer）、自動微分引擎（autograd engine）、類似 GPT-2 的神經網路架構、Adam 最佳化器、訓練迴圈，以及推論迴圈。其餘的一切都只是效率上的考量。我已經無法再進一步簡化它了。這支腳本是多個專案（micrograd、makemore、nanogpt 等）的集大成之作，也是我長達十年、想把大型語言模型簡化到最核心本質的執念，我認為它美極了 🥹。它甚至可以完美地切分成 3 個欄位：</p>
+		</div>
+		<figure class="article-image">
+			<img src="http://karpathy.github.io/assets/microgpt.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">The following is my guide on stepping an interested reader through the code.</p>
+			<p class="para-translation">接下來是我為有興趣的讀者所寫的逐步導覽，帶你走過這份程式碼。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The fuel of large language models is a stream of text data, optionally separated into a set of documents. In production-grade applications, each document would be an internet web page but for microgpt we use a simpler example of 32,000 names, one per line:</p>
+			<p class="para-translation">大型語言模型的燃料是一連串的文字資料，可以選擇性地切分成一組一組的文件。在正式的生產應用中，每份文件可能會是一個網頁，但在 microgpt 中，我們使用更簡單的範例：32,000 個名字，每行一個：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The dataset looks like this. Each name is a document:</p>
+			<p class="para-translation">資料集看起來就像這樣，每個名字都是一份文件：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The goal of the model is to learn the patterns in the data and then generate similar new documents that share the statistical patterns within. As a preview, by the end of the script our model will generate (“hallucinate”!) new, plausible-sounding names. Skipping ahead, we’ll get:</p>
+			<p class="para-translation">這個模型的目標，是學習資料中的模式，接著生成具有相同統計模式的新文件。先預告一下：到了這支腳本的最後，我們的模型會生成（「幻覺產生」！）出全新、聽起來煞有其事的名字。先跳到後面看看結果：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">It doesn’t look like much, but from the perspective of a model like ChatGPT, your conversation with it is just a funny looking “document”. When you initialize the document with your prompt, the model’s response from its perspective is just a statistical document completion.</p>
+			<p class="para-translation">這看起來沒什麼大不了，但從像 ChatGPT 這樣的模型的角度來看，你跟它的對話，其實只是一份長相有點奇怪的「文件」。當你用自己的提示詞（prompt）初始化這份文件時，模型的回應在它眼中，其實只是一種統計上的文件補完（completion）。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Under the hood, neural networks work with numbers, not characters, so we need a way to convert text into a sequence of integer token ids and back. Production <span class="word-term" data-word="tokenizer">tokenizer</span>s liketiktoken(used by GPT-4) operate on chunks of characters for efficiency, but the simplest possible tokenizer just assigns one integer to each unique character in the dataset:</p>
+			<p class="para-translation">在底層，神經網路處理的是數字，而不是文字，所以我們需要一種方法，能把文字轉換成一串整數 token id，並且能反向轉換回來。像 tiktoken（GPT-4 所使用的）這類正式的分詞器，為了效率會以字元區塊為單位運作，但最簡單的分詞器，就只是為資料集中每個獨特的字元分配一個整數：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">In the code above, we collect all unique characters across the dataset (which are just all the lowercase letters a-z), sort them, and each letter gets an id by its index. Note that the integer values themselves have no meaning at all; each token is just a separate discrete symbol. Instead of 0, 1, 2 they might as well be different emoji. In addition, we create one more special token calledBOS(Beginning of Sequence), which acts as a <span class="word-highfreq" data-word="delimiter">delimiter</span>: it tells the model “a new document starts/ends here”. Later during training, each document gets wrapped withBOSon both sides:[BOS, e, m, m, a, BOS]. The model learns thatBOSinitates a new name, and that anotherBOSends it. Therefore, we have a final vocavulary of 27 (26 possible lowercase characters a-z and +1 for the BOS token).</p>
+			<p class="para-translation">在上面的程式碼中，我們蒐集了資料集裡所有獨特的字元（也就是所有的小寫字母 a 到 z），將它們排序，然後依照索引為每個字母分配一個 id。要注意的是，這些整數值本身完全沒有任何意義；每個 token 都只是一個獨立的離散符號。與其用 0、1、2，它們其實也可以換成不同的表情符號。此外，我們還額外建立了一個特殊 token，叫做 BOS（序列開始，Beginning of Sequence），它作為一種分隔符號：告訴模型「一份新文件從這裡開始/結束」。之後在訓練時，每份文件的兩端都會被包上 BOS：[BOS, e, m, m, a, BOS]。模型會學到 BOS 代表一個新名字的開始，另一個 BOS 則代表它的結束。因此，我們最終得到的詞彙量是 27（26 個可能的小寫字母 a-z，再加上 1 個 BOS token）。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Training a neural network requires <span class="word-term" data-word="gradient">gradient</span>s: for each parameter in the model, we need to know “if I <span class="word-highfreq" data-word="nudge">nudge</span> this number up a little, does the loss go up or down, and by how much?”. The computation graph has many inputs (the model parameters and the input tokens) but funnels down to a single <span class="word-term" data-word="scalar">scalar</span> output: the loss (we’ll define exactly what the loss is below). <span class="word-term" data-word="backpropagation">Backpropagation</span> starts at that single output and works backwards through the graph, computing the gradient of the loss with respect to every input. It relies on the chain rule from calculus. In production, libraries like PyTorch handle this automatically. Here, we implement it from scratch in a single class calledValue:</p>
+			<p class="para-translation">訓練神經網路需要梯度（gradients）：對模型中的每一個參數，我們都需要知道「如果我把這個數字稍微往上調一點點，損失（loss）會上升還是下降，幅度又是多少？」。這個計算圖有許多輸入（模型參數與輸入的 token），但最終會匯聚成單一一個純量輸出：損失（我們稍後會準確定義損失是什麼）。反向傳播（backpropagation）從這個單一輸出開始，沿著計算圖反向運作，計算損失相對於每一個輸入的梯度。它仰賴的是微積分中的連鎖律（chain rule）。在正式的生產環境中，像 PyTorch 這樣的函式庫會自動處理這一切。而在這裡，我們要從零開始，用一個叫做 Value 的類別來實作它：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">I realize that this is the most mathematically and algorithmically intense part and I have a 2.5 hour video on it:micrograd video. Briefly, aValuewraps a single <span class="word-term" data-word="scalar">scalar</span> number (.data) and tracks how it was computed. Think of each operation as a little lego block: it takes some inputs, produces an output (the forward pass), and it knows how its output would change with respect to each of its inputs (the local <span class="word-term" data-word="gradient">gradient</span>). That’s all the information autograd needs from each block. Everything else is just the chain rule, stringing the blocks together.</p>
+			<p class="para-translation">我知道這是數學與演算法上最硬核的一個部分，我也為此做了一支 2.5 小時的影片：micrograd 影片。簡單來說，一個 Value 包裝了單一一個純量數字（.data），並追蹤它是如何被計算出來的。可以把每一個運算想成一塊小小的樂高積木：它接收一些輸入，產生一個輸出（前向傳播），並且知道自己的輸出相對於每一個輸入會如何變化（也就是局部梯度）。這就是自動微分（autograd）從每一個區塊所需要的全部資訊。剩下的一切，就只是連鎖律把這些積木串接起來而已。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Every time you do math withValueobjects (add, multiply, etc.), the result is a newValuethat remembers its inputs (_children) and the local <span class="word-term" data-word="derivative">derivative</span> of that operation (_local_grads). For example,__mul__records that \(\frac{\partial(a \cdot b)}{\partial a} = b\) and \(\frac{\partial(a \cdot b)}{\partial b} = a\). The full set of lego blocks:</p>
+			<p class="para-translation">每一次你對 Value 物件做數學運算（加法、乘法等），結果都會是一個新的 Value，它會記得自己的輸入來源（_children）以及該運算的局部導數（_local_grads）。舉例來說，__mul__ 會記錄下 a*b 對 a 的偏導數等於 b，對 b 的偏導數等於 a。這就是完整的一整套樂高積木：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Thebackward()method walks this graph in reverse topological order (starting from the loss, ending at the parameters), applying the chain rule at each step. If the loss is \(L\) and a node \(v\) has a child \(c\) with local <span class="word-term" data-word="gradient">gradient</span> \(\frac{\partial v}{\partial c}\), then:</p>
+			<p class="para-translation">backward() 方法會以反向拓樸順序（從損失開始，一路走到參數為止）遍歷這張計算圖，並在每一步套用連鎖律。如果損失是 L，而節點 v 有一個子節點 c，其局部梯度為 ∂v/∂c，那麼：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This looks a bit scary if you’re not comfortable with your calculus, but this is literally just multiplying two numbers in an intuitive way. One way to see it looks as follows: “If a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 x 4 = 8 times as fast as the man.” The chain rule is the same idea: you multiply the rates of change along the path.</p>
+			<p class="para-translation">如果你對微積分不太熟悉，這看起來可能有點嚇人，但這其實就只是很直觀地把兩個數字相乘而已。換一種方式來理解：「如果一輛汽車的速度是腳踏車的兩倍，而腳踏車的速度又是步行的人的四倍，那麼汽車的速度就是那個人的 2 x 4 = 8 倍。」連鎖律的概念也是一樣的：你只是把沿路上的變化率一路相乘而已。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">We kick things off by settingself.grad = 1at the loss node, because \(\frac{\partial L}{\partial L} = 1\): the loss’s rate of change with respect to itself is trivially 1. From there, the chain rule just multiplies local <span class="word-term" data-word="gradient">gradient</span>s along every path back to the parameters.</p>
+			<p class="para-translation">我們一開始會在損失節點設定 self.grad = 1，因為損失相對於自身的變化率，顯然就是 1。從這裡開始，連鎖律就只是沿著每一條回到參數的路徑，把局部梯度一路相乘下去。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Note the += (accumulation, not assignment). When a value is used in multiple places in the graph (i.e. the graph branches), <span class="word-term" data-word="gradient">gradient</span>s flow back along each branch independently and must be summed. This is a consequence of the multivariable chain rule: if \(c\) contributes to \(L\) through multiple paths, the total <span class="word-term" data-word="derivative">derivative</span> is the sum of contributions from each path.</p>
+			<p class="para-translation">請注意這裡用的是 +=（累加，而不是賦值）。當一個數值在計算圖中被用在多個地方（也就是計算圖出現分支）時，梯度會沿著每一條分支各自獨立地往回流動，而且必須被加總起來。這是多變數連鎖律的必然結果：如果 c 是透過多條路徑對 L 有貢獻，那麼總導數就是每條路徑貢獻的總和。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Afterbackward()completes, everyValuein the graph has a.gradcontaining \(\frac{\partial L}{\partial v}\), which tells us how the final loss would change if we <span class="word-highfreq" data-word="nudge">nudge</span>d that value.</p>
+			<p class="para-translation">backward() 執行完成後，計算圖中的每一個 Value 都會有一個 .grad，裡面裝著 ∂L/∂v，告訴我們如果稍微調動這個數值，最終的損失會如何變化。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Here’s a concrete example. Note thatais used twice (the graph branches), so its <span class="word-term" data-word="gradient">gradient</span> is the sum of both paths:</p>
+			<p class="para-translation">這裡有一個具體的例子。請注意 a 被使用了兩次（計算圖出現分支），所以它的梯度會是兩條路徑加總的結果：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This is exactly what PyTorch’s.backward()gives you:</p>
+			<p class="para-translation">這正是 PyTorch 的 .backward() 所給你的結果：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This is the same algorithm that PyTorch’sloss.backward()runs, just on <span class="word-term" data-word="scalar">scalar</span>s instead of tensors (arrays of scalars) - algorithmically identical, significantly smaller and simpler, but of course a lot less efficient.</p>
+			<p class="para-translation">這跟 PyTorch 的 loss.backward() 所執行的是同一套演算法，只是這裡處理的是純量，而不是張量（純量的陣列）——在演算法上完全相同，規模小上許多、也簡單許多，但效率當然也差上不少。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Let’s spell what the.backward()gives us above. Autograd calculated that ifL = a*b + a, anda=2andb=3, thena.grad = 4.0is telling us about the local influence ofaonL. If you wiggle the inmputa, in what direction isLchanging? Here, the <span class="word-term" data-word="derivative">derivative</span> ofLw.r.t.ais 4.0, meaning that if we increaseaby a tiny amount (say 0.001),Lwould increase by about 4x that (0.004). Similarly,b.grad = 2.0means the same <span class="word-highfreq" data-word="nudge">nudge</span> tobwould increaseLby about 2x that (0.002). In other words, these <span class="word-term" data-word="gradient">gradient</span>s tell us the direction (positive or negative depending on the sign), and the steepness (the magnitude) of the influence of each individual input on the final output (the loss). This then allows us to interately nudge the parameters of our neural network to lower the loss, and hence improve its predictions.</p>
+			<p class="para-translation">讓我們具體說明一下上面 .backward() 給我們的結果。自動微分計算出，如果 L = a*b + a，且 a=2、b=3，那麼 a.grad = 4.0 告訴我們的是 a 對 L 的局部影響。如果你微調輸入 a，L 會朝哪個方向變化？在這裡，L 對 a 的導數是 4.0，意味著如果我們把 a 增加一點點（比如說 0.001），L 大約會增加 4 倍那麼多（0.004）。同樣地，b.grad = 2.0 意味著對 b 做同樣幅度的微調，會讓 L 大約增加 2 倍那麼多（0.002）。換句話說，這些梯度告訴我們每一個輸入對最終輸出（損失）的影響方向（正負取決於正負號）以及陡峭程度（也就是幅度大小）。這讓我們得以反覆地微調神經網路的參數，以降低損失，進而改善模型的預測。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The parameters are the knowledge of the model. They are a large collection of floating point numbers (wrapped inValuefor autograd) that start out random and are iteratively optimized during training. The exact role of each parameter will make more sense once we define the model architecture below, but for now we just need to initialize them:</p>
+			<p class="para-translation">參數就是模型的知識所在。它們是一大批浮點數（為了自動微分而被包裝在 Value 中），一開始是隨機的，並在訓練過程中被反覆地最佳化。每個參數確切的角色，等我們在下面定義完模型架構後會更清楚，但現在我們只需要先初始化它們：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Each parameter is initialized to a small random number drawn from a Gaussian distribution. Thestate_dictorganizes them into named matrices (borrowing PyTorch’s terminology): embedding tables, attention weights, MLP weights, and a final output projection. We also flatten all parameters into a single listparamsso the optimizer can loop over them later. In our tiny model this comes out to 4,192 parameters. GPT-2 had 1.6 billion, and modern LLMs have hundreds of billions.</p>
+			<p class="para-translation">每個參數都會被初始化為從高斯分布中抽取出的一個小隨機數。state_dict 會將它們組織成一個個具名的矩陣（借用 PyTorch 的術語）：嵌入表（embedding tables）、注意力權重、MLP 權重，以及最終的輸出投影層。我們也會把所有參數攤平成一個單一的清單 params，方便最佳化器之後對它們逐一遍歷。在我們這個迷你模型中，這總共會得到 4,192 個參數。GPT-2 有 16 億個參數，而現代的大型語言模型則有數千億個。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The model architecture is a <span class="word-term" data-word="stateless">stateless</span> function: it takes a token, a position, the parameters, and the cached keys/values from previous positions, and returns logits (scores) over what token the model things should come next in the sequence. We follow GPT-2 with minor simplifications: RMSNorm instead of LayerNorm, no biases, and ReLU instead of GeLU. First, three small helper functions:</p>
+			<p class="para-translation">這個模型架構是一個無狀態的函式：它接收一個 token、一個位置、所有的參數，以及先前位置快取下來的鍵/值（keys/values），然後回傳 logits（分數），代表模型認為序列中接下來應該是哪個 token。我們大致遵循 GPT-2 的架構，只做了一些小幅簡化：用 RMSNorm 取代 LayerNorm、不使用偏差項（biases），並用 ReLU 取代 GeLU。首先，先來看三個小小的輔助函式：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">linearis a matrix-vector multiply. It takes a vectorxand a weight matrixw, and computes one dot product per row ofw. This is the fundamental building block of neural networks: a learned linear transformation.</p>
+			<p class="para-translation">linear 是一個矩陣與向量的乘法運算。它接收一個向量 x 與一個權重矩陣 w，針對 w 的每一列各計算一次內積。這是神經網路最基本的建構區塊：一個經過學習的線性轉換。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">softmaxconverts a vector of raw scores (logits), which can range from \(-\infty\) to \(+\infty\), into a probability distribution: all values end up in \([0, 1]\) and sum to 1. We subtract the max first for numerical stability (it doesn’t change the result mathematically, but prevents <span class="word-highfreq" data-word="overflow">overflow</span> inexp).</p>
+			<p class="para-translation">softmax 會把一個由原始分數（logits，範圍可以從負無限大到正無限大）組成的向量，轉換成一個機率分布：所有數值最終都會落在 [0, 1] 之間，且總和為 1。我們會先減去最大值以確保數值穩定性（這在數學上不會改變結果，但可以避免 exp 運算發生溢位）。</p>
+		</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "tokenizer", "type": "term", "ipa": "/ˈtoʊ.kən.aɪ.zər/", "definition_zh": "分詞器", "example": "Production tokenizers like tiktoken (used by GPT-4) operate on chunks of characters for efficiency, but the simplest possible tokenizer just assigns one integer to each unique character in the dataset."}, {"word": "backpropagation", "type": "term", "ipa": "/ˌbæk.proʊ.pə.ɡeɪˈʃən/", "definition_zh": "反向傳播", "example": "Backpropagation starts at that single output and works backwards through the graph, computing the gradient of the loss with respect to every input."}, {"word": "gradient", "type": "term", "ipa": "/ˈɡreɪ.di.ənt/", "definition_zh": "梯度", "example": "Training a neural network requires gradients: for each parameter in the model, we need to know if I nudge this number up a little, does the loss go up or down."}, {"word": "scalar", "type": "term", "ipa": "/ˈskeɪ.lər/", "definition_zh": "純量", "example": "Briefly, a Value wraps a single scalar number (.data) and tracks how it was computed."}, {"word": "delimiter", "type": "highfreq", "ipa": "/dɪˈlɪm.ɪ.tər/", "definition_zh": "分隔符號", "example": "We create one more special token called BOS (Beginning of Sequence), which acts as a delimiter."}, {"word": "derivative", "type": "term", "ipa": "/dɪˈrɪv.ə.tɪv/", "definition_zh": "導數", "example": "The result is a new Value that remembers its inputs (_children) and the local derivative of that operation (_local_grads)."}, {"word": "overflow", "type": "highfreq", "ipa": "/ˈoʊ.vər.floʊ/", "definition_zh": "溢位", "example": "We subtract the max first for numerical stability, it doesn't change the result mathematically, but prevents overflow in exp."}, {"word": "nudge", "type": "highfreq", "ipa": "/nʌdʒ/", "definition_zh": "輕推；微調", "example": "For each parameter in the model, we need to know if I nudge this number up a little, does the loss go up or down, and by how much."}, {"word": "stateless", "type": "term", "ipa": "/ˈsteɪt.ləs/", "definition_zh": "無狀態的", "example": "The model architecture is a stateless function: it takes a token, a position, the parameters, and the cached keys/values from previous positions."}, {"word": "obsession", "type": "highfreq", "ipa": "/əbˈseʃ.ən/", "definition_zh": "執念；著迷", "example": "This script is the culmination of multiple projects and a decade-long obsession to simplify LLMs to their bare essentials."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const knownKey = "known-words";
+	function getKnown() {
+		return JSON.parse(localStorage.getItem(knownKey) || "{}");
+	}
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = entry.type === "highfreq"
+			? '<span class="badge badge-highfreq">高頻詞</span>'
+			: '<span class="badge badge-term">術語</span>';
+
+		const known = getKnown();
+		const btn = document.getElementById("btn-known");
+		btn.classList.toggle("marked", !!known[entry.word]);
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleKnown() {
+		if (!currentWord) return;
+		const known = getKnown();
+		if (known[currentWord]) {
+			delete known[currentWord];
+		} else {
+			known[currentWord] = true;
+		}
+		localStorage.setItem(knownKey, JSON.stringify(known));
+		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+</script>
+
+</body>
+</html>

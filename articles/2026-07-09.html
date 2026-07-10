@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Deep Neural Nets: 33 years ago and 33 years from now — AI English Daily</title>
+	<link rel="stylesheet" href="../style.css?v=6">
+</head>
+<body>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-09</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Andrej Karpathy</div>
+	<h1 class="article-title">Deep Neural Nets: 33 years ago and 33 years from now</h1>
+	<div class="article-meta">
+		2026-07-09 &nbsp;·&nbsp; <a href="http://karpathy.github.io/2022/03/14/lecun1989/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="reproduce" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reproduce</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˌriː.prəˈdjuːs/</span>
+				<span class="vocab-def">重現；複製</span>
+			</div>
+			<div class="vocab-card" data-word="overfitting" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">overfitting</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˌoʊ.vərˈfɪt.ɪŋ/</span>
+				<span class="vocab-def">過擬合</span>
+			</div>
+			<div class="vocab-card" data-word="augmentation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">augmentation</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˌɔːɡ.menˈteɪ.ʃən/</span>
+				<span class="vocab-def">增強；擴增</span>
+			</div>
+			<div class="vocab-card" data-word="latency" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">latency</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ˈleɪ.tən.si/</span>
+				<span class="vocab-def">延遲</span>
+			</div>
+			<div class="vocab-card" data-word="decay" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">decay</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/dɪˈkeɪ/</span>
+				<span class="vocab-def">衰減</span>
+			</div>
+			<div class="vocab-card" data-word="sparse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sparse</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/spɑːrs/</span>
+				<span class="vocab-def">稀疏的</span>
+			</div>
+			<div class="vocab-card" data-word="invariant" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">invariant</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ɪnˈveər.i.ənt/</span>
+				<span class="vocab-def">不變的</span>
+			</div>
+			<div class="vocab-card" data-word="distillation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distillation</span>
+				<span class="badge badge-term">術語</span>
+				<span class="vocab-ipa">/ˌdɪs.tɪˈleɪ.ʃən/</span>
+				<span class="vocab-def">蒸餾</span>
+			</div>
+			<div class="vocab-card" data-word="extrapolation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">extrapolation</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/ɪkˌstræp.əˈleɪ.ʃən/</span>
+				<span class="vocab-def">外推；推演</span>
+			</div>
+			<div class="vocab-card" data-word="oblige" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">oblige</span>
+				<span class="badge badge-highfreq">高頻詞</span>
+				<span class="vocab-ipa">/əˈblaɪdʒ/</span>
+				<span class="vocab-def">順從；照辦</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">The Yann LeCun et al. (1989) paperBackpropagation Applied to Handwritten Zip Code Recognitionis I believe of some historical significance because it is, to my knowledge, the earliest real-world application of a neural net trained end-to-end with backpropagation. Except for the tiny dataset (7291 16x16 grayscale images of digits) and the tiny neural network used (only 1,000 neurons), this paper reads remarkably modern today, 33 years later - it lays out a dataset, describes the neural net architecture, loss function, optimization, and reports the experimental classification error rates over training and test sets. It’s all very recognizable and type checks as a modern deep learning paper, except it is from 33 years ago. So I set out to <span class="word-highfreq" data-word="reproduce">reproduce</span> the paper 1) for fun, but 2) to use the exercise as a case study on the nature of progress in deep learning.</p>
+			<p class="para-translation">Yann LeCun 等人於 1989 年發表的論文《Backpropagation Applied to Handwritten Zip Code Recognition（將反向傳播應用於手寫郵遞區號辨識）》，我認為具有一定的歷史意義，因為就我所知，這是最早一個以反向傳播進行端到端訓練的類神經網路，實際應用在真實世界問題上的案例。除了資料集非常小（7,291 張 16x16 的灰階數字圖像）、使用的神經網路也很小（僅有 1,000 個神經元）之外，這篇論文在今天讀起來，33 年過去了，依然驚人地「現代」——它列出了資料集，描述了神經網路架構、損失函數、最佳化方式，並回報了在訓練集與測試集上的實驗分類錯誤率。整篇論文的架構完全可以辨認、也完全符合一篇現代深度學習論文的樣貌，只不過它是 33 年前寫的。所以我決定重現這篇論文，一方面 1）純粹好玩，另一方面 2）把這個練習當作一個案例研究，探討深度學習進展的本質。</p>
+		</div>
+		<figure class="article-image">
+			<img src="http://karpathy.github.io/assets/lecun/lecun1989.png" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Implementation. I tried to follow the paper as close as possible and re-implemented everything in PyTorch in thiskarpathy/lecun1989-reprogithub repo. The original network was implemented in Lisp using the Bottou and LeCun 1988backpropagation simulator SN(later named Lush). The paper is in french so I can’t super read it, but from the syntax it looks like you can specify neural nets using higher-level API similar to what you’d do in something like PyTorch today. As a quick note on software design, modern libraries have adopted a design that splits into 3 components: 1) a fast (C/CUDA) general Tensor library that implements basic mathematical operations over multi-dimensional tensors, and 2) an autograd engine that tracks the forward compute graph and can generate operations for the backward pass, and 3) a scriptable (Python) deep-learning-aware, high-level API of common deep learning operations, layers, architectures, optimizers, loss functions, etc.</p>
+			<p class="para-translation">實作。我盡可能貼近原始論文的做法，並在 karpathy/lecun1989-repro 這個 GitHub repo 中，用 PyTorch 重新實作了整套流程。原始的網路是用 Lisp 語言、搭配 Bottou 與 LeCun 於 1988 年開發的反向傳播模擬器 SN（後來改名為 Lush）所實作的。這篇論文是用法文寫的，所以我沒辦法完全讀懂，但從語法上看起來，你可以用一種類似今天 PyTorch 的高階 API 來定義神經網路。順帶簡單談一下軟體設計：現代的函式庫大多採用了拆成三個元件的設計：1）一個快速（C/CUDA）的通用張量（Tensor）函式庫，實作多維張量上的基本數學運算；2）一個自動微分引擎，追蹤前向計算圖，並能為反向傳播產生對應的運算；以及 3）一個可腳本化（Python）、了解深度學習概念的高階 API，提供常見的深度學習運算、層、架構、最佳化器、損失函數等等。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Training. During the course of training we have to make 23 passes over the training set of 7291 examples, for a total of 167,693 presentations of (example, label) to the neural network. The original network trained for 3 days on aSUN-4/260workstation. I ran my implementation on my MacBook Air (M1) CPU, which crunched through it in about 90 seconds (~3000X naive speedup). My conda is setup to use the native arm64 builds, rather than Rosetta emulation. The speedup may have been more dramatic if PyTorch had support for the full capability of the M1 (including the GPU and the NPU), but this seems to still be in development. I also tried naively running the code on an A100 GPU, but the training was actuallyslower, most likely because the network is so tiny (4 layer convnet with up to 12 channels, total of 9760 params, 64K MACs, 1K activations), and the SGD uses only a single example at a time. That said, if one really wanted to crush this problem with modern hardware (A100) and software infrastructure (CUDA, PyTorch), we’d need to trade per-example SGD for full-batch training to maximize GPU utilization and most likely achieve another ~100X speedup of training <span class="word-highfreq" data-word="latency">latency</span>.</p>
+			<p class="para-translation">訓練。在訓練過程中，我們需要在 7,291 個訓練樣本上跑 23 個 epoch，總共向神經網路呈現了 167,693 次（樣本、標籤）配對。原始的網路是在一台 SUN-4/260 工作站上訓練了 3 天。我則是在我的 MacBook Air（M1）CPU 上執行我的實作版本，大約 90 秒就跑完了（相較之下大約快了 3000 倍）。我的 conda 環境設定為使用原生的 arm64 版本，而不是透過 Rosetta 模擬執行。如果 PyTorch 能完整支援 M1 的所有能力（包括 GPU 與 NPU），加速幅度可能會更驚人，不過這部分目前似乎還在開發中。我也天真地嘗試在 A100 GPU 上直接跑這段程式碼，結果訓練反而變慢了，很可能是因為這個網路實在太小了（一個 4 層的卷積網路，最多 12 個通道，總共只有 9,760 個參數、64K 次乘加運算、1K 個激活值），而且 SGD 一次只處理一個樣本。話說回來，如果真的想用現代硬體（A100）與軟體基礎設施（CUDA、PyTorch）來大幅加速這個問題，我們就需要把逐樣本的 SGD 換成全批次（full-batch）訓練，以最大化 GPU 使用率，很可能還能再獲得約 100 倍的訓練延遲加速。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Reproducing 1989 performance. The original paper reports the following results:</p>
+			<p class="para-translation">重現 1989 年的效能表現。原始論文回報了以下的結果：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">While my training script repro.py in its current form prints at the end of the 23rd pass:</p>
+			<p class="para-translation">而我的訓練腳本 repro.py 在目前的形式下，於第 23 個 epoch 結束時印出的結果是：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">So I am reproducing the numbersroughly, but not exactly. Sadly, an exact reproduction is most likely not possible because the original dataset has, I believe, been lost to time. Instead, I had to simulate it using the larger MNIST dataset (hah never thought I’d say that) by taking its 28x28 digits, scaling them down to 16x16 pixels with bilinear interpolation, and randomly without replacement drawing the correct number of training and test set examples from it. But I am sure there are other culprits at play. For example, the paper is a bit too abstract in its description of the weight initialization scheme, and I suspect that there are some formatting errors in the pdf file that, for example, erase dots “.”, making “2.5” look like like “2 5”, and potentially (I think?) erasing square roots. E.g. we’re told that the weight init is drawn from uniform “2 4 / F” where F is the fan-in, but I am guessing this surely (?) means “2.4 / sqrt(F)”, where the sqrt helps preserve the standard deviation of outputs. The specific <span class="word-term" data-word="sparse">sparse</span> connectivity structure between the H1 and H2 layers of the net are also brushed over, the paper just says it is “chosen according to a scheme that will not be discussed here”, so I had to make some some sensible guesses here with an overlapping block sparse structure. The paper also claims to use tanh non-linearity, but I am worried this may have actually been the “normalized tanh” that maps ntanh(1) = 1, and potentially with an added scaled-down skip connection, which was trendy at the time to ensure there is at least a bit of gradient in the flat tails of the tanh. Lastly, the paper uses a “special version of Newton’s algorithm that uses a positive, diagonal approximation of Hessian”, but I only used SGD because it is significantly simpler and, according to the paper, “this algorithm is not believed to bring a tremendous increase in learning speed”.</p>
+			<p class="para-translation">所以我大致上重現了這些數字，但並不完全精確。可惜的是，要完全精確地重現大概是不可能的，因為我認為原始的資料集已經隨著時間流逝而不可考了。我只能改用規模更大的 MNIST 資料集來模擬（哈，從沒想過我會這麼說），做法是把它的 28x28 數字圖像，透過雙線性插值縮小成 16x16 像素，再從中不放回地隨機抽取相應數量的訓練集與測試集樣本。但我確定還有其他因素在起作用。舉例來說，這篇論文對權重初始化方式的描述有點太過抽象，而且我懷疑這份 PDF 檔案裡有一些格式上的錯誤，比如把小數點「.」給消掉了，讓「2.5」看起來像「2 5」，也有可能（我猜？）把根號也弄丟了。舉例來說，論文告訴我們權重初始化是從均勻分布「2 4 / F」中抽取的，其中 F 是扇入數（fan-in），但我猜這其實（該不會？）指的是「2.4 / sqrt(F)」，這裡的平方根有助於保持輸出的標準差。網路中 H1 與 H2 層之間特定的稀疏連接結構，論文也是輕輕帶過，只說這是「依照一套這裡不會討論的方案所選定的」，所以我只能自己合理猜測，採用一種重疊的區塊稀疏結構。論文也宣稱使用了 tanh 非線性函數，但我擔心這其實可能是「正規化 tanh」，也就是讓 ntanh(1) = 1 的版本，而且可能還加上了一個縮小過的跳躍連接（skip connection），這在當時是很流行的做法，用來確保 tanh 平坦的尾端至少還有一點點梯度。最後，論文使用了一種「利用 Hessian 矩陣的正定對角近似的特殊版牛頓演算法」，但我只用了 SGD，因為它簡單得多，而且根據論文所說，「這個演算法並不被認為能大幅提升學習速度」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Cheating with time travel. Around this point came my favorite part. We are living here 33 years in the future and deep learning is a highly active area of research. How much can we improve on the original result using our modern understanding and 33 years of R&D? My original result was:</p>
+			<p class="para-translation">用時光旅行作弊。差不多到這裡，就進入了我最喜歡的部分。我們身處在 33 年後的未來，而深度學習正是一個極度活躍的研究領域。運用我們現代的理解，加上 33 年的研發成果，我們究竟能把原本的結果改善多少？我最初重現出來的結果是：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The first thing I was a bit sketched out about is that we are doing simple classification into 10 categories, but at the time this was modeled as amean squared error(MSE) regression into targets -1 (for negative class) or +1 (for positive class), with output neurons that also had the tanh non-linearity. So I deleted the tanh on output layers to get class logits and swapped in the standard (multiclass)cross entropy lossfunction. This change dramatically improved the training error, completely <span class="word-term" data-word="overfitting">overfitting</span> the training set:</p>
+			<p class="para-translation">第一件讓我有點在意的事情是：我們現在做的是把資料簡單分類成 10 個類別，但在當時，這被建模成一個均方誤差（MSE）迴歸問題，目標值是 -1（負類別）或 +1（正類別），輸出神經元也套用了 tanh 非線性函數。所以我把輸出層的 tanh 拿掉，改成輸出類別的 logits，並換成標準的（多類別）交叉熵損失函數。這個改動大幅改善了訓練誤差，完全把訓練集過擬合了：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">I suspect one has to be much more careful with weight initialization details if your output layer has the (saturating) tanh non-linearity and an MSE error on top of it. Next, in my experience a very finely-tuned SGD can work very well, but the modernAdam optimizer(learning rate of 3e-4, of course :)) is almost always a strong baseline and needs little to no tuning. So to improve my confidence that optimization was not holding back performance, I switched to AdamW with LR 3e-4, and <span class="word-highfreq" data-word="decay">decay</span> it down to 1e-4 over the course of training, giving:</p>
+			<p class="para-translation">我猜想，如果輸出層使用了（會飽和的）tanh 非線性函數，再疊加 MSE 誤差，就必須對權重初始化的細節格外小心。接下來，依我的經驗，一個經過細膩調校的 SGD 可以表現得很好，但現代的 Adam 最佳化器（學習率當然是 3e-4 :)）幾乎總是一個強大的基準線，幾乎不太需要調校。所以為了確認最佳化本身並不是拖累效能的原因，我改用了 AdamW，學習率設為 3e-4，並在訓練過程中衰減到 1e-4，得到了：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This gave a slightly improved result on top of SGD, except we also have to remember that a little bit of weight <span class="word-highfreq" data-word="decay">decay</span> came in for the ride as well via the default parameters, which helps fight the <span class="word-term" data-word="overfitting">overfitting</span> situation. As we are still heavily overfitting, next I introduced a simple data <span class="word-term" data-word="augmentation">augmentation</span> strategy where I shift the input images by up to 1 pixel horizontally or vertically. However, because this simulates an increase in the size of the dataset, I also had to increase the number of passes from 23 to 60 (I verified that just naively increasing passes in original setting did not substantially improve results):</p>
+			<p class="para-translation">這比 SGD 稍微改善了一點結果，不過也要記得，預設參數也順帶引入了一點點權重衰減（weight decay），有助於對抗過擬合的狀況。由於我們仍然嚴重過擬合，接下來我導入了一個簡單的資料增強策略：把輸入圖像水平或垂直方向最多平移 1 個像素。不過，因為這相當於模擬增加了資料集的大小，我也必須把訓練的 epoch 數從 23 增加到 60（我有驗證過，單純在原始設定下增加 epoch 數，並不會讓結果有明顯改善）：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As can be seen in the test error, that helped quite a bit! Data <span class="word-term" data-word="augmentation">augmentation</span> is a fairly simple and very standard concept used to fight <span class="word-term" data-word="overfitting">overfitting</span>, but I didn’t see it mentioned in the 1989 paper, perhaps it was a more recent innovation (?). Since we are still overfitting a bit, I reached for another modern tool in the toolbox,Dropout. I added a weak dropout of 0.25 just before the layer with the largest number of parameters (H3). Because dropout sets activations to zero, it doesn’t make as much sense to use it with tanh that has an active range of [-1,1], so I swapped all non-linearities to the much simplerReLUactivation function as well. Because dropout introduces even more noise during training, we also have to train longer, bumping up to 80 passes, but giving:</p>
+			<p class="para-translation">從測試誤差可以看出來，這確實有不小的幫助！資料增強是一個相當簡單、也非常標準的對抗過擬合的手法，但我在 1989 年的論文裡並沒有看到它被提及，也許這是比較晚近才出現的創新（？）。由於我們仍然有一點過擬合，我又從現代的工具箱裡拿出了另一項工具：Dropout。我在參數量最大的那一層（H3）之前，加入了一個強度較弱、比例為 0.25 的 dropout。由於 dropout 會把激活值歸零，拿它搭配活動範圍只有 [-1,1] 的 tanh 就沒那麼合理了，所以我也把所有的非線性函數都換成了簡單許多的 ReLU 激活函數。因為 dropout 會在訓練過程中引入更多雜訊，我們也需要訓練更久，把 epoch 數拉高到 80，這樣就得到了：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Which brings us down to only 32 / 2007 mistakes on the test set! I verified that just swapping tanh -> relu in the original network did not give substantial gains, so most of the improvement here is coming from the addition of dropout. In summary, if I time traveled to 1989 I’d be able to cut the rate of errors by about 60%, taking us from ~80 to ~30 mistakes, and an overall error rate of ~1.5% on the test set. This gain did not come completely free because we also almost 4X’d the training time, which would have increased the 1989 training time from 3 days to almost 12. But the inference <span class="word-highfreq" data-word="latency">latency</span> would not have been impacted. The remaining errors are here:</p>
+			<p class="para-translation">這讓我們把測試集上的錯誤數降到只剩 32 / 2007！我有驗證過，單純把原始網路裡的 tanh 換成 relu，並不會帶來太大的提升，所以這裡大部分的改善都是來自於加入 dropout。總結來說，如果我真的時光旅行回 1989 年，我可以把錯誤率削減大約 60%，把錯誤數從約 80 個降到約 30 個，測試集上的整體錯誤率大約是 1.5%。這個進步並不是完全沒有代價的，因為訓練時間也幾乎變成了原本的 4 倍，如果放到 1989 年，訓練時間會從 3 天拉長到將近 12 天。不過推論的延遲並不會受到影響。剩下的錯誤案例如下：</p>
+		</div>
+		<figure class="article-image">
+			<img src="http://karpathy.github.io/assets/lecun/errors32.png" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Going further. However, after swapping MSE -> Softmax, SGD -> AdamW, adding data <span class="word-term" data-word="augmentation">augmentation</span>, dropout, and swapping tanh -> relu I’ve started to taper out on the low hanging fruit of ideas. I tried a few more things (e.g. weight normalization), but did not get substantially better results. I also tried to miniaturize aVisual Transformer (ViT)) into a “micro-ViT” that roughly matches the number of parameters and flops, but couldn’t match the performance of a convnet. Of course, many other innovations have been made in the last 33 years, but many of them (e.g. residual connections, layer/batch normalizations) only become relevant in much larger models, and mostly help stabilize large-scale optimization. Further gains at this point would likely have to come from scaling up the size of the network, but this would bloat the test-time inference <span class="word-highfreq" data-word="latency">latency</span>.</p>
+			<p class="para-translation">再進一步。不過，在把 MSE 換成 Softmax、把 SGD 換成 AdamW、加入資料增強與 dropout，再把 tanh 換成 relu 之後，我已經開始把容易摘到的果實都摘完了。我又多嘗試了幾樣東西（例如權重正規化），但沒有得到明顯更好的結果。我也試著把一個視覺 Transformer（ViT）微縮成一個「micro-ViT」，讓它的參數量與運算量大致相當，但表現始終比不上卷積網路。當然，過去 33 年間還出現了許多其他的創新，但其中不少（例如殘差連接、層/批次正規化）只有在規模大得多的模型中才會派上用場，而且大多是用來幫助穩定大規模最佳化過程。到了這個階段，要再進一步提升，大概就得靠擴大網路的規模了，但這樣一來也會拖累測試時的推論延遲。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Cheating with data. Another approach to improving the performance would have been to scale up the dataset, though this would come at a dollar cost of labeling. Our original reproduction baseline, again for reference, was:</p>
+			<p class="para-translation">用資料作弊。另一種改善效能的方式，是擴大資料集的規模，不過這會需要付出標註資料的金錢成本。我們最原始的重現基準線，再次列出來作為參考：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Using the fact that we have all of MNIST available to us, we can simply try scaling up the training set by ~7X (7,291 to 50,000 examples). Leaving the baseline training running for 100 passes already shows some improvement from the added data alone:</p>
+			<p class="para-translation">既然我們手上有完整的 MNIST 資料集可以運用，我們可以直接嘗試把訓練集擴大大約 7 倍（從 7,291 筆擴增到 50,000 筆）。光是讓基準模型多訓練 100 個 epoch，就已經能從新增的資料中看到一些改善：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">But further combining this with the innovations of modern knowledge (described in the previous section) gives the best performance yet:</p>
+			<p class="para-translation">但如果再把這個做法，跟前一節提到的現代知識創新結合起來，就能得到目前為止最好的表現：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">In summary, simply scaling up the dataset in 1989 would have been an effective way to drive up the performance of the system, at no cost to inference <span class="word-highfreq" data-word="latency">latency</span>.</p>
+			<p class="para-translation">總結來說，在 1989 年，單純擴大資料集的規模，其實就會是一種有效提升系統效能的方式，而且完全不會犧牲推論的延遲。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Reflections. Let’s summarize what we’ve learned as a 2022 time traveler examining state of the art 1989 deep learning tech:</p>
+			<p class="para-translation">反思。讓我們來總結一下，身為一個來自 2022 年的時光旅人，在檢視 1989 年最先進的深度學習技術後，我們學到了什麼：</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Suppose that the lessons of this exercise remain <span class="word-highfreq" data-word="invariant">invariant</span> in time. What does that imply about deep learning of 2022? What would a time traveler from 2055 think about the performance of current networks?</p>
+			<p class="para-translation">假設這次練習所學到的教訓，是不隨時間改變的。那麼這對 2022 年的深度學習又意味著什麼呢？一個來自 2055 年的時光旅人，會怎麼看待現在這些網路的表現呢？</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">But the most important trend I want to comment on is that the whole setting of training a neural network from scratch on some target task (like digit recognition) is quickly becoming outdated due to finetuning, especially with the emergence offoundation modelslike GPT. These foundation models are trained by only a few institutions with substantial computing resources, and most applications are achieved via lightweight finetuning of part of the network, prompt engineering, or an optional step of data or model <span class="word-term" data-word="distillation">distillation</span> into smaller, special-purpose inference networks. I think we should expect this trend to be very much alive, and indeed, intensify. In its most extreme <span class="word-highfreq" data-word="extrapolation">extrapolation</span>, you will not want to train any neural networks at all. In 2055, you will ask a 10,000,000X-sized neural net megabrain to perform some task by speaking (or thinking) to it in English. And if you ask nicely enough, it will <span class="word-highfreq" data-word="oblige">oblige</span>. Yes you could train a neural net too… but why would you?</p>
+			<p class="para-translation">但我最想評論的一個最重要的趨勢是：針對某個目標任務（像是數字辨識）從零開始訓練一個神經網路，這整套做法正因為微調（finetuning）而迅速過時，尤其是隨著像 GPT 這樣的基礎模型（foundation models）出現。這些基礎模型只由少數幾個擁有龐大運算資源的機構所訓練，而大部分的應用，則是透過對網路的一小部分做輕量微調、提示工程（prompt engineering），或是選擇性地把資料或模型蒸餾成更小、專用的推論網路來達成。我認為我們應該預期這股趨勢會持續存在，而且事實上還會愈演愈烈。往最極端的方向推演，你將完全不會想自己訓練任何神經網路。到了 2055 年，你只需要用英文對一個規模是現在一千萬倍的神經網路「巨腦」說話（或想著它），請它幫你完成某項任務。而且只要你問得夠客氣，它就會照辦。是的，你當然還是可以自己訓練一個神經網路……但你何必呢？</p>
+		</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "reproduce", "type": "highfreq", "ipa": "/ˌriː.prəˈdjuːs/", "definition_zh": "重現；複製", "example": "So I set out to reproduce the paper 1) for fun, but 2) to use the exercise as a case study on the nature of progress in deep learning."}, {"word": "overfitting", "type": "term", "ipa": "/ˌoʊ.vərˈfɪt.ɪŋ/", "definition_zh": "過擬合", "example": "This change dramatically improved the training error, completely overfitting the training set."}, {"word": "augmentation", "type": "term", "ipa": "/ˌɔːɡ.menˈteɪ.ʃən/", "definition_zh": "增強；擴增", "example": "I introduced a simple data augmentation strategy where I shift the input images by up to 1 pixel horizontally or vertically."}, {"word": "latency", "type": "highfreq", "ipa": "/ˈleɪ.tən.si/", "definition_zh": "延遲", "example": "But the inference latency would not have been impacted."}, {"word": "decay", "type": "highfreq", "ipa": "/dɪˈkeɪ/", "definition_zh": "衰減", "example": "We also have to remember that a little bit of weight decay came in for the ride as well via the default parameters."}, {"word": "sparse", "type": "term", "ipa": "/spɑːrs/", "definition_zh": "稀疏的", "example": "The specific sparse connectivity structure between the H1 and H2 layers of the net are also brushed over."}, {"word": "invariant", "type": "highfreq", "ipa": "/ɪnˈveər.i.ənt/", "definition_zh": "不變的", "example": "Suppose that the lessons of this exercise remain invariant in time."}, {"word": "distillation", "type": "term", "ipa": "/ˌdɪs.tɪˈleɪ.ʃən/", "definition_zh": "蒸餾", "example": "An optional step of data or model distillation into smaller, special-purpose inference networks."}, {"word": "extrapolation", "type": "highfreq", "ipa": "/ɪkˌstræp.əˈleɪ.ʃən/", "definition_zh": "外推；推演", "example": "In its most extreme extrapolation, you will not want to train any neural networks at all."}, {"word": "oblige", "type": "highfreq", "ipa": "/əˈblaɪdʒ/", "definition_zh": "順從；照辦", "example": "And if you ask nicely enough, it will oblige."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const knownKey = "known-words";
+	function getKnown() {
+		return JSON.parse(localStorage.getItem(knownKey) || "{}");
+	}
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = entry.type === "highfreq"
+			? '<span class="badge badge-highfreq">高頻詞</span>'
+			: '<span class="badge badge-term">術語</span>';
+
+		const known = getKnown();
+		const btn = document.getElementById("btn-known");
+		btn.classList.toggle("marked", !!known[entry.word]);
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleKnown() {
+		if (!currentWord) return;
+		const known = getKnown();
+		if (known[currentWord]) {
+			delete known[currentWord];
+		} else {
+			known[currentWord] = true;
+		}
+		localStorage.setItem(knownKey, JSON.stringify(known));
+		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+</script>
+
+</body>
+</html>
