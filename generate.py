@@ -230,10 +230,13 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 
 		# insert images after this paragraph
 		for img in images_by_para.get(i, []):
+			src_e = htmllib.escape(img['src'], quote=True)
+			alt_e = htmllib.escape(img['alt'], quote=True)
+			caption = f'<figcaption>{htmllib.escape(img["alt"])}</figcaption>' if img['alt'] else ''
 			paras_html += f"""
 		<figure class="article-image">
-			<img src="{img['src']}" alt="{img['alt']}" loading="lazy">
-			{f'<figcaption>{img["alt"]}</figcaption>' if img['alt'] else ''}
+			<img src="{src_e}" alt="{alt_e}" loading="lazy">
+			{caption}
 		</figure>"""
 
 	# build vocab summary
@@ -250,30 +253,34 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 				<span class="vocab-def">{v['definition_zh']}</span>
 			</div>"""
 
+	title_html = htmllib.escape(title)
+	source_html = htmllib.escape(source_name)
+	url_html = htmllib.escape(url, quote=True)
+
 	return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{title} — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=5">
+	<title>{title_html} — AI English Daily</title>
+	<link rel="stylesheet" href="../style.css?v=6">
 </head>
 <body>
 
 <header class="site-header site-header--nav">
 	<a href="../index.html">AI English Daily</a>
-	<span style="color:#6b5f50">/ {date_str}</span>
+	<span class="breadcrumb-date">/ {date_str}</span>
 </header>
 
-<div class="article-header">
-	<div class="article-source">{source_name}</div>
-	<h1 class="article-title">{title}</h1>
+<div class="article-header content-block">
+	<div class="article-source">{source_html}</div>
+	<h1 class="article-title">{title_html}</h1>
 	<div class="article-meta">
-		{date_str} &nbsp;·&nbsp; <a href="{url}" target="_blank" rel="noopener">原文連結</a>
+		{date_str} &nbsp;·&nbsp; <a href="{url_html}" target="_blank" rel="noopener">原文連結</a>
 	</div>
 </div>
 
-<div class="vocab-section">
+<div class="vocab-section content-block">
 	<button class="vocab-toggle" onclick="toggleVocab(this)">
 		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
 	</button>
@@ -282,7 +289,7 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 	</div>
 </div>
 
-<div class="article-body">
+<div class="article-body content-block">
 	{paras_html}
 </div>
 
@@ -347,6 +354,7 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 
 	function speakWord() {{
 		if (!currentWord) return;
+		speechSynthesis.cancel();
 		const utter = new SpeechSynthesisUtterance(currentWord);
 		utter.lang = "en-US";
 		speechSynthesis.speak(utter);
@@ -385,12 +393,15 @@ def build_article_html(source_name, title, url, date_str, paragraphs, images, ge
 
 def update_index(date_str, title, source_name, filename):
 	index_path = INDEX_FILE
-	entry_html = f'<li><a href="articles/{filename}">{date_str} — {title} <span class="source-tag">{source_name}</span></a></li>'
+	title_escaped = htmllib.escape(title)
+	source_escaped = htmllib.escape(source_name)
+	entry_html = f'<li><a href="articles/{filename}">{date_str} — {title_escaped} <span class="source-tag">{source_escaped}</span></a></li>'
 
 	if not index_path.exists():
 		return  # initial index.html will be committed separately
 
 	content = index_path.read_text(encoding="utf-8")
+	content = re.sub(r'\s*<li class="empty-state">.*?</li>', '', content)
 	insert_after = '<ul id="article-list">'
 	content = content.replace(insert_after, insert_after + "\n\t\t\t" + entry_html, 1)
 	index_path.write_text(content, encoding="utf-8")

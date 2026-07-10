@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Profiling in PyTorch (Part 3): Attention is all you profile — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=5">
+	<link rel="stylesheet" href="../style.css?v=6">
 </head>
 <body>
 
 <header class="site-header site-header--nav">
 	<a href="../index.html">AI English Daily</a>
-	<span style="color:#6b5f50">/ 2026-07-10</span>
+	<span class="breadcrumb-date">/ 2026-07-10</span>
 </header>
 
-<div class="article-header">
+<div class="article-header content-block">
 	<div class="article-source">Hugging Face Blog</div>
 	<h1 class="article-title">Profiling in PyTorch (Part 3): Attention is all you profile</h1>
 	<div class="article-meta">
@@ -21,7 +21,7 @@
 	</div>
 </div>
 
-<div class="vocab-section">
+<div class="vocab-section content-block">
 	<button class="vocab-toggle" onclick="toggleVocab(this)">
 		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
 	</button>
@@ -90,7 +90,7 @@
 	</div>
 </div>
 
-<div class="article-body">
+<div class="article-body content-block">
 	
 		<div class="para-block">
 			<p class="para-original">This is the third post of <span class="word-term" data-word="profiling">Profiling</span> in PyTorch, a series where we slowly build the skill of reading profiler <span class="word-term" data-word="trace">trace</span>s and use it to drive optimization:</p>
@@ -259,6 +259,7 @@
 
 	function speakWord() {
 		if (!currentWord) return;
+		speechSynthesis.cancel();
 		const utter = new SpeechSynthesisUtterance(currentWord);
 		utter.lang = "en-US";
 		speechSynthesis.speak(utter);
