@@ -396,7 +396,7 @@ def update_index(date_str, title, source_name, filename):
 def main():
 	sources = load_sources()
 	done = existing_dates()
-	today = datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+	today = os.environ.get("DATE_OVERRIDE") or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
 
 	if today in done:
 		print(f"Article for {today} already exists, skipping.")

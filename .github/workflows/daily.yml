@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 1 * * *"  # UTC 01:00 = 台灣時間 09:00
   workflow_dispatch:
+    inputs:
+      date_override:
+        description: '指定日期 (YYYY-MM-DD)，留空則用今天'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -27,6 +32,7 @@ jobs:
       - name: Generate article
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
         run: python generate.py
 
       - name: Commit and push
