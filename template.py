@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 8
+CSS_VERSION = 9
 
 FIXED_TAGS = ["AI", "科技", "商業與新創", "科學", "社會與文化", "生活與心理", "觀點評論"]
 
@@ -15,6 +15,63 @@ VOCAB_TYPE_INFO = {
 	"term": ("word-term", "badge-term", "術語"),
 	"phrase": ("word-phrase", "badge-phrase", "片語"),
 }
+
+WENKAI_FONT_CSS = "https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css"
+
+# reads saved settings before first paint so the page never flashes the default theme
+SETTINGS_INIT_SCRIPT = """<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>"""
+
+SETTINGS_PANEL_HTML = """
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>"""
 
 
 def entry_filename(d):
@@ -188,7 +245,10 @@ def render_article(data, all_entries=None):
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title_html} — AI English Daily</title>
+	{SETTINGS_INIT_SCRIPT}
 	<link rel="stylesheet" href="../style.css?v={CSS_VERSION}">
+	<link rel="stylesheet" href="{WENKAI_FONT_CSS}">
+	<script src="../assets/settings.js" defer></script>
 	<script>
 		window.MathJax = {{
 			tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }}
@@ -197,6 +257,8 @@ def render_article(data, all_entries=None):
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
 <body>
+
+{SETTINGS_PANEL_HTML}
 
 <header class="site-header site-header--nav">
 	<a href="../index.html">AI English Daily</a>
@@ -386,9 +448,14 @@ def render_index(entries):
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AI English Daily</title>
+	{SETTINGS_INIT_SCRIPT}
 	<link rel="stylesheet" href="style.css?v={CSS_VERSION}">
+	<link rel="stylesheet" href="{WENKAI_FONT_CSS}">
+	<script src="assets/settings.js" defer></script>
 </head>
 <body>
+
+{SETTINGS_PANEL_HTML}
 
 <header class="site-header">
 	<h1>AI English Daily</h1>
