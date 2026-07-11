@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How Maison de Sabré built a cult business of bag charms from scraps — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=9">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-11</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">商業與新創</span></div>
+	<h1 class="article-title">How Maison de Sabré built a cult business of bag charms from scraps</h1>
+	<div class="article-meta">
+		2026-07-11 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91571599/how-maison-de-sabre-built-a-cult-bag-charms-business-from-scraps?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="reputation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reputation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌrepjuˈteɪʃn/</span>
+				<span class="vocab-def">名聲、聲望</span>
+			</div>
+			<div class="vocab-card" data-word="intricate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">intricate</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈɪntrɪkət/</span>
+				<span class="vocab-def">錯綜複雜的、精細的</span>
+			</div>
+			<div class="vocab-card" data-word="personality" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">personality</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌpɜːrsəˈnæləti/</span>
+				<span class="vocab-def">個性、特色</span>
+			</div>
+			<div class="vocab-card" data-word="capsule" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">capsule</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈkæpsuːl/</span>
+				<span class="vocab-def">（服裝等）膠囊系列</span>
+			</div>
+			<div class="vocab-card" data-word="scraps" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">scraps</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/skræps/</span>
+				<span class="vocab-def">碎片、邊角料</span>
+			</div>
+			<div class="vocab-card" data-word="offcut" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">offcut</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɒfkʌt/</span>
+				<span class="vocab-def">剩料、切下來的廢料</span>
+			</div>
+			<div class="vocab-card" data-word="collectible" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">collectible</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˈlektəbl/</span>
+				<span class="vocab-def">收藏品</span>
+			</div>
+			<div class="vocab-card" data-word="prevention" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prevention</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/prɪˈvenʃn/</span>
+				<span class="vocab-def">預防、防止</span>
+			</div>
+			<div class="vocab-card" data-word="ambition" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ambition</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/æmˈbɪʃn/</span>
+				<span class="vocab-def">抱負、野心</span>
+			</div>
+			<div class="vocab-card" data-word="sustainability" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sustainability</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/səˌsteɪnəˈbɪləti/</span>
+				<span class="vocab-def">永續性</span>
+			</div>
+			<div class="vocab-card" data-word="pursuing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">pursuing</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/pərˈsuːɪŋ/</span>
+				<span class="vocab-def">追求、從事</span>
+			</div>
+			<div class="vocab-card" data-word="satisfying" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">satisfying</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsætɪsfaɪɪŋ/</span>
+				<span class="vocab-def">令人滿意的</span>
+			</div>
+			<div class="vocab-card" data-word="mutual" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mutual</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈmjuːtʃuəl/</span>
+				<span class="vocab-def">共同的、相互的</span>
+			</div>
+			<div class="vocab-card" data-word="outlive" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">outlive</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌaʊtˈlɪv/</span>
+				<span class="vocab-def">比...長壽、比...耐久</span>
+			</div>
+			<div class="vocab-card" data-word="revenue" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">revenue</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈrevənjuː/</span>
+				<span class="vocab-def">營收、收入</span>
+			</div>
+			<div class="vocab-card" data-word="retailer" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">retailer</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈriːteɪlər/</span>
+				<span class="vocab-def">零售商</span>
+			</div>
+			<div class="vocab-card" data-word="accelerated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">accelerated</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əkˈseləreɪtɪd/</span>
+				<span class="vocab-def">加速</span>
+			</div>
+			<div class="vocab-card" data-word="durability" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">durability</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌdʊrəˈbɪləti/</span>
+				<span class="vocab-def">耐用性</span>
+			</div>
+			<div class="vocab-card" data-word="joyful" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">joyful</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈdʒɔɪfl/</span>
+				<span class="vocab-def">快樂的、令人愉悅的</span>
+			</div>
+			<div class="vocab-card" data-word="feature" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">feature</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈfiːtʃər/</span>
+				<span class="vocab-def">以...為特色</span>
+			</div>
+			<div class="vocab-card" data-word="fall for" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fall for</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/fɔːl fɔːr/</span>
+				<span class="vocab-def">愛上、迷戀</span>
+			</div>
+			<div class="vocab-card" data-word="round out" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">round out</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/raʊnd aʊt/</span>
+				<span class="vocab-def">使圓滿、使完整</span>
+			</div>
+			<div class="vocab-card" data-word="timed to" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">timed to</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/taɪmd tuː/</span>
+				<span class="vocab-def">配合...的時間</span>
+			</div>
+			<div class="vocab-card" data-word="show off" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">show off</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ʃəʊ ɒf/</span>
+				<span class="vocab-def">展示、炫耀</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Maison de Sabré has spent nearly a decade building a <span class="word-highfreq" data-word="reputation">reputation</span> for colorful, beautifully crafted leather handbags. But lately, the thing that makes people <span class="word-phrase" data-word="fall for">fall for</span> the brand isn’t a bag at all—it’s the charms.</p>
+			<p class="para-translation">Maison de Sabré 近十年來致力於為其色彩繽紛、工藝精湛的皮革手提包建立名聲。但最近，讓大眾愛上這個品牌的原因根本不是包包，而是吊飾。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Its newest collection <span class="word-general" data-word="feature">feature</span>s tiny, <span class="word-general" data-word="intricate">intricate</span> leather flowers—cherry blossoms, sunflowers, and daisies—that clip onto a strap, adding a jolt of <span class="word-highfreq" data-word="personality">personality</span> to an otherwise formal bag. There’s also a bumblebee and a snail to <span class="word-phrase" data-word="round out">round out</span> the garden themes. Last season’s collection included jewel-toned fruits and vegetables: snap peas, carrots, chilis, and mushrooms. A recentPikachu <span class="word-general" data-word="capsule">capsule</span>,<span class="word-phrase" data-word="timed to">timed to</span>Pokémon’s 30th anniversary, sold out almost immediately.</p>
+			<p class="para-translation">其最新系列以精細的微型皮革花卉為特色——櫻花、向日葵和雛菊——可夾在背帶上，為原本正式的包包增添活潑的個性。還有大黃蜂和蝸牛來使花園主題更完整。上季系列包含寶石色調的水果與蔬菜：甜豌豆、胡蘿蔔、辣椒和蘑菇。近期為慶祝寶可夢 30 週年推出的皮卡丘膠囊系列幾乎立即售罄。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/20-91571599-charms.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">What most customers don’t realize is that those charms are born on the cutting-room floor, from the <span class="word-general" data-word="scraps">scraps</span> of colorful leather left from other bags. These <span class="word-term" data-word="offcut">offcut</span>s are part of an ongoing “Sabrémoji” charm line that keeps Maison de Sabré customers coming back to the brand season after season. Since they’re limited-edition offerings—dependent on what offcuts are currently available—they’ve also become <span class="word-general" data-word="collectible">collectible</span>s. It’s a waste-<span class="word-highfreq" data-word="prevention">prevention</span> strategy that generates sales and lets customers personalize a classic bag.</p>
+			<p class="para-translation">大多數顧客沒意識到，那些吊飾誕生於裁剪室，是由製作其他包包後剩餘的彩色皮革邊角料製成的。這些邊角料是持續推出的「Sabrémoji」吊飾系列的一部分，吸引著 Maison de Sabré 的顧客季復一季地回歸。由於它們是限量版商品——取決於目前現有的邊角料——因此也具備了收藏價值。這是一種防止浪費的策略，既能產生銷售，又讓顧客能個性化經典包款。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The clearest sign of how central those charms are to the brand’s identity is the newest bag in the collection. Maison de Sabré recently launched the Soft Trio, a crossbody deliberately designed with clasps and hooks to <span class="word-phrase" data-word="show off">show off</span> the charms. It’s part of the company’s broader <span class="word-highfreq" data-word="ambition">ambition</span> of building the next generation of luxury brand, where <span class="word-term" data-word="sustainability">sustainability</span> is a central value.</p>
+			<p class="para-translation">這些吊飾對品牌識別的重要性，最明顯的跡象是系列中的新款包。Maison de Sabré 最近推出了 Soft Trio，這是一款斜背包，刻意設計了扣環和掛鉤來展示吊飾。這是該公司更大的抱負的一部分，即打造以永續發展為核心價值的下一代奢侈品牌。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://www.fastcompany.com/_public/fc-icon.svg" alt="Design Newsletter logo" loading="lazy">
+			<figcaption>Design Newsletter logo</figcaption>
+		</figure>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/19-91571599-charms.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block heading-block">
+			<h2 class="para-original">The New Rules of Luxury</h2>
+			<h2 class="para-translation">奢侈品的新規則</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Maison de Sabré was founded by brothers Omar and Zane Sabré, who grew up in New Zealand. They originally trained as dentists, but when their father got sick, they realized they didn’t want to spend their lives <span class="word-highfreq" data-word="pursuing">pursuing</span> careers that weren’t emotionally <span class="word-highfreq" data-word="satisfying">satisfying</span> to them. As they talked about the future, they discovered a <span class="word-highfreq" data-word="mutual">mutual</span> passion for building a luxury brand that would carry their family name and <span class="word-general" data-word="outlive">outlive</span> them.</p>
+			<p class="para-translation">Maison de Sabré 由在紐西蘭長大的 Omar 和 Zane Sabré 兄弟創立。他們最初受訓成為牙醫，但當父親生病時，他們意識到自己不想把一生花在追求無法帶給他們情感滿足感的職業上。當他們談論未來時，他們發現了共同的熱情，那就是建立一個能承載家族姓氏且比他們更長久的奢侈品牌。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">They poured $40,000 of savings into their new label, which launched out of Australia. Its very first product, a line of colorful, leather-wrapped iPhone cases, generated $2 million in <span class="word-term" data-word="revenue">revenue</span> in its first year. After six years of selling directly to consumers, the company—entirely self-funded—has now expanded into <span class="word-highfreq" data-word="retailer">retailer</span>s like Nordstrom, Bloomingdale’s, Saks, and Le Bon Marché in Paris. This has <span class="word-highfreq" data-word="accelerated">accelerated</span> their growth over the past three years. Today, the U.S. is their biggest market.</p>
+			<p class="para-translation">他們將 4 萬美元的積蓄投入到這個在澳洲啟動的新品牌中。其第一款產品是一系列色彩繽紛的皮革包覆 iPhone 手機殼，在第一年就產生了 200 萬美元的營收。在直接面向消費者銷售六年後，這家完全自籌資金的公司目前已擴展至 Nordstrom、Bloomingdale’s、Saks 和巴黎的 Le Bon Marché 等零售商。這在過去三年中加速了他們的成長。如今，美國是他們最大的市場。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/22-91571599-charms.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">The Sabré brothers have spent a lot of time thinking about what a modern luxury brand should be. Like older generations of luxury consumers, millennials and Gen Zers prize beauty, good design, and <span class="word-general" data-word="durability">durability</span>, but they also expect luxury to be <span class="word-highfreq" data-word="joyful">joyful</span>, sustainable, and fairly priced. (Maison de Sabré bags cost $400 to $800, which is between a third and a quarter of the price of brands like Louis Vuitton and Chanel, even though they use similar-quality leather.)</p>
+			<p class="para-translation">Sabré 兄弟花了大量時間思考現代奢侈品牌應該是什麼樣子。與老一輩的奢侈品消費者一樣，千禧世代和 Z 世代重視美感、優良設計和耐用性，但他們也期望奢侈品是令人愉悅、永續且價格合理的。（Maison de Sabré 的包款售價為 400 至 800 美元，約為路易威登和香奈兒等品牌價格的三分之一到四分之一，儘管它們使用的是品質相近的皮革。）</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-11-noon.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">The funky font on Norway’s World Cup jersey? It’s inspired by Nordic runes</span>
+			</a>
+			<a class="related-card" href="2026-07-08.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">microgpt</span>
+			</a>
+			<a class="related-card" href="2026-07-09.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">Deep Neural Nets: 33 years ago and 33 years from now</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "reputation", "type": "highfreq", "pos": "n.", "ipa": "/ˌrepjuˈteɪʃn/", "definition_zh": "名聲、聲望", "example": "Maison de Sabré has spent nearly a decade building a reputation for colorful, beautifully crafted leather handbags."}, {"word": "intricate", "type": "general", "pos": "adj.", "ipa": "/ˈɪntrɪkət/", "definition_zh": "錯綜複雜的、精細的", "example": "Its newest collection features tiny, intricate leather flowers—cherry blossoms, sunflowers, and daisies."}, {"word": "personality", "type": "highfreq", "pos": "n.", "ipa": "/ˌpɜːrsəˈnæləti/", "definition_zh": "個性、特色", "example": "adding a jolt of personality to an otherwise formal bag."}, {"word": "capsule", "type": "general", "pos": "n.", "ipa": "/ˈkæpsuːl/", "definition_zh": "（服裝等）膠囊系列", "example": "A recent Pikachu capsule, timed to Pokémon’s 30th anniversary, sold out almost immediately."}, {"word": "scraps", "type": "general", "pos": "n.", "ipa": "/skræps/", "definition_zh": "碎片、邊角料", "example": "What most customers don’t realize is that those charms are born on the cutting-room floor, from the scraps of colorful leather left from other bags."}, {"word": "offcut", "type": "term", "pos": "n.", "ipa": "/ˈɒfkʌt/", "definition_zh": "剩料、切下來的廢料", "example": "These offcuts are part of an ongoing “Sabrémoji” charm line that keeps Maison de Sabré customers coming back."}, {"word": "collectible", "type": "general", "pos": "n.", "ipa": "/kəˈlektəbl/", "definition_zh": "收藏品", "example": "Since they’re limited-edition offerings—dependent on what offcuts are currently available—they’ve also become collectibles."}, {"word": "prevention", "type": "highfreq", "pos": "n.", "ipa": "/prɪˈvenʃn/", "definition_zh": "預防、防止", "example": "It’s a waste-prevention strategy that generates sales and lets customers personalize a classic bag."}, {"word": "ambition", "type": "highfreq", "pos": "n.", "ipa": "/æmˈbɪʃn/", "definition_zh": "抱負、野心", "example": "It’s part of the company’s broader ambition of building the next generation of luxury brand."}, {"word": "sustainability", "type": "term", "pos": "n.", "ipa": "/səˌsteɪnəˈbɪləti/", "definition_zh": "永續性", "example": "It’s part of the company’s broader ambition of building the next generation of luxury brand, where sustainability is a central value."}, {"word": "pursuing", "type": "highfreq", "pos": "v.", "ipa": "/pərˈsuːɪŋ/", "definition_zh": "追求、從事", "example": "they realized they didn’t want to spend their lives pursuing careers that weren’t emotionally satisfying to them."}, {"word": "satisfying", "type": "highfreq", "pos": "adj.", "ipa": "/ˈsætɪsfaɪɪŋ/", "definition_zh": "令人滿意的", "example": "they realized they didn’t want to spend their lives pursuing careers that weren’t emotionally satisfying to them."}, {"word": "mutual", "type": "highfreq", "pos": "adj.", "ipa": "/ˈmjuːtʃuəl/", "definition_zh": "共同的、相互的", "example": "As they talked about the future, they discovered a mutual passion for building a luxury brand."}, {"word": "outlive", "type": "general", "pos": "v.", "ipa": "/ˌaʊtˈlɪv/", "definition_zh": "比...長壽、比...耐久", "example": "they discovered a mutual passion for building a luxury brand that would carry their family name and outlive them."}, {"word": "revenue", "type": "term", "pos": "n.", "ipa": "/ˈrevənjuː/", "definition_zh": "營收、收入", "example": "Its very first product, a line of colorful, leather-wrapped iPhone cases, generated $2 million in revenue in its first year."}, {"word": "retailer", "type": "highfreq", "pos": "n.", "ipa": "/ˈriːteɪlər/", "definition_zh": "零售商", "example": "the company—entirely self-funded—has now expanded into retailers like Nordstrom, Bloomingdale’s, Saks, and Le Bon Marché in Paris."}, {"word": "accelerated", "type": "highfreq", "pos": "v.", "ipa": "/əkˈseləreɪtɪd/", "definition_zh": "加速", "example": "This has accelerated their growth over the past three years."}, {"word": "durability", "type": "general", "pos": "n.", "ipa": "/ˌdʊrəˈbɪləti/", "definition_zh": "耐用性", "example": "millennials and Gen Zers prize beauty, good design, and durability."}, {"word": "joyful", "type": "highfreq", "pos": "adj.", "ipa": "/ˈdʒɔɪfl/", "definition_zh": "快樂的、令人愉悅的", "example": "but they also expect luxury to be joyful, sustainable, and fairly priced."}, {"word": "feature", "type": "general", "pos": "v.", "ipa": "/ˈfiːtʃər/", "definition_zh": "以...為特色", "example": "Its newest collection features tiny, intricate leather flowers."}, {"word": "fall for", "type": "phrase", "pos": "", "ipa": "/fɔːl fɔːr/", "definition_zh": "愛上、迷戀", "example": "But lately, the thing that makes people fall for the brand isn’t a bag at all—it’s the charms."}, {"word": "round out", "type": "phrase", "pos": "", "ipa": "/raʊnd aʊt/", "definition_zh": "使圓滿、使完整", "example": "There’s also a bumblebee and a snail to round out the garden themes."}, {"word": "timed to", "type": "phrase", "pos": "", "ipa": "/taɪmd tuː/", "definition_zh": "配合...的時間", "example": "A recent Pikachu capsule, timed to Pokémon’s 30th anniversary, sold out almost immediately."}, {"word": "show off", "type": "phrase", "pos": "", "ipa": "/ʃəʊ ɒf/", "definition_zh": "展示、炫耀", "example": "Maison de Sabré recently launched the Soft Trio, a crossbody deliberately designed with clasps and hooks to show off the charms."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The company’s commitment to ____ means they prioritize eco-friendly materials and ethical production.", "answer": "sustainability", "options": ["sustainability", "revenue", "ambition", "prevention"]}, {"sentence": "She has a great ____ for being one of the most reliable lawyers in the city.", "answer": "reputation", "options": ["reputation", "personality", "durability", "capsule"]}, {"sentence": "Despite the economic downturn, the tech firm reported a record-breaking ____ this quarter.", "answer": "revenue", "options": ["revenue", "scraps", "offcut", "mutual"]}, {"sentence": "The artist spent months creating the ____ patterns on the traditional silk fabric.", "answer": "intricate", "options": ["intricate", "joyful", "satisfying", "collectible"]}, {"sentence": "Great literature has the power to ____ its author and inspire future generations.", "answer": "outlive", "options": ["outlive", "pursuing", "accelerated", "feature"]}, {"sentence": "The museum held an exhibition to ____ the rare artifacts that had been kept in storage for years.", "answer": "show off", "options": ["show off", "fall for", "round out", "timed to"]}, {"sentence": "We added a dessert buffet to ____ the evening's celebration.", "answer": "round out", "options": ["round out", "fall for", "show off", "timed to"]}, {"sentence": "The government ____ the vaccine rollout to ensure the safety of the public.", "answer": "accelerated", "options": ["accelerated", "pursuing", "outlive", "feature"]}, {"sentence": "The divorce was handled with ____ respect, as both parties wanted what was best for the children.", "answer": "mutual", "options": ["mutual", "joyful", "satisfying", "intricate"]}, {"sentence": "Completing the marathon was the most ____ achievement of his athletic career.", "answer": "satisfying", "options": ["satisfying", "joyful", "intricate", "collectible"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+		document.getElementById("quiz-feedback").textContent = correct ? "答對了！" : `答錯了，正確答案：${q.answer}`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
