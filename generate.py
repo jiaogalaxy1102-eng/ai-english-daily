@@ -184,6 +184,13 @@ def call_gemini(source_name, title, url, paragraphs):
       "definition_zh": "中文釋義（15字以內）",
       "example": "從文章中包含此詞的原句"
     }}
+  ],
+  "quiz": [
+    {{
+      "sentence": "一句全新造的英文例句，不可取自文章原文，句中把要考的單字/片語挖空，用 ____ 表示",
+      "answer": "被挖空的單字或片語，必須與 vocab 陣列中某個 word 完全一致",
+      "options": ["4 個選項字串，其中一個等於 answer，其餘 3 個是從 vocab 陣列中挑的其他單字/片語，順序打散"]
+    }}
   ]
 }}
 
@@ -197,6 +204,7 @@ def call_gemini(source_name, title, url, paragraphs):
 - 另外額外挑 2-4 個實用片語或慣用語，type 設為 "phrase"，pos 留空字串 ""
 - 除了 type "phrase" 以外，每個單字都要標注 pos（詞性縮寫）
 - ipa 使用標準 IPA
+- quiz 陣列請從 vocab 陣列中挑 10 個不同的單字/片語出題（各類型都可能考），每題的 4 個選項不可重複、且都要來自 vocab 陣列
 - 只輸出 JSON，不加任何說明"""
 
 	for attempt in range(3):
@@ -231,6 +239,7 @@ def build_article_data(source_name, title, url, date_str, slot, tag, paragraphs,
 		],
 		"images": images,
 		"vocab": gemini_data["vocab"],
+		"quiz": gemini_data.get("quiz", []),
 	}
 
 

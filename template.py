@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 7
+CSS_VERSION = 8
 
 FIXED_TAGS = ["AI", "科技", "商業與新創", "科學", "社會與文化", "生活與心理", "觀點評論"]
 
@@ -83,6 +83,9 @@ def render_article(data, all_entries=None):
 
 	# escape JSON for embedding in HTML — prevent </script> from breaking the tag
 	vocab_json = json.dumps(vocab, ensure_ascii=False).replace("</script>", r"<\/script>")
+
+	quiz = data.get("quiz") or []
+	quiz_json = json.dumps(quiz, ensure_ascii=False).replace("</script>", r"<\/script>")
 
 	# group images by after_paragraph index
 	images_by_para = {}
@@ -166,6 +169,19 @@ def render_article(data, all_entries=None):
 	</div>
 </div>"""
 
+	quiz_html = ""
+	if quiz:
+		quiz_html = f"""
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（{len(quiz)} 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>"""
+
 	return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -207,6 +223,7 @@ def render_article(data, all_entries=None):
 <div class="article-body content-block">
 	{paras_html}
 </div>
+{quiz_html}
 {related_html}
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
@@ -220,7 +237,6 @@ def render_article(data, all_entries=None):
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
 			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
-			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
 		</div>
 	</div>
 </div>
@@ -236,11 +252,6 @@ def render_article(data, all_entries=None):
 		term: ["badge-term", "術語"],
 		phrase: ["badge-phrase", "片語"],
 	}};
-
-	const knownKey = "known-words";
-	function getKnown() {{
-		return JSON.parse(localStorage.getItem(knownKey) || "{{}}");
-	}}
 
 	let currentWord = null;
 
@@ -260,10 +271,6 @@ def render_article(data, all_entries=None):
 		badge.innerHTML = `<span class="badge ${{badgeClass}}">${{badgeLabel}}</span>`;
 
 		document.getElementById("popup-pos").textContent = entry.pos || "";
-
-		const known = getKnown();
-		const btn = document.getElementById("btn-known");
-		btn.classList.toggle("marked", !!known[entry.word]);
 
 		document.getElementById("popup-overlay").classList.add("open");
 	}}
@@ -285,18 +292,6 @@ def render_article(data, all_entries=None):
 		speechSynthesis.speak(utter);
 	}}
 
-	function toggleKnown() {{
-		if (!currentWord) return;
-		const known = getKnown();
-		if (known[currentWord]) {{
-			delete known[currentWord];
-		}} else {{
-			known[currentWord] = true;
-		}}
-		localStorage.setItem(knownKey, JSON.stringify(known));
-		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
-	}}
-
 	function toggleVocab(btn) {{
 		const grid = document.getElementById("vocab-grid");
 		grid.classList.toggle("open");
@@ -310,6 +305,62 @@ def render_article(data, all_entries=None):
 
 	// close on Escape
 	document.addEventListener("keydown", e => {{ if (e.key === "Escape") closePopup(); }});
+
+	// quiz
+	const quizData = {quiz_json};
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {{
+		if (quizIndex >= quizData.length) {{
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${{quizScore}} / ${{quizData.length}} 題`;
+			return;
+		}}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${{quizIndex + 1}} / ${{quizData.length}} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {{
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		}});
+	}}
+
+	function answerQuiz(selected, btn) {{
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {{
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		}});
+		document.getElementById("quiz-feedback").textContent = correct ? "答對了！" : `答錯了，正確答案：${{q.answer}}`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}}
+
+	function nextQuiz() {{
+		quizIndex++;
+		renderQuiz();
+	}}
+
+	if (quizData.length) renderQuiz();
 </script>
 
 </body>

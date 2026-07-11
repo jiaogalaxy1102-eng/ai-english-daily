@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>microgpt — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=7">
+	<link rel="stylesheet" href="../style.css?v=8">
 	<script>
 		window.MathJax = {
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
@@ -204,6 +204,7 @@
 		</div>
 </div>
 
+
 <div class="related-section content-block">
 	<div class="section-label">延伸閱讀</div>
 	<div class="related-grid">
@@ -233,7 +234,6 @@
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
 			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
-			<button class="btn-known" id="btn-known" onclick="toggleKnown()">已認識</button>
 		</div>
 	</div>
 </div>
@@ -249,11 +249,6 @@
 		term: ["badge-term", "術語"],
 		phrase: ["badge-phrase", "片語"],
 	};
-
-	const knownKey = "known-words";
-	function getKnown() {
-		return JSON.parse(localStorage.getItem(knownKey) || "{}");
-	}
 
 	let currentWord = null;
 
@@ -273,10 +268,6 @@
 		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
 
 		document.getElementById("popup-pos").textContent = entry.pos || "";
-
-		const known = getKnown();
-		const btn = document.getElementById("btn-known");
-		btn.classList.toggle("marked", !!known[entry.word]);
 
 		document.getElementById("popup-overlay").classList.add("open");
 	}
@@ -298,18 +289,6 @@
 		speechSynthesis.speak(utter);
 	}
 
-	function toggleKnown() {
-		if (!currentWord) return;
-		const known = getKnown();
-		if (known[currentWord]) {
-			delete known[currentWord];
-		} else {
-			known[currentWord] = true;
-		}
-		localStorage.setItem(knownKey, JSON.stringify(known));
-		document.getElementById("btn-known").classList.toggle("marked", !!known[currentWord]);
-	}
-
 	function toggleVocab(btn) {
 		const grid = document.getElementById("vocab-grid");
 		grid.classList.toggle("open");
@@ -323,6 +302,62 @@
 
 	// close on Escape
 	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+		document.getElementById("quiz-feedback").textContent = correct ? "答對了！" : `答錯了，正確答案：${q.answer}`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
 </script>
 
 </body>
