@@ -1,10 +1,22 @@
 [
 	{
-		"name": "Hugging Face Blog",
-		"rss": "https://huggingface.co/blog/feed.xml"
+		"name": "The Verge",
+		"rss": "https://www.theverge.com/rss/index.xml"
 	},
 	{
-		"name": "Andrej Karpathy",
-		"rss": "http://karpathy.github.io/feed.xml"
+		"name": "MIT Technology Review",
+		"rss": "https://www.technologyreview.com/feed/"
+	},
+	{
+		"name": "Fast Company",
+		"rss": "https://www.fastcompany.com/co-design/rss"
+	},
+	{
+		"name": "It's Nice That",
+		"rss": "https://www.itsnicethat.com/articles.rss"
+	},
+	{
+		"name": "VentureBeat",
+		"rss": "https://venturebeat.com/category/ai/feed/"
 	}
 ]

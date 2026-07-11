@@ -208,5 +208,6 @@
 			"definition_zh": "內核（GPU計算單元）",
 			"example": "Now let's unfold the GPU lane and see which kernels were actually launched."
 		}
-	]
+	],
+	"tag": "AI"
 }

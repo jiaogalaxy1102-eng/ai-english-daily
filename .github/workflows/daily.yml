@@ -2,13 +2,19 @@ name: Daily Article
 
 on:
   schedule:
-    - cron: "0 1 * * *"  # UTC 01:00 = 台灣時間 09:00
+    - cron: "0 1 * * *"   # UTC 01:00 = 台灣 09:00（早報）
+    - cron: "0 4 * * *"   # UTC 04:00 = 台灣 12:00（午報）
+    - cron: "0 11 * * *"  # UTC 11:00 = 台灣 19:00（晚報）
   workflow_dispatch:
     inputs:
       date_override:
         description: '指定日期 (YYYY-MM-DD)，留空則用今天'
         required: false
         default: ''
+      time_slot:
+        description: '時段 (morning/noon/evening)'
+        required: false
+        default: 'morning'
 
 permissions:
   contents: write
@@ -29,10 +35,21 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Determine time slot
+        id: slot
+        run: |
+          case "${{ github.event.schedule }}" in
+            "0 1 * * *") echo "slot=morning" >> "$GITHUB_OUTPUT" ;;
+            "0 4 * * *") echo "slot=noon" >> "$GITHUB_OUTPUT" ;;
+            "0 11 * * *") echo "slot=evening" >> "$GITHUB_OUTPUT" ;;
+            *) echo "slot=${{ github.event.inputs.time_slot || 'morning' }}" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - name: Generate article
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DATE_OVERRIDE: ${{ github.event.inputs.date_override }}
+          TIME_SLOT: ${{ steps.slot.outputs.slot }}
         run: python generate.py
 
       - name: Commit and push
@@ -40,5 +57,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ articles/ index.html
-          git diff --cached --quiet || git commit -m "Daily article $(date -u +%Y-%m-%d)"
+          git diff --cached --quiet || git commit -m "Article (${{ steps.slot.outputs.slot }}) $(date -u +%Y-%m-%d)"
           git push

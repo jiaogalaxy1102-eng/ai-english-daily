@@ -1,8 +1,59 @@
 import html as htmllib
 import json
+import random
 import re
 
-CSS_VERSION = 6
+CSS_VERSION = 7
+
+FIXED_TAGS = ["AI", "科技", "商業與新創", "科學", "社會與文化", "生活與心理", "觀點評論"]
+
+SLOT_ORDER = {"morning": 0, "noon": 1, "evening": 2}
+
+VOCAB_TYPE_INFO = {
+	"highfreq": ("word-highfreq", "badge-highfreq", "高頻詞"),
+	"general": ("word-general", "badge-general", "學習詞"),
+	"term": ("word-term", "badge-term", "術語"),
+	"phrase": ("word-phrase", "badge-phrase", "片語"),
+}
+
+
+def entry_filename(d):
+	"""Reconstruct an article's HTML filename from its data dict.
+	Articles generated before the multi-slot schedule have no "slot" key
+	and keep the plain {date}.html filename they were already published under."""
+	slot = d.get("slot")
+	return f"{d['date']}-{slot}.html" if slot else f"{d['date']}.html"
+
+
+def build_entry(d):
+	return {
+		"date": d["date"],
+		"slot": d.get("slot"),
+		"title": d["title"],
+		"source_name": d["source_name"],
+		"filename": entry_filename(d),
+		"tag": d.get("tag", ""),
+	}
+
+
+def sort_entries(entries):
+	"""Newest first; within the same date, evening > noon > morning."""
+	return sorted(
+		entries,
+		key=lambda e: (e["date"], SLOT_ORDER.get(e.get("slot"), -1)),
+		reverse=True,
+	)
+
+
+def pick_related(current_filename, current_tag, all_entries, n=3):
+	others = [e for e in all_entries if e["filename"] != current_filename]
+	same_tag = [e for e in others if current_tag and e.get("tag") == current_tag]
+	chosen = same_tag[:n]
+	if len(chosen) < n:
+		pool = [e for e in others if e not in chosen]
+		random.shuffle(pool)
+		chosen += pool[: n - len(chosen)]
+	return chosen
 
 
 def highlight(text, vocab_map):
@@ -10,7 +61,7 @@ def highlight(text, vocab_map):
 	all_words = sorted(vocab_map.keys(), key=len, reverse=True)
 	for word in all_words:
 		entry = vocab_map[word]
-		css_class = "word-highfreq" if entry["type"] == "highfreq" else "word-term"
+		css_class = VOCAB_TYPE_INFO.get(entry["type"], VOCAB_TYPE_INFO["highfreq"])[0]
 		word_attr = htmllib.escape(entry["word"], quote=True)
 		pattern = re.compile(re.escape(word), re.IGNORECASE)
 		escaped_word = lambda m, c=css_class, a=word_attr: (
@@ -21,9 +72,12 @@ def highlight(text, vocab_map):
 	return text
 
 
-def render_article(data):
+def render_article(data, all_entries=None):
 	"""data: dict with keys date, title, source_name, url, paragraphs, images, vocab
-	(see data/{date}.json for the on-disk shape)."""
+	(see data/{date}.json for the on-disk shape).
+	all_entries: list of entries (see build_entry) for every published article,
+	used to populate the "related articles" section at the bottom of the page."""
+	all_entries = all_entries or []
 	vocab = data["vocab"]
 	vocab_map = {v["word"].lower(): v for v in vocab}
 
@@ -77,13 +131,14 @@ def render_article(data):
 	# build vocab summary
 	vocab_summary = ""
 	for v in vocab:
-		badge_class = "badge-highfreq" if v["type"] == "highfreq" else "badge-term"
-		badge_label = "高頻詞" if v["type"] == "highfreq" else "術語"
+		_, badge_class, badge_label = VOCAB_TYPE_INFO.get(v["type"], VOCAB_TYPE_INFO["highfreq"])
 		word_attr = htmllib.escape(v['word'], quote=True)
+		pos = v.get("pos", "")
+		pos_html = f'<span class="vocab-pos">{htmllib.escape(pos)}</span>' if pos else ""
 		vocab_summary += f"""
 			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
 				<span class="vocab-word">{v['word']}</span>
-				<span class="badge {badge_class}">{badge_label}</span>
+				<span class="badge {badge_class}">{badge_label}</span>{pos_html}
 				<span class="vocab-ipa">{v['ipa']}</span>
 				<span class="vocab-def">{v['definition_zh']}</span>
 			</div>"""
@@ -92,6 +147,24 @@ def render_article(data):
 	source_html = htmllib.escape(data["source_name"])
 	url_html = htmllib.escape(data["url"], quote=True)
 	date_str = data["date"]
+
+	tag = data.get("tag", "")
+	tag_html = f'<span class="tag-badge">{htmllib.escape(tag)}</span>' if tag else ""
+
+	related = pick_related(entry_filename(data), tag, all_entries, n=3)
+	related_html = ""
+	if related:
+		related_cards = "".join(f"""
+			<a class="related-card" href="{htmllib.escape(e['filename'], quote=True)}">
+				<span class="related-source">{htmllib.escape(e['source_name'])}</span>
+				<span class="related-title">{htmllib.escape(e['title'])}</span>
+			</a>""" for e in related)
+		related_html = f"""
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">{related_cards}
+	</div>
+</div>"""
 
 	return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -115,7 +188,7 @@ def render_article(data):
 </header>
 
 <div class="article-header content-block">
-	<div class="article-source">{source_html}</div>
+	<div class="article-source">{source_html}{tag_html}</div>
 	<h1 class="article-title">{title_html}</h1>
 	<div class="article-meta">
 		{date_str} &nbsp;·&nbsp; <a href="{url_html}" target="_blank" rel="noopener">原文連結</a>
@@ -134,6 +207,7 @@ def render_article(data):
 <div class="article-body content-block">
 	{paras_html}
 </div>
+{related_html}
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
@@ -141,6 +215,7 @@ def render_article(data):
 		<div class="popup-word" id="popup-word"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
@@ -154,6 +229,13 @@ def render_article(data):
 	const vocabData = {vocab_json};
 	const vocabMap = {{}};
 	vocabData.forEach(v => {{ vocabMap[v.word.toLowerCase()] = v; }});
+
+	const badgeInfo = {{
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	}};
 
 	const knownKey = "known-words";
 	function getKnown() {{
@@ -172,11 +254,12 @@ def render_article(data):
 		document.getElementById("popup-def").textContent = entry.definition_zh;
 		document.getElementById("popup-example").textContent = entry.example || "";
 
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
 		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
+		badge.innerHTML = `<span class="badge ${{badgeClass}}">${{badgeLabel}}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
 
 		const known = getKnown();
 		const btn = document.getElementById("btn-known");

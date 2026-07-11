@@ -11,7 +11,15 @@ import feedparser
 import requests
 from bs4 import BeautifulSoup
 
-from template import render_article, render_index
+from template import (
+	FIXED_TAGS,
+	SLOT_ORDER,
+	build_entry,
+	entry_filename,
+	render_article,
+	render_index,
+	sort_entries,
+)
 
 GEMINI_MODEL = "gemini-3-flash-preview"
 
@@ -30,8 +38,16 @@ def load_sources():
 		return json.load(f)
 
 
-def existing_dates():
+def existing_slots():
 	return {p.stem for p in ARTICLES_DIR.glob("*.html")}
+
+
+def load_all_entries():
+	entries = []
+	for path in DATA_DIR.glob("*.json"):
+		with open(path, encoding="utf-8") as f:
+			entries.append(build_entry(json.load(f)))
+	return sort_entries(entries)
 
 
 def fetch_feed(rss_url):
@@ -131,6 +147,8 @@ def call_gemini(source_name, title, url, paragraphs):
 		f"[{i}] {p['text']}" for i, p in enumerate(paragraphs)
 	)
 
+	tag_list = "、".join(FIXED_TAGS)
+
 	prompt = f"""你是一個英文學習助手。以下是一篇來自 {source_name} 的文章：
 標題：{title}
 網址：{url}
@@ -141,6 +159,7 @@ def call_gemini(source_name, title, url, paragraphs):
 請完成以下任務，輸出 JSON（不要加 markdown code block）：
 
 {{
+  "tag": "從清單中選一個最符合這篇文章主題的分類",
   "paragraphs": [
     {{
       "index": 0,
@@ -151,6 +170,7 @@ def call_gemini(source_name, title, url, paragraphs):
     {{
       "word": "英文單字或片語",
       "type": "highfreq",
+      "pos": "詞性縮寫，如 n. / v. / adj. / adv. / prep. / conj.",
       "ipa": "/發音/",
       "definition_zh": "中文釋義（15字以內）",
       "example": "從文章中包含此詞的原句"
@@ -160,9 +180,13 @@ def call_gemini(source_name, title, url, paragraphs):
 
 規則：
 - paragraphs 陣列長度必須與輸入段落數一致
-- vocab 挑出 8-12 個值得學習的單字/片語：
-  - type "highfreq"：常見但實用的詞（動詞、形容詞、副詞等）
-  - type "term"：AI/技術/專業術語
+- tag 必須是以下其中一個，不可自創：{tag_list}
+- vocab 陣列請挑選共 20-24 個單字，比例約為：
+  - type "highfreq"（常見但實用的詞，如動詞/形容詞/副詞）約 50%
+  - type "general"（值得學習、但不算高頻也不算專業術語的單字）約 40%
+  - type "term"（AI/科技/專業術語）約 10%
+- 另外額外挑 2-4 個實用片語或慣用語，type 設為 "phrase"，pos 留空字串 ""
+- 除了 type "phrase" 以外，每個單字都要標注 pos（詞性縮寫）
 - ipa 使用標準 IPA
 - 只輸出 JSON，不加任何說明"""
 
@@ -183,10 +207,12 @@ def call_gemini(source_name, title, url, paragraphs):
 				raise
 
 
-def build_article_data(source_name, title, url, date_str, paragraphs, images, gemini_data):
+def build_article_data(source_name, title, url, date_str, slot, tag, paragraphs, images, gemini_data):
 	translations = {p["index"]: p["translation"] for p in gemini_data["paragraphs"]}
 	return {
 		"date": date_str,
+		"slot": slot,
+		"tag": tag,
 		"title": title,
 		"source_name": source_name,
 		"url": url,
@@ -199,28 +225,20 @@ def build_article_data(source_name, title, url, date_str, paragraphs, images, ge
 	}
 
 
-def rebuild_index():
-	entries = []
-	for path in sorted(DATA_DIR.glob("*.json"), reverse=True):
-		with open(path, encoding="utf-8") as f:
-			d = json.load(f)
-		entries.append({
-			"date": d["date"],
-			"title": d["title"],
-			"source_name": d["source_name"],
-			"filename": f"{d['date']}.html",
-		})
-	INDEX_FILE.write_text(render_index(entries), encoding="utf-8")
-
-
 def main():
 	DATA_DIR.mkdir(exist_ok=True)
 	sources = load_sources()
-	done = existing_dates()
+	done = existing_slots()
 	today = os.environ.get("DATE_OVERRIDE") or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
 
-	if today in done:
-		print(f"Article for {today} already exists, skipping.")
+	time_slot = os.environ.get("TIME_SLOT", "morning")
+	if time_slot not in SLOT_ORDER:
+		print(f"Unknown TIME_SLOT '{time_slot}', falling back to 'morning'.")
+		time_slot = "morning"
+
+	today_slot = f"{today}-{time_slot}"
+	if today_slot in done:
+		print(f"Article for {today_slot} already exists, skipping.")
 		sys.exit(0)
 
 	random.shuffle(sources)
@@ -230,8 +248,8 @@ def main():
 
 	for source in sources:
 		try:
-			entries = fetch_feed(source["rss"])
-			entry = pick_article(entries, used)
+			feed_entries = fetch_feed(source["rss"])
+			entry = pick_article(feed_entries, used)
 			if entry:
 				selected_entry = entry
 				selected_source = source
@@ -241,8 +259,8 @@ def main():
 			continue
 
 	if not selected_entry:
-		print("No article found from any source.")
-		sys.exit(1)
+		print(f"No unused article found from any source for {today_slot}, skipping.")
+		sys.exit(0)
 
 	title = selected_entry.get("title", "Untitled")
 	url = selected_entry.get("link", "")
@@ -266,18 +284,24 @@ def main():
 		print(f"Gemini error: {e}")
 		sys.exit(1)
 
-	data = build_article_data(source_name, title, url, today, paragraphs, images, gemini_data)
+	tag = gemini_data.get("tag")
+	if tag not in FIXED_TAGS:
+		print(f"Unexpected tag '{tag}' from Gemini, falling back to '科技'.")
+		tag = "科技"
 
-	data_path = DATA_DIR / f"{today}.json"
+	data = build_article_data(source_name, title, url, today, time_slot, tag, paragraphs, images, gemini_data)
+
+	data_path = DATA_DIR / f"{today_slot}.json"
 	data_path.write_text(json.dumps(data, ensure_ascii=False, indent="\t"), encoding="utf-8")
 	print(f"Written: {data_path}")
 
-	filename = f"{today}.html"
-	out_path = ARTICLES_DIR / filename
-	out_path.write_text(render_article(data), encoding="utf-8")
+	entries = load_all_entries()
+
+	out_path = ARTICLES_DIR / entry_filename(data)
+	out_path.write_text(render_article(data, entries), encoding="utf-8")
 	print(f"Written: {out_path}")
 
-	rebuild_index()
+	INDEX_FILE.write_text(render_index(entries), encoding="utf-8")
 	print("Done.")
 
 

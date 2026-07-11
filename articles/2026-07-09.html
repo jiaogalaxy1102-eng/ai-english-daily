@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Deep Neural Nets: 33 years ago and 33 years from now — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=6">
+	<link rel="stylesheet" href="../style.css?v=7">
 	<script>
 		window.MathJax = {
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
@@ -20,7 +20,7 @@
 </header>
 
 <div class="article-header content-block">
-	<div class="article-source">Andrej Karpathy</div>
+	<div class="article-source">Andrej Karpathy<span class="tag-badge">AI</span></div>
 	<h1 class="article-title">Deep Neural Nets: 33 years ago and 33 years from now</h1>
 	<div class="article-meta">
 		2026-07-09 &nbsp;·&nbsp; <a href="http://karpathy.github.io/2022/03/14/lecun1989/" target="_blank" rel="noopener">原文連結</a>
@@ -188,12 +188,31 @@
 		</div>
 </div>
 
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-10.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Profiling in PyTorch (Part 3): Attention is all you profile</span>
+			</a>
+			<a class="related-card" href="2026-07-08.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">microgpt</span>
+			</a>
+			<a class="related-card" href="2026-07-07.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Data for Agents</span>
+			</a>
+	</div>
+</div>
+
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
 		<button class="btn-close" onclick="closePopup()">×</button>
 		<div class="popup-word" id="popup-word"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
@@ -207,6 +226,13 @@
 	const vocabData = [{"word": "reproduce", "type": "highfreq", "ipa": "/ˌriː.prəˈdjuːs/", "definition_zh": "重現；複製", "example": "So I set out to reproduce the paper 1) for fun, but 2) to use the exercise as a case study on the nature of progress in deep learning."}, {"word": "overfitting", "type": "term", "ipa": "/ˌoʊ.vərˈfɪt.ɪŋ/", "definition_zh": "過擬合", "example": "This change dramatically improved the training error, completely overfitting the training set."}, {"word": "augmentation", "type": "term", "ipa": "/ˌɔːɡ.menˈteɪ.ʃən/", "definition_zh": "增強；擴增", "example": "I introduced a simple data augmentation strategy where I shift the input images by up to 1 pixel horizontally or vertically."}, {"word": "latency", "type": "highfreq", "ipa": "/ˈleɪ.tən.si/", "definition_zh": "延遲", "example": "But the inference latency would not have been impacted."}, {"word": "decay", "type": "highfreq", "ipa": "/dɪˈkeɪ/", "definition_zh": "衰減", "example": "We also have to remember that a little bit of weight decay came in for the ride as well via the default parameters."}, {"word": "sparse", "type": "term", "ipa": "/spɑːrs/", "definition_zh": "稀疏的", "example": "The specific sparse connectivity structure between the H1 and H2 layers of the net are also brushed over."}, {"word": "invariant", "type": "highfreq", "ipa": "/ɪnˈveər.i.ənt/", "definition_zh": "不變的", "example": "Suppose that the lessons of this exercise remain invariant in time."}, {"word": "distillation", "type": "term", "ipa": "/ˌdɪs.tɪˈleɪ.ʃən/", "definition_zh": "蒸餾", "example": "An optional step of data or model distillation into smaller, special-purpose inference networks."}, {"word": "extrapolation", "type": "highfreq", "ipa": "/ɪkˌstræp.əˈleɪ.ʃən/", "definition_zh": "外推；推演", "example": "In its most extreme extrapolation, you will not want to train any neural networks at all."}, {"word": "oblige", "type": "highfreq", "ipa": "/əˈblaɪdʒ/", "definition_zh": "順從；照辦", "example": "And if you ask nicely enough, it will oblige."}];
 	const vocabMap = {};
 	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
 
 	const knownKey = "known-words";
 	function getKnown() {
@@ -225,11 +251,12 @@
 		document.getElementById("popup-def").textContent = entry.definition_zh;
 		document.getElementById("popup-example").textContent = entry.example || "";
 
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
 		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
 
 		const known = getKnown();
 		const btn = document.getElementById("btn-known");

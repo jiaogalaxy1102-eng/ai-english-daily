@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Profiling in PyTorch (Part 3): Attention is all you profile — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=6">
+	<link rel="stylesheet" href="../style.css?v=7">
 	<script>
 		window.MathJax = {
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
@@ -20,7 +20,7 @@
 </header>
 
 <div class="article-header content-block">
-	<div class="article-source">Hugging Face Blog</div>
+	<div class="article-source">Hugging Face Blog<span class="tag-badge">AI</span></div>
 	<h1 class="article-title">Profiling in PyTorch (Part 3): Attention is all you profile</h1>
 	<div class="article-meta">
 		2026-07-10 &nbsp;·&nbsp; <a href="https://huggingface.co/blog/torch-attention-profile" target="_blank" rel="noopener">原文連結</a>
@@ -204,12 +204,31 @@
 		</figure>
 </div>
 
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-09.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">Deep Neural Nets: 33 years ago and 33 years from now</span>
+			</a>
+			<a class="related-card" href="2026-07-08.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">microgpt</span>
+			</a>
+			<a class="related-card" href="2026-07-07.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Data for Agents</span>
+			</a>
+	</div>
+</div>
+
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
 		<button class="btn-close" onclick="closePopup()">×</button>
 		<div class="popup-word" id="popup-word"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
@@ -223,6 +242,13 @@
 	const vocabData = [{"word": "profiling", "type": "term", "ipa": "/ˈproʊ.faɪ.lɪŋ/", "definition_zh": "效能分析", "example": "This is the third post of Profiling in PyTorch, a series where we slowly build the skill of reading profiler traces and use it to drive optimization:"}, {"word": "trace", "type": "term", "ipa": "/treɪs/", "definition_zh": "追蹤圖", "example": "We saw how the profiler table uncovers hotspots, and how the profiler trace shows the order in which an algorithm runs over time."}, {"word": "hotspots", "type": "highfreq", "ipa": "/ˈhɑːt.spɑːts/", "definition_zh": "效能熱點（瓶頸）", "example": "We saw how the profiler table uncovers hotspots, and how the profiler trace shows the order in which an algorithm runs over time."}, {"word": "fused", "type": "term", "ipa": "/fjuːzd/", "definition_zh": "融合的（指算子合併）", "example": "Along the way we also profiled fused and hand-tuned kernels."}, {"word": "quadratic-time complexity", "type": "term", "ipa": "/kwɒˈdræt.ɪk taɪm kəmˈplɛk.sə.ti/", "definition_zh": "平方時間複雜度", "example": "While being infamous for its quadratic-time complexity, many clever tricks exist to mitigate that issue and make it fast."}, {"word": "mitigate", "type": "highfreq", "ipa": "/ˈmɪt.ɪ.ɡeɪt/", "definition_zh": "減輕；緩解", "example": "While being infamous for its quadratic-time complexity, many clever tricks exist to mitigate that issue and make it fast."}, {"word": "infrastructure", "type": "highfreq", "ipa": "/ˈɪn.frəˌstrʌk.tʃər/", "definition_zh": "基礎設施", "example": "It is really easy to set up a GPU on the Hugging Face infrastructure and experiment with the scripts using Dev Mode with Spaces."}, {"word": "primitive", "type": "highfreq", "ipa": "/ˈprɪm.ə.tɪv/", "definition_zh": "原始的；基本的", "example": "So attention is really a collection of primitive operations."}, {"word": "annotated", "type": "highfreq", "ipa": "/ˈæn.ə.teɪ.tɪd/", "definition_zh": "經註釋的", "example": "Inside attn_fwd (our annotated forward call) we can see exactly the operations we guessed."}, {"word": "kernel", "type": "term", "ipa": "/ˈkɜːr.nəl/", "definition_zh": "內核（GPU計算單元）", "example": "Now let's unfold the GPU lane and see which kernels were actually launched."}];
 	const vocabMap = {};
 	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
 
 	const knownKey = "known-words";
 	function getKnown() {
@@ -241,11 +267,12 @@
 		document.getElementById("popup-def").textContent = entry.definition_zh;
 		document.getElementById("popup-example").textContent = entry.example || "";
 
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
 		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
 
 		const known = getKnown();
 		const btn = document.getElementById("btn-known");

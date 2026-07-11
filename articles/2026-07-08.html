@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>microgpt — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=6">
+	<link rel="stylesheet" href="../style.css?v=7">
 	<script>
 		window.MathJax = {
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
@@ -20,7 +20,7 @@
 </header>
 
 <div class="article-header content-block">
-	<div class="article-source">Andrej Karpathy</div>
+	<div class="article-source">Andrej Karpathy<span class="tag-badge">AI</span></div>
 	<h1 class="article-title">microgpt</h1>
 	<div class="article-meta">
 		2026-07-08 &nbsp;·&nbsp; <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener">原文連結</a>
@@ -204,12 +204,31 @@
 		</div>
 </div>
 
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-10.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Profiling in PyTorch (Part 3): Attention is all you profile</span>
+			</a>
+			<a class="related-card" href="2026-07-09.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">Deep Neural Nets: 33 years ago and 33 years from now</span>
+			</a>
+			<a class="related-card" href="2026-07-07.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Data for Agents</span>
+			</a>
+	</div>
+</div>
+
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
 		<button class="btn-close" onclick="closePopup()">×</button>
 		<div class="popup-word" id="popup-word"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
@@ -223,6 +242,13 @@
 	const vocabData = [{"word": "tokenizer", "type": "term", "ipa": "/ˈtoʊ.kən.aɪ.zər/", "definition_zh": "分詞器", "example": "Production tokenizers like tiktoken (used by GPT-4) operate on chunks of characters for efficiency, but the simplest possible tokenizer just assigns one integer to each unique character in the dataset."}, {"word": "backpropagation", "type": "term", "ipa": "/ˌbæk.proʊ.pə.ɡeɪˈʃən/", "definition_zh": "反向傳播", "example": "Backpropagation starts at that single output and works backwards through the graph, computing the gradient of the loss with respect to every input."}, {"word": "gradient", "type": "term", "ipa": "/ˈɡreɪ.di.ənt/", "definition_zh": "梯度", "example": "Training a neural network requires gradients: for each parameter in the model, we need to know if I nudge this number up a little, does the loss go up or down."}, {"word": "scalar", "type": "term", "ipa": "/ˈskeɪ.lər/", "definition_zh": "純量", "example": "Briefly, a Value wraps a single scalar number (.data) and tracks how it was computed."}, {"word": "delimiter", "type": "highfreq", "ipa": "/dɪˈlɪm.ɪ.tər/", "definition_zh": "分隔符號", "example": "We create one more special token called BOS (Beginning of Sequence), which acts as a delimiter."}, {"word": "derivative", "type": "term", "ipa": "/dɪˈrɪv.ə.tɪv/", "definition_zh": "導數", "example": "The result is a new Value that remembers its inputs (_children) and the local derivative of that operation (_local_grads)."}, {"word": "overflow", "type": "highfreq", "ipa": "/ˈoʊ.vər.floʊ/", "definition_zh": "溢位", "example": "We subtract the max first for numerical stability, it doesn't change the result mathematically, but prevents overflow in exp."}, {"word": "nudge", "type": "highfreq", "ipa": "/nʌdʒ/", "definition_zh": "輕推；微調", "example": "For each parameter in the model, we need to know if I nudge this number up a little, does the loss go up or down, and by how much."}, {"word": "stateless", "type": "term", "ipa": "/ˈsteɪt.ləs/", "definition_zh": "無狀態的", "example": "The model architecture is a stateless function: it takes a token, a position, the parameters, and the cached keys/values from previous positions."}, {"word": "obsession", "type": "highfreq", "ipa": "/əbˈseʃ.ən/", "definition_zh": "執念；著迷", "example": "This script is the culmination of multiple projects and a decade-long obsession to simplify LLMs to their bare essentials."}];
 	const vocabMap = {};
 	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
 
 	const knownKey = "known-words";
 	function getKnown() {
@@ -241,11 +267,12 @@
 		document.getElementById("popup-def").textContent = entry.definition_zh;
 		document.getElementById("popup-example").textContent = entry.example || "";
 
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
 		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
 
 		const known = getKnown();
 		const btn = document.getElementById("btn-known");

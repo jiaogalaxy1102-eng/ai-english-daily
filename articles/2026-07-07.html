@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Data for Agents — AI English Daily</title>
-	<link rel="stylesheet" href="../style.css?v=6">
+	<link rel="stylesheet" href="../style.css?v=7">
 	<script>
 		window.MathJax = {
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
@@ -20,7 +20,7 @@
 </header>
 
 <div class="article-header content-block">
-	<div class="article-source">Hugging Face Blog</div>
+	<div class="article-source">Hugging Face Blog<span class="tag-badge">AI</span></div>
 	<h1 class="article-title">Data for Agents</h1>
 	<div class="article-meta">
 		2026-07-07 &nbsp;·&nbsp; <a href="https://huggingface.co/blog/nvidia/open-data-for-agents" target="_blank" rel="noopener">原文連結</a>
@@ -214,12 +214,31 @@
 		</div>
 </div>
 
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-10.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Profiling in PyTorch (Part 3): Attention is all you profile</span>
+			</a>
+			<a class="related-card" href="2026-07-09.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">Deep Neural Nets: 33 years ago and 33 years from now</span>
+			</a>
+			<a class="related-card" href="2026-07-08.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">microgpt</span>
+			</a>
+	</div>
+</div>
+
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
 		<button class="btn-close" onclick="closePopup()">×</button>
 		<div class="popup-word" id="popup-word"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
@@ -233,6 +252,13 @@
 	const vocabData = [{"word": "benchmark", "type": "term", "ipa": "/ˈbentʃ.mɑːrk/", "definition_zh": "基準；標竿", "example": "Building AI agents is hard, because the real world does not behave like a benchmark."}, {"word": "reproducibility", "type": "highfreq", "ipa": "/ˌriː.prə.dʌk.təˈbɪl.ə.ti/", "definition_zh": "可重現性", "example": "Reproducibility also depends on the datasets, curation choices, training recipes, and evaluation methods behind the model."}, {"word": "curation", "type": "highfreq", "ipa": "/kjʊˈreɪ.ʃən/", "definition_zh": "策展；篩選整理", "example": "It can reduce risk, but it does not remove the need for grounding, lineage, curation, evaluation, and human judgment."}, {"word": "synthetic", "type": "term", "ipa": "/sɪnˈθet.ɪk/", "definition_zh": "合成的", "example": "Synthetic data gives teams a way to preserve useful signals without exposing the underlying sources."}, {"word": "grounded", "type": "highfreq", "ipa": "/ˈɡraʊn.dɪd/", "definition_zh": "有依據的；扎根的", "example": "Nemotron-Personas is one attempt at addressing that: locally grounded synthetic personas capturing the diversity and complexity of populations."}, {"word": "toxicity", "type": "term", "ipa": "/tɒkˈsɪs.ə.ti/", "definition_zh": "毒性；有害性", "example": "A toxicity classifier trained on English internet data can miss hostile messages in Korean or Japanese."}, {"word": "demographic", "type": "term", "ipa": "/ˌdem.əˈɡræf.ɪk/", "definition_zh": "人口統計的", "example": "Nemotron-Personas mirrors official regional demographic and geographic statistics."}, {"word": "lineage", "type": "highfreq", "ipa": "/ˈlɪn.i.ɪdʒ/", "definition_zh": "來源脈絡；血統", "example": "It can reduce risk, but it does not remove the need for grounding, lineage, curation, evaluation, and human judgment."}, {"word": "intertwined", "type": "highfreq", "ipa": "/ˌɪn.tərˈtwaɪnd/", "definition_zh": "交織的", "example": "Real workflows, human feedback, model-generated traces, simulated users, and synthetic labels can all become intertwined."}, {"word": "fidelity", "type": "term", "ipa": "/fɪˈdel.ə.ti/", "definition_zh": "保真度；精確度", "example": "Persona data needs distributional fidelity and local review."}, {"word": "recovery", "type": "highfreq", "ipa": "/rɪˈkʌv.ər.i/", "definition_zh": "復原；恢復", "example": "Agentic workflows need task diversity, failure coverage, and recovery paths."}];
 	const vocabMap = {};
 	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
 
 	const knownKey = "known-words";
 	function getKnown() {
@@ -251,11 +277,12 @@
 		document.getElementById("popup-def").textContent = entry.definition_zh;
 		document.getElementById("popup-example").textContent = entry.example || "";
 
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
 		badge.className = "popup-badge";
-		badge.innerHTML = entry.type === "highfreq"
-			? '<span class="badge badge-highfreq">高頻詞</span>'
-			: '<span class="badge badge-term">術語</span>';
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
 
 		const known = getKnown();
 		const btn = document.getElementById("btn-known");
