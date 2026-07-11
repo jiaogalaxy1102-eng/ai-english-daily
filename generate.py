@@ -1,3 +1,4 @@
+import html
 import json
 import random
 import os
@@ -80,6 +81,10 @@ def fetch_article_content(url):
 	for tag in soup(["nav", "header", "footer", "aside", "script", "style", "form"]):
 		tag.decompose()
 
+	# remove native ad / sponsored content blocks (e.g. Vox Media's data-native-ad-id containers)
+	for tag in soup.select('[data-native-ad-id], [class*="native-ad"], [class*="sponsor"], [class*="advertisement"]'):
+		tag.decompose()
+
 	# find main content area
 	content = (
 		soup.find("article")
@@ -91,6 +96,7 @@ def fetch_article_content(url):
 	paragraphs = []
 	images = []
 	char_count = 0
+	seen_texts = set()
 
 	def is_avatar(img_tag, src, alt):
 		src_l = src.lower()
@@ -131,6 +137,9 @@ def fetch_article_content(url):
 			text = elem.get_text(strip=True)
 			if len(text) < 20:
 				continue
+			if text in seen_texts:
+				continue
+			seen_texts.add(text)
 			paragraphs.append({"text": text, "tag": elem.name})
 			char_count += len(text)
 			if len(paragraphs) >= MAX_PARAGRAPHS or char_count >= MAX_CHARS:
@@ -262,7 +271,7 @@ def main():
 		print(f"No unused article found from any source for {today_slot}, skipping.")
 		sys.exit(0)
 
-	title = selected_entry.get("title", "Untitled")
+	title = html.unescape(selected_entry.get("title", "Untitled"))
 	url = selected_entry.get("link", "")
 	source_name = selected_source["name"]
 

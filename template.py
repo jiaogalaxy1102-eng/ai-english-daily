@@ -304,7 +304,7 @@ def render_article(data, all_entries=None):
 	}}
 
 	// wire up highlighted words
-	document.querySelectorAll(".word-highfreq, .word-term").forEach(el => {{
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {{
 		el.addEventListener("click", () => showPopup(el.dataset.word));
 	}});
 

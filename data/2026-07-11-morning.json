@@ -2,15 +2,10 @@
 	"date": "2026-07-11",
 	"slot": "morning",
 	"tag": "科技",
-	"title": "No, Flock isn&#8217;t threatening people for debating surveillance",
+	"title": "No, Flock isn’t threatening people for debating surveillance",
 	"source_name": "The Verge",
 	"url": "https://www.theverge.com/tech/964425/flock-safety-cease-and-desist-letter",
 	"paragraphs": [
-		{
-			"tag": "p",
-			"text": "Photos of purported cease and desist letters from the company have gone viral, but Flock says it didn’t send them.",
-			"translation": "網傳該公司寄發停止侵權通知函的照片，但 Flock 表示並非其所寄。"
-		},
 		{
 			"tag": "p",
 			"text": "Photos of purported cease and desist letters from the company have gone viral, but Flock says it didn’t send them.",
@@ -65,23 +60,13 @@
 			"tag": "p",
 			"text": "This letter also has some unusual characteristics, such as identifying the company as Flock Cameras and Flock incorporated [sic]. The letter in the photo says that failure to comply with the purported cease and desist “may result in Flock Group inc. [sic] to persecute you”, which is both an awkwardly worded phrase and incorrectly uses “persecute” instead of “prosecute.” Orion didn’t immediately reply to a request for comment.",
 			"translation": "這封信也有一些不尋常的特徵，例如將公司識別為 Flock Cameras 和 Flock incorporated [原文如此]。照片中的信函稱，若不遵守所謂的停止侵權通知，「可能導致 Flock Group inc. [原文如此] 對你進行迫害 (persecute)」，這既是一個措辭笨拙的短語，也錯誤地使用了「persecute」而非「起訴 (prosecute)」。Orion 並未立即回覆評論請求。"
-		},
-		{
-			"tag": "p",
-			"text": "This is the title for the native ad",
-			"translation": "這是原生廣告的標題。"
 		}
 	],
 	"images": [
 		{
 			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STK471_Government_Surveillance_CVirginia_C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
 			"alt": "STK471_Government_Surveillance_CVirginia_C",
-			"after_paragraph": 2
-		},
-		{
-			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STK471_Government_Surveillance_CVirginia_C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
-			"alt": "STK471_Government_Surveillance_CVirginia_C",
-			"after_paragraph": 2
+			"after_paragraph": 1
 		}
 	],
 	"vocab": [
