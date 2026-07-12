@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Download: Claude’s inner workings and OpenAI’s “super app” — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=9">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-12</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">MIT Technology Review<span class="tag-badge">AI</span></div>
+	<h1 class="article-title">The Download: Claude’s inner workings and OpenAI’s “super app”</h1>
+	<div class="article-meta">
+		2026-07-12 &nbsp;·&nbsp; <a href="https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="mundane" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mundane</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/mʌnˈdeɪn/</span>
+				<span class="vocab-def">平凡的、單調的</span>
+			</div>
+			<div class="vocab-card" data-word="flagship" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">flagship</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈflæɡʃɪp/</span>
+				<span class="vocab-def">旗艦的、最一流的</span>
+			</div>
+			<div class="vocab-card" data-word="reveal" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reveal</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈviːl/</span>
+				<span class="vocab-def">揭示、顯露</span>
+			</div>
+			<div class="vocab-card" data-word="unveil" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">unveil</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌʌnˈveɪl/</span>
+				<span class="vocab-def">推出、展示</span>
+			</div>
+			<div class="vocab-card" data-word="skyrocket" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">skyrocket</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈskaɪˌrɒkɪt/</span>
+				<span class="vocab-def">暴漲、飛速上升</span>
+			</div>
+			<div class="vocab-card" data-word="restore" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">restore</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈstɔːr/</span>
+				<span class="vocab-def">恢復、修復</span>
+			</div>
+			<div class="vocab-card" data-word="comfort" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">comfort</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈkʌmfərt/</span>
+				<span class="vocab-def">安慰、舒適</span>
+			</div>
+			<div class="vocab-card" data-word="skeptical" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">skeptical</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈskeptɪkl/</span>
+				<span class="vocab-def">懷疑的</span>
+			</div>
+			<div class="vocab-card" data-word="precise" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">precise</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/prɪˈsaɪs/</span>
+				<span class="vocab-def">精確的</span>
+			</div>
+			<div class="vocab-card" data-word="shape" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">shape</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ʃeɪp/</span>
+				<span class="vocab-def">形塑、決定</span>
+			</div>
+			<div class="vocab-card" data-word="reliable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reliable</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/rɪˈlaɪəbl/</span>
+				<span class="vocab-def">可靠的</span>
+			</div>
+			<div class="vocab-card" data-word="dose" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dose</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/dəʊs/</span>
+				<span class="vocab-def">劑量、一份（資訊）</span>
+			</div>
+			<div class="vocab-card" data-word="glimpse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">glimpse</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɡlɪmps/</span>
+				<span class="vocab-def">一瞥、初步體驗</span>
+			</div>
+			<div class="vocab-card" data-word="unnerving" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">unnerving</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ʌnˈnɜːrvɪŋ/</span>
+				<span class="vocab-def">令人不安的</span>
+			</div>
+			<div class="vocab-card" data-word="long-awaited" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">long-awaited</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌlɔːŋ əˈweɪtɪd/</span>
+				<span class="vocab-def">期待已久的</span>
+			</div>
+			<div class="vocab-card" data-word="stunning" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">stunning</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈstʌnɪŋ/</span>
+				<span class="vocab-def">令人驚嘆的</span>
+			</div>
+			<div class="vocab-card" data-word="prescient" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prescient</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈpreʃnt/</span>
+				<span class="vocab-def">有預見性的</span>
+			</div>
+			<div class="vocab-card" data-word="psychedelic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">psychedelic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌsaɪkəˈdelɪk/</span>
+				<span class="vocab-def">迷幻的</span>
+			</div>
+			<div class="vocab-card" data-word="speculation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">speculation</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌspekjuˈleɪʃn/</span>
+				<span class="vocab-def">推測、猜測</span>
+			</div>
+			<div class="vocab-card" data-word="large language models" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">large language models</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɒdəlz/</span>
+				<span class="vocab-def">大型語言模型</span>
+			</div>
+			<div class="vocab-card" data-word="reinforcement learning" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reinforcement learning</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌriːɪnˈfɔːrsmənt ˈlɜːrnɪŋ/</span>
+				<span class="vocab-def">強化學習</span>
+			</div>
+			<div class="vocab-card" data-word="comb the internet" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">comb the internet</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/koʊm ðə ˈɪntərnet/</span>
+				<span class="vocab-def">在網路上仔細搜尋</span>
+			</div>
+			<div class="vocab-card" data-word="trial and error" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">trial and error</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈtraɪəl ənd ˈerər/</span>
+				<span class="vocab-def">試錯法</span>
+			</div>
+			<div class="vocab-card" data-word="drop me a line" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">drop me a line</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/drɒp miː ə laɪn/</span>
+				<span class="vocab-def">寫封信給我</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">This is today's edition ofThe Download,our weekday newsletter that provides a daily <span class="word-general" data-word="dose">dose</span> of what's going on in the world of technology.</p>
+			<p class="para-translation">這是今日版的《The Download》，我們的平日電子報，每天為您提供科技界的最新動態。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Anthropic found a hidden space where Claude puzzles over concepts</h3>
+			<h3 class="para-translation">Anthropic 發現了一個 Claude 用來思考概念的隱藏空間。</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The AI firm Anthropic has got the clearest <span class="word-general" data-word="glimpse">glimpse</span> yet at what’s really going on inside <span class="word-term" data-word="large language models">large language models</span> as they answer questions or carry out tasks. What they found ranges from the <span class="word-highfreq" data-word="mundane">mundane</span> to the <span class="word-general" data-word="unnerving">unnerving</span>.</p>
+			<p class="para-translation">AI 公司 Anthropic 以前所未有的清晰視角，觀察了大型語言模型在回答問題或執行任務時內部的運作情況。他們的發現範圍從平凡的小事到令人不安的現象都有。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Researchers at the company built a tool called the Jacobian lens (or J-lens) and used it to uncover a hidden area, which they named the J-space, inside its <span class="word-highfreq" data-word="flagship">flagship</span> LLM, Claude.</p>
+			<p class="para-translation">該公司的研究人員開發了一種名為「雅可比透鏡」（Jacobian lens，簡稱 J-lens）的工具，並用它在旗艦 LLM Claude 內部揭開了一個名為「J 空間」（J-space）的隱藏區域。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The J-space contains words related to the response a model is working on but may not ultimately produce. If Claude were a person (which it is not), you might say these hidden words <span class="word-highfreq" data-word="reveal">reveal</span> what’s on its mind before it actually speaks.</p>
+			<p class="para-translation">J 空間包含了與模型正在處理的回答相關、但最終可能不會生成的詞彙。如果 Claude 是個人（它並非人類），你可能會說這些隱藏的詞彙揭示了它在開口說話之前的想法。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Read the full story on what they found.</p>
+			<p class="para-translation">閱讀關於他們發現的全文報導。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">—Will Douglas Heaven</p>
+			<p class="para-translation">——Will Douglas Heaven</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.</p>
+			<p class="para-translation">我搜尋了網路，為您找出了今天最有趣、最重要、最可怕或最引人入勝的科技報導。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">1 OpenAI has <span class="word-highfreq" data-word="unveil">unveil</span>ed its <span class="word-general" data-word="long-awaited">long-awaited</span> "super app"ChatGPT Work blends its chatbot, coding tool, and new models. (Reuters$)+ It’s designed to do your work for you and with you.(Ars Technica)+ And arrived the same day as OpenAI’s GPT 5.6 models.(NYT$)+ It’s also developing a fully automated researcher.(MIT Technology Review)2  Humanoids have performed teleoperated surgery on living animalsIn the world-first, they removed gallbladders from pigs. (Ars Technica)+ The human work behind humanoids is hidden.(MIT Technology Review)3 SK Hynix has landed the largest US listing by a foreign companyThe South Korean chip giant raised $26.5 billion. (CNN)+ Demand for AI data centres has led its profits to <span class="word-highfreq" data-word="skyrocket">skyrocket</span>.(Guardian)+ But its jumbo share sale may be a sign of overheated times.(FT$)+ South Korea’s hottest bachelors are chip workers.(MIT Technology Review)4 Tencent is leading a deal to unwind Meta's $2 billion Manus acquisitionIt’s in talks to become the Chinese AI startup’s largest shareholder. (FT$)+ Tencent will reportedly buy Manus for no less ​than $2 billion.(Reuters$)+ Beijing had ordered Meta to unwind the acquisition.(Bloomberg$)5 Resuscitated human retinas responded to light 10 hours after deathIt’s a big step towards eye transplants that <span class="word-highfreq" data-word="restore">restore</span> vision. (New Scientist$)+ As is a new device that revives dead eyeballs.(MIT Technology Review)6 Meta has started charging for AI accessA new version of Muse Spark has a paid tier for developers. (Quartz)+ Meta also plans to start producing an AI chip in September.(Reuters$)7 OpenAI and Google have sold AI models to blacklisted China groupsVia Singapore-based subsidiaries of Alibaba, Baidu and Tencent. (FT$)8 A daughter tested an AI “death bot” of her fatherThe technology provided both <span class="word-highfreq" data-word="comfort">comfort</span> and unease. (New Yorker$)9 An astronomer says the hunt for alien life needs more statisticsHe wants to replace <span class="word-general" data-word="speculation">speculation</span> with mathematical frameworks. (Quanta)10 Pokémon Go players turned Times Square into a giant battlefieldMore than 1,500 fans finally fulfilled the game’s 2016 launch promise. (Wired$)+ Pokémon Go is also training world models.(MIT Technology Review)</p>
+			<p class="para-translation">1. OpenAI 展示了期待已久的「超級應用程式」ChatGPT Work，結合了聊天機器人、程式開發工具和新模型。（路透社）+ 它旨在為您工作並與您協作。（Ars Technica）+ 它與 OpenAI 的 GPT 5.6 模型在同一天推出。（紐約時報）+ 它還在開發一個全自動的研究員。（MIT 科技評論）2. 人形機器人已在活體動物上執行遠端遙控手術。這是在世界首例中，它們移除了豬的膽囊。（Ars Technica）+ 人形機器人背後的人類工作被隱藏了。（MIT 科技評論）3. SK 海力士創下外國公司在美國上市規模最大的紀錄。這家韓國晶片巨頭募集了 265 億美元。（CNN）+ 對 AI 資料中心的需求使其利潤飆升。（衛報）+ 但其巨大的股票發售可能是市場過熱的徵兆。（金融時報）+ 韓國最炙手可熱的單身漢是晶片工人。（MIT 科技評論）4. 騰訊正主導一筆交易以拆解 Meta 對 Manus 的 20 億美元收購案。據報其正洽談成為這家中國 AI 新創公司的最大股東。（金融時報）+ 據報騰訊將以不低於 20 億美元的價格收購 Manus。（路透社）+ 北京曾命令 Meta 拆解該收購案。（彭博社）5. 復甦的人類視網膜在死亡 10 小時後對光產生反應。這是邁向恢復視力的眼球移植的一大步。（新科學家）+ 另一個能使死眼球復甦的新裝置也是如此。（MIT 科技評論）6. Meta 已開始對 AI 存取收費。新版本的 Muse Spark 為開發者提供了付費層級。（Quartz）+ Meta 還計劃在 9 月開始生產一款 AI 晶片。（路透社）7. OpenAI 和 Google 透過阿里巴巴、百度和騰訊在新加坡的子公司，向列入黑名單的中國團體出售 AI 模型。（金融時報）8. 一位女兒測試了她父親的 AI「死亡機器人」。這項技術既帶來了安慰也帶來了不安。（紐約客）9. 一位天文學家表示，尋找外星生命需要更多的統計數據。他希望用數學框架取代推測。（Quanta）10. 《Pokémon Go》玩家將時報廣場變成了一個巨大的戰場。超過 1,500 名粉絲終於實現了該遊戲 2016 年發布時的承諾。（Wired）+ 《Pokémon Go》也在訓練世界模型。（MIT 科技評論）</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">“When we’re talking about AI, we love the hype, we get excited about it. The damn thing never actually lands in practice.”</h2>
+			<h2 class="para-translation">「當我們談論 AI 時，我們熱衷於炒作，對其感到興奮。但這該死的東西在實踐中從未真正落地。」</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">—Vijay Janapa Reddi, an engineering professor at Harvard University, tellsWiredwhy he’s <span class="word-highfreq" data-word="skeptical">skeptical</span> about grand plans for AI.</p>
+			<p class="para-translation">——哈佛大學工程學教授 Vijay Janapa Reddi 告訴《Wired》雜誌，為何他對 AI 的宏偉計畫持懷疑態度。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://wp.technologyreview.com/wp-content/uploads/2025/08/PigeonIntoMissile.edit_.jpg?w=3000" alt="a hand putting a pigeon into hatch in a missile" loading="lazy">
+			<figcaption>a hand putting a pigeon into hatch in a missile</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">In 1943, psychologist B.F. Skinner led a secret government project to make bombs more <span class="word-highfreq" data-word="precise">precise</span>. His idea: teach pigeons to guide missiles by pecking at targets on a screen inside a warhead. To train them, Skinner rewarded the birds with food when they made the right decisions, using <span class="word-phrase" data-word="trial and error">trial and error</span> to <span class="word-highfreq" data-word="shape">shape</span> their behavior.</p>
+			<p class="para-translation">1943 年，心理學家 B.F. Skinner 領導了一項秘密政府計畫，旨在讓炸彈更精準。他的想法是：教導鴿子透過啄食彈頭內螢幕上的目標來引導飛彈。為了訓練牠們，Skinner 在鴿子做出正確決定時給予食物獎勵，利用試錯法來形塑牠們的行為。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Unsurprisingly, the military never deployed Skinner’s kamikaze pigeons. Yet his experiments convinced him that pigeons were “an extremely <span class="word-highfreq" data-word="reliable">reliable</span> instrument” for studying learning.</p>
+			<p class="para-translation">不出所料，軍方從未部署過 Skinner 的神風特攻隊鴿子。然而，他的實驗讓他確信，鴿子是研究學習過程「極其可靠的工具」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Decades later, those same principles would help power <span class="word-term" data-word="reinforcement learning">reinforcement learning</span>, the technology behind some of today’s most advanced AI systems.</p>
+			<p class="para-translation">幾十年後，同樣的原理將幫助推動強化學習，這是當今一些最先進 AI 系統背後的技術。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Discover how pigeons inspired one of AI’s most powerful techniques.</p>
+			<p class="para-translation">探索鴿子如何激發了 AI 最強大的技術之一。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">We can still have nice things</p>
+			<p class="para-translation">我們依然能擁有美好的事物。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">A place for <span class="word-highfreq" data-word="comfort">comfort</span>, fun, and distraction to brighten up your day. (Got any ideas?<span class="word-phrase" data-word="drop me a line">Drop me a line</span>.)</p>
+			<p class="para-translation">一個提供安慰、樂趣和消遣的地方，點亮您的一天。（有任何主意嗎？請與我聯繫。）</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">+ Here’s a splendid selection of this year’sNSW architectureaward winners.+ Photographers have captured theStrawberry Moon’s golden glowin <span class="word-general" data-word="stunning">stunning</span> detail.+Idiocracyis the film that best exemplifies the “American experience,” according to a new poll. Look back at the <span class="word-general" data-word="prescient">prescient</span> comedy with thisScreen Junkies trailer.+ Get ready for the weekend with this<span class="word-general" data-word="psychedelic">psychedelic</span> house journeyfrom Jamie xx b2b Caribou.</p>
+			<p class="para-translation">+ 這裡是今年 NSW 建築獎得主的精彩精選。+ 攝影師們以驚人的細節捕捉到了草莓月亮的金色光芒。+ 根據一項新民調，《蠢蛋搞怪秀》(Idiocracy) 是最能體現「美國經驗」的電影。透過這段 Screen Junkies 預告片回顧這部具預見性的喜劇。+ 聽聽這段來自 Jamie xx 與 Caribou 的迷幻 House 音樂之旅，為週末做好準備。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: the future of chipmaking and Anthropic’s government clash</h3>
+			<h3 class="para-translation">《The Download》：晶片製造的未來與 Anthropic 的政府衝突。</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.</p>
+			<p class="para-translation">此外：Meta 正在暫停一項追蹤工人按鍵次數的 AI 訓練計畫。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains</h3>
+			<h3 class="para-translation">《The Download》：超越 Mythos 的 AI 駭客攻擊，以及聊天機器人對我們大腦的影響。</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: Anthropic has called for a global slowdown in AI development.</p>
+			<p class="para-translation">此外：Anthropic 已呼籲全球放慢 AI 的發展速度。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: a reality check for geoengineering and the science of interoception</h3>
+			<h3 class="para-translation">《The Download》：地球工程的現實查核與內感科學。</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: SpaceX is now valued higher than Amazon.</p>
+			<p class="para-translation">此外：SpaceX 目前的估值高於亞馬遜。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: keeping up with AI, and the future of IVF</h3>
+			<h3 class="para-translation">《The Download》：跟上 AI 的步伐，以及體外受精的未來。</h3>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-10.html">
+				<span class="related-source">Hugging Face Blog</span>
+				<span class="related-title">Profiling in PyTorch (Part 3): Attention is all you profile</span>
+			</a>
+			<a class="related-card" href="2026-07-09.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">Deep Neural Nets: 33 years ago and 33 years from now</span>
+			</a>
+			<a class="related-card" href="2026-07-08.html">
+				<span class="related-source">Andrej Karpathy</span>
+				<span class="related-title">microgpt</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "mundane", "type": "highfreq", "pos": "adj.", "ipa": "/mʌnˈdeɪn/", "definition_zh": "平凡的、單調的", "example": "What they found ranges from the mundane to the unnerving."}, {"word": "flagship", "type": "highfreq", "pos": "adj.", "ipa": "/ˈflæɡʃɪp/", "definition_zh": "旗艦的、最一流的", "example": "Researchers used it to uncover a hidden area inside its flagship LLM, Claude."}, {"word": "reveal", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈviːl/", "definition_zh": "揭示、顯露", "example": "You might say these hidden words reveal what’s on its mind."}, {"word": "unveil", "type": "highfreq", "pos": "v.", "ipa": "/ˌʌnˈveɪl/", "definition_zh": "推出、展示", "example": "OpenAI has unveiled its long-awaited \"super app\"."}, {"word": "skyrocket", "type": "highfreq", "pos": "v.", "ipa": "/ˈskaɪˌrɒkɪt/", "definition_zh": "暴漲、飛速上升", "example": "Demand for AI data centres has led its profits to skyrocket."}, {"word": "restore", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈstɔːr/", "definition_zh": "恢復、修復", "example": "It’s a big step towards eye transplants that restore vision."}, {"word": "comfort", "type": "highfreq", "pos": "n.", "ipa": "/ˈkʌmfərt/", "definition_zh": "安慰、舒適", "example": "The technology provided both comfort and unease."}, {"word": "skeptical", "type": "highfreq", "pos": "adj.", "ipa": "/ˈskeptɪkl/", "definition_zh": "懷疑的", "example": "He tells Wired why he’s skeptical about grand plans for AI."}, {"word": "precise", "type": "highfreq", "pos": "adj.", "ipa": "/prɪˈsaɪs/", "definition_zh": "精確的", "example": "B.F. Skinner led a secret government project to make bombs more precise."}, {"word": "shape", "type": "highfreq", "pos": "v.", "ipa": "/ʃeɪp/", "definition_zh": "形塑、決定", "example": "Using trial and error to shape their behavior."}, {"word": "reliable", "type": "highfreq", "pos": "adj.", "ipa": "/rɪˈlaɪəbl/", "definition_zh": "可靠的", "example": "Pigeons were “an extremely reliable instrument” for studying learning."}, {"word": "dose", "type": "general", "pos": "n.", "ipa": "/dəʊs/", "definition_zh": "劑量、一份（資訊）", "example": "Provides a daily dose of what's going on in the world of technology."}, {"word": "glimpse", "type": "general", "pos": "n.", "ipa": "/ɡlɪmps/", "definition_zh": "一瞥、初步體驗", "example": "Anthropic has got the clearest glimpse yet at what’s really going on."}, {"word": "unnerving", "type": "general", "pos": "adj.", "ipa": "/ʌnˈnɜːrvɪŋ/", "definition_zh": "令人不安的", "example": "What they found ranges from the mundane to the unnerving."}, {"word": "long-awaited", "type": "general", "pos": "adj.", "ipa": "/ˌlɔːŋ əˈweɪtɪd/", "definition_zh": "期待已久的", "example": "OpenAI has unveiled its long-awaited \"super app\"."}, {"word": "stunning", "type": "general", "pos": "adj.", "ipa": "/ˈstʌnɪŋ/", "definition_zh": "令人驚嘆的", "example": "Photographers have captured the Strawberry Moon’s golden glow in stunning detail."}, {"word": "prescient", "type": "general", "pos": "adj.", "ipa": "/ˈpreʃnt/", "definition_zh": "有預見性的", "example": "Look back at the prescient comedy with this Screen Junkies trailer."}, {"word": "psychedelic", "type": "general", "pos": "adj.", "ipa": "/ˌsaɪkəˈdelɪk/", "definition_zh": "迷幻的", "example": "Get ready for the weekend with this psychedelic house journey."}, {"word": "speculation", "type": "general", "pos": "n.", "ipa": "/ˌspekjuˈleɪʃn/", "definition_zh": "推測、猜測", "example": "He wants to replace speculation with mathematical frameworks."}, {"word": "large language models", "type": "term", "pos": "n.", "ipa": "/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɒdəlz/", "definition_zh": "大型語言模型", "example": "What’s really going on inside large language models as they answer questions."}, {"word": "reinforcement learning", "type": "term", "pos": "n.", "ipa": "/ˌriːɪnˈfɔːrsmənt ˈlɜːrnɪŋ/", "definition_zh": "強化學習", "example": "Those same principles would help power reinforcement learning."}, {"word": "comb the internet", "type": "phrase", "pos": "", "ipa": "/koʊm ðə ˈɪntərnet/", "definition_zh": "在網路上仔細搜尋", "example": "I’ve combed the internet to find you today’s most fun stories."}, {"word": "trial and error", "type": "phrase", "pos": "", "ipa": "/ˈtraɪəl ənd ˈerər/", "definition_zh": "試錯法", "example": "Using trial and error to shape their behavior."}, {"word": "drop me a line", "type": "phrase", "pos": "", "ipa": "/drɒp miː ə laɪn/", "definition_zh": "寫封信給我", "example": "Got any ideas? Drop me a line."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The company's stock price began to ____ after the new product launch was announced.", "answer": "skyrocket", "options": ["skyrocket", "restore", "reveal", "shape"]}, {"sentence": "He remains ____ about the possibility of traveling to Mars in this decade.", "answer": "skeptical", "options": ["skeptical", "reliable", "precise", "stunning"]}, {"sentence": "The detective managed to ____ the true identity of the suspect during the interrogation.", "answer": "reveal", "options": ["reveal", "unveil", "restore", "shape"]}, {"sentence": "Scientific experiments require extremely ____ measurements to be considered valid.", "answer": "precise", "options": ["precise", "mundane", "unnerving", "flagship"]}, {"sentence": "The sunrise over the mountains was absolutely ____, leaving us all speechless.", "answer": "stunning", "options": ["stunning", "mundane", "prescient", "psychedelic"]}, {"sentence": "I only managed to catch a quick ____ of the car before it turned the corner.", "answer": "glimpse", "options": ["glimpse", "dose", "comfort", "speculation"]}, {"sentence": "After several attempts and a lot of ____, we finally fixed the software bug.", "answer": "trial and error", "options": ["trial and error", "reinforcement learning", "large language models", "comb the internet"]}, {"sentence": "The government is working on a plan to ____ the historical district to its former glory.", "answer": "restore", "options": ["restore", "unveil", "reveal", "shape"]}, {"sentence": "Doing laundry is just one of the many ____ chores that need to be done every week.", "answer": "mundane", "options": ["mundane", "flagship", "unnerving", "reliable"]}, {"sentence": "Fans are camping outside for the ____ release of the new video game console.", "answer": "long-awaited", "options": ["long-awaited", "prescient", "psychedelic", "skeptical"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+		document.getElementById("quiz-feedback").textContent = correct ? "答對了！" : `答錯了，正確答案：${q.answer}`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>

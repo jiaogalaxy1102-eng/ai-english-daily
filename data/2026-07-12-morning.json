@@ -1,0 +1,438 @@
+{
+	"date": "2026-07-12",
+	"slot": "morning",
+	"tag": "AI",
+	"title": "The Download: Claude’s inner workings and OpenAI’s “super app”",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/10/1140316/the-download-anthropic-claude-hidden-space-openai-super-app/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "This is today's edition ofThe Download,our weekday newsletter that provides a daily dose of what's going on in the world of technology.",
+			"translation": "這是今日版的《The Download》，我們的平日電子報，每天為您提供科技界的最新動態。"
+		},
+		{
+			"tag": "h3",
+			"text": "Anthropic found a hidden space where Claude puzzles over concepts",
+			"translation": "Anthropic 發現了一個 Claude 用來思考概念的隱藏空間。"
+		},
+		{
+			"tag": "p",
+			"text": "The AI firm Anthropic has got the clearest glimpse yet at what’s really going on inside large language models as they answer questions or carry out tasks. What they found ranges from the mundane to the unnerving.",
+			"translation": "AI 公司 Anthropic 以前所未有的清晰視角，觀察了大型語言模型在回答問題或執行任務時內部的運作情況。他們的發現範圍從平凡的小事到令人不安的現象都有。"
+		},
+		{
+			"tag": "p",
+			"text": "Researchers at the company built a tool called the Jacobian lens (or J-lens) and used it to uncover a hidden area, which they named the J-space, inside its flagship LLM, Claude.",
+			"translation": "該公司的研究人員開發了一種名為「雅可比透鏡」（Jacobian lens，簡稱 J-lens）的工具，並用它在旗艦 LLM Claude 內部揭開了一個名為「J 空間」（J-space）的隱藏區域。"
+		},
+		{
+			"tag": "p",
+			"text": "The J-space contains words related to the response a model is working on but may not ultimately produce. If Claude were a person (which it is not), you might say these hidden words reveal what’s on its mind before it actually speaks.",
+			"translation": "J 空間包含了與模型正在處理的回答相關、但最終可能不會生成的詞彙。如果 Claude 是個人（它並非人類），你可能會說這些隱藏的詞彙揭示了它在開口說話之前的想法。"
+		},
+		{
+			"tag": "p",
+			"text": "Read the full story on what they found.",
+			"translation": "閱讀關於他們發現的全文報導。"
+		},
+		{
+			"tag": "p",
+			"text": "—Will Douglas Heaven",
+			"translation": "——Will Douglas Heaven"
+		},
+		{
+			"tag": "p",
+			"text": "I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.",
+			"translation": "我搜尋了網路，為您找出了今天最有趣、最重要、最可怕或最引人入勝的科技報導。"
+		},
+		{
+			"tag": "p",
+			"text": "1 OpenAI has unveiled its long-awaited \"super app\"ChatGPT Work blends its chatbot, coding tool, and new models. (Reuters$)+ It’s designed to do your work for you and with you.(Ars Technica)+ And arrived the same day as OpenAI’s GPT 5.6 models.(NYT$)+ It’s also developing a fully automated researcher.(MIT Technology Review)2  Humanoids have performed teleoperated surgery on living animalsIn the world-first, they removed gallbladders from pigs. (Ars Technica)+ The human work behind humanoids is hidden.(MIT Technology Review)3 SK Hynix has landed the largest US listing by a foreign companyThe South Korean chip giant raised $26.5 billion. (CNN)+ Demand for AI data centres has led its profits to skyrocket.(Guardian)+ But its jumbo share sale may be a sign of overheated times.(FT$)+ South Korea’s hottest bachelors are chip workers.(MIT Technology Review)4 Tencent is leading a deal to unwind Meta's $2 billion Manus acquisitionIt’s in talks to become the Chinese AI startup’s largest shareholder. (FT$)+ Tencent will reportedly buy Manus for no less ​than $2 billion.(Reuters$)+ Beijing had ordered Meta to unwind the acquisition.(Bloomberg$)5 Resuscitated human retinas responded to light 10 hours after deathIt’s a big step towards eye transplants that restore vision. (New Scientist$)+ As is a new device that revives dead eyeballs.(MIT Technology Review)6 Meta has started charging for AI accessA new version of Muse Spark has a paid tier for developers. (Quartz)+ Meta also plans to start producing an AI chip in September.(Reuters$)7 OpenAI and Google have sold AI models to blacklisted China groupsVia Singapore-based subsidiaries of Alibaba, Baidu and Tencent. (FT$)8 A daughter tested an AI “death bot” of her fatherThe technology provided both comfort and unease. (New Yorker$)9 An astronomer says the hunt for alien life needs more statisticsHe wants to replace speculation with mathematical frameworks. (Quanta)10 Pokémon Go players turned Times Square into a giant battlefieldMore than 1,500 fans finally fulfilled the game’s 2016 launch promise. (Wired$)+ Pokémon Go is also training world models.(MIT Technology Review)",
+			"translation": "1. OpenAI 展示了期待已久的「超級應用程式」ChatGPT Work，結合了聊天機器人、程式開發工具和新模型。（路透社）+ 它旨在為您工作並與您協作。（Ars Technica）+ 它與 OpenAI 的 GPT 5.6 模型在同一天推出。（紐約時報）+ 它還在開發一個全自動的研究員。（MIT 科技評論）2. 人形機器人已在活體動物上執行遠端遙控手術。這是在世界首例中，它們移除了豬的膽囊。（Ars Technica）+ 人形機器人背後的人類工作被隱藏了。（MIT 科技評論）3. SK 海力士創下外國公司在美國上市規模最大的紀錄。這家韓國晶片巨頭募集了 265 億美元。（CNN）+ 對 AI 資料中心的需求使其利潤飆升。（衛報）+ 但其巨大的股票發售可能是市場過熱的徵兆。（金融時報）+ 韓國最炙手可熱的單身漢是晶片工人。（MIT 科技評論）4. 騰訊正主導一筆交易以拆解 Meta 對 Manus 的 20 億美元收購案。據報其正洽談成為這家中國 AI 新創公司的最大股東。（金融時報）+ 據報騰訊將以不低於 20 億美元的價格收購 Manus。（路透社）+ 北京曾命令 Meta 拆解該收購案。（彭博社）5. 復甦的人類視網膜在死亡 10 小時後對光產生反應。這是邁向恢復視力的眼球移植的一大步。（新科學家）+ 另一個能使死眼球復甦的新裝置也是如此。（MIT 科技評論）6. Meta 已開始對 AI 存取收費。新版本的 Muse Spark 為開發者提供了付費層級。（Quartz）+ Meta 還計劃在 9 月開始生產一款 AI 晶片。（路透社）7. OpenAI 和 Google 透過阿里巴巴、百度和騰訊在新加坡的子公司，向列入黑名單的中國團體出售 AI 模型。（金融時報）8. 一位女兒測試了她父親的 AI「死亡機器人」。這項技術既帶來了安慰也帶來了不安。（紐約客）9. 一位天文學家表示，尋找外星生命需要更多的統計數據。他希望用數學框架取代推測。（Quanta）10. 《Pokémon Go》玩家將時報廣場變成了一個巨大的戰場。超過 1,500 名粉絲終於實現了該遊戲 2016 年發布時的承諾。（Wired）+ 《Pokémon Go》也在訓練世界模型。（MIT 科技評論）"
+		},
+		{
+			"tag": "h2",
+			"text": "“When we’re talking about AI, we love the hype, we get excited about it. The damn thing never actually lands in practice.”",
+			"translation": "「當我們談論 AI 時，我們熱衷於炒作，對其感到興奮。但這該死的東西在實踐中從未真正落地。」"
+		},
+		{
+			"tag": "p",
+			"text": "—Vijay Janapa Reddi, an engineering professor at Harvard University, tellsWiredwhy he’s skeptical about grand plans for AI.",
+			"translation": "——哈佛大學工程學教授 Vijay Janapa Reddi 告訴《Wired》雜誌，為何他對 AI 的宏偉計畫持懷疑態度。"
+		},
+		{
+			"tag": "p",
+			"text": "In 1943, psychologist B.F. Skinner led a secret government project to make bombs more precise. His idea: teach pigeons to guide missiles by pecking at targets on a screen inside a warhead. To train them, Skinner rewarded the birds with food when they made the right decisions, using trial and error to shape their behavior.",
+			"translation": "1943 年，心理學家 B.F. Skinner 領導了一項秘密政府計畫，旨在讓炸彈更精準。他的想法是：教導鴿子透過啄食彈頭內螢幕上的目標來引導飛彈。為了訓練牠們，Skinner 在鴿子做出正確決定時給予食物獎勵，利用試錯法來形塑牠們的行為。"
+		},
+		{
+			"tag": "p",
+			"text": "Unsurprisingly, the military never deployed Skinner’s kamikaze pigeons. Yet his experiments convinced him that pigeons were “an extremely reliable instrument” for studying learning.",
+			"translation": "不出所料，軍方從未部署過 Skinner 的神風特攻隊鴿子。然而，他的實驗讓他確信，鴿子是研究學習過程「極其可靠的工具」。"
+		},
+		{
+			"tag": "p",
+			"text": "Decades later, those same principles would help power reinforcement learning, the technology behind some of today’s most advanced AI systems.",
+			"translation": "幾十年後，同樣的原理將幫助推動強化學習，這是當今一些最先進 AI 系統背後的技術。"
+		},
+		{
+			"tag": "p",
+			"text": "Discover how pigeons inspired one of AI’s most powerful techniques.",
+			"translation": "探索鴿子如何激發了 AI 最強大的技術之一。"
+		},
+		{
+			"tag": "p",
+			"text": "We can still have nice things",
+			"translation": "我們依然能擁有美好的事物。"
+		},
+		{
+			"tag": "p",
+			"text": "A place for comfort, fun, and distraction to brighten up your day. (Got any ideas?Drop me a line.)",
+			"translation": "一個提供安慰、樂趣和消遣的地方，點亮您的一天。（有任何主意嗎？請與我聯繫。）"
+		},
+		{
+			"tag": "p",
+			"text": "+ Here’s a splendid selection of this year’sNSW architectureaward winners.+ Photographers have captured theStrawberry Moon’s golden glowin stunning detail.+Idiocracyis the film that best exemplifies the “American experience,” according to a new poll. Look back at the prescient comedy with thisScreen Junkies trailer.+ Get ready for the weekend with thispsychedelic house journeyfrom Jamie xx b2b Caribou.",
+			"translation": "+ 這裡是今年 NSW 建築獎得主的精彩精選。+ 攝影師們以驚人的細節捕捉到了草莓月亮的金色光芒。+ 根據一項新民調，《蠢蛋搞怪秀》(Idiocracy) 是最能體現「美國經驗」的電影。透過這段 Screen Junkies 預告片回顧這部具預見性的喜劇。+ 聽聽這段來自 Jamie xx 與 Caribou 的迷幻 House 音樂之旅，為週末做好準備。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: the future of chipmaking and Anthropic’s government clash",
+			"translation": "《The Download》：晶片製造的未來與 Anthropic 的政府衝突。"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.",
+			"translation": "此外：Meta 正在暫停一項追蹤工人按鍵次數的 AI 訓練計畫。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
+			"translation": "《The Download》：超越 Mythos 的 AI 駭客攻擊，以及聊天機器人對我們大腦的影響。"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Anthropic has called for a global slowdown in AI development.",
+			"translation": "此外：Anthropic 已呼籲全球放慢 AI 的發展速度。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: a reality check for geoengineering and the science of interoception",
+			"translation": "《The Download》：地球工程的現實查核與內感科學。"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: SpaceX is now valued higher than Amazon.",
+			"translation": "此外：SpaceX 目前的估值高於亞馬遜。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: keeping up with AI, and the future of IVF",
+			"translation": "《The Download》：跟上 AI 的步伐，以及體外受精的未來。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2025/08/PigeonIntoMissile.edit_.jpg?w=3000",
+			"alt": "a hand putting a pigeon into hatch in a missile",
+			"after_paragraph": 11
+		}
+	],
+	"vocab": [
+		{
+			"word": "mundane",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/mʌnˈdeɪn/",
+			"definition_zh": "平凡的、單調的",
+			"example": "What they found ranges from the mundane to the unnerving."
+		},
+		{
+			"word": "flagship",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈflæɡʃɪp/",
+			"definition_zh": "旗艦的、最一流的",
+			"example": "Researchers used it to uncover a hidden area inside its flagship LLM, Claude."
+		},
+		{
+			"word": "reveal",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈviːl/",
+			"definition_zh": "揭示、顯露",
+			"example": "You might say these hidden words reveal what’s on its mind."
+		},
+		{
+			"word": "unveil",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌʌnˈveɪl/",
+			"definition_zh": "推出、展示",
+			"example": "OpenAI has unveiled its long-awaited \"super app\"."
+		},
+		{
+			"word": "skyrocket",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈskaɪˌrɒkɪt/",
+			"definition_zh": "暴漲、飛速上升",
+			"example": "Demand for AI data centres has led its profits to skyrocket."
+		},
+		{
+			"word": "restore",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈstɔːr/",
+			"definition_zh": "恢復、修復",
+			"example": "It’s a big step towards eye transplants that restore vision."
+		},
+		{
+			"word": "comfort",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈkʌmfərt/",
+			"definition_zh": "安慰、舒適",
+			"example": "The technology provided both comfort and unease."
+		},
+		{
+			"word": "skeptical",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈskeptɪkl/",
+			"definition_zh": "懷疑的",
+			"example": "He tells Wired why he’s skeptical about grand plans for AI."
+		},
+		{
+			"word": "precise",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/prɪˈsaɪs/",
+			"definition_zh": "精確的",
+			"example": "B.F. Skinner led a secret government project to make bombs more precise."
+		},
+		{
+			"word": "shape",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ʃeɪp/",
+			"definition_zh": "形塑、決定",
+			"example": "Using trial and error to shape their behavior."
+		},
+		{
+			"word": "reliable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/rɪˈlaɪəbl/",
+			"definition_zh": "可靠的",
+			"example": "Pigeons were “an extremely reliable instrument” for studying learning."
+		},
+		{
+			"word": "dose",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dəʊs/",
+			"definition_zh": "劑量、一份（資訊）",
+			"example": "Provides a daily dose of what's going on in the world of technology."
+		},
+		{
+			"word": "glimpse",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɡlɪmps/",
+			"definition_zh": "一瞥、初步體驗",
+			"example": "Anthropic has got the clearest glimpse yet at what’s really going on."
+		},
+		{
+			"word": "unnerving",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ʌnˈnɜːrvɪŋ/",
+			"definition_zh": "令人不安的",
+			"example": "What they found ranges from the mundane to the unnerving."
+		},
+		{
+			"word": "long-awaited",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌlɔːŋ əˈweɪtɪd/",
+			"definition_zh": "期待已久的",
+			"example": "OpenAI has unveiled its long-awaited \"super app\"."
+		},
+		{
+			"word": "stunning",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈstʌnɪŋ/",
+			"definition_zh": "令人驚嘆的",
+			"example": "Photographers have captured the Strawberry Moon’s golden glow in stunning detail."
+		},
+		{
+			"word": "prescient",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈpreʃnt/",
+			"definition_zh": "有預見性的",
+			"example": "Look back at the prescient comedy with this Screen Junkies trailer."
+		},
+		{
+			"word": "psychedelic",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌsaɪkəˈdelɪk/",
+			"definition_zh": "迷幻的",
+			"example": "Get ready for the weekend with this psychedelic house journey."
+		},
+		{
+			"word": "speculation",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌspekjuˈleɪʃn/",
+			"definition_zh": "推測、猜測",
+			"example": "He wants to replace speculation with mathematical frameworks."
+		},
+		{
+			"word": "large language models",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɒdəlz/",
+			"definition_zh": "大型語言模型",
+			"example": "What’s really going on inside large language models as they answer questions."
+		},
+		{
+			"word": "reinforcement learning",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌriːɪnˈfɔːrsmənt ˈlɜːrnɪŋ/",
+			"definition_zh": "強化學習",
+			"example": "Those same principles would help power reinforcement learning."
+		},
+		{
+			"word": "comb the internet",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/koʊm ðə ˈɪntərnet/",
+			"definition_zh": "在網路上仔細搜尋",
+			"example": "I’ve combed the internet to find you today’s most fun stories."
+		},
+		{
+			"word": "trial and error",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈtraɪəl ənd ˈerər/",
+			"definition_zh": "試錯法",
+			"example": "Using trial and error to shape their behavior."
+		},
+		{
+			"word": "drop me a line",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/drɒp miː ə laɪn/",
+			"definition_zh": "寫封信給我",
+			"example": "Got any ideas? Drop me a line."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company's stock price began to ____ after the new product launch was announced.",
+			"answer": "skyrocket",
+			"options": [
+				"skyrocket",
+				"restore",
+				"reveal",
+				"shape"
+			]
+		},
+		{
+			"sentence": "He remains ____ about the possibility of traveling to Mars in this decade.",
+			"answer": "skeptical",
+			"options": [
+				"skeptical",
+				"reliable",
+				"precise",
+				"stunning"
+			]
+		},
+		{
+			"sentence": "The detective managed to ____ the true identity of the suspect during the interrogation.",
+			"answer": "reveal",
+			"options": [
+				"reveal",
+				"unveil",
+				"restore",
+				"shape"
+			]
+		},
+		{
+			"sentence": "Scientific experiments require extremely ____ measurements to be considered valid.",
+			"answer": "precise",
+			"options": [
+				"precise",
+				"mundane",
+				"unnerving",
+				"flagship"
+			]
+		},
+		{
+			"sentence": "The sunrise over the mountains was absolutely ____, leaving us all speechless.",
+			"answer": "stunning",
+			"options": [
+				"stunning",
+				"mundane",
+				"prescient",
+				"psychedelic"
+			]
+		},
+		{
+			"sentence": "I only managed to catch a quick ____ of the car before it turned the corner.",
+			"answer": "glimpse",
+			"options": [
+				"glimpse",
+				"dose",
+				"comfort",
+				"speculation"
+			]
+		},
+		{
+			"sentence": "After several attempts and a lot of ____, we finally fixed the software bug.",
+			"answer": "trial and error",
+			"options": [
+				"trial and error",
+				"reinforcement learning",
+				"large language models",
+				"comb the internet"
+			]
+		},
+		{
+			"sentence": "The government is working on a plan to ____ the historical district to its former glory.",
+			"answer": "restore",
+			"options": [
+				"restore",
+				"unveil",
+				"reveal",
+				"shape"
+			]
+		},
+		{
+			"sentence": "Doing laundry is just one of the many ____ chores that need to be done every week.",
+			"answer": "mundane",
+			"options": [
+				"mundane",
+				"flagship",
+				"unnerving",
+				"reliable"
+			]
+		},
+		{
+			"sentence": "Fans are camping outside for the ____ release of the new video game console.",
+			"answer": "long-awaited",
+			"options": [
+				"long-awaited",
+				"prescient",
+				"psychedelic",
+				"skeptical"
+			]
+		}
+	]
+}
