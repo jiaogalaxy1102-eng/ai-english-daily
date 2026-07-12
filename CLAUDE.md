@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static site (GitHub Pages, see `.nojekyll`) that publishes one bilingual (English/Traditional Chinese) AI-news article per day, with interactive vocabulary popups. There is no build tool beyond the Python scripts below — HTML files in `articles/` and `index.html` are committed directly to the repo.
 
+See [NOTES.md](NOTES.md) for known scraper pitfalls, past bugs/fixes, and design decisions already discussed with the project owner — check it before re-investigating something or re-proposing a design already settled there, and add new entries there (not to Claude's memory system) when you hit something worth remembering.
+
 ## Commands
 
 ```bash

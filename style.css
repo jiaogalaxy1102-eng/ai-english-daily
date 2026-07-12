@@ -136,12 +136,18 @@ body {
 }
 
 /* content that reads as English gets the English font */
-.article-title, .para-original, .vocab-word, .vocab-ipa,
-.popup-word, .popup-ipa, .popup-example,
+.article-title, .para-original, .vocab-word,
+.popup-word, .popup-example,
 .article-source, .related-title, .related-source, .source-tag,
 .quiz-sentence, .quiz-option,
 ul#article-list a, .site-header h1, .site-header--nav a {
 	font-family: var(--font-en);
+}
+
+/* IPA symbols: always use the system default font, custom English fonts
+   (e.g. handwritten styles) don't render phonetic symbols reliably */
+.vocab-ipa, .popup-ipa {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ── Header ── */
@@ -334,6 +340,23 @@ ul#article-list a:hover { color: var(--color-term); }
 .quiz-option.correct { background: var(--feedback-correct-bg); border-color: var(--feedback-correct-line); color: var(--color-general); }
 .quiz-option.wrong { background: var(--feedback-wrong-bg); border-color: var(--feedback-wrong-line); color: var(--feedback-wrong-text); }
 .quiz-feedback { font-size: 0.875rem; margin-top: 12px; min-height: 1.2em; }
+.quiz-feedback-result { font-weight: 600; margin-bottom: 6px; }
+.quiz-feedback-zh {
+	color: var(--color-brown);
+	font-size: 0.875rem;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	border-left: 3px solid var(--color-border);
+}
+.quiz-feedback-options {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.quiz-feedback-option { font-size: 0.8125rem; color: var(--color-muted); }
+.quiz-feedback-option.is-answer { color: var(--color-general); font-weight: 600; }
+.quiz-feedback-word { font-family: var(--font-en); }
 .quiz-next {
 	background: var(--color-dark);
 	color: var(--color-bg);
@@ -377,7 +400,8 @@ ul#article-list a:hover { color: var(--color-term); }
 .para-block { margin-bottom: 28px; }
 .heading-block { margin-bottom: 20px; }
 .para-original { color: var(--color-dark); }
-h2.para-original, h3.para-original { font-size: 1.25rem; margin-bottom: 4px; }
+h2.para-original, h3.para-original, h4.para-original { font-size: 1.25rem; margin-bottom: 4px; }
+h4.para-original { font-size: 1.0625rem; }
 .para-translation {
 	color: var(--color-brown);
 	font-size: 0.9375rem;
@@ -385,7 +409,51 @@ h2.para-original, h3.para-original { font-size: 1.25rem; margin-bottom: 4px; }
 	padding-left: 12px;
 	border-left: 3px solid var(--color-border);
 }
-h2.para-translation, h3.para-translation { font-size: 1rem; font-weight: 400; }
+h2.para-translation, h3.para-translation, h4.para-translation { font-size: 1rem; font-weight: 400; }
+
+/* ── Lists ── */
+.list-block .para-original { padding-left: 1.4em; }
+.list-block .para-original li { margin-bottom: 14px; }
+.list-block .para-original li:last-child { margin-bottom: 0; }
+.li-translation {
+	display: block;
+	font-family: var(--font-zh);
+	color: var(--color-brown);
+	font-size: 0.875rem;
+	margin-top: 4px;
+}
+
+/* ── Blockquote ── */
+.quote-block blockquote.para-original {
+	font-style: italic;
+	padding-left: 16px;
+	border-left: 3px solid var(--color-border);
+}
+.quote-block blockquote.para-translation { font-style: italic; }
+
+/* ── Code blocks (not translated or vocab-highlighted) ── */
+.code-block pre.para-original {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 14px 16px;
+	overflow-x: auto;
+	font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+	font-size: 0.8125rem;
+	line-height: 1.6;
+	color: var(--color-dark);
+	white-space: pre;
+}
+
+/* ── Tables (not translated or vocab-highlighted) ── */
+.table-block { overflow-x: auto; font-family: var(--font-en); }
+.table-block table { border-collapse: collapse; width: 100%; font-size: 0.875rem; }
+.table-block th, .table-block td {
+	border: 1px solid var(--color-border);
+	padding: 8px 10px;
+	text-align: left;
+}
+.table-block th { background: var(--color-surface); font-weight: 600; }
 
 /* ── Word highlights ── */
 .word-highfreq {
@@ -587,15 +655,8 @@ h2.para-translation, h3.para-translation { font-size: 1rem; font-weight: 400; }
 	ul#article-list a { flex-direction: column; align-items: flex-start; gap: 4px; }
 	.source-tag { margin-left: 0; }
 
-	.popup-overlay {
-		flex-direction: column;
-		justify-content: flex-end;
-		align-items: stretch;
-	}
 	.popup-overlay .popup-card {
-		border-radius: 16px 16px 0 0;
-		padding: 20px 20px max(36px, env(safe-area-inset-bottom));
-		max-width: 100%;
+		max-width: 90%;
 		max-height: 80vh;
 		overflow-y: auto;
 	}

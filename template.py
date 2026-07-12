@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 9
+CSS_VERSION = 11
 
 FIXED_TAGS = ["AI", "科技", "商業與新創", "科學", "社會與文化", "生活與心理", "觀點評論"]
 
@@ -164,29 +164,76 @@ def render_article(data, all_entries=None):
 	# after_paragraph == 0 means the image appeared before any paragraph
 	# (e.g. a lead image), so it goes before the loop below
 	paras_html = "".join(image_figure(img) for img in images_by_para.get(0, []))
-	for i, para in enumerate(data["paragraphs"]):
+	all_paras = data["paragraphs"]
+	i = 0
+	while i < len(all_paras):
+		para = all_paras[i]
 		tag = para["tag"]
-		original_highlighted = highlight(para["text"], vocab_map)
-		translation = para.get("translation", "")
 
-		if tag in ["h2", "h3"]:
+		# after_paragraph is recorded as "how many paragraphs collected so far"
+		# at scrape time, which is i+1 once this (i-th, 0-indexed) paragraph is added
+
+		if tag == "li":
+			# group consecutive li's of the same list type into one <ul>/<ol>,
+			# pairing each bullet with its own translation underneath
+			list_type = para.get("list_type", "ul")
+			items_html = ""
+			while i < len(all_paras) and all_paras[i]["tag"] == "li" and all_paras[i].get("list_type") == list_type:
+				p = all_paras[i]
+				items_html += f"""
+				<li>{highlight(p["text"], vocab_map)}<span class="li-translation">{p.get("translation", "")}</span></li>"""
+				for img in images_by_para.get(i + 1, []):
+					items_html += image_figure(img)
+				i += 1
+			paras_html += f"""
+		<div class="para-block list-block">
+			<{list_type} class="para-original">{items_html}
+			</{list_type}>
+		</div>"""
+			continue
+
+		if tag in ("h2", "h3", "h4"):
+			original_highlighted = highlight(para["text"], vocab_map)
+			translation = para.get("translation", "")
 			paras_html += f"""
 		<div class="para-block heading-block">
 			<{tag} class="para-original">{original_highlighted}</{tag}>
 			<{tag} class="para-translation">{translation}</{tag}>
 		</div>"""
+		elif tag == "blockquote":
+			original_highlighted = highlight(para["text"], vocab_map)
+			translation = para.get("translation", "")
+			paras_html += f"""
+		<div class="para-block quote-block">
+			<blockquote class="para-original">{original_highlighted}</blockquote>
+			<blockquote class="para-translation">{translation}</blockquote>
+		</div>"""
+		elif tag == "pre":
+			# code isn't translated or vocab-highlighted; text is already
+			# HTML-escaped at scrape time (see fetch_article_content)
+			paras_html += f"""
+		<div class="para-block code-block">
+			<pre class="para-original"><code>{para["text"]}</code></pre>
+		</div>"""
+		elif tag == "table":
+			# already-built, already-escaped <table>...</table> HTML from
+			# scrape time; not translated or vocab-highlighted
+			paras_html += f"""
+		<div class="para-block table-block">
+			{para["text"]}
+		</div>"""
 		else:
+			original_highlighted = highlight(para["text"], vocab_map)
+			translation = para.get("translation", "")
 			paras_html += f"""
 		<div class="para-block">
 			<p class="para-original">{original_highlighted}</p>
 			<p class="para-translation">{translation}</p>
 		</div>"""
 
-		# insert images after this paragraph
-		# after_paragraph is recorded as "how many paragraphs collected so far"
-		# at scrape time, which is i+1 once this (i-th, 0-indexed) paragraph is added
 		for img in images_by_para.get(i + 1, []):
 			paras_html += image_figure(img)
+		i += 1
 
 	# build vocab summary
 	vocab_summary = ""
@@ -402,6 +449,12 @@ def render_article(data, all_entries=None):
 		}});
 	}}
 
+	function escapeHtml(s) {{
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}}
+
 	function answerQuiz(selected, btn) {{
 		if (quizAnswered) return;
 		quizAnswered = true;
@@ -413,7 +466,25 @@ def render_article(data, all_entries=None):
 			if (b.textContent === q.answer) b.classList.add("correct");
 			else if (b === btn) b.classList.add("wrong");
 		}});
-		document.getElementById("quiz-feedback").textContent = correct ? "答對了！" : `答錯了，正確答案：${{q.answer}}`;
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${{escapeHtml(q.answer)}}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${{escapeHtml(q.sentence_zh)}}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {{
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${{isAnswer ? " is-answer" : ""}}">`
+				+ `<span class="quiz-feedback-word">${{escapeHtml(opt)}}</span>`
+				+ (def ? ` — ${{escapeHtml(def)}}` : "")
+				+ `</li>`;
+		}}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${{resultLine}}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${{optionsList}}</ul>`;
 		document.getElementById("quiz-next").style.display = "inline-block";
 	}}
 

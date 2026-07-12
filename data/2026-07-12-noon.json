@@ -2,42 +2,37 @@
 	"date": "2026-07-12",
 	"slot": "noon",
 	"tag": "科技",
-	"title": "After years of teasing, the viral Nopia synth is ‘basically finished’",
+	"title": "After years of teasing, the viral Nopia synth is 'basically finished'",
 	"source_name": "The Verge",
 	"url": "https://www.theverge.com/gadgets/964499/nopia-viral-synth-finished-price-release-demo",
 	"paragraphs": [
 		{
-			"tag": "p",
 			"text": "The ‘harmony machine’ will be out by the end of the year for ‘around £550.’",
-			"translation": "這台「和聲機器」將在年底前上市，售價約為 550 英鎊。"
+			"tag": "p",
+			"translation": "這台「和聲機器」將於今年底上市,售價約 550 英鎊。"
 		},
 		{
+			"text": "After setting the music gear corner of the internet on fire back in 2023 with the first glimpse at the Nopia, creators Martin Grieco and Rocío Gal are almost ready to bring it to market. The duo brought it to the <em>MusicRadar</em> offices for an in-depth first look and revealed that it will be launching in “a couple of months” for around £550.",
 			"tag": "p",
-			"text": "After setting the music gear corner of the internet on fire back in 2023 with thefirst glimpseat theNopia, creators Martin Grieco and Rocío Gal are almost ready to bring it to market. The duo brought it to theMusicRadaroffices for an in-depth first look and revealed that it will be launching in “a couple of months” for around £550.",
-			"translation": "在 2023 年首度亮相並讓網路上的音樂設備圈為之瘋狂後，創作者 Martin Grieco 和 Rocío Gal 已準備好將 Nopia 推向市場。這對搭檔帶著它來到 MusicRadar 辦公室進行深入的首度預覽，並透露它將在「幾個月內」上市，售價約為 550 英鎊。"
+			"translation": "2023 年,Nopia 首次亮相就在網路音樂器材圈掀起熱潮,如今創作者 Martin Grieco 與 Rocío Gal 終於即將把它推向市場。兩人將原型機帶到 MusicRadar 辦公室進行深度搶先體驗,並透露這款產品將在「幾個月內」上市,售價約 550 英鎊。"
 		},
 		{
+			"text": "Nopia is built around harmonic interplay in a unique way. Rather than a few knobs and a keyboard controlling a single synth patch, it blends multiple modules — keys, bass, arp, and pad — into a single performance, not unlike a drumless groovebox. There’s a one-octave keyboard called the Chord Builder, a 12-button Tonal Selector, and an Extensions Dial that dictate the key and voicing of the chords. The idea is to let you play complex harmonies with just a finger or two.",
 			"tag": "p",
-			"text": "Nopia is built around harmonic interplay in a unique way. Rather than a few knobs and a keyboard controlling a single synth patch, it blends multiple modules — keys, bass, arp, and pad — into a single performance, not unlike a drumlessgroovebox. There’s a one-octave keyboard called the Chord Builder, a 12-button Tonal Selector, and an Extensions Dial that dictate the key and voicing of the chords. The idea is to let you play complex harmonies with just a finger or two.",
-			"translation": "Nopia 以獨特的和聲互動方式打造。它不是透過幾個旋鈕和鍵盤來控制單一合成器音色，而是將多個模組（琴鍵、貝斯、琶音和背景音）融合進單一演奏中，與不含鼓組的節奏機（groovebox）類似。機身配備一個單八度的「和弦構建器」鍵盤、一個 12 鍵的「音調選擇器」以及一個「擴展撥盤」，用來決定和弦的調性和聲部配置。其理念是讓你僅用一兩根手指就能彈奏複雜的和聲。"
+			"translation": "Nopia 以獨特的方式圍繞和聲互動打造而成。它並非用幾顆旋鈕與一個鍵盤來控制單一合成器音色,而是將鍵盤、貝斯、琶音器與 pad 等多個模組融合成一次演奏,有點像沒有鼓組的 groovebox(節奏製作機)。機身上有一個名為 Chord Builder 的單八度鍵盤、一個 12 按鍵的 Tonal Selector,以及一個 Extensions Dial,用來決定和弦的調性與聲位。其核心理念是讓使用者只用一兩根手指,就能彈奏出複雜的和聲。"
 		},
 		{
-			"tag": "p",
 			"text": "Additional performance features include a strum plate in the top-right corner for plucking specific notes from a chord and a slider for full chord pitch bends.",
-			"translation": "額外的演奏功能包括位於右上角、用於撥動和弦中特定音符的「撥弦板」，以及用於全和弦音高彎曲的滑動條。"
+			"tag": "p",
+			"translation": "其他演奏功能還包括位於右上角的 strum plate(刷弦板),可用來從和弦中挑出特定音符,以及一個能對整組和弦做音高彎音的滑桿。"
 		},
 		{
-			"tag": "p",
 			"text": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine.",
-			"translation": "除了虛擬類比和基於取樣的合成引擎外，還有延遲、殘響、磁帶模擬和節拍重複等基本效果，以及大量的連接選項，包括每模組 MIDI 輸出，以便使用 Nopia 的和聲引擎來控制其他樂器。"
+			"tag": "p",
+			"translation": "除了虛擬類比與取樣式合成引擎之外,Nopia 還內建 delay(延遲)、reverb(殘響)、磁帶模擬與 beat repeat 等基本效果,並提供大量連接選項,包括各模組獨立的 MIDI 輸出,讓使用者能用 Nopia 的和聲引擎去控制其他樂器。"
 		}
 	],
 	"images": [
-		{
-			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/maxresdefault_503c4e.jpg?quality=90&strip=all&crop=7.8125%2C0%2C84.375%2C100&w=2400",
-			"alt": "maxresdefault_503c4e",
-			"after_paragraph": 1
-		},
 		{
 			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/maxresdefault_503c4e.jpg?quality=90&strip=all&crop=7.8125%2C0%2C84.375%2C100&w=2400",
 			"alt": "maxresdefault_503c4e",
@@ -46,156 +41,116 @@
 	],
 	"vocab": [
 		{
-			"word": "viral",
+			"word": "glimpse",
 			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈvaɪrəl/",
-			"definition_zh": "病毒式傳播的，極受歡迎的",
-			"example": "After years of teasing, the viral Nopia synth is ‘basically finished’"
-		},
-		{
-			"word": "launch",
-			"type": "highfreq",
-			"pos": "v.",
-			"ipa": "/lɔːntʃ/",
-			"definition_zh": "推出，發布",
-			"example": "...it will be launching in “a couple of months” for around £550."
+			"pos": "n.",
+			"ipa": "/ɡlɪmps/",
+			"definition_zh": "一瞥;短暫的一看",
+			"example": "After setting the music gear corner of the internet on fire back in 2023 with the first glimpse at the Nopia, creators Martin Grieco and Rocío Gal are almost ready to bring it to market."
 		},
 		{
 			"word": "reveal",
 			"type": "highfreq",
 			"pos": "v.",
 			"ipa": "/rɪˈviːl/",
-			"definition_zh": "揭露，透露",
-			"example": "...revealed that it will be launching in “a couple of months”"
+			"definition_zh": "透露;揭露",
+			"example": "The duo brought it to the MusicRadar offices for an in-depth first look and revealed that it will be launching in “a couple of months” for around £550."
 		},
 		{
-			"word": "unique",
+			"word": "launch",
 			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/juˈniːk/",
-			"definition_zh": "獨特的，唯一的",
-			"example": "Nopia is built around harmonic interplay in a unique way."
+			"pos": "v.",
+			"ipa": "/lɔːntʃ/",
+			"definition_zh": "推出;上市",
+			"example": "The duo brought it to the MusicRadar offices for an in-depth first look and revealed that it will be launching in “a couple of months” for around £550."
+		},
+		{
+			"word": "blend",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/blend/",
+			"definition_zh": "混合;融合",
+			"example": "Rather than a few knobs and a keyboard controlling a single synth patch, it blends multiple modules — keys, bass, arp, and pad — into a single performance, not unlike a drumless groovebox."
+		},
+		{
+			"word": "dictate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪkˈteɪt/",
+			"definition_zh": "決定;支配",
+			"example": "There’s a one-octave keyboard called the Chord Builder, a 12-button Tonal Selector, and an Extensions Dial that dictate the key and voicing of the chords."
 		},
 		{
 			"word": "complex",
 			"type": "highfreq",
 			"pos": "adj.",
-			"ipa": "/kəmˈpleks/",
+			"ipa": "/ˈkɒmpleks/",
 			"definition_zh": "複雜的",
 			"example": "The idea is to let you play complex harmonies with just a finger or two."
 		},
 		{
-			"word": "specific",
+			"word": "connectivity",
 			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/spəˈsɪfɪk/",
-			"definition_zh": "特定的，明確的",
-			"example": "...for plucking specific notes from a chord"
-		},
-		{
-			"word": "additional",
-			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/əˈdɪʃənl/",
-			"definition_zh": "額外的",
-			"example": "Additional performance features include a strum plate..."
-		},
-		{
-			"word": "basic",
-			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈbeɪsɪk/",
-			"definition_zh": "基礎的",
-			"example": "...there are basic effects like delay, reverb, tape emulation..."
-		},
-		{
-			"word": "control",
-			"type": "highfreq",
-			"pos": "v.",
-			"ipa": "/kənˈtroʊl/",
-			"definition_zh": "控制，支配",
-			"example": "...controlling a single synth patch"
-		},
-		{
-			"word": "ready",
-			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈredi/",
-			"definition_zh": "準備好的",
-			"example": "...creators Martin Grieco and Rocío Gal are almost ready to bring it to market."
-		},
-		{
-			"word": "single",
-			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈsɪŋɡl/",
-			"definition_zh": "單一的",
-			"example": "...controlling a single synth patch"
-		},
-		{
-			"word": "glimpse",
-			"type": "general",
 			"pos": "n.",
-			"ipa": "/ɡlɪmps/",
-			"definition_zh": "短暫的體驗，一瞥",
-			"example": "...with the first glimpse at the Nopia"
-		},
-		{
-			"word": "duo",
-			"type": "general",
-			"pos": "n.",
-			"ipa": "/ˈduːoʊ/",
-			"definition_zh": "二人組，搭檔",
-			"example": "The duo brought it to the MusicRadar offices"
-		},
-		{
-			"word": "in-depth",
-			"type": "general",
-			"pos": "adj.",
-			"ipa": "/ˌɪn ˈdepθ/",
-			"definition_zh": "深入的，詳盡的",
-			"example": "...for an in-depth first look"
-		},
-		{
-			"word": "blend",
-			"type": "general",
-			"pos": "v.",
-			"ipa": "/blend/",
-			"definition_zh": "混合，融合",
-			"example": "...it blends multiple modules — keys, bass, arp, and pad — into a single performance"
-		},
-		{
-			"word": "performance",
-			"type": "general",
-			"pos": "n.",
-			"ipa": "/pərˈfɔːrməns/",
-			"definition_zh": "演奏，表演，性能",
-			"example": "...into a single performance, not unlike a drumless groovebox."
-		},
-		{
-			"word": "dictate",
-			"type": "general",
-			"pos": "v.",
-			"ipa": "/ˈdɪkteɪt/",
-			"definition_zh": "決定，支配",
-			"example": "...an Extensions Dial that dictate the key and voicing of the chords."
+			"ipa": "/ˌkɒnekˈtɪvəti/",
+			"definition_zh": "連接性;連結能力",
+			"example": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine."
 		},
 		{
 			"word": "virtual",
-			"type": "general",
+			"type": "highfreq",
 			"pos": "adj.",
-			"ipa": "/ˈvɜːrtʃuəl/",
+			"ipa": "/ˈvɜːtʃuəl/",
 			"definition_zh": "虛擬的",
-			"example": "In addition to the virtual analog and sample-based synth engines"
+			"example": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine."
+		},
+		{
+			"word": "interplay",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪntəpleɪ/",
+			"definition_zh": "互動;交互作用",
+			"example": "Nopia is built around harmonic interplay in a unique way."
+		},
+		{
+			"word": "module",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈmɒdjuːl/",
+			"definition_zh": "模組",
+			"example": "Rather than a few knobs and a keyboard controlling a single synth patch, it blends multiple modules — keys, bass, arp, and pad — into a single performance, not unlike a drumless groovebox."
+		},
+		{
+			"word": "pluck",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/plʌk/",
+			"definition_zh": "撥弦;摘取",
+			"example": "Additional performance features include a strum plate in the top-right corner for plucking specific notes from a chord and a slider for full chord pitch bends."
+		},
+		{
+			"word": "slider",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈslaɪdər/",
+			"definition_zh": "滑桿",
+			"example": "Additional performance features include a strum plate in the top-right corner for plucking specific notes from a chord and a slider for full chord pitch bends."
 		},
 		{
 			"word": "emulation",
 			"type": "general",
 			"pos": "n.",
-			"ipa": "/ˌemjuˈleɪʃn/",
-			"definition_zh": "模擬，仿真",
-			"example": "...there are basic effects like delay, reverb, tape emulation..."
+			"ipa": "/ˌemjʊˈleɪʃən/",
+			"definition_zh": "模擬",
+			"example": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine."
+		},
+		{
+			"word": "harmonic",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/hɑːˈmɒnɪk/",
+			"definition_zh": "和聲的;和諧的",
+			"example": "Nopia is built around harmonic interplay in a unique way."
 		},
 		{
 			"word": "synth",
@@ -203,140 +158,142 @@
 			"pos": "n.",
 			"ipa": "/sɪnθ/",
 			"definition_zh": "合成器",
-			"example": "After years of teasing, the viral Nopia synth is ‘basically finished’"
+			"example": "Rather than a few knobs and a keyboard controlling a single synth patch, it blends multiple modules — keys, bass, arp, and pad — into a single performance, not unlike a drumless groovebox."
 		},
 		{
-			"word": "module",
+			"word": "MIDI",
 			"type": "term",
 			"pos": "n.",
-			"ipa": "/ˈmɑːdʒuːl/",
-			"definition_zh": "模組",
-			"example": "...it blends multiple modules — keys, bass, arp, and pad"
+			"ipa": "/ˈmɪdi/",
+			"definition_zh": "樂器數位介面",
+			"example": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine."
 		},
 		{
-			"word": "harmonic",
-			"type": "term",
-			"pos": "adj.",
-			"ipa": "/hɑːrˈmɑːnɪk/",
-			"definition_zh": "和聲的",
-			"example": "Nopia is built around harmonic interplay in a unique way."
-		},
-		{
-			"word": "set the internet on fire",
+			"word": "set...on fire",
 			"type": "phrase",
 			"pos": "",
-			"ipa": "/set ðə ˈɪntərnet ɒn ˈfaɪər/",
-			"definition_zh": "在網路上引起轟動",
-			"example": "After setting the music gear corner of the internet on fire back in 2023"
+			"ipa": "/set ɒn ˈfaɪər/",
+			"definition_zh": "引爆熱潮;使轟動",
+			"example": "After setting the music gear corner of the internet on fire back in 2023 with the first glimpse at the Nopia, creators Martin Grieco and Rocío Gal are almost ready to bring it to market."
 		},
 		{
-			"word": "be out",
+			"word": "a ton of",
 			"type": "phrase",
 			"pos": "",
-			"ipa": "/bi aʊt/",
-			"definition_zh": "問世，發布，上市",
-			"example": "The ‘harmony machine’ will be out by the end of the year"
+			"ipa": "/ə tʌn ʌv/",
+			"definition_zh": "大量的",
+			"example": "In addition to the virtual analog and sample-based synth engines, there are basic effects like delay, reverb, tape emulation, and beat repeat, as well as a ton of connectivity options, including per-module MIDI output for controlling other instruments with Nopia’s harmonic engine."
 		}
 	],
 	"quiz": [
 		{
-			"sentence": "The new trailer for the movie went ____ immediately after it was posted on YouTube.",
-			"answer": "viral",
+			"sentence": "The photographer got a rare ____ of the elusive snow leopard through her camera lens.",
+			"sentence_zh": "攝影師透過鏡頭,難得一瞥了神出鬼沒的雪豹。",
+			"answer": "glimpse",
 			"options": [
-				"viral",
-				"unique",
-				"harmonic",
-				"basic"
+				"glimpse",
+				"module",
+				"slider",
+				"emulation"
 			]
 		},
 		{
-			"sentence": "The company is planning to ____ its latest smartphone model next month.",
-			"answer": "launch",
-			"options": [
-				"launch",
-				"dictate",
-				"blend",
-				"control"
-			]
-		},
-		{
-			"sentence": "Each fingerprint is ____ to an individual and can be used for identification.",
-			"answer": "unique",
-			"options": [
-				"unique",
-				"complex",
-				"virtual",
-				"additional"
-			]
-		},
-		{
-			"sentence": "Scientists conducted an ____ study to find the cause of the mysterious disease.",
-			"answer": "in-depth",
-			"options": [
-				"in-depth",
-				"ready",
-				"single",
-				"viral"
-			]
-		},
-		{
-			"sentence": "The chef used a special machine to ____ various spices into a flavorful powder.",
-			"answer": "blend",
-			"options": [
-				"blend",
-				"reveal",
-				"launch",
-				"dictate"
-			]
-		},
-		{
-			"sentence": "This computer program can handle very ____ calculations in just a few seconds.",
-			"answer": "complex",
-			"options": [
-				"complex",
-				"basic",
-				"ready",
-				"single"
-			]
-		},
-		{
-			"sentence": "The pop star's surprise performance managed to ____ with millions of views.",
-			"answer": "set the internet on fire",
-			"options": [
-				"set the internet on fire",
-				"be out",
-				"launch",
-				"control"
-			]
-		},
-		{
-			"sentence": "The video game creates a ____ world where players can interact with each other.",
-			"answer": "virtual",
-			"options": [
-				"virtual",
-				"specific",
-				"harmonic",
-				"additional"
-			]
-		},
-		{
-			"sentence": "The witness refused to ____ any details about the suspect to the police.",
+			"sentence": "The company plans to ____ its findings at next week's press conference.",
+			"sentence_zh": "該公司計畫在下週的記者會上透露其研究結果。",
 			"answer": "reveal",
 			"options": [
 				"reveal",
+				"pluck",
 				"dictate",
+				"blend"
+			]
+		},
+		{
+			"sentence": "The startup will ____ its new app in three different countries next month.",
+			"sentence_zh": "這家新創公司下個月將在三個不同國家推出新應用程式。",
+			"answer": "launch",
+			"options": [
+				"launch",
+				"interplay",
+				"harmonic",
+				"synth"
+			]
+		},
+		{
+			"sentence": "The chef likes to ____ sweet and spicy flavors in his signature dish.",
+			"sentence_zh": "這位主廚喜歡在他的招牌菜中融合甜與辣的風味。",
+			"answer": "blend",
+			"options": [
 				"blend",
+				"MIDI",
+				"connectivity",
+				"virtual"
+			]
+		},
+		{
+			"sentence": "Weather conditions often ____ whether the flight will depart on time.",
+			"sentence_zh": "天氣狀況常常決定班機是否能準時起飛。",
+			"answer": "dictate",
+			"options": [
+				"dictate",
+				"glimpse",
+				"a ton of",
+				"set...on fire"
+			]
+		},
+		{
+			"sentence": "Untangling the old wiring turned out to be a surprisingly ____ task.",
+			"sentence_zh": "整理那些老舊的電線,結果是一項出乎意料複雜的任務。",
+			"answer": "complex",
+			"options": [
+				"complex",
+				"module",
+				"pluck",
+				"reveal"
+			]
+		},
+		{
+			"sentence": "The new router offers better ____ for smart home devices throughout the house.",
+			"sentence_zh": "這款新路由器為家中的智慧家電提供更好的連接性。",
+			"answer": "connectivity",
+			"options": [
+				"connectivity",
+				"slider",
+				"emulation",
 				"launch"
 			]
 		},
 		{
-			"sentence": "The new album will ____ by next Friday, and fans are very excited.",
-			"answer": "be out",
+			"sentence": "She tried on a ____ headset to explore the museum's digital exhibit.",
+			"sentence_zh": "她戴上虛擬頭戴裝置,探索博物館的數位展覽。",
+			"answer": "virtual",
 			"options": [
-				"be out",
-				"viral",
-				"synth",
-				"ready"
+				"virtual",
+				"interplay",
+				"harmonic",
+				"blend"
+			]
+		},
+		{
+			"sentence": "The film explores the ____ between memory and identity.",
+			"sentence_zh": "這部電影探討記憶與身分之間的互動關係。",
+			"answer": "interplay",
+			"options": [
+				"interplay",
+				"dictate",
+				"MIDI",
+				"synth"
+			]
+		},
+		{
+			"sentence": "Each ____ in the software can be updated independently of the others.",
+			"sentence_zh": "軟體中的每個模組都可以獨立於其他模組進行更新。",
+			"answer": "module",
+			"options": [
+				"module",
+				"complex",
+				"connectivity",
+				"pluck"
 			]
 		}
 	]

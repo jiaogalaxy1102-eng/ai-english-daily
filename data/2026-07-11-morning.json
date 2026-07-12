@@ -2,64 +2,59 @@
 	"date": "2026-07-11",
 	"slot": "morning",
 	"tag": "科技",
-	"title": "No, Flock isn’t threatening people for debating surveillance",
+	"title": "No, Flock isn't threatening people for debating surveillance",
 	"source_name": "The Verge",
 	"url": "https://www.theverge.com/tech/964425/flock-safety-cease-and-desist-letter",
 	"paragraphs": [
 		{
-			"tag": "p",
 			"text": "Photos of purported cease and desist letters from the company have gone viral, but Flock says it didn’t send them.",
-			"translation": "網傳該公司寄發停止侵權通知函的照片，但 Flock 表示並非其所寄。"
+			"tag": "p",
+			"translation": "網路上瘋傳幾張據稱是該公司寄出的「停止與終止函」照片，但 Flock 表示這些信並非該公司所發。"
 		},
 		{
-			"tag": "p",
 			"text": "On Thursday, the Instagram account for a lecture series in Newport Beach, CA posted a photo of what appeared to be a cease and desist letter from the surveillance technology company Flock Safety. Flock has received significant backlash over its technology and work with law enforcement agencies, and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work.",
-			"translation": "週四，加州新港灘一個講座系列的 Instagram 帳號發布了一張照片，看起來像是來自監視技術公司 Flock Safety 的停止侵權通知函。Flock 因其技術以及與執法機構的合作而面臨巨大的輿論反彈，而這封信引發了另一波對該公司的批評，指責其試圖封殺對其工作的討論。"
+			"tag": "p",
+			"translation": "週四，加州新港灘（Newport Beach）一個講座系列的 Instagram 帳號貼出一張照片，內容看似是監控科技公司 Flock Safety 寄出的停止與終止函。Flock 因其技術與和執法機關的合作關係已飽受抨擊，而這封信件又掀起新一波批評聲浪，指控該公司試圖打壓外界對其業務的討論。"
 		},
 		{
+			"text": "“WE WILL NOT BE SILENCED,” the group, The Saturday Salon, wrote in the Instagram post, which has more than 3,000 likes. A separate post about the letter on Bluesky has more than 360 reposts. The text of the letter demands that the group stop hosting conversations about Flock’s surveillance technology. In a DM from The Saturday Salon’s Instagram account, Schuyler Lifschultz tells <em>The Verge</em> that it “found this letter taped to our front door.”",
 			"tag": "p",
-			"text": "“WE WILL NOT BE SILENCED,” the group, The Saturday Salon, wrote inthe Instagram post, which has more than 3,000 likes. A separate post about the letter on Bluesky hasmore than 360 reposts. The text of the letter demands that the group stop hosting conversations about Flock’s surveillance technology. In a DM from The Saturday Salon’s Instagram account, Schuyler Lifschultz tellsThe Vergethat it “found this letter taped to our front door.”",
-			"translation": "「我們不會沈默，」名為「週六沙龍」的團體在 Instagram 貼文中寫道，該貼文已獲得超過 3,000 個讚。Bluesky 上另一篇關於此信函的貼文也有超過 360 次轉發。信件內容要求該團體停止主辦關於 Flock 監視技術的對話。在來自「週六沙龍」Instagram 帳號的私訊中，Schuyler Lifschultz 告訴《The Verge》，這封信是「貼在我們前門發現的」。"
+			"translation": "「我們不會被噤聲」，這個名為 The Saturday Salon 的團體在 Instagram 貼文中寫道，該貼文已獲得超過 3,000 個讚。Bluesky 上另一則關於此信件的貼文則有超過 360 次轉發。信件內容要求該團體停止舉辦討論 Flock 監控技術的活動。The Saturday Salon 的 Instagram 帳號透過私訊告訴《The Verge》，他們是「在自家前門發現這封被貼在門上的信」。"
 		},
 		{
+			"text": "But Flock denies that it sent the letter, with chief strategy officer Rahul Sidhu citing it as an example of a mass disinformation campaign against Flock. “Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people,” Sidhu says. “We are pro-democracy. People SHOULD have discussions and lectures like this.”",
 			"tag": "p",
-			"text": "But Flock denies that it sent the letter, with chief strategy officer Rahul Sidhu citing it as an example of a mass disinformation campaign against Flock. “Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people,”Sidhu says. “We are pro-democracy. People SHOULD have discussions and lectures like this.”",
-			"translation": "但 Flock 否認寄出該信，其首席策略長 Rahul Sidhu 稱其為針對 Flock 的大規模虛假訊息運動的一個案例。「Flock 從未寄出這封信，這些人捏造了它（帶有偽造簽名）試圖操縱大眾，」Sidhu 表示。「我們支持民主。人們應該進行這樣的討論和講座。」"
+			"translation": "但 Flock 否認曾寄出這封信，首席策略長 Rahul Sidhu 將此事視為針對 Flock 的大規模不實資訊操作案例之一。「Flock 從未寄出這封信，這些人是自己捏造出來的（還偽造了簽名），企圖操弄大眾，」Sidhu 表示。「我們支持民主。大家『應該』要有這樣的討論與講座。」"
 		},
 		{
+			"text": "In a statement to <em>The Verge</em>, Flock’s chief legal officer, Dan Haley, says that Flock is aware of “at least two forged” letters and that “these letters did not come from me or from anyone at Flock.” Here is Haley’s full statement:",
 			"tag": "p",
-			"text": "In a statement toThe Verge, Flock’s chief legal officer, Dan Haley, says that Flock is aware of “at least two forged” letters and that “these letters did not come from me or from anyone at Flock.” Here is Haley’s full statement:",
-			"translation": "在給《The Verge》的聲明中，Flock 的首席法務長 Dan Haley 表示，Flock 已知悉「至少兩封偽造的」信函，且「這些信件並非出自我也非出自 Flock 的任何人」。以下是 Haley 的完整聲明："
+			"translation": "Flock 的首席法務長 Dan Haley 在給《The Verge》的聲明中表示，Flock 已知悉「至少有兩封偽造」信件，並強調「這些信件並非出自我本人或 Flock 任何一位員工之手」。以下是 Haley 的完整聲明："
 		},
 		{
-			"tag": "p",
-			"text": "We’re aware of at least two forged letters circulating on the internet, including this one, that purport to be cease-and-desist letters from our legal department. To be clear: these letters did not come from me or from anyone at Flock.",
-			"translation": "我們知悉網路上流傳著至少兩封偽造信函，包括這一封，其聲稱是來自我們法律部門的停止侵權通知函。澄清一下：這些信件並非出自我也非出自 Flock 的任何人。"
+			"text": "We’re aware of at least two forged letters circulating on the internet, including this one, that purport to be cease-and-desist letters from our legal department. To be clear: these letters did not come from me or from anyone at Flock. Flock welcomes and encourages public debate about our technology. We have not and would not seek to discourage, prevent, or prohibit such discussion and debate. In fact, we would be happy to participate in any such discussions the group in question might host in the future.",
+			"tag": "blockquote",
+			"translation": "我們已知悉網路上至少流傳著兩封偽造信件，包括這一封，這些信件都自稱是我們法務部門發出的停止與終止函。在此澄清：這些信件並非出自我本人或 Flock 任何一位員工。 Flock 歡迎並鼓勵大眾就我們的技術展開公開辯論。我們從未、也不會試圖勸阻、阻止或禁止這類討論與辯論。事實上，若該團體未來舉辦類似討論活動，我們很樂意參與其中。"
 		},
 		{
+			"text": "Looking closely at the photo of the letter in The Saturday Salon’s post reveals some dodgy details. Haley’s title in the letter is “Head of Legal Affairs Division,” but his actual title is chief legal officer. <em>The Verge</em> also emailed Haley’s purported email address on the letter but received a bounceback.",
 			"tag": "p",
-			"text": "Flock welcomes and encourages public debate about our technology. We have not and would not seek to discourage, prevent, or prohibit such discussion and debate. In fact, we would be happy to participate in any such discussions the group in question might host in the future.",
-			"translation": "Flock 歡迎並鼓勵大眾對我們的技術進行辯論。我們現在和未來都不會尋求阻止、防止或禁止此類討論與辯論。事實上，我們很樂意參與該團體未來可能舉辦的任何此類討論。"
+			"translation": "仔細檢視 The Saturday Salon 貼文中信件的照片，可以發現一些可疑的細節。信中列出的 Haley 職稱是「法務事務部主管」，但他實際的職稱是首席法務長。《The Verge》也試著寄信到信中列出的 Haley 電子郵件地址，結果收到退信通知。"
 		},
 		{
+			"text": "Lifschultz tells <em>The Verge</em> that The Saturday Salon would “love to have somebody from Flock come in and tell their views and give a lecture. We are politically neutral and not a business.”",
 			"tag": "p",
-			"text": "Looking closely at the photo of the letter in The Saturday Salon’s post reveals some dodgy details. Haley’s title in the letter is “Head of Legal Affairs Division,” but his actual title is chief legal officer.The Vergealso emailed Haley’s purported email address on the letter but received a bounceback.",
-			"translation": "仔細觀察「週六沙龍」貼文中的信件照片，會發現一些可疑細節。Haley 在信中的職稱為「法律事務部負責人」，但其正式職稱是首席法務長。《The Verge》也向信中提供的 Haley 電子郵件地址發送郵件，但遭退信。"
+			"translation": "Lifschultz 告訴《The Verge》，The Saturday Salon「很樂意邀請 Flock 的人來分享他們的看法、進行一場講座。我們在政治上保持中立，也不是一間營利事業」。"
 		},
 		{
+			"text": "One of the other apparently forged letters Flock is aware of was shared in an Instagram post from musician Noah Orion. On his website, Orion has a shop listing for “Fuck Flock” stickers, and the cease and desist letter in the photo says that Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials in a way that encourages Orion’s fans to “claim and place stickers that constitute a rude and unusual manner towards our company and association.”",
 			"tag": "p",
-			"text": "Lifschultz tellsThe Vergethat The Saturday Salon would “love to have somebody from Flock come in and tell their views and give a lecture. We are politically neutral and not a business.”",
-			"translation": "Lifschultz 告訴《The Verge》，「週六沙龍」會「很樂意邀請 Flock 的人來分享觀點並舉辦講座。我們在政治上保持中立，並非營利事業。」"
+			"translation": "Flock 已知悉的另一封疑似偽造信件，是由音樂人 Noah Orion 在 Instagram 貼文中分享的。Orion 在自己的網站上販售「Fuck Flock」貼紙，而照片中的停止與終止函指控 Orion「未經授權散布」視覺素材，慫恿粉絲「索取並張貼對本公司及協會構成粗魯且異常方式的貼紙」。"
 		},
 		{
-			"tag": "p",
-			"text": "One of the other apparently forged letters Flock is aware of was shared inan Instagram postfrom musician Noah Orion. On his website, Orion hasa shop listing for “Fuck Flock” stickers, and the cease and desist letter in the photo says that Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials in a way that encourages Orion’s fans to “claim and place stickers that constitute a rude and unusual manner towards our company and association.”",
-			"translation": "Flock 知悉的另一封顯然是偽造的信件，是由音樂家 Noah Orion 在 Instagram 貼文中分享的。在 Orion 的網站上，他有一個「Fuck Flock」貼紙的商店列表，而照片中的停止侵權通知函稱，Orion 從事了「未經授權傳播」視覺素材的行為，並以此鼓勵粉絲「索取並張貼對我們公司及協會構成粗魯且異常行為的貼紙」。"
-		},
-		{
-			"tag": "p",
 			"text": "This letter also has some unusual characteristics, such as identifying the company as Flock Cameras and Flock incorporated [sic]. The letter in the photo says that failure to comply with the purported cease and desist “may result in Flock Group inc. [sic] to persecute you”, which is both an awkwardly worded phrase and incorrectly uses “persecute” instead of “prosecute.” Orion didn’t immediately reply to a request for comment.",
-			"translation": "這封信也有一些不尋常的特徵，例如將公司識別為 Flock Cameras 和 Flock incorporated [原文如此]。照片中的信函稱，若不遵守所謂的停止侵權通知，「可能導致 Flock Group inc. [原文如此] 對你進行迫害 (persecute)」，這既是一個措辭笨拙的短語，也錯誤地使用了「persecute」而非「起訴 (prosecute)」。Orion 並未立即回覆評論請求。"
+			"tag": "p",
+			"translation": "這封信也有一些不尋常之處，例如將公司名稱寫成「Flock Cameras」和「Flock incorporated」〔原文如此〕。照片中的信件寫道，若未遵守這份所謂的停止與終止函，「可能導致 Flock Group inc.〔原文如此〕對你進行 persecute（迫害）」，這句話不但用詞拗口，還誤用了「persecute（迫害）」一詞，正確用字應為「prosecute（起訴）」。Orion 並未立即回覆置評請求。"
 		}
 	],
 	"images": [
@@ -71,84 +66,108 @@
 	],
 	"vocab": [
 		{
-			"word": "purported",
-			"type": "general",
-			"pos": "adj.",
-			"ipa": "/pərˈpɔːrtɪd/",
-			"definition_zh": "據稱的；聲稱的",
-			"example": "Photos of purported cease and desist letters from the company have gone viral, but Flock says it didn’t send them."
-		},
-		{
 			"word": "viral",
 			"type": "highfreq",
 			"pos": "adj.",
-			"ipa": "/ˈvaɪrəl/",
-			"definition_zh": "（在網路上）瘋傳的",
+			"ipa": "/ˈvaɪ.rəl/",
+			"definition_zh": "快速爆紅的",
 			"example": "Photos of purported cease and desist letters from the company have gone viral, but Flock says it didn’t send them."
-		},
-		{
-			"word": "cease and desist",
-			"type": "term",
-			"pos": "n.",
-			"ipa": "/ˌsiːs ənd dɪˈsɪst/",
-			"definition_zh": "停止並終止函",
-			"example": "On Thursday, the Instagram account for a lecture series in Newport Beach, CA posted a photo of what appeared to be a cease and desist letter from the surveillance technology company Flock Safety."
-		},
-		{
-			"word": "surveillance",
-			"type": "general",
-			"pos": "n.",
-			"ipa": "/sɜːrˈveɪləns/",
-			"definition_zh": "監視；監督",
-			"example": "The text of the letter demands that the group stop hosting conversations about Flock’s surveillance technology."
 		},
 		{
 			"word": "backlash",
 			"type": "highfreq",
 			"pos": "n.",
-			"ipa": "/ˈbæklæʃ/",
-			"definition_zh": "強烈反彈；集體反對",
-			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies..."
-		},
-		{
-			"word": "law enforcement",
-			"type": "term",
-			"pos": "n.",
-			"ipa": "/lɔː ɛnˈfɔːrsmənt/",
-			"definition_zh": "執法部門",
-			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies..."
+			"ipa": "/ˈbæk.læʃ/",
+			"definition_zh": "強烈反彈",
+			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies, and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
 		},
 		{
 			"word": "allegedly",
-			"type": "general",
-			"pos": "adv.",
-			"ipa": "/əˈledʒɪdli/",
-			"definition_zh": "據稱地",
-			"example": "...and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
-		},
-		{
-			"word": "separate",
 			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈsepərət/",
-			"definition_zh": "各自的；不同的",
-			"example": "A separate post about the letter on Bluesky has more than 360 reposts."
+			"pos": "adv.",
+			"ipa": "/əˈledʒ.ɪd.li/",
+			"definition_zh": "據稱地",
+			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies, and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
 		},
 		{
-			"word": "cite",
+			"word": "silenced",
 			"type": "highfreq",
 			"pos": "v.",
-			"ipa": "/saɪt/",
-			"definition_zh": "引用；舉出",
-			"example": "...chief strategy officer Rahul Sidhu citing it as an example of a mass disinformation campaign against Flock."
+			"ipa": "/ˈsaɪ.lənst/",
+			"definition_zh": "使沉默",
+			"example": "“WE WILL NOT BE SILENCED,” the group, The Saturday Salon, wrote in the Instagram post, which has more than 3,000 likes."
+		},
+		{
+			"word": "demand",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈmænd/",
+			"definition_zh": "要求",
+			"example": "The text of the letter demands that the group stop hosting conversations about Flock’s surveillance technology."
+		},
+		{
+			"word": "deny",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈnaɪ/",
+			"definition_zh": "否認",
+			"example": "But Flock denies that it sent the letter, with chief strategy officer Rahul Sidhu citing it as an example of a mass disinformation campaign against Flock."
 		},
 		{
 			"word": "manipulate",
 			"type": "highfreq",
 			"pos": "v.",
-			"ipa": "/məˈnɪpjuleɪt/",
-			"definition_zh": "操縱；影響",
-			"example": "Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people..."
+			"ipa": "/məˈnɪp.jə.leɪt/",
+			"definition_zh": "操縱；操弄",
+			"example": "“Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people,” Sidhu says."
+		},
+		{
+			"word": "statement",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈsteɪt.mənt/",
+			"definition_zh": "聲明",
+			"example": "In a statement to The Verge, Flock’s chief legal officer, Dan Haley, says that Flock is aware of “at least two forged” letters and that “these letters did not come from me or from anyone at Flock.”"
+		},
+		{
+			"word": "encourage",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪnˈkɜː.rɪdʒ/",
+			"definition_zh": "鼓勵",
+			"example": "Flock welcomes and encourages public debate about our technology."
+		},
+		{
+			"word": "discourage",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈskɜː.rɪdʒ/",
+			"definition_zh": "勸阻",
+			"example": "We have not and would not seek to discourage, prevent, or prohibit such discussion and debate."
+		},
+		{
+			"word": "neutral",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈnuː.trəl/",
+			"definition_zh": "中立的",
+			"example": "We are politically neutral and not a business.”"
+		},
+		{
+			"word": "apparently",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/əˈpær.ənt.li/",
+			"definition_zh": "顯然地；據稱",
+			"example": "One of the other apparently forged letters Flock is aware of was shared in an Instagram post from musician Noah Orion."
+		},
+		{
+			"word": "repost",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈriː.poʊst/",
+			"definition_zh": "轉發文",
+			"example": "A separate post about the letter on Bluesky has more than 360 reposts."
 		},
 		{
 			"word": "forged",
@@ -156,111 +175,223 @@
 			"pos": "adj.",
 			"ipa": "/fɔːrdʒd/",
 			"definition_zh": "偽造的",
-			"example": "...Flock’s chief legal officer, Dan Haley, says that Flock is aware of “at least two forged” letters..."
+			"example": "“Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people,” Sidhu says."
 		},
 		{
 			"word": "circulating",
 			"type": "general",
-			"pos": "adj.",
-			"ipa": "/ˈsɜːrkjəleɪtɪŋ/",
-			"definition_zh": "流傳的；循環的",
-			"example": "We’re aware of at least two forged letters circulating on the internet..."
+			"pos": "v.",
+			"ipa": "/ˈsɜː.kjə.leɪ.tɪŋ/",
+			"definition_zh": "流傳",
+			"example": "We’re aware of at least two forged letters circulating on the internet, including this one, that purport to be cease-and-desist letters from our legal department."
 		},
 		{
-			"word": "future",
-			"type": "highfreq",
-			"pos": "n.",
-			"ipa": "/ˈfjuːtʃər/",
-			"definition_zh": "未來",
-			"example": "In fact, we would be happy to participate in any such discussions the group in question might host in the future."
+			"word": "prohibit",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/proʊˈhɪb.ɪt/",
+			"definition_zh": "禁止",
+			"example": "We have not and would not seek to discourage, prevent, or prohibit such discussion and debate."
 		},
 		{
 			"word": "dodgy",
 			"type": "general",
 			"pos": "adj.",
-			"ipa": "/ˈdɒdʒi/",
-			"definition_zh": "可疑的；有風險的",
+			"ipa": "/ˈdɑː.dʒi/",
+			"definition_zh": "可疑的",
 			"example": "Looking closely at the photo of the letter in The Saturday Salon’s post reveals some dodgy details."
 		},
 		{
-			"word": "bounceback",
-			"type": "term",
-			"pos": "n.",
-			"ipa": "/ˈbaʊnsbæk/",
-			"definition_zh": "退信；郵件彈回",
-			"example": "The Verge also emailed Haley’s purported email address on the letter but received a bounceback."
-		},
-		{
-			"word": "neutral",
-			"type": "highfreq",
-			"pos": "adj.",
-			"ipa": "/ˈnuːtrəl/",
-			"definition_zh": "中立的",
-			"example": "We are politically neutral and not a business."
-		},
-		{
-			"word": "dissemination",
+			"word": "constitute",
 			"type": "general",
-			"pos": "n.",
-			"ipa": "/dɪˌsemɪˈneɪʃn/",
-			"definition_zh": "傳播；散布",
-			"example": "...Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials..."
+			"pos": "v.",
+			"ipa": "/ˈkɑːn.stə.tuːt/",
+			"definition_zh": "構成",
+			"example": "On his website, Orion has a shop listing for “Fuck Flock” stickers, and the cease and desist letter in the photo says that Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials in a way that encourages Orion’s fans to “claim and place stickers that constitute a rude and unusual manner towards our company and association.”"
 		},
 		{
 			"word": "comply",
 			"type": "general",
 			"pos": "v.",
 			"ipa": "/kəmˈplaɪ/",
-			"definition_zh": "遵守；服從",
-			"example": "The letter in the photo says that failure to comply with the purported cease and desist “may result in Flock Group inc. [sic] to persecute you”"
+			"definition_zh": "遵守",
+			"example": "The letter in the photo says that failure to comply with the purported cease and desist “may result in Flock Group inc. [sic] to persecute you”, which is both an awkwardly worded phrase and incorrectly uses “persecute” instead of “prosecute.”"
 		},
 		{
-			"word": "comment",
-			"type": "highfreq",
-			"pos": "n.",
-			"ipa": "/ˈkɒment/",
-			"definition_zh": "評論；意見",
-			"example": "Orion didn’t immediately reply to a request for comment."
-		},
-		{
-			"word": "views",
-			"type": "highfreq",
-			"pos": "n.",
-			"ipa": "/vjuːz/",
-			"definition_zh": "觀點；看法",
-			"example": "Lifschultz tells The Verge that The Saturday Salon would “love to have somebody from Flock come in and tell their views and give a lecture."
-		},
-		{
-			"word": "statement",
-			"type": "highfreq",
-			"pos": "n.",
-			"ipa": "/ˈsteɪtmənt/",
-			"definition_zh": "聲明",
-			"example": "In a statement to The Verge, Flock’s chief legal officer, Dan Haley, says that Flock is aware of “at least two forged” letters..."
-		},
-		{
-			"word": "significant",
-			"type": "highfreq",
+			"word": "purported",
+			"type": "general",
 			"pos": "adj.",
-			"ipa": "/sɪɡˈnɪfɪkənt/",
-			"definition_zh": "顯著的；重大的",
-			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies..."
+			"ipa": "/pərˈpɔːr.tɪd/",
+			"definition_zh": "據稱的",
+			"example": "The Verge also emailed Haley’s purported email address on the letter but received a bounceback."
 		},
 		{
-			"word": "kick off",
+			"word": "dissemination",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪˌsem.əˈneɪ.ʃən/",
+			"definition_zh": "散布；傳播",
+			"example": "On his website, Orion has a shop listing for “Fuck Flock” stickers, and the cease and desist letter in the photo says that Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials in a way that encourages Orion’s fans to “claim and place stickers that constitute a rude and unusual manner towards our company and association.”"
+		},
+		{
+			"word": "disinformation",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/dɪsˌɪn.fərˈmeɪ.ʃən/",
+			"definition_zh": "不實資訊",
+			"example": "But Flock denies that it sent the letter, with chief strategy officer Rahul Sidhu citing it as an example of a mass disinformation campaign against Flock."
+		},
+		{
+			"word": "unauthorized",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ʌnˈɔː.θə.raɪzd/",
+			"definition_zh": "未經授權的",
+			"example": "On his website, Orion has a shop listing for “Fuck Flock” stickers, and the cease and desist letter in the photo says that Orion has engaged in conduct “involving the unauthorized dissemination” of visual materials in a way that encourages Orion’s fans to “claim and place stickers that constitute a rude and unusual manner towards our company and association.”"
+		},
+		{
+			"word": "kicked off",
 			"type": "phrase",
 			"pos": "",
-			"ipa": "/kɪk ɔːf/",
+			"ipa": "/kɪkt ɒf/",
 			"definition_zh": "開始；引發",
-			"example": "...and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
+			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies, and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
 		},
 		{
-			"word": "made it up",
+			"word": "shut down",
 			"type": "phrase",
 			"pos": "",
-			"ipa": "/meɪd ɪt ʌp/",
-			"definition_zh": "捏造；編造",
-			"example": "Flock never sent this letter, these people made it up (with a forged signature) to try to manipulate people..."
+			"ipa": "/ʃʌt daʊn/",
+			"definition_zh": "阻止；終止",
+			"example": "Flock has received significant backlash over its technology and work with law enforcement agencies, and this letter kicked off yet another wave of criticism against the company for allegedly trying to shut down discussions of its work."
+		},
+		{
+			"word": "awkwardly worded",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈɔːk.wərd.li ˈwɜːr.dɪd/",
+			"definition_zh": "措辭笨拙",
+			"example": "The letter in the photo says that failure to comply with the purported cease and desist “may result in Flock Group inc. [sic] to persecute you”, which is both an awkwardly worded phrase and incorrectly uses “persecute” instead of “prosecute.”"
+		},
+		{
+			"word": "request for comment",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/rɪˈkwest fər ˈkɑː.mənt/",
+			"definition_zh": "置評請求",
+			"example": "Orion didn’t immediately reply to a request for comment."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The new pricing policy caused a huge ____ from loyal customers.",
+			"sentence_zh": "新的定價政策引發忠實顧客的強烈反彈。",
+			"answer": "backlash",
+			"options": [
+				"statement",
+				"backlash",
+				"constitute",
+				"repost"
+			]
+		},
+		{
+			"sentence": "The spokesperson continued to ____ any involvement in the scandal.",
+			"sentence_zh": "發言人持續否認涉入這起醜聞。",
+			"answer": "deny",
+			"options": [
+				"encourage",
+				"deny",
+				"dissemination",
+				"silenced"
+			]
+		},
+		{
+			"sentence": "Investigators found evidence that someone tried to ____ the stock price.",
+			"sentence_zh": "調查人員發現有人企圖操縱股價的證據。",
+			"answer": "manipulate",
+			"options": [
+				"manipulate",
+				"comply",
+				"forged",
+				"apparently"
+			]
+		},
+		{
+			"sentence": "High fees might ____ small businesses from applying for the grant.",
+			"sentence_zh": "高額費用可能會讓小型企業卻步而不申請補助。",
+			"answer": "discourage",
+			"options": [
+				"prohibit",
+				"discourage",
+				"demand",
+				"viral"
+			]
+		},
+		{
+			"sentence": "The used car dealer seemed a bit ____, so we decided not to buy from him.",
+			"sentence_zh": "那個二手車商感覺有點可疑，所以我們決定不跟他買車。",
+			"answer": "dodgy",
+			"options": [
+				"dodgy",
+				"neutral",
+				"unauthorized",
+				"purported"
+			]
+		},
+		{
+			"sentence": "All employees must ____ with the new safety regulations.",
+			"sentence_zh": "所有員工都必須遵守新的安全規定。",
+			"answer": "comply",
+			"options": [
+				"comply",
+				"constitute",
+				"circulating",
+				"kicked off"
+			]
+		},
+		{
+			"sentence": "The ____ evidence turned out to be completely fabricated.",
+			"sentence_zh": "那份據稱的證據結果完全是捏造的。",
+			"answer": "purported",
+			"options": [
+				"purported",
+				"disinformation",
+				"backlash",
+				"shut down"
+			]
+		},
+		{
+			"sentence": "The government launched a campaign to fight online ____ during the election.",
+			"sentence_zh": "政府在選舉期間發起了打擊網路不實資訊的行動。",
+			"answer": "disinformation",
+			"options": [
+				"disinformation",
+				"statement",
+				"dodgy",
+				"repost"
+			]
+		},
+		{
+			"sentence": "The company fired the employee for ____ access to customer data.",
+			"sentence_zh": "公司因該名員工未經授權存取客戶資料而將其解僱。",
+			"answer": "unauthorized",
+			"options": [
+				"unauthorized",
+				"apparently",
+				"silenced",
+				"manipulate"
+			]
+		},
+		{
+			"sentence": "Protesters tried to ____ the meeting by blocking the entrance.",
+			"sentence_zh": "抗議者試圖藉由堵住入口來終止這場會議。",
+			"answer": "shut down",
+			"options": [
+				"shut down",
+				"kicked off",
+				"encourage",
+				"deny"
+			]
 		}
 	]
 }
