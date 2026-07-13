@@ -1,0 +1,11 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(python3 generate.py)",
+			"Bash(python3 rebuild.py)",
+			"Bash(python generate.py)",
+			"Bash(python rebuild.py)",
+			"Bash(gh run *)"
+		]
+	}
+}
