@@ -1,0 +1,488 @@
+{
+	"date": "2026-07-13",
+	"slot": "noon",
+	"tag": "科技",
+	"title": "The Download: a nuclear landmark, and China eyes Nvidia chips",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/09/1140283/the-download-nuclear-power-milestone-nvidia-china-ai-chips/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "<em>This is today's edition of </em><em>The Download</em>, <em>our weekday newsletter that provides a daily dose of what's going on in the world of technology.</em>",
+			"translation": "這是今日版的 The Download，我們每個工作日發送的通訊，為您提供科技界正在發生的大小事。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Four nuclear reactors hit a big milestone in the US</strong>",
+			"translation": "美國四座核子反應爐達成重大里程碑"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Casey Crownhart</em>",
+			"translation": "—Casey Crownhart"
+		},
+		{
+			"tag": "p",
+			"text": "I was really looking forward to July 4, and not just because I love a poolside barbecue. This year the American holiday also marked a big symbolic deadline for US nuclear power.",
+			"translation": "我非常期待 7 月 4 日，不僅是因為我喜歡泳池邊的燒烤。今年這個美國節日也標誌著美國核能的一個重要象徵性期限。"
+		},
+		{
+			"tag": "p",
+			"text": "Last year the Trump administration set a goal to see three new microreactors achieve criticality, a technical milestone establishing that a reactor can sustain a chain reaction, by the nation’s 250th birthday. And just in time, not just three, but four reactors did so.",
+			"translation": "去年，川普政府設定了一個目標，希望在美國建國 250 週年之際，看到三座新的微型反應爐達到「臨界狀態」（criticality），這是一個技術里程碑，證明反應爐可以維持連鎖反應。而就在及時之際，不僅是三座，而是有四座反應爐做到了。"
+		},
+		{
+			"tag": "p",
+			"text": "It’s a positive sign for nuclear technologies at a time of increasing need for electricity and emissions-free energy sources. But achieving criticality doesn’t mean a reactor is ready to provide electricity for the grid (or at all, for that matter).",
+			"translation": "在電力需求增加和對無排放能源需求日益增長的背景下，這對核能技術來說是一個積極的信號。但達到臨界狀態並不意味著反應爐已經準備好為電網提供電力（或者說，根本還沒準備好供電）。"
+		},
+		{
+			"tag": "p",
+			"text": "Here’s what the milestone could mean for nuclear power in the US—and where the four companies might go next.",
+			"translation": "以下是這個里程碑對美國核能的意義，以及這四家公司接下來可能的發展方向。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>This </strong><strong>story</strong><strong> is from The Spark, our weekly climate tech newsletter. </strong><strong>Sign up</strong><strong> to receive it in your inbox every Wednesday.</strong>",
+			"translation": "這則故事摘自 The Spark，我們每週一次的氣候科技通訊。歡迎訂閱，每週三將發送到您的收件箱。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>The must-reads</strong>",
+			"translation": "必讀文章"
+		},
+		{
+			"tag": "p",
+			"text": "<em>I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.</em>",
+			"translation": "我蒐羅了網路上的資訊，為您找出今天最有趣、最重要、最可怕或最引人入勝的科技故事。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>1 China plans to let its top AI firms buy Nvidia H200 chips</strong> Alibaba, ByteDance, and DeepSeek are set to get permission. (Information $) <em>+ China had previously withheld approval despite US authorization.</em> (Reuters $) <strong>2 NATO is building a network to stop Russian attackers in their tracks</strong> It will use sensors, drones, satellites, and AI to detect them. (Business Insider) <em>+ Troops are donning odd camouflage to elude drones. </em>(Economist $) <em>+ The US wants cheaper drones as Iran's wrecking its Reapers. </em>(Ars Technica) <strong>3 Researchers have a new idea to fight future El Niños: dimming the sun</strong> Deflecting solar energy could cool the ocean and mitigate the risks. (Wired $) <em>+ But there could be unexpected consequences.</em> (New Scientist $) <em>+ And geoengineering as a field is getting a reality check.</em> (MIT Technology Review) <strong>4 Meta is patenting an AI device that records users to analyse emotions</strong> It ostensibly aims to tailor workout plans to the user’s mood. (404 Media) <em>+ AI memory is privacy’s next frontier. </em>(MIT Technology Review) <strong>5 Chipmakers are going vertical as Moore’s Law slows</strong> They’re stacking transistors to keep chips advancing. (Economist $) <em>+ IBM is betting on the technique.</em> (MIT Technology Review) <strong>6 Ivy League students suspected of AI cheating saw scores fall in person</strong> From 96% all the way down to 48%. (Ars Technica) <em>+ AI giants want to take over the classroom.</em> (MIT Technology Review) <strong>7 A new study says parents’ phone addictions damage bonds with kids</strong> It can exacerbate “insecure attachment” for life. (Bloomberg $) <em>+ And make children more anxious and avoidant. </em>(Gizmodo) <strong>8 A judge approved Musk’s $1.5 million Twitter settlement with the SEC</strong> Despite what she called “serious misgivings” and “red flags.” (Reuters $) <em>+ Musk was accused of skirting stock disclosure rules.</em> (Fortune) <strong>9 Shoebox-sized “detector satellites” could find nuclear bombs in space</strong> Cubesats carrying the detector could sense a bomb’s radiation. (Space) <em>+ Russia is suspected of developing space-based nukes.</em> (Reuters $) <strong>10 A World Cup match drove Google Search traffic to a new record</strong> The milestone came after Argentina’s comeback against Egypt. (CNBC)",
+			"translation": "1. 中國計劃允許其頂尖 AI 公司購買輝達 H200 晶片：阿里巴巴、字節跳動和 DeepSeek 預計將獲得許可。（The Information $） + 中國此前儘管獲得美國授權，但仍扣住審批。（路透社 $） 2. 北約正在建立網絡以阻截俄羅斯攻擊者：它將使用感測器、無人機、衛星和 AI 來偵測他們。（商業內幕） + 部隊正穿著奇特的迷彩服以避開無人機偵測。（經濟學人 $） + 美國希望獲得更便宜的無人機，因為伊朗正在摧毀其收割者無人機。（Ars Technica） 3. 研究人員提出對抗未來聖嬰現象的新點子：讓太陽變暗。反射太陽能可以冷卻海洋並減輕風險。（Wired $） + 但這可能會產生意想不到的後果。（新科學家 $） + 而地球工程作為一個領域正受到現實檢驗。（MIT 科技評論） 4. Meta 正在申請一項 AI 裝置專利，可記錄使用者以分析情緒：其表面目的是為使用者的情緒量身打造健身計劃。（404 Media） + AI 記憶是隱私的下一個前沿領域。（MIT 科技評論） 5. 隨著摩爾定律放緩，晶片製造商正朝向垂直化發展：他們正堆疊電晶體以保持晶片進步。（經濟學人 $） + IBM 正押注於此技術。（MIT 科技評論） 6. 被懷疑使用 AI 作弊的長春藤盟校學生在實體考試中分數下降：從 96% 一路跌到 48%。（Ars Technica） + AI 巨頭想要接管教室。（MIT 科技評論） 7. 一項新研究稱父母的手機成癮會損害與孩子的關係：這可能會加劇終身的「不安全依附」。（彭博社 $） + 並使孩子變得更加焦慮和逃避。（Gizmodo） 8. 法官批准了馬斯克與美國證券交易委員會價值 150 萬美元的推特和解案：儘管她稱之為存在「嚴重的疑慮」和「警訊」。（路透社 $） + 馬斯克被指控規避股票披露規則。（財富雜誌） 9. 鞋盒大小的「探測衛星」可以在太空發現核彈：攜帶探測器的立方衛星可以感測炸彈的輻射。（Space） + 俄羅斯被懷疑正在開發太空核武。（路透社 $） 10. 世界盃比賽帶動 Google 搜尋流量創下新紀錄：這一里程碑是在阿根廷對陣埃及逆轉勝後達成的。（CNBC）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Quote of the day</strong>",
+			"translation": "今日語錄"
+		},
+		{
+			"tag": "h2",
+			"text": "<strong>“I talk about it on Tic Tac.”</strong>",
+			"translation": "「我在 Tic Tac 上談論它。」"
+		},
+		{
+			"tag": "p",
+			"text": "—President Donald Trump tells the public where to find his insights on the dangers of communism, Gizmodo reports.",
+			"translation": "—據 Gizmodo 報導，前總統唐納·川普告訴公眾在哪裡可以找到他對共產主義危險的見解。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>One More Thing</strong>",
+			"translation": "還有一件事"
+		},
+		{
+			"tag": "h4",
+			"text": "<strong> Robots are bringing new life to extinct species</strong>",
+			"translation": "機器人正為滅絕物種帶來新生命"
+		},
+		{
+			"tag": "p",
+			"text": "Paleontologists aren’t easily deterred by evolutionary dead ends or a sparse fossil record. And in the last few years, they’ve developed a new trick for turning back time and studying prehistoric animals: building experimental robotic models of them.",
+			"translation": "古生物學家不會輕易被演化的死胡同或稀少的化石記錄所阻撓。在過去幾年裡，他們開發了一種倒轉時間並研究史前動物的新技巧：為它們建造實驗性的機器模型。"
+		},
+		{
+			"tag": "p",
+			"text": "In the absence of a living specimen, an ambling, flying, swimming, or slithering automaton is the next best thing for studying the behavior of extinct organisms. Learning more about how they moved can in turn shed light on their lives, such as their historic ranges and feeding habits. Scientists can simply sit back and observe their behavior in different environments.",
+			"translation": "在缺乏活體樣本的情況下，一個會緩步移動、飛行、游泳或滑行的自動機器是研究滅絕生物行為的次佳選擇。深入了解它們如何移動，反過來可以闡明它們的生活，例如它們的歷史活動範圍和餵食習慣。科學家只需坐下來觀察它們在不同環境中的行為即可。"
+		},
+		{
+			"tag": "p",
+			"text": "Read the full story on the rise of paleo-inspired robots—and four examples that are shedding light on creatures of yore.",
+			"translation": "閱讀關於古生物啟發機器人興起的完整故事，以及四個闡明古代生物的範例。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Shi En Kim</em>",
+			"translation": "—Shi En Kim"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>We can still have nice things</strong>",
+			"translation": "我們仍能擁有美好的事物"
+		},
+		{
+			"tag": "p",
+			"text": "<em>A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? </em><em>Drop me a line</em><em>.)</em>",
+			"translation": "一個提供舒適、樂趣和消遣以點亮您一天的地方。（有什麼點子嗎？請聯繫我。）"
+		},
+		{
+			"tag": "p",
+			"text": "+ Georgia Hill’s monochrome artworks are filled with visual harmony. + AI has salvaged text from a papyrus scroll burned to a crisp when Mount Vesuvius erupted 2,000 years ago. + Rare images taken by a Japanese space probe show a near-Earth asteroid resembling a cuddly snowman. + “Another One Bites the Bee Gees” smoothly merges two classic tracks with a 4/4 time signature into the perfect song for applying CPR.",
+			"translation": "+ Georgia Hill 的單色藝術作品充滿了視覺和諧。+ AI 從 2000 年前維蘇威火山噴發時燒焦的莎草紙卷中搶救出了文字。+ 日本太空探測器拍攝的珍貴影像顯示，一顆近地小行星看起來像個可愛的雪人。+ 「Another One Bites the Bee Gees」流暢地將兩首經典歌曲以 4/4 拍融合，成為施行心肺復甦術（CPR）的完美歌曲。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: the future of chipmaking and Anthropic’s government clash",
+			"translation": "The Download：晶片製造的未來與 Anthropic 的政府衝突"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.",
+			"translation": "外加：Meta 正在暫停一項追蹤員工按鍵紀錄的 AI 訓練計劃。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
+			"translation": "The Download：超越神話的 AI 駭客攻擊，以及聊天機器人對大腦的影響"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Anthropic has called for a global slowdown in AI development.",
+			"translation": "外加：Anthropic 呼籲全球放慢 AI 發展速度。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: a reality check for geoengineering and the science of interoception",
+			"translation": "The Download：地球工程的現實檢驗與內感作用的科學"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: SpaceX is now valued higher than Amazon.",
+			"translation": "外加：SpaceX 現在的估值高於亞馬遜。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: keeping up with AI, and the future of IVF",
+			"translation": "The Download：緊跟 AI 腳步與體外受精的未來"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: NASA unveiled plans for three uncrewed missions to the Moon this year.",
+			"translation": "外加：NASA 公布了今年三項前往月球的無人任務計劃。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "獲取 MIT 科技評論的最新動態"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "探索特別優惠、頭條故事、即將舉行的活動等。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2025/02/Photomontage-1.jpg?w=3000",
+			"alt": "",
+			"after_paragraph": 15
+		}
+	],
+	"vocab": [
+		{
+			"word": "milestone",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈmaɪlˌstoʊn/",
+			"definition_zh": "重大事件；里程碑",
+			"example": "Four nuclear reactors hit a big milestone in the US"
+		},
+		{
+			"word": "achieve",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/əˈtʃiːv/",
+			"definition_zh": "達成；實現",
+			"example": "see three new microreactors achieve criticality"
+		},
+		{
+			"word": "sustain",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/səˈsteɪn/",
+			"definition_zh": "維持；使持續",
+			"example": "establishing that a reactor can sustain a chain reaction"
+		},
+		{
+			"word": "emission",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/iˈmɪʃən/",
+			"definition_zh": "排放（物）",
+			"example": "increasing need for electricity and emissions-free energy sources."
+		},
+		{
+			"word": "mitigate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈmɪtɪɡeɪt/",
+			"definition_zh": "緩解；減輕",
+			"example": "Deflecting solar energy could cool the ocean and mitigate the risks."
+		},
+		{
+			"word": "tailor",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈteɪlər/",
+			"definition_zh": "量身打造；調整",
+			"example": "It ostensibly aims to tailor workout plans to the user’s mood."
+		},
+		{
+			"word": "disclose",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪsˈkloʊz/",
+			"definition_zh": "揭露；公開",
+			"example": "Musk was accused of skirting stock disclosure rules."
+		},
+		{
+			"word": "observe",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/əbˈzɜːrv/",
+			"definition_zh": "觀察；觀測",
+			"example": "Scientists can simply sit back and observe their behavior in different environments."
+		},
+		{
+			"word": "salvage",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈsælvɪdʒ/",
+			"definition_zh": "搶救；回收",
+			"example": "AI has salvaged text from a papyrus scroll burned to a crisp."
+		},
+		{
+			"word": "authorize",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈɔːθəraɪz/",
+			"definition_zh": "授權；批准",
+			"example": "China had previously withheld approval despite US authorization."
+		},
+		{
+			"word": "criticality",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌkrɪtɪˈkælɪti/",
+			"definition_zh": "臨界狀態（核能）",
+			"example": "But achieving criticality doesn’t mean a reactor is ready to provide electricity."
+		},
+		{
+			"word": "withhold",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/wɪðˈhoʊld/",
+			"definition_zh": "扣留；拒絕給予",
+			"example": "China had previously withheld approval despite US authorization."
+		},
+		{
+			"word": "camouflage",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkæməflɑːʒ/",
+			"definition_zh": "偽裝；保護色",
+			"example": "Troops are donning odd camouflage to elude drones."
+		},
+		{
+			"word": "elude",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/iˈluːd/",
+			"definition_zh": "躲避；逃避",
+			"example": "Troops are donning odd camouflage to elude drones."
+		},
+		{
+			"word": "ostensibly",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/ɒˈstensəbli/",
+			"definition_zh": "表面上地",
+			"example": "It ostensibly aims to tailor workout plans to the user’s mood."
+		},
+		{
+			"word": "ambling",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈæmblɪŋ/",
+			"definition_zh": "緩步慢行的",
+			"example": "an ambling, flying, swimming, or slithering automaton"
+		},
+		{
+			"word": "automaton",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɔːˈtɒmətən/",
+			"definition_zh": "自動機器；機器人",
+			"example": "an ambling, flying, swimming, or slithering automaton is the next best thing"
+		},
+		{
+			"word": "deter",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/dɪˈtɜːr/",
+			"definition_zh": "阻嚇；使卻步",
+			"example": "Paleontologists aren’t easily deterred by evolutionary dead ends."
+		},
+		{
+			"word": "microreactor",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈmaɪkroʊriˌæktər/",
+			"definition_zh": "微型反應爐",
+			"example": "set a goal to see three new microreactors achieve criticality."
+		},
+		{
+			"word": "interoception",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌɪntərəʊˈsepʃən/",
+			"definition_zh": "內感作用",
+			"example": "the future of geoengineering and the science of interoception"
+		},
+		{
+			"word": "just in time",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/dʒʌst ɪn taɪm/",
+			"definition_zh": "及時；在最後一刻",
+			"example": "And just in time, not just three, but four reactors did so."
+		},
+		{
+			"word": "shed light on",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ʃɛd laɪt ɒn/",
+			"definition_zh": "闡明；幫助解釋",
+			"example": "How they moved can in turn shed light on their lives."
+		},
+		{
+			"word": "look forward to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lʊk ˈfɔːrwərd tuː/",
+			"definition_zh": "期待",
+			"example": "I was really looking forward to July 4."
+		},
+		{
+			"word": "drop me a line",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/drɒp mi ə laɪn/",
+			"definition_zh": "聯繫我；寫信給我",
+			"example": "Got any ideas? Drop me a line."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The successful launch of the satellite marked a significant ____ in the nation's space program.",
+			"sentence_zh": "衛星的成功發射標誌著該國太空計劃的一個重要里程碑。",
+			"answer": "milestone",
+			"options": [
+				"milestone",
+				"criticality",
+				"automaton",
+				"emission"
+			]
+		},
+		{
+			"sentence": "The government refused to ____ the classified documents even after the court order.",
+			"sentence_zh": "即使在法院下達命令後，政府仍拒絕公開機密文件。",
+			"answer": "disclose",
+			"options": [
+				"disclose",
+				"authorize",
+				"mitigate",
+				"deter"
+			]
+		},
+		{
+			"sentence": "Scientists are trying to find new ways to ____ the impact of climate change on coastal cities.",
+			"sentence_zh": "科學家正試圖尋找新方法來減輕氣候變遷對沿海城市的影響。",
+			"answer": "mitigate",
+			"options": [
+				"mitigate",
+				"salvage",
+				"sustain",
+				"tailor"
+			]
+		},
+		{
+			"sentence": "The spy used a clever ____ to blend into the crowd and avoid being spotted.",
+			"sentence_zh": "間諜使用了巧妙的偽裝來融入人群並避免被發現。",
+			"answer": "camouflage",
+			"options": [
+				"camouflage",
+				"milestone",
+				"microreactor",
+				"automaton"
+			]
+		},
+		{
+			"sentence": "We ____ hearing from you regarding the job opportunity.",
+			"sentence_zh": "我們期待收到您關於這份工作機會的消息。",
+			"answer": "look forward to",
+			"options": [
+				"look forward to",
+				"shed light on",
+				"just in time",
+				"drop me a line"
+			]
+		},
+		{
+			"sentence": "High taxes can ____ investors from putting money into new startups.",
+			"sentence_zh": "高稅收可能會阻礙投資者將資金投入新的新創公司。",
+			"answer": "deter",
+			"options": [
+				"deter",
+				"achieve",
+				"authorize",
+				"sustain"
+			]
+		},
+		{
+			"sentence": "The thief managed to ____ the police by running through narrow alleys.",
+			"sentence_zh": "小偷穿過狹窄的巷弄，成功躲避了警察的追捕。",
+			"answer": "elude",
+			"options": [
+				"elude",
+				"observe",
+				"salvage",
+				"withhold"
+			]
+		},
+		{
+			"sentence": "The software is designed to ____ the user experience based on individual preferences.",
+			"sentence_zh": "該軟體旨在根據個人喜好為使用者量身打造體驗。",
+			"answer": "tailor",
+			"options": [
+				"tailor",
+				"mitigate",
+				"disclose",
+				"deter"
+			]
+		},
+		{
+			"sentence": "Archaeologists managed to ____ several ancient artifacts from the shipwreck.",
+			"sentence_zh": "考古學家成功從沉船中搶救出幾件古代文物。",
+			"answer": "salvage",
+			"options": [
+				"salvage",
+				"withhold",
+				"achieve",
+				"elude"
+			]
+		},
+		{
+			"sentence": "The manager has the power to ____ the release of the company's annual budget.",
+			"sentence_zh": "經理有權批准發布公司的年度預算。",
+			"answer": "authorize",
+			"options": [
+				"authorize",
+				"sustain",
+				"observe",
+				"deter"
+			]
+		}
+	]
+}
