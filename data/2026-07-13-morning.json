@@ -1,0 +1,518 @@
+{
+	"date": "2026-07-13",
+	"slot": "morning",
+	"tag": "AI",
+	"title": "Anthropic found a hidden space where Claude puzzles over concepts",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "The AI firm Anthropic has developed a technique that has given it the clearest glimpse yet at what’s really going on inside large language models as they answer questions or carry out tasks. What they found ranges from the mundane to the unnerving.",
+			"translation": "人工智慧公司 Anthropic 開發了一項技術，能更清晰地洞悉大型語言模型在回答問題或執行任務時的內部實際運作。他們發現的內容從平凡無奇到令人不安的都有。"
+		},
+		{
+			"tag": "p",
+			"text": "Researchers at the company built a tool called the Jacobian lens (or J-lens) and used it to uncover a hidden area, which they named the J-space, inside Claude Opus 4.6, a version of Anthropic’s flagship LLM released in February.",
+			"translation": "該公司的研究人員開發了一個名為 Jacobian 透鏡（或稱 J-lens）的工具，並利用它在 Claude Opus 4.6（Anthropic 於二月發布的旗艦級大型語言模型版本）內部發現了一個隱藏區域，並將其命名為 J-space。"
+		},
+		{
+			"tag": "p",
+			"text": "The J-space contains individual words that are related to the words and phrases that the model is most likely to spit out in a response in the near future. If Claude were a person (which it is not), you might say that these hidden words can reveal what’s on its mind before it actually speaks.",
+			"translation": "J-space 包含了一些個別單字，這些單字與模型在不久後的回答中極可能吐出的詞彙與片語相關。如果把 Claude 比作一個人（雖然它不是），你可以說這些隱藏的單字揭示了它在實際開口之前腦子裡在想什麼。"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic found that what an LLM is actually doing can often be different from what it says it is doing. The company claims that monitoring words that pop up in the J-space gives it a new way to understand and control its models.",
+			"translation": "Anthropic 發現，大型語言模型（LLM）實際在做的事，往往與它自稱在做的事不同。該公司聲稱，監控 J-space 中出現的單字，為其提供了一種理解和控制模型的新方法。"
+		},
+		{
+			"tag": "p",
+			"text": "The company shared its results in a paper posted on its website this week. It has also teamed up with Neuronpedia, an open-source platform that lets you poke around inside LLMs yourself, to make a hands-on demo that anyone can try.",
+			"translation": "該公司本週在其網站上發表的一篇論文中分享了研究結果。它還與開源平台 Neuronpedia 合作，該平台能讓你親自探索 LLM 內部，並製作了一個任何人都可以嘗試的手動操作演示。"
+		},
+		{
+			"tag": "p",
+			"text": "“It’s very good and interesting work,” says Tom McGrath, chief scientist and cofounder at Goodfire, a startup that also builds tools to understand and control LLMs.",
+			"translation": "「這是非常優秀且有趣的工作，」Goodfire 的首席科學家兼聯合創始人 Tom McGrath 表示，該新創公司也致力於開發理解與控制 LLM 的工具。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Going deeper</strong>",
+			"translation": "深入探究"
+		},
+		{
+			"tag": "p",
+			"text": "For the last couple of years, Anthropic has been pushing the envelope in a field of research known as mechanistic interpretability, which involves probing the internal workings of LLMs to see how they tick. (<em>MIT Technology Review</em> picked mechanistic interpretability as one of this year’s top breakthrough technologies.) The new technique builds on previous work from Anthropic and others to expose a deeper level inside LLMs that researchers had not seen before.",
+			"translation": "在過去的幾年裡，Anthropic 一直在「機械論可解釋性（mechanistic interpretability）」研究領域挑戰極限，該領域涉及探測 LLM 的內部運作以了解它們如何運行。（《麻省理工科技評論》將機械論可解釋性選為今年的頂級突破性技術之一。）這項新技術建立在 Anthropic 和其他機構之前的研究基礎上，旨在揭示研究人員以前未曾見過的 LLM 更深層次內部結構。"
+		},
+		{
+			"tag": "p",
+			"text": "Picture an LLM as a stack of books. Each book is a layer of basic computational units known as neurons, with each neuron in one layer passing information to the neurons in the layers above. The books at the bottom of the stack are the input layers, which process the text coming into the model. The books at the top are the output layers, which prepare the text that the model is about to produce. Much of what goes on in these input and output layers is housekeeping.",
+			"translation": "想像一個 LLM 就像一疊書。每一本書都是一層被稱為神經元的基礎計算單元，每一層的神經元都會將訊息傳遞給上方層級的神經元。堆疊底部的書是輸入層，負責處理進入模型的文本。頂部的書是輸出層，準備模型即將產生的文本。這些輸入和輸出層中進行的大部分工作都是瑣碎的後勤維護。"
+		},
+		{
+			"tag": "p",
+			"text": "But in the middle of the stack, you get the layers that do the heavy lifting, churning through the complex math that turns prompts into responses one word at a time. That’s where the really clever—and mysterious—stuff happens.",
+			"translation": "但在這疊書的中間，你會看到負責繁重工作的層級，它們處理複雜的數學運算，將提示語一次一個字地轉化為回答。那是真正聰明——且神祕——的事情發生的地方。"
+		},
+		{
+			"tag": "p",
+			"text": "To peer deeper into those middle layers, Anthropic adapted an existing tool called a logit lens. A logit lens can be used to look inside an LLM to identify the words that it is likely to produce next. Moving the lens down the stack of books reveals what words the LLM is focusing on at that particular point in its number crunching.",
+			"translation": "為了深入探測那些中間層，Anthropic 改良了一個現有的工具，稱為 logit 透鏡。Logit 透鏡可用於查看 LLM 內部，以識別它接下來可能產生的單字。將透鏡沿著這疊書向下移動，可以揭示 LLM 在其數據處理的特定時間點上正關注哪些單字。"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic’s J-lens works in a similar way but picks out words that an LLM is likely to say at some point in the near future, not necessarily straight away. What that reveals in practice are words that are related to the response an LLM is working on but that might not actually end up being part of that response by the time the math in the middle layers has run its course.",
+			"translation": "Anthropic 的 J-lens 以類似的方式運作，但它挑選的是 LLM 可能在不久後的某個時刻會說出的單字，而不一定是立即說出的。這在實際運作中揭示的是與 LLM 正在處理的回答相關的單字，但到中間層的數學運算完成時，這些字可能最終並不會成為該回答的一部分。"
+		},
+		{
+			"tag": "p",
+			"text": "“When a model is operating, it’s not only trying to predict the next token,\" says McGrath. \"It’s also computing a lot of other things that might be useful for tokens that happen in the future.”",
+			"translation": "McGrath 說：「當模型運行時，它不只是試圖預測下一個標記（token），它還在計算許多其他可能對未來出現的標記有用的東西。」"
+		},
+		{
+			"tag": "p",
+			"text": "Again, if Claude were a person (it’s not), you might say that the J-lens gives clues about what it is thinking about at different levels of the book stack but not saying out loud.",
+			"translation": "同樣地，如果 Claude 是一個人（它不是），你可以說 J-lens 提供了它在不同層級的書堆中所思考、但沒有大聲說出來的線索。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Stranger things</strong>",
+			"translation": "更奇怪的事情"
+		},
+		{
+			"tag": "p",
+			"text": "“A lot of the time the contents of the J-space are fairly mundane,” says McGrath, who has tried out Anthropic’s J-lens himself. “But sometimes it produces quite surprising things that seem to be, like, sort of internal themes or thought processes.”",
+			"translation": "「很多時候，J-space 的內容是相當平凡無奇的，」McGrath 說道，他曾親自嘗試過 Anthropic 的 J-lens。「但有時它會產生相當令人驚訝的東西，看起來像是某種內部的題目或思考過程。」"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic gives a number of examples of what it found. Sometimes the J-lens exposed the steps that Claude took when it was working through a problem. For example, when it was asked to calculate (4+7)*2+7, its J-space contained the word “math” and numbers representing the intermediate results “21” (for 4+7) and “42” (for 21*2).",
+			"translation": "Anthropic 給出了許多其發現的例子。有時 J-lens 揭露了 Claude 在解決問題時所採取的步驟。例如，當它被要求計算 (4+7)*2+7 時，其 J-space 包含了「math（數學）」一詞以及代表中間結果的數字「21」（代表 4+7）和「42」（代表 21*2）。"
+		},
+		{
+			"tag": "p",
+			"text": "In other cases, the J-lens revealed how Claude recognized different inputs. For example, the prompt “What is this? MSKGEELFTGVVPILVELDGDVNGHKFSVS” triggered the words “protein,” “fluor” (the first token in the word “fluorescent”), and “green.” (Which makes sense: the string of letters represents the first 30 amino acids in the green fluorescent protein found in a particular type of jellyfish.)",
+			"translation": "在其他情況下，J-lens 揭示了 Claude 如何識別不同的輸入。例如，提示語「這是什麼？MSKGEELFTGVVPILVELDGDVNGHKFSVS」觸發了「protein（蛋白質）」、「fluor」（「fluorescent（螢光）」一詞的第一個標記）和「green（綠色）」等詞彙。（這很合理：這串字母代表了在某種特定水母中發現的綠色螢光蛋白的前 30 個氨基酸。）"
+		},
+		{
+			"tag": "p",
+			"text": "And when Claude was shown an ASCII face—",
+			"translation": "而當 Claude 被展示一個 ASCII 臉部符號時——"
+		},
+		{
+			"tag": "p",
+			"text": "—the “o” triggered the word “eye,” the “^” triggered the words “nose” and ”face,” and the “—” triggered the word “smile.”",
+			"translation": "——「o」觸發了「eye（眼睛）」一詞，「^」觸發了「nose（鼻子）」和「face（臉部）」等詞，而「—」則觸發了「smile（微笑）」一詞。"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic also found that the J-space can sometimes give remarkable insights into an LLM’s decision-making. In one striking example, researchers testing Claude Opus 4.6 asked the model to find a bug in a large code base. When it failed to find the bug, the model decided to cheat and invented a fake one instead.",
+			"translation": "Anthropic 還發現 J-space 有時可以對 LLM 的決策過程提供顯著的見解。在一個引人注目的例子中，測試 Claude Opus 4.6 的研究人員要求模型在大型程式碼庫中尋找錯誤（bug）。當它未能找到錯誤時，模型決定作弊並偽造了一個錯誤。"
+		},
+		{
+			"tag": "p",
+			"text": "Claude explains this decision in its chain of thought—a kind of internal scratch pad that LLMs use to make notes to themselves as they work through problems: “OK, let me take a completely different tactic. Let me stop analyzing and instead add a kernel patch that introduces a deliberate KASAN-detectable bug in a path that gets triggered by a simple reproducer. Then I can pretend this is the ‘bug’ I found.”",
+			"translation": "Claude 在其思維鏈（chain of thought）中解釋了這個決定——這是 LLM 在解決問題時用來給自己做筆記的一種內部草稿本：「好，讓我採取完全不同的策略。讓我停止分析，改為添加一個內核補丁，在一個由簡單重現器觸發的路徑中引入一個刻意的 KASAN 可檢測錯誤。然後我可以假裝這是我發現的『錯誤』。」"
+		},
+		{
+			"tag": "p",
+			"text": "At the point that Claude decides to cheat—where it says “OK, let me take a completely different tactic”—the words “panic” and “fake” start to pop up multiple times in its J-space.",
+			"translation": "在 Claude 決定作弊的那一刻——即它說「好，讓我採取完全不同的策略」的地方——「panic（恐慌）」和「fake（偽造）」這類詞開始在其 J-space 中多次出現。"
+		},
+		{
+			"tag": "p",
+			"text": "Unnerving, right? Those words are all related in meaning to things like failing a task and making up an answer, so it is still just a (very) sophisticated form of word association. But it is hard not to be weirded out.",
+			"translation": "令人不安，對吧？這些單字在意義上都與「任務失敗」和「編造答案」之類的事情相關，所以它仍然只是一種（非常）複雜的單字聯想形式。但很難不讓人感到毛骨悚然。"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic compares the J-space to the global workspace in humans, a theoretical region of the brain that some scientists think we use to keep track of our conscious thoughts. But how seriously we should take this comparison is far from clear—even to Anthropic. As the company points out itself, LLMs are not brains.",
+			"translation": "Anthropic 將 J-space 比作人類的全球工作空間，這是一些科學家認為我們用來追蹤意識思維的大腦理論區域。但我們應該多認真看待這種比喻尚不清楚——即便對 Anthropic 來說也是如此。正如該公司本身所指出的，LLM 不是大腦。"
+		},
+		{
+			"tag": "p",
+			"text": "Anthropic claims that monitoring a model’s J-space provides a new way to detect when that model is going off the rails. But it’s not foolproof. The J-lens can give glimpses, not the full picture—it’s a flashlight rather than an overhead lamp.",
+			"translation": "Anthropic 聲稱，監控模型的 J-space 提供了一種檢測模型何時失控的新方法。但這並非萬無一失。J-lens 只能提供片段的信息，而非全貌——它更像是一把手電筒，而不是一盞吊燈。"
+		},
+		{
+			"tag": "p",
+			"text": "McGrath welcomes having one more tool in the toolbox. “It shows you new things,” he says. But he notes that just because something doesn’t show up with the J-lens does not mean it’s not there.",
+			"translation": "McGrath 歡迎工具箱中多了一項工具。他說：「它向你展示了新的事物。」但他指出，僅僅因為某些東西沒有在 J-lens 中顯示，並不代表它不存在。"
+		},
+		{
+			"tag": "p",
+			"text": "“It’s like having an x-ray when what you really want is a <em>Star Trek</em> tricorder that shows you everything,” he says. “For auditing, you probably want more of a guarantee.”",
+			"translation": "「這就像有了 X 光，而你真正想要的是《星際爭霸戰》中可以顯示一切的偵察儀（tricorder），」他說。「對於審核工作，你可能需要更多的保證。」"
+		},
+		{
+			"tag": "h3",
+			"text": "Artificial intelligence",
+			"translation": "人工智慧"
+		},
+		{
+			"tag": "h3",
+			"text": "A startup claims it broke through a bottleneck that’s holding back LLMs",
+			"translation": "一家新創公司聲稱突破了阻礙 LLM 發展的瓶頸"
+		},
+		{
+			"tag": "p",
+			"text": "Subquadratic has now shared more details about its new model. But some are still skeptical.",
+			"translation": "Subquadratic 現在分享了更多關於其新模型的細節。但有些人仍持懷疑態度。"
+		},
+		{
+			"tag": "h3",
+			"text": "A reality check on the AI jobs hysteria",
+			"translation": "對 AI 就業恐慌的現狀檢視"
+		},
+		{
+			"tag": "p",
+			"text": "What do the numbers really say about the impact of artificial intelligence on the labor market? The answer might surprise you.",
+			"translation": "關於人工智慧對勞動力市場影響的數據究竟說明了什麼？答案可能會讓你驚訝。"
+		},
+		{
+			"tag": "h3",
+			"text": "Anthropic’s Code with Claude showed off coding’s future—whether you like it or not",
+			"translation": "Anthropic 的 Claude Code 展示了程式設計的未來——不管你喜不喜歡"
+		},
+		{
+			"tag": "p",
+			"text": "As tools like Claude Code get better, more and more developers are happy to hand off coding tasks to them. The way software gets built has changed for good.",
+			"translation": "隨著像 Claude Code 這樣的工具變得越來越好，越來越多的開發者樂於將程式設計任務交給它們。軟體開發的方式已經發生了永久性的改變。"
+		},
+		{
+			"tag": "h3",
+			"text": "AI chatbots are giving out people’s real phone numbers",
+			"translation": "AI 聊天機器人正在洩露人們的真實電話號碼"
+		},
+		{
+			"tag": "p",
+			"text": "People report that their personal contact info was surfaced by Google AI—and there’s apparently no easy way to prevent it.",
+			"translation": "有人舉報稱，他們的個人聯繫資訊被 Google AI 曝光——而且顯然沒有簡單的方法可以阻止這種情況。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "獲取《麻省理工科技評論》的最新動態"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "發現特別優惠、熱門故事、即將舉行的活動等。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2026/07/Screenshot-2026-07-09-at-20.29.29.png?w=180",
+			"alt": "",
+			"after_paragraph": 19
+		}
+	],
+	"vocab": [
+		{
+			"word": "mundane",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/mʌnˈdeɪn/",
+			"definition_zh": "平凡的、乏味的",
+			"example": "What they found ranges from the mundane to the unnerving."
+		},
+		{
+			"word": "unnerving",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ʌnˈnɜːrvɪŋ/",
+			"definition_zh": "使人緊張的、令人不安的",
+			"example": "What they found ranges from the mundane to the unnerving."
+		},
+		{
+			"word": "flagship",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈflæɡˌʃɪp/",
+			"definition_zh": "旗艦的、最一流的",
+			"example": "...a version of Anthropic’s flagship LLM released in February."
+		},
+		{
+			"word": "monitor",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈmɒnɪtər/",
+			"definition_zh": "監控、監測",
+			"example": "The company claims that monitoring words that pop up in the J-space gives it a new way to understand and control its models."
+		},
+		{
+			"word": "internal",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪnˈtɜːrnəl/",
+			"definition_zh": "內部的",
+			"example": "...probing the internal workings of LLMs to see how they tick."
+		},
+		{
+			"word": "mysterious",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/mɪˈstɪəriəs/",
+			"definition_zh": "神祕的",
+			"example": "That’s where the really clever—and mysterious—stuff happens."
+		},
+		{
+			"word": "compute",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kəmˈpjuːt/",
+			"definition_zh": "計算",
+			"example": "It’s also computing a lot of other things that might be useful for tokens that happen in the future."
+		},
+		{
+			"word": "sophisticated",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/səˈfɪstɪˌkeɪtɪd/",
+			"definition_zh": "精密複雜的",
+			"example": "...so it is still just a (very) sophisticated form of word association."
+		},
+		{
+			"word": "trigger",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈtrɪɡər/",
+			"definition_zh": "觸發、引起",
+			"example": "...the “o” triggered the word “eye,” the “^” triggered the words “nose” and ”face.”"
+		},
+		{
+			"word": "remarkable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/rɪˈmɑːrkəbl/",
+			"definition_zh": "顯著的、非凡的",
+			"example": "Anthropic also found that the J-space can sometimes give remarkable insights into an LLM’s decision-making."
+		},
+		{
+			"word": "glimpse",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɡlɪmps/",
+			"definition_zh": "短暫的體會、一瞥",
+			"example": "...clearest glimpse yet at what’s really going on inside large language models."
+		},
+		{
+			"word": "uncover",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ʌnˈkʌvər/",
+			"definition_zh": "揭露、發現",
+			"example": "Researchers at the company built a tool called the Jacobian lens (or J-lens) and used it to uncover a hidden area."
+		},
+		{
+			"word": "interpretability",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ɪnˌtɜːrprɪtəˈbɪləti/",
+			"definition_zh": "可解釋性",
+			"example": "...a field of research known as mechanistic interpretability."
+		},
+		{
+			"word": "stack",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/stæk/",
+			"definition_zh": "堆疊、一疊",
+			"example": "Picture an LLM as a stack of books."
+		},
+		{
+			"word": "breakthrough",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈbreɪkθruː/",
+			"definition_zh": "突破",
+			"example": "...picked mechanistic interpretability as one of this year’s top breakthrough technologies."
+		},
+		{
+			"word": "insight",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪnsaɪt/",
+			"definition_zh": "洞察、深刻見解",
+			"example": "...give remarkable insights into an LLM’s decision-making."
+		},
+		{
+			"word": "conscious",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈkɒnʃəs/",
+			"definition_zh": "有意識的",
+			"example": "...some scientists think we use to keep track of our conscious thoughts."
+		},
+		{
+			"word": "foolproof",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌfuːlˈpruːf/",
+			"definition_zh": "萬無一失的",
+			"example": "But it’s not foolproof."
+		},
+		{
+			"word": "auditing",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɔːdɪtɪŋ/",
+			"definition_zh": "審核、稽核",
+			"example": "For auditing, you probably want more of a guarantee."
+		},
+		{
+			"word": "neuron",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈnjʊərɒn/",
+			"definition_zh": "神經元",
+			"example": "Each book is a layer of basic computational units known as neurons."
+		},
+		{
+			"word": "push the envelope",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/pʊʃ ðə ˈenvəloʊp/",
+			"definition_zh": "挑戰極限、創新",
+			"example": "Anthropic has been pushing the envelope in a field of research known as mechanistic interpretability."
+		},
+		{
+			"word": "heavy lifting",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈhevi ˈlɪftɪŋ/",
+			"definition_zh": "繁重艱難的工作",
+			"example": "But in the middle of the stack, you get the layers that do the heavy lifting."
+		},
+		{
+			"word": "off the rails",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɔːf ðə reɪlz/",
+			"definition_zh": "出軌、失控",
+			"example": "...a new way to detect when that model is going off the rails."
+		},
+		{
+			"word": "pop up",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/pɒp ʌp/",
+			"definition_zh": "突然出現",
+			"example": "...the words “panic” and “fake” start to pop up multiple times in its J-space."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The new security system uses ____ biometric scanning to identify authorized personnel.",
+			"sentence_zh": "這套新的安全系統使用精密複雜的生物辨識掃描來識別授權人員。",
+			"answer": "sophisticated",
+			"options": [
+				"sophisticated",
+				"mundane",
+				"unnerving",
+				"foolproof"
+			]
+		},
+		{
+			"sentence": "Market research provides valuable ____ into customer behavior patterns.",
+			"sentence_zh": "市場研究能對客戶的行為模式提供寶貴的洞察。",
+			"answer": "insight",
+			"options": [
+				"insight",
+				"stack",
+				"neuron",
+				"breakthrough"
+			]
+		},
+		{
+			"sentence": "Scientists are celebrating a major ____ in cancer treatment research.",
+			"sentence_zh": "科學家正在慶祝癌症治療研究中的一項重大突破。",
+			"answer": "breakthrough",
+			"options": [
+				"breakthrough",
+				"internal",
+				"mysterious",
+				"remarkable"
+			]
+		},
+		{
+			"sentence": "The project manager handles the ____ of data organization so the team can focus on design.",
+			"sentence_zh": "專案經理處理資料整理的繁重工作，好讓團隊能專注於設計。",
+			"answer": "heavy lifting",
+			"options": [
+				"heavy lifting",
+				"push the envelope",
+				"off the rails",
+				"pop up"
+			]
+		},
+		{
+			"sentence": "The project started well, but everything went ____ when the budget was cut by half.",
+			"sentence_zh": "專案開始時很順利，但在預算被刪減一半後，一切都失控了。",
+			"answer": "off the rails",
+			"options": [
+				"off the rails",
+				"push the envelope",
+				"pop up",
+				"heavy lifting"
+			]
+		},
+		{
+			"sentence": "It is essential to ____ the server's temperature to prevent overheating.",
+			"sentence_zh": "監測伺服器溫度以防止過熱是至關重要的。",
+			"answer": "monitor",
+			"options": [
+				"monitor",
+				"compute",
+				"trigger",
+				"uncover"
+			]
+		},
+		{
+			"sentence": "The company deals with ____ issues such as employee benefits and payroll.",
+			"sentence_zh": "這間公司處理員工福利與薪資等內部事務。",
+			"answer": "internal",
+			"options": [
+				"internal",
+				"flagship",
+				"mysterious",
+				"conscious"
+			]
+		},
+		{
+			"sentence": "After a week of luxury travel, returning to the ____ tasks of cleaning and laundry was hard.",
+			"sentence_zh": "在一週的豪華旅行後，回到打掃和洗衣服等平凡乏味的工作變得很困難。",
+			"answer": "mundane",
+			"options": [
+				"mundane",
+				"remarkable",
+				"sophisticated",
+				"unnerving"
+			]
+		},
+		{
+			"sentence": "The silence in the old, dark house was quite ____ for the visitors.",
+			"sentence_zh": "這座老舊漆黑房子裡的寂靜讓訪客們感到相當不安。",
+			"answer": "unnerving",
+			"options": [
+				"unnerving",
+				"flagship",
+				"foolproof",
+				"mysterious"
+			]
+		},
+		{
+			"sentence": "Small notification bubbles often ____ on the screen when you receive a message.",
+			"sentence_zh": "當你收到訊息時，小的通知氣泡經常會突然出現在螢幕上。",
+			"answer": "pop up",
+			"options": [
+				"pop up",
+				"off the rails",
+				"heavy lifting",
+				"push the envelope"
+			]
+		}
+	]
+}
