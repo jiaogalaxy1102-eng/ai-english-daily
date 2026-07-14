@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Microsoft tests Windows Search without all the ads and fluff — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-14</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">The Verge<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">Microsoft tests Windows Search without all the ads and fluff</h1>
+	<div class="article-meta">
+		2026-07-14 &nbsp;·&nbsp; <a href="https://www.theverge.com/tech/965090/microsoft-windows-11-search-menu-ads" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="distracting" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distracting</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/dɪˈstræktɪŋ/</span>
+				<span class="vocab-def">令人分心的</span>
+			</div>
+			<div class="vocab-card" data-word="recommendation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">recommendation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌrekəmenˈdeɪʃn/</span>
+				<span class="vocab-def">推薦；建議</span>
+			</div>
+			<div class="vocab-card" data-word="relevant" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">relevant</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈreləvənt/</span>
+				<span class="vocab-def">相關的</span>
+			</div>
+			<div class="vocab-card" data-word="improvement" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">improvement</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪmˈpruːvmənt/</span>
+				<span class="vocab-def">改進；提升</span>
+			</div>
+			<div class="vocab-card" data-word="prioritize" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prioritize</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/praɪˈɔːrətaɪz/</span>
+				<span class="vocab-def">優先考慮</span>
+			</div>
+			<div class="vocab-card" data-word="reliably" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reliably</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/rɪˈlaɪəbli/</span>
+				<span class="vocab-def">可靠地</span>
+			</div>
+			<div class="vocab-card" data-word="entirely" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">entirely</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ɪnˈtaɪərli/</span>
+				<span class="vocab-def">完全地</span>
+			</div>
+			<div class="vocab-card" data-word="performance" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">performance</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/pərˈfɔːrməns/</span>
+				<span class="vocab-def">效能；表現</span>
+			</div>
+			<div class="vocab-card" data-word="display" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">display</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈspleɪ/</span>
+				<span class="vocab-def">顯示</span>
+			</div>
+			<div class="vocab-card" data-word="contain" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">contain</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/kənˈteɪn/</span>
+				<span class="vocab-def">包含</span>
+			</div>
+			<div class="vocab-card" data-word="handle" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">handle</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈhændl/</span>
+				<span class="vocab-def">處理</span>
+			</div>
+			<div class="vocab-card" data-word="declutter" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">declutter</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌdiːˈklʌtər/</span>
+				<span class="vocab-def">清理；排除雜亂</span>
+			</div>
+			<div class="vocab-card" data-word="strip" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">strip</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/strɪp/</span>
+				<span class="vocab-def">剝除；移除</span>
+			</div>
+			<div class="vocab-card" data-word="revamped" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">revamped</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌriːˈvæmpt/</span>
+				<span class="vocab-def">翻新的；改良的</span>
+			</div>
+			<div class="vocab-card" data-word="pane" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">pane</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/peɪn/</span>
+				<span class="vocab-def">窗格</span>
+			</div>
+			<div class="vocab-card" data-word="promotion" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">promotion</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/prəˈmoʊʃn/</span>
+				<span class="vocab-def">促銷；宣傳</span>
+			</div>
+			<div class="vocab-card" data-word="notable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">notable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈnoʊtəbl/</span>
+				<span class="vocab-def">顯著的；值得注意的</span>
+			</div>
+			<div class="vocab-card" data-word="typo" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">typo</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈtaɪpoʊ/</span>
+				<span class="vocab-def">打字錯誤</span>
+			</div>
+			<div class="vocab-card" data-word="pilot" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">pilot</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈpaɪlət/</span>
+				<span class="vocab-def">試行；測試</span>
+			</div>
+			<div class="vocab-card" data-word="regain" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">regain</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈɡeɪn/</span>
+				<span class="vocab-def">重新獲得</span>
+			</div>
+			<div class="vocab-card" data-word="metadata" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">metadata</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmetədeɪtə/</span>
+				<span class="vocab-def">中繼資料</span>
+			</div>
+			<div class="vocab-card" data-word="preview" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">preview</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈpriːvjuː/</span>
+				<span class="vocab-def">預覽</span>
+			</div>
+			<div class="vocab-card" data-word="get rid of" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">get rid of</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɡet rɪd əv/</span>
+				<span class="vocab-def">擺脫；除去</span>
+			</div>
+			<div class="vocab-card" data-word="aside from" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">aside from</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/əˈsaɪd frəm/</span>
+				<span class="vocab-def">除了...之外</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">The <span class="word-general" data-word="declutter">declutter</span>ed search menu gets rid of those <span class="word-highfreq" data-word="distracting">distracting</span> tiles with game <span class="word-highfreq" data-word="recommendation">recommendation</span>s and the ‘image of the day.’</p>
+			<p class="para-translation">淨化後的搜尋選單移除了那些包含遊戲推薦和「今日圖片」且令人分心的動態磁貼。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/windows-search-update.png?quality=90&amp;strip=all&amp;crop=0%2C10.25525598554%2C100%2C85.71540565369&amp;w=2400" alt="windows-search-update" loading="lazy">
+			<figcaption>windows-search-update</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Microsoft is testing a cleaner version of the Windows 11 search menu that <span class="word-general" data-word="strip">strip</span>s it of recommended content and ads. In a blog post on Monday, Microsoft announced that it’s rolling out the <span class="word-general" data-word="declutter">declutter</span>ed Search Box to Windows Insiders in the Experimental channel as the company looks to <span class="word-general" data-word="regain">regain</span> trust with users and fix Windows.</p>
+			<p class="para-translation">微軟正在測試一個更乾淨版本的 Windows 11 搜尋選單，將其推薦內容和廣告移除。在週一的一篇部落格文章中，微軟宣佈正向測試人員管道的 Windows 預覽體驗成員推出淨化後的搜尋框，因為該公司正尋求重新贏得使用者的信任並修復 Windows。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">One of the biggest changes is a <span class="word-general" data-word="revamped">revamped</span> search homescreen that <span class="word-highfreq" data-word="display">display</span>s only your recent searches. Currently, when you open the search menu, it shows your recent searches alongside several <span class="word-highfreq" data-word="distracting">distracting</span> tiles on the right <span class="word-general" data-word="pane">pane</span>, <span class="word-highfreq" data-word="contain">contain</span>ing things like the image of the day, daily quizzes, trending searches, and game <span class="word-highfreq" data-word="recommendation">recommendation</span>s.</p>
+			<p class="para-translation">其中最大的變化之一是重新設計的搜尋主畫面，僅顯示你最近的搜尋記錄。目前，當你打開搜尋選單時，它會在右側窗格顯示你的最近搜尋以及幾個令人分心的動態磁貼，包含像今日圖片、每日測驗、熱門搜尋和遊戲推薦等內容。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/windows-search-menu.png?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Microsoft is cleaning up web results, too, as the search menu will surface the “most <span class="word-highfreq" data-word="relevant">relevant</span> answer” first, rather than showing “related products and <span class="word-general" data-word="promotion">promotion</span>s.”</p>
+			<p class="para-translation">微軟也在清理網頁搜尋結果，搜尋選單將優先顯示「最相關的答案」，而非顯示「相關產品和促銷活動」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-phrase" data-word="aside from">Aside from</span> doing some <span class="word-general" data-word="declutter">declutter</span>ing, Microsoft is testing other <span class="word-general" data-word="notable">notable</span> <span class="word-highfreq" data-word="improvement">improvement</span>s to its search menu. It will more clearly show <span class="word-term" data-word="metadata">metadata</span>, along with a <span class="word-term" data-word="preview">preview</span> of the file in the <span class="word-general" data-word="pane">pane</span> on the right side of the search menu, making it easier to figure out where the result came from. The Windows 11 search system will also <span class="word-highfreq" data-word="prioritize">prioritize</span> results from your local files, apps, and settings, which will “more <span class="word-highfreq" data-word="reliably">reliably</span> appear” ahead of web and Microsoft Store <span class="word-highfreq" data-word="recommendation">recommendation</span>s. Testers can now turn off web and Store recommendations <span class="word-highfreq" data-word="entirely">entirely</span> from the Settings menu.</p>
+			<p class="para-translation">除了進行一些淨化工作，微軟也在測試其搜尋選單的其他顯著改進。它將更清楚地顯示中繼資料，並在搜尋選單右側的窗格中顯示檔案預覽，讓人更容易搞清楚結果的來源。Windows 11 搜尋系統也將優先考慮來自本地檔案、應用程式和設定的結果，這些結果將比網頁和 Microsoft Store 的推薦「更可靠地出現」。測試人員現在可以從「設定」選單中完全關閉網頁和商店推薦。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/windows-11-search-results.png?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">There are a few quality-of-life updates, too, as Microsoft says the search system it’s <span class="word-general" data-word="pilot">pilot</span>ing can better <span class="word-highfreq" data-word="handle">handle</span> <span class="word-general" data-word="typo">typo</span>s, extra letters, and partial words, while offering some <span class="word-highfreq" data-word="performance">performance</span> <span class="word-highfreq" data-word="improvement">improvement</span>s.</p>
+			<p class="para-translation">還有一些生活品質方面的更新，微軟表示其試行的搜尋系統能更好地處理拼寫錯誤、多出的字母和部分單詞，同時提供一些效能改進。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-13-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: a nuclear landmark, and China eyes Nvidia chips</span>
+			</a>
+			<a class="related-card" href="2026-07-12-noon.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">After years of teasing, the viral Nopia synth is &#x27;basically finished&#x27;</span>
+			</a>
+			<a class="related-card" href="2026-07-11-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">No, Flock isn&#x27;t threatening people for debating surveillance</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "distracting", "type": "highfreq", "pos": "adj.", "ipa": "/dɪˈstræktɪŋ/", "definition_zh": "令人分心的", "example": "The decluttered search menu gets rid of those distracting tiles with game recommendations and the ‘image of the day.’"}, {"word": "recommendation", "type": "highfreq", "pos": "n.", "ipa": "/ˌrekəmenˈdeɪʃn/", "definition_zh": "推薦；建議", "example": "The decluttered search menu gets rid of those distracting tiles with game recommendations and the ‘image of the day.’"}, {"word": "relevant", "type": "highfreq", "pos": "adj.", "ipa": "/ˈreləvənt/", "definition_zh": "相關的", "example": "Microsoft is cleaning up web results, too, as the search menu will surface the “most relevant answer” first, rather than showing “related products and promotions.”"}, {"word": "improvement", "type": "highfreq", "pos": "n.", "ipa": "/ɪmˈpruːvmənt/", "definition_zh": "改進；提升", "example": "Aside from doing some decluttering, Microsoft is testing other notable improvements to its search menu."}, {"word": "prioritize", "type": "highfreq", "pos": "v.", "ipa": "/praɪˈɔːrətaɪz/", "definition_zh": "優先考慮", "example": "The Windows 11 search system will also prioritize results from your local files, apps, and settings..."}, {"word": "reliably", "type": "highfreq", "pos": "adv.", "ipa": "/rɪˈlaɪəbli/", "definition_zh": "可靠地", "example": "...which will “more reliably appear” ahead of web and Microsoft Store recommendations."}, {"word": "entirely", "type": "highfreq", "pos": "adv.", "ipa": "/ɪnˈtaɪərli/", "definition_zh": "完全地", "example": "Testers can now turn off web and Store recommendations entirely from the Settings menu."}, {"word": "performance", "type": "highfreq", "pos": "n.", "ipa": "/pərˈfɔːrməns/", "definition_zh": "效能；表現", "example": "...while offering some performance improvements."}, {"word": "display", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈspleɪ/", "definition_zh": "顯示", "example": "One of the biggest changes is a revamped search homescreen that displays only your recent searches."}, {"word": "contain", "type": "highfreq", "pos": "v.", "ipa": "/kənˈteɪn/", "definition_zh": "包含", "example": "...containing things like the image of the day, daily quizzes, trending searches, and game recommendations."}, {"word": "handle", "type": "highfreq", "pos": "v.", "ipa": "/ˈhændl/", "definition_zh": "處理", "example": "...as Microsoft says the search system it’s piloting can better handle typos, extra letters, and partial words..."}, {"word": "declutter", "type": "general", "pos": "v.", "ipa": "/ˌdiːˈklʌtər/", "definition_zh": "清理；排除雜亂", "example": "The decluttered search menu gets rid of those distracting tiles..."}, {"word": "strip", "type": "general", "pos": "v.", "ipa": "/strɪp/", "definition_zh": "剝除；移除", "example": "Microsoft is testing a cleaner version of the Windows 11 search menu that strips it of recommended content and ads."}, {"word": "revamped", "type": "general", "pos": "adj.", "ipa": "/ˌriːˈvæmpt/", "definition_zh": "翻新的；改良的", "example": "One of the biggest changes is a revamped search homescreen that displays only your recent searches."}, {"word": "pane", "type": "general", "pos": "n.", "ipa": "/peɪn/", "definition_zh": "窗格", "example": "...it shows your recent searches alongside several distracting tiles on the right pane..."}, {"word": "promotion", "type": "general", "pos": "n.", "ipa": "/prəˈmoʊʃn/", "definition_zh": "促銷；宣傳", "example": "...rather than showing “related products and promotions.”"}, {"word": "notable", "type": "general", "pos": "adj.", "ipa": "/ˈnoʊtəbl/", "definition_zh": "顯著的；值得注意的", "example": "Aside from doing some decluttering, Microsoft is testing other notable improvements to its search menu."}, {"word": "typo", "type": "general", "pos": "n.", "ipa": "/ˈtaɪpoʊ/", "definition_zh": "打字錯誤", "example": "...as Microsoft says the search system it’s piloting can better handle typos, extra letters, and partial words..."}, {"word": "pilot", "type": "general", "pos": "v.", "ipa": "/ˈpaɪlət/", "definition_zh": "試行；測試", "example": "...as Microsoft says the search system it’s piloting can better handle typos..."}, {"word": "regain", "type": "general", "pos": "v.", "ipa": "/rɪˈɡeɪn/", "definition_zh": "重新獲得", "example": "...as the company looks to regain trust with users and fix Windows."}, {"word": "metadata", "type": "term", "pos": "n.", "ipa": "/ˈmetədeɪtə/", "definition_zh": "中繼資料", "example": "It will more clearly show metadata, along with a preview of the file..."}, {"word": "preview", "type": "term", "pos": "n.", "ipa": "/ˈpriːvjuː/", "definition_zh": "預覽", "example": "...along with a preview of the file in the pane on the right side of the search menu..."}, {"word": "get rid of", "type": "phrase", "pos": "", "ipa": "/ɡet rɪd əv/", "definition_zh": "擺脫；除去", "example": "The decluttered search menu gets rid of those distracting tiles..."}, {"word": "aside from", "type": "phrase", "pos": "", "ipa": "/əˈsaɪd frəm/", "definition_zh": "除了...之外", "example": "Aside from doing some decluttering, Microsoft is testing other notable improvements to its search menu."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "It is important for a manager to know how to ____ difficult customer complaints effectively.", "sentence_zh": "對於經理來說，知道如何有效地處理困難的客戶投訴是很重要的。", "answer": "handle", "options": ["handle", "strip", "pilot", "regain"]}, {"sentence": "Please only provide information that is ____ to the project we are currently working on.", "sentence_zh": "請只提供與我們目前正在進行的專案相關的資訊。", "answer": "relevant", "options": ["relevant", "notable", "distracting", "revamped"]}, {"sentence": "I decided to ____ my desk so I could focus better on my work without so many papers.", "sentence_zh": "我決定清理我的桌面，這樣我就可以在沒有那麼多紙張的情況下更好地專注於工作。", "answer": "declutter", "options": ["declutter", "contain", "prioritize", "display"]}, {"sentence": "You should ____ your tasks based on their importance and upcoming deadlines.", "sentence_zh": "你應該根據任務的重要性和即將到來的截止日期來優先處理你的任務。", "answer": "prioritize", "options": ["prioritize", "regain", "strip", "handle"]}, {"sentence": "There has been a ____ change in the weather since the cold front arrived yesterday.", "sentence_zh": "自從昨天冷鋒到達以來，天氣發生了顯著的變化。", "answer": "notable", "options": ["notable", "relevant", "distracting", "entirely"]}, {"sentence": "We need to ____ all the old furniture before moving into our new apartment.", "sentence_zh": "在搬進新公寓之前，我們需要除掉所有舊家具。", "answer": "get rid of", "options": ["get rid of", "aside from", "revamped", "preview"]}, {"sentence": "After resting for a week, she managed to ____ her energy and return to work.", "sentence_zh": "休息一週後，她成功地恢復了體力並回到工作崗位。", "answer": "regain", "options": ["regain", "pilot", "strip", "contain"]}, {"sentence": "The new software update significantly improved the overall ____ of the computer.", "sentence_zh": "新的軟體更新顯著提高了電腦的整體效能。", "answer": "performance", "options": ["performance", "recommendation", "improvement", "metadata"]}, {"sentence": "This old car still runs ____ even after twenty years on the road.", "sentence_zh": "這輛老車即使在路上開了二十年，運作起來依然很可靠。", "answer": "reliably", "options": ["reliably", "entirely", "distracting", "notable"]}, {"sentence": "My teacher gave me a strong ____ for the university scholarship program.", "sentence_zh": "我的老師為我的大學獎學金計畫寫了一份強力的推薦信。", "answer": "recommendation", "options": ["recommendation", "promotion", "pane", "typo"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
