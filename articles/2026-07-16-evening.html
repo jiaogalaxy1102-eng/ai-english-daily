@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Noble Signs restores NYC’s storefront signage so you “feel at home before you’ve stepped in your own door” — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-16</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">It&#x27;s Nice That<span class="tag-badge">社會與文化</span></div>
+	<h1 class="article-title">Noble Signs restores NYC’s storefront signage so you “feel at home before you’ve stepped in your own door”</h1>
+	<div class="article-meta">
+		2026-07-16 &nbsp;·&nbsp; <a href="https://www.itsnicethat.com/articles/nicer-tuesdays-new-york-june-noble-signs-160726" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="signage" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">signage</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈsaɪnɪdʒ/</span>
+				<span class="vocab-def">招牌；標識</span>
+			</div>
+			<div class="vocab-card" data-word="reviving" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reviving</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈvaɪvɪŋ/</span>
+				<span class="vocab-def">復興；使甦醒</span>
+			</div>
+			<div class="vocab-card" data-word="vanishing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">vanishing</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈvænɪʃɪŋ/</span>
+				<span class="vocab-def">消逝中的</span>
+			</div>
+			<div class="vocab-card" data-word="restores" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">restores</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈstɔːrz/</span>
+				<span class="vocab-def">修復；恢復</span>
+			</div>
+			<div class="vocab-card" data-word="original" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">original</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/əˈrɪdʒənl/</span>
+				<span class="vocab-def">原創的；最初的</span>
+			</div>
+			<div class="vocab-card" data-word="creatives" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">creatives</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kriˈeɪtɪvz/</span>
+				<span class="vocab-def">創意工作者</span>
+			</div>
+			<div class="vocab-card" data-word="partner" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">partner</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈpɑːrtnər/</span>
+				<span class="vocab-def">合夥；合作</span>
+			</div>
+			<div class="vocab-card" data-word="packed" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">packed</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/pækt/</span>
+				<span class="vocab-def">充滿...的</span>
+			</div>
+			<div class="vocab-card" data-word="dazzling" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dazzling</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈdæzlɪŋ/</span>
+				<span class="vocab-def">耀眼的；令人驚嘆的</span>
+			</div>
+			<div class="vocab-card" data-word="typographic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">typographic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌtaɪpəˈɡræfɪk/</span>
+				<span class="vocab-def">字體排印的</span>
+			</div>
+			<div class="vocab-card" data-word="investigates" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">investigates</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ɪnˈvestɪɡeɪts/</span>
+				<span class="vocab-def">調查；研究</span>
+			</div>
+			<div class="vocab-card" data-word="decade" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">decade</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈdekeɪd/</span>
+				<span class="vocab-def">十年</span>
+			</div>
+			<div class="vocab-card" data-word="homage" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">homage</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈhɒmɪdʒ/</span>
+				<span class="vocab-def">敬意；致敬之作</span>
+			</div>
+			<div class="vocab-card" data-word="tackling" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">tackling</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈtæklɪŋ/</span>
+				<span class="vocab-def">應對；處理</span>
+			</div>
+			<div class="vocab-card" data-word="erotic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">erotic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈrɒtɪk/</span>
+				<span class="vocab-def">色情的；性愛的</span>
+			</div>
+			<div class="vocab-card" data-word="experimentation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">experimentation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪkˌsperɪmenˈteɪʃn/</span>
+				<span class="vocab-def">實驗；嘗試</span>
+			</div>
+			<div class="vocab-card" data-word="Risograph" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">Risograph</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈraɪsoʊˌɡræf/</span>
+				<span class="vocab-def">孔版印刷</span>
+			</div>
+			<div class="vocab-card" data-word="anti-design" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">anti-design</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌæntaɪ dɪˈzaɪn/</span>
+				<span class="vocab-def">反設計</span>
+			</div>
+			<div class="vocab-card" data-word="storefront" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">storefront</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈstɔːrfrʌnt/</span>
+				<span class="vocab-def">店面</span>
+			</div>
+			<div class="vocab-card" data-word="manual" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">manual</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmænjuəl/</span>
+				<span class="vocab-def">手冊</span>
+			</div>
+			<div class="vocab-card" data-word="first dibs on" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">first dibs on</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/fɜːrst dɪbz ɒn/</span>
+				<span class="vocab-def">優先權；優先挑選權</span>
+			</div>
+			<div class="vocab-card" data-word="in the loop" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in the loop</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɪn ðə luːp/</span>
+				<span class="vocab-def">知情；掌握消息</span>
+			</div>
+			<div class="vocab-card" data-word="head over to" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">head over to</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/hed ˈoʊvər tu/</span>
+				<span class="vocab-def">前往（某處）</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">David Barnett, co-founder of Noble Signs, joined us on the Nicer Tuesdays stage in New York City to talk about what he loves most: <span class="word-general" data-word="signage">signage</span>, especially in the Big Apple. The graphic designer talked about collecting over 200 <span class="word-general" data-word="storefront">storefront</span> signs in New York City and how the studio draws everything by hand, is shaped by <span class="word-highfreq" data-word="reviving">reviving</span> <span class="word-general" data-word="vanishing">vanishing</span> signage and how the team <span class="word-highfreq" data-word="restores">restores</span> loved and lost signs to clients such as bakeries and delis.</p>
+			<p class="para-translation">Noble Signs 的共同創辦人 David Barnett 加入了我們在紐約市舉辦的 Nicer Tuesdays 講座，分享他最熱愛的事物：招牌，特別是位於大蘋果（紐約）的招牌。這位平面設計師談到了他在紐約市收集了超過 200 個店面招牌的故事，以及他的工作室如何堅持全手工繪製、如何受到復興消逝中招牌的影響，以及團隊如何為麵包店和熟食店等客戶修復那些備受喜愛但已損毀的招牌。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Come and join us at Nicer Tuesdays</h2>
+			<h2 class="para-translation">來加入我們的 Nicer Tuesdays</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">If inspiring talks from <span class="word-highfreq" data-word="original">original</span> <span class="word-general" data-word="creatives">creatives</span> sounds like your kinda thing, sign up to our Nicer Tuesdays newsletter for <span class="word-phrase" data-word="first dibs on">first dibs on</span> tickets.</p>
+			<p class="para-translation">如果你喜歡聽來自原創創意人士的啟發性演講，請訂閱我們的 Nicer Tuesdays 電子報，以獲得購票優先權。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">We’re excited to <span class="word-highfreq" data-word="partner">partner</span> with Love Corn the UK’s first crunchy corn brand as our snack sponsor. Its delicious crunchy corn kernels are <span class="word-highfreq" data-word="packed">packed</span> with flavour and made with love. On trend with being low sugar, gluten-free and vegan, it’s the feel good snack so please enjoy!</p>
+			<p class="para-translation">我們很高興能與英國首個脆玉米品牌 Love Corn 合作，擔任我們的點心贊助商。其美味的脆玉米粒充滿風味且用心製作。符合低糖、無麩質和純素的趨勢，這是一款讓人心情愉悅的零食，請盡情享用！</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Nicer Tuesdays is our monthly event of creative talks. You can find out more here.</p>
+			<p class="para-translation">Nicer Tuesdays 是我們每月舉辦一次的創意講座活動。你可以在這裡了解更多資訊。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This article was written by the It’s Nice That team. To find our editors and writers, please <span class="word-phrase" data-word="head over to">head over to</span> our Contact page.</p>
+			<p class="para-translation">這篇文章由 It’s Nice That 團隊撰寫。如需聯繫我們的編輯與作者，請前往我們的聯繫頁面。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Look up! Parallel Press’ Astro Black archives and protects the <span class="word-general" data-word="dazzling">dazzling</span> visual history of Black astronauts</h3>
+			<h3 class="para-translation">抬頭看！Parallel Press 的 Astro Black 存檔並保護了黑人太空人耀眼的視覺歷史</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Are we stuck in the <span class="word-general" data-word="typographic">typographic</span> principles of the 20th century? Matter Of’s new <span class="word-term" data-word="anti-design">anti-design</span> <span class="word-general" data-word="manual">manual</span> <span class="word-highfreq" data-word="investigates">investigates</span></h3>
+			<h3 class="para-translation">我們是否被困在 20 世紀的字體排印原則中？Matter Of 的全新「反設計」手冊展開調查</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Tinder’s first rebrand in nearly a <span class="word-highfreq" data-word="decade">decade</span> channels the voice of a dating columnist</h3>
+			<h3 class="para-translation">Tinder 近十年來的首次品牌重塑，傳達了約會專欄作家的心聲</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">James Kuwamura didn’t have one team in the World Cup, but three – and he’s made a <span class="word-term" data-word="Risograph">Risograph</span> <span class="word-general" data-word="homage">homage</span> to each</h3>
+			<h3 class="para-translation">James Kuwamura 在世界盃中不只支持一支球隊，而是三支——他為每支球隊製作了 Risograph 孔版印刷致敬作品</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Body, mind and printed matter: Angela Lian on how she exercises creative muscles as well as her body’s</h3>
+			<h3 class="para-translation">身體、心靈與印刷品：Angela Lian 談她如何像鍛鍊身體一樣鍛鍊創意肌肉</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">“Story is humanity’s oldest technology”: Wedge Studio on its 12 steps for <span class="word-highfreq" data-word="tackling">tackling</span> design projects</h3>
+			<h3 class="para-translation">「故事是人類最古老的科技」：Wedge Studio 分享其應對設計專案的 12 個步驟</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The iPhone as a sex toy: Mindy Seu invites us to uncover our <span class="word-general" data-word="erotic">erotic</span> relationship with the internet</h3>
+			<h3 class="para-translation">將 iPhone 作為情趣用品：Mindy Seu 邀請我們揭開與網路之間的色情關係</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Being a local artist in a global city: Ben Sanders on self-publishing, <span class="word-highfreq" data-word="experimentation">experimentation</span> and giant bottle caps</h3>
+			<h3 class="para-translation">在全球城市當一名在地藝術家：Ben Sanders 談自出版、實驗與巨型瓶蓋</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">It's Nice That Newsletters</h2>
+			<h2 class="para-translation">It's Nice That 電子報</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Fancy a bit of It's Nice That in your inbox? Sign up to our newsletters and we'll keep you <span class="word-phrase" data-word="in the loop">in the loop</span> with everything good going on in the creative world.</p>
+			<p class="para-translation">想在收件匣中看到 It's Nice That 嗎？訂閱我們的電子報，我們將讓你隨時掌握創意世界中發生的一切好事。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-15-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">This Trump ‘participation trophy’ perfectly mocks his second term</span>
+			</a>
+			<a class="related-card" href="2026-07-13-evening.html">
+				<span class="related-source">It&#x27;s Nice That</span>
+				<span class="related-title">From Garth Marenghi to Garden Force: Sam Campbell and Joe Pelling discuss the creative approach to Make That Movie</span>
+			</a>
+			<a class="related-card" href="2026-07-11-noon.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">The funky font on Norway&#x27;s World Cup jersey? It&#x27;s inspired by Nordic runes</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "signage", "type": "general", "pos": "n.", "ipa": "/ˈsaɪnɪdʒ/", "definition_zh": "招牌；標識", "example": "David Barnett, co-founder of Noble Signs, joined us on the Nicer Tuesdays stage in New York City to talk about what he loves most: signage."}, {"word": "reviving", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈvaɪvɪŋ/", "definition_zh": "復興；使甦醒", "example": "the studio draws everything by hand, is shaped by reviving vanishing signage."}, {"word": "vanishing", "type": "general", "pos": "adj.", "ipa": "/ˈvænɪʃɪŋ/", "definition_zh": "消逝中的", "example": "the studio draws everything by hand, is shaped by reviving vanishing signage."}, {"word": "restores", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈstɔːrz/", "definition_zh": "修復；恢復", "example": "how the team restores loved and lost signs to clients such as bakeries and delis."}, {"word": "original", "type": "highfreq", "pos": "adj.", "ipa": "/əˈrɪdʒənl/", "definition_zh": "原創的；最初的", "example": "If inspiring talks from original creatives sounds like your kinda thing..."}, {"word": "creatives", "type": "general", "pos": "n.", "ipa": "/kriˈeɪtɪvz/", "definition_zh": "創意工作者", "example": "If inspiring talks from original creatives sounds like your kinda thing..."}, {"word": "partner", "type": "highfreq", "pos": "v.", "ipa": "/ˈpɑːrtnər/", "definition_zh": "合夥；合作", "example": "We’re excited to partner with Love Corn the UK’s first crunchy corn brand."}, {"word": "packed", "type": "highfreq", "pos": "adj.", "ipa": "/pækt/", "definition_zh": "充滿...的", "example": "Its delicious crunchy corn kernels are packed with flavour."}, {"word": "dazzling", "type": "general", "pos": "adj.", "ipa": "/ˈdæzlɪŋ/", "definition_zh": "耀眼的；令人驚嘆的", "example": "Astro Black archives and protects the dazzling visual history of Black astronauts"}, {"word": "typographic", "type": "general", "pos": "adj.", "ipa": "/ˌtaɪpəˈɡræfɪk/", "definition_zh": "字體排印的", "example": "Are we stuck in the typographic principles of the 20th century?"}, {"word": "investigates", "type": "highfreq", "pos": "v.", "ipa": "/ɪnˈvestɪɡeɪts/", "definition_zh": "調查；研究", "example": "Matter Of’s new anti-design manual investigates"}, {"word": "decade", "type": "highfreq", "pos": "n.", "ipa": "/ˈdekeɪd/", "definition_zh": "十年", "example": "Tinder’s first rebrand in nearly a decade channels the voice of a dating columnist"}, {"word": "homage", "type": "general", "pos": "n.", "ipa": "/ˈhɒmɪdʒ/", "definition_zh": "敬意；致敬之作", "example": "and he’s made a Risograph homage to each"}, {"word": "tackling", "type": "highfreq", "pos": "v.", "ipa": "/ˈtæklɪŋ/", "definition_zh": "應對；處理", "example": "Wedge Studio on its 12 steps for tackling design projects"}, {"word": "erotic", "type": "general", "pos": "adj.", "ipa": "/ɪˈrɒtɪk/", "definition_zh": "色情的；性愛的", "example": "Mindy Seu invites us to uncover our erotic relationship with the internet"}, {"word": "experimentation", "type": "highfreq", "pos": "n.", "ipa": "/ɪkˌsperɪmenˈteɪʃn/", "definition_zh": "實驗；嘗試", "example": "Ben Sanders on self-publishing, experimentation and giant bottle caps"}, {"word": "Risograph", "type": "term", "pos": "n.", "ipa": "/ˈraɪsoʊˌɡræf/", "definition_zh": "孔版印刷", "example": "and he’s made a Risograph homage to each"}, {"word": "anti-design", "type": "term", "pos": "n.", "ipa": "/ˌæntaɪ dɪˈzaɪn/", "definition_zh": "反設計", "example": "Matter Of’s new anti-design manual investigates"}, {"word": "storefront", "type": "general", "pos": "n.", "ipa": "/ˈstɔːrfrʌnt/", "definition_zh": "店面", "example": "Noble Signs restores NYC’s storefront signage"}, {"word": "manual", "type": "general", "pos": "n.", "ipa": "/ˈmænjuəl/", "definition_zh": "手冊", "example": "Matter Of’s new anti-design manual investigates"}, {"word": "first dibs on", "type": "phrase", "pos": "", "ipa": "/fɜːrst dɪbz ɒn/", "definition_zh": "優先權；優先挑選權", "example": "sign up to our Nicer Tuesdays newsletter for first dibs on tickets."}, {"word": "in the loop", "type": "phrase", "pos": "", "ipa": "/ɪn ðə luːp/", "definition_zh": "知情；掌握消息", "example": "we'll keep you in the loop with everything good going on in the creative world."}, {"word": "head over to", "type": "phrase", "pos": "", "ipa": "/hed ˈoʊvər tu/", "definition_zh": "前往（某處）", "example": "To find our editors and writers, please head over to our Contact page."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The museum hired an expert who ____ old oil paintings to their former glory.", "sentence_zh": "博物館聘請了一位專家，將舊油畫修復回往日的輝煌。", "answer": "restores", "options": ["restores", "investigates", "tackling", "reviving"]}, {"sentence": "Modern ____ in airports is designed to be easily understood by people from all over the world.", "sentence_zh": "機場現代化的招牌設計旨在讓全世界的人都能輕鬆理解。", "answer": "signage", "options": ["manual", "signage", "storefront", "decade"]}, {"sentence": "Traditional crafts are ____ in this region because young people are moving to the cities.", "sentence_zh": "由於年輕人移居城市，傳統工藝在這個地區正在消失。", "answer": "vanishing", "options": ["dazzling", "vanishing", "original", "packed"]}, {"sentence": "Members of the fan club get ____ the best seats before they go on sale to the public.", "sentence_zh": "粉絲俱樂部的成員在公開售票前享有最佳座位的優先挑選權。", "answer": "first dibs on", "options": ["in the loop", "first dibs on", "head over to", "reviving"]}, {"sentence": "We need a new strategy for ____ the rising costs of raw materials.", "sentence_zh": "我們需要一個應對原材料成本上漲的新策略。", "answer": "tackling", "options": ["tackling", "partner", "investigates", "restores"]}, {"sentence": "It has been a ____ since the two companies last collaborated on a project.", "sentence_zh": "距離這兩家公司上一次合作專案已經過了十年。", "answer": "decade", "options": ["decade", "signage", "manual", "homage"]}, {"sentence": "Please BCC me on the email so I can stay ____ regarding the project's progress.", "sentence_zh": "請在電子郵件中密件抄送我，這樣我也能隨時掌握專案進度。", "answer": "in the loop", "options": ["packed", "in the loop", "original", "vanishing"]}, {"sentence": "Before using the new coffee machine, you should read the instruction ____ carefully.", "sentence_zh": "在使用新的咖啡機之前，你應該仔細閱讀說明手冊。", "answer": "manual", "options": ["manual", "storefront", "signage", "homage"]}, {"sentence": "The circus performance featured ____ costumes and incredible acrobatics.", "sentence_zh": "馬戲團的表演以耀眼的服裝和驚人的雜技為特色。", "answer": "dazzling", "options": ["dazzling", "erotic", "typographic", "vanishing"]}, {"sentence": "The artist's style is so ____ that you can recognize her work instantly.", "sentence_zh": "這位藝術家的風格非常原創，你一眼就能認出她的作品。", "answer": "original", "options": ["original", "packed", "vanishing", "dazzling"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
