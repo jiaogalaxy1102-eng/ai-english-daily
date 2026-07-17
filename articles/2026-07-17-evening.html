@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SpaceX uses ‘chopsticks.’ China uses ‘nets.’ Here’s how these space superpowers  design their rocket recovery systems — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-17</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">SpaceX uses ‘chopsticks.’ China uses ‘nets.’ Here’s how these space superpowers  design their rocket recovery systems</h1>
+	<div class="article-meta">
+		2026-07-17 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91573268/spacex-china-rocket-recovery-systems?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="gap" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">gap</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɡæp/</span>
+				<span class="vocab-def">差距、隔閡</span>
+			</div>
+			<div class="vocab-card" data-word="competitor" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">competitor</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəmˈpetɪtər/</span>
+				<span class="vocab-def">競爭者、對手</span>
+			</div>
+			<div class="vocab-card" data-word="reusable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reusable</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌriːˈjuːzəbl/</span>
+				<span class="vocab-def">可重複使用的</span>
+			</div>
+			<div class="vocab-card" data-word="contractor" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">contractor</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈkɑːntræktər/</span>
+				<span class="vocab-def">承包商、承辦商</span>
+			</div>
+			<div class="vocab-card" data-word="payload" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">payload</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈpeɪloʊd/</span>
+				<span class="vocab-def">有效載荷</span>
+			</div>
+			<div class="vocab-card" data-word="midflight" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">midflight</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˌmɪdˈflaɪt/</span>
+				<span class="vocab-def">在飛行途中</span>
+			</div>
+			<div class="vocab-card" data-word="mechanized" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mechanized</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈmekənaɪzd/</span>
+				<span class="vocab-def">機械化的</span>
+			</div>
+			<div class="vocab-card" data-word="radically" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">radically</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˈrædɪkli/</span>
+				<span class="vocab-def">根本地、徹底地</span>
+			</div>
+			<div class="vocab-card" data-word="floating" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">floating</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈfloʊtɪŋ/</span>
+				<span class="vocab-def">漂浮的</span>
+			</div>
+			<div class="vocab-card" data-word="offshore" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">offshore</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˌɔːfˈʃɔːr/</span>
+				<span class="vocab-def">近海的、離岸地</span>
+			</div>
+			<div class="vocab-card" data-word="distinction" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distinction</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/dɪˈstɪŋkʃn/</span>
+				<span class="vocab-def">區別、差別</span>
+			</div>
+			<div class="vocab-card" data-word="solid" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">solid</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsɑːlɪd/</span>
+				<span class="vocab-def">紮實的、穩固的</span>
+			</div>
+			<div class="vocab-card" data-word="poised" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">poised</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/pɔɪzd/</span>
+				<span class="vocab-def">準備就緒的</span>
+			</div>
+			<div class="vocab-card" data-word="match" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">match</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/mætʃ/</span>
+				<span class="vocab-def">匹敵、與...相配</span>
+			</div>
+			<div class="vocab-card" data-word="grip" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">grip</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɡrɪp/</span>
+				<span class="vocab-def">掌控、控制</span>
+			</div>
+			<div class="vocab-card" data-word="cargo" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">cargo</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈkɑːrɡoʊ/</span>
+				<span class="vocab-def">貨物</span>
+			</div>
+			<div class="vocab-card" data-word="justify" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">justify</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈdʒʌstɪfaɪ/</span>
+				<span class="vocab-def">證明...是正當的</span>
+			</div>
+			<div class="vocab-card" data-word="delete" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">delete</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈliːt/</span>
+				<span class="vocab-def">刪除、移除</span>
+			</div>
+			<div class="vocab-card" data-word="scale" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">scale</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/skeɪl/</span>
+				<span class="vocab-def">規模</span>
+			</div>
+			<div class="vocab-card" data-word="mount" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mount</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/maʊnt/</span>
+				<span class="vocab-def">安裝、架設</span>
+			</div>
+			<div class="vocab-card" data-word="hardware" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hardware</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈhɑːrdwer/</span>
+				<span class="vocab-def">硬體、設備</span>
+			</div>
+			<div class="vocab-card" data-word="closing the gap" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">closing the gap</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈkloʊzɪŋ ðə ɡæp/</span>
+				<span class="vocab-def">縮小差距</span>
+			</div>
+			<div class="vocab-card" data-word="dead weight" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dead weight</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ded weɪt/</span>
+				<span class="vocab-def">累贅、死重</span>
+			</div>
+			<div class="vocab-card" data-word="space chops" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">space chops</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/speɪs tʃɑːps/</span>
+				<span class="vocab-def">航天技術實力</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">China is quickly <span class="word-phrase" data-word="closing the <span class="word-highfreq" data-word="gap">gap</span>">closing the gap</span> on Elon Musk’s <span class="word-term" data-word="reusable">reusable</span> rockets in a way that should worry him more than any single <span class="word-highfreq" data-word="competitor">competitor</span> has before.</p>
+			<p class="para-translation">中國正在迅速縮小與伊隆·馬斯克可重複使用火箭之間的差距，這種方式比起以往任何單一競爭對手都更令他擔憂。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">On July 10, China Aerospace Science and Technology Corp. (CASC)—the state-owned <span class="word-general" data-word="contractor">contractor</span> that builds nearly all of China’s rockets and satellites—launched the Long March-10B rocket on its first flight. It successfully placed its <span class="word-term" data-word="payload">payload</span> into orbit, and then did something that only SpaceX has managed to do: get back to Earth and dance softly, catching it <span class="word-general" data-word="midflight">midflight</span> like SpaceX does with Starship’s Super Heavy booster.</p>
+			<p class="para-translation">7 月 10 日，中國航天科技集團（CASC）——這家幾乎建造了中國所有火箭和衛星的國有承包商——首飛發射了長征十號乙火箭。它成功將其有效載荷送入軌道，隨後做了一件只有 SpaceX 曾做到的事：返回地球並優雅地舞動，像 SpaceX 對待星艦的超級重型助推器那樣在飛行中將其捕獲。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">However, instead of using the huge <span class="word-general" data-word="mechanized">mechanized</span> “chopsticks” on the launch tower at Starbase, the Chinese used a <span class="word-highfreq" data-word="radically">radically</span> different system that nobody has seen before.</p>
+			<p class="para-translation">然而，中國人並非使用星際基地發射塔上巨大的機械化「筷子」，而是使用了一種前所未見的截然不同的系統。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">CASC caught the falling rocket in a moving net <span class="word-general" data-word="mount">mount</span>ed on a ship <span class="word-highfreq" data-word="floating">floating</span> <span class="word-general" data-word="offshore">offshore</span>, making it the second country ever to recover an orbital-class booster and the first in the world to do it with a sea-based net instead of legs or a tower.</p>
+			<p class="para-translation">CASC 在一艘漂浮於近海的船上安裝了移動網，捕獲了墜落的火箭，使其成為史上第二個回收軌道級助推器的國家，也是全球第一個使用海基網而非起落架或發射塔進行回收的國家。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That <span class="word-general" data-word="distinction">distinction</span> matters. It shows, once again, that China has developed <span class="word-highfreq" data-word="solid">solid</span> <span class="word-phrase" data-word="space chops">space chops</span>.</p>
+			<p class="para-translation">這一區別至關重要。它再次表明，中國已經發展出紮實的航天技術實力。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">China’s aerospace industry is <span class="word-general" data-word="poised">poised</span> to build <span class="word-term" data-word="hardware">hardware</span> at a <span class="word-highfreq" data-word="scale">scale</span> and cost few <span class="word-highfreq" data-word="competitor">competitor</span>s can <span class="word-highfreq" data-word="match">match</span>, and a working, <span class="word-term" data-word="reusable">reusable</span> rocket is key to challenging SpaceX’s <span class="word-highfreq" data-word="grip">grip</span> on the commercial launch market.</p>
+			<p class="para-translation">中國的航天工業準備以少有對手能匹敵的規模和成本建造硬體，而運作成熟的可重複使用火箭，是挑戰 SpaceX 對商業發射市場控制權的關鍵。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Both systems are designed to cut the <span class="word-phrase" data-word="dead weight">dead weight</span> of landing legs—typical of <span class="word-term" data-word="reusable">reusable</span> rockets like the Falcon 9—to carry more <span class="word-highfreq" data-word="cargo">cargo</span>. Landing legs are simply too heavy to <span class="word-highfreq" data-word="justify">justify</span> flying on every mission, so both organizations <span class="word-highfreq" data-word="delete">delete</span>d them entirely.</p>
+			<p class="para-translation">這兩種系統的設計都是為了削減起落架的「死重」——這是獵鷹 9 號等可重複使用火箭的典型特徵——以便運載更多貨物。起落架過於沉重，無法證明在每次任務中攜帶它們的合理性，因此兩家機構都將其完全移除。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-14-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Microsoft tests Windows Search without all the ads and fluff</span>
+			</a>
+			<a class="related-card" href="2026-07-13-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: a nuclear landmark, and China eyes Nvidia chips</span>
+			</a>
+			<a class="related-card" href="2026-07-12-noon.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">After years of teasing, the viral Nopia synth is &#x27;basically finished&#x27;</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "gap", "type": "highfreq", "pos": "n.", "ipa": "/ɡæp/", "definition_zh": "差距、隔閡", "example": "China is quickly closing the gap on Elon Musk’s reusable rockets in a way that should worry him more than any single competitor has before."}, {"word": "competitor", "type": "highfreq", "pos": "n.", "ipa": "/kəmˈpetɪtər/", "definition_zh": "競爭者、對手", "example": "China is quickly closing the gap on Elon Musk’s reusable rockets in a way that should worry him more than any single competitor has before."}, {"word": "reusable", "type": "term", "pos": "adj.", "ipa": "/ˌriːˈjuːzəbl/", "definition_zh": "可重複使用的", "example": "China is quickly closing the gap on Elon Musk’s reusable rockets in a way that should worry him more than any single competitor has before."}, {"word": "contractor", "type": "general", "pos": "n.", "ipa": "/ˈkɑːntræktər/", "definition_zh": "承包商、承辦商", "example": "China Aerospace Science and Technology Corp. (CASC)—the state-owned contractor that builds nearly all of China’s rockets and satellites."}, {"word": "payload", "type": "term", "pos": "n.", "ipa": "/ˈpeɪloʊd/", "definition_zh": "有效載荷", "example": "It successfully placed its payload into orbit."}, {"word": "midflight", "type": "general", "pos": "adv.", "ipa": "/ˌmɪdˈflaɪt/", "definition_zh": "在飛行途中", "example": "catching it midflight like SpaceX does with Starship’s Super Heavy booster."}, {"word": "mechanized", "type": "general", "pos": "adj.", "ipa": "/ˈmekənaɪzd/", "definition_zh": "機械化的", "example": "instead of using the huge mechanized “chopsticks” on the launch tower at Starbase."}, {"word": "radically", "type": "highfreq", "pos": "adv.", "ipa": "/ˈrædɪkli/", "definition_zh": "根本地、徹底地", "example": "the Chinese used a radically different system that nobody has seen before."}, {"word": "floating", "type": "highfreq", "pos": "adj.", "ipa": "/ˈfloʊtɪŋ/", "definition_zh": "漂浮的", "example": "CASC caught the falling rocket in a moving net mounted on a ship floating offshore."}, {"word": "offshore", "type": "general", "pos": "adv.", "ipa": "/ˌɔːfˈʃɔːr/", "definition_zh": "近海的、離岸地", "example": "CASC caught the falling rocket in a moving net mounted on a ship floating offshore."}, {"word": "distinction", "type": "general", "pos": "n.", "ipa": "/dɪˈstɪŋkʃn/", "definition_zh": "區別、差別", "example": "That distinction matters."}, {"word": "solid", "type": "highfreq", "pos": "adj.", "ipa": "/ˈsɑːlɪd/", "definition_zh": "紮實的、穩固的", "example": "It shows, once again, that China has developed solid space chops."}, {"word": "poised", "type": "general", "pos": "adj.", "ipa": "/pɔɪzd/", "definition_zh": "準備就緒的", "example": "China’s aerospace industry is poised to build hardware at a scale and cost few competitors can match."}, {"word": "match", "type": "highfreq", "pos": "v.", "ipa": "/mætʃ/", "definition_zh": "匹敵、與...相配", "example": "China’s aerospace industry is poised to build hardware at a scale and cost few competitors can match."}, {"word": "grip", "type": "highfreq", "pos": "n.", "ipa": "/ɡrɪp/", "definition_zh": "掌控、控制", "example": "reusable rocket is key to challenging SpaceX’s grip on the commercial launch market."}, {"word": "cargo", "type": "highfreq", "pos": "n.", "ipa": "/ˈkɑːrɡoʊ/", "definition_zh": "貨物", "example": "typical of reusable rockets like the Falcon 9—to carry more cargo."}, {"word": "justify", "type": "highfreq", "pos": "v.", "ipa": "/ˈdʒʌstɪfaɪ/", "definition_zh": "證明...是正當的", "example": "Landing legs are simply too heavy to justify flying on every mission."}, {"word": "delete", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈliːt/", "definition_zh": "刪除、移除", "example": "so both organizations deleted them entirely."}, {"word": "scale", "type": "highfreq", "pos": "n.", "ipa": "/skeɪl/", "definition_zh": "規模", "example": "China’s aerospace industry is poised to build hardware at a scale and cost few competitors can match."}, {"word": "mount", "type": "general", "pos": "v.", "ipa": "/maʊnt/", "definition_zh": "安裝、架設", "example": "CASC caught the falling rocket in a moving net mounted on a ship floating offshore."}, {"word": "hardware", "type": "term", "pos": "n.", "ipa": "/ˈhɑːrdwer/", "definition_zh": "硬體、設備", "example": "China’s aerospace industry is poised to build hardware at a scale and cost few competitors can match."}, {"word": "closing the gap", "type": "phrase", "pos": "", "ipa": "/ˈkloʊzɪŋ ðə ɡæp/", "definition_zh": "縮小差距", "example": "China is quickly closing the gap on Elon Musk’s reusable rockets."}, {"word": "dead weight", "type": "phrase", "pos": "", "ipa": "/ded weɪt/", "definition_zh": "累贅、死重", "example": "Both systems are designed to cut the dead weight of landing legs."}, {"word": "space chops", "type": "phrase", "pos": "", "ipa": "/speɪs tʃɑːps/", "definition_zh": "航天技術實力", "example": "It shows, once again, that China has developed solid space chops."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The new marketing campaign helped the startup narrow the ____ between it and the industry leader.", "sentence_zh": "新的行銷活動幫助這家新創公司縮小了它與行業領導者之間的差距。", "answer": "gap", "options": ["gap", "scale", "grip", "cargo"]}, {"sentence": "To protect the environment, the company switched to using ____ packaging for all its products.", "sentence_zh": "為了保護環境，這家公司將其所有產品轉為使用可重複使用的包裝。", "answer": "reusable", "options": ["reusable", "mechanized", "solid", "floating"]}, {"sentence": "The government signed a deal with a private ____ to maintain the city's public parks.", "sentence_zh": "政府與一家私人承包商簽署了合約，以維護城市的公立公園。", "answer": "contractor", "options": ["contractor", "competitor", "payload", "distinction"]}, {"sentence": "The satellite's primary ____ includes advanced sensors for monitoring climate change.", "sentence_zh": "該衛星的主要有效載荷包括用於監測氣候變遷的高級傳感器。", "answer": "payload", "options": ["payload", "mount", "match", "delete"]}, {"sentence": "The CEO decided to ____ change the company's focus from traditional retail to e-commerce.", "sentence_zh": "執行長決定從根本上改變公司的重心，從傳統零售轉向電子商務。", "answer": "radically", "options": ["radically", "midflight", "offshore", "poised"]}, {"sentence": "Researchers often make a ____ between short-term results and long-term trends.", "sentence_zh": "研究人員經常在短期結果與長期趨勢之間做出區別。", "answer": "distinction", "options": ["distinction", "contractor", "justify", "scale"]}, {"sentence": "The manager found it difficult to ____ the extra expenses to the board of directors.", "sentence_zh": "經理發現很難向董事會證明這筆額外支出的合理性。", "answer": "justify", "options": ["justify", "match", "delete", "mount"]}, {"sentence": "The project failed because the team did not realize the massive ____ of the task they had undertaken.", "sentence_zh": "該專案失敗了，因為團隊沒有意識到他們所承擔任務的巨大規模。", "answer": "scale", "options": ["scale", "gap", "grip", "distinction"]}, {"sentence": "By investing heavily in research and development, the firm is finally ____ on its main rival.", "sentence_zh": "透過在研發上投入巨資，該公司終於在縮小與主要對手的差距。", "answer": "closing the gap", "options": ["closing the gap", "dead weight", "space chops", "radically"]}, {"sentence": "The aircraft was loaded with essential ____ to be delivered to the disaster-stricken area.", "sentence_zh": "這架飛機裝載了要運送到受災地區的必要貨物。", "answer": "cargo", "options": ["cargo", "payload", "hardware", "competitor"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
