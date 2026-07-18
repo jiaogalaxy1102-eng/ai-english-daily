@@ -1,0 +1,370 @@
+{
+	"date": "2026-07-18",
+	"slot": "noon",
+	"tag": "科學",
+	"title": "Taylor Farms pulls iceberg lettuce from the US market after cyclosporiasis outbreak",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/science/967563/cyclospora-taylor-farms-taco-bell-iceberg-lettuce",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "Everything we know so far about the cyclosporiasis outbreak.",
+			"translation": "關於隱孢子蟲病疫情我們目前所知的一切。"
+		},
+		{
+			"tag": "p",
+			"text": "Food producer Taylor Farms released a statement on the Cyclospora outbreak Friday, confirming that it’s “voluntarily removing all iceberg lettuce sourced from central Mexico from the US market.” <em>Reuters</em> reports that, according to a source, Taylor Farms told customers like Yum Brands owner Taco Bell and the food distributor Sysco on Thursday to pull shredded lettuce that had been produced initially as 5-pound bags at a facility in Guanajuato, Mexico, from distribution.",
+			"translation": "食品生產商泰勒農場（Taylor Farms）週五就隱孢子蟲疫情發表聲明，確認其「自願將所有源自墨西哥中部的結球萵苣從美國市場撤出」。據路透社報導，消息人士指出，泰勒農場週四告知百勝品牌旗下的大口鐘（Taco Bell）和食品分銷商西斯科（Sysco）等客戶，要求撤回最初在墨西哥瓜納華托工廠生產的 5 磅裝碎萵苣。"
+		},
+		{
+			"tag": "p",
+			"text": "Taco Bell said on Thursday that “The affected ingredient from our supplier is being indefinitely removed from our supply chain nationwide and will be replaced within 24 hours in select states.”",
+			"translation": "大口鐘週四表示：「供應商受影響的食材正無限期地從我們全國的供應鏈中移除，並將在 24 小時內於選定州份進行更換。」"
+		},
+		{
+			"tag": "p",
+			"text": "The Cyclospora parasite infects humans’ small intestine, can take up to one to two weeks to incubate, and causes symptoms including “watery diarrhea, with frequent bowel movements… vomiting, body aches, headache, low-grade fever, and other flu-like symptoms,” that may seem to go away and then come back more than once.",
+			"translation": "隱孢子蟲寄生蟲會感染人類小腸，潛伏期可達一到兩週，引起的症狀包括「水樣腹瀉且排便頻繁……嘔吐、體痛、頭痛、低燒以及其他類流感症狀」，這些症狀可能會消失後再次復發多次。"
+		},
+		{
+			"tag": "p",
+			"text": "As <em>The Verge </em>reported this week, not all of the reported cases have been linked to Taco Bell, and Taylor Farms is a giant, which has said it sells more than $7 billion in produce every year and makes two out of every five of the salad kits sold in grocery stores. However, its name doesn’t appear on most of those items, and while the extent of the outbreak is still under investigation, the CDC has said it’s also looking into illnesses and outbreaks in other states that are unrelated.",
+			"translation": "正如《The Verge》本週報導，並非所有通報病例都與大口鐘有關。泰勒農場是一家巨頭企業，據稱每年農產品銷售額超過 70 億美元，且雜貨店銷售的沙拉組合包中，每五包就有兩包出自該公司。然而，其名稱並未出現在大多數品項上；雖然疫情規模仍在調查中，但美國疾控中心（CDC）表示，也在調查其他州不相關的疾病與疫情。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Taylor Farms:</strong>",
+			"translation": "泰勒農場："
+		},
+		{
+			"tag": "blockquote",
+			"text": "Based on information provided yesterday by the FDA, Taylor Farms de Mexico is voluntarily removing all iceberg lettuce sourced from central Mexico from the U.S. market. While the FDA traceback is indicating a specific independent farm that represents less than 1% of the U.S.’s iceberg lettuce supply as the potential source of the outbreak, we have removed all iceberg lettuce from the region indefinitely.",
+			"translation": "根據美國食品藥物管理局（FDA）昨日提供的資訊，墨西哥泰勒農場正自願將所有源自墨西哥中部的結球萵苣從美國市場撤出。雖然 FDA 的追溯顯示一家特定獨立農場（佔美國結球萵苣供應量不到 1%）可能是疫情源頭，但我們已無限期移除該地區的所有結球萵苣。"
+		},
+		{
+			"tag": "p",
+			"text": "It hasn’t identified other companies or products to avoid yet. <em>ProPublica’s </em>Annie Waldman reports that the tracing effort is working without more than 240 consumer safety specialists who left as the Trump administration cut funding to federal health agencies, and the CDC scaled back its Foodborne Diseases Active Surveillance Network (FoodNet) that worked with 10 states.",
+			"translation": "目前尚未確定其他需要避開的公司或產品。ProPublica 的記者 Annie Waldman 報導稱，追溯工作是在缺乏 240 多名消費者安全專家的情況下進行的，這些專家在川普政府削減聯邦衛生機構預算時離職，且 CDC 也縮減了與 10 個州合作的食源性疾病主動監測網絡（FoodNet）。"
+		},
+		{
+			"tag": "p",
+			"text": "The <em>Washington Post</em> also mentions that a few months ago, the FDA pushed back the compliance deadline on implementing its Requirements for Additional Traceability Records for Certain Foods (Food Traceability Final Rule) from January 20th, 2026, until July 20th, 2028. Its requirement for standardized record-keeping about goods and shipments could’ve made finding the “specific independent farm” tied to the outbreak easier and faster.",
+			"translation": "《華盛頓郵報》還提到，幾個月前，FDA 將實施「某些食品額外追溯記錄要求」（食品追溯最終規則）的合規期限從 2026 年 1 月 20 日推遲到 2028 年 7 月 20 日。該項針對貨物和運輸標準化記錄保存的要求，本可使尋找與疫情相關的「特定獨立農場」變得更輕鬆、更快速。"
+		},
+		{
+			"tag": "p",
+			"text": "This all follows statements from the CDC and FDA saying the “explosive diarrhea parasite” outbreak has been linked to shredded iceberg lettuce served at Taco Bell locations across five states: Indiana, Kentucky, Michigan, Ohio, and West Virginia. In Michigan alone, there are over 5,000 reported cases, with 102 reports of hospitalization.",
+			"translation": "此前 CDC 和 FDA 發表聲明稱，這場「爆發性腹瀉寄生蟲」疫情已與印第安納州、肯塔基州、密西根州、俄亥俄州和西維吉尼亞州這五個州的大口鐘分店供應的碎結球萵苣相關聯。光是在密西根州，就有超過 5,000 例通報病例，其中 102 例住院治療。"
+		},
+		{
+			"tag": "p",
+			"text": "According to the FDA, “FDA and state partners are actively investigating the source and scope of the contamination. Because the investigation remains ongoing, additional implicated brands, restaurants, retailers, or distribution channels may be identified as the investigation continues.”",
+			"translation": "根據 FDA 的說法：「FDA 和各州合作夥伴正在積極調查污染的來源和範圍。由於調查仍在進行中，隨著調查的繼續，可能會確定其他受影響的品牌、餐廳、零售商或分銷渠道。」"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/gettyimages-2139547139.jpg?quality=90&strip=all&crop=0%2C27.126311979732%2C100%2C45.747376040536&w=2400",
+			"alt": "Agriculture",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "producer",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/prəˈdjuːsər/",
+			"definition_zh": "生產者、製造商",
+			"example": "Food producer Taylor Farms released a statement on the Cyclospora outbreak Friday."
+		},
+		{
+			"word": "voluntarily",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈvɑːlənterəli/",
+			"definition_zh": "自願地",
+			"example": "confirming that it’s “voluntarily removing all iceberg lettuce sourced from central Mexico from the US market.”"
+		},
+		{
+			"word": "distributor",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪˈstrɪbjuːtər/",
+			"definition_zh": "分銷商、批發商",
+			"example": "Taylor Farms told customers like Yum Brands owner Taco Bell and the food distributor Sysco on Thursday..."
+		},
+		{
+			"word": "initially",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ɪˈnɪʃəli/",
+			"definition_zh": "最初、開始地",
+			"example": "pull shredded lettuce that had been produced initially as 5-pound bags..."
+		},
+		{
+			"word": "ingredient",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈɡriːdiənt/",
+			"definition_zh": "材料、成分",
+			"example": "The affected ingredient from our supplier is being indefinitely removed..."
+		},
+		{
+			"word": "indefinitely",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/ɪnˈdefɪnətli/",
+			"definition_zh": "無限期地",
+			"example": "The affected ingredient from our supplier is being indefinitely removed..."
+		},
+		{
+			"word": "nationwide",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˌneɪʃnˈwaɪd/",
+			"definition_zh": "全國性地",
+			"example": "removed from our supply chain nationwide and will be replaced within 24 hours..."
+		},
+		{
+			"word": "parasite",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈpærəsaɪt/",
+			"definition_zh": "寄生蟲",
+			"example": "The Cyclospora parasite infects humans’ small intestine..."
+		},
+		{
+			"word": "incubate",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈɪŋkjubeɪt/",
+			"definition_zh": "潛伏、孵化",
+			"example": "can take up to one to two weeks to incubate..."
+		},
+		{
+			"word": "symptoms",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈsɪmptəmz/",
+			"definition_zh": "症狀、徵兆",
+			"example": "causes symptoms including “watery diarrhea, with frequent bowel movements...”"
+		},
+		{
+			"word": "investigation",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ɪnˌvestɪˈɡeɪʃn/",
+			"definition_zh": "調查、審查",
+			"example": "while the extent of the outbreak is still under investigation..."
+		},
+		{
+			"word": "potential",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/pəˈtenʃl/",
+			"definition_zh": "潛在的、可能的",
+			"example": "representing less than 1% of the U.S.’s iceberg lettuce supply as the potential source of the outbreak..."
+		},
+		{
+			"word": "federal",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈfedərəl/",
+			"definition_zh": "聯邦的、中央政府的",
+			"example": "as the Trump administration cut funding to federal health agencies..."
+		},
+		{
+			"word": "compliance",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/kəmˈplaɪəns/",
+			"definition_zh": "合規、遵守",
+			"example": "the FDA pushed back the compliance deadline on implementing its Requirements..."
+		},
+		{
+			"word": "implementing",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈɪmplɪmentɪŋ/",
+			"definition_zh": "實施、執行",
+			"example": "pushed back the compliance deadline on implementing its Requirements..."
+		},
+		{
+			"word": "standardized",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈstændərdaɪzd/",
+			"definition_zh": "標準化的",
+			"example": "Its requirement for standardized record-keeping about goods..."
+		},
+		{
+			"word": "hospitalization",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌhɒspɪtəlaɪˈzeɪʃn/",
+			"definition_zh": "住院",
+			"example": "with 102 reports of hospitalization."
+		},
+		{
+			"word": "channel",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈtʃænl/",
+			"definition_zh": "管道、渠道",
+			"example": "additional implicated brands, restaurants, retailers, or distribution channels may be identified..."
+		},
+		{
+			"word": "small intestine",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/smɔːl ɪnˈtestɪn/",
+			"definition_zh": "小腸",
+			"example": "The Cyclospora parasite infects humans’ small intestine..."
+		},
+		{
+			"word": "grocery",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɡroʊsəri/",
+			"definition_zh": "雜貨、食品雜貨店",
+			"example": "makes two out of every five of the salad kits sold in grocery stores."
+		},
+		{
+			"word": "pull from",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/pʊl frʌm/",
+			"definition_zh": "從...中撤出",
+			"example": "Taylor Farms told customers... to pull shredded lettuce... from distribution."
+		},
+		{
+			"word": "look into",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lʊk ˈɪntuː/",
+			"definition_zh": "調查、查視",
+			"example": "the CDC has said it’s also looking into illnesses and outbreaks in other states..."
+		},
+		{
+			"word": "linked to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lɪŋkt tuː/",
+			"definition_zh": "與...有關聯",
+			"example": "not all of the reported cases have been linked to Taco Bell..."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company ____ recalled the faulty chargers to ensure customer safety.",
+			"sentence_zh": "該公司自願召回有缺陷的充電器，以確保客戶安全。",
+			"answer": "voluntarily",
+			"options": [
+				"voluntarily",
+				"initially",
+				"indefinitely",
+				"nationwide"
+			]
+		},
+		{
+			"sentence": "Fatigue and a high fever are common ____ of the infection.",
+			"sentence_zh": "疲勞和高燒是該感染的常見症狀。",
+			"answer": "symptoms",
+			"options": [
+				"symptoms",
+				"investigation",
+				"hospitalization",
+				"compliance"
+			]
+		},
+		{
+			"sentence": "The police launched an ____ to find the cause of the accident.",
+			"sentence_zh": "警方展開調查以尋找事故原因。",
+			"answer": "investigation",
+			"options": [
+				"investigation",
+				"potential",
+				"ingredient",
+				"distributor"
+			]
+		},
+		{
+			"sentence": "Milk is a key ____ in many pancake recipes.",
+			"sentence_zh": "牛奶是許多鬆餅食譜中的關鍵材料。",
+			"answer": "ingredient",
+			"options": [
+				"ingredient",
+				"parasite",
+				"channel",
+				"grocery"
+			]
+		},
+		{
+			"sentence": "The new law will be ____ starting from next January.",
+			"sentence_zh": "新法律將從明年一月開始實施。",
+			"answer": "implementing",
+			"options": [
+				"implementing",
+				"incubate",
+				"standardized",
+				"nationwide"
+			]
+		},
+		{
+			"sentence": "The severe injury required immediate ____ for the athlete.",
+			"sentence_zh": "嚴重的傷勢要求這名運動員立即住院。",
+			"answer": "hospitalization",
+			"options": [
+				"hospitalization",
+				"compliance",
+				"symptoms",
+				"investigation"
+			]
+		},
+		{
+			"sentence": "Poor hygiene is often ____ the spread of bacteria in kitchens.",
+			"sentence_zh": "衛生不良通常與廚房中細菌的傳播有關聯。",
+			"answer": "linked to",
+			"options": [
+				"linked to",
+				"pull from",
+				"look into",
+				"voluntarily"
+			]
+		},
+		{
+			"sentence": "The board of directors decided to ____ the matter before making a final decision.",
+			"sentence_zh": "董事會決定在做出最終決定前調查此事。",
+			"answer": "look into",
+			"options": [
+				"look into",
+				"pull from",
+				"linked to",
+				"incubate"
+			]
+		},
+		{
+			"sentence": "The supermarket has a ____ network that covers the whole country.",
+			"sentence_zh": "這家超市有一個覆蓋全國的分銷網絡。",
+			"answer": "nationwide",
+			"options": [
+				"nationwide",
+				"indefinitely",
+				"initially",
+				"federal"
+			]
+		},
+		{
+			"sentence": "The company was fined for failing to maintain ____ with environmental rules.",
+			"sentence_zh": "該公司因未能遵守環境法規而被罰款。",
+			"answer": "compliance",
+			"options": [
+				"compliance",
+				"potential",
+				"investigation",
+				"producer"
+			]
+		}
+	]
+}
