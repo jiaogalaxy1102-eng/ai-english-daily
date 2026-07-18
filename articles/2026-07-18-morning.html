@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AI is turning the Smithsonian into an illuminated fever dream — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-18</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">AI</span></div>
+	<h1 class="article-title">AI is turning the Smithsonian into an illuminated fever dream</h1>
+	<div class="article-meta">
+		2026-07-18 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91574979/refik-anadol-installation-smithsonian?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="commemorate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">commemorate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/kəˈmem.ə.reɪt/</span>
+				<span class="vocab-def">紀念</span>
+			</div>
+			<div class="vocab-card" data-word="illuminate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">illuminate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ɪˈluː.mə.neɪt/</span>
+				<span class="vocab-def">照亮；闡明</span>
+			</div>
+			<div class="vocab-card" data-word="facade" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">facade</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/fəˈsɑːd/</span>
+				<span class="vocab-def">（建築物的）正面；外牆</span>
+			</div>
+			<div class="vocab-card" data-word="installation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">installation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɪn.stəˈleɪ.ʃən/</span>
+				<span class="vocab-def">藝術裝置；設施</span>
+			</div>
+			<div class="vocab-card" data-word="immersive" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">immersive</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈmɜː.sɪv/</span>
+				<span class="vocab-def">沉浸式的；身臨其境的</span>
+			</div>
+			<div class="vocab-card" data-word="abstract" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">abstract</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈæb.strækt/</span>
+				<span class="vocab-def">抽象的</span>
+			</div>
+			<div class="vocab-card" data-word="repository" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">repository</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/rɪˈpɒz.ɪ.tər.i/</span>
+				<span class="vocab-def">貯藏室；存放處</span>
+			</div>
+			<div class="vocab-card" data-word="transform" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">transform</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/trænsˈfɔːm/</span>
+				<span class="vocab-def">轉換；改變</span>
+			</div>
+			<div class="vocab-card" data-word="unfold" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">unfold</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ʌnˈfəʊld/</span>
+				<span class="vocab-def">展開；顯露</span>
+			</div>
+			<div class="vocab-card" data-word="presentation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">presentation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌprez.enˈteɪ.ʃən/</span>
+				<span class="vocab-def">展示；呈現</span>
+			</div>
+			<div class="vocab-card" data-word="festivities" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">festivities</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/fesˈtɪv.ə.tiz/</span>
+				<span class="vocab-def">慶祝活動</span>
+			</div>
+			<div class="vocab-card" data-word="sparsely" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sparsely</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˈspɑːs.li/</span>
+				<span class="vocab-def">稀疏地</span>
+			</div>
+			<div class="vocab-card" data-word="sandstone" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sandstone</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈsænd.stəʊn/</span>
+				<span class="vocab-def">砂岩</span>
+			</div>
+			<div class="vocab-card" data-word="archival" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">archival</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɑːˈkaɪ.vəl/</span>
+				<span class="vocab-def">檔案的</span>
+			</div>
+			<div class="vocab-card" data-word="specimen" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">specimen</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈspes.ə.mɪn/</span>
+				<span class="vocab-def">標本；樣品</span>
+			</div>
+			<div class="vocab-card" data-word="digitized" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">digitized</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈdɪdʒ.ɪ.taɪzd/</span>
+				<span class="vocab-def">數位化的</span>
+			</div>
+			<div class="vocab-card" data-word="collaborator" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">collaborator</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˈlæb.ə.reɪ.tər/</span>
+				<span class="vocab-def">合作者</span>
+			</div>
+			<div class="vocab-card" data-word="mapping" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mapping</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmæp.ɪŋ/</span>
+				<span class="vocab-def">映射；繪製圖表</span>
+			</div>
+			<div class="vocab-card" data-word="manifold" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">manifold</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmæn.ɪ.fəʊld/</span>
+				<span class="vocab-def">流形（數學術語）</span>
+			</div>
+			<div class="vocab-card" data-word="collection" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">collection</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˈlek.ʃən/</span>
+				<span class="vocab-def">館藏；收集物</span>
+			</div>
+			<div class="vocab-card" data-word="set to" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">set to</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/set tuː/</span>
+				<span class="vocab-def">預定；準備好</span>
+			</div>
+			<div class="vocab-card" data-word="as well as" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">as well as</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/æz wel æz/</span>
+				<span class="vocab-def">以及；還有</span>
+			</div>
+			<div class="vocab-card" data-word="press statement" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">press statement</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/pres ˈsteɪt.mənt/</span>
+				<span class="vocab-def">新聞稿；媒體聲明</span>
+			</div>
+			<div class="vocab-card" data-word="UMAP" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">UMAP</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈjuːmæp/</span>
+				<span class="vocab-def">均勻流形逼近與投影</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">The National Mall has become a hot spot for <span class="word-general" data-word="festivities">festivities</span> this summer as the U.S. <span class="word-highfreq" data-word="commemorate">commemorate</span>s its 250th anniversary, hosting the (<span class="word-general" data-word="sparsely">sparsely</span> attended) Great American State Fair <span class="word-phrase" data-word="as well as">as well as</span> a massive FIFA fan zone for the World Cup. The latest celebration arriving at the capital’s famous park is <span class="word-phrase" data-word="set to">set to</span> <span class="word-highfreq" data-word="illuminate">illuminate</span> the red <span class="word-general" data-word="sandstone">sandstone</span> <span class="word-general" data-word="facade">facade</span> of the Smithsonian.</p>
+			<p class="para-translation">國家廣場今年夏天已成為慶祝活動的熱點，因為美國正紀念其 250 週年，舉辦了（參與人數稀少的）大美國州博覽會以及世界盃的大型 FIFA 粉絲區。抵達首都著名公園的最新慶祝活動將照亮史密森尼學會的紅砂岩外牆。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">For the <span class="word-highfreq" data-word="immersive">immersive</span> public <span class="word-highfreq" data-word="installation">installation</span> titled <em>Smithsonian Dreams</em>, the artist Refik Anadol will project images from the museum’s <span class="word-highfreq" data-word="collection">collection</span>, <span class="word-phrase" data-word="as well as">as well as</span> <span class="word-highfreq" data-word="abstract">abstract</span> graphics made with the help of AI, onto the Smithsonian’s Gothic Revival building.</p>
+			<p class="para-translation">為了這個名為《史密森尼之夢》的沉浸式公共藝術裝置，藝術家 Refik Anadol 將把來自博物館館藏的影像，以及在 AI 幫助下製作的抽象圖形，投影到史密森尼學會的哥德復興式建築上。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Lisa Sasaki, deputy under secretary for special projects at the Smithsonian Institution, tells <em>Fast Company</em> that Anadol’s work was guided by a question: “The Smithsonian Castle, if it could dream, what would it dream about?”</p>
+			<p class="para-translation">史密森尼學會特殊專案副次長 Lisa Sasaki 告訴《Fast Company》，Anadol 的作品是受到一個問題的啟發：「如果史密森尼城堡會做夢，它會夢到什麼？」</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">A technological journey</h2>
+			<h2 class="para-translation">一場科技之旅</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">With more than 2 million library volumes, 156,000 cubic feet of <span class="word-general" data-word="archival">archival</span> materials (the size of two Boeing 737-800 airliners), and some 157 million objects and <span class="word-general" data-word="specimen">specimen</span>s, the Smithsonian Institution is one of the world’s largest repositories of knowledge. Using a custom artificial intelligence system, Anadol dove into almost 200 years of <span class="word-term" data-word="digitized">digitized</span> items ranging over photographs, art, manuscripts, scientific records, objects, and even physical specimens.</p>
+			<p class="para-translation">史密森尼學會擁有超過 200 萬冊圖書館藏書、15.6 萬立方英尺的檔案材料（相當於兩架波音 737-800 客機的大小），以及約 1.57 億件物品和標本，是世界上最大的知識庫之一。利用自定義的人工智慧系統，Anadol 深入研究了近 200 年的數位化項目，範圍涵蓋照片、藝術品、手稿、科學記錄、物品甚至物理標本。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Treating these elements as data points, Anadol created a <span class="word-term" data-word="UMAP">UMAP</span> (uniform <span class="word-general" data-word="manifold">manifold</span> approximation and projection), <span class="word-highfreq" data-word="mapping">mapping</span> the connections between the data.</p>
+			<p class="para-translation">Anadol 將這些元素視為數據點，創建了一個 UMAP（均勻流形逼近與投影），繪製出數據之間的聯繫。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“For me, data is a form of memory,” Anadol said in a <span class="word-phrase" data-word="press statement">press statement</span>. “Using machine intelligence as a creative <span class="word-highfreq" data-word="collaborator">collaborator</span>, we are <span class="word-highfreq" data-word="transform">transform</span>ing the archive into a living experience where history, culture, science and imagination continuously <span class="word-highfreq" data-word="unfold">unfold</span> in new ways.”</p>
+			<p class="para-translation">Anadol 在一份新聞聲明中表示：「對我來說，數據是記憶的一種形式。利用機器智能作為創意合作者，我們正在將檔案轉化為一種活生生的體驗，讓歷史、文化、科學和想像力不斷以新的方式展現。」</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/01-91574979-smithsonian-dreams.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Projected on the 145-foot-tall building, the <span class="word-highfreq" data-word="installation">installation</span> will run for only two nights, July 17 and 18. To <span class="word-highfreq" data-word="transform">transform</span> the castle, the installation is using Panasonic projection technology to showcase the artist’s <span class="word-highfreq" data-word="immersive">immersive</span> <span class="word-highfreq" data-word="presentation">presentation</span> as a show with visuals and sounds.</p>
+			<p class="para-translation">該裝置投影在 145 英尺高的建築上，僅展出兩個晚上，即 7 月 17 日和 18 日。為了改造城堡，該裝置使用 Panasonic 的投影技術，將藝術家的沉浸式展示呈現為一場結合視覺與聽覺的表演。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-16-morning.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">Meet GPT-Red: an LLM super-hacker OpenAI built to make its models safer</span>
+			</a>
+			<a class="related-card" href="2026-07-15-morning.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">Advertising isn’t the answer to Anthropic’s hard questions</span>
+			</a>
+			<a class="related-card" href="2026-07-13-morning.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">Anthropic found a hidden space where Claude puzzles over concepts</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "commemorate", "type": "highfreq", "pos": "v.", "ipa": "/kəˈmem.ə.reɪt/", "definition_zh": "紀念", "example": "the U.S. commemorates its 250th anniversary"}, {"word": "illuminate", "type": "highfreq", "pos": "v.", "ipa": "/ɪˈluː.mə.neɪt/", "definition_zh": "照亮；闡明", "example": "set to illuminate the red sandstone facade of the Smithsonian."}, {"word": "facade", "type": "general", "pos": "n.", "ipa": "/fəˈsɑːd/", "definition_zh": "（建築物的）正面；外牆", "example": "set to illuminate the red sandstone facade of the Smithsonian."}, {"word": "installation", "type": "highfreq", "pos": "n.", "ipa": "/ˌɪn.stəˈleɪ.ʃən/", "definition_zh": "藝術裝置；設施", "example": "For the immersive public installation titled Smithsonian Dreams"}, {"word": "immersive", "type": "highfreq", "pos": "adj.", "ipa": "/ɪˈmɜː.sɪv/", "definition_zh": "沉浸式的；身臨其境的", "example": "For the immersive public installation titled Smithsonian Dreams"}, {"word": "abstract", "type": "highfreq", "pos": "adj.", "ipa": "/ˈæb.strækt/", "definition_zh": "抽象的", "example": "as well as abstract graphics made with the help of AI"}, {"word": "repository", "type": "general", "pos": "n.", "ipa": "/rɪˈpɒz.ɪ.tər.i/", "definition_zh": "貯藏室；存放處", "example": "the Smithsonian Institution is one of the world’s largest repositories of knowledge."}, {"word": "transform", "type": "highfreq", "pos": "v.", "ipa": "/trænsˈfɔːm/", "definition_zh": "轉換；改變", "example": "we are transforming the archive into a living experience"}, {"word": "unfold", "type": "highfreq", "pos": "v.", "ipa": "/ʌnˈfəʊld/", "definition_zh": "展開；顯露", "example": "science and imagination continuously unfold in new ways."}, {"word": "presentation", "type": "highfreq", "pos": "n.", "ipa": "/ˌprez.enˈteɪ.ʃən/", "definition_zh": "展示；呈現", "example": "to showcase the artist’s immersive presentation as a show"}, {"word": "festivities", "type": "general", "pos": "n.", "ipa": "/fesˈtɪv.ə.tiz/", "definition_zh": "慶祝活動", "example": "The National Mall has become a hot spot for festivities this summer"}, {"word": "sparsely", "type": "general", "pos": "adv.", "ipa": "/ˈspɑːs.li/", "definition_zh": "稀疏地", "example": "hosting the (sparsely attended) Great American State Fair"}, {"word": "sandstone", "type": "general", "pos": "n.", "ipa": "/ˈsænd.stəʊn/", "definition_zh": "砂岩", "example": "illuminate the red sandstone facade of the Smithsonian."}, {"word": "archival", "type": "general", "pos": "adj.", "ipa": "/ɑːˈkaɪ.vəl/", "definition_zh": "檔案的", "example": "156,000 cubic feet of archival materials"}, {"word": "specimen", "type": "general", "pos": "n.", "ipa": "/ˈspes.ə.mɪn/", "definition_zh": "標本；樣品", "example": "157 million objects and specimens"}, {"word": "digitized", "type": "term", "pos": "adj.", "ipa": "/ˈdɪdʒ.ɪ.taɪzd/", "definition_zh": "數位化的", "example": "Anadol dove into almost 200 years of digitized items"}, {"word": "collaborator", "type": "highfreq", "pos": "n.", "ipa": "/kəˈlæb.ə.reɪ.tər/", "definition_zh": "合作者", "example": "Using machine intelligence as a creative collaborator"}, {"word": "mapping", "type": "highfreq", "pos": "n.", "ipa": "/ˈmæp.ɪŋ/", "definition_zh": "映射；繪製圖表", "example": "mapping the connections between the data."}, {"word": "manifold", "type": "general", "pos": "n.", "ipa": "/ˈmæn.ɪ.fəʊld/", "definition_zh": "流形（數學術語）", "example": "Anadol created a UMAP (uniform manifold approximation and projection)"}, {"word": "collection", "type": "highfreq", "pos": "n.", "ipa": "/kəˈlek.ʃən/", "definition_zh": "館藏；收集物", "example": "Anadol will project images from the museum’s collection"}, {"word": "set to", "type": "phrase", "pos": "", "ipa": "/set tuː/", "definition_zh": "預定；準備好", "example": "The latest celebration arriving at the capital’s famous park is set to illuminate"}, {"word": "as well as", "type": "phrase", "pos": "", "ipa": "/æz wel æz/", "definition_zh": "以及；還有", "example": "Great American State Fair as well as a massive FIFA fan zone"}, {"word": "press statement", "type": "phrase", "pos": "", "ipa": "/pres ˈsteɪt.mənt/", "definition_zh": "新聞稿；媒體聲明", "example": "“For me, data is a form of memory,” Anadol said in a press statement."}, {"word": "UMAP", "type": "term", "pos": "n.", "ipa": "/ˈjuːmæp/", "definition_zh": "均勻流形逼近與投影", "example": "Anadol created a UMAP (uniform manifold approximation and projection)"}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The city held a grand parade to ____ the victory of the national team.", "sentence_zh": "這座城市舉行了一場盛大的遊行，以紀念國家隊的勝利。", "answer": "commemorate", "options": ["commemorate", "transform", "mapping", "facade"]}, {"sentence": "The street lamps began to ____ the narrow alley as night fell.", "sentence_zh": "夜幕降臨時，路燈開始照亮這條狹窄的小巷。", "answer": "illuminate", "options": ["unfold", "illuminate", "sparsely", "abstract"]}, {"sentence": "This video game provides an ____ experience that makes you feel part of the story.", "sentence_zh": "這款電子遊戲提供了一種沉浸式的體驗，讓你覺得自己是故事的一部分。", "answer": "immersive", "options": ["archival", "digitized", "immersive", "sandstone"]}, {"sentence": "The university library is a vast ____ of ancient manuscripts and historical records.", "sentence_zh": "大學圖書館是一個巨大的古代手稿和歷史記錄存放處。", "answer": "repository", "options": ["presentation", "repository", "installation", "collaborator"]}, {"sentence": "The new government plans to ____ the education system to meet modern needs.", "sentence_zh": "新政府計劃改革教育系統以滿足現代需求。", "answer": "transform", "options": ["commemorate", "transform", "collection", "manifold"]}, {"sentence": "The local ____ for the Lunar New Year attracted thousands of visitors.", "sentence_zh": "當地的農曆新年慶祝活動吸引了數千名遊客。", "answer": "festivities", "options": ["festivities", "UMAP", "specimen", "as well as"]}, {"sentence": "The scientist carefully placed the butterfly ____ under the microscope for observation.", "sentence_zh": "科學家小心翼翼地將蝴蝶標本放在顯微鏡下觀察。", "answer": "specimen", "options": ["facade", "specimen", "press statement", "mapping"]}, {"sentence": "As the plot of the movie began to ____, the audience became more intrigued.", "sentence_zh": "隨著電影情節的展開，觀眾變得越來越感興趣。", "answer": "unfold", "options": ["unfold", "set to", "illuminate", "sparsely"]}, {"sentence": "The new tech startup is ____ launch its innovative app early next month.", "sentence_zh": "這家科技初創公司預定於下月初推出其創新應用程式。", "answer": "set to", "options": ["set to", "as well as", "transform", "abstract"]}, {"sentence": "The museum has ____ all of its records to allow people to search them online.", "sentence_zh": "博物館已將所有記錄數位化，以便人們在線搜尋。", "answer": "digitized", "options": ["digitized", "archival", "immersive", "commemorate"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
