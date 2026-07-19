@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Download: perimenopause misinformation and China’s latest AI leap — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-19</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">MIT Technology Review<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">The Download: perimenopause misinformation and China’s latest AI leap</h1>
+	<div class="article-meta">
+		2026-07-19 &nbsp;·&nbsp; <a href="https://www.technologyreview.com/2026/07/17/1140640/the-download-perimenopause-misinformation-china-moonshot-ai/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="perimenopause" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">perimenopause</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌper.iˈmen.ə.pɔːz/</span>
+				<span class="vocab-def">圍絕經期（更年期前期）</span>
+			</div>
+			<div class="vocab-card" data-word="misinformation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">misinformation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌmɪs.ɪn.fəˈmeɪ.ʃən/</span>
+				<span class="vocab-def">錯誤資訊</span>
+			</div>
+			<div class="vocab-card" data-word="hype" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hype</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/haɪp/</span>
+				<span class="vocab-def">炒作、誇大宣傳</span>
+			</div>
+			<div class="vocab-card" data-word="shaped" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">shaped</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ʃeɪpt/</span>
+				<span class="vocab-def">塑造、影響</span>
+			</div>
+			<div class="vocab-card" data-word="claim" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">claim</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/kleɪm/</span>
+				<span class="vocab-def">聲稱、主張</span>
+			</div>
+			<div class="vocab-card" data-word="narrowed" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">narrowed</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈnær.əʊd/</span>
+				<span class="vocab-def">（差距等）縮小</span>
+			</div>
+			<div class="vocab-card" data-word="alternative" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">alternative</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɒlˈtɜː.nə.tɪv/</span>
+				<span class="vocab-def">替代方案、替代物</span>
+			</div>
+			<div class="vocab-card" data-word="monetize" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">monetize</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈmʌn.ɪ.taɪz/</span>
+				<span class="vocab-def">變現、貨幣化</span>
+			</div>
+			<div class="vocab-card" data-word="override" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">override</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌəʊ.vəˈraɪd/</span>
+				<span class="vocab-def">撤銷、覆蓋（自動控制）</span>
+			</div>
+			<div class="vocab-card" data-word="disrupt" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">disrupt</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪsˈrʌpt/</span>
+				<span class="vocab-def">擾亂、中斷</span>
+			</div>
+			<div class="vocab-card" data-word="restore" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">restore</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈstɔːr/</span>
+				<span class="vocab-def">恢復</span>
+			</div>
+			<div class="vocab-card" data-word="captivate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">captivate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈkæp.tɪ.veɪt/</span>
+				<span class="vocab-def">吸引、使著迷</span>
+			</div>
+			<div class="vocab-card" data-word="taboo" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">taboo</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/təˈbuː/</span>
+				<span class="vocab-def">禁忌</span>
+			</div>
+			<div class="vocab-card" data-word="hormones" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hormones</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈhɔː.məʊnz/</span>
+				<span class="vocab-def">荷爾蒙、激素</span>
+			</div>
+			<div class="vocab-card" data-word="habitable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">habitable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈhæb.ɪ.tə.bəl/</span>
+				<span class="vocab-def">宜居的、適於居住的</span>
+			</div>
+			<div class="vocab-card" data-word="contender" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">contender</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kənˈten.dər/</span>
+				<span class="vocab-def">競爭者</span>
+			</div>
+			<div class="vocab-card" data-word="recipient" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">recipient</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/rɪˈsɪp.i.ənt/</span>
+				<span class="vocab-def">接受者、受試者</span>
+			</div>
+			<div class="vocab-card" data-word="cosmic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">cosmic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkɒz.mɪk/</span>
+				<span class="vocab-def">宇宙的</span>
+			</div>
+			<div class="vocab-card" data-word="semiconductor" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">semiconductor</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌsem.i.kənˈdʌk.tər/</span>
+				<span class="vocab-def">半導體</span>
+			</div>
+			<div class="vocab-card" data-word="open-source" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">open-source</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌəʊ.pənˈsɔːs/</span>
+				<span class="vocab-def">開源的</span>
+			</div>
+			<div class="vocab-card" data-word="put up with" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">put up with</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/pʊt ʌp wɪð/</span>
+				<span class="vocab-def">忍受、容忍</span>
+			</div>
+			<div class="vocab-card" data-word="gain traction" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">gain traction</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɡeɪn ˈtræk.ʃən/</span>
+				<span class="vocab-def">獲得關注、開始流行</span>
+			</div>
+			<div class="vocab-card" data-word="all the rage" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">all the rage</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɔːl ðə reɪdʒ/</span>
+				<span class="vocab-def">風靡一時、非常流行</span>
+			</div>
+			<div class="vocab-card" data-word="drop me a line" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">drop me a line</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/drɒp miː ə laɪn/</span>
+				<span class="vocab-def">寫信給我、聯絡我</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original"><em>This is today's edition of </em><em>The Download</em>,<em> our weekday newsletter that provides a daily dose of what's going on in the world of technology.</em></p>
+			<p class="para-translation">這是今日版本的 The Download，這是我們的平日電子報，每日為您提供科技界的最新動態。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original"><strong>There’s a lot of <span class="word-highfreq" data-word="hype">hype</span> around <span class="word-term" data-word="perimenopause">perimenopause</span>. Don’t buy it.</strong><strong></strong></h3>
+			<h3 class="para-translation">關於圍絕經期有許多炒作。別信。</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-term" data-word="perimenopause">Perimenopause</span> used to be considered <span class="word-general" data-word="taboo">taboo</span>, but not anymore. Thanks at least in part to TV doctors and social media influencers, conversations about the sometimes years-long period before menopause are now more open than ever. But the conversation is increasingly <span class="word-highfreq" data-word="shaped">shaped</span> by <span class="word-highfreq" data-word="misinformation">misinformation</span>.</p>
+			<p class="para-translation">圍絕經期（更年期前期）過去被視為禁忌，但現在不再如此。至少部分歸功於電視醫生和社交媒體影響者，關於更年期前有時長達數年這段時期的對話比以往任何時候都更加開放。但這段對話越來越多地受到錯誤資訊的影響。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Despite what some marketers will <span class="word-highfreq" data-word="claim">claim</span>, there is no test for <span class="word-term" data-word="perimenopause">perimenopause</span>. That doesn’t mean women should have to <span class="word-phrase" data-word="put up with">put up with</span> symptoms, but treatment suggestions often lack scientific evidence. And not all the symptoms women experience in midlife can be blamed on <span class="word-general" data-word="hormones">hormones</span>.</p>
+			<p class="para-translation">儘管某些行銷人員宣稱，但目前並沒有針對圍絕經期的測試。這並不意味著女性必須忍受這些症狀，但治療建議通常缺乏科學證據。而且並非女性在中年經歷的所有症狀都可以歸咎於荷爾蒙。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Read the full story on the <span class="word-highfreq" data-word="hype">hype</span> and <span class="word-highfreq" data-word="misinformation">misinformation</span> surrounding <span class="word-term" data-word="perimenopause">perimenopause</span>.</p>
+			<p class="para-translation">閱讀關於圍絕經期炒作與錯誤資訊的完整報導。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><em>—Jessica Hamzelou</em></p>
+			<p class="para-translation">—Jessica Hamzelou</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>This </strong><strong>article </strong><strong>is from The Spark, our weekly climate tech newsletter. </strong><strong>Sign up</strong><strong> to receive it in your inbox every Wednesday.</strong></p>
+			<p class="para-translation">本文出自 The Spark，這是我們的每週氣候科技電子報。點擊訂閱，即可在每週三於收件匣中收到。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>The must-reads</strong></p>
+			<p class="para-translation">必讀內容</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><em>I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.</em></p>
+			<p class="para-translation">我搜遍了網路，為您找出了今日最有趣、重要、恐怖或迷人的科技故事。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>1</strong> <strong>China's AI gap with the US may have just <span class="word-highfreq" data-word="narrowed">narrowed</span></strong> A Chinese startup has released the world's largest open AI model. (Reuters $) <em>+ It competes with some Anthropic and OpenAI models. </em>(Gizmodo) <em>+ The model’s launch sent AI and <span class="word-term" data-word="semiconductor">semiconductor</span> stocks sliding. </em>(Bloomberg $) <em>+ Chinese Nvidia <span class="word-highfreq" data-word="alternative">alternative</span>s are also gaining traction. </em>(SCMP) <em>+ Xi Jinping pitched China as an AI partner to the developing world.</em> (CNBC) <em>+ The country is betting big on <span class="word-term" data-word="open-source">open-source</span>.</em> (MIT Technology Review) <strong>2 Trump Media is selling instant access to “market-moving' social posts</strong> It’s developed a new way to <span class="word-highfreq" data-word="monetize">monetize</span> the president’s posts. (Quartz) <em>+ And Trump could profit directly from selling access to his statements.</em> (BBC) <em>+ Kalshi says it caught Trump’s teleprompter operator insider trading</em>﻿<em>.</em> (Verge) <strong>3 Astronomers have found an atmosphere on a nearby Earth-like planet </strong> It’s the first potentially <span class="word-general" data-word="habitable">habitable</span> world known to host an atmosphere. (NYT $) <em>+ Making it a top <span class="word-general" data-word="contender">contender</span> in the search for aliens.</em> (404 Media) <em>+ But you need to know how to spot one.</em> (MIT Technology Review) <strong>4 A brain implant has <span class="word-highfreq" data-word="restore">restore</span>d feeling in a paralysed hand </strong> The <span class="word-general" data-word="recipient">recipient</span> can now feed himself and drink from a cup. (Guardian) <em>+ Movement continued when the stimulation was turned off.</em> (New Scientist $) <em>+ China has approved a world-first brain chip. </em>(MIT Technology Review) <strong>5 The EU has told Google to share search data and open up AI on Android</strong> It will be forced to share data with competing search providers. (Ars Technica) <em>+ And open Android phones to rivals’ AI bots. </em>(WP $) <strong>6 Period trackers are hiding privacy problems</strong> New research uncovers how they’re sharing users’ health data. (BBC) <strong>7 The Tesla driver in a fatal Texas crash overrode FSD, investigators say</strong> He bypassed the tech by pressing the gas pedal to 100%. (Verge) <strong>8 A new stealth drone spins so fast that it disappears</strong> Though its creators admit it can still be easily heard. (New Scientist $) <strong>9 A space-station study suggests why astronauts’ bodies waste away</strong> Microgravity <span class="word-highfreq" data-word="disrupt">disrupt</span>s mitochondria, reducing protein production. (Nature) <strong>10 “Adversarial clothing” that confuses facial recognition is <span class="word-phrase" data-word="all the rage">all the rage</span></strong> Privacy could be the next big trend. (Guardian)</p>
+			<p class="para-translation">1. 中國與美國的 AI 差距可能剛剛縮小：一家中國新創公司發布了全球最大的開源 AI 模型。（路透社 $）+ 該模型可與 Anthropic 和 OpenAI 的部分模型競爭。（Gizmodo）+ 該模型的發布導致 AI 和半導體股票下跌。（彭博社 $）+ 中國的輝達替代方案也正獲得關注。（南華早報）+ 習近平將中國定位為開發中國家的 AI 合作夥伴。（CNBC）+ 該國正大舉押注開源技術。（麻省理工科技評論）
+2. 川普媒體公司正在販售「足以影響市場」的社交貼文即時存取權：它開發了一種將總統貼文變現的新方法。（Quartz）+ 川普可能直接從販售其聲明的存取權中獲利。（BBC）+ Kalshi 表示它抓到了川普的讀稿機操作員進行內線交易。（Verge）
+3. 天文學家在一顆鄰近的類地行星上發現了大氣層：這是首個已知擁有大氣層的潛在宜居世界。（紐約時報 $）+ 這使其成為尋找外星人的首選。（404 Media）+ 但你需要知道如何發現它。（麻省理工科技評論）
+4. 大腦植入物恢復了癱瘓手部的知覺：受試者現在可以自己進食並用杯子喝水。（衛報）+ 當刺激關閉後，動作仍能持續。（新科學人 $）+ 中國批准了全球首款腦機晶片。（麻省理工科技評論）
+5. 歐盟要求 Google 分享搜尋數據並在 Android 上開放 AI：它將被強制與競爭的搜尋供應商分享數據。（Ars Technica）+ 並向對手的 AI 機器人開放 Android 手機。（華盛頓郵報 $）
+6. 經期追蹤軟體正隱藏隱私問題：新研究揭露了它們如何分享用戶的健康數據。（BBC）
+7. 調查人員稱，德州致命事故中的特斯拉駕駛覆蓋了 FSD 系統：他透過將油門踩到 100% 來繞過技術限制。（Verge）
+8. 新型隱形無人機旋轉極快以至於消失：儘管其創造者承認它仍然很容易被聽到。（新科學人 $）
+9. 一項太空站研究揭示了太空人身體萎縮的原因：微重力會擾亂粒線體，減少蛋白質生成。（自然）
+10. 混淆面部識別的「對抗性服飾」正大行其道：隱私可能成為下一個大趨勢。（衛報）</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>Quote of the day</strong></p>
+			<p class="para-translation">今日語錄</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original"><strong>“Xi's message is clear: China is not going to follow anyone on both AI technology and ​standards. Instead, China is going </strong><strong>⁠</strong><strong>to lead the world in both aspects.” </strong></h2>
+			<h2 class="para-translation">「習近平傳遞的信息很明確：中國不會在 AI 技術和標準上追隨任何人。相反，中國將在兩方面引領世界。」</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">—George Chen, chair in digital practice at The Asia Group consultancy, gives Reuters his take on Xi Jinping’s speech at the World Artificial Intelligence Conference (WAIC) in Shanghai.</p>
+			<p class="para-translation">—George Chen，The Asia Group 諮詢公司的數位實踐主席，對習近平在上海世界人工智能大會（WAIC）上的講話向路透社發表看法。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>One More Thing</strong></p>
+			<p class="para-translation">還有一件事</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://wp.technologyreview.com/wp-content/uploads/2024/12/Varcor-Facility-Interiorpoop-thumb.jpg?w=3000" alt="&quot;&quot;" loading="lazy">
+			<figcaption>&quot;&quot;</figcaption>
+		</figure>
+		<div class="para-block heading-block">
+			<h4 class="para-original"><strong> How poop could feed the planet</strong></h4>
+			<h4 class="para-translation">糞便如何能養活地球</h4>
+		</div>
+		<div class="para-block">
+			<p class="para-original">A new industrial facility in suburban Seattle is giving off a whiff of futuristic technology. It can safely treat fecal waste from people and livestock while recycling nutrients that are crucial for agriculture but in increasingly short supply across the nation’s farmlands.</p>
+			<p class="para-translation">西雅圖郊區的一個新工業設施正散發著一股未來科技的氣息。它可以安全地處理人類和牲畜的排泄物，同時回收對農業至關重要、但在全國農田中供應日益短缺的營養物質。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">It’s among a range of systems reframing feces, urine, and their ingredients as invaluable natural resources to reuse instead of waste products to burn or bury. Several companies are now showing how to safely scale up the transformation with energy-efficient technologies.</p>
+			<p class="para-translation">這是一系列將糞便、尿液及其成分重新定位為寶貴自然資源，而非燃燒或掩埋的廢棄物的系統之一。幾家公司目前正展示如何透過節能技術安全地擴大這種轉型規模。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Find out how human waste is being transfomed into agricultural solutions.</p>
+			<p class="para-translation">了解人類排泄物如何被轉化為農業解決方案。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><em>—Bryn Nelson</em></p>
+			<p class="para-translation">—Bryn Nelson</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>We can still have nice things</strong></p>
+			<p class="para-translation">我們仍能擁有美好的事物</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><em>A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? </em><em><span class="word-phrase" data-word="drop me a line">Drop me a line</span></em><em>.)</em></p>
+			<p class="para-translation">一個提供安慰、樂趣和消遣，讓您的生活更有活力的地方。（有任何想法嗎？歡迎寫信給我。）</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">+ Soccer icons have received the Ghanaian movie poster treatment. + A captivating <span class="word-general" data-word="cosmic">cosmic</span> construction project is July’s Picture of the Month from the James Webb Space Telescope. + Sir David Attenborough recently turned 100. Here’s everything he’s ever worked on, all in one place. + “Desire paths” are the trails made by people walking contrary to defined routes. This video explains what they mean about psychology and design.</p>
+			<p class="para-translation">+ 足球巨星們接受了加納電影海報風格的改造。+ 詹姆斯·韋伯太空望遠鏡的 7 月本月圖片是一個迷人的宇宙建築項目。+ 大衛·艾登堡爵士最近滿 100 歲了。這裡有他曾經參與過的所有作品。+ 「欲望路徑」是指人們在既定路線之外走出的路徑。這段影片解釋了它們在心理學和設計方面的意義。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: Claude’s inner workings and OpenAI’s “super app”</h3>
+			<h3 class="para-translation">The Download：Claude 的內部運作機制與 OpenAI 的「超級 App」</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: OpenAI has unveiled its long-awaited "super app."</p>
+			<p class="para-translation">另外：OpenAI 發布了期待已久的「超級 App」。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: the future of chipmaking and Anthropic’s government clash</h3>
+			<h3 class="para-translation">The Download：晶片製造的未來與 Anthropic 的政府衝突</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.</p>
+			<p class="para-translation">另外：Meta 暫停了一項追蹤員工按鍵記錄的 AI 訓練計畫。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: Claude’s inner workings, and the future of world models</h3>
+			<h3 class="para-translation">The Download：Claude 的內部運作機制與世界模型的未來</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: New York has become the first state to enact a data center moratorium.</p>
+			<p class="para-translation">另外：紐約成為第一個頒布數據中心暫停令的州。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains</h3>
+			<h3 class="para-translation">The Download：超越 Mythos 的 AI 黑客攻擊，以及聊天機器人對我們大腦的影響</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Plus: Anthropic has called for a global slowdown in AI development.</p>
+			<p class="para-translation">另外：Anthropic 呼籲全球放緩 AI 開發速度。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Get the latest updates from MIT Technology Review</h2>
+			<h2 class="para-translation">獲取麻省理工科技評論的最新更新</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Discover special offers, top stories, upcoming events, and more.</p>
+			<p class="para-translation">探索特別優惠、頭條故事、即將舉行的活動等。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-17-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">SpaceX uses ‘chopsticks.’ China uses ‘nets.’ Here’s how these space superpowers  design their rocket recovery systems</span>
+			</a>
+			<a class="related-card" href="2026-07-14-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Microsoft tests Windows Search without all the ads and fluff</span>
+			</a>
+			<a class="related-card" href="2026-07-13-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: a nuclear landmark, and China eyes Nvidia chips</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "perimenopause", "type": "term", "pos": "n.", "ipa": "/ˌper.iˈmen.ə.pɔːz/", "definition_zh": "圍絕經期（更年期前期）", "example": "Perimenopause used to be considered taboo, but not anymore."}, {"word": "misinformation", "type": "highfreq", "pos": "n.", "ipa": "/ˌmɪs.ɪn.fəˈmeɪ.ʃən/", "definition_zh": "錯誤資訊", "example": "But the conversation is increasingly shaped by misinformation."}, {"word": "hype", "type": "highfreq", "pos": "n.", "ipa": "/haɪp/", "definition_zh": "炒作、誇大宣傳", "example": "There’s a lot of hype around perimenopause."}, {"word": "shaped", "type": "highfreq", "pos": "v.", "ipa": "/ʃeɪpt/", "definition_zh": "塑造、影響", "example": "But the conversation is increasingly shaped by misinformation."}, {"word": "claim", "type": "highfreq", "pos": "v.", "ipa": "/kleɪm/", "definition_zh": "聲稱、主張", "example": "Despite what some marketers will claim, there is no test for perimenopause."}, {"word": "narrowed", "type": "highfreq", "pos": "v.", "ipa": "/ˈnær.əʊd/", "definition_zh": "（差距等）縮小", "example": "China's AI gap with the US may have just narrowed."}, {"word": "alternative", "type": "highfreq", "pos": "n.", "ipa": "/ɒlˈtɜː.nə.tɪv/", "definition_zh": "替代方案、替代物", "example": "Chinese Nvidia alternatives are also gaining traction."}, {"word": "monetize", "type": "highfreq", "pos": "v.", "ipa": "/ˈmʌn.ɪ.taɪz/", "definition_zh": "變現、貨幣化", "example": "It’s developed a new way to monetize the president’s posts."}, {"word": "override", "type": "highfreq", "pos": "v.", "ipa": "/ˌəʊ.vəˈraɪd/", "definition_zh": "撤銷、覆蓋（自動控制）", "example": "The Tesla driver in a fatal Texas crash overrode FSD, investigators say."}, {"word": "disrupt", "type": "highfreq", "pos": "v.", "ipa": "/dɪsˈrʌpt/", "definition_zh": "擾亂、中斷", "example": "Microgravity disrupts mitochondria, reducing protein production."}, {"word": "restore", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈstɔːr/", "definition_zh": "恢復", "example": "A brain implant has restored feeling in a paralysed hand."}, {"word": "captivate", "type": "highfreq", "pos": "v.", "ipa": "/ˈkæp.tɪ.veɪt/", "definition_zh": "吸引、使著迷", "example": "A captivating cosmic construction project is July’s Picture of the Month."}, {"word": "taboo", "type": "general", "pos": "n.", "ipa": "/təˈbuː/", "definition_zh": "禁忌", "example": "Perimenopause used to be considered taboo, but not anymore."}, {"word": "hormones", "type": "general", "pos": "n.", "ipa": "/ˈhɔː.məʊnz/", "definition_zh": "荷爾蒙、激素", "example": "And not all the symptoms women experience in midlife can be blamed on hormones."}, {"word": "habitable", "type": "general", "pos": "adj.", "ipa": "/ˈhæb.ɪ.tə.bəl/", "definition_zh": "宜居的、適於居住的", "example": "It’s the first potentially habitable world known to host an atmosphere."}, {"word": "contender", "type": "general", "pos": "n.", "ipa": "/kənˈten.dər/", "definition_zh": "競爭者", "example": "Making it a top contender in the search for aliens."}, {"word": "recipient", "type": "general", "pos": "n.", "ipa": "/rɪˈsɪp.i.ənt/", "definition_zh": "接受者、受試者", "example": "The recipient can now feed himself and drink from a cup."}, {"word": "cosmic", "type": "general", "pos": "adj.", "ipa": "/ˈkɒz.mɪk/", "definition_zh": "宇宙的", "example": "A captivating cosmic construction project is July’s Picture of the Month."}, {"word": "semiconductor", "type": "term", "pos": "n.", "ipa": "/ˌsem.i.kənˈdʌk.tər/", "definition_zh": "半導體", "example": "The model’s launch sent AI and semiconductor stocks sliding."}, {"word": "open-source", "type": "term", "pos": "adj.", "ipa": "/ˌəʊ.pənˈsɔːs/", "definition_zh": "開源的", "example": "The country is betting big on open-source."}, {"word": "put up with", "type": "phrase", "pos": "", "ipa": "/pʊt ʌp wɪð/", "definition_zh": "忍受、容忍", "example": "That doesn’t mean women should have to put up with symptoms."}, {"word": "gain traction", "type": "phrase", "pos": "", "ipa": "/ɡeɪn ˈtræk.ʃən/", "definition_zh": "獲得關注、開始流行", "example": "Chinese Nvidia alternatives are also gaining traction."}, {"word": "all the rage", "type": "phrase", "pos": "", "ipa": "/ɔːl ðə reɪdʒ/", "definition_zh": "風靡一時、非常流行", "example": "“Adversarial clothing” that confuses facial recognition is all the rage."}, {"word": "drop me a line", "type": "phrase", "pos": "", "ipa": "/drɒp miː ə laɪn/", "definition_zh": "寫信給我、聯絡我", "example": "(Got any ideas? Drop me a line.)"}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The marketing department is trying to ____ the massive popularity of the video game.", "sentence_zh": "行銷部門正試圖將這款電子遊戲的巨大人氣變現。", "answer": "monetize", "options": ["monetize", "shaped", "claim", "narrowed"]}, {"sentence": "The athlete was a strong ____ for the gold medal in the marathon.", "sentence_zh": "這位運動員是馬拉松金牌的強力競爭者。", "answer": "contender", "options": ["contender", "recipient", "cosmic", "habitable"]}, {"sentence": "If the software fails, the pilot must manually ____ the system.", "sentence_zh": "如果軟體故障，飛行員必須手動覆蓋系統。", "answer": "override", "options": ["override", "disrupt", "monetize", "narrowed"]}, {"sentence": "In some cultures, talking about money is still considered a ____.", "sentence_zh": "在某些文化中，談論金錢仍被視為一種禁忌。", "answer": "taboo", "options": ["taboo", "hype", "misinformation", "traction"]}, {"sentence": "I cannot ____ his constant complaining any longer.", "sentence_zh": "我再也無法忍受他不斷的抱怨了。", "answer": "put up with", "options": ["put up with", "all the rage", "gain traction", "drop me a line"]}, {"sentence": "The new electric vehicle is starting to ____ in the European market.", "sentence_zh": "這款新型電動車正開始在歐洲市場獲得關注。", "answer": "gain traction", "options": ["gain traction", "taboo", "hype", "alternative"]}, {"sentence": "The telescope captured a stunning image of a distant ____ nebula.", "sentence_zh": "望遠鏡捕捉到了遙遠宇宙星雲的驚人圖像。", "answer": "cosmic", "options": ["cosmic", "habitable", "semiconductor", "restore"]}, {"sentence": "We need to verify the facts to prevent the spread of ____.", "sentence_zh": "我們需要核實事實以防止錯誤資訊的傳播。", "answer": "misinformation", "options": ["misinformation", "hormones", "restore", "claim"]}, {"sentence": "Don't believe all the ____; the movie isn't actually that good.", "sentence_zh": "別相信所有的誇大宣傳；那部電影實際上沒那麼好。", "answer": "hype", "options": ["hype", "alternative", "semiconductor", "shaped"]}, {"sentence": "The doctor explained how ____ influence mood and energy levels.", "sentence_zh": "醫生解釋了荷爾蒙如何影響情緒和能量水平。", "answer": "hormones", "options": ["hormones", "taboo", "contender", "recipient"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
