@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>There’s a lot of hype around perimenopause. Don’t buy it. — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-20</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">MIT Technology Review<span class="tag-badge">科學</span></div>
+	<h1 class="article-title">There’s a lot of hype around perimenopause. Don’t buy it.</h1>
+	<div class="article-meta">
+		2026-07-20 &nbsp;·&nbsp; <a href="https://www.technologyreview.com/2026/07/17/1140608/theres-a-lot-of-hype-around-perimenopause-dont-buy-it/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="hype" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hype</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/haɪp/</span>
+				<span class="vocab-def">大肆宣傳；炒作</span>
+			</div>
+			<div class="vocab-card" data-word="taboo" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">taboo</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/təˈbuː/</span>
+				<span class="vocab-def">禁忌的；忌諱的</span>
+			</div>
+			<div class="vocab-card" data-word="algorithm" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">algorithm</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈælɡərɪðəm/</span>
+				<span class="vocab-def">（電腦）演算法</span>
+			</div>
+			<div class="vocab-card" data-word="prevalent" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prevalent</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈprevələnt/</span>
+				<span class="vocab-def">普遍的；流行的</span>
+			</div>
+			<div class="vocab-card" data-word="fluctuate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fluctuate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈflʌktʃueɪt/</span>
+				<span class="vocab-def">波動；變動</span>
+			</div>
+			<div class="vocab-card" data-word="interpret" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">interpret</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ɪnˈtɜːrprət/</span>
+				<span class="vocab-def">解釋；詮釋</span>
+			</div>
+			<div class="vocab-card" data-word="clouded" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">clouded</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈklaʊdɪd/</span>
+				<span class="vocab-def">被遮蔽的；不明朗的</span>
+			</div>
+			<div class="vocab-card" data-word="prescribe" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prescribe</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/prɪˈskraɪb/</span>
+				<span class="vocab-def">開處方；開藥</span>
+			</div>
+			<div class="vocab-card" data-word="decline" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">decline</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈklaɪn/</span>
+				<span class="vocab-def">下降；減少</span>
+			</div>
+			<div class="vocab-card" data-word="immensely" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">immensely</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ɪˈmensli/</span>
+				<span class="vocab-def">極大地；非常地</span>
+			</div>
+			<div class="vocab-card" data-word="osteoporosis" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">osteoporosis</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɒstɪəʊpəˈrəʊsɪs/</span>
+				<span class="vocab-def">骨質疏鬆症</span>
+			</div>
+			<div class="vocab-card" data-word="swamped" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">swamped</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/swɒmpt/</span>
+				<span class="vocab-def">被淹沒的；應接不暇的</span>
+			</div>
+			<div class="vocab-card" data-word="cult-like" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">cult-like</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkʌltˌlaɪk/</span>
+				<span class="vocab-def">邪教般的；狂熱崇拜的</span>
+			</div>
+			<div class="vocab-card" data-word="nonexistent" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">nonexistent</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌnɒnɪɡˈzɪstənt/</span>
+				<span class="vocab-def">不存在的</span>
+			</div>
+			<div class="vocab-card" data-word="mechanism" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mechanism</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmekənɪzəm/</span>
+				<span class="vocab-def">機制；運作方式</span>
+			</div>
+			<div class="vocab-card" data-word="fatigue" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fatigue</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/fəˈtiːɡ/</span>
+				<span class="vocab-def">疲勞；勞累</span>
+			</div>
+			<div class="vocab-card" data-word="endometriosis" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">endometriosis</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌendəʊˌmiːtrɪˈəʊsɪs/</span>
+				<span class="vocab-def">子宮內膜異位症</span>
+			</div>
+			<div class="vocab-card" data-word="juggle" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">juggle</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈdʒʌɡəl/</span>
+				<span class="vocab-def">兼顧；盡力應付</span>
+			</div>
+			<div class="vocab-card" data-word="attributing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">attributing</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈtrɪbjuːtɪŋ/</span>
+				<span class="vocab-def">歸因於</span>
+			</div>
+			<div class="vocab-card" data-word="invasive" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">invasive</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪnˈveɪsɪv/</span>
+				<span class="vocab-def">侵入性的</span>
+			</div>
+			<div class="vocab-card" data-word="enter the chat" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">enter the chat</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈentər ðə tʃæt/</span>
+				<span class="vocab-def">加入對話；成為話題</span>
+			</div>
+			<div class="vocab-card" data-word="put up with" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">put up with</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/pʊt ʌp wɪð/</span>
+				<span class="vocab-def">忍受；容忍</span>
+			</div>
+			<div class="vocab-card" data-word="at any rate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">at any rate</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/æt ˈeni reɪt/</span>
+				<span class="vocab-def">無論如何；至少</span>
+			</div>
+			<div class="vocab-card" data-word="hold down" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hold down</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/hoʊld daʊn/</span>
+				<span class="vocab-def">維持（工作等）</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Perimenopause has entered the chat. Perimenopause—and its better-known relative, menopause—used to be considered <span class="word-general" data-word="taboo">taboo</span>. Not anymore, thanks at least in part to TV doctors and social media influencers. Perhaps it’s my age, but these days, both my <span class="word-term" data-word="algorithm">algorithm</span> and my conversations with friends increasingly swing toward perimenopause.</p>
+			<p class="para-translation">圍絕經期（Perimenopause）已成為熱門話題。圍絕經期——以及它更廣為人知的親戚「更年期」（menopause）——過去曾被視為禁忌。現在不再是了，這至少要歸功於電視醫生和社群媒體網紅。也許是因為我的年紀，最近我的演算法和與朋友的對話越來越常轉向圍絕經期。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Menopause is defined as the life stage that occurs a year after a person has had their last period. Perimenopause is the sometimes years-long period before that point, which can also feature all the symptoms we’d typically associate with menopause.</p>
+			<p class="para-translation">更年期的定義是發生在一個人最後一次月經一年後的人生階段。圍絕經期則是該時間點之前可能長達數年的期間，這段期間也可能出現所有我們通常會聯想到更年期的症狀。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Today, information about perimenopause is more <span class="word-highfreq" data-word="prevalent">prevalent</span> and accessible than ever. If you’re a woman in your 40s and you’re not feeling 100%, chances are there’ll be someone online ready to tell you you’re in perimenopause. And that you might want to start spending your money on blood tests, apps, and supplements or demanding hormone replacement therapy. But as regular readers might have guessed by this point, it’s not that simple.</p>
+			<p class="para-translation">如今，關於圍絕經期的資訊比以往任何時候都更加普遍且易於取得。如果你是一位 40 多歲的女性，且感覺身體狀況不是百分之百，網路上很可能就會有人準備告訴你，你正處於圍絕經期。而且你可能想開始把錢花在血液測試、應用程式和補給品上，或者要求進行荷爾蒙補充療法。但正如經常閱讀本刊的讀者到此可能已經猜到的，事情沒那麼簡單。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Perimenopause tends to start around the age of 46 or 47. It’s during this time that many women start to experience some symptoms like hot flashes, irregular or unusually heavy periods, or anxiety, for example. And it can be heavy going. “Often symptoms are at their worst in the perimenopause,” says Mary Ann Lumsden, former president of the International Menopause Society.</p>
+			<p class="para-translation">圍絕經期往往始於 46 或 47 歲左右。正是在這段時間，許多女性開始經歷一些症狀，例如熱潮紅、月經不規則或異常量大，或是焦慮。這可能是一段艱難的過程。國際更年期學會前主席瑪麗·安·蘭姆斯登（Mary Ann Lumsden）表示：「症狀通常在圍絕經期最為嚴重。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That’s because hormones can <span class="word-highfreq" data-word="fluctuate">fluctuate</span> wildly. Levels of estrogen, progesterone, luteinizing hormone, and follicle-stimulating hormone can roller-coaster before leveling off after menopause. And that’s why, despite what some marketers will claim, <em>there is no test for perimenopause</em>.</p>
+			<p class="para-translation">這是因為荷爾蒙會劇烈波動。雌激素、孕酮、促黃體激素和促濾泡激素的水平在更年期後趨於穩定之前，可能會像雲霄飛車般起伏。這就是為什麼，儘管有些行銷人員會聲稱可以，但「目前並沒有針對圍絕經期的測試」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>“You can’t <span class="word-highfreq" data-word="interpret">interpret</span> hormone [measures] because they change so much,” </strong>says Lumsden. “And that is quite normal.”</p>
+			<p class="para-translation">蘭姆斯登說：「你無法解釋荷爾蒙（測量值），因為它們變化太大了。而那是相當正常的。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That doesn’t mean women should have to <span class="word-phrase" data-word="put up with">put up with</span> symptoms. But exactly how those symptoms are treated is another topic that has been <span class="word-highfreq" data-word="clouded">clouded</span> by misinformation.</p>
+			<p class="para-translation">這並不代表女性必須忍受這些症狀。但這些症狀究竟該如何治療，則是另一個被錯誤訊息籠罩的話題。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Last week, I told a friend about some unusually bad pelvic pain I’d experienced. Her immediate advice was to find out if I was perimenopausal and, if I was, to request hormone replacement therapy (HRT) as soon as possible. If my doctor wouldn’t <span class="word-general" data-word="prescribe">prescribe</span> it, she continued, I should simply find another doctor who would.</p>
+			<p class="para-translation">上週，我告訴一位朋友我經歷了一些異常嚴重的骨盆疼痛。她的建議是立刻去查明我是否處於圍絕經期，如果是，就盡快要求荷爾蒙補充療法（HRT）。她接著說，如果我的醫生不開處方，我就應該直接換一個願意開藥的醫生。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>This line of thinking has been heavily promoted on social media platforms</strong>, says Paula Briggs, a former chair of the British Menopause Society who currently leads the menopause service at Liverpool Women’s Hospital. But it’s not helpful.</p>
+			<p class="para-translation">曾任英國更年期學會主席、目前在利物浦女子醫院領導更年期服務的寶拉·布里格斯（Paula Briggs）表示，這種思維模式在社群媒體平台上被大肆推廣。但這並沒有幫助。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">HRT is essentially designed to top up or replace hormones like estrogen and progesterone, which naturally <span class="word-highfreq" data-word="decline">decline</span> around menopause. There are lots of different drugs that can be taken in lots of different ways and at various doses.</p>
+			<p class="para-translation">HRT 的核心設計是補充或取代更年期前後自然下降的荷爾蒙，如雌激素和孕酮。目前有許多不同的藥物，可以透過多種方式和不同劑量服用。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">While it does come with some risks and won’t suit everyone, HRT can be <span class="word-highfreq" data-word="immensely">immensely</span> helpful for many menopausal women. Not only can it help with many of the common symptoms of menopause, but it can also help prevent <span class="word-term" data-word="osteoporosis">osteoporosis</span> and maintain muscle strength.</p>
+			<p class="para-translation">雖然 HRT 確實存在一些風險，且並非適合每個人，但它對許多更年期女性有極大幫助。它不僅能幫助緩解許多常見的更年期症狀，還有助於預防骨質疏鬆症並維持肌肉強度。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>But these drugs were trialed in, and approved for, <em>menopausal</em> women, says Lumsden. </strong>They won’t have the same effects in perimenopausal women. “If you give standard HRT, it may well get <span class="word-general" data-word="swamped">swamped</span> by [the woman’s] own hormone production,” she says.</p>
+			<p class="para-translation">但蘭姆斯登表示，這些藥物是在「更年期」女性身上進行臨床試驗並獲批准的。它們在圍絕經期女性身上不會產生相同的效果。她說：「如果你給予標準的 HRT，它很可能會被（女性）自身產生的荷爾蒙所淹沒。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">HRT can also cause abnormal bleeding in perimenopausal women, says Briggs.</p>
+			<p class="para-translation">布里格斯說，HRT 也可能導致圍絕經期女性異常出血。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">She’s concerned about the messaging on perimenopause that is being promoted on social media. Particularly worrisome, she says, is the way younger women are being encouraged to assume they are perimenopausal and seek out HRT treatment.</p>
+			<p class="para-translation">她對社群媒體上推廣的圍絕經期訊息感到擔憂。她說，特別令人擔憂的是，年輕女性被鼓勵假設自己正處於圍絕經期並尋求 HRT 治療的方式。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>“It’s almost <span class="word-general" data-word="cult-like">cult-like</span>, this idea that everybody must have HRT,” she says.</strong></p>
+			<p class="para-translation">她說：「這種『每個人都必須接受 HRT』的想法，幾乎像是一種邪教。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">And then there are the supplements. There’s been an explosion in marketing for vitamins and supplements specifically targeted to middle-aged and menopausal women. But the evidence for these, too, is either limited or <span class="word-highfreq" data-word="nonexistent">nonexistent</span>. “I can’t see a <span class="word-highfreq" data-word="mechanism">mechanism</span> for a lot of them,” says Lumsden.</p>
+			<p class="para-translation">接著還有補給品。針對中年和更年期女性的維生素和補給品行銷出現了爆炸式成長。但這些產品的證據同樣有限或根本不存在。蘭姆斯登說：「我看不出其中許多產品的運作機制。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Women who take these supplements don’t always know what they’re getting. Some of Lumsden’s patients have told her they take testosterone supplements to manage their symptoms. But blood tests revealed no increase in testosterone levels. “Whatever they’re getting, it’s not testosterone,” she says.</p>
+			<p class="para-translation">服用這些補給品的女性並不總是知道自己攝取了什麼。蘭姆斯登的一些病人告訴她，她們服用睪固酮補給品來管理症狀。但血液檢查顯示睪固酮水平並未增加。她說：「無論她們攝取了什麼，那都不是睪固酮。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-phrase" data-word="at any rate">At any rate</span>, not all the symptoms women experience in midlife can be blamed on hormones. The lengthy lists of perimenopause symptoms shared on social media include <span class="word-general" data-word="fatigue">fatigue</span>, brain fog, aches and pains, digestive issues, and more. “These do not link closely to the obvious menstrual cycle changes and hormone changes … across menopause,” says Nanette Santoro, a professor of obstetrics and gynecology at the University of Colorado Anschutz who studies menopause.</p>
+			<p class="para-translation">無論如何，並非女性在中年經歷的所有症狀都可以歸咎於荷爾蒙。社群媒體上分享的冗長圍絕經期症狀清單包括疲勞、腦霧、疼痛、消化問題等。科羅拉多大學安舒茨分校研究更年期的婦產科教授納內特·桑托羅（Nanette Santoro）表示：「這些症狀與更年期明顯的月經週期變化和荷爾蒙變化並沒有密切聯繫。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>If you’re experiencing any symptoms, it’s worth getting them checked out to make sure they’re not being caused by something else.</strong> My own pelvic pain, for example, is almost definitely the result of <span class="word-term" data-word="endometriosis">endometriosis</span>—a condition that can be made <em>worse</em> by HRT, Lumsden tells me.</p>
+			<p class="para-translation">如果你遇到任何症狀，值得去檢查一下，以確保它們不是由其他原因引起的。例如，我自己的骨盆疼痛幾乎肯定是由子宮內膜異位症引起的——蘭姆斯登告訴我，這種情況可能會因為 HRT 而變得「更糟」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-phrase" data-word="at any rate">At any rate</span>, by the time women reach their 40s, many are already juggling care for children and aging parents, often while holding down a job (and dealing with pressures from societies that don’t appear to value older women). It’s an exhausting time—and not all of that exhaustion can be blamed on hormones.</p>
+			<p class="para-translation">無論如何，當女性到了 40 多歲時，許多人已經在兼顧照顧孩子和年邁父母，同時還要工作（並應對來自似乎不重視年長女性的社會壓力）。這是一個精疲力竭的時期——並非所有的疲憊都能歸咎於荷爾蒙。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As Santoro puts it: “<span class="word-highfreq" data-word="attributing">Attributing</span> everything unpleasant that happens to a woman over 35 to perimenopause is not based on any scientific evidence.”</p>
+			<p class="para-translation">正如桑托羅所說：「將 35 歲以上女性發生的所有不愉快事情都歸咎於圍絕經期，是沒有任何科學依據的。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><em>This article first appeared in The Checkup, </em>MIT Technology Review’s<em> weekly biotech newsletter. To receive it in your inbox every Thursday, and read articles like this first, </em><em>sign up here</em><em>.</em></p>
+			<p class="para-translation">這篇文章最初出現在《The Checkup》，這是《麻省理工科技評論》每週一次的生物技術電子報。若想在每週四將其收件匣並率先閱讀此類文章，請在此註冊。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Biotechnology and health</h3>
+			<h3 class="para-translation">生物技術與健康</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">China has approved the world’s first <span class="word-general" data-word="invasive">invasive</span> brain-computer chip—here’s what’s next</h3>
+			<h3 class="para-translation">中國已批准全球首款侵入式腦機晶片——接下來會發生什麼</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The country wants to become a global leader in brain implants. Strong government support is expected to help accelerate that process.</p>
+			<p class="para-translation">該國希望成為大腦植入物的全球領導者。強大的政府支持預計將有助於加速這一進程。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The “steroid olympics” were a circus—and a window into our culture</h3>
+			<h3 class="para-translation">「類固醇奧運」是一場馬戲團表演——也是窺探我們文化的一扇窗</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Dozens of athletes on performance-enhancing drugs competed in the Enhanced Games. Organizers hope it'll sell a lot of peptides and other supplements.</p>
+			<p class="para-translation">數十名使用體能增強藥物的運動員參加了增強運動會（Enhanced Games）。主辦方希望這能賣出大量的胜肽和其他補給品。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Sperm donors need limits, says a European fertility group</h3>
+			<h3 class="para-translation">歐洲生育組織表示，捐精者需要有所限制</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Some donor-conceived people are finding hundreds of siblings. An international cap on donations could help prevent that.</p>
+			<p class="para-translation">一些透過捐贈受孕的人發現了數百名兄弟姐妹。國際性的捐贈上限可能有助於防止這種情況。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Inside interoception: The hidden sense of how you feel inside</h3>
+			<h3 class="para-translation">深入了解內感覺（Interoception）：關於你內心感受的隱藏感官</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Researchers are decoding how signals move between body and brain, with implications for how we understand and treat conditions from obesity to anxiety.</p>
+			<p class="para-translation">研究人員正在解碼信號如何在身體和大腦之間移動，這對我們如何理解和治療從肥胖到焦慮的疾病具有重要意義。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Get the latest updates from MIT Technology Review</h2>
+			<h2 class="para-translation">獲取來自《麻省理工科技評論》的最新更新</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Discover special offers, top stories, upcoming events, and more.</p>
+			<p class="para-translation">探索特別優惠、熱門故事、即將舉行的活動等。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-18-noon.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Taylor Farms pulls iceberg lettuce from the US market after cyclosporiasis outbreak</span>
+			</a>
+			<a class="related-card" href="2026-07-12-evening.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">Sperm donors need limits, says a European fertility group</span>
+			</a>
+			<a class="related-card" href="2026-07-11-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">No, Flock isn&#x27;t threatening people for debating surveillance</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "hype", "type": "highfreq", "pos": "n.", "ipa": "/haɪp/", "definition_zh": "大肆宣傳；炒作", "example": "There’s a lot of hype around perimenopause."}, {"word": "taboo", "type": "general", "pos": "adj.", "ipa": "/təˈbuː/", "definition_zh": "禁忌的；忌諱的", "example": "menopause—used to be considered taboo."}, {"word": "algorithm", "type": "term", "pos": "n.", "ipa": "/ˈælɡərɪðəm/", "definition_zh": "（電腦）演算法", "example": "both my algorithm and my conversations with friends increasingly swing toward perimenopause."}, {"word": "prevalent", "type": "highfreq", "pos": "adj.", "ipa": "/ˈprevələnt/", "definition_zh": "普遍的；流行的", "example": "information about perimenopause is more prevalent and accessible than ever."}, {"word": "fluctuate", "type": "highfreq", "pos": "v.", "ipa": "/ˈflʌktʃueɪt/", "definition_zh": "波動；變動", "example": "That’s because hormones can fluctuate wildly."}, {"word": "interpret", "type": "highfreq", "pos": "v.", "ipa": "/ɪnˈtɜːrprət/", "definition_zh": "解釋；詮釋", "example": "You can’t interpret hormone [measures] because they change so much."}, {"word": "clouded", "type": "highfreq", "pos": "adj.", "ipa": "/ˈklaʊdɪd/", "definition_zh": "被遮蔽的；不明朗的", "example": "how those symptoms are treated is another topic that has been clouded by misinformation."}, {"word": "prescribe", "type": "general", "pos": "v.", "ipa": "/prɪˈskraɪb/", "definition_zh": "開處方；開藥", "example": "If my doctor wouldn’t prescribe it, she continued, I should simply find another doctor who would."}, {"word": "decline", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈklaɪn/", "definition_zh": "下降；減少", "example": "hormones like estrogen and progesterone, which naturally decline around menopause."}, {"word": "immensely", "type": "highfreq", "pos": "adv.", "ipa": "/ɪˈmensli/", "definition_zh": "極大地；非常地", "example": "HRT can be immensely helpful for many menopausal women."}, {"word": "osteoporosis", "type": "term", "pos": "n.", "ipa": "/ˌɒstɪəʊpəˈrəʊsɪs/", "definition_zh": "骨質疏鬆症", "example": "it can also help prevent osteoporosis and maintain muscle strength."}, {"word": "swamped", "type": "general", "pos": "adj.", "ipa": "/swɒmpt/", "definition_zh": "被淹沒的；應接不暇的", "example": "it may well get swamped by [the woman’s] own hormone production."}, {"word": "cult-like", "type": "general", "pos": "adj.", "ipa": "/ˈkʌltˌlaɪk/", "definition_zh": "邪教般的；狂熱崇拜的", "example": "It’s almost cult-like, this idea that everybody must have HRT."}, {"word": "nonexistent", "type": "highfreq", "pos": "adj.", "ipa": "/ˌnɒnɪɡˈzɪstənt/", "definition_zh": "不存在的", "example": "the evidence for these, too, is either limited or nonexistent."}, {"word": "mechanism", "type": "highfreq", "pos": "n.", "ipa": "/ˈmekənɪzəm/", "definition_zh": "機制；運作方式", "example": "I can’t see a mechanism for a lot of them."}, {"word": "fatigue", "type": "general", "pos": "n.", "ipa": "/fəˈtiːɡ/", "definition_zh": "疲勞；勞累", "example": "The lengthy lists of perimenopause symptoms shared on social media include fatigue."}, {"word": "endometriosis", "type": "term", "pos": "n.", "ipa": "/ˌendəʊˌmiːtrɪˈəʊsɪs/", "definition_zh": "子宮內膜異位症", "example": "almost definitely the result of endometriosis."}, {"word": "juggle", "type": "general", "pos": "v.", "ipa": "/ˈdʒʌɡəl/", "definition_zh": "兼顧；盡力應付", "example": "many are already juggling care for children and aging parents."}, {"word": "attributing", "type": "highfreq", "pos": "v.", "ipa": "/əˈtrɪbjuːtɪŋ/", "definition_zh": "歸因於", "example": "Attributing everything unpleasant that happens to a woman over 35 to perimenopause."}, {"word": "invasive", "type": "general", "pos": "adj.", "ipa": "/ɪnˈveɪsɪv/", "definition_zh": "侵入性的", "example": "China has approved the world’s first invasive brain-computer chip."}, {"word": "enter the chat", "type": "phrase", "pos": "", "ipa": "/ˈentər ðə tʃæt/", "definition_zh": "加入對話；成為話題", "example": "Perimenopause has entered the chat."}, {"word": "put up with", "type": "phrase", "pos": "", "ipa": "/pʊt ʌp wɪð/", "definition_zh": "忍受；容忍", "example": "That doesn’t mean women should have to put up with symptoms."}, {"word": "at any rate", "type": "phrase", "pos": "", "ipa": "/æt ˈeni reɪt/", "definition_zh": "無論如何；至少", "example": "At any rate, not all the symptoms women experience in midlife can be blamed on hormones."}, {"word": "hold down", "type": "phrase", "pos": "", "ipa": "/hoʊld daʊn/", "definition_zh": "維持（工作等）", "example": "often while holding down a job."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The marketing team created a lot of ____ for the new movie, but it turned out to be boring.", "sentence_zh": "行銷團隊對這部新電影進行了大肆宣傳，但結果卻很無聊。", "answer": "hype", "options": ["hype", "taboo", "mechanism", "fatigue"]}, {"sentence": "In some cultures, it is considered ____ to talk about death during a wedding.", "sentence_zh": "在某些文化中，在婚禮期間談論死亡被視為一種禁忌。", "answer": "taboo", "options": ["prevalent", "taboo", "invasive", "swamped"]}, {"sentence": "Stock prices often ____ based on global political news.", "sentence_zh": "股票價格經常根據全球政治新聞而波動。", "answer": "fluctuate", "options": ["prescribe", "interpret", "fluctuate", "decline"]}, {"sentence": "The doctor decided to ____ a new type of antibiotic to treat the infection.", "sentence_zh": "醫生決定開一種新型抗生素來治療感染。", "answer": "prescribe", "options": ["juggle", "prescribe", "interpret", "attributing"]}, {"sentence": "She finds it difficult to ____ a full-time job and the needs of her three children.", "sentence_zh": "她發現很難兼顧全職工作和三個孩子的需求。", "answer": "juggle", "options": ["juggle", "decline", "prescribe", "fluctuate"]}, {"sentence": "Despite many efforts, the evidence for the existence of ghosts remains ____.", "sentence_zh": "儘管付出了許多努力，鬼魂存在的證據仍然是不存在的。", "answer": "nonexistent", "options": ["prevalent", "nonexistent", "immensely", "clouded"]}, {"sentence": "He had to ____ his loud neighbors for years before he finally moved out.", "sentence_zh": "在最終搬走之前，他不得不忍受大聲吵鬧的鄰居好幾年。", "answer": "put up with", "options": ["enter the chat", "put up with", "at any rate", "hold down"]}, {"sentence": "The company's profits began to ____ rapidly after the scandal broke.", "sentence_zh": "醜聞爆發後，該公司的利潤開始迅速下降。", "answer": "decline", "options": ["decline", "interpret", "fluctuate", "prescribe"]}, {"sentence": "Scientists are still trying to understand the exact ____ of how the virus spreads.", "sentence_zh": "科學家們仍在努力了解病毒傳播的確切機制。", "answer": "mechanism", "options": ["mechanism", "algorithm", "fatigue", "hype"]}, {"sentence": "I am not sure how to ____ his silence; it could mean he's angry or just tired.", "sentence_zh": "我不確定該如何詮釋他的沉默；這可能代表他生氣了，或者只是累了。", "answer": "interpret", "options": ["interpret", "attributing", "juggle", "prescribe"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
