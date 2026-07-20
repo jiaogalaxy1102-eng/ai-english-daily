@@ -1,0 +1,352 @@
+{
+	"date": "2026-07-20",
+	"slot": "evening",
+	"tag": "商業與新創",
+	"title": "The iconic ‘Fearless Girl’ statue is becoming a brand",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91573651/fearless-girl-statue-is-becoming-a-brand?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "For years, the <em>Charging Bull </em>statue was the icon of Wall Street, meant to represent the financial might of a bull market. But over the past decade, it has been eclipsed by a very different sculpture.",
+			"translation": "多年來，「衝鋒公牛」雕像一直是華爾街的象徵，旨在代表牛市的金融實力。但在過去十年中，它被一座截然不同的雕像奪去了光彩。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>Fearless Girl</em>, which stands on Broad Street across from the New York Stock Exchange, is a small child whose hands are planted on her hips, tilting her chin up in defiance. To the millions of people who pay homage to her every year, she embodies the power that girls have to push back against the patriarchy and bravely break into spaces where they haven’t historically been welcome, including the financial sector.",
+			"translation": "站在紐約證券交易所對面百老街上的「無畏女孩」，是一個雙手叉腰、昂首挺胸、神情挑釁的小女孩。對於每年向她致敬的數百萬人來說，她體現了女孩們反擊父權制度的力量，並勇敢地闖入歷史上不歡迎她們的空間，包括金融領域。"
+		},
+		{
+			"tag": "p",
+			"text": "Nearly a decade after she appeared in New York’s financial district, State Street—the financial giant that commissioned her—wants to make <em>Fearless Girl </em>more than just a statue. The company is launching a coordinated effort to transform her into a global brand and platform, with a new visual identity and a website where people from around the world can express what she means to them.",
+			"translation": "在她出現在紐約金融區近十年後，委託製作她的金融巨頭道富集團（State Street）希望讓「無畏女孩」不僅僅是一座雕像。該公司正在發起一項協調一致的行動，將其轉變為一個全球品牌和平台，並擁有新的視覺識別和一個網站，讓來自世界各地的人們可以表達她對他們的意義。"
+		},
+		{
+			"tag": "p",
+			"text": "“She’s going to have her own social media channel and other places for people to engage with her,” says Yie-Hsin Hung, president and CEO of State Street Investment Management.",
+			"translation": "道富環球投資管理公司總裁兼執行長洪奕欣（Yie-Hsin Hung）表示：「她將擁有自己的社交媒體頻道和其他供人們與之互動的地方。」"
+		},
+		{
+			"tag": "p",
+			"text": "State Street commissioned the statue from the artist Kristen Visbal for International Women’s Day in 2017, standing across from <em>Charging Bull</em>. It was part of a marketing campaign around a State Street exchange-traded fund that allowed customers to invest in companies with a high proportion of women in senior leadership.",
+			"translation": "道富集團在 2017 年國際婦女節之際，委託藝術家克里斯汀·維斯巴爾（Kristen Visbal）創作了這座雕像，當時矗立在「衝鋒公牛」對面。這是圍繞道富集團一檔交易所交易基金（ETF）營銷活動的一部分，該基金允許客戶投資於高管領導層中女性比例較高的公司。"
+		},
+		{
+			"tag": "p",
+			"text": "The sculpture was meant to be temporary—installed for about a week to stare down Arturo Di Modica’s <em>Charging Bull</em> at the northern tip of Bowling Green. But <em>Fearless Girl</em> quickly became a phenomenon. Tourists lined up to photograph her. Parents posed their daughters beside her. Di Modica objected that his own sculpture had been turned into a villain to sell a financial product, and in 2018 the city relocated <em>Fearless Girl </em>a few blocks north to her current position, where she now stares down the Stock Exchange instead.",
+			"translation": "這座雕像原本是臨時性的——安裝大約一週，在鮑林格林公園北端與阿圖羅·迪·莫迪卡（Arturo Di Modica）的「衝鋒公牛」對峙。但「無畏女孩」迅速成為一種現象。遊客排隊為她拍照。父母讓女兒在旁合影。迪·莫迪卡反對說他自己的雕像被變成了反派來推銷金融產品，於是在 2018 年，市政府將「無畏女孩」向北遷移了幾個街區到她目前的位置，在那裡她現在改為盯著證券交易所。"
+		},
+		{
+			"tag": "p",
+			"text": "The meaning of the statue has evolved as culture has changed. She was initially meant to celebrate the progress that women had made to that point in breaking the glass ceiling in corporate America. But a few years later, when the #MeToo movement swept through the country, <em>Fearless Girl</em> became a pilgrimage site for women confronting harassment and discrimination.",
+			"translation": "雕像的意義隨著文化的變化而演變。最初是為了慶祝女性在打破美國企業玻璃天花板方面所取得的進步。但幾年後，當 #MeToo 運動席捲全國時，「無畏女孩」成為了面對騷擾和歧視的女性心目中的朝聖之地。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "icon",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈaɪkɑːn/",
+			"definition_zh": "象徵、偶像",
+			"example": "For years, the Charging Bull statue was the icon of Wall Street."
+		},
+		{
+			"word": "represent",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌreprɪˈzent/",
+			"definition_zh": "代表、象徵",
+			"example": "meant to represent the financial might of a bull market."
+		},
+		{
+			"word": "eclipse",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ɪˈklɪps/",
+			"definition_zh": "使相形見絀、遮蔽",
+			"example": "it has been eclipsed by a very different sculpture."
+		},
+		{
+			"word": "defiance",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪˈfaɪəns/",
+			"definition_zh": "挑釁、違抗",
+			"example": "tilting her chin up in defiance."
+		},
+		{
+			"word": "embody",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ɪmˈbɑːdi/",
+			"definition_zh": "體現、代表",
+			"example": "she embodies the power that girls have to push back against the patriarchy."
+		},
+		{
+			"word": "patriarchy",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈpeɪtriɑːrki/",
+			"definition_zh": "父權制度",
+			"example": "push back against the patriarchy."
+		},
+		{
+			"word": "sector",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈsektər/",
+			"definition_zh": "領域、部門",
+			"example": "including the financial sector."
+		},
+		{
+			"word": "commission",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kəˈmɪʃn/",
+			"definition_zh": "委託",
+			"example": "State Street—the financial giant that commissioned her."
+		},
+		{
+			"word": "identity",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/aɪˈdentəti/",
+			"definition_zh": "識別、身分",
+			"example": "with a new visual identity and a website."
+		},
+		{
+			"word": "engage",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪnˈɡeɪdʒ/",
+			"definition_zh": "交流、互動",
+			"example": "other places for people to engage with her."
+		},
+		{
+			"word": "proportion",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/prəˈpɔːrʃn/",
+			"definition_zh": "比例、部分",
+			"example": "invest in companies with a high proportion of women in senior leadership."
+		},
+		{
+			"word": "leadership",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈliːdərʃɪp/",
+			"definition_zh": "領導層、領導力",
+			"example": "with a high proportion of women in senior leadership."
+		},
+		{
+			"word": "temporary",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈtempəreri/",
+			"definition_zh": "暫時的、臨時的",
+			"example": "The sculpture was meant to be temporary."
+		},
+		{
+			"word": "phenomenon",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/fəˈnɑːmɪnən/",
+			"definition_zh": "現象、傑出的人事物",
+			"example": "Fearless Girl quickly became a phenomenon."
+		},
+		{
+			"word": "villain",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈvɪlən/",
+			"definition_zh": "反派、壞人",
+			"example": "his own sculpture had been turned into a villain to sell a financial product."
+		},
+		{
+			"word": "relocate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌriːˈloʊkeɪt/",
+			"definition_zh": "遷移、搬遷",
+			"example": "in 2018 the city relocated Fearless Girl a few blocks north."
+		},
+		{
+			"word": "harassment",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/həˈræsmənt/",
+			"definition_zh": "騷擾",
+			"example": "for women confronting harassment and discrimination."
+		},
+		{
+			"word": "discrimination",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪˌskrɪmɪˈneɪʃn/",
+			"definition_zh": "歧視",
+			"example": "for women confronting harassment and discrimination."
+		},
+		{
+			"word": "exchange-traded fund",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ɪksˈtʃeɪndʒ ˈtreɪdɪd fʌnd/",
+			"definition_zh": "交易所交易基金(ETF)",
+			"example": "a marketing campaign around a State Street exchange-traded fund."
+		},
+		{
+			"word": "glass ceiling",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌɡlæs ˈsiːlɪŋ/",
+			"definition_zh": "玻璃天花板(晉升障礙)",
+			"example": "breaking the glass ceiling in corporate America."
+		},
+		{
+			"word": "push back",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/pʊʃ bæk/",
+			"definition_zh": "反擊、抵制",
+			"example": "the power that girls have to push back against the patriarchy."
+		},
+		{
+			"word": "break into",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/breɪk ˈɪntuː/",
+			"definition_zh": "闖入、進入(某領域)",
+			"example": "bravely break into spaces where they haven’t historically been welcome."
+		},
+		{
+			"word": "stare down",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ster daʊn/",
+			"definition_zh": "盯著看使其退縮/對峙",
+			"example": "installed for about a week to stare down Arturo Di Modica’s Charging Bull."
+		},
+		{
+			"word": "sweep through",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/swiːp θruː/",
+			"definition_zh": "席捲、橫掃",
+			"example": "when the #MeToo movement swept through the country."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The student raised her voice in ____ against the unfair school rules.",
+			"sentence_zh": "這名學生提高嗓門，以表示對不公平校規的違抗。",
+			"answer": "defiance",
+			"options": [
+				"defiance",
+				"leadership",
+				"proportion",
+				"sector"
+			]
+		},
+		{
+			"sentence": "The brand's new logo is intended to ____ the values of sustainability and trust.",
+			"sentence_zh": "該品牌的新標誌旨在體現永續與信任的價值觀。",
+			"answer": "embody",
+			"options": [
+				"embody",
+				"commission",
+				"relocate",
+				"engage"
+			]
+		},
+		{
+			"sentence": "Social media has become a global ____ that influences how people consume news.",
+			"sentence_zh": "社交媒體已成為一種影響人們消費新聞方式的全球現象。",
+			"answer": "phenomenon",
+			"options": [
+				"phenomenon",
+				"villain",
+				"identity",
+				"icon"
+			]
+		},
+		{
+			"sentence": "We are currently living in a ____ apartment while our new house is being built.",
+			"sentence_zh": "在新房子建造期間，我們目前住在一個暫時的公寓裡。",
+			"answer": "temporary",
+			"options": [
+				"temporary",
+				"represent",
+				"eclipse",
+				"patriarchy"
+			]
+		},
+		{
+			"sentence": "The law was passed to protect citizens from racial ____ in the workplace.",
+			"answer": "discrimination",
+			"sentence_zh": "這項法律的通過是為了保護公民在職場上免受種族歧視。",
+			"options": [
+				"discrimination",
+				"harassment",
+				"glass ceiling",
+				"exchange-traded fund"
+			]
+		},
+		{
+			"sentence": "Many small businesses struggle to ____ the international market due to high costs.",
+			"sentence_zh": "許多小企業因成本高昂而難以進入國際市場。",
+			"answer": "break into",
+			"options": [
+				"break into",
+				"push back",
+				"stare down",
+				"sweep through"
+			]
+		},
+		{
+			"sentence": "The athlete's historic performance will likely ____ all previous records in the sport.",
+			"sentence_zh": "這位運動員歷史性的表現很可能會使該運動項目的所有先前紀錄相形見絀。",
+			"answer": "eclipse",
+			"options": [
+				"eclipse",
+				"represent",
+				"relocate",
+				"engage"
+			]
+		},
+		{
+			"sentence": "The billionaire decided to ____ a world-famous architect to design his new museum.",
+			"sentence_zh": "這位億萬富翁決定委託一位世界著名的建築師來設計他的新博物館。",
+			"answer": "commission",
+			"options": [
+				"commission",
+				"embody",
+				"villain",
+				"leadership"
+			]
+		},
+		{
+			"sentence": "The company held a seminar to educate employees on how to report workplace ____.",
+			"sentence_zh": "公司舉辦了一場研討會，教育員工如何舉報職場騷擾。",
+			"answer": "harassment",
+			"options": [
+				"harassment",
+				"phenomenon",
+				"identity",
+				"sector"
+			]
+		},
+		{
+			"sentence": "Even in modern companies, many women feel they still face a ____ when trying to reach top executive roles.",
+			"sentence_zh": "即使在現代公司中，許多女性在試圖晉升到高階主管職位時，仍覺得面臨著玻璃天花板。",
+			"answer": "glass ceiling",
+			"options": [
+				"glass ceiling",
+				"exchange-traded fund",
+				"proportion",
+				"patriarchy"
+			]
+		}
+	]
+}
