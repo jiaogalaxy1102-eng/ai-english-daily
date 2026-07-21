@@ -1,0 +1,527 @@
+{
+	"date": "2026-07-21",
+	"slot": "evening",
+	"tag": "AI",
+	"title": "Advancing next-gen AI with materials science innovation",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/21/1140602/advancing-next-gen-ai-with-materials-science-innovation/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "The conversation about AI often centers on algorithms, computing power, or huge investments in new semiconductor fabrication plants and hyperscale data centers. But beneath each of these advances is another layer of innovation that makes them possible: advanced materials.",
+			"translation": "關於人工智慧（AI）的對話通常集中在演算法、算力，或是對新型半導體製造廠和超大規模資料中心的海量投資。但在這些進步的背後，還有另一層使其成為可能的創新：先進材料。"
+		},
+		{
+			"tag": "p",
+			"text": "Every new generation of AI technology demands more processing power, more memory, greater energy efficiency, and higher reliability. Every increase in computing performance increases the physical demands placed on the systems that make and run AI.",
+			"translation": "每一代新的 AI 技術都需要更強的處理能力、更多的記憶體、更高的能源效率以及更好的可靠性。運算效能的每一次提升，都增加了對製造與運行 AI 系統物理層面的要求。"
+		},
+		{
+			"tag": "p",
+			"text": "Delivering these gains depends not only on advances in chip design and system architecture, but on advances in the materials that enable them to perform under extreme conditions.",
+			"translation": "實現這些增益不僅取決於晶片設計和系統架構的進步，還取決於能讓系統在極端條件下運行的材料創新。"
+		},
+		{
+			"tag": "p",
+			"text": "As AI continues to push the physical limits of semiconductors and data center infrastructure, advanced materials are no longer simply supporting innovation in this area; they are defining the limits of what is possible.",
+			"translation": "隨著 AI 持續推向半導體和資料中心基礎設施的物理極限，先進材料不再僅僅是該領域創新的支持者；它們正在定義可能性的極限。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Performance first</strong>",
+			"translation": "性能第一"
+		},
+		{
+			"tag": "p",
+			"text": "Advanced materials exist to solve performance challenges. As AI raises the bar, these challenges are becoming more demanding.",
+			"translation": "先進材料的存在是為了完成性能挑戰。隨著 AI 提高了標準，這些挑戰也變得越來越嚴苛。"
+		},
+		{
+			"tag": "p",
+			"text": "Manufacturing a semiconductor chip today requires thousands of tightly controlled process steps, with almost no room for error. Tiny variations in temperature or chemical instability can create defects that reduce yield and drive up manufacturing costs. With every new generation of semiconductor chips, manufacturers seek advanced materials that can deliver greater purity, higher chemical and plasma resistance, and better stability under increasingly harsh operating conditions.",
+			"translation": "現今製造半導體晶片需要數千個受到嚴格控制的製程步驟，幾乎沒有任何容錯空間。溫度或化學穩定性的微小變異都可能產生缺陷，降低良率並推高製造代價。隨著每一代新型半導體晶片的推出，製造商都在尋求能提供更高純度、更高抗化學性與抗電漿性，以及在日益惡劣的運行條件下具有更好穩定性的先進材料。"
+		},
+		{
+			"tag": "p",
+			"text": "These are familiar engineering challenges being pushed to new extremes. And it’s here that materials innovation makes the difference with continuous advances in polymers, elastomers, specialty fluids, and other advanced materials that make each new generation of technology possible.",
+			"translation": "這些都是被推向新極限的熟悉工程挑戰。正是在這裡，材料創新透過在聚合物、彈性體、特殊流體和其他先進材料方面的持續進步發揮了關鍵作用，使每一代新技術成為可能。"
+		},
+		{
+			"tag": "p",
+			"text": "For materials companies, it’s not about reinventing semiconductor manufacturing but about ensuring the materials supporting the industry continue to evolve alongside it. This same principle applies beyond the semiconductor fabrication floor. As AI workloads become more demanding, the physical infrastructure that powers them is evolving rapidly.",
+			"translation": "對於材料公司而言，重點不在於重新發明半導體製造，而是確保支持該產業的材料能與之同步演進。這一原則同樣適用於半導體製造廠房之外。隨著 AI 工作負載變得更加沉重，驅動它們的實體基礎設施也在快速演變。"
+		},
+		{
+			"tag": "p",
+			"text": "Increasing computing density is transforming data center design, driving the need for more sophisticated thermal management, higher-voltage power architectures, increased data storage, and faster, more reliable data transmission. Every part of the system is under greater pressure, from cooling and power management to critical electronic components, such as connectors, capacitors, and hard disk drives.",
+			"translation": "運算密度的增加正在改變資料中心的設計，驅動了對更精密熱管理、更高電壓電力架構、增加數據存儲以及更快速、更可靠數據傳輸的需求。系統的每個部分都承受著更大的壓力，從冷卻和電源管理到連接器、電容器和硬碟驅動器等關鍵電子元件。"
+		},
+		{
+			"tag": "p",
+			"text": "At Syensqo, we're building on our expertise in electronic and electrical components, along with insights from other markets, to meet these emerging needs.",
+			"translation": "在 Syensqo，我們正憑藉在電子和電氣元件方面的專業知識，結合來自其他市場的見解，來滿足這些新興需求。"
+		},
+		{
+			"tag": "p",
+			"text": "For example, as data centers shift to higher-voltage architectures and greater power density, many of the materials challenges we face closely mirror those of electric vehicles. Fluid-circulation know-how from semiconductor and automotive coolant systems, for instance, can be adapted to direct liquid-cooling designs for AI servers. By transferring knowledge across markets, we can accelerate new power and thermal management solutions while supporting the reliability required by next-generation AI infrastructure.",
+			"translation": "例如，隨著資料中心轉向更高電壓的架構和更高的功率密度，我們面臨的許多材料挑戰與電動車面臨的挑戰非常相似。例如，來自半導體和汽車冷卻系統的流體循環專業知識，可以應用於 AI 伺服器的直接液冷設計。透過跨市場的知識轉移，我們可以加速新型電源和熱管理解決方案，同時支持下一代 AI 基礎設施所需的可靠性。"
+		},
+		{
+			"tag": "p",
+			"text": "Whether we’re talking about semiconductor fabrication or hyperscale server farms, the challenge for materials science companies is the same: enabling greater performance without compromising reliability.",
+			"translation": "無論我們談論的是半導體製造還是超大規模伺服器機房，材料科學公司面臨的挑戰都是一樣的：在不犧牲可靠性的情況下實現更高的性能。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>A new definition of what performance means</strong>",
+			"translation": "性能意義的新定義"
+		},
+		{
+			"tag": "p",
+			"text": "While performance remains the first priority, the way performance is defined is changing.",
+			"translation": "雖然性能仍是首要任務，但性能的定義方式正在改變。"
+		},
+		{
+			"tag": "p",
+			"text": "In addition to meeting the increasingly demanding technical requirements of next-generation semiconductors and data centers, there is now an expectation that these materials are developed and manufactured more responsibly.",
+			"translation": "除了滿足下一代半導體和資料中心日益嚴苛的技術要求外，現在人們還期望這些材料能以更負責任的方式開發和製造。"
+		},
+		{
+			"tag": "p",
+			"text": "Perfluoroelastomers, for example, are used to seal semiconductor manufacturing equipment. These materials operate under extreme temperatures, aggressive plasma, and highly reactive chemicals.",
+			"translation": "例如，全氟彈性體被用於密封半導體製造設備。這些材料在極端溫度、強侵蝕性電漿和高活性化學物質下運行。"
+		},
+		{
+			"tag": "p",
+			"text": "To make the process more sustainable, at Syensqo, our next generation of perfluoroelastomers use a fluorosurfactant-free manufacturing process. Our goal was to make a better-performing material, produced in a better way, ensuring manufacturers no longer have to choose between higher performance and a more responsible way of producing the materials that enable it.",
+			"translation": "為了使製程更具永續性，Syensqo 的下一代全氟彈性體採用了無氟界面活性劑的製造工藝。我們的目標是製造出性能更好、生產方式更優的材料，確保製造商不再需要在高效能和更負責任的生產方式之間做出抉擇。"
+		},
+		{
+			"tag": "p",
+			"text": "This approach reflects a broader reality across the industry.",
+			"translation": "這種做法反映了整個產業更廣泛的現實。"
+		},
+		{
+			"tag": "p",
+			"text": "New materials aren’t adopted simply because they are new. Qualification can take years, and manufacturers only make changes when a material solves a genuine engineering challenge or enables new technology.",
+			"translation": "新材料的採用不僅僅是因為它們是新的。資格認證可能需要數年時間，且製造商只有在材料能解決真正的工程挑戰或實現新技術時才會做出改變。"
+		},
+		{
+			"tag": "p",
+			"text": "Performance remains the price of entry. The difference today is that the definition of performance has expanded. Success increasingly depends on delivering technical excellence through more responsible manufacturing from the outset.",
+			"translation": "性能仍然是入場券。今天的不同之處在於性能的定義已經擴展。成功越來越取決於從一開始就透過更負責任的製造來提供卓越的技術。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Accelerating the pace of discovery</strong>",
+			"translation": "加速發現的步伐"
+		},
+		{
+			"tag": "p",
+			"text": "As the performance bar rises, the way we innovate must evolve with it.",
+			"translation": "隨著性能標準的提高，我們創新的方式也必須隨之演進。"
+		},
+		{
+			"tag": "p",
+			"text": "Developing advanced materials has traditionally involved a lengthy process of hypothesis, synthesis, testing, and iteration. While this process remains unchanged, new digital tools are helping researchers move through these cycles faster. By helping researchers identify the most promising candidates earlier, AI can reduce the number of physical experiments required and accelerate the earliest stages of materials discovery.",
+			"translation": "開發先進材料傳統上涉及假設、合成、測試和迭代的冗長過程。雖然這個過程本身保持不變，但新的數位工具正在幫助研究人員更快地完成這些循環。透過幫助研究人員更早地識別最有希望的候選材料，AI 可以減少所需的物理實驗數量，並加速材料發現的最早階段。"
+		},
+		{
+			"tag": "p",
+			"text": "AI isn’t replacing scientific expertise. It’s helping scientists apply that expertise more effectively, allowing them to spend less time searching for answers and more time solving the industry's toughest challenges.",
+			"translation": "AI 並非在取代科學專業知識。它正在幫助科學家更有效地應用這些專業知識，讓他們減少尋找答案的時間，而將更多時間花在解決產業最艱鉅的挑戰上。"
+		},
+		{
+			"tag": "p",
+			"text": "At Syensqo, we're putting this approach into practice through use of several AI tools, including the Microsoft Discovery platform, which are helping researchers identify and evaluate promising molecular candidates for next-generation heat transfer fluids, used in semiconductor manufacturing and data centers.",
+			"translation": "在 Syensqo，我們正透過使用多種 AI 工具將這種方法付諸實踐，包括微軟的 Discovery 平台，這些工具正在幫助研究人員識別和評估用於半導體製造和資料中心的下一代熱傳導流體的分選分子。"
+		},
+		{
+			"tag": "p",
+			"text": "AI helps our researchers rapidly identify and evaluate promising molecular candidates based on the properties they need to achieve. This allows us to focus laboratory work where it has the greatest potential to deliver results, accelerating discovery and reducing the time needed to turn promising materials into solutions customers can qualify and deploy.",
+			"translation": "AI 幫助我們的研究人員根據他們需要達到的特性，快速識別並評估有前景的分子候選者。這使我們能夠將實驗室工作集中在最具有產出潛力的地方，加速發現過程，並縮短將有前景的材料轉化為客戶可認證並部署的解決方案所需的時間。"
+		},
+		{
+			"tag": "p",
+			"text": "The journey from laboratory discovery to a qualified material will always require scientific expertise, rigorous testing, and close collaboration with customers. But by accelerating the earliest stages of discovery, AI can help materials innovation keep pace with the evolving needs of industries such as semiconductors, electronics, and data centers.",
+			"translation": "從實驗室發現到合格材料的過程始終需要科學專業知識、嚴格測試以及與客戶的密切合作。但透過加速最早期的發現階段，AI 可以幫助材料創新跟上半導體、電子和資料中心等產業不斷演進的需求。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Progress is earned</strong>",
+			"translation": "進步是贏來的"
+		},
+		{
+			"tag": "p",
+			"text": "The future of artificial intelligence will depend on better algorithms, more powerful chips, and larger computing infrastructure. But sustaining that progress will also require advances in the materials that make those technologies possible.",
+			"translation": "人工智慧的未來將取決於更好的演算法、更強大的晶片和更大規模的運算基礎設施。但要維持這種進步，還需要使這些技術成為可能的材料科學方面的進步。"
+		},
+		{
+			"tag": "p",
+			"text": "Whether in semiconductor manufacturing or AI infrastructure, progress is earned. Every new generation of technologies raises the bar, and every new material must prove it can deliver the performance, reliability, and efficiency needed before it earns its place.",
+			"translation": "無論是在半導體製造還是 AI 基礎設施中，進步都是贏來的。每一代新技術都提高了標準，每一種新材料在贏得一席之地前，都必須證明它能提供所需的性能、可靠性和效率。"
+		},
+		{
+			"tag": "p",
+			"text": "For materials companies, that remains both the challenge and the opportunity.",
+			"translation": "對於材料公司而言，這既是挑戰也是機遇。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>This content was produced by Syensqo. It was not written by MIT Technology Review’s editorial staff.</em>",
+			"translation": "本內容由 Syensqo 製作。並非由 MIT 科技評論編輯人員撰寫。"
+		},
+		{
+			"tag": "h3",
+			"text": "Artificial intelligence",
+			"translation": "人工智慧"
+		},
+		{
+			"tag": "h3",
+			"text": "A startup claims it broke through a bottleneck that’s holding back LLMs",
+			"translation": "一家初創公司聲稱突破了阻礙大型語言模型發展的瓶頸"
+		},
+		{
+			"tag": "p",
+			"text": "Subquadratic has now shared more details about its new model. But some are still skeptical.",
+			"translation": "Subquadratic 現在分享了關於其新模型的更多細節。但仍有一些人持懷疑態度。"
+		},
+		{
+			"tag": "h3",
+			"text": "A reality check on the AI jobs hysteria",
+			"translation": "關於 AI 工作職位恐慌的現狀檢核"
+		},
+		{
+			"tag": "p",
+			"text": "What do the numbers really say about the impact of artificial intelligence on the labor market? The answer might surprise you.",
+			"translation": "數據對於人工智慧對勞動力市場影響的真實說法是什麼？答案可能會讓你驚訝。"
+		},
+		{
+			"tag": "h3",
+			"text": "Anthropic found a hidden space where Claude puzzles over concepts",
+			"translation": "Anthropic 發現了一個隱藏空間，Claude 在那裡思考概念"
+		},
+		{
+			"tag": "p",
+			"text": "A new technique has let the company probe deeper than ever into the weird workings of an LLM.",
+			"translation": "一項新技術讓該公司能比以往更深入地探查大型語言模型（LLM）奇特的運作方式。"
+		},
+		{
+			"tag": "h3",
+			"text": "Claude Science is Anthropic’s newest flagship product",
+			"translation": "Claude Science 是 Anthropic 最新的旗艦產品"
+		},
+		{
+			"tag": "p",
+			"text": "The company is doubling down on AI for science.",
+			"translation": "該公司正加倍投入科學領域的 AI。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "從 MIT 科技評論獲取最新更新"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "探索特別優惠、熱門故事、即將舉行的活動等。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2026/07/Syensqo-shutterstock_2491787317.jpg?w=1200",
+			"alt": "",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "centers",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈsentərz/",
+			"definition_zh": "以...為中心",
+			"example": "The conversation about AI often centers on algorithms."
+		},
+		{
+			"word": "layer",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈleɪər/",
+			"definition_zh": "層；層次",
+			"example": "But beneath each of these advances is another layer of innovation."
+		},
+		{
+			"word": "demand",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈmænd/",
+			"definition_zh": "需要；要求",
+			"example": "Every new generation of AI technology demands more processing power."
+		},
+		{
+			"word": "extreme",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪkˈstriːm/",
+			"definition_zh": "極端的；嚴酷的",
+			"example": "perform under extreme conditions."
+		},
+		{
+			"word": "stability",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/stəˈbɪləti/",
+			"definition_zh": "穩定性",
+			"example": "manufacturers seek advanced materials that can deliver better stability."
+		},
+		{
+			"word": "variations",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌveəriˈeɪʃənz/",
+			"definition_zh": "微小變異；變化",
+			"example": "Tiny variations in temperature or chemical instability can create defects."
+		},
+		{
+			"word": "transform",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/trænsˈfɔːrm/",
+			"definition_zh": "改變；轉化",
+			"example": "Increasing computing density is transforming data center design."
+		},
+		{
+			"word": "expertise",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌekspɜːrˈtiːz/",
+			"definition_zh": "專業知識",
+			"example": "At Syensqo, we're building on our expertise in electronic and electrical components."
+		},
+		{
+			"word": "accelerate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/əkˈseləreɪt/",
+			"definition_zh": "加速",
+			"example": "By transferring knowledge across markets, we can accelerate new power management solutions."
+		},
+		{
+			"word": "priority",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/praɪˈɔːrəti/",
+			"definition_zh": "優先事項",
+			"example": "While performance remains the first priority, the way performance is defined is changing."
+		},
+		{
+			"word": "sustainable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/səˈsteɪnəbl/",
+			"definition_zh": "永續的；可持續的",
+			"example": "To make the process more sustainable, our next generation of perfluoroelastomers use a fluorosurfactant-free manufacturing process."
+		},
+		{
+			"word": "fabrication",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌfæbrɪˈkeɪʃən/",
+			"definition_zh": "製造；組裝",
+			"example": "huge investments in new semiconductor fabrication plants."
+		},
+		{
+			"word": "yield",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/jiːld/",
+			"definition_zh": "產量；良率",
+			"example": "defects that reduce yield and drive up manufacturing costs."
+		},
+		{
+			"word": "principle",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈprɪnsəpl/",
+			"definition_zh": "原則；原理",
+			"example": "This same principle applies beyond the semiconductor fabrication floor."
+		},
+		{
+			"word": "infrastructure",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪnfrəstrʌktʃər/",
+			"definition_zh": "基礎設施",
+			"example": "the physical infrastructure that powers them is evolving rapidly."
+		},
+		{
+			"word": "hypothesis",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/haɪˈpɒθəsɪs/",
+			"definition_zh": "假設",
+			"example": "Developing advanced materials has traditionally involved a lengthy process of hypothesis."
+		},
+		{
+			"word": "iteration",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌɪtəˈreɪʃən/",
+			"definition_zh": "迭代；重複循環",
+			"example": "a lengthy process of hypothesis, synthesis, testing, and iteration."
+		},
+		{
+			"word": "rigorous",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈrɪɡərəs/",
+			"definition_zh": "嚴格的；嚴謹的",
+			"example": "The journey will always require scientific expertise, rigorous testing."
+		},
+		{
+			"word": "semiconductor",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌsemikənˈdʌktər/",
+			"definition_zh": "半導體",
+			"example": "Manufacturing a semiconductor chip today requires thousands of process steps."
+		},
+		{
+			"word": "fluorosurfactant",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌflʊərəʊsɜːˈfæktənt/",
+			"definition_zh": "氟碳表面活性劑",
+			"example": "our next generation of perfluoroelastomers use a fluorosurfactant-free manufacturing process."
+		},
+		{
+			"word": "raise the bar",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/reɪz ðə bɑːr/",
+			"definition_zh": "提高標準；提高門檻",
+			"example": "As AI raises the bar, these challenges are becoming more demanding."
+		},
+		{
+			"word": "price of entry",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/praɪs əv ˈentri/",
+			"definition_zh": "入場門檻；入場代價",
+			"example": "Performance remains the price of entry."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The government is investing heavily in the country's ____ to support future economic growth.",
+			"sentence_zh": "政府正投入巨資於國家的基礎設施，以支持未來的經濟增長。",
+			"answer": "infrastructure",
+			"options": [
+				"infrastructure",
+				"stability",
+				"yield",
+				"priority"
+			]
+		},
+		{
+			"sentence": "Chemical ____ is essential for materials used in space exploration where temperatures vary wildly.",
+			"sentence_zh": "對於在溫度劇烈變化的太空探索中所使用的材料來說，化學穩定性是必不可少的。",
+			"answer": "stability",
+			"options": [
+				"fabrication",
+				"expertise",
+				"stability",
+				"iteration"
+			]
+		},
+		{
+			"sentence": "The factory managed to increase its production ____ by optimizing the assembly line.",
+			"sentence_zh": "工廠透過優化組裝線成功地提高了產量（良率）。",
+			"answer": "yield",
+			"options": [
+				"yield",
+				"hypothesis",
+				"semiconductor",
+				"variations"
+			]
+		},
+		{
+			"sentence": "New digital tools can significantly ____ the process of drug discovery.",
+			"sentence_zh": "新型數位工具能顯著加速藥物研發的過程。",
+			"answer": "accelerate",
+			"options": [
+				"transform",
+				"accelerate",
+				"demand",
+				"centers"
+			]
+		},
+		{
+			"sentence": "For a successful product launch, meeting the safety standards is always the top ____.",
+			"sentence_zh": "對於一次成功的產品發表，符合安全標準始終是首要任務。",
+			"answer": "priority",
+			"options": [
+				"priority",
+				"rigorous",
+				"layer",
+				"principle"
+			]
+		},
+		{
+			"sentence": "All new medical treatments must undergo ____ clinical trials before being approved.",
+			"sentence_zh": "所有新的醫療方案在獲准前都必須經過嚴格的臨床試驗。",
+			"answer": "rigorous",
+			"options": [
+				"extreme",
+				"sustainable",
+				"rigorous",
+				"semiconductor"
+			]
+		},
+		{
+			"sentence": "The global shortage of ____ chips has caused delays in the automotive industry.",
+			"sentence_zh": "全球半導體晶片的短缺已導致汽車產業出現延遲。",
+			"answer": "semiconductor",
+			"options": [
+				"fabrication",
+				"fluorosurfactant",
+				"semiconductor",
+				"expertise"
+			]
+		},
+		{
+			"sentence": "The company's innovative software has truly ____ the way people communicate online.",
+			"sentence_zh": "這家公司的創新軟體真正改變了人們在網上溝通的方式。",
+			"answer": "transform",
+			"options": [
+				"transform",
+				"demand",
+				"centers",
+				"accelerate"
+			]
+		},
+		{
+			"sentence": "In the smartphone industry, competitors constantly ____ by introducing more advanced camera features.",
+			"sentence_zh": "在智慧型手機產業中，競爭對手不斷透過推出更先進的相機功能來提高門檻。",
+			"answer": "raise the bar",
+			"options": [
+				"raise the bar",
+				"price of entry",
+				"rigorous",
+				"infrastructure"
+			]
+		},
+		{
+			"sentence": "High-quality customer service is no longer a luxury; it has become the ____ for any business.",
+			"sentence_zh": "高品質的客戶服務不再是奢侈品；它已成為任何企業的入場門檻。",
+			"answer": "price of entry",
+			"options": [
+				"yield",
+				"price of entry",
+				"hypothesis",
+				"fabrication"
+			]
+		}
+	]
+}
