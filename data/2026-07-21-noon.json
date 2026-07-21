@@ -1,0 +1,348 @@
+{
+	"date": "2026-07-21",
+	"slot": "noon",
+	"tag": "AI",
+	"title": "Here are the 30,000 songs Sony is suing Udio’s AI music generator over",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "Songs from Beyoncé, Britney Spears, Johnny Cash, Harry Styles, and many more are on the list.",
+			"translation": "碧昂絲 (Beyoncé)、布蘭妮 (Britney Spears)、強尼·凱許 (Johnny Cash)、哈利·史泰爾斯 (Harry Styles) 以及更多藝人的歌曲都在名單之列。"
+		},
+		{
+			"tag": "p",
+			"text": "Sony Music Entertainment has filed another lawsuit against Udio, accusing the AI music generator of infringing the copyright of more than 30,000 of its songs, ranging from Elvis Presley’s <em>Hound Dog</em> to Beyoncé’s <em>Say My Name</em>, and Harry Styles’ <em>As It Was</em>. The lawsuit, filed in a New York court on Monday, claims that this list represents “only a small portion of Plaintiffs’ works that Udio infringed,” as reported earlier by <em>Music Business Worldwide</em>.",
+			"translation": "索尼音樂娛樂公司 (Sony Music Entertainment) 對 Udio 提起另一項訴訟，指控這家人工智慧音樂生成器侵犯了其超過 30,000 首歌曲的版權，範圍涵蓋從艾維斯·普里斯萊 (Elvis Presley) 的《Hound Dog》到碧昂絲的《Say My Name》，以及哈利·史泰爾斯的《As It Was》。據《Music Business Worldwide》先前報導，週一向紐約法院提交的這項訴訟聲稱，這份名單僅代表「Udio 侵犯的原告作品中的一小部分」。"
+		},
+		{
+			"tag": "p",
+			"text": "In 2024, Sony, along with Universal Music Group and Warner Records, filed a lawsuit against Udio and the AI music-maker Suno. After gaining access to Udio’s training data through discovery, Sony claims it identified additional songs using an “audio fingerprinting” technique. Sony filed a request to add more than 30,000 songs that Udio allegedly “copied and ingested into its generative AI models,” but a judge later rejected the company’s motion, leaving the scope of the original lawsuit at 333 works.",
+			"translation": "2024 年，索尼與環球音樂集團 (Universal Music Group) 和華納唱片 (Warner Records) 一同對 Udio 和 AI 音樂製作公司 Suno 提起訴訟。索尼聲稱，在透過證據開示程序獲取 Udio 的訓練數據後，其利用「音訊指紋識別」技術識別出了更多歌曲。索尼提交了一項請求，欲增加超過 30,000 首 Udio 涉嫌「複製並攝入其生成式 AI 模型」的歌曲，但法官隨後駁回了該公司的動議，將原始訴訟的範圍維持在 333 件作品。"
+		},
+		{
+			"tag": "p",
+			"text": "Sony has now made the more than 30,000 songs the subject of its new lawsuit, which the company says it could expand. It claims Udio “admitted that its generative AI models were ‘constructed by showing the program a vast amount of different kinds of sound recordings,’” including from YouTube. UMG and Warner Music Group have since settled with Udio and are now partnering with the company as the music industry embraces AI.",
+			"translation": "索尼現在將這 30,000 多首歌曲作為其新訴訟的主體，該公司表示可能會擴大訴訟規模。索尼聲稱 Udio 「承認其生成式 AI 模型是透過向程式展示大量不同類型的錄音而建構的」，其中包括來自 YouTube 的內容。此後，環球音樂集團和華納音樂集團已與 Udio 達成和解，並隨著音樂產業擁抱 AI 而正與該公司合作。"
+		},
+		{
+			"tag": "p",
+			"text": "You can read the full list of songs Sony is suing Udio over in this filing. The company is asking to block Udio from infringing its works, as well as for up to $150,000 per work infringed.",
+			"translation": "您可以在這份文件中閱讀索尼控告 Udio 的完整歌曲清單。該公司正要求禁止 Udio 侵犯其作品，並要求為每件受侵害的作品支付高達 15 萬美元的賠償。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK467_AI_MUSIC_CVirginia_A.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+			"alt": "STK467_AI_MUSIC_CVirginia_A",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "lawsuit",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈlɔːˌsuːt/",
+			"definition_zh": "訴訟",
+			"example": "Sony Music Entertainment has filed another lawsuit against Udio."
+		},
+		{
+			"word": "claim",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kleɪm/",
+			"definition_zh": "聲稱、主張",
+			"example": "Sony claims it identified additional songs using an “audio fingerprinting” technique."
+		},
+		{
+			"word": "portion",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈpɔːrʃn/",
+			"definition_zh": "部分",
+			"example": "This list represents “only a small portion of Plaintiffs’ works that Udio infringed.”"
+		},
+		{
+			"word": "identify",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/aɪˈdentɪfaɪ/",
+			"definition_zh": "識別、確認",
+			"example": "Sony claims it identified additional songs using an “audio fingerprinting” technique."
+		},
+		{
+			"word": "expand",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪkˈspænd/",
+			"definition_zh": "擴大、擴展",
+			"example": "Sony has now made the more than 30,000 songs the subject of its new lawsuit, which the company says it could expand."
+		},
+		{
+			"word": "admit",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ədˈmɪt/",
+			"definition_zh": "承認",
+			"example": "It claims Udio “admitted that its generative AI models were ‘constructed by showing the program a vast amount of different kinds of sound recordings.’”"
+		},
+		{
+			"word": "vast",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/væst/",
+			"definition_zh": "大量的、巨大的",
+			"example": "Udio admitted its models were constructed by showing the program a vast amount of different kinds of sound recordings."
+		},
+		{
+			"word": "embrace",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪmˈbreɪs/",
+			"definition_zh": "欣然接受、擁抱",
+			"example": "UMG and Warner Music Group are now partnering with the company as the music industry embraces AI."
+		},
+		{
+			"word": "block",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/blɑːk/",
+			"definition_zh": "阻礙、禁止",
+			"example": "The company is asking to block Udio from infringing its works."
+		},
+		{
+			"word": "represent",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌreprɪˈzent/",
+			"definition_zh": "代表、相當於",
+			"example": "The lawsuit claims that this list represents “only a small portion of Plaintiffs’ works.”"
+		},
+		{
+			"word": "access",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈækses/",
+			"definition_zh": "讀取、獲取的權限",
+			"example": "After gaining access to Udio’s training data through discovery, Sony claims it identified additional songs."
+		},
+		{
+			"word": "discovery",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪˈskʌvəri/",
+			"definition_zh": "（法律）證據開示程序",
+			"example": "Sony gained access to Udio’s training data through discovery."
+		},
+		{
+			"word": "technique",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/tekˈniːk/",
+			"definition_zh": "技術、技巧",
+			"example": "Sony claims it identified additional songs using an “audio fingerprinting” technique."
+		},
+		{
+			"word": "allegedly",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/əˈledʒɪdli/",
+			"definition_zh": "據稱地、涉嫌地",
+			"example": "Sony filed a request to add more than 30,000 songs that Udio allegedly “copied and ingested.”"
+		},
+		{
+			"word": "motion",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈmoʊʃn/",
+			"definition_zh": "（向法庭提出的）動議",
+			"example": "A judge later rejected the company’s motion."
+		},
+		{
+			"word": "scope",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/skoʊp/",
+			"definition_zh": "範圍",
+			"example": "Leaving the scope of the original lawsuit at 333 works."
+		},
+		{
+			"word": "settle",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈsetl/",
+			"definition_zh": "和解、解決",
+			"example": "UMG and Warner Music Group have since settled with Udio."
+		},
+		{
+			"word": "filing",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈfaɪlɪŋ/",
+			"definition_zh": "法律文件、卷宗",
+			"example": "You can read the full list of songs Sony is suing Udio over in this filing."
+		},
+		{
+			"word": "copyright",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈkɑːpiraɪt/",
+			"definition_zh": "版權、著作權",
+			"example": "Accusing the AI music generator of infringing the copyright of more than 30,000 of its songs."
+		},
+		{
+			"word": "infringing",
+			"type": "term",
+			"pos": "v.",
+			"ipa": "/ɪnˈfrɪndʒɪŋ/",
+			"definition_zh": "侵害（法律、權利）",
+			"example": "Sony Music Entertainment has filed another lawsuit against Udio, accusing it of infringing copyright."
+		},
+		{
+			"word": "generative AI",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈdʒenərətɪv eɪ aɪ/",
+			"definition_zh": "生成式人工智慧",
+			"example": "Sony filed a request to add more than 30,000 songs that Udio allegedly copied into its generative AI models."
+		},
+		{
+			"word": "file a lawsuit",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/faɪl ə ˈlɔːˌsuːt/",
+			"definition_zh": "提起訴訟",
+			"example": "Sony Music Entertainment has filed another lawsuit against Udio."
+		},
+		{
+			"word": "range from",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/reɪndʒ frəm/",
+			"definition_zh": "範圍從...到...",
+			"example": "Ranging from Elvis Presley’s Hound Dog to Beyoncé’s Say My Name."
+		},
+		{
+			"word": "as well as",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/əz wel æz/",
+			"definition_zh": "以及",
+			"example": "The company is asking to block Udio from infringing its works, as well as for up to $150,000 per work."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The pharmaceutical giant is facing a major ____ from patients claiming the drug had severe side effects.",
+			"sentence_zh": "這家製藥巨頭正因病患聲稱該藥物有嚴重副作用而面臨一場重大的訴訟。",
+			"answer": "lawsuit",
+			"options": [
+				"lawsuit",
+				"technique",
+				"motion",
+				"filing"
+			]
+		},
+		{
+			"sentence": "Witnesses were unable to ____ the suspect in the police lineup.",
+			"sentence_zh": "證人無法在警方的認人程序中識別出嫌疑人。",
+			"answer": "identify",
+			"options": [
+				"expand",
+				"identify",
+				"settle",
+				"embrace"
+			]
+		},
+		{
+			"sentence": "The library contains a ____ collection of ancient manuscripts from all over the world.",
+			"sentence_zh": "這座圖書館收藏了來自世界各地的大量古代手稿。",
+			"answer": "vast",
+			"options": [
+				"vast",
+				"allegedly",
+				"infringing",
+				"portion"
+			]
+		},
+		{
+			"sentence": "It is important for older industries to ____ new technologies to stay competitive.",
+			"sentence_zh": "對於傳統產業來說，擁抱新技術以保持競爭力是很重要的。",
+			"answer": "embrace",
+			"options": [
+				"admit",
+				"claim",
+				"embrace",
+				"block"
+			]
+		},
+		{
+			"sentence": "Unauthorized use of this software is a direct violation of ____ law.",
+			"sentence_zh": "未經授權使用此軟體是直接違反版權法的行為。",
+			"answer": "copyright",
+			"options": [
+				"copyright",
+				"generative AI",
+				"discovery",
+				"scope"
+			]
+		},
+		{
+			"sentence": "The company plans to ____ its operations into the European market next year.",
+			"sentence_zh": "該公司計劃明年將其業務擴展到歐洲市場。",
+			"answer": "expand",
+			"options": [
+				"represent",
+				"expand",
+				"settle",
+				"access"
+			]
+		},
+		{
+			"sentence": "The prices of the rooms ____ $100 to $500 per night depending on the season.",
+			"sentence_zh": "房價範圍從每晚 100 美元到 500 美元不等，具體取決於季節。",
+			"answer": "range from",
+			"options": [
+				"file a lawsuit",
+				"range from",
+				"as well as",
+				"portion"
+			]
+		},
+		{
+			"sentence": "The defendant's lawyer filed a ____ to dismiss the case due to lack of evidence.",
+			"sentence_zh": "被告律師因證據不足提交了駁回案件的動議。",
+			"answer": "motion",
+			"options": [
+				"filing",
+				"motion",
+				"discovery",
+				"lawsuit"
+			]
+		},
+		{
+			"sentence": "She was accused of ____ on the company's trademark by using a similar logo.",
+			"sentence_zh": "她被指控因使用類似的標誌而侵犯了公司的商標。",
+			"answer": "infringing",
+			"options": [
+				"infringing",
+				"embrace",
+				"identify",
+				"claim"
+			]
+		},
+		{
+			"sentence": "The insurance company agreed to ____ the claim for a total of $50,000.",
+			"sentence_zh": "保險公司同意以總計 5 萬美元的金額和解這項索賠。",
+			"answer": "settle",
+			"options": [
+				"admit",
+				"settle",
+				"block",
+				"represent"
+			]
+		}
+	]
+}
