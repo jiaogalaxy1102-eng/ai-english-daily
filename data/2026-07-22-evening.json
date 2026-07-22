@@ -1,0 +1,357 @@
+{
+	"date": "2026-07-22",
+	"slot": "evening",
+	"tag": "科技",
+	"title": "Stats show LinkedIn’s ‘Open to Work’ badge works. Designers say it could be even better",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91577144/linkedin-open-to-work-badge-redesign?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "If you’re a LinkedIn user, you recognize it instinctively: Anyone with a green ribbon around their profile picture is in the market for a new job, and they want everyone to know it.",
+			"translation": "如果你是 LinkedIn 用戶，你會直覺地認出它：頭像周圍帶有綠色緞帶的任何人都在尋找新工作，且他們希望讓每個人都知道。"
+		},
+		{
+			"tag": "p",
+			"text": "LinkedIn’s “Open to Work” badge, which has now been part of the platform for six years, has become a distinct visual shorthand for frequent posters on the platform. Recently, however, its merits have come under fire.",
+			"translation": "LinkedIn 的「Open to Work」徽章已在該平台推出六年，已成為該平台頻繁發文者的獨特視覺代號。然而，最近它的優點受到了批評。"
+		},
+		{
+			"tag": "p",
+			"text": "On July 19, Ben Lang, an engineer at the AI coding platform Cursor AI, took to X with a message for his followers. “Tip: never use the green Open to Work badge on LinkedIn,” the post reads. “Negative signal for hiring managers and recruiters.”",
+			"translation": "7 月 19 日，AI 程式碼平台 Cursor AI 的工程師 Ben Lang 在 X 上向他的追隨者發布了一則訊息。貼文寫道：「建議：永遠不要在 LinkedIn 上使用綠色的 Open to Work 徽章，這對招募經理和招聘人員來說是負面信號。」"
+		},
+		{
+			"tag": "p",
+			"text": "The post has since amassed more than a million views and hundreds of comments, and notched a featured post under X’s trending topics.",
+			"translation": "此後，該貼文累積了超過一百萬次的瀏覽量和數百條評論，並登上了 X 熱門話題下的精選貼文。"
+		},
+		{
+			"tag": "blockquote",
+			"text": "Tip: never use the green Open to Work banner on LinkedIn Negative signal for hiring managers and recruiters — Ben Lang (@benln) July 19, 2026",
+			"translation": "建議：永遠不要在 LinkedIn 上使用綠色的 Open to Work 橫幅。這對招聘經理和招聘人員來說是負面信號 — Ben Lang (@benln) 2026 年 7 月 19 日"
+		},
+		{
+			"tag": "p",
+			"text": "This isn’t the first time LinkedIn’s Open to Work badge has attracted debate. In fact, the discourse has been ongoing for years, with commenters generally falling into two camps: One side argues the design of the badge gives off an “air of desperation” to recruiters; the other views the badge as a crucial tool for grabbing recruiters’ attention on the crowded platform.",
+			"translation": "這不是 LinkedIn 的 Open to Work 徽章第一次引發爭論。事實上，這場討論已經持續多年，評論者通常分為兩派：一方認為徽章的設計向招聘人員散發出一種「絕望的氣息」；另一方則認為該徽章是在擁擠的平台上吸引招聘人員注意的關鍵工具。"
+		},
+		{
+			"tag": "p",
+			"text": "According to LinkedIn, more than 60 million users currently have the public #OpenToWork frame on their profile pictures. Those members, it says, are nearly two times as likely to get a message from a recruiter than those who don’t. They’re also finding jobs more than 20% faster than job seekers who don’t display the Open to Work badge.",
+			"translation": "根據 LinkedIn 的數據，目前有超過 6,000 萬用戶在其個人資料頭像上使用了公開的 #OpenToWork 框。該公司表示，這些成員收到招聘人員訊息的可能性是未使用者的近兩倍。他們找到工作的速度也比不顯示 Open to Work 徽章的求職者快 20% 以上。"
+		},
+		{
+			"tag": "p",
+			"text": "LinkedIn’s data appears to show that the Open to Work profile badge does its job—but its enduring negative reputation signals that it might still be time for a redesign.",
+			"translation": "LinkedIn 的數據似乎顯示 Open to Work 個人資料徽章發揮了作用，但它揮之不去的負面名聲顯示，現在可能仍是重新設計的時候了。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "instinctively",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/ɪnˈstɪŋktɪvli/",
+			"definition_zh": "直覺地",
+			"example": "If you’re a LinkedIn user, you recognize it instinctively."
+		},
+		{
+			"word": "ribbon",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈrɪbən/",
+			"definition_zh": "緞帶、絲帶",
+			"example": "Anyone with a green ribbon around their profile picture is in the market for a new job."
+		},
+		{
+			"word": "platform",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈplætfɔːrm/",
+			"definition_zh": "平台",
+			"example": "LinkedIn’s “Open to Work” badge, which has now been part of the platform for six years."
+		},
+		{
+			"word": "shorthand",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈʃɔːrthænd/",
+			"definition_zh": "簡稱、代號",
+			"example": "has become a distinct visual shorthand for frequent posters on the platform."
+		},
+		{
+			"word": "merit",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈmerɪt/",
+			"definition_zh": "優點、價值",
+			"example": "Recently, however, its merits have come under fire."
+		},
+		{
+			"word": "follower",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈfɑːloʊər/",
+			"definition_zh": "追隨者、關注者",
+			"example": "Ben Lang, an engineer at the AI coding platform Cursor AI, took to X with a message for his followers."
+		},
+		{
+			"word": "recruiter",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/rɪˈkruːtər/",
+			"definition_zh": "招聘人員、獵頭",
+			"example": "Negative signal for hiring managers and recruiters."
+		},
+		{
+			"word": "amass",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/əˈmæs/",
+			"definition_zh": "積聚、累積",
+			"example": "The post has since amassed more than a million views."
+		},
+		{
+			"word": "notch",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/nɑːtʃ/",
+			"definition_zh": "獲得、達成",
+			"example": "and notched a featured post under X’s trending topics."
+		},
+		{
+			"word": "trending",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈtrendɪŋ/",
+			"definition_zh": "（在網路上）熱門的",
+			"example": "notched a featured post under X’s trending topics."
+		},
+		{
+			"word": "discourse",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈdɪskɔːrs/",
+			"definition_zh": "討論、對話",
+			"example": "In fact, the discourse has been ongoing for years."
+		},
+		{
+			"word": "ongoing",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈɑːnɡoʊɪŋ/",
+			"definition_zh": "持續中的",
+			"example": "In fact, the discourse has been ongoing for years."
+		},
+		{
+			"word": "desperation",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌdespəˈreɪʃn/",
+			"definition_zh": "絕望、拼命",
+			"example": "One side argues the design of the badge gives off an “air of desperation” to recruiters."
+		},
+		{
+			"word": "crucial",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈkruːʃl/",
+			"definition_zh": "關鍵的、至關重要的",
+			"example": "the other views the badge as a crucial tool for grabbing recruiters’ attention."
+		},
+		{
+			"word": "currently",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈkɜːrəntli/",
+			"definition_zh": "目前",
+			"example": "According to LinkedIn, more than 60 million users currently have the public #OpenToWork frame."
+		},
+		{
+			"word": "frame",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/freɪm/",
+			"definition_zh": "框、邊框",
+			"example": "more than 60 million users currently have the public #OpenToWork frame."
+		},
+		{
+			"word": "profile",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈproʊfaɪl/",
+			"definition_zh": "個人資料、頭像",
+			"example": "on their profile pictures."
+		},
+		{
+			"word": "enduring",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪnˈdʊrɪŋ/",
+			"definition_zh": "持久的、長期的",
+			"example": "but its enduring negative reputation signals that it might still be time for a redesign."
+		},
+		{
+			"word": "reputation",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌrepjuˈteɪʃn/",
+			"definition_zh": "名聲、聲譽",
+			"example": "but its enduring negative reputation signals that it might still be time for a redesign."
+		},
+		{
+			"word": "redesign",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌriːdɪˈzaɪn/",
+			"definition_zh": "重新設計",
+			"example": "its enduring negative reputation signals that it might still be time for a redesign."
+		},
+		{
+			"word": "in the market for",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɪn ðə ˈmɑːrkɪt fɔːr/",
+			"definition_zh": "正在尋找、想要",
+			"example": "Anyone with a green ribbon around their profile picture is in the market for a new job."
+		},
+		{
+			"word": "come under fire",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/kʌm ˈʌndər ˈfaɪər/",
+			"definition_zh": "受到批評",
+			"example": "Recently, however, its merits have come under fire."
+		},
+		{
+			"word": "take to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/teɪk tuː/",
+			"definition_zh": "開始使用（某種媒介發表）",
+			"example": "Ben Lang, an engineer at the AI coding platform Cursor AI, took to X with a message."
+		},
+		{
+			"word": "give off",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɡɪv ɔːf/",
+			"definition_zh": "散發出（某種氣息）",
+			"example": "One side argues the design of the badge gives off an “air of desperation” to recruiters."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "He managed to ____ a large collection of stamps over several decades.",
+			"sentence_zh": "幾十年來，他成功累積了大量的郵票收藏。",
+			"answer": "amass",
+			"options": [
+				"amass",
+				"crucial",
+				"reputation",
+				"trending"
+			]
+		},
+		{
+			"sentence": "Effective communication is ____ for a successful marriage.",
+			"sentence_zh": "有效的溝通對於成功的婚姻至關重要。",
+			"answer": "crucial",
+			"options": [
+				"crucial",
+				"currently",
+				"profile",
+				"ongoing"
+			]
+		},
+		{
+			"sentence": "The restaurant has a great ____ for its authentic Italian cuisine.",
+			"sentence_zh": "這家餐廳因其道地的義大利料理而享有極佳的名聲。",
+			"answer": "reputation",
+			"options": [
+				"reputation",
+				"redesign",
+				"frame",
+				"discourse"
+			]
+		},
+		{
+			"sentence": "The latest fashion style is currently ____ on social media platforms.",
+			"sentence_zh": "最新的流行款式目前正在社交媒體平台上熱搜盛行。",
+			"answer": "trending",
+			"options": [
+				"trending",
+				"notch",
+				"shorthand",
+				"ribbon"
+			]
+		},
+		{
+			"sentence": "Those flowers ____ a sweet fragrance that fills the entire room.",
+			"sentence_zh": "那些花朵散發出一股清香，充滿了整個房間。",
+			"answer": "give off",
+			"options": [
+				"give off",
+				"take to",
+				"come under fire",
+				"in the market for"
+			]
+		},
+		{
+			"sentence": "A professional ____ contacted me yesterday about a potential job opportunity.",
+			"sentence_zh": "一位專業的招聘人員昨天聯繫我，談到一個潛在的工作機會。",
+			"answer": "recruiter",
+			"options": [
+				"recruiter",
+				"follower",
+				"merit",
+				"frame"
+			]
+		},
+		{
+			"sentence": "The mother cat ____ protected her kittens from the barking dog.",
+			"sentence_zh": "母貓直覺地保護她的幼貓免受狂吠犬的傷害。",
+			"answer": "instinctively",
+			"options": [
+				"instinctively",
+				"enduring",
+				"desperation",
+				"amass"
+			]
+		},
+		{
+			"sentence": "The government's new policy has ____ from the public.",
+			"sentence_zh": "政府的新政策受到了公眾的批評。",
+			"answer": "come under fire",
+			"options": [
+				"come under fire",
+				"give off",
+				"take to",
+				"in the market for"
+			]
+		},
+		{
+			"sentence": "The police are conducting an ____ investigation into the recent robbery.",
+			"sentence_zh": "警方正在對最近的搶劫案進行持續中的調查。",
+			"answer": "ongoing",
+			"options": [
+				"ongoing",
+				"currently",
+				"profile",
+				"enduring"
+			]
+		},
+		{
+			"sentence": "Each proposal should be judged on its own ____ rather than its author.",
+			"sentence_zh": "每項提案都應根據其本身的優點而非作者來評判。",
+			"answer": "merit",
+			"options": [
+				"merit",
+				"reputation",
+				"discourse",
+				"redesign"
+			]
+		}
+	]
+}
