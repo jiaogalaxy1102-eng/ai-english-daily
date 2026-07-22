@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>This beautiful data visualization shows how Spain obliterated Argentina in the World Cup final — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-22</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">This beautiful data visualization shows how Spain obliterated Argentina in the World Cup final</h1>
+	<div class="article-meta">
+		2026-07-22 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91577156/world-cup-soccer-visualization-data?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="obliterated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">obliterated</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈblɪtəreɪtɪd/</span>
+				<span class="vocab-def">徹底摧毀；抹滅</span>
+			</div>
+			<div class="vocab-card" data-word="dominate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dominate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈdɑːmɪneɪt/</span>
+				<span class="vocab-def">支配；主導</span>
+			</div>
+			<div class="vocab-card" data-word="register" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">register</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈredʒɪstər/</span>
+				<span class="vocab-def">錄得；登記</span>
+			</div>
+			<div class="vocab-card" data-word="regulation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">regulation</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌreɡjuˈleɪʃn/</span>
+				<span class="vocab-def">正規的；條例</span>
+			</div>
+			<div class="vocab-card" data-word="absolute" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">absolute</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈæbsəluːt/</span>
+				<span class="vocab-def">絕對的；完全的</span>
+			</div>
+			<div class="vocab-card" data-word="undulating" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">undulating</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈʌndʒəleɪtɪŋ/</span>
+				<span class="vocab-def">起伏的；波動的</span>
+			</div>
+			<div class="vocab-card" data-word="topography" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">topography</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/təˈpɑːɡrəfi/</span>
+				<span class="vocab-def">地貌；地形學</span>
+			</div>
+			<div class="vocab-card" data-word="capture" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">capture</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈkæptʃər/</span>
+				<span class="vocab-def">捕捉；拍攝</span>
+			</div>
+			<div class="vocab-card" data-word="raw" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">raw</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/rɔː/</span>
+				<span class="vocab-def">原始的；未加工的</span>
+			</div>
+			<div class="vocab-card" data-word="telemetry" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">telemetry</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/təˈlemətri/</span>
+				<span class="vocab-def">遙測技術</span>
+			</div>
+			<div class="vocab-card" data-word="dull" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dull</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/dʌl/</span>
+				<span class="vocab-def">乏味的；單調的</span>
+			</div>
+			<div class="vocab-card" data-word="materialize" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">materialize</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/məˈtɪriəlaɪz/</span>
+				<span class="vocab-def">顯現；具體化</span>
+			</div>
+			<div class="vocab-card" data-word="appreciate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">appreciate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈpriːʃieɪt/</span>
+				<span class="vocab-def">欣賞；感激</span>
+			</div>
+			<div class="vocab-card" data-word="shaders" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">shaders</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈʃeɪdərz/</span>
+				<span class="vocab-def">著色器</span>
+			</div>
+			<div class="vocab-card" data-word="momentum" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">momentum</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/moʊˈmentəm/</span>
+				<span class="vocab-def">動力；勢頭</span>
+			</div>
+			<div class="vocab-card" data-word="underlying" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">underlying</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌʌndərˈlaɪɪŋ/</span>
+				<span class="vocab-def">潛在的；底層的</span>
+			</div>
+			<div class="vocab-card" data-word="impact" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">impact</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪmpækt/</span>
+				<span class="vocab-def">影響；衝擊</span>
+			</div>
+			<div class="vocab-card" data-word="distinct" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distinct</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/dɪˈstɪŋkt/</span>
+				<span class="vocab-def">截然不同的</span>
+			</div>
+			<div class="vocab-card" data-word="calibrated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">calibrated</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈkælɪbreɪtɪd/</span>
+				<span class="vocab-def">校準；調整</span>
+			</div>
+			<div class="vocab-card" data-word="professional" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">professional</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/prəˈfeʃənl/</span>
+				<span class="vocab-def">專業的；職業的</span>
+			</div>
+			<div class="vocab-card" data-word="foreign" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">foreign</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈfɔːrən/</span>
+				<span class="vocab-def">陌生的；外國的</span>
+			</div>
+			<div class="vocab-card" data-word="under the hood" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">under the hood</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa"></span>
+				<span class="vocab-def">在幕後；在底層運行</span>
+			</div>
+			<div class="vocab-card" data-word="in real time" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in real time</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa"></span>
+				<span class="vocab-def">實時地</span>
+			</div>
+			<div class="vocab-card" data-word="register a single shot" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">register a single shot</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa"></span>
+				<span class="vocab-def">錄得任何一次射門</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Spain <span class="word-highfreq" data-word="dominate">dominate</span>d the ball and occupied the entire pitch at MetLife Stadium during the World Cup final against Argentina. It didn’t matter that Messi’s teammates fouled, elbowed, and used every trick to slow the Spaniards down and force the game to penalties. <em>La Roja</em> was so overwhelmingly better that they outshot Argentina, 20 to 2, across the full 120 minutes; Argentina became the first finalist in World Cup history to fail to <span class="word-phrase" data-word="<span class="word-highfreq" data-word="register">register</span> a single shot">register a single shot</span> in <span class="word-general" data-word="regulation">regulation</span> time.</p>
+			<p class="para-translation">西班牙在 MetLife 體育場對陣阿根廷的世界盃決賽中，完全掌控了控球權並佔據了整個球場。即便梅西的隊友們不斷犯規、肘擊，並用盡各種手段試圖拖慢西班牙隊的速度，強迫比賽進入點球大戰，也無濟於事。西班牙隊（La Roja）表現得過於強大，在整整 120 分鐘內以 20 比 2 的射門次數壓制阿根廷；阿根廷成為世界盃歷史上第一支在正規時間內未能錄得任何一次射門的決賽隊伍。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">But if all this soccer talk sounds <span class="word-highfreq" data-word="foreign">foreign</span>, let some visuals do the explaining. A 3D animation by data visualization expert Alexandre Bogachev shows Spain’s <span class="word-highfreq" data-word="absolute">absolute</span> control of the game in a way anyone can understand. It’s part of his “Football Data Portraits” series, which covered all 2026 World Cup matches.</p>
+			<p class="para-translation">但如果這些足球術語聽起來很陌生，就讓視覺效果來代勞說明。數據視覺化專家 Alexandre Bogachev 製作的 3D 動畫，以任何人都能理解的方式展現了西班牙對比賽的絕對控制。這是他「足球數據肖像」系列的一部分，該系列涵蓋了 2026 年世界盃的所有比賽。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Bogachev’s work turns each World Cup match into something closer to a piece of generative functional art: an <span class="word-general" data-word="undulating">undulating</span>, cloth-like 3D <span class="word-general" data-word="topography">topography</span> that ripples and buckles <span class="word-phrase" data-word="in real time">in real time</span> as the game unfolds. The goal, he explains on the project’s website, is to <span class="word-highfreq" data-word="capture">capture</span> the emotion of a match rather than just its <span class="word-general" data-word="raw">raw</span> numbers.</p>
+			<p class="para-translation">Bogachev 的作品將每場世界盃比賽轉化為更接近生成式功能藝術的東西：一種起伏的、像布料般的 3D 地貌，隨著比賽的進行實時波動與褶皺。他在該項目的網站上解釋道，其目標是捕捉比賽的情感，而不僅僅是原始數據。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Each of these scenes is built from roughly 1,500 individually logged actions per match—passes, fouls, shots, cards—all pulled from real match <span class="word-term" data-word="telemetry">telemetry</span>, with nothing AI-generated. The platform also plays with time itself, running in what Bogachev calls “dramatic time”: It compresses the <span class="word-general" data-word="dull">dull</span> midfield sequences and slows down time to the instant a scoring chance <span class="word-highfreq" data-word="materialize">materialize</span>s to <span class="word-highfreq" data-word="appreciate">appreciate</span> the drama of the moment.</p>
+			<p class="para-translation">每個場景都是由每場比賽大約 1,500 個單獨記錄的動作（傳球、犯規、射門、紅黃牌）構建而成，所有數據都取自真實的比賽遙測技術，沒有任何 AI 生成。該平台還玩轉了時間本身，以 Bogachev 所謂的「戲劇化時間」運行：它壓縮了乏味的中場拉鋸戰，並在進球機會出現的瞬間放慢時間，以便欣賞那一刻的戲劇性。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-phrase" data-word="under the hood">Under the hood</span>, the visualization runs on Three.js, the widely used JavaScript library for WebGL 3D graphics. The fabric-like texture of the team “blankets”—red for Spain and blue for Argentina—is rendered through custom <span class="word-term" data-word="shaders">shaders</span>. To prevent the animation from flickering when the ball changes teams for a second, Bogachev runs the <span class="word-general" data-word="underlying">underlying</span> <span class="word-term" data-word="momentum">momentum</span> data through something called a low-pass filter, basically a mathematical function that smooths sudden spikes with no real <span class="word-highfreq" data-word="impact">impact</span> on the game, so the cloth flows rather than convulses.</p>
+			<p class="para-translation">在核心技術方面，該視覺化運行在 Three.js 上，這是廣泛用於 WebGL 3D 圖形的 JavaScript 函式庫。球隊「地毯」——西班牙為紅色，阿根廷為藍色——的織物狀質地是透過自定義著色器（shaders）渲染的。為了防止球權瞬間易主時動畫產生閃爍，Bogachev 將底層的動力數據經過所謂的「低通濾波器」（low-pass filter），這基本上是一個數學函數，用於平滑突然的峰值，且對比賽沒有實質影響，讓布料流動而非抽搐。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The visualization stacks five <span class="word-general" data-word="distinct">distinct</span> data-driven elements. The foundation is the two red and blue blankets showing which team controls which zone of the pitch. This data is sourced from FotMob, the live football data platform widely used by broadcasters and analysts for real-time match statistics. This includes the ball possession and <span class="word-term" data-word="momentum">momentum</span> feeds, the way the game is going for the dominating team.</p>
+			<p class="para-translation">該視覺化疊加了五個不同的數據驅動元素。基礎是紅色和藍色的地毯，顯示哪支球隊控制球場的哪個區域。這些數據來源於 FotMob，這是一個廣泛被轉播商和分析師用於實時比賽統計的足球數據平台。這包括控球權和動量數據，反映比賽對主導球隊的發展趨勢。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As the match progresses, the terrain rises into peaks that track every shot attempt, with the height <span class="word-highfreq" data-word="calibrated">calibrated</span> to expected goals—something called “xG” in football terms. This data comes from a sports data company called Opta, which is the analytics backbone for <span class="word-highfreq" data-word="professional">professional</span> football leagues and federations across the world.</p>
+			<p class="para-translation">隨著比賽進行，地形升起為追蹤每次射門嘗試的山峰，其高度根據預期進球值（足球術語中稱為「xG」）進行校準。這些數據來自一家名為 Opta 的體育數據公司，它是全球職業足球聯賽和聯合會的分析骨幹。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-19-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: perimenopause misinformation and China’s latest AI leap</span>
+			</a>
+			<a class="related-card" href="2026-07-17-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">SpaceX uses ‘chopsticks.’ China uses ‘nets.’ Here’s how these space superpowers  design their rocket recovery systems</span>
+			</a>
+			<a class="related-card" href="2026-07-14-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Microsoft tests Windows Search without all the ads and fluff</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "obliterated", "type": "general", "pos": "v.", "ipa": "/əˈblɪtəreɪtɪd/", "definition_zh": "徹底摧毀；抹滅", "example": "This beautiful data visualization shows how Spain obliterated Argentina in the World Cup final"}, {"word": "dominate", "type": "highfreq", "pos": "v.", "ipa": "/ˈdɑːmɪneɪt/", "definition_zh": "支配；主導", "example": "Spain dominated the ball and occupied the entire pitch"}, {"word": "register", "type": "highfreq", "pos": "v.", "ipa": "/ˈredʒɪstər/", "definition_zh": "錄得；登記", "example": "Argentina became the first finalist in World Cup history to fail to register a single shot in regulation time."}, {"word": "regulation", "type": "general", "pos": "n.", "ipa": "/ˌreɡjuˈleɪʃn/", "definition_zh": "正規的；條例", "example": "Argentina became the first finalist in World Cup history to fail to register a single shot in regulation time."}, {"word": "absolute", "type": "highfreq", "pos": "adj.", "ipa": "/ˈæbsəluːt/", "definition_zh": "絕對的；完全的", "example": "Bogachev shows Spain’s absolute control of the game in a way anyone can understand."}, {"word": "undulating", "type": "general", "pos": "adj.", "ipa": "/ˈʌndʒəleɪtɪŋ/", "definition_zh": "起伏的；波動的", "example": "an undulating, cloth-like 3D topography that ripples and buckles in real time"}, {"word": "topography", "type": "general", "pos": "n.", "ipa": "/təˈpɑːɡrəfi/", "definition_zh": "地貌；地形學", "example": "an undulating, cloth-like 3D topography that ripples and buckles in real time"}, {"word": "capture", "type": "highfreq", "pos": "v.", "ipa": "/ˈkæptʃər/", "definition_zh": "捕捉；拍攝", "example": "The goal is to capture the emotion of a match rather than just its raw numbers."}, {"word": "raw", "type": "general", "pos": "adj.", "ipa": "/rɔː/", "definition_zh": "原始的；未加工的", "example": "The goal is to capture the emotion of a match rather than just its raw numbers."}, {"word": "telemetry", "type": "term", "pos": "n.", "ipa": "/təˈlemətri/", "definition_zh": "遙測技術", "example": "all pulled from real match telemetry, with nothing AI-generated."}, {"word": "dull", "type": "general", "pos": "adj.", "ipa": "/dʌl/", "definition_zh": "乏味的；單調的", "example": "It compresses the dull midfield sequences and slows down time"}, {"word": "materialize", "type": "highfreq", "pos": "v.", "ipa": "/məˈtɪriəlaɪz/", "definition_zh": "顯現；具體化", "example": "slows down time to the instant a scoring chance materializes"}, {"word": "appreciate", "type": "highfreq", "pos": "v.", "ipa": "/əˈpriːʃieɪt/", "definition_zh": "欣賞；感激", "example": "to appreciate the drama of the moment."}, {"word": "shaders", "type": "term", "pos": "n.", "ipa": "/ˈʃeɪdərz/", "definition_zh": "著色器", "example": "is rendered through custom shaders."}, {"word": "momentum", "type": "term", "pos": "n.", "ipa": "/moʊˈmentəm/", "definition_zh": "動力；勢頭", "example": "Bogachev runs the underlying momentum data through something called a low-pass filter"}, {"word": "underlying", "type": "general", "pos": "adj.", "ipa": "/ˌʌndərˈlaɪɪŋ/", "definition_zh": "潛在的；底層的", "example": "Bogachev runs the underlying momentum data through something called a low-pass filter"}, {"word": "impact", "type": "highfreq", "pos": "n.", "ipa": "/ˈɪmpækt/", "definition_zh": "影響；衝擊", "example": "a mathematical function that smooths sudden spikes with no real impact on the game"}, {"word": "distinct", "type": "general", "pos": "adj.", "ipa": "/dɪˈstɪŋkt/", "definition_zh": "截然不同的", "example": "The visualization stacks five distinct data-driven elements."}, {"word": "calibrated", "type": "highfreq", "pos": "v.", "ipa": "/ˈkælɪbreɪtɪd/", "definition_zh": "校準；調整", "example": "with the height calibrated to expected goals"}, {"word": "professional", "type": "highfreq", "pos": "adj.", "ipa": "/prəˈfeʃənl/", "definition_zh": "專業的；職業的", "example": "which is the analytics backbone for professional football leagues"}, {"word": "foreign", "type": "highfreq", "pos": "adj.", "ipa": "/ˈfɔːrən/", "definition_zh": "陌生的；外國的", "example": "But if all this soccer talk sounds foreign, let some visuals do the explaining."}, {"word": "under the hood", "type": "phrase", "pos": "", "ipa": "", "definition_zh": "在幕後；在底層運行", "example": "Under the hood, the visualization runs on Three.js"}, {"word": "in real time", "type": "phrase", "pos": "", "ipa": "", "definition_zh": "實時地", "example": "cloth-like 3D topography that ripples and buckles in real time as the game unfolds."}, {"word": "register a single shot", "type": "phrase", "pos": "", "ipa": "", "definition_zh": "錄得任何一次射門", "example": "fail to register a single shot in regulation time."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The king's power was ____, meaning no one could challenge his decisions.", "sentence_zh": "國王的權力是絕對的，這意味著沒有人可以挑戰他的決定。", "answer": "absolute", "options": ["absolute", "raw", "dull", "foreign"]}, {"sentence": "We watched the ____ waves crash against the shore during the storm.", "sentence_zh": "暴風雨期間，我們看著起伏的波浪拍打著海岸。", "answer": "undulating", "options": ["undulating", "underlying", "professional", "distinct"]}, {"sentence": "The expected funding failed to ____, so the project had to be canceled.", "sentence_zh": "預期的資金未能顯現，因此該項目不得不取消。", "answer": "materialize", "options": ["materialize", "dominate", "register", "capture"]}, {"sentence": "After winning three games in a row, the team has a lot of ____ going into the finals.", "sentence_zh": "在連續贏得三場比賽後，球隊進入決賽時擁有強大的勢頭。", "answer": "momentum", "options": ["momentum", "topography", "telemetry", "shaders"]}, {"sentence": "The two species of birds are quite ____, despite looking similar from a distance.", "sentence_zh": "儘管從遠處看很相似，但這兩種鳥類截然不同。", "answer": "distinct", "options": ["distinct", "raw", "underlying", "absolute"]}, {"sentence": "The global pandemic had a significant ____ on the world economy.", "sentence_zh": "全球流行病對世界經濟產生了重大影響。", "answer": "impact", "options": ["impact", "regulation", "momentum", "topography"]}, {"sentence": "The entire city was ____ by the powerful earthquake.", "sentence_zh": "整座城市被強烈的地震徹底摧毀。", "answer": "obliterated", "options": ["obliterated", "calibrated", "materialize", "appreciate"]}, {"sentence": "A good photographer knows how to ____ the perfect lighting in a portrait.", "sentence_zh": "一位優秀的攝影師知道如何在人像照中捕捉完美的光影。", "answer": "capture", "options": ["capture", "register", "dominate", "appreciate"]}, {"sentence": "While the website looks simple, there is a lot of complex code running ____.", "sentence_zh": "雖然網站看起來很簡單，但底層運行著許多複雜的程式碼。", "answer": "under the hood", "options": ["under the hood", "in real time", "register a single shot", "absolute"]}, {"sentence": "The stock market app allows users to see price changes ____.", "sentence_zh": "股票市場應用程式允許用戶實時查看價格變化。", "answer": "in real time", "options": ["in real time", "under the hood", "undulating", "raw"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
