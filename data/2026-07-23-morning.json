@@ -1,0 +1,558 @@
+{
+	"date": "2026-07-23",
+	"slot": "morning",
+	"tag": "科技",
+	"title": "The Download: NASA’s new space telescope and OpenAI’s autonomous hacker",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/22/1140717/the-download-nasa-space-telescope-openai-hugging-face-hack/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "<em>This is today's edition of </em><em>The Download</em>, <em>our weekday newsletter that provides a daily dose of what's going on in the world of technology.</em>",
+			"translation": "這是今日版的 The Download，我們的平日電子報，為您提供科技世界正在發生的大小事。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>Shape-shifting mirrors on NASA’s new space telescope could unveil Jupiters like our own</strong><strong></strong>",
+			"translation": "NASA 新太空望遠鏡上的形狀記憶鏡面，可能揭開類似我們木星的行星面紗"
+		},
+		{
+			"tag": "p",
+			"text": "When NASA’s Nancy Grace Roman Space Telescope launches, as early as the end of next month, it will attempt one of astronomy’s most precise disappearing acts to date. It will carry the first space-bound “active” coronagraph, an instrument that effectively erases most of the light from a star during photography.",
+			"translation": "當 NASA 的南希·格蕾絲·羅曼太空望遠鏡最快於下個月底發射時，它將嘗試天文學迄今最精確的一次「消失術」。它將攜帶首台太空運行的「主動式」日冕儀，這是一種能在攝影過程中有效消除恆星大部分光線的儀器。"
+		},
+		{
+			"tag": "p",
+			"text": "The technology will allow astronomers to take the first pictures of planets orbiting other stars that are similar to those in our solar system. Ultimately, it could pave the way for a future mission that could snap the first photos of Earth-like worlds.",
+			"translation": "這項技術將使天文學家能夠拍攝第一批環繞其他恆星、且與我們太陽系行星相似的行星照片。最終，它可能為未來的任務鋪平道路，從而拍下第一張類地世界的照片。"
+		},
+		{
+			"tag": "p",
+			"text": "“I hope it’s remembered for it being that critical stepping stone for … finding Earth 2.0,” says Brandon Creager, the instrument’s lead mechanical engineer.",
+			"translation": "該儀器的首席機械工程師布蘭登·克雷格表示：「我希望它被銘記，是因為它是發現『地球 2.0』的關鍵基石。」"
+		},
+		{
+			"tag": "p",
+			"text": "Read the full story on the space telescope that could transform the search for distant planets.",
+			"translation": "閱讀關於這台可能改變遙遠行星搜尋方式的太空望遠鏡完整報導。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Eshan Raul</em>",
+			"translation": "—Eshan Raul"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>MIT Technology Review Narrated: PsiQuantum has a plan to make a massive quantum computer out of light</strong>",
+			"translation": "《麻省理工科技評論》音頻版：PsiQuantum 計劃用光製造一台巨大的量子電腦"
+		},
+		{
+			"tag": "p",
+			"text": "The machine that could change the world will be housed in a room that looks like a data center crossed with an ice cream factory.",
+			"translation": "這台可能改變世界的機器將安置在一個看起來像是數據中心與冰淇淋工廠結合體的房間裡。"
+		},
+		{
+			"tag": "p",
+			"text": "Inside, some 100 stainless-steel cabinets each hold hundreds of chips. On those chips, thousands of light particles will fly through a maze of optical switches and beam splitters. Each photon must be accounted for, because precisely measuring where it ends up will help answer questions that current computers might take millions of years to solve.",
+			"translation": "在內部，約 100 個不鏽鋼機櫃各裝有數百個晶片。在這些晶片上，數千個光粒子將飛過由光學開關和分束器組成的迷宮。每個光子都必須被計算在內，因為精確測量它的最終落點將有助於回答目前電腦可能需要數百萬年才能解決的問題。"
+		},
+		{
+			"tag": "p",
+			"text": "This computer, as described, does not exist. It’s the brainchild of a company called PsiQuantum, founded in 2016 by four physicists from UK universities. In a crowded field of deep-pocketed competitors with similarly fantastical visions, the company aims to be the first to build a useful quantum machine.",
+			"translation": "如上所述的這台電腦目前還不存在。它是 PsiQuantum 公司的結晶，該公司由四位來自英國大學的物理學家於 2016 年創立。在眾多擁有雄厚資金且同樣懷抱奇幻願景的競爭對手中，該公司旨在成為第一個建造出實用量子機器的公司。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—James O'Donnell</em>",
+			"translation": "—James O'Donnell"
+		},
+		{
+			"tag": "p",
+			"text": "<strong> This is our latest </strong><strong>story</strong><strong> to be turned into an MIT Technology Review Narrated podcast, which we publish each week on </strong><strong>Spotify</strong><strong>and </strong><strong>Apple Podcasts</strong><strong>. Just navigate to MIT Technology Review Narrated on either platform, and follow us to get all our new content as it’s released.</strong>",
+			"translation": "這是我們最新一篇被轉化為《麻省理工科技評論》音頻版播客的文章，我們每週會在 Spotify 和 Apple Podcasts 上發布。只需在任一平台搜尋 MIT Technology Review Narrated，並關注我們以獲取發布的所有新內容。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>The must-reads</strong>",
+			"translation": "必讀內容"
+		},
+		{
+			"tag": "p",
+			"text": "<em>I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.</em>",
+			"translation": "我搜尋了網路，為您找出了今日最有趣、重要、駭人且迷人的科技故事。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>1 OpenAI says one of its models carried out an autonomous hack </strong>It escaped its testing sandbox and breached AI research platform Hugging Face. (Reuters $) <em>+ OpenAI described it as a cybersecurity test that went badly wrong. </em>(WSJ $)<em> + The hack is among the first known cyberattacks by an AI acting on its own.</em> (FT $) <em>+ Even simple AI attacks are cause for alarm, though.</em> (MIT Technology Review)",
+			"translation": "1. OpenAI 表示其模型之一執行了自主駭客行為。它逃脫了測試沙箱並入侵了 AI 研究平台 Hugging Face。（路透社 $）+ OpenAI 將其描述為一次嚴重出錯的網路安全測試。（華爾街日報 $）+ 這次入侵是已知的首批由 AI 自主發動的網路攻擊之一。（金融時報 $）+ 不過，即使是簡單的 AI 攻擊也值得警惕。（《麻省理工科技評論》）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>2 France has become the first EU country to ban social media for under-15s </strong>Its parliament approved the ban, which President Macron championed. (NYT $) <em>+ He pledged to enforce it by September, the start of the school year. </em>(Guardian) <em>+ But critics say it’s unconstitutional and impossible to enforce.</em> (NPR)",
+			"translation": "2. 法國成為首個禁止 15 歲以下青少年使用社群媒體的歐盟國家。其議會批准了這項由馬克宏總統倡導的禁令。（紐約時報 $）+ 他承諾在 9 月開學時執行該禁令。（衛報）+ 但批評者表示這違反憲法且無法執行。（全國公共廣播電台）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>3 The US and China will hold talks over AI in September </strong>Treasury Secretary Scott Bessent will lead the US side. (Reuters $) <em>+ Chinese models have Trump’s AI world at war with itself. </em>(MIT Technology Review)",
+			"translation": "3. 美國和中國將在 9 月舉行 AI 會談。財政部長史考特·貝森特將領導美方。（路透社 $）+ 中國的模型讓川普的 AI 陣營陷入內戰。（《麻省理工科技評論》）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>4 Publishers are considering cutting Google off as AI reshapes search</strong> News outlets are weighing lost traffic against AI exposure. (WSJ $)",
+			"translation": "4. 出版商正考慮切斷 Google 的存取權，因為 AI 正在重塑搜尋。新聞媒體正在權衡流失的流量與 AI 曝光之間的利弊。（華爾街日報 $）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>5 Samsung is in talks to invest €1 billion in Mistral </strong>The French AI firm is positioning itself as an alternative to US models. (FT $) <em>+ It’s Europe's leading AI firm, but US peers dwarf its $20 billion valuation. </em>(Reuters $)",
+			"translation": "5. 三星正在洽談向 Mistral 投資 10 億歐元。這家法國 AI 公司正把自己定位為美國模型的替代方案。（金融時報 $）+ 它是歐洲領先的 AI 公司，但美國同行的規模使其 200 億美元的估值顯得渺小。（路透社 $）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>6 Amazon pushed up rivals’ prices, leaked records allege </strong>Internal emails reveal tactics that allegedly reshaped online pricing. (Guardian)",
+			"translation": "6. 洩漏的記錄指稱 Amazon 推高了對手的價格。內部郵件揭露了據稱重塑線上定價的策略。（衛報）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>7 Trump has tapped a Big Tech critic to lead the DOJ's antitrust division </strong>Adam Candeub has called for tougher federal competition enforcement. (FT $)",
+			"translation": "7. 川普指派了一位大科技公司的批評者領導司法部的反壟斷部門。亞當·坎杜布呼籲加強聯邦競爭法的執法。（金融時報 $）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>8 New drilling methods could unlock geothermal energy almost anywhere </strong>They aim to unlock Earth’s enormous heat reserves. (New Scientist $) <em>+ AI is uncovering hidden geothermal energy resources.</em> (MIT Technology Review)",
+			"translation": "8. 新的鑽探方法幾乎可以在任何地方開發地熱能。它們旨在開發地球巨大的熱能儲量。（新科學家 $）+ AI 正在發掘隱藏的地熱資源。（《麻省理工科技評論》）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>9 AI researchers have proposed a “Genie coefficient” for measuring AI risks</strong> It would track the gap between intent and action. (IEEE Spectrum) <em>+ We need better ways to evaluate AI.</em> (MIT Technology Review)",
+			"translation": "9. AI 研究人員提出了一個用於衡量 AI 風險的「吉尼係數」。它將追蹤意圖與行動之間的差距。（IEEE Spectrum）+ 我們需要更好的方法來評估 AI。（《麻省理工科技評論》）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>10 Japan's AI boom has two unlikely winners: a toilet maker and an MSG giant</strong> They’re supplying critical chipmaking materials. (CNBC)",
+			"translation": "10. 日本的 AI 熱潮有兩個意想不到的贏家：一家馬桶製造商和一家味精巨頭。它們正在供應關鍵的晶片製造材料。（CNBC）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Quote of the day</strong>",
+			"translation": "今日名言"
+		},
+		{
+			"tag": "h2",
+			"text": "<strong>“He’s an analog man in a digital AI world, and I think that’s incredibly appealing.”</strong>",
+			"translation": "「他在數位 AI 世界中是一個類比人，我認為這非常有吸引力。」"
+		},
+		{
+			"tag": "p",
+			"text": "—Paul Dergarabedian, a movie industry analyst at Comscore, tells Fortune that Christopher Nolan’s commitment to human filmmaking provides an attractive counterweight to Hollywood’s embrace of AI.",
+			"translation": "— Comscore 電影業分析師保羅·德加拉貝迪安告訴《財富》雜誌，克里斯多福·諾蘭對人文電影製作的堅持，為好萊塢對 AI 的擁抱提供了一個具吸引力的平衡點。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>One More Thing</strong>",
+			"translation": "還有一件事"
+		},
+		{
+			"tag": "h4",
+			"text": "<strong> Taiwan’s “silicon shield” could be weakening</strong>",
+			"translation": "台灣的「矽盾」可能正在減弱"
+		},
+		{
+			"tag": "p",
+			"text": "Taiwan produces the majority of the world’s semiconductors and more than 90% of the most advanced chips needed for AI applications. Many believe that’s helped deter China from invading the island. But now some Taiwan specialists and citizens are worried that this “silicon shield” is cracking.",
+			"translation": "台灣生產了全球大部分的半導體，以及超過 90% AI 應用所需的最先進晶片。許多人認為這有助於震懾中國入侵該島。但現在一些台灣專家和公民擔心這面「矽盾」正在出現裂痕。"
+		},
+		{
+			"tag": "p",
+			"text": "Facing pressure from Washington, TSMC—the world’s largest chipmaker—is expanding manufacturing abroad. In Taiwan, there are worries that this will dilute the company’s power at home, making the US and other countries less inclined to defend the island.",
+			"translation": "面對來自華盛頓的壓力，全球最大的晶片製造商台積電正在擴大海外生產。在台灣，有人擔心這會削弱該公司在國內的力量，使美國和其他國家保衛該島的意願降低。"
+		},
+		{
+			"tag": "p",
+			"text": "Find out why Taiwan's chipmaking dominance could be key to its future security.",
+			"translation": "了解為何台灣的晶片製造主導地位可能是其未來安全的關鍵。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Johanna M. Costigan</em>",
+			"translation": "—Johanna M. Costigan"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>We can still have nice things</strong>",
+			"translation": "我們依然能擁有美好的事物"
+		},
+		{
+			"tag": "p",
+			"text": "<em>A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? </em><em>Drop me a line</em><em>.)</em>",
+			"translation": "一個提供舒適、樂趣和消遣的地方，讓您的每一天都更有活力。（有任何想法嗎？請寫信給我。）"
+		},
+		{
+			"tag": "p",
+			"text": "+ Thrifty filmmakers have masterfully recreated Star Wars on a $10 budget. + A man discovered squirrels hug and kiss their loved ones in the privacy of their homes. + Toronto’s floating waterfront store is reimagining one of the most familiar spaces across cultures. + These animations of Sesame Street characters performing classic tracks like Underworld’s “Born Slippy” will brighten up your day.",
+			"translation": "+ 節儉的電影製作人僅用 10 美元預算就巧妙地重現了《星際大戰》。+ 一位男子發現松鼠會在私密的家裡擁抱和親吻心愛的人。+ 多倫多的漂浮水岸商店正在重新想像跨文化中最熟悉的空間之一。+ 芝麻街角色表演 Underworld 的《Born Slippy》等經典曲目的動畫會讓您的每一天更有活力。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: Claude’s inner workings and OpenAI’s “super app”",
+			"translation": "The Download：Claude 的內部運作與 OpenAI 的「超級應用程式」"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: OpenAI has unveiled its long-awaited \"super app.\"",
+			"translation": "此外：OpenAI 公布了期待已久的「超級應用程式」。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: Claude’s inner workings, and the future of world models",
+			"translation": "The Download：Claude 的內部運作與世界模型的未來"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: New York has become the first state to enact a data center moratorium.",
+			"translation": "此外：紐約州成為第一個頒布數據中心停建令的州。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: the future of chipmaking and Anthropic’s government clash",
+			"translation": "The Download：晶片製造的未來與 Anthropic 的政府衝突"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.",
+			"translation": "此外：Meta 正在暫停一項追蹤員工敲擊鍵盤次數的 AI 訓練計劃。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
+			"translation": "The Download：超越 Mythos 的 AI 駭客行為，以及聊天機器人對大腦的影響"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Anthropic has called for a global slowdown in AI development.",
+			"translation": "此外：Anthropic 呼籲全球放慢 AI 開發速度。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "從《麻省理工科技評論》獲取最新動態"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "探索特別優惠、熱門故事、即將舉行的活動等。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2025/08/MIT-TSMC-2-final-thumb.jpg?w=840",
+			"alt": "\"\"",
+			"after_paragraph": 29
+		}
+	],
+	"vocab": [
+		{
+			"word": "unveil",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˌʌnˈveɪl/",
+			"definition_zh": "揭露；發表（新產品）",
+			"example": "Shape-shifting mirrors on NASA’s new space telescope could unveil Jupiters like our own"
+		},
+		{
+			"word": "precise",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/prɪˈsaɪs/",
+			"definition_zh": "精確的；準確的",
+			"example": "it will attempt one of astronomy’s most precise disappearing acts to date."
+		},
+		{
+			"word": "effectively",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ɪˈfektɪvli/",
+			"definition_zh": "有效地",
+			"example": "an instrument that effectively erases most of the light from a star"
+		},
+		{
+			"word": "pave the way",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/peɪv ðə weɪ/",
+			"definition_zh": "為...鋪平道路；作準備",
+			"example": "Ultimately, it could pave the way for a future mission"
+		},
+		{
+			"word": "critical",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈkrɪtɪkl/",
+			"definition_zh": "關鍵的；至關重要的",
+			"example": "I hope it’s remembered for it being that critical stepping stone"
+		},
+		{
+			"word": "stepping stone",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈstepɪŋ stoʊn/",
+			"definition_zh": "跳板；進一步發展的手段",
+			"example": "I hope it’s remembered for it being that critical stepping stone"
+		},
+		{
+			"word": "massive",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈmæsɪv/",
+			"definition_zh": "巨大的；龐大的",
+			"example": "PsiQuantum has a plan to make a massive quantum computer out of light"
+		},
+		{
+			"word": "brainchild",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈbreɪntʃaɪld/",
+			"definition_zh": "（某人的）創意；心血結晶",
+			"example": "It’s the brainchild of a company called PsiQuantum"
+		},
+		{
+			"word": "autonomous",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ɔːˈtɒnəməs/",
+			"definition_zh": "自主的；自治的",
+			"example": "OpenAI says one of its models carried out an autonomous hack"
+		},
+		{
+			"word": "breach",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/briːtʃ/",
+			"definition_zh": "攻破；違背",
+			"example": "It escaped its testing sandbox and breached AI research platform Hugging Face."
+		},
+		{
+			"word": "champion",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈtʃæmpiən/",
+			"definition_zh": "提倡；支持",
+			"example": "Its parliament approved the ban, which President Macron championed."
+		},
+		{
+			"word": "unconstitutional",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌʌnkɒnstɪˈtjuːʃənl/",
+			"definition_zh": "違憲的",
+			"example": "But critics say it’s unconstitutional and impossible to enforce."
+		},
+		{
+			"word": "dwarf",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/dwɔːrf/",
+			"definition_zh": "使顯得矮小；使相形見絀",
+			"example": "It’s Europe's leading AI firm, but US peers dwarf its $20 billion valuation."
+		},
+		{
+			"word": "antitrust",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˌæntiˈtrʌst/",
+			"definition_zh": "反壟斷的",
+			"example": "Trump has tapped a Big Tech critic to lead the DOJ's antitrust division"
+		},
+		{
+			"word": "reserve",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/rɪˈzɜːrv/",
+			"definition_zh": "儲備（量）；儲藏",
+			"example": "They aim to unlock Earth’s enormous heat reserves."
+		},
+		{
+			"word": "deter",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/dɪˈtɜːr/",
+			"definition_zh": "威懾；阻撓",
+			"example": "Many believe that’s helped deter China from invading the island."
+		},
+		{
+			"word": "dilute",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/daɪˈluːt/",
+			"definition_zh": "稀釋；削弱",
+			"example": "In Taiwan, there are worries that this will dilute the company’s power at home"
+		},
+		{
+			"word": "counterweight",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkaʊntərweɪt/",
+			"definition_zh": "抗衡力量；平衡物",
+			"example": "Christopher Nolan’s commitment to human filmmaking provides an attractive counterweight"
+		},
+		{
+			"word": "semiconductor",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌsemikənˈdʌktər/",
+			"definition_zh": "半導體",
+			"example": "Taiwan produces the majority of the world’s semiconductors"
+		},
+		{
+			"word": "drop me a line",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/drɒp miː ə laɪn/",
+			"definition_zh": "寫信給我",
+			"example": "Got any ideas? Drop me a line."
+		},
+		{
+			"word": "to date",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/tu deɪt/",
+			"definition_zh": "迄今為止",
+			"example": "it will attempt one of astronomy’s most precise disappearing acts to date."
+		},
+		{
+			"word": "instrument",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈɪnstrəmənt/",
+			"definition_zh": "儀器；工具",
+			"example": "an instrument that effectively erases most of the light from a star"
+		},
+		{
+			"word": "account for",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/əˈkaʊnt fɔːr/",
+			"definition_zh": "計算；說明；佔...",
+			"example": "Each photon must be accounted for"
+		},
+		{
+			"word": "evaluate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪˈvæljueɪt/",
+			"definition_zh": "評估；評價",
+			"example": "We need better ways to evaluate AI."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "Scientists are working on a more ____ way to measure carbon emissions.",
+			"sentence_zh": "科學家正致力於尋找更精確的方法來衡量碳排放量。",
+			"answer": "precise",
+			"options": [
+				"precise",
+				"massive",
+				"antitrust",
+				"dilute"
+			]
+		},
+		{
+			"sentence": "The successful trial will ____ for the widespread use of this new drug.",
+			"sentence_zh": "這次成功的試驗將為這種新藥的廣泛應用鋪平道路。",
+			"answer": "pave the way",
+			"options": [
+				"pave the way",
+				"drop me a line",
+				"to date",
+				"account for"
+			]
+		},
+		{
+			"sentence": "Experts are worried that AI might eventually make ____ decisions without any human oversight.",
+			"sentence_zh": "專家擔心人工智慧最終可能會在沒有任何人類監督的情況下做出自主決策。",
+			"answer": "autonomous",
+			"options": [
+				"autonomous",
+				"critical",
+				"unconstitutional",
+				"massive"
+			]
+		},
+		{
+			"sentence": "The giant tech company's market value began to ____ its smaller competitors.",
+			"sentence_zh": "這家科技巨頭的市值開始使其較小的競爭對手顯得渺小。",
+			"answer": "dwarf",
+			"options": [
+				"dwarf",
+				"unveil",
+				"breach",
+				"deter"
+			]
+		},
+		{
+			"sentence": "Strong international sanctions were imposed to ____ the country from starting a war.",
+			"sentence_zh": "實施強有力的國際制裁是為了震懾該國發動戰爭。",
+			"answer": "deter",
+			"options": [
+				"deter",
+				"champion",
+				"evaluate",
+				"dilute"
+			]
+		},
+		{
+			"sentence": "The manager asked her to ____ the team's performance over the last quarter.",
+			"sentence_zh": "經理要求她評估團隊上個季度的表現。",
+			"answer": "evaluate",
+			"options": [
+				"evaluate",
+				"unveil",
+				"breach",
+				"precise"
+			]
+		},
+		{
+			"sentence": "Security experts discovered a major ____ in the bank's online database.",
+			"sentence_zh": "安全專家在銀行的線上資料庫中發現了一個重大的漏洞（攻破口）。",
+			"answer": "breach",
+			"options": [
+				"breach",
+				"brainchild",
+				"semiconductor",
+				"instrument"
+			]
+		},
+		{
+			"sentence": "The new museum, which is the ____ of a local artist, will open next month.",
+			"sentence_zh": "這座新博物館是一位當地藝術家的心血結晶，將於下個月開幕。",
+			"answer": "brainchild",
+			"options": [
+				"brainchild",
+				"counterweight",
+				"stepping stone",
+				"instrument"
+			]
+		},
+		{
+			"sentence": "Her logic and facts served as a powerful ____ to his purely emotional argument.",
+			"sentence_zh": "她的邏輯和事實是他純感性論點的有力抗衡力量。",
+			"answer": "counterweight",
+			"options": [
+				"counterweight",
+				"brainchild",
+				"reserve",
+				"semiconductor"
+			]
+		},
+		{
+			"sentence": "The company plans to ____ its latest electric car at the upcoming auto show.",
+			"sentence_zh": "該公司計劃在即將舉行的車展上發表其最新的電動車。",
+			"answer": "unveil",
+			"options": [
+				"unveil",
+				"dilute",
+				"champion",
+				"evaluate"
+			]
+		}
+	]
+}
