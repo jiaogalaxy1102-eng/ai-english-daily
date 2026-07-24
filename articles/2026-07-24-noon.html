@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alexa Plus is getting an AI update to handle more complicated instructions — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-24</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">The Verge<span class="tag-badge">AI</span></div>
+	<h1 class="article-title">Alexa Plus is getting an AI update to handle more complicated instructions</h1>
+	<div class="article-meta">
+		2026-07-24 &nbsp;·&nbsp; <a href="https://www.theverge.com/tech/970399/amazon-alexa-plus-ai-update-smart-home-devices" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="upgraded" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">upgraded</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ʌpˈɡreɪdɪd/</span>
+				<span class="vocab-def">升級的、更新的</span>
+			</div>
+			<div class="vocab-card" data-word="complicated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">complicated</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkɒmplɪkeɪtɪd/</span>
+				<span class="vocab-def">複雜的、難懂的</span>
+			</div>
+			<div class="vocab-card" data-word="instructions" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">instructions</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪnˈstrʌkʃənz/</span>
+				<span class="vocab-def">指令、指示、說明</span>
+			</div>
+			<div class="vocab-card" data-word="launching" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">launching</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈlɔːntʃɪŋ/</span>
+				<span class="vocab-def">發布、推出、發起</span>
+			</div>
+			<div class="vocab-card" data-word="routing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">routing</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈruːtɪŋ/</span>
+				<span class="vocab-def">路由、引導、發送</span>
+			</div>
+			<div class="vocab-card" data-word="navigate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">navigate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈnævɪɡeɪt/</span>
+				<span class="vocab-def">導航、操作、處理</span>
+			</div>
+			<div class="vocab-card" data-word="toolkit" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">toolkit</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈtuːlkɪt/</span>
+				<span class="vocab-def">工具包、工具集</span>
+			</div>
+			<div class="vocab-card" data-word="capabilities" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">capabilities</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌkeɪpəˈbɪlətiz/</span>
+				<span class="vocab-def">能力、功能、性能</span>
+			</div>
+			<div class="vocab-card" data-word="revamped" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">revamped</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌriːˈvæmpt/</span>
+				<span class="vocab-def">改版的、翻新的</span>
+			</div>
+			<div class="vocab-card" data-word="routines" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">routines</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ruːˈtiːnz/</span>
+				<span class="vocab-def">常規、日常行程、自動化流程</span>
+			</div>
+			<div class="vocab-card" data-word="limited" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">limited</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈlɪmɪtɪd/</span>
+				<span class="vocab-def">有限的、受限的</span>
+			</div>
+			<div class="vocab-card" data-word="adopting" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">adopting</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈdɒptɪŋ/</span>
+				<span class="vocab-def">採用、採納</span>
+			</div>
+			<div class="vocab-card" data-word="external" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">external</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪkˈstɜːnl/</span>
+				<span class="vocab-def">外部的、外面的</span>
+			</div>
+			<div class="vocab-card" data-word="standard" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">standard</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈstændəd/</span>
+				<span class="vocab-def">標準、規格</span>
+			</div>
+			<div class="vocab-card" data-word="interact" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">interact</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌɪntərˈækt/</span>
+				<span class="vocab-def">互動、交流、相互作用</span>
+			</div>
+			<div class="vocab-card" data-word="browse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">browse</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/braʊz/</span>
+				<span class="vocab-def">瀏覽、隨意觀看</span>
+			</div>
+			<div class="vocab-card" data-word="Model Context Protocol" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">Model Context Protocol</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmɒdl ˈkɒntekst ˈprəʊtəkɒl/</span>
+				<span class="vocab-def">模型上下文協議</span>
+			</div>
+			<div class="vocab-card" data-word="open-source" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">open-source</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈəʊpən sɔːs/</span>
+				<span class="vocab-def">開源的、開放原始碼的</span>
+			</div>
+			<div class="vocab-card" data-word="integration" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">integration</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɪntɪˈɡreɪʃn/</span>
+				<span class="vocab-def">整合、集成</span>
+			</div>
+			<div class="vocab-card" data-word="multi-step" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">multi-step</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈmʌlti-step/</span>
+				<span class="vocab-def">多步驟的</span>
+			</div>
+			<div class="vocab-card" data-word="link up" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">link up</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/lɪŋk ʌp/</span>
+				<span class="vocab-def">連結、聯接</span>
+			</div>
+			<div class="vocab-card" data-word="powered by" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">powered by</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈpaʊəd baɪ/</span>
+				<span class="vocab-def">由...驅動、支持</span>
+			</div>
+			<div class="vocab-card" data-word="along with" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">along with</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/əˈlɒŋ wɪð/</span>
+				<span class="vocab-def">以及、連同</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Amazon’s <span class="word-highfreq" data-word="upgraded">upgraded</span> AI assistant will be able to do more across a wider range of smart home devices.</p>
+			<p class="para-translation">亞馬遜升級後的 AI 助手將能夠在更廣泛的智慧家居設備上執行更多操作。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/8A0A3921.jpeg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="Alexa Plus Echo Show 15" loading="lazy">
+			<figcaption>Alexa Plus Echo Show 15</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Amazon is <span class="word-highfreq" data-word="launching">launching</span> an update to its Alexa Plus assistant that will allow it to connect to smart home devices in new ways. With the update, which is currently in preview, Alexa Plus can <span class="word-phrase" data-word="link up">link up</span> with tech from Bosch, Delta, Ecovacs, iRobot, Yale Home, Whirlpool, Tapo, Eufy, and others, while automatically <span class="word-general" data-word="routing">routing</span> requests to the correct device.</p>
+			<p class="para-translation">亞馬遜正在為其 Alexa Plus 助手推出一項更新，使其能以全新方式連接智慧家居設備。這項更新目前處於預覽階段，Alexa Plus 可以與 Bosch、Delta、Ecovacs、iRobot、Yale Home、Whirlpool、Tapo、Eufy 等品牌技術連結，同時自動將請求發送到正確的設備。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">In an example shared by Amazon, a person with a supported washing machine can say, “Alexa, my kid’s soccer jersey could use a deep clean, but the tag says cold wash only.” From there, Alexa Plus would <span class="word-highfreq" data-word="navigate">navigate</span> the washer’s cycle options and choose the correct setting. The new <span class="word-term" data-word="integration">integration</span>s are <span class="word-phrase" data-word="powered by">powered by</span> Amazon’s new AI developer <span class="word-general" data-word="toolkit">toolkit</span>, which is supposed to make it easier for device makers to connect to Alexa Plus, “including those with unique <span class="word-general" data-word="capabilities">capabilities</span> that weren’t supported before.”</p>
+			<p class="para-translation">在亞馬遜分享的一個範例中，擁有受支援洗衣機的使用者可以說：「Alexa，我孩子的足球球衣需要強力清洗，但標籤上寫著只能冷水洗。」隨後，Alexa Plus 會操作洗衣機的循環選項並選擇正確的設定。這些新整合功能由亞馬遜新的 AI 開發者工具包驅動，旨在讓設備製造商更輕鬆地連接到 Alexa Plus，「包括那些以前不支援的獨特功能」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Amazon widely launched its <span class="word-general" data-word="revamped">revamped</span> AI assistant in February, which can handle <span class="word-general" data-word="multi-step">multi-step</span> requests and help you create <span class="word-highfreq" data-word="routines">routines</span> using your voice. It currently only performs tasks in a <span class="word-highfreq" data-word="limited">limited</span> number of third-party services, such as Ticketmaster, OpenTable, Uber, Thumbtack, Expedia, Yelp, Square, and Angi.</p>
+			<p class="para-translation">亞馬遜於二月廣泛推出了其改版後的 AI 助手，它可以處理多步驟請求並協助你用語音建立日常行程。目前它僅能在有限數量的第三方服務中執行任務，例如 Ticketmaster、OpenTable、Uber、Thumbtack、Expedia、Yelp、Square 和 Angi。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">But Amazon is trying to change this by <span class="word-highfreq" data-word="adopting">adopting</span> the <span class="word-term" data-word="Model Context Protocol">Model Context Protocol</span> (MCP), an <span class="word-term" data-word="open-source">open-source</span> <span class="word-highfreq" data-word="standard">standard</span> that allows AI models to connect to <span class="word-highfreq" data-word="external">external</span> systems and tools. This will give more brands the ability to <span class="word-highfreq" data-word="interact">interact</span> with Alexa Plus, with Canva, Headspace, Priceline, Lyft, Cengage, Virgin Atlantic, Weekend, and other companies <span class="word-highfreq" data-word="launching">launching</span> <span class="word-term" data-word="integration">integration</span>s later this year.</p>
+			<p class="para-translation">但亞馬遜正試圖透過採用模型上下文協議 (MCP) 來改變現狀，這是一項允許 AI 模型連接到外部系統和工具的開源標準。這將使更多品牌能夠與 Alexa Plus 互動，Canva、Headspace、Priceline、Lyft、Cengage、Virgin Atlantic、Weekend 等公司將於今年晚些時候推出整合功能。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">For example, Priceline will give customers the ability to <span class="word-general" data-word="browse">browse</span> hotel options and book a trip directly through Alexa Plus. Priceline, <span class="word-phrase" data-word="along with">along with</span> Atom Tickets, Cengage, Fandango, and Taskrabbit, will soon support payments through Amazon Wallet as well.</p>
+			<p class="para-translation">例如，Priceline 將讓客戶能夠瀏覽飯店選項並直接透過 Alexa Plus 預訂行程。Priceline 以及 Atom Tickets、Cengage、Fandango 和 Taskrabbit 很快也將支援透過 Amazon Wallet 進行付款。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-22-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: Chinese AI divides the White House, and a record copyright payout</span>
+			</a>
+			<a class="related-card" href="2026-07-21-evening.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">Advancing next-gen AI with materials science innovation</span>
+			</a>
+			<a class="related-card" href="2026-07-21-noon.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Here are the 30,000 songs Sony is suing Udio’s AI music generator over</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "upgraded", "type": "highfreq", "pos": "adj.", "ipa": "/ʌpˈɡreɪdɪd/", "definition_zh": "升級的、更新的", "example": "Amazon’s upgraded AI assistant will be able to do more across a wider range of smart home devices."}, {"word": "complicated", "type": "highfreq", "pos": "adj.", "ipa": "/ˈkɒmplɪkeɪtɪd/", "definition_zh": "複雜的、難懂的", "example": "Alexa Plus is getting an AI update to handle more complicated instructions"}, {"word": "instructions", "type": "general", "pos": "n.", "ipa": "/ɪnˈstrʌkʃənz/", "definition_zh": "指令、指示、說明", "example": "Alexa Plus is getting an AI update to handle more complicated instructions"}, {"word": "launching", "type": "highfreq", "pos": "v.", "ipa": "/ˈlɔːntʃɪŋ/", "definition_zh": "發布、推出、發起", "example": "Amazon is launching an update to its Alexa Plus assistant that will allow it to connect to smart home devices in new ways."}, {"word": "routing", "type": "general", "pos": "v.", "ipa": "/ˈruːtɪŋ/", "definition_zh": "路由、引導、發送", "example": "while automatically routing requests to the correct device."}, {"word": "navigate", "type": "highfreq", "pos": "v.", "ipa": "/ˈnævɪɡeɪt/", "definition_zh": "導航、操作、處理", "example": "From there, Alexa Plus would navigate the washer’s cycle options and choose the correct setting."}, {"word": "toolkit", "type": "general", "pos": "n.", "ipa": "/ˈtuːlkɪt/", "definition_zh": "工具包、工具集", "example": "The new integrations are powered by Amazon’s new AI developer toolkit"}, {"word": "capabilities", "type": "general", "pos": "n.", "ipa": "/ˌkeɪpəˈbɪlətiz/", "definition_zh": "能力、功能、性能", "example": "including those with unique capabilities that weren’t supported before."}, {"word": "revamped", "type": "general", "pos": "adj.", "ipa": "/ˌriːˈvæmpt/", "definition_zh": "改版的、翻新的", "example": "Amazon widely launched its revamped AI assistant in February"}, {"word": "routines", "type": "highfreq", "pos": "n.", "ipa": "/ruːˈtiːnz/", "definition_zh": "常規、日常行程、自動化流程", "example": "which can handle multi-step requests and help you create routines using your voice."}, {"word": "limited", "type": "highfreq", "pos": "adj.", "ipa": "/ˈlɪmɪtɪd/", "definition_zh": "有限的、受限的", "example": "It currently only performs tasks in a limited number of third-party services"}, {"word": "adopting", "type": "highfreq", "pos": "v.", "ipa": "/əˈdɒptɪŋ/", "definition_zh": "採用、採納", "example": "But Amazon is trying to change this by adopting the Model Context Protocol (MCP)"}, {"word": "external", "type": "highfreq", "pos": "adj.", "ipa": "/ɪkˈstɜːnl/", "definition_zh": "外部的、外面的", "example": "an open-source standard that allows AI models to connect to external systems and tools."}, {"word": "standard", "type": "highfreq", "pos": "n.", "ipa": "/ˈstændəd/", "definition_zh": "標準、規格", "example": "an open-source standard that allows AI models to connect to external systems and tools."}, {"word": "interact", "type": "highfreq", "pos": "v.", "ipa": "/ˌɪntərˈækt/", "definition_zh": "互動、交流、相互作用", "example": "This will give more brands the ability to interact with Alexa Plus"}, {"word": "browse", "type": "general", "pos": "v.", "ipa": "/braʊz/", "definition_zh": "瀏覽、隨意觀看", "example": "Priceline will give customers the ability to browse hotel options and book a trip directly through Alexa Plus."}, {"word": "Model Context Protocol", "type": "term", "pos": "n.", "ipa": "/ˈmɒdl ˈkɒntekst ˈprəʊtəkɒl/", "definition_zh": "模型上下文協議", "example": "But Amazon is trying to change this by adopting the Model Context Protocol (MCP)"}, {"word": "open-source", "type": "term", "pos": "adj.", "ipa": "/ˈəʊpən sɔːs/", "definition_zh": "開源的、開放原始碼的", "example": "an open-source standard that allows AI models to connect to external systems and tools."}, {"word": "integration", "type": "term", "pos": "n.", "ipa": "/ˌɪntɪˈɡreɪʃn/", "definition_zh": "整合、集成", "example": "with Canva, Headspace, Priceline, Lyft, Cengage, Virgin Atlantic, Weekend, and other companies launching integrations later this year."}, {"word": "multi-step", "type": "general", "pos": "adj.", "ipa": "/ˈmʌlti-step/", "definition_zh": "多步驟的", "example": "which can handle multi-step requests and help you create routines using your voice."}, {"word": "link up", "type": "phrase", "pos": "", "ipa": "/lɪŋk ʌp/", "definition_zh": "連結、聯接", "example": "Alexa Plus can link up with tech from Bosch, Delta, Ecovacs, iRobot, Yale Home, Whirlpool, Tapo, Eufy, and others"}, {"word": "powered by", "type": "phrase", "pos": "", "ipa": "/ˈpaʊəd baɪ/", "definition_zh": "由...驅動、支持", "example": "The new integrations are powered by Amazon’s new AI developer toolkit"}, {"word": "along with", "type": "phrase", "pos": "", "ipa": "/əˈlɒŋ wɪð/", "definition_zh": "以及、連同", "example": "Priceline, along with Atom Tickets, Cengage, Fandango, and Taskrabbit, will soon support payments through Amazon Wallet as well."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The manual provides clear ____ on how to assemble the new furniture.", "sentence_zh": "手冊提供了關於如何組裝新家具的清楚指令。", "answer": "instructions", "options": ["instructions", "capabilities", "routines", "standard"]}, {"sentence": "The technician ____ the system to the latest version to improve performance.", "sentence_zh": "技術人員將系統升級到最新版本以提升性能。", "answer": "upgraded", "options": ["upgraded", "revamped", "limited", "launching"]}, {"sentence": "Establishing morning ____ can help you start your day with more focus.", "sentence_zh": "建立晨間常規能幫助你在開始一天時更加專注。", "answer": "routines", "options": ["routines", "instructions", "capabilities", "integration"]}, {"sentence": "The software update is currently in a ____ release before the full launch.", "sentence_zh": "軟體更新在正式發布前目前處於有限發行階段。", "answer": "limited", "options": ["limited", "external", "upgraded", "revamped"]}, {"sentence": "The company is ____ a new smartphone that features a revolutionary camera.", "sentence_zh": "該公司正在推出一款配備革命性相機的新智慧型手機。", "answer": "launching", "options": ["launching", "adopting", "browse", "interact"]}, {"sentence": "You can connect an ____ monitor to your laptop for a dual-screen setup.", "sentence_zh": "你可以將外部顯示器連接到筆記型電腦以進行雙螢幕設置。", "answer": "external", "options": ["external", "limited", "upgraded", "revamped"]}, {"sentence": "The new software allows users to ____ seamlessly with their smart home appliances.", "sentence_zh": "新軟體允許使用者與其智慧家居用品無縫互動。", "answer": "interact", "options": ["interact", "browse", "navigate", "routing"]}, {"sentence": "This project was ____ the latest advancements in machine learning technology.", "sentence_zh": "這個項目是由機器學習技術的最新進展所驅動的。", "answer": "powered by", "options": ["powered by", "link up", "along with", "routing"]}, {"sentence": "The seamless ____ of the new payment system improved the customer experience.", "sentence_zh": "新支付系統的無縫整合提升了客戶體驗。", "answer": "integration", "options": ["integration", "toolkit", "standard", "external"]}, {"sentence": "She likes to ____ the internet for new recipes during her free time.", "sentence_zh": "她喜歡在空閒時間瀏覽網路尋找新食譜。", "answer": "browse", "options": ["browse", "navigate", "interact", "routing"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>

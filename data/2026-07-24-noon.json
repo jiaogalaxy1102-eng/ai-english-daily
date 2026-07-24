@@ -1,0 +1,345 @@
+{
+	"date": "2026-07-24",
+	"slot": "noon",
+	"tag": "AI",
+	"title": "Alexa Plus is getting an AI update to handle more complicated instructions",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/tech/970399/amazon-alexa-plus-ai-update-smart-home-devices",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "Amazon’s upgraded AI assistant will be able to do more across a wider range of smart home devices.",
+			"translation": "亞馬遜升級後的 AI 助手將能夠在更廣泛的智慧家居設備上執行更多操作。"
+		},
+		{
+			"tag": "p",
+			"text": "Amazon is launching an update to its Alexa Plus assistant that will allow it to connect to smart home devices in new ways. With the update, which is currently in preview, Alexa Plus can link up with tech from Bosch, Delta, Ecovacs, iRobot, Yale Home, Whirlpool, Tapo, Eufy, and others, while automatically routing requests to the correct device.",
+			"translation": "亞馬遜正在為其 Alexa Plus 助手推出一項更新，使其能以全新方式連接智慧家居設備。這項更新目前處於預覽階段，Alexa Plus 可以與 Bosch、Delta、Ecovacs、iRobot、Yale Home、Whirlpool、Tapo、Eufy 等品牌技術連結，同時自動將請求發送到正確的設備。"
+		},
+		{
+			"tag": "p",
+			"text": "In an example shared by Amazon, a person with a supported washing machine can say, “Alexa, my kid’s soccer jersey could use a deep clean, but the tag says cold wash only.” From there, Alexa Plus would navigate the washer’s cycle options and choose the correct setting. The new integrations are powered by Amazon’s new AI developer toolkit, which is supposed to make it easier for device makers to connect to Alexa Plus, “including those with unique capabilities that weren’t supported before.”",
+			"translation": "在亞馬遜分享的一個範例中，擁有受支援洗衣機的使用者可以說：「Alexa，我孩子的足球球衣需要強力清洗，但標籤上寫著只能冷水洗。」隨後，Alexa Plus 會操作洗衣機的循環選項並選擇正確的設定。這些新整合功能由亞馬遜新的 AI 開發者工具包驅動，旨在讓設備製造商更輕鬆地連接到 Alexa Plus，「包括那些以前不支援的獨特功能」。"
+		},
+		{
+			"tag": "p",
+			"text": "Amazon widely launched its revamped AI assistant in February, which can handle multi-step requests and help you create routines using your voice. It currently only performs tasks in a limited number of third-party services, such as Ticketmaster, OpenTable, Uber, Thumbtack, Expedia, Yelp, Square, and Angi.",
+			"translation": "亞馬遜於二月廣泛推出了其改版後的 AI 助手，它可以處理多步驟請求並協助你用語音建立日常行程。目前它僅能在有限數量的第三方服務中執行任務，例如 Ticketmaster、OpenTable、Uber、Thumbtack、Expedia、Yelp、Square 和 Angi。"
+		},
+		{
+			"tag": "p",
+			"text": "But Amazon is trying to change this by adopting the Model Context Protocol (MCP), an open-source standard that allows AI models to connect to external systems and tools. This will give more brands the ability to interact with Alexa Plus, with Canva, Headspace, Priceline, Lyft, Cengage, Virgin Atlantic, Weekend, and other companies launching integrations later this year.",
+			"translation": "但亞馬遜正試圖透過採用模型上下文協議 (MCP) 來改變現狀，這是一項允許 AI 模型連接到外部系統和工具的開源標準。這將使更多品牌能夠與 Alexa Plus 互動，Canva、Headspace、Priceline、Lyft、Cengage、Virgin Atlantic、Weekend 等公司將於今年晚些時候推出整合功能。"
+		},
+		{
+			"tag": "p",
+			"text": "For example, Priceline will give customers the ability to browse hotel options and book a trip directly through Alexa Plus. Priceline, along with Atom Tickets, Cengage, Fandango, and Taskrabbit, will soon support payments through Amazon Wallet as well.",
+			"translation": "例如，Priceline 將讓客戶能夠瀏覽飯店選項並直接透過 Alexa Plus 預訂行程。Priceline 以及 Atom Tickets、Cengage、Fandango 和 Taskrabbit 很快也將支援透過 Amazon Wallet 進行付款。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/8A0A3921.jpeg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+			"alt": "Alexa Plus Echo Show 15",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "upgraded",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ʌpˈɡreɪdɪd/",
+			"definition_zh": "升級的、更新的",
+			"example": "Amazon’s upgraded AI assistant will be able to do more across a wider range of smart home devices."
+		},
+		{
+			"word": "complicated",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈkɒmplɪkeɪtɪd/",
+			"definition_zh": "複雜的、難懂的",
+			"example": "Alexa Plus is getting an AI update to handle more complicated instructions"
+		},
+		{
+			"word": "instructions",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈstrʌkʃənz/",
+			"definition_zh": "指令、指示、說明",
+			"example": "Alexa Plus is getting an AI update to handle more complicated instructions"
+		},
+		{
+			"word": "launching",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈlɔːntʃɪŋ/",
+			"definition_zh": "發布、推出、發起",
+			"example": "Amazon is launching an update to its Alexa Plus assistant that will allow it to connect to smart home devices in new ways."
+		},
+		{
+			"word": "routing",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈruːtɪŋ/",
+			"definition_zh": "路由、引導、發送",
+			"example": "while automatically routing requests to the correct device."
+		},
+		{
+			"word": "navigate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈnævɪɡeɪt/",
+			"definition_zh": "導航、操作、處理",
+			"example": "From there, Alexa Plus would navigate the washer’s cycle options and choose the correct setting."
+		},
+		{
+			"word": "toolkit",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈtuːlkɪt/",
+			"definition_zh": "工具包、工具集",
+			"example": "The new integrations are powered by Amazon’s new AI developer toolkit"
+		},
+		{
+			"word": "capabilities",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌkeɪpəˈbɪlətiz/",
+			"definition_zh": "能力、功能、性能",
+			"example": "including those with unique capabilities that weren’t supported before."
+		},
+		{
+			"word": "revamped",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌriːˈvæmpt/",
+			"definition_zh": "改版的、翻新的",
+			"example": "Amazon widely launched its revamped AI assistant in February"
+		},
+		{
+			"word": "routines",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ruːˈtiːnz/",
+			"definition_zh": "常規、日常行程、自動化流程",
+			"example": "which can handle multi-step requests and help you create routines using your voice."
+		},
+		{
+			"word": "limited",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈlɪmɪtɪd/",
+			"definition_zh": "有限的、受限的",
+			"example": "It currently only performs tasks in a limited number of third-party services"
+		},
+		{
+			"word": "adopting",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/əˈdɒptɪŋ/",
+			"definition_zh": "採用、採納",
+			"example": "But Amazon is trying to change this by adopting the Model Context Protocol (MCP)"
+		},
+		{
+			"word": "external",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪkˈstɜːnl/",
+			"definition_zh": "外部的、外面的",
+			"example": "an open-source standard that allows AI models to connect to external systems and tools."
+		},
+		{
+			"word": "standard",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈstændəd/",
+			"definition_zh": "標準、規格",
+			"example": "an open-source standard that allows AI models to connect to external systems and tools."
+		},
+		{
+			"word": "interact",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌɪntərˈækt/",
+			"definition_zh": "互動、交流、相互作用",
+			"example": "This will give more brands the ability to interact with Alexa Plus"
+		},
+		{
+			"word": "browse",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/braʊz/",
+			"definition_zh": "瀏覽、隨意觀看",
+			"example": "Priceline will give customers the ability to browse hotel options and book a trip directly through Alexa Plus."
+		},
+		{
+			"word": "Model Context Protocol",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈmɒdl ˈkɒntekst ˈprəʊtəkɒl/",
+			"definition_zh": "模型上下文協議",
+			"example": "But Amazon is trying to change this by adopting the Model Context Protocol (MCP)"
+		},
+		{
+			"word": "open-source",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˈəʊpən sɔːs/",
+			"definition_zh": "開源的、開放原始碼的",
+			"example": "an open-source standard that allows AI models to connect to external systems and tools."
+		},
+		{
+			"word": "integration",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌɪntɪˈɡreɪʃn/",
+			"definition_zh": "整合、集成",
+			"example": "with Canva, Headspace, Priceline, Lyft, Cengage, Virgin Atlantic, Weekend, and other companies launching integrations later this year."
+		},
+		{
+			"word": "multi-step",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈmʌlti-step/",
+			"definition_zh": "多步驟的",
+			"example": "which can handle multi-step requests and help you create routines using your voice."
+		},
+		{
+			"word": "link up",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lɪŋk ʌp/",
+			"definition_zh": "連結、聯接",
+			"example": "Alexa Plus can link up with tech from Bosch, Delta, Ecovacs, iRobot, Yale Home, Whirlpool, Tapo, Eufy, and others"
+		},
+		{
+			"word": "powered by",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈpaʊəd baɪ/",
+			"definition_zh": "由...驅動、支持",
+			"example": "The new integrations are powered by Amazon’s new AI developer toolkit"
+		},
+		{
+			"word": "along with",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/əˈlɒŋ wɪð/",
+			"definition_zh": "以及、連同",
+			"example": "Priceline, along with Atom Tickets, Cengage, Fandango, and Taskrabbit, will soon support payments through Amazon Wallet as well."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The manual provides clear ____ on how to assemble the new furniture.",
+			"sentence_zh": "手冊提供了關於如何組裝新家具的清楚指令。",
+			"answer": "instructions",
+			"options": [
+				"instructions",
+				"capabilities",
+				"routines",
+				"standard"
+			]
+		},
+		{
+			"sentence": "The technician ____ the system to the latest version to improve performance.",
+			"sentence_zh": "技術人員將系統升級到最新版本以提升性能。",
+			"answer": "upgraded",
+			"options": [
+				"upgraded",
+				"revamped",
+				"limited",
+				"launching"
+			]
+		},
+		{
+			"sentence": "Establishing morning ____ can help you start your day with more focus.",
+			"sentence_zh": "建立晨間常規能幫助你在開始一天時更加專注。",
+			"answer": "routines",
+			"options": [
+				"routines",
+				"instructions",
+				"capabilities",
+				"integration"
+			]
+		},
+		{
+			"sentence": "The software update is currently in a ____ release before the full launch.",
+			"sentence_zh": "軟體更新在正式發布前目前處於有限發行階段。",
+			"answer": "limited",
+			"options": [
+				"limited",
+				"external",
+				"upgraded",
+				"revamped"
+			]
+		},
+		{
+			"sentence": "The company is ____ a new smartphone that features a revolutionary camera.",
+			"sentence_zh": "該公司正在推出一款配備革命性相機的新智慧型手機。",
+			"answer": "launching",
+			"options": [
+				"launching",
+				"adopting",
+				"browse",
+				"interact"
+			]
+		},
+		{
+			"sentence": "You can connect an ____ monitor to your laptop for a dual-screen setup.",
+			"sentence_zh": "你可以將外部顯示器連接到筆記型電腦以進行雙螢幕設置。",
+			"answer": "external",
+			"options": [
+				"external",
+				"limited",
+				"upgraded",
+				"revamped"
+			]
+		},
+		{
+			"sentence": "The new software allows users to ____ seamlessly with their smart home appliances.",
+			"sentence_zh": "新軟體允許使用者與其智慧家居用品無縫互動。",
+			"answer": "interact",
+			"options": [
+				"interact",
+				"browse",
+				"navigate",
+				"routing"
+			]
+		},
+		{
+			"sentence": "This project was ____ the latest advancements in machine learning technology.",
+			"sentence_zh": "這個項目是由機器學習技術的最新進展所驅動的。",
+			"answer": "powered by",
+			"options": [
+				"powered by",
+				"link up",
+				"along with",
+				"routing"
+			]
+		},
+		{
+			"sentence": "The seamless ____ of the new payment system improved the customer experience.",
+			"sentence_zh": "新支付系統的無縫整合提升了客戶體驗。",
+			"answer": "integration",
+			"options": [
+				"integration",
+				"toolkit",
+				"standard",
+				"external"
+			]
+		},
+		{
+			"sentence": "She likes to ____ the internet for new recipes during her free time.",
+			"sentence_zh": "她喜歡在空閒時間瀏覽網路尋找新食譜。",
+			"answer": "browse",
+			"options": [
+				"browse",
+				"navigate",
+				"interact",
+				"routing"
+			]
+		}
+	]
+}
