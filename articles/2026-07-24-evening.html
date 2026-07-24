@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The ignored, ugly utilities that run your home just got a major redesign — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-24</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">商業與新創</span></div>
+	<h1 class="article-title">The ignored, ugly utilities that run your home just got a major redesign</h1>
+	<div class="article-meta">
+		2026-07-24 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91575298/the-ignored-ugly-utilities-that-run-your-home-just-got-a-major-redesign?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="reflection" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reflection</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/rɪˈflek.ʃən/</span>
+				<span class="vocab-def">反映、顯現</span>
+			</div>
+			<div class="vocab-card" data-word="personal" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">personal</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈpɜː.sən.əl/</span>
+				<span class="vocab-def">個人的、私人的</span>
+			</div>
+			<div class="vocab-card" data-word="startup" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">startup</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈstɑːt.ʌp/</span>
+				<span class="vocab-def">新創公司</span>
+			</div>
+			<div class="vocab-card" data-word="available" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">available</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/əˈveɪ.lə.bəl/</span>
+				<span class="vocab-def">可獲得的、可買到的</span>
+			</div>
+			<div class="vocab-card" data-word="depend" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">depend</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈpend/</span>
+				<span class="vocab-def">依賴、依靠</span>
+			</div>
+			<div class="vocab-card" data-word="impacts" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">impacts</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪm.pækts/</span>
+				<span class="vocab-def">影響、衝擊</span>
+			</div>
+			<div class="vocab-card" data-word="customizable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">customizable</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkʌs.tə.maɪ.zə.bəl/</span>
+				<span class="vocab-def">可客製化的</span>
+			</div>
+			<div class="vocab-card" data-word="optimize" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">optimize</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈɒp.tɪ.maɪz/</span>
+				<span class="vocab-def">優化、使完善</span>
+			</div>
+			<div class="vocab-card" data-word="perform" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">perform</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/pəˈfɔːm/</span>
+				<span class="vocab-def">運作、執行</span>
+			</div>
+			<div class="vocab-card" data-word="minimalist" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">minimalist</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈmɪn.ɪ.mə.lɪst/</span>
+				<span class="vocab-def">極簡主義的</span>
+			</div>
+			<div class="vocab-card" data-word="expand" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">expand</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ɪkˈspænd/</span>
+				<span class="vocab-def">擴張、擴展</span>
+			</div>
+			<div class="vocab-card" data-word="complicated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">complicated</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkɒm.plɪ.keɪ.tɪd/</span>
+				<span class="vocab-def">複雜的、難懂的</span>
+			</div>
+			<div class="vocab-card" data-word="furnace" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">furnace</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈfɜː.nɪs/</span>
+				<span class="vocab-def">暖爐、熔爐</span>
+			</div>
+			<div class="vocab-card" data-word="aesthetic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">aesthetic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/esˈθet.ɪk/</span>
+				<span class="vocab-def">審美觀、美學</span>
+			</div>
+			<div class="vocab-card" data-word="integrated" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">integrated</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈɪn.tɪ.ɡreɪ.tɪd/</span>
+				<span class="vocab-def">整合的、一體化的</span>
+			</div>
+			<div class="vocab-card" data-word="infrastructure" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">infrastructure</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪn.frəˌstrʌk.tʃər/</span>
+				<span class="vocab-def">基礎設施</span>
+			</div>
+			<div class="vocab-card" data-word="seemingly" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">seemingly</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˈsiː.mɪŋ.li/</span>
+				<span class="vocab-def">看似、表面上</span>
+			</div>
+			<div class="vocab-card" data-word="interchangeable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">interchangeable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌɪn.təˈtʃeɪn.dʒə.bəl/</span>
+				<span class="vocab-def">可互換的</span>
+			</div>
+			<div class="vocab-card" data-word="overlooked" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">overlooked</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌəʊ.vəˈlʊkt/</span>
+				<span class="vocab-def">被忽視的</span>
+			</div>
+			<div class="vocab-card" data-word="HVAC" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">HVAC</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌeɪtʃ.viː.eɪˈsiː/</span>
+				<span class="vocab-def">暖通空調</span>
+			</div>
+			<div class="vocab-card" data-word="heat-pump" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">heat-pump</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈhiːt.pʌmp/</span>
+				<span class="vocab-def">熱泵</span>
+			</div>
+			<div class="vocab-card" data-word="through the lens of" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">through the lens of</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa"></span>
+				<span class="vocab-def">透過...的視角</span>
+			</div>
+			<div class="vocab-card" data-word="mesh with" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">mesh with</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa"></span>
+				<span class="vocab-def">與...相契合/融合</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Could you love your <span class="word-general" data-word="furnace">furnace</span>? Would you put your water heater on display? Is your air conditioner a <span class="word-highfreq" data-word="reflection">reflection</span> of your <span class="word-highfreq" data-word="personal">personal</span> design <span class="word-general" data-word="aesthetic">aesthetic</span>?</p>
+			<p class="para-translation">你會愛上你的暖爐嗎？你會把熱水器擺出來展示嗎？你的冷氣機是否反映了你的個人設計美學？</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Unless you are very, very weird, the answer to all those questions is no. A new home utilities <span class="word-highfreq" data-word="startup">startup</span> called Everyday^ wants to make you say yes.</p>
+			<p class="para-translation">除非你非常、非常古怪，否則對這些問題的回答都是「不」。一家名為 Everyday^ 的新居家設施新創公司想要讓你說「是」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Everyday^ has just launched what it calls an <span class="word-general" data-word="integrated">integrated</span> home <span class="word-general" data-word="infrastructure">infrastructure</span> system made up of the <span class="word-general" data-word="seemingly">seemingly</span> boring utilities of the home: <span class="word-term" data-word="HVAC">HVAC</span> systems, water heaters, air purifiers, and thermostats. A single-unit Air^ system will sell for about $2,280 and first be <span class="word-highfreq" data-word="available">available</span> in the European market.</p>
+			<p class="para-translation">Everyday^ 剛推出了一套所謂的整合式居家基礎設施系統，由看似乏味的居家設施組成：暖通空調（HVAC）系統、熱水器、空氣清淨機和恆溫器。一套單機版的 Air^ 系統售價約為 2,280 美元，並將首先在歐洲市場上市。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/Everyday-4x5-Indoor-3.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Home utilities are “something that people rarely think about,” says cofounder Morten Meisner-Jensen. “But they’re actually where the most money is spent and they’re some of the systems that we <span class="word-highfreq" data-word="depend">depend</span> [on] the most. And some of these devices have some of the largest <span class="word-highfreq" data-word="impacts">impacts</span> on the global climate.”</p>
+			<p class="para-translation">共同創辦人 Morten Meisner-Jensen 表示，居家設施是「人們很少思考的東西」。「但它們實際上是花費最多資金的地方，也是我們最依賴的系統之一。而且其中一些設備對全球氣候有著巨大的影響。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Everyday^, based in Copenhagen, has reconsidered these utilities <span class="word-phrase" data-word="through the lens of">through the lens of</span> design and artificial intelligence, developing <span class="word-highfreq" data-word="customizable">customizable</span> devices that <span class="word-phrase" data-word="mesh with">mesh with</span> the furnishings in modern homes while also using AI to <span class="word-highfreq" data-word="optimize">optimize</span> how they <span class="word-highfreq" data-word="perform">perform</span>.</p>
+			<p class="para-translation">總部位於哥本哈根的 Everyday^ 透過設計與人工智慧的視角重新審視了這些設施，開發出可客製化的設備，能與現代家居擺設融合，同時利用人工智慧優化其效能。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The first product, which was announced earlier this summer, is called Air^. It’s a <span class="word-term" data-word="heat-pump">heat-pump</span>-connected heating, cooling, and air purification unit. Its <span class="word-highfreq" data-word="minimalist">minimalist</span> design and profile can be customized with <span class="word-general" data-word="interchangeable">interchangeable</span> material surfaces. The company plans to <span class="word-highfreq" data-word="expand">expand</span> its product line to include hot water, energy storage, and broader home energy systems.</p>
+			<p class="para-translation">第一款產品於今年夏天稍早發布，名為 Air^。這是一款連接熱泵的供暖、製冷和空氣淨化單元。其極簡主義的設計與外型可以透過更換材質表面進行客製化。該公司計劃擴展其產品線，納入熱水、儲能和更廣泛的家庭能源系統。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/Everyday-4x5-Outdoor-1.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Meisner-Jensen, who previously founded the stand-alone office pod maker Room, says the idea for Everyday^ came from noticing just how ugly, <span class="word-general" data-word="overlooked">overlooked</span>, and <span class="word-highfreq" data-word="complicated">complicated</span> most home utilities are.</p>
+			<p class="para-translation">Meisner-Jensen 曾創立獨立辦公艙製造商 Room，他表示 Everyday^ 的構思源於注意到大多數居家設施是多麼醜陋、被忽視且複雜。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-20-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">The iconic ‘Fearless Girl’ statue is becoming a brand</span>
+			</a>
+			<a class="related-card" href="2026-07-11-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">How Maison de Sabré built a cult business of bag charms from scraps</span>
+			</a>
+			<a class="related-card" href="2026-07-17-noon.html">
+				<span class="related-source">It&#x27;s Nice That</span>
+				<span class="related-title">Look up! Parallel Press’ Astro Black archives and protects the dazzling visual history of Black astronauts</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "reflection", "type": "highfreq", "pos": "n.", "ipa": "/rɪˈflek.ʃən/", "definition_zh": "反映、顯現", "example": "Is your air conditioner a reflection of your personal design aesthetic?"}, {"word": "personal", "type": "highfreq", "pos": "adj.", "ipa": "/ˈpɜː.sən.əl/", "definition_zh": "個人的、私人的", "example": "Is your air conditioner a reflection of your personal design aesthetic?"}, {"word": "startup", "type": "highfreq", "pos": "n.", "ipa": "/ˈstɑːt.ʌp/", "definition_zh": "新創公司", "example": "A new home utilities startup called Everyday^ wants to make you say yes."}, {"word": "available", "type": "highfreq", "pos": "adj.", "ipa": "/əˈveɪ.lə.bəl/", "definition_zh": "可獲得的、可買到的", "example": "A single-unit Air^ system will sell for about $2,280 and first be available in the European market."}, {"word": "depend", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈpend/", "definition_zh": "依賴、依靠", "example": "But they’re actually where the most money is spent and they’re some of the systems that we depend [on] the most."}, {"word": "impacts", "type": "highfreq", "pos": "n.", "ipa": "/ˈɪm.pækts/", "definition_zh": "影響、衝擊", "example": "And some of these devices have some of the largest impacts on the global climate."}, {"word": "customizable", "type": "highfreq", "pos": "adj.", "ipa": "/ˈkʌs.tə.maɪ.zə.bəl/", "definition_zh": "可客製化的", "example": "developing customizable devices that mesh with the furnishings in modern homes."}, {"word": "optimize", "type": "highfreq", "pos": "v.", "ipa": "/ˈɒp.tɪ.maɪz/", "definition_zh": "優化、使完善", "example": "while also using AI to optimize how they perform."}, {"word": "perform", "type": "highfreq", "pos": "v.", "ipa": "/pəˈfɔːm/", "definition_zh": "運作、執行", "example": "while also using AI to optimize how they perform."}, {"word": "minimalist", "type": "highfreq", "pos": "adj.", "ipa": "/ˈmɪn.ɪ.mə.lɪst/", "definition_zh": "極簡主義的", "example": "Its minimalist design and profile can be customized with interchangeable material surfaces."}, {"word": "expand", "type": "highfreq", "pos": "v.", "ipa": "/ɪkˈspænd/", "definition_zh": "擴張、擴展", "example": "The company plans to expand its product line to include hot water."}, {"word": "complicated", "type": "highfreq", "pos": "adj.", "ipa": "/ˈkɒm.plɪ.keɪ.tɪd/", "definition_zh": "複雜的、難懂的", "example": "the idea for Everyday^ came from noticing just how ugly, overlooked, and complicated most home utilities are."}, {"word": "furnace", "type": "general", "pos": "n.", "ipa": "/ˈfɜː.nɪs/", "definition_zh": "暖爐、熔爐", "example": "Could you love your furnace?"}, {"word": "aesthetic", "type": "general", "pos": "n.", "ipa": "/esˈθet.ɪk/", "definition_zh": "審美觀、美學", "example": "Is your air conditioner a reflection of your personal design aesthetic?"}, {"word": "integrated", "type": "general", "pos": "adj.", "ipa": "/ˈɪn.tɪ.ɡreɪ.tɪd/", "definition_zh": "整合的、一體化的", "example": "Everyday^ has just launched what it calls an integrated home infrastructure system."}, {"word": "infrastructure", "type": "general", "pos": "n.", "ipa": "/ˈɪn.frəˌstrʌk.tʃər/", "definition_zh": "基礎設施", "example": "Everyday^ has just launched what it calls an integrated home infrastructure system."}, {"word": "seemingly", "type": "general", "pos": "adv.", "ipa": "/ˈsiː.mɪŋ.li/", "definition_zh": "看似、表面上", "example": "made up of the seemingly boring utilities of the home."}, {"word": "interchangeable", "type": "general", "pos": "adj.", "ipa": "/ˌɪn.təˈtʃeɪn.dʒə.bəl/", "definition_zh": "可互換的", "example": "Its minimalist design and profile can be customized with interchangeable material surfaces."}, {"word": "overlooked", "type": "general", "pos": "adj.", "ipa": "/ˌəʊ.vəˈlʊkt/", "definition_zh": "被忽視的", "example": "the idea for Everyday^ came from noticing just how ugly, overlooked, and complicated most home utilities are."}, {"word": "HVAC", "type": "term", "pos": "n.", "ipa": "/ˌeɪtʃ.viː.eɪˈsiː/", "definition_zh": "暖通空調", "example": "integrated home infrastructure system made up of the seemingly boring utilities of the home: HVAC systems."}, {"word": "heat-pump", "type": "term", "pos": "n.", "ipa": "/ˈhiːt.pʌmp/", "definition_zh": "熱泵", "example": "It’s a heat-pump-connected heating, cooling, and air purification unit."}, {"word": "through the lens of", "type": "phrase", "pos": "", "ipa": "", "definition_zh": "透過...的視角", "example": "Everyday^, based in Copenhagen, has reconsidered these utilities through the lens of design and artificial intelligence."}, {"word": "mesh with", "type": "phrase", "pos": "", "ipa": "", "definition_zh": "與...相契合/融合", "example": "developing customizable devices that mesh with the furnishings in modern homes."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The tech ____ raised ten million dollars in its first round of funding.", "sentence_zh": "這家科技新創公司在第一輪融資中募集了一千萬美元。", "answer": "startup", "options": ["startup", "furnace", "expand", "impacts"]}, {"sentence": "The updated software will help ____ the computer's battery life.", "sentence_zh": "更新後的軟體將有助於優化電腦的電池壽命。", "answer": "optimize", "options": ["optimize", "overlooked", "HVAC", "seemingly"]}, {"sentence": "We should look at this problem ____ a customer's experience.", "sentence_zh": "我們應該透過客戶體驗的視角來看待這個問題。", "answer": "through the lens of", "options": ["through the lens of", "mesh with", "customizable", "integrated"]}, {"sentence": "The new furniture is designed to ____ the minimalist style of the office.", "sentence_zh": "這款新家具的設計旨在與辦公室的極簡風格相融合。", "answer": "mesh with", "options": ["mesh with", "depend", "perform", "available"]}, {"sentence": "Tickets for the concert are now ____ online.", "sentence_zh": "音樂會的門票現在可以在網路上買到。", "answer": "available", "options": ["available", "complicated", "interchangeable", "personal"]}, {"sentence": "The city needs to invest more money in its aging ____.", "sentence_zh": "這座城市需要投入更多資金改善其老化的基礎設施。", "answer": "infrastructure", "options": ["infrastructure", "reflection", "furnace", "aesthetic"]}, {"sentence": "Many small details were ____ during the planning stage of the project.", "sentence_zh": "在項目的規劃階段，許多小細節都被忽視了。", "answer": "overlooked", "options": ["overlooked", "minimalist", "integrated", "customizable"]}, {"sentence": "The company wants to ____ its business into Southeast Asia next year.", "sentence_zh": "公司計劃明年將業務擴展到東南亞。", "answer": "expand", "options": ["expand", "perform", "depend", "optimize"]}, {"sentence": "Modern climate change has significant ____ on global agriculture.", "sentence_zh": "現代氣候變遷對全球農業有重大影響。", "answer": "impacts", "options": ["impacts", "HVAC", "startup", "infrastructure"]}, {"sentence": "This ____ watch allows you to change the strap to match your outfit.", "sentence_zh": "這款可客製化的手錶讓你可以更換錶帶以搭配你的服裝。", "answer": "customizable", "options": ["customizable", "seemingly", "complicated", "overlooked"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
