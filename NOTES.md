@@ -83,4 +83,4 @@
 - 這台機器的 `python3` 是 Xcode 內建的 Python 3.9，不是專案 venv，套件裝在 `~/Library/Python/3.9/lib/python/site-packages`（`pip install --user`）。
 - 本機連 PyPI 很慢（實測約 20KB/s），`pip install` 裝 `lxml`/`beautifulsoup4` 這類套件可能要好幾分鐘，不是卡住，不用重跑。
 - 只是要跑爬蟲相關功能（`fetch_article_content`、`add_article.py scrape`）不需要裝 `google-genai`——`generate.py` 裡的 Gemini client 是在 `call_gemini()` 裡才 lazy 建立。
-- `gh` CLI 已裝好且登入（帳號 `jiaogalaxy1102-eng`，repo/workflow 權限都有），不用重新檢查或建議安裝。
+- `gh` CLI 已裝好且登入，權限足夠操作本專案，不用重新檢查或建議安裝。

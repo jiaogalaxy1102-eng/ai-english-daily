@@ -37,12 +37,15 @@ jobs:
 
       - name: Determine time slot
         id: slot
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          INPUT_SLOT: ${{ github.event.inputs.time_slot }}
         run: |
-          case "${{ github.event.schedule }}" in
+          case "$SCHEDULE" in
             "0 1 * * *") echo "slot=morning" >> "$GITHUB_OUTPUT" ;;
             "0 4 * * *") echo "slot=noon" >> "$GITHUB_OUTPUT" ;;
             "0 11 * * *") echo "slot=evening" >> "$GITHUB_OUTPUT" ;;
-            *) echo "slot=${{ github.event.inputs.time_slot || 'morning' }}" >> "$GITHUB_OUTPUT" ;;
+            *) echo "slot=${INPUT_SLOT:-morning}" >> "$GITHUB_OUTPUT" ;;
           esac
 
       - name: Generate article
