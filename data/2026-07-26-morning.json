@@ -1,0 +1,348 @@
+{
+	"date": "2026-07-26",
+	"slot": "morning",
+	"tag": "科技",
+	"title": "Google basically confirms the Pixel 11 is getting a price hike",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "It’s just the latest victim of RAMageddon.",
+			"translation": "這只是記憶體浩劫 (RAMageddon) 的最新受害者。"
+		},
+		{
+			"tag": "p",
+			"text": "Google’s Vice President of Devices and Services, Shakil Barkat, all but confirmed in an interview with <em>9to5 Google</em> that its next Pixel phone would cost more than the Pixel 10. Considering the ongoing RAM supply issues due to the explosion of AI data centers, the rumored price hike is not a complete surprise. Companies from Apple to Nintendo, Microsoft to Roku, have all raised their prices in response to the soaring cost of memory.",
+			"translation": "Google 裝置與服務副總裁 Shakil Barkat 在接受《9to5 Google》採訪時，幾乎證實了其下一款 Pixel 手機的價格將高於 Pixel 10。考量到 AI 數據中心激增導致的記憶體供應持續短缺，傳聞中的價格上漲並不完全令人意外。從 Apple 到任天堂、微軟到 Roku，各大公司都因記憶體成本飆升而調漲了價格。"
+		},
+		{
+			"tag": "p",
+			"text": "Barkat said that Google had “shielded our consumers from supply fluctuations for as long as possible,” but that the “economics have fundamentally shifted and we’re not immune to that.” He went on to tell 9to5 that the Pixel lineup would see pricing “adjustments,” accordingly, that “will be rolled out dynamically to match supply realities.”",
+			"translation": "Barkat 表示，Google 已「盡可能長時間地保護我們的消費者免受供應波動的影響」，但「經濟環境已發生根本性轉變，我們也無法倖免」。他接著告訴 9to5，Pixel 系列將會進行相應的定價「調整」，並將「動態推行以符合供應現實」。"
+		},
+		{
+			"tag": "p",
+			"text": "The base model Pixel 11 is expected to cost $899, but would come with 256GB of storage, instead of 128GB. It’s also rumored that the Pixel 11 Pro could go from 16GB of RAM to 12GB. We won’t have to wait too long to find out for sure, though. Google’s scheduled to announce the next generation of Pixel devices on August 12th.",
+			"translation": "基本款 Pixel 11 的售價預計為 899 美元，但儲存空間將從 128GB 增加到 256GB。另有傳言稱 Pixel 11 Pro 的記憶體可能會從 16GB 降至 12GB。不過，我們不需要等太久就能確定。Google 預計於 8 月 12 日發表下一代 Pixel 裝置。"
+		},
+		{
+			"tag": "h2",
+			"text": "More in: RAM price hikes: the latest on the global memory shortage",
+			"translation": "更多相關資訊：記憶體價格上漲：全球記憶體短缺的最新進展"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Screenshot-2026-07-15-at-11.36.30-AM.png?quality=90&strip=all&crop=4.4321329639889%2C0%2C91.135734072022%2C100&w=2400",
+			"alt": "Screenshot 2026-07-15 at 11.36.30 AM",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "confirmed",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kənˈfɜːrmd/",
+			"definition_zh": "證實、確認",
+			"example": "Barkat, all but confirmed in an interview with 9to5 Google that its next Pixel phone would cost more."
+		},
+		{
+			"word": "ongoing",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈɒnˌɡəʊ.ɪŋ/",
+			"definition_zh": "持續進行中的",
+			"example": "Considering the ongoing RAM supply issues due to the explosion of AI data centers."
+		},
+		{
+			"word": "response",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/rɪˈspɒns/",
+			"definition_zh": "反應、回應",
+			"example": "Companies have all raised their prices in response to the soaring cost of memory."
+		},
+		{
+			"word": "fundamentally",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˌfʌn.dəˈmen.təl.i/",
+			"definition_zh": "根本上地",
+			"example": "The economics have fundamentally shifted and we’re not immune to that."
+		},
+		{
+			"word": "adjustments",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/əˈdʒʌst.mənts/",
+			"definition_zh": "調整、調節",
+			"example": "the Pixel lineup would see pricing “adjustments,” accordingly."
+		},
+		{
+			"word": "accordingly",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/əˈkɔːr.dɪŋ.li/",
+			"definition_zh": "相應地",
+			"example": "the Pixel lineup would see pricing “adjustments,” accordingly."
+		},
+		{
+			"word": "scheduled",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈskedʒ.uːld/",
+			"definition_zh": "預定的、排定的",
+			"example": "Google’s scheduled to announce the next generation of Pixel devices on August 12th."
+		},
+		{
+			"word": "generation",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌdʒen.əˈreɪ.ʃən/",
+			"definition_zh": "世代、一代",
+			"example": "Google’s scheduled to announce the next generation of Pixel devices."
+		},
+		{
+			"word": "supply",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/səˈplaɪ/",
+			"definition_zh": "供應、供給",
+			"example": "Considering the ongoing RAM supply issues."
+		},
+		{
+			"word": "reality",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/riˈæl.ə.ti/",
+			"definition_zh": "現實、實際情況",
+			"example": "that “will be rolled out dynamically to match supply realities.”"
+		},
+		{
+			"word": "soaring",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈsɔːr.ɪŋ/",
+			"definition_zh": "驟升的、劇增的",
+			"example": "Companies have all raised their prices in response to the soaring cost of memory."
+		},
+		{
+			"word": "shielded",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈʃiːl.dɪd/",
+			"definition_zh": "保護、屏障",
+			"example": "Barkat said that Google had “shielded our consumers from supply fluctuations.”"
+		},
+		{
+			"word": "fluctuations",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌflʌk.tʃuˈeɪ.ʃənz/",
+			"definition_zh": "波動、起伏",
+			"example": "Google had “shielded our consumers from supply fluctuations for as long as possible.”"
+		},
+		{
+			"word": "immune",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ɪˈmjuːn/",
+			"definition_zh": "免疫的、不受影響的",
+			"example": "the economics have fundamentally shifted and we’re not immune to that."
+		},
+		{
+			"word": "dynamically",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/daɪˈnæm.ɪ.kəl.i/",
+			"definition_zh": "動態地",
+			"example": "pricing adjustments that “will be rolled out dynamically to match supply realities.”"
+		},
+		{
+			"word": "shortage",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈʃɔːr.tɪdʒ/",
+			"definition_zh": "短缺、不足",
+			"example": "RAM price hikes: the latest on the global memory shortage."
+		},
+		{
+			"word": "victim",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈvɪk.tɪm/",
+			"definition_zh": "受害者、犧牲者",
+			"example": "It’s just the latest victim of RAMageddon."
+		},
+		{
+			"word": "explosion",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪkˈspləʊ.ʒən/",
+			"definition_zh": "激增、爆炸性增長",
+			"example": "the ongoing RAM supply issues due to the explosion of AI data centers."
+		},
+		{
+			"word": "data center",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈdeɪ.tə ˌsen.tər/",
+			"definition_zh": "數據中心",
+			"example": "the ongoing RAM supply issues due to the explosion of AI data centers."
+		},
+		{
+			"word": "RAM",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ræm/",
+			"definition_zh": "隨機存取記憶體",
+			"example": "the Pixel 11 Pro could go from 16GB of RAM to 12GB."
+		},
+		{
+			"word": "all but",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɔːl bʌt/",
+			"definition_zh": "幾乎",
+			"example": "Barkat, all but confirmed in an interview with 9to5 Google that its next Pixel phone would cost more."
+		},
+		{
+			"word": "in response to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɪn rɪˈspɒns tuː/",
+			"definition_zh": "為了回應、由於",
+			"example": "Companies have all raised their prices in response to the soaring cost of memory."
+		},
+		{
+			"word": "find out",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/faɪnd aʊt/",
+			"definition_zh": "查明、弄清楚",
+			"example": "We won’t have to wait too long to find out for sure, though."
+		},
+		{
+			"word": "go from",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɡəʊ frɒm/",
+			"definition_zh": "從...變成...",
+			"example": "It’s also rumored that the Pixel 11 Pro could go from 16GB of RAM to 12GB."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The CEO ____ the news of the merger during the press conference.",
+			"sentence_zh": "執行長在記者會上證實了併購的消息。",
+			"answer": "confirmed",
+			"options": [
+				"confirmed",
+				"shielded",
+				"immune",
+				"scheduled"
+			]
+		},
+		{
+			"sentence": "There is an ____ investigation into the cause of the plane crash.",
+			"sentence_zh": "關於飛機失事原因的調查仍在持續進行中。",
+			"answer": "ongoing",
+			"options": [
+				"ongoing",
+				"soaring",
+				"dynamically",
+				"accordingly"
+			]
+		},
+		{
+			"sentence": "The government lowered taxes ____ the economic crisis.",
+			"sentence_zh": "政府降稅以回應經濟危機。",
+			"answer": "in response to",
+			"options": [
+				"in response to",
+				"all but",
+				"go from",
+				"find out"
+			]
+		},
+		{
+			"sentence": "The two cultures are ____ different in their views on family.",
+			"sentence_zh": "這兩種文化在家庭觀念上根本上是不同的。",
+			"answer": "fundamentally",
+			"options": [
+				"fundamentally",
+				"dynamically",
+				"accordingly",
+				"confirmed"
+			]
+		},
+		{
+			"sentence": "No company is completely ____ to the effects of a global recession.",
+			"sentence_zh": "沒有一家公司能完全不受全球經濟衰退的影響。",
+			"answer": "immune",
+			"options": [
+				"immune",
+				"ongoing",
+				"soaring",
+				"scheduled"
+			]
+		},
+		{
+			"sentence": "The heavy rain caused a severe food ____ in the mountain village.",
+			"sentence_zh": "大雨導致山村食物嚴重短缺。",
+			"answer": "shortage",
+			"options": [
+				"shortage",
+				"reality",
+				"generation",
+				"supply"
+			]
+		},
+		{
+			"sentence": "Prices have risen, and we must adjust our budget ____.",
+			"sentence_zh": "物價上漲了，我們必須相應地調整預算。",
+			"answer": "accordingly",
+			"options": [
+				"accordingly",
+				"fundamentally",
+				"dynamically",
+				"confirmed"
+			]
+		},
+		{
+			"sentence": "Stock market ____ can be scary for first-time investors.",
+			"sentence_zh": "股市波動對於初次投資者來說可能很可怕。",
+			"answer": "fluctuations",
+			"options": [
+				"fluctuations",
+				"adjustments",
+				"generation",
+				"realities"
+			]
+		},
+		{
+			"sentence": "With the final goal, the team's victory was ____ guaranteed.",
+			"sentence_zh": "隨著最後一顆進球，這支球隊的勝利幾乎已成定局。",
+			"answer": "all but",
+			"options": [
+				"all but",
+				"in response to",
+				"find out",
+				"go from"
+			]
+		},
+		{
+			"sentence": "The new ____ of smartphones is much faster than the previous one.",
+			"sentence_zh": "新一代的智慧型手機比上一代快得多。",
+			"answer": "generation",
+			"options": [
+				"generation",
+				"victim",
+				"explosion",
+				"shortage"
+			]
+		}
+	]
+}

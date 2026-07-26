@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Google basically confirms the Pixel 11 is getting a price hike — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-26</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">The Verge<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">Google basically confirms the Pixel 11 is getting a price hike</h1>
+	<div class="article-meta">
+		2026-07-26 &nbsp;·&nbsp; <a href="https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="confirmed" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">confirmed</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/kənˈfɜːrmd/</span>
+				<span class="vocab-def">證實、確認</span>
+			</div>
+			<div class="vocab-card" data-word="ongoing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ongoing</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈɒnˌɡəʊ.ɪŋ/</span>
+				<span class="vocab-def">持續進行中的</span>
+			</div>
+			<div class="vocab-card" data-word="response" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">response</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/rɪˈspɒns/</span>
+				<span class="vocab-def">反應、回應</span>
+			</div>
+			<div class="vocab-card" data-word="fundamentally" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fundamentally</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˌfʌn.dəˈmen.təl.i/</span>
+				<span class="vocab-def">根本上地</span>
+			</div>
+			<div class="vocab-card" data-word="adjustments" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">adjustments</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/əˈdʒʌst.mənts/</span>
+				<span class="vocab-def">調整、調節</span>
+			</div>
+			<div class="vocab-card" data-word="accordingly" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">accordingly</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/əˈkɔːr.dɪŋ.li/</span>
+				<span class="vocab-def">相應地</span>
+			</div>
+			<div class="vocab-card" data-word="scheduled" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">scheduled</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈskedʒ.uːld/</span>
+				<span class="vocab-def">預定的、排定的</span>
+			</div>
+			<div class="vocab-card" data-word="generation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">generation</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌdʒen.əˈreɪ.ʃən/</span>
+				<span class="vocab-def">世代、一代</span>
+			</div>
+			<div class="vocab-card" data-word="supply" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">supply</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/səˈplaɪ/</span>
+				<span class="vocab-def">供應、供給</span>
+			</div>
+			<div class="vocab-card" data-word="reality" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reality</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/riˈæl.ə.ti/</span>
+				<span class="vocab-def">現實、實際情況</span>
+			</div>
+			<div class="vocab-card" data-word="soaring" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">soaring</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsɔːr.ɪŋ/</span>
+				<span class="vocab-def">驟升的、劇增的</span>
+			</div>
+			<div class="vocab-card" data-word="shielded" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">shielded</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈʃiːl.dɪd/</span>
+				<span class="vocab-def">保護、屏障</span>
+			</div>
+			<div class="vocab-card" data-word="fluctuations" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fluctuations</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌflʌk.tʃuˈeɪ.ʃənz/</span>
+				<span class="vocab-def">波動、起伏</span>
+			</div>
+			<div class="vocab-card" data-word="immune" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">immune</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈmjuːn/</span>
+				<span class="vocab-def">免疫的、不受影響的</span>
+			</div>
+			<div class="vocab-card" data-word="dynamically" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dynamically</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/daɪˈnæm.ɪ.kəl.i/</span>
+				<span class="vocab-def">動態地</span>
+			</div>
+			<div class="vocab-card" data-word="shortage" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">shortage</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈʃɔːr.tɪdʒ/</span>
+				<span class="vocab-def">短缺、不足</span>
+			</div>
+			<div class="vocab-card" data-word="victim" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">victim</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈvɪk.tɪm/</span>
+				<span class="vocab-def">受害者、犧牲者</span>
+			</div>
+			<div class="vocab-card" data-word="explosion" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">explosion</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪkˈspləʊ.ʒən/</span>
+				<span class="vocab-def">激增、爆炸性增長</span>
+			</div>
+			<div class="vocab-card" data-word="data center" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">data center</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈdeɪ.tə ˌsen.tər/</span>
+				<span class="vocab-def">數據中心</span>
+			</div>
+			<div class="vocab-card" data-word="RAM" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">RAM</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ræm/</span>
+				<span class="vocab-def">隨機存取記憶體</span>
+			</div>
+			<div class="vocab-card" data-word="all but" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">all but</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɔːl bʌt/</span>
+				<span class="vocab-def">幾乎</span>
+			</div>
+			<div class="vocab-card" data-word="in response to" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in response to</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɪn rɪˈspɒns tuː/</span>
+				<span class="vocab-def">為了回應、由於</span>
+			</div>
+			<div class="vocab-card" data-word="find out" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">find out</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/faɪnd aʊt/</span>
+				<span class="vocab-def">查明、弄清楚</span>
+			</div>
+			<div class="vocab-card" data-word="go from" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">go from</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɡəʊ frɒm/</span>
+				<span class="vocab-def">從...變成...</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">It’s just the latest <span class="word-general" data-word="victim">victim</span> of <span class="word-term" data-word="RAM">RAM</span>ageddon.</p>
+			<p class="para-translation">這只是記憶體浩劫 (RAMageddon) 的最新受害者。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Screenshot-2026-07-15-at-11.36.30-AM.png?quality=90&amp;strip=all&amp;crop=4.4321329639889%2C0%2C91.135734072022%2C100&amp;w=2400" alt="Screenshot 2026-07-15 at 11.36.30 AM" loading="lazy">
+			<figcaption>Screenshot 2026-07-15 at 11.36.30 AM</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Google’s Vice President of Devices and Services, Shakil Barkat, <span class="word-phrase" data-word="all but">all but</span> <span class="word-highfreq" data-word="confirmed">confirmed</span> in an interview with <em>9to5 Google</em> that its next Pixel phone would cost more than the Pixel 10. Considering the <span class="word-highfreq" data-word="ongoing">ongoing</span> <span class="word-term" data-word="RAM">RAM</span> <span class="word-highfreq" data-word="supply">supply</span> issues due to the <span class="word-general" data-word="explosion">explosion</span> of AI <span class="word-term" data-word="data center">data center</span>s, the rumored price hike is not a complete surprise. Companies from Apple to Nintendo, Microsoft to Roku, have all raised their prices <span class="word-phrase" data-word="in <span class="word-highfreq" data-word="response">response</span> to">in response to</span> the <span class="word-general" data-word="soaring">soaring</span> cost of memory.</p>
+			<p class="para-translation">Google 裝置與服務副總裁 Shakil Barkat 在接受《9to5 Google》採訪時，幾乎證實了其下一款 Pixel 手機的價格將高於 Pixel 10。考量到 AI 數據中心激增導致的記憶體供應持續短缺，傳聞中的價格上漲並不完全令人意外。從 Apple 到任天堂、微軟到 Roku，各大公司都因記憶體成本飆升而調漲了價格。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Barkat said that Google had “<span class="word-general" data-word="shielded">shielded</span> our consumers from <span class="word-highfreq" data-word="supply">supply</span> <span class="word-general" data-word="fluctuations">fluctuations</span> for as long as possible,” but that the “economics have <span class="word-highfreq" data-word="fundamentally">fundamentally</span> shifted and we’re not <span class="word-general" data-word="immune">immune</span> to that.” He went on to tell 9to5 that the Pixel lineup would see pricing “<span class="word-highfreq" data-word="adjustments">adjustments</span>,” <span class="word-highfreq" data-word="accordingly">accordingly</span>, that “will be rolled out <span class="word-general" data-word="dynamically">dynamically</span> to match supply realities.”</p>
+			<p class="para-translation">Barkat 表示，Google 已「盡可能長時間地保護我們的消費者免受供應波動的影響」，但「經濟環境已發生根本性轉變，我們也無法倖免」。他接著告訴 9to5，Pixel 系列將會進行相應的定價「調整」，並將「動態推行以符合供應現實」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The base model Pixel 11 is expected to cost $899, but would come with 256GB of storage, instead of 128GB. It’s also rumored that the Pixel 11 Pro could <span class="word-phrase" data-word="go from">go from</span> 16GB of <span class="word-term" data-word="RAM">RAM</span> to 12GB. We won’t have to wait too long to <span class="word-phrase" data-word="find out">find out</span> for sure, though. Google’s <span class="word-highfreq" data-word="scheduled">scheduled</span> to announce the next <span class="word-highfreq" data-word="generation">generation</span> of Pixel devices on August 12th.</p>
+			<p class="para-translation">基本款 Pixel 11 的售價預計為 899 美元，但儲存空間將從 128GB 增加到 256GB。另有傳言稱 Pixel 11 Pro 的記憶體可能會從 16GB 降至 12GB。不過，我們不需要等太久就能確定。Google 預計於 8 月 12 日發表下一代 Pixel 裝置。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">More in: <span class="word-term" data-word="RAM">RAM</span> price hikes: the latest on the global memory <span class="word-general" data-word="shortage">shortage</span></h2>
+			<h2 class="para-translation">更多相關資訊：記憶體價格上漲：全球記憶體短缺的最新進展</h2>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-23-morning.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: NASA’s new space telescope and OpenAI’s autonomous hacker</span>
+			</a>
+			<a class="related-card" href="2026-07-22-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">Stats show LinkedIn’s ‘Open to Work’ badge works. Designers say it could be even better</span>
+			</a>
+			<a class="related-card" href="2026-07-22-morning.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">This beautiful data visualization shows how Spain obliterated Argentina in the World Cup final</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "confirmed", "type": "highfreq", "pos": "v.", "ipa": "/kənˈfɜːrmd/", "definition_zh": "證實、確認", "example": "Barkat, all but confirmed in an interview with 9to5 Google that its next Pixel phone would cost more."}, {"word": "ongoing", "type": "highfreq", "pos": "adj.", "ipa": "/ˈɒnˌɡəʊ.ɪŋ/", "definition_zh": "持續進行中的", "example": "Considering the ongoing RAM supply issues due to the explosion of AI data centers."}, {"word": "response", "type": "highfreq", "pos": "n.", "ipa": "/rɪˈspɒns/", "definition_zh": "反應、回應", "example": "Companies have all raised their prices in response to the soaring cost of memory."}, {"word": "fundamentally", "type": "highfreq", "pos": "adv.", "ipa": "/ˌfʌn.dəˈmen.təl.i/", "definition_zh": "根本上地", "example": "The economics have fundamentally shifted and we’re not immune to that."}, {"word": "adjustments", "type": "highfreq", "pos": "n.", "ipa": "/əˈdʒʌst.mənts/", "definition_zh": "調整、調節", "example": "the Pixel lineup would see pricing “adjustments,” accordingly."}, {"word": "accordingly", "type": "highfreq", "pos": "adv.", "ipa": "/əˈkɔːr.dɪŋ.li/", "definition_zh": "相應地", "example": "the Pixel lineup would see pricing “adjustments,” accordingly."}, {"word": "scheduled", "type": "highfreq", "pos": "adj.", "ipa": "/ˈskedʒ.uːld/", "definition_zh": "預定的、排定的", "example": "Google’s scheduled to announce the next generation of Pixel devices on August 12th."}, {"word": "generation", "type": "highfreq", "pos": "n.", "ipa": "/ˌdʒen.əˈreɪ.ʃən/", "definition_zh": "世代、一代", "example": "Google’s scheduled to announce the next generation of Pixel devices."}, {"word": "supply", "type": "highfreq", "pos": "n.", "ipa": "/səˈplaɪ/", "definition_zh": "供應、供給", "example": "Considering the ongoing RAM supply issues."}, {"word": "reality", "type": "highfreq", "pos": "n.", "ipa": "/riˈæl.ə.ti/", "definition_zh": "現實、實際情況", "example": "that “will be rolled out dynamically to match supply realities.”"}, {"word": "soaring", "type": "general", "pos": "adj.", "ipa": "/ˈsɔːr.ɪŋ/", "definition_zh": "驟升的、劇增的", "example": "Companies have all raised their prices in response to the soaring cost of memory."}, {"word": "shielded", "type": "general", "pos": "v.", "ipa": "/ˈʃiːl.dɪd/", "definition_zh": "保護、屏障", "example": "Barkat said that Google had “shielded our consumers from supply fluctuations.”"}, {"word": "fluctuations", "type": "general", "pos": "n.", "ipa": "/ˌflʌk.tʃuˈeɪ.ʃənz/", "definition_zh": "波動、起伏", "example": "Google had “shielded our consumers from supply fluctuations for as long as possible.”"}, {"word": "immune", "type": "general", "pos": "adj.", "ipa": "/ɪˈmjuːn/", "definition_zh": "免疫的、不受影響的", "example": "the economics have fundamentally shifted and we’re not immune to that."}, {"word": "dynamically", "type": "general", "pos": "adv.", "ipa": "/daɪˈnæm.ɪ.kəl.i/", "definition_zh": "動態地", "example": "pricing adjustments that “will be rolled out dynamically to match supply realities.”"}, {"word": "shortage", "type": "general", "pos": "n.", "ipa": "/ˈʃɔːr.tɪdʒ/", "definition_zh": "短缺、不足", "example": "RAM price hikes: the latest on the global memory shortage."}, {"word": "victim", "type": "general", "pos": "n.", "ipa": "/ˈvɪk.tɪm/", "definition_zh": "受害者、犧牲者", "example": "It’s just the latest victim of RAMageddon."}, {"word": "explosion", "type": "general", "pos": "n.", "ipa": "/ɪkˈspləʊ.ʒən/", "definition_zh": "激增、爆炸性增長", "example": "the ongoing RAM supply issues due to the explosion of AI data centers."}, {"word": "data center", "type": "term", "pos": "n.", "ipa": "/ˈdeɪ.tə ˌsen.tər/", "definition_zh": "數據中心", "example": "the ongoing RAM supply issues due to the explosion of AI data centers."}, {"word": "RAM", "type": "term", "pos": "n.", "ipa": "/ræm/", "definition_zh": "隨機存取記憶體", "example": "the Pixel 11 Pro could go from 16GB of RAM to 12GB."}, {"word": "all but", "type": "phrase", "pos": "", "ipa": "/ɔːl bʌt/", "definition_zh": "幾乎", "example": "Barkat, all but confirmed in an interview with 9to5 Google that its next Pixel phone would cost more."}, {"word": "in response to", "type": "phrase", "pos": "", "ipa": "/ɪn rɪˈspɒns tuː/", "definition_zh": "為了回應、由於", "example": "Companies have all raised their prices in response to the soaring cost of memory."}, {"word": "find out", "type": "phrase", "pos": "", "ipa": "/faɪnd aʊt/", "definition_zh": "查明、弄清楚", "example": "We won’t have to wait too long to find out for sure, though."}, {"word": "go from", "type": "phrase", "pos": "", "ipa": "/ɡəʊ frɒm/", "definition_zh": "從...變成...", "example": "It’s also rumored that the Pixel 11 Pro could go from 16GB of RAM to 12GB."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The CEO ____ the news of the merger during the press conference.", "sentence_zh": "執行長在記者會上證實了併購的消息。", "answer": "confirmed", "options": ["confirmed", "shielded", "immune", "scheduled"]}, {"sentence": "There is an ____ investigation into the cause of the plane crash.", "sentence_zh": "關於飛機失事原因的調查仍在持續進行中。", "answer": "ongoing", "options": ["ongoing", "soaring", "dynamically", "accordingly"]}, {"sentence": "The government lowered taxes ____ the economic crisis.", "sentence_zh": "政府降稅以回應經濟危機。", "answer": "in response to", "options": ["in response to", "all but", "go from", "find out"]}, {"sentence": "The two cultures are ____ different in their views on family.", "sentence_zh": "這兩種文化在家庭觀念上根本上是不同的。", "answer": "fundamentally", "options": ["fundamentally", "dynamically", "accordingly", "confirmed"]}, {"sentence": "No company is completely ____ to the effects of a global recession.", "sentence_zh": "沒有一家公司能完全不受全球經濟衰退的影響。", "answer": "immune", "options": ["immune", "ongoing", "soaring", "scheduled"]}, {"sentence": "The heavy rain caused a severe food ____ in the mountain village.", "sentence_zh": "大雨導致山村食物嚴重短缺。", "answer": "shortage", "options": ["shortage", "reality", "generation", "supply"]}, {"sentence": "Prices have risen, and we must adjust our budget ____.", "sentence_zh": "物價上漲了，我們必須相應地調整預算。", "answer": "accordingly", "options": ["accordingly", "fundamentally", "dynamically", "confirmed"]}, {"sentence": "Stock market ____ can be scary for first-time investors.", "sentence_zh": "股市波動對於初次投資者來說可能很可怕。", "answer": "fluctuations", "options": ["fluctuations", "adjustments", "generation", "realities"]}, {"sentence": "With the final goal, the team's victory was ____ guaranteed.", "sentence_zh": "隨著最後一顆進球，這支球隊的勝利幾乎已成定局。", "answer": "all but", "options": ["all but", "in response to", "find out", "go from"]}, {"sentence": "The new ____ of smartphones is much faster than the previous one.", "sentence_zh": "新一代的智慧型手機比上一代快得多。", "answer": "generation", "options": ["generation", "victim", "explosion", "shortage"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
