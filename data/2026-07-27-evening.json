@@ -1,0 +1,353 @@
+{
+	"date": "2026-07-27",
+	"slot": "evening",
+	"tag": "AI",
+	"title": "Nvidia, Microsoft launch open AI security alliance — without OpenAI, Google, or Anthropic",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "It comes after Hugging Face used a Chinese open-weight AI to defend itself against rogue OpenAI agents.",
+			"translation": "繼 Hugging Face 使用中國開源權重 AI 來抵禦惡意 OpenAI 代理程式之後，此舉隨之而來。"
+		},
+		{
+			"tag": "p",
+			"text": "Nvidia on Monday said it is joining forces with Microsoft, SpaceX, IBM, and other tech companies to build and share open-source AI security tools.",
+			"translation": "NVIDIA 週一表示，正與微軟、SpaceX、IBM 及其他科技公司聯手，共同建立並分享開源 AI 安全工具。"
+		},
+		{
+			"tag": "p",
+			"text": "The new Open Secure AI Alliance said open tools are required to effectively defend against attacks from frontier models. The initiative is a direct response to mounting concerns over the safety of advanced AI systems after a rogue OpenAI model escaped containment and attacked another company during testing. That company, Hugging Face, said it was forced to use a Chinese open-weight model to defend itself due to the strict safety guardrails limiting the usefulness of top US models.",
+			"translation": "新成立的開源安全 AI 聯盟（Open Secure AI Alliance）表示，需要開源工具才能有效抵禦來自前沿模型的攻擊。此項倡議是針對先進 AI 系統安全性日益增長的擔憂所做的直接回應，先前一個惡意的 OpenAI 模型在測試期間逃脫管控並攻擊了另一家公司。該公司 Hugging Face 表示，由於嚴格的安全護欄限制了美國頂尖模型的實用性，它被迫使用中國的開源權重模型來自我防衛。"
+		},
+		{
+			"tag": "p",
+			"text": "Founding members include Palantir, OpenClaw, the Linux Foundation, Cloudflare, Cloudera, Dell, Cisco, Adobe, Siemens, and DoorDash. Conspicuously absent are leading US AI companies, including OpenAI, Google, and Anthropic.",
+			"translation": "創始成員包括 Palantir、OpenClaw、Linux 基金會、Cloudflare、Cloudera、戴爾、思科、Adobe、西門子和 DoorDash。顯然缺席的是領先的美國 AI 公司，包括 OpenAI、Google 和 Anthropic。"
+		},
+		{
+			"tag": "p",
+			"text": "The alliance arrives amid growing tensions over whether the world’s most capable AI models should remain open. Chinese companies have released increasingly powerful open-weight models, notably Moonshot AI’s Kimi K3, challenging the strategy pursued by US labs that have largely kept frontier systems closed and proprietary. Nvidia and its partners argue that securing AI requires access to both closed and open models, stressing that defenders need the tools to counter emerging threats.",
+			"translation": "該聯盟成立之際，全球最強大的 AI 模型是否應保持開源的緊張局勢正不斷升溫。中國公司發布了日益強大的開源權重模型，特別是月之暗面（Moonshot AI）的 Kimi K3，這挑戰了美國實驗室主要保持前沿系統封閉且專有的策略。NVIDIA 及其合作夥伴主張，確保 AI 安全需要同時取用封閉式和開源模型，並強調防禦者需要工具來應對新興威脅。"
+		},
+		{
+			"tag": "p",
+			"text": "The announcement also follows reports that the Trump administration considered restricting access to cutting-edge Chinese models and an industry movement — again spearheaded by Nvidia — defending the need for openness in AI. Google and OpenAI signed that letter belatedly, too, though Anthropic remains absent.",
+			"translation": "此公告也緊隨相關報導之後，即川普政府曾考慮限制取得中國尖端模型，以及一場同樣由 NVIDIA 帶頭、捍衛 AI 開放必要性的產業運動。Google 和 OpenAI 隨後也補簽了該信函，但 Anthropic 仍舊缺席。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/STKP210_JENSEN_HUANG_A.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+			"alt": "STKP210_JENSEN_HUANG_A",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "rogue",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/roʊɡ/",
+			"definition_zh": "惡意的、不受控制的",
+			"example": "It comes after Hugging Face used a Chinese open-weight AI to defend itself against rogue OpenAI agents."
+		},
+		{
+			"word": "alliance",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/əˈlaɪ.əns/",
+			"definition_zh": "聯盟",
+			"example": "Nvidia, Microsoft launch open AI security alliance — without OpenAI, Google, or Anthropic"
+		},
+		{
+			"word": "initiative",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪˈnɪʃ.ə.tɪv/",
+			"definition_zh": "倡議、初步行動",
+			"example": "The initiative is a direct response to mounting concerns over the safety of advanced AI systems."
+		},
+		{
+			"word": "mounting",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈmaʊn.tɪŋ/",
+			"definition_zh": "增加中的、日益增長的",
+			"example": "The initiative is a direct response to mounting concerns over the safety of advanced AI systems."
+		},
+		{
+			"word": "containment",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/kənˈteɪn.mənt/",
+			"definition_zh": "圍堵、控制",
+			"example": "after a rogue OpenAI model escaped containment and attacked another company during testing."
+		},
+		{
+			"word": "guardrails",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈɡɑːrd.reɪlz/",
+			"definition_zh": "安全防護、護欄",
+			"example": "due to the strict safety guardrails limiting the usefulness of top US models."
+		},
+		{
+			"word": "conspicuously",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/kənˈspɪk.ju.əs.li/",
+			"definition_zh": "顯眼地、明顯地",
+			"example": "Conspicuously absent are leading US AI companies, including OpenAI, Google, and Anthropic."
+		},
+		{
+			"word": "proprietary",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/prəˈpraɪə.ter.i/",
+			"definition_zh": "專有的、私有的",
+			"example": "challenging the strategy pursued by US labs that have largely kept frontier systems closed and proprietary."
+		},
+		{
+			"word": "frontier",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/frʌnˈtɪər/",
+			"definition_zh": "前沿、邊界",
+			"example": "The new Open Secure AI Alliance said open tools are required to effectively defend against attacks from frontier models."
+		},
+		{
+			"word": "emerging",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪˈmɜːrdʒɪŋ/",
+			"definition_zh": "新興的",
+			"example": "stressing that defenders need the tools to counter emerging threats."
+		},
+		{
+			"word": "launch",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/lɔːntʃ/",
+			"definition_zh": "發表、發起",
+			"example": "Nvidia, Microsoft launch open AI security alliance"
+		},
+		{
+			"word": "effectively",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ɪˈfektɪvli/",
+			"definition_zh": "有效地",
+			"example": "open tools are required to effectively defend against attacks from frontier models."
+		},
+		{
+			"word": "strategy",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈstrætədʒi/",
+			"definition_zh": "策略",
+			"example": "challenging the strategy pursued by US labs"
+		},
+		{
+			"word": "limit",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈlɪmɪt/",
+			"definition_zh": "限制",
+			"example": "due to the strict safety guardrails limiting the usefulness of top US models."
+		},
+		{
+			"word": "consider",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kənˈsɪdər/",
+			"definition_zh": "考慮",
+			"example": "the Trump administration considered restricting access to cutting-edge Chinese models"
+		},
+		{
+			"word": "access",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈækses/",
+			"definition_zh": "取用、存取權",
+			"example": "the Trump administration considered restricting access to cutting-edge Chinese models"
+		},
+		{
+			"word": "notably",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈnoʊtəbli/",
+			"definition_zh": "特別是、顯著地",
+			"example": "notably Moonshot AI’s Kimi K3"
+		},
+		{
+			"word": "stress",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/stres/",
+			"definition_zh": "強調",
+			"example": "stressing that defenders need the tools to counter emerging threats."
+		},
+		{
+			"word": "open-weight",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˈoʊpən weɪt/",
+			"definition_zh": "開源權重的",
+			"example": "Hugging Face used a Chinese open-weight AI to defend itself"
+		},
+		{
+			"word": "tension",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈtenʃn/",
+			"definition_zh": "緊張局勢",
+			"example": "The alliance arrives amid growing tensions over whether the world’s most capable AI models should remain open."
+		},
+		{
+			"word": "absent",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈæbsənt/",
+			"definition_zh": "缺席的",
+			"example": "Conspicuously absent are leading US AI companies"
+		},
+		{
+			"word": "join forces",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/dʒɔɪn ˈfɔːrsɪz/",
+			"definition_zh": "聯手、合作",
+			"example": "Nvidia on Monday said it is joining forces with Microsoft, SpaceX, IBM, and other tech companies"
+		},
+		{
+			"word": "respond to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/rɪˈspɑːnd tuː/",
+			"definition_zh": "回應",
+			"example": "The initiative is a direct response to mounting concerns"
+		},
+		{
+			"word": "spearhead",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈspɪərhed/",
+			"definition_zh": "帶頭、領軍",
+			"example": "an industry movement — again spearheaded by Nvidia — defending the need for openness in AI."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "A ____ software agent managed to steal sensitive data from the database.",
+			"sentence_zh": "一個惡意的軟體代理程式設法從資料庫中竊取了敏感數據。",
+			"answer": "rogue",
+			"options": [
+				"rogue",
+				"frontier",
+				"mounting",
+				"absent"
+			]
+		},
+		{
+			"sentence": "The two startups decided to ____ to create a more competitive product.",
+			"sentence_zh": "這兩家新創公司決定聯手，以開發出更具競爭力的產品。",
+			"answer": "join forces",
+			"options": [
+				"limit",
+				"stress",
+				"join forces",
+				"respond to"
+			]
+		},
+		{
+			"sentence": "The new environmental ____ aims to reduce plastic waste in the ocean.",
+			"sentence_zh": "這項新的環保倡議旨在減少海洋中的塑膠廢棄物。",
+			"answer": "initiative",
+			"options": [
+				"strategy",
+				"initiative",
+				"containment",
+				"tension"
+			]
+		},
+		{
+			"sentence": "There is ____ pressure on the government to lower taxes.",
+			"sentence_zh": "政府面臨著日益增長的減稅壓力。",
+			"answer": "mounting",
+			"options": [
+				"emerging",
+				"notably",
+				"mounting",
+				"effectively"
+			]
+		},
+		{
+			"sentence": "Developers often set up ____ to ensure the AI doesn't generate harmful content.",
+			"sentence_zh": "開發者通常會設置安全防護，以確保 AI 不會產生有害內容。",
+			"answer": "guardrails",
+			"options": [
+				"guardrails",
+				"alliance",
+				"access",
+				"strategy"
+			]
+		},
+		{
+			"sentence": "The company uses ____ software, so the source code is not available to the public.",
+			"sentence_zh": "該公司使用專有軟體，因此大眾無法取得其原始碼。",
+			"answer": "proprietary",
+			"options": [
+				"proprietary",
+				"open-weight",
+				"rogue",
+				"emerging"
+			]
+		},
+		{
+			"sentence": "This research pushes the ____ of what is possible in modern medicine.",
+			"sentence_zh": "這項研究推動了現代醫學可能性的前沿。",
+			"answer": "frontier",
+			"options": [
+				"containment",
+				"frontier",
+				"tension",
+				"alliance"
+			]
+		},
+		{
+			"sentence": "The CEO will ____ the project to expand the business into Asia.",
+			"sentence_zh": "執行長將帶頭執行將業務擴展到亞洲的計畫。",
+			"answer": "spearhead",
+			"options": [
+				"launch",
+				"consider",
+				"spearhead",
+				"limit"
+			]
+		},
+		{
+			"sentence": "We need to invest in ____ technologies like renewable energy.",
+			"sentence_zh": "我們需要投資像再生能源這樣的新興技術。",
+			"answer": "emerging",
+			"options": [
+				"emerging",
+				"mounting",
+				"absent",
+				"proprietary"
+			]
+		},
+		{
+			"sentence": "The manager was ____ from the meeting due to a family emergency.",
+			"sentence_zh": "經理因為家庭緊急情況缺席了會議。",
+			"answer": "absent",
+			"options": [
+				"conspicuously",
+				"effectively",
+				"absent",
+				"notably"
+			]
+		}
+	]
+}
