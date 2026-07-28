@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inside the making of the category-busting Nike Air Zoom Hyperslide — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-28</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">Inside the making of the category-busting Nike Air Zoom Hyperslide</h1>
+	<div class="article-meta">
+		2026-07-28 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91579671/inside-the-creation-of-the-brand-new-nike-air-zoom-hyperslide?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="ritual" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ritual</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈrɪtʃ.u.əl/</span>
+				<span class="vocab-def">慣常做法；儀式</span>
+			</div>
+			<div class="vocab-card" data-word="simplistic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">simplistic</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/sɪmˈplɪs.tɪk/</span>
+				<span class="vocab-def">過分簡化的；簡單的</span>
+			</div>
+			<div class="vocab-card" data-word="combination" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">combination</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌkɒm.bɪˈneɪ.ʃən/</span>
+				<span class="vocab-def">結合；組合</span>
+			</div>
+			<div class="vocab-card" data-word="describe" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">describe</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈskraɪb/</span>
+				<span class="vocab-def">描述；描寫</span>
+			</div>
+			<div class="vocab-card" data-word="focus" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">focus</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈfəʊ.kəs/</span>
+				<span class="vocab-def">集中；專注</span>
+			</div>
+			<div class="vocab-card" data-word="completed" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">completed</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/kəmˈpliː.tɪd/</span>
+				<span class="vocab-def">完成的；結束的</span>
+			</div>
+			<div class="vocab-card" data-word="million" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">million</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈmɪl.jən/</span>
+				<span class="vocab-def">百萬</span>
+			</div>
+			<div class="vocab-card" data-word="career" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">career</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˈrɪər/</span>
+				<span class="vocab-def">職業生涯</span>
+			</div>
+			<div class="vocab-card" data-word="opportunity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">opportunity</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɒp.əˈtjuː.nə.ti/</span>
+				<span class="vocab-def">機會；時機</span>
+			</div>
+			<div class="vocab-card" data-word="larger" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">larger</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/lɑːdʒər/</span>
+				<span class="vocab-def">較大的；更廣泛的</span>
+			</div>
+			<div class="vocab-card" data-word="available" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">available</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/əˈveɪ.lə.bəl/</span>
+				<span class="vocab-def">可獲得的；可買到的</span>
+			</div>
+			<div class="vocab-card" data-word="collaboration" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">collaboration</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˌlæb.əˈreɪ.ʃən/</span>
+				<span class="vocab-def">合作；協作</span>
+			</div>
+			<div class="vocab-card" data-word="cushioning" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">cushioning</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈkʊʃ.ən.ɪŋ/</span>
+				<span class="vocab-def">緩震；緩衝</span>
+			</div>
+			<div class="vocab-card" data-word="intrinsically" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">intrinsically</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ɪnˈtrɪn.zɪ.kəl.i/</span>
+				<span class="vocab-def">本質上；固有地</span>
+			</div>
+			<div class="vocab-card" data-word="longevity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">longevity</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/lɒnˈdʒev.ə.ti/</span>
+				<span class="vocab-def">長壽；壽命</span>
+			</div>
+			<div class="vocab-card" data-word="explosiveness" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">explosiveness</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪkˈspləʊ.sɪv.nəs/</span>
+				<span class="vocab-def">爆發力</span>
+			</div>
+			<div class="vocab-card" data-word="portfolio" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">portfolio</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/pɔːtˈfəʊ.li.əʊ/</span>
+				<span class="vocab-def">產品組合；投資組合</span>
+			</div>
+			<div class="vocab-card" data-word="evolution" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">evolution</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌiː.vəˈluː.ʃən/</span>
+				<span class="vocab-def">演變；進化</span>
+			</div>
+			<div class="vocab-card" data-word="signals" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">signals</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈsɪɡ.nəlz/</span>
+				<span class="vocab-def">標誌著；傳達</span>
+			</div>
+			<div class="vocab-card" data-word="wearable tech" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">wearable tech</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈweə.rə.bəl tek/</span>
+				<span class="vocab-def">可穿戴技術</span>
+			</div>
+			<div class="vocab-card" data-word="wearable electronics" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">wearable electronics</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈweə.rə.bəl iˌlekˈtrɒn.ɪks/</span>
+				<span class="vocab-def">可穿戴電子設備</span>
+			</div>
+			<div class="vocab-card" data-word="kick off" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">kick off</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/kɪk ɒf/</span>
+				<span class="vocab-def">脫掉；踢掉</span>
+			</div>
+			<div class="vocab-card" data-word="slip into" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">slip into</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/slɪp ˈɪn.tuː/</span>
+				<span class="vocab-def">輕快地穿上</span>
+			</div>
+			<div class="vocab-card" data-word="go about" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">go about</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɡəʊ əˈbaʊt/</span>
+				<span class="vocab-def">著手做；進行日常活動</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">The first thing most athletes do after a game is <span class="word-phrase" data-word="kick off">kick off</span> their sneakers and <span class="word-phrase" data-word="slip into">slip into</span> a pair of slides. Nike and Hyperice are betting that <span class="word-highfreq" data-word="ritual">ritual</span> will become something much more intentional.</p>
+			<p class="para-translation">大多數運動員在比賽後做的第一件事就是踢掉運動鞋，換上一雙拖鞋。Nike 和 Hyperice 賭定這種慣例將會變得更具目的性。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Their latest <span class="word-general" data-word="collaboration">collaboration</span>, the Nike Air Zoom Hyperslide, looks like an everyday recovery slide, but hidden within its <span class="word-highfreq" data-word="simplistic">simplistic</span> design is a <span class="word-highfreq" data-word="combination">combination</span> of Air Zoom <span class="word-general" data-word="cushioning">cushioning</span>, heat, and vibration technology. During Nike’s media briefing, Tobie Hatfield, senior director of athlete innovation, <span class="word-highfreq" data-word="describe">describe</span>d the Hyperslide as a product designed to begin recovery in the first five minutes after activity.</p>
+			<p class="para-translation">他們最新的合作作品 Nike Air Zoom Hyperslide 看起來像是一般的恢復拖鞋，但其簡約設計中隱藏了 Air Zoom 緩震、發熱和振動技術的結合。在 Nike 的媒體簡報中，運動員創新高級總監 Tobie Hatfield 將 Hyperslide 描述為一款旨在於運動後前五分鐘內開始恢復的產品。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">For decades, athletic innovation <span class="word-highfreq" data-word="focus">focus</span>ed on helping athletes run faster, jump higher, and generate more power. Recovery was treated as something that happened after an effort was <span class="word-highfreq" data-word="completed">completed</span>—an hour on the training table, a dip in the cold tub, or active stretching. Today, however, recovery is <span class="word-general" data-word="intrinsically">intrinsically</span> a part of performance itself. Teams spend <span class="word-highfreq" data-word="million">million</span>s on sports science; athletes are extending their <span class="word-highfreq" data-word="career">career</span>s well into their late thirties and beyond, and <span class="word-general" data-word="longevity">longevity</span> is talked about almost as much as <span class="word-general" data-word="explosiveness">explosiveness</span>.</p>
+			<p class="para-translation">幾十年來，運動創新專注於幫助運動員跑得更快、跳得更高並產生更強的力量。恢復被視為在努力完成後才發生的事情——在訓練桌上待一小時、泡冷水澡或進行動態伸展。然而，在今天，恢復在本質上已成為表現本身的一部分。團隊在運動科學上投入數百萬美元；運動員將其職業生涯延伸至三十多歲甚至更久，而長壽被討論的程度幾乎與爆發力不相上下。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Hyperice believes recovery shouldn’t start once an athlete has time to be still. It should start the moment the final buzzer sounds</p>
+			<p class="para-translation">Hyperice 認為恢復不應該等到運動員有時間靜下來才開始。它應該在最後一聲哨響響起的那一刻就開始。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/02-91579671-nike-air-zoom-hyperslide_483642.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">“The opportunities around this <span class="word-term" data-word="wearable tech">wearable tech</span> segment just become limitless,” says Jim Huether, Hyperice’s CEO. Rather than viewing the Hyperslide as another product across their <span class="word-general" data-word="portfolio">portfolio</span>, he sees it as part of a <span class="word-highfreq" data-word="larger">larger</span> <span class="word-general" data-word="evolution">evolution</span> where footwear and apparel become intelligent, connected technologies that work while athletes <span class="word-phrase" data-word="go about">go about</span> their day.</p>
+			<p class="para-translation">Hyperice 的執行長 Jim Huether 表示：「圍繞這個可穿戴技術領域的機會正變得無限大。」他並非將 Hyperslide 視為其產品組合中的另一款產品，而是將其視為更大演變的一部分，其中鞋類和服裝將成為智能且互聯的技術，在運動員進行日常活動時發揮作用。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That vision extends well beyond a singular product launch. Along with last year’s launch of the Hyperboot, the Hyperslide <span class="word-general" data-word="signals">signals</span> what Nike and Hyperice believe is the beginning of an entirely new category: tech-enabled footwear that blends performance equipment and <span class="word-term" data-word="wearable electronics">wearable electronics</span>.</p>
+			<p class="para-translation">這一願景遠超出了單一產品的發佈。繼去年推出 Hyperboot 之後，Hyperslide 標誌著 Nike 和 Hyperice 認為的一個全新類別的開始：融合了性能設備和可穿戴電子的科技驅動鞋類。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The Hyperslide will be <span class="word-highfreq" data-word="available">available</span> on September 29 for $249 on Nike.com and Hyperice.com, as well as at Best Buy and Dick’s Sporting Goods in the U.S.</p>
+			<p class="para-translation">Hyperslide 將於 9 月 29 日在 Nike.com 和 Hyperice.com 以及美國的 Best Buy 和 Dick’s Sporting Goods 以 249 美元的價格發售。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-26-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Google basically confirms the Pixel 11 is getting a price hike</span>
+			</a>
+			<a class="related-card" href="2026-07-23-morning.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: NASA’s new space telescope and OpenAI’s autonomous hacker</span>
+			</a>
+			<a class="related-card" href="2026-07-22-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">Stats show LinkedIn’s ‘Open to Work’ badge works. Designers say it could be even better</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "ritual", "type": "highfreq", "pos": "n.", "ipa": "/ˈrɪtʃ.u.əl/", "definition_zh": "慣常做法；儀式", "example": "Nike and Hyperice are betting that ritual will become something much more intentional."}, {"word": "simplistic", "type": "highfreq", "pos": "adj.", "ipa": "/sɪmˈplɪs.tɪk/", "definition_zh": "過分簡化的；簡單的", "example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."}, {"word": "combination", "type": "highfreq", "pos": "n.", "ipa": "/ˌkɒm.bɪˈneɪ.ʃən/", "definition_zh": "結合；組合", "example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."}, {"word": "describe", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈskraɪb/", "definition_zh": "描述；描寫", "example": "Tobie Hatfield described the Hyperslide as a product designed to begin recovery in the first five minutes after activity."}, {"word": "focus", "type": "highfreq", "pos": "v.", "ipa": "/ˈfəʊ.kəs/", "definition_zh": "集中；專注", "example": "athletic innovation focused on helping athletes run faster, jump higher, and generate more power."}, {"word": "completed", "type": "highfreq", "pos": "adj.", "ipa": "/kəmˈpliː.tɪd/", "definition_zh": "完成的；結束的", "example": "Recovery was treated as something that happened after an effort was completed."}, {"word": "million", "type": "highfreq", "pos": "n.", "ipa": "/ˈmɪl.jən/", "definition_zh": "百萬", "example": "Teams spend millions on sports science."}, {"word": "career", "type": "highfreq", "pos": "n.", "ipa": "/kəˈrɪər/", "definition_zh": "職業生涯", "example": "athletes are extending their careers well into their late thirties and beyond."}, {"word": "opportunity", "type": "highfreq", "pos": "n.", "ipa": "/ˌɒp.əˈtjuː.nə.ti/", "definition_zh": "機會；時機", "example": "The opportunities around this wearable tech segment just become limitless."}, {"word": "larger", "type": "highfreq", "pos": "adj.", "ipa": "/lɑːdʒər/", "definition_zh": "較大的；更廣泛的", "example": "he sees it as part of a larger evolution where footwear and apparel become intelligent."}, {"word": "available", "type": "highfreq", "pos": "adj.", "ipa": "/əˈveɪ.lə.bəl/", "definition_zh": "可獲得的；可買到的", "example": "The Hyperslide will be available on September 29 for $249."}, {"word": "collaboration", "type": "general", "pos": "n.", "ipa": "/kəˌlæb.əˈreɪ.ʃən/", "definition_zh": "合作；協作", "example": "Their latest collaboration, the Nike Air Zoom Hyperslide, looks like an everyday recovery slide."}, {"word": "cushioning", "type": "general", "pos": "n.", "ipa": "/ˈkʊʃ.ən.ɪŋ/", "definition_zh": "緩震；緩衝", "example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."}, {"word": "intrinsically", "type": "general", "pos": "adv.", "ipa": "/ɪnˈtrɪn.zɪ.kəl.i/", "definition_zh": "本質上；固有地", "example": "Today, however, recovery is intrinsically a part of performance itself."}, {"word": "longevity", "type": "general", "pos": "n.", "ipa": "/lɒnˈdʒev.ə.ti/", "definition_zh": "長壽；壽命", "example": "longevity is talked about almost as much as explosiveness."}, {"word": "explosiveness", "type": "general", "pos": "n.", "ipa": "/ɪkˈspləʊ.sɪv.nəs/", "definition_zh": "爆發力", "example": "longevity is talked about almost as much as explosiveness."}, {"word": "portfolio", "type": "general", "pos": "n.", "ipa": "/pɔːtˈfəʊ.li.əʊ/", "definition_zh": "產品組合；投資組合", "example": "Rather than viewing the Hyperslide as another product across their portfolio."}, {"word": "evolution", "type": "general", "pos": "n.", "ipa": "/ˌiː.vəˈluː.ʃən/", "definition_zh": "演變；進化", "example": "he sees it as part of a larger evolution where footwear and apparel become intelligent."}, {"word": "signals", "type": "general", "pos": "v.", "ipa": "/ˈsɪɡ.nəlz/", "definition_zh": "標誌著；傳達", "example": "the Hyperslide signals what Nike and Hyperice believe is the beginning of an entirely new category."}, {"word": "wearable tech", "type": "term", "pos": "n.", "ipa": "/ˈweə.rə.bəl tek/", "definition_zh": "可穿戴技術", "example": "The opportunities around this wearable tech segment just become limitless."}, {"word": "wearable electronics", "type": "term", "pos": "n.", "ipa": "/ˈweə.rə.bəl iˌlekˈtrɒn.ɪks/", "definition_zh": "可穿戴電子設備", "example": "tech-enabled footwear that blends performance equipment and wearable electronics."}, {"word": "kick off", "type": "phrase", "pos": "", "ipa": "/kɪk ɒf/", "definition_zh": "脫掉；踢掉", "example": "The first thing most athletes do after a game is kick off their sneakers."}, {"word": "slip into", "type": "phrase", "pos": "", "ipa": "/slɪp ˈɪn.tuː/", "definition_zh": "輕快地穿上", "example": "The first thing most athletes do after a game is kick off their sneakers and slip into a pair of slides."}, {"word": "go about", "type": "phrase", "pos": "", "ipa": "/ɡəʊ əˈbaʊt/", "definition_zh": "著手做；進行日常活動", "example": "technologies that work while athletes go about their day."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "Drinking a cup of warm tea before bed has become a relaxing nightly ____ for him.", "sentence_zh": "睡前喝一杯熱茶已成為他放鬆的每日慣常做法。", "answer": "ritual", "options": ["ritual", "cushioning", "longevity", "combination"]}, {"sentence": "The successful project was a result of the close ____ between the marketing and design teams.", "sentence_zh": "這個成功的專案是行銷與設計團隊緊密合作的結果。", "answer": "collaboration", "options": ["collaboration", "simplistic", "available", "signals"]}, {"sentence": "These new running shoes have extra ____ in the heel to absorb impact.", "sentence_zh": "這款新跑鞋的後跟有額外的緩震功能以吸收衝擊力。", "answer": "cushioning", "options": ["cushioning", "ritual", "portfolio", "evolution"]}, {"sentence": "The joy of creating art is ____ linked to the artist's personal experiences.", "sentence_zh": "創作藝術的喜悅與藝術家的個人經歷在本質上是相連的。", "answer": "intrinsically", "options": ["intrinsically", "describe", "larger", "focus"]}, {"sentence": "Scientists are studying how genetics and lifestyle affect human ____.", "sentence_zh": "科學家們正在研究遺傳和生活方式如何影響人類的壽命。", "answer": "longevity", "options": ["longevity", "explosiveness", "career", "million"]}, {"sentence": "The ____ of digital cameras has led to the decline of traditional film photography.", "sentence_zh": "數位相機的演變導致了傳統底片攝影的衰落。", "answer": "evolution", "options": ["evolution", "combination", "opportunity", "simplistic"]}, {"sentence": "The manager said that more information about the product will be ____ next week.", "sentence_zh": "經理表示，有關該產品的更多資訊將於下週提供。", "answer": "available", "options": ["available", "completed", "intrinsically", "signals"]}, {"sentence": "Smart glasses are an innovative form of ____ that can display data on the lens.", "sentence_zh": "智能眼鏡是一種創新的可穿戴技術，可以在鏡片上顯示數據。", "answer": "wearable tech", "options": ["wearable tech", "wearable electronics", "cushioning", "portfolio"]}, {"sentence": "After a long day of hiking, I couldn't wait to ____ my heavy boots.", "sentence_zh": "經過一整天的徒步旅行，我迫不及待地想脫掉沉重的靴子。", "answer": "kick off", "options": ["kick off", "slip into", "go about", "describe"]}, {"sentence": "The expansion of the company into the Asian market represents a significant ____.", "sentence_zh": "公司向亞洲市場的擴張代表了一個重大的機會。", "answer": "opportunity", "options": ["opportunity", "million", "focus", "larger"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>

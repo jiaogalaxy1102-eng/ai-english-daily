@@ -1,0 +1,358 @@
+{
+	"date": "2026-07-28",
+	"slot": "morning",
+	"tag": "科技",
+	"title": "Inside the making of the category-busting Nike Air Zoom Hyperslide",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91579671/inside-the-creation-of-the-brand-new-nike-air-zoom-hyperslide?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "The first thing most athletes do after a game is kick off their sneakers and slip into a pair of slides. Nike and Hyperice are betting that ritual will become something much more intentional.",
+			"translation": "大多數運動員在比賽後做的第一件事就是踢掉運動鞋，換上一雙拖鞋。Nike 和 Hyperice 賭定這種慣例將會變得更具目的性。"
+		},
+		{
+			"tag": "p",
+			"text": "Their latest collaboration, the Nike Air Zoom Hyperslide, looks like an everyday recovery slide, but hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology. During Nike’s media briefing, Tobie Hatfield, senior director of athlete innovation, described the Hyperslide as a product designed to begin recovery in the first five minutes after activity.",
+			"translation": "他們最新的合作作品 Nike Air Zoom Hyperslide 看起來像是一般的恢復拖鞋，但其簡約設計中隱藏了 Air Zoom 緩震、發熱和振動技術的結合。在 Nike 的媒體簡報中，運動員創新高級總監 Tobie Hatfield 將 Hyperslide 描述為一款旨在於運動後前五分鐘內開始恢復的產品。"
+		},
+		{
+			"tag": "p",
+			"text": "For decades, athletic innovation focused on helping athletes run faster, jump higher, and generate more power. Recovery was treated as something that happened after an effort was completed—an hour on the training table, a dip in the cold tub, or active stretching. Today, however, recovery is intrinsically a part of performance itself. Teams spend millions on sports science; athletes are extending their careers well into their late thirties and beyond, and longevity is talked about almost as much as explosiveness.",
+			"translation": "幾十年來，運動創新專注於幫助運動員跑得更快、跳得更高並產生更強的力量。恢復被視為在努力完成後才發生的事情——在訓練桌上待一小時、泡冷水澡或進行動態伸展。然而，在今天，恢復在本質上已成為表現本身的一部分。團隊在運動科學上投入數百萬美元；運動員將其職業生涯延伸至三十多歲甚至更久，而長壽被討論的程度幾乎與爆發力不相上下。"
+		},
+		{
+			"tag": "p",
+			"text": "Hyperice believes recovery shouldn’t start once an athlete has time to be still. It should start the moment the final buzzer sounds",
+			"translation": "Hyperice 認為恢復不應該等到運動員有時間靜下來才開始。它應該在最後一聲哨響響起的那一刻就開始。"
+		},
+		{
+			"tag": "p",
+			"text": "“The opportunities around this wearable tech segment just become limitless,” says Jim Huether, Hyperice’s CEO. Rather than viewing the Hyperslide as another product across their portfolio, he sees it as part of a larger evolution where footwear and apparel become intelligent, connected technologies that work while athletes go about their day.",
+			"translation": "Hyperice 的執行長 Jim Huether 表示：「圍繞這個可穿戴技術領域的機會正變得無限大。」他並非將 Hyperslide 視為其產品組合中的另一款產品，而是將其視為更大演變的一部分，其中鞋類和服裝將成為智能且互聯的技術，在運動員進行日常活動時發揮作用。"
+		},
+		{
+			"tag": "p",
+			"text": "That vision extends well beyond a singular product launch. Along with last year’s launch of the Hyperboot, the Hyperslide signals what Nike and Hyperice believe is the beginning of an entirely new category: tech-enabled footwear that blends performance equipment and wearable electronics.",
+			"translation": "這一願景遠超出了單一產品的發佈。繼去年推出 Hyperboot 之後，Hyperslide 標誌著 Nike 和 Hyperice 認為的一個全新類別的開始：融合了性能設備和可穿戴電子的科技驅動鞋類。"
+		},
+		{
+			"tag": "p",
+			"text": "The Hyperslide will be available on September 29 for $249 on Nike.com and Hyperice.com, as well as at Best Buy and Dick’s Sporting Goods in the U.S.",
+			"translation": "Hyperslide 將於 9 月 29 日在 Nike.com 和 Hyperice.com 以及美國的 Best Buy 和 Dick’s Sporting Goods 以 249 美元的價格發售。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/02-91579671-nike-air-zoom-hyperslide_483642.jpg",
+			"alt": "",
+			"after_paragraph": 4
+		}
+	],
+	"vocab": [
+		{
+			"word": "ritual",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈrɪtʃ.u.əl/",
+			"definition_zh": "慣常做法；儀式",
+			"example": "Nike and Hyperice are betting that ritual will become something much more intentional."
+		},
+		{
+			"word": "simplistic",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/sɪmˈplɪs.tɪk/",
+			"definition_zh": "過分簡化的；簡單的",
+			"example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."
+		},
+		{
+			"word": "combination",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌkɒm.bɪˈneɪ.ʃən/",
+			"definition_zh": "結合；組合",
+			"example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."
+		},
+		{
+			"word": "describe",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈskraɪb/",
+			"definition_zh": "描述；描寫",
+			"example": "Tobie Hatfield described the Hyperslide as a product designed to begin recovery in the first five minutes after activity."
+		},
+		{
+			"word": "focus",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈfəʊ.kəs/",
+			"definition_zh": "集中；專注",
+			"example": "athletic innovation focused on helping athletes run faster, jump higher, and generate more power."
+		},
+		{
+			"word": "completed",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/kəmˈpliː.tɪd/",
+			"definition_zh": "完成的；結束的",
+			"example": "Recovery was treated as something that happened after an effort was completed."
+		},
+		{
+			"word": "million",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈmɪl.jən/",
+			"definition_zh": "百萬",
+			"example": "Teams spend millions on sports science."
+		},
+		{
+			"word": "career",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/kəˈrɪər/",
+			"definition_zh": "職業生涯",
+			"example": "athletes are extending their careers well into their late thirties and beyond."
+		},
+		{
+			"word": "opportunity",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌɒp.əˈtjuː.nə.ti/",
+			"definition_zh": "機會；時機",
+			"example": "The opportunities around this wearable tech segment just become limitless."
+		},
+		{
+			"word": "larger",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/lɑːdʒər/",
+			"definition_zh": "較大的；更廣泛的",
+			"example": "he sees it as part of a larger evolution where footwear and apparel become intelligent."
+		},
+		{
+			"word": "available",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/əˈveɪ.lə.bəl/",
+			"definition_zh": "可獲得的；可買到的",
+			"example": "The Hyperslide will be available on September 29 for $249."
+		},
+		{
+			"word": "collaboration",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/kəˌlæb.əˈreɪ.ʃən/",
+			"definition_zh": "合作；協作",
+			"example": "Their latest collaboration, the Nike Air Zoom Hyperslide, looks like an everyday recovery slide."
+		},
+		{
+			"word": "cushioning",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkʊʃ.ən.ɪŋ/",
+			"definition_zh": "緩震；緩衝",
+			"example": "hidden within its simplistic design is a combination of Air Zoom cushioning, heat, and vibration technology."
+		},
+		{
+			"word": "intrinsically",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/ɪnˈtrɪn.zɪ.kəl.i/",
+			"definition_zh": "本質上；固有地",
+			"example": "Today, however, recovery is intrinsically a part of performance itself."
+		},
+		{
+			"word": "longevity",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/lɒnˈdʒev.ə.ti/",
+			"definition_zh": "長壽；壽命",
+			"example": "longevity is talked about almost as much as explosiveness."
+		},
+		{
+			"word": "explosiveness",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪkˈspləʊ.sɪv.nəs/",
+			"definition_zh": "爆發力",
+			"example": "longevity is talked about almost as much as explosiveness."
+		},
+		{
+			"word": "portfolio",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/pɔːtˈfəʊ.li.əʊ/",
+			"definition_zh": "產品組合；投資組合",
+			"example": "Rather than viewing the Hyperslide as another product across their portfolio."
+		},
+		{
+			"word": "evolution",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌiː.vəˈluː.ʃən/",
+			"definition_zh": "演變；進化",
+			"example": "he sees it as part of a larger evolution where footwear and apparel become intelligent."
+		},
+		{
+			"word": "signals",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈsɪɡ.nəlz/",
+			"definition_zh": "標誌著；傳達",
+			"example": "the Hyperslide signals what Nike and Hyperice believe is the beginning of an entirely new category."
+		},
+		{
+			"word": "wearable tech",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈweə.rə.bəl tek/",
+			"definition_zh": "可穿戴技術",
+			"example": "The opportunities around this wearable tech segment just become limitless."
+		},
+		{
+			"word": "wearable electronics",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈweə.rə.bəl iˌlekˈtrɒn.ɪks/",
+			"definition_zh": "可穿戴電子設備",
+			"example": "tech-enabled footwear that blends performance equipment and wearable electronics."
+		},
+		{
+			"word": "kick off",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/kɪk ɒf/",
+			"definition_zh": "脫掉；踢掉",
+			"example": "The first thing most athletes do after a game is kick off their sneakers."
+		},
+		{
+			"word": "slip into",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/slɪp ˈɪn.tuː/",
+			"definition_zh": "輕快地穿上",
+			"example": "The first thing most athletes do after a game is kick off their sneakers and slip into a pair of slides."
+		},
+		{
+			"word": "go about",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɡəʊ əˈbaʊt/",
+			"definition_zh": "著手做；進行日常活動",
+			"example": "technologies that work while athletes go about their day."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "Drinking a cup of warm tea before bed has become a relaxing nightly ____ for him.",
+			"sentence_zh": "睡前喝一杯熱茶已成為他放鬆的每日慣常做法。",
+			"answer": "ritual",
+			"options": [
+				"ritual",
+				"cushioning",
+				"longevity",
+				"combination"
+			]
+		},
+		{
+			"sentence": "The successful project was a result of the close ____ between the marketing and design teams.",
+			"sentence_zh": "這個成功的專案是行銷與設計團隊緊密合作的結果。",
+			"answer": "collaboration",
+			"options": [
+				"collaboration",
+				"simplistic",
+				"available",
+				"signals"
+			]
+		},
+		{
+			"sentence": "These new running shoes have extra ____ in the heel to absorb impact.",
+			"sentence_zh": "這款新跑鞋的後跟有額外的緩震功能以吸收衝擊力。",
+			"answer": "cushioning",
+			"options": [
+				"cushioning",
+				"ritual",
+				"portfolio",
+				"evolution"
+			]
+		},
+		{
+			"sentence": "The joy of creating art is ____ linked to the artist's personal experiences.",
+			"sentence_zh": "創作藝術的喜悅與藝術家的個人經歷在本質上是相連的。",
+			"answer": "intrinsically",
+			"options": [
+				"intrinsically",
+				"describe",
+				"larger",
+				"focus"
+			]
+		},
+		{
+			"sentence": "Scientists are studying how genetics and lifestyle affect human ____.",
+			"sentence_zh": "科學家們正在研究遺傳和生活方式如何影響人類的壽命。",
+			"answer": "longevity",
+			"options": [
+				"longevity",
+				"explosiveness",
+				"career",
+				"million"
+			]
+		},
+		{
+			"sentence": "The ____ of digital cameras has led to the decline of traditional film photography.",
+			"sentence_zh": "數位相機的演變導致了傳統底片攝影的衰落。",
+			"answer": "evolution",
+			"options": [
+				"evolution",
+				"combination",
+				"opportunity",
+				"simplistic"
+			]
+		},
+		{
+			"sentence": "The manager said that more information about the product will be ____ next week.",
+			"sentence_zh": "經理表示，有關該產品的更多資訊將於下週提供。",
+			"answer": "available",
+			"options": [
+				"available",
+				"completed",
+				"intrinsically",
+				"signals"
+			]
+		},
+		{
+			"sentence": "Smart glasses are an innovative form of ____ that can display data on the lens.",
+			"sentence_zh": "智能眼鏡是一種創新的可穿戴技術，可以在鏡片上顯示數據。",
+			"answer": "wearable tech",
+			"options": [
+				"wearable tech",
+				"wearable electronics",
+				"cushioning",
+				"portfolio"
+			]
+		},
+		{
+			"sentence": "After a long day of hiking, I couldn't wait to ____ my heavy boots.",
+			"sentence_zh": "經過一整天的徒步旅行，我迫不及待地想脫掉沉重的靴子。",
+			"answer": "kick off",
+			"options": [
+				"kick off",
+				"slip into",
+				"go about",
+				"describe"
+			]
+		},
+		{
+			"sentence": "The expansion of the company into the Asian market represents a significant ____.",
+			"sentence_zh": "公司向亞洲市場的擴張代表了一個重大的機會。",
+			"answer": "opportunity",
+			"options": [
+				"opportunity",
+				"million",
+				"focus",
+				"larger"
+			]
+		}
+	]
+}
