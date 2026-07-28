@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>What we learned about immersive tech, fan experiences and storytelling at Belgium House — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-28</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">It&#x27;s Nice That<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">What we learned about immersive tech, fan experiences and storytelling at Belgium House</h1>
+	<div class="article-meta">
+		2026-07-28 &nbsp;·&nbsp; <a href="https://www.itsnicethat.com/articles/belgium-house-sxsw-sponsored-content-270726" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="influential" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">influential</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌɪn.fluˈen.ʃəl/</span>
+				<span class="vocab-def">具影響力的</span>
+			</div>
+			<div class="vocab-card" data-word="legacy" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">legacy</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈleɡ.ə.si/</span>
+				<span class="vocab-def">傳承、遺產</span>
+			</div>
+			<div class="vocab-card" data-word="collaboration" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">collaboration</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˌlæb.əˈreɪ.ʃən/</span>
+				<span class="vocab-def">協作、合作</span>
+			</div>
+			<div class="vocab-card" data-word="inaugural" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">inaugural</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈnɔː.ɡjə.rəl/</span>
+				<span class="vocab-def">首屆的、開幕的</span>
+			</div>
+			<div class="vocab-card" data-word="narrative" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">narrative</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈnær.ə.tɪv/</span>
+				<span class="vocab-def">敘事、故事</span>
+			</div>
+			<div class="vocab-card" data-word="personal" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">personal</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈpɜː.sən.əl/</span>
+				<span class="vocab-def">個人化的、私人的</span>
+			</div>
+			<div class="vocab-card" data-word="commercial" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">commercial</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/kəˈmɜː.ʃəl/</span>
+				<span class="vocab-def">商業的</span>
+			</div>
+			<div class="vocab-card" data-word="diversity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">diversity</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/daɪˈvɜː.sə.ti/</span>
+				<span class="vocab-def">多樣性</span>
+			</div>
+			<div class="vocab-card" data-word="strengthen" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">strengthen</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈstreŋ.θən/</span>
+				<span class="vocab-def">加強、強化</span>
+			</div>
+			<div class="vocab-card" data-word="meaningful" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">meaningful</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈmiː.nɪŋ.fəl/</span>
+				<span class="vocab-def">有意義的</span>
+			</div>
+			<div class="vocab-card" data-word="burgeoning" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">burgeoning</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈbɜː.dʒən.ɪŋ/</span>
+				<span class="vocab-def">蓬勃發展的</span>
+			</div>
+			<div class="vocab-card" data-word="intertwining" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">intertwining</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɪn.təˈtwaɪ.nɪŋ/</span>
+				<span class="vocab-def">交織、糾纏</span>
+			</div>
+			<div class="vocab-card" data-word="novelty" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">novelty</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈnɒv.əl.ti/</span>
+				<span class="vocab-def">新鮮感、新奇事物</span>
+			</div>
+			<div class="vocab-card" data-word="participation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">participation</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/pɑːˌtɪs.ɪˈpeɪ.ʃən/</span>
+				<span class="vocab-def">參與</span>
+			</div>
+			<div class="vocab-card" data-word="integral" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">integral</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈɪn.tɪ.ɡrəl/</span>
+				<span class="vocab-def">不可或缺的</span>
+			</div>
+			<div class="vocab-card" data-word="remarkable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">remarkable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/rɪˈmɑː.kə.bəl/</span>
+				<span class="vocab-def">非凡的、卓越的</span>
+			</div>
+			<div class="vocab-card" data-word="appetite" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">appetite</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈæp.ə.taɪt/</span>
+				<span class="vocab-def">渴求、胃口</span>
+			</div>
+			<div class="vocab-card" data-word="spectacle" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">spectacle</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈspek.tə.kəl/</span>
+				<span class="vocab-def">奇觀、壯觀場面</span>
+			</div>
+			<div class="vocab-card" data-word="boldness" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">boldness</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈboʊld.nəs/</span>
+				<span class="vocab-def">大膽、勇敢</span>
+			</div>
+			<div class="vocab-card" data-word="immersive" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">immersive</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈmɜː.sɪv/</span>
+				<span class="vocab-def">沉浸式的</span>
+			</div>
+			<div class="vocab-card" data-word="IP" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">IP</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌaɪˈpiː/</span>
+				<span class="vocab-def">知識產權 (Intellectual Property)</span>
+			</div>
+			<div class="vocab-card" data-word="set the pace" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">set the pace</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/set ðə peɪs/</span>
+				<span class="vocab-def">引領速度、設定節奏</span>
+			</div>
+			<div class="vocab-card" data-word="bridge the gap" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">bridge the gap</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/brɪdʒ ðə ɡæp/</span>
+				<span class="vocab-def">彌合差距、消除隔閡</span>
+			</div>
+			<div class="vocab-card" data-word="know no borders" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">know no borders</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/noʊ noʊ ˈbɔːrdərz/</span>
+				<span class="vocab-def">無國界、不分國界</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">This <span class="word-highfreq" data-word="influential">influential</span> industry event brought together leaders and innovators to discuss our creative and technological futures, and the importance of keeping designers at the centre of the conversations.</p>
+			<p class="para-translation">這次具有影響力的產業活動聚集了領導者與創新者，共同探討我們創意與科技的未來，以及將設計師置於對話中心的重要性。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">From the clean-lined worlds of Tintin and the Smurfs to the boundary-pushing music of Angèle and Stromae, Belgium has a rich history of storytelling which has made an impact the world over. Today, this <span class="word-highfreq" data-word="legacy">legacy</span> is expanding within Southern Belgium’s <span class="word-general" data-word="burgeoning">burgeoning</span> cultural hub, Wallonia-Brussels: a territory emerging as a hub for the <span class="word-general" data-word="intertwining">intertwining</span> of design, technology and creative entrepreneursh<span class="word-term" data-word="IP">ip</span>.</p>
+			<p class="para-translation">從丁丁和藍色小精靈那線條簡潔的世界，到安琪兒（Angèle）與司徒邁（Stromae）挑戰極限的音樂，比利時擁有深厚的敘事歷史，並對全球產生了影響。如今，這份傳承正在比利時南部蓬勃發展的文化中心——瓦隆-布魯塞爾擴張：該地區正成為設計、科技與創意創業相互交織的樞紐。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Across audiovisual production, fashion, architecture, music, performance and <span class="word-term" data-word="immersive">immersive</span> media, the region’s creative industries are being shaped by <span class="word-highfreq" data-word="collaboration">collaboration</span> as much as craft. After all, Belgium is home to three official languages and communities from around 180 nationalities, so cultural overlap is embedded – and Wallonia-Brussels has become a place where cultural exchange naturally feeds experimentation, resulting in projects that often blur the boundaries between art, technology and experience.</p>
+			<p class="para-translation">跨越影音製作、時尚、建築、音樂、表演和沉浸式媒體，該地區的創意產業正受到協作與工藝的共同形塑。畢竟，比利時擁有三種官方語言以及來自約 180 個國家的社群，文化交融已根植其中——而瓦隆-布魯塞爾已成為一個文化交流自然孕育實驗的地方，產出的計畫往往模糊了藝術、科技與體驗之間的界限。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That growing ecosystem was the focus of Belgium House 2026, which returned to London’s Shoreditch Arts Club following its <span class="word-highfreq" data-word="inaugural">inaugural</span> edition last year. Organised by Wallonia-Brussels International, the event brought together creatives, cultural organisations, researchers and industry leaders from Belgium and the UK for a day of conversations exploring <span class="word-term" data-word="immersive">immersive</span> storytelling, creative technologies, music, design and cross-border <span class="word-highfreq" data-word="collaboration">collaboration</span>.</p>
+			<p class="para-translation">這種不斷成長的生態系統是 2026 年比利時館（Belgium House 2026）的焦點。該活動在去年首屆舉辦後，再次回歸倫敦的肖迪奇藝術俱樂部。由瓦隆-布魯塞爾國際組織，該活動匯集了來自比利時和英國的創意人、文化組織、研究人員和產業領袖，進行為期一天的對話，探索沉浸式敘事、創意科技、音樂、設計和跨境合作。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Copyright © J. Van Belle - WBI</p>
+			<p class="para-translation">版權所有 © J. Van Belle - WBI</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Rather than simply showcasing Belgian talent, Belgium House served to connect creative communities and promote discussion around the topics currently shaping Europe’s cultural industries: how <span class="word-term" data-word="immersive">immersive</span> technologies can move beyond <span class="word-general" data-word="novelty">novelty</span>, how storytelling evolves through <span class="word-general" data-word="partic<span class="word-term" data-word="IP">ip</span>ation">participation</span>, and how designers can continue to influence technological development as new tools emerge. Part of the discussions were representatives from initiatives such as Kikk Festival, XR4Europe and Ikii studio, which have been <span class="word-general" data-word="integral">integral</span> to building the ecosystem of artists, researchers and creative entrepreneurs across the Wallonia-Brussels region. Imagine a world where Wallonia-Brussels is a European creative tech valley – that is the future these initiatives, and others like Wake! By Digital Wallonia, are working towards.</p>
+			<p class="para-translation">比利時館不僅僅是展示比利時的人才，更致力於連結創意社群，並推動有關當前塑造歐洲文化產業話題的討論：沉浸式技術如何超越新鮮感、敘事如何透過參與演變，以及隨著新工具的出現，設計師如何繼續影響技術開發。參與討論的代表來自 Kikk Festival、XR4Europe 和 Ikii studio 等倡議組織，這些組織對於建立瓦隆-布魯塞爾地區的藝術家、研究人員和創意企業家生態系統至關重要。想像一個瓦隆-布魯塞爾成為歐洲創意科技谷的世界——這正是這些倡議以及像 Wake! By Digital Wallonia 等組織正努力邁向的未來。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“Belgium is setting the pace for Europe’s next creative wave,” says Motonobu Kasajima, general representative of Wallonia-Brussels to the UK. “From three major awards at Cannes to Belgian designers shaping the vision of the world’s leading fashion houses, to the unmistakable voices of Angèle and Stromae resonating across continents, our artists are proving that creativity knows no borders.”</p>
+			<p class="para-translation">「比利時正在為歐洲的下一波創意浪潮設定節奏，」瓦隆-布魯塞爾駐英國總代表 Motonobu Kasajima 表示。「從在坎城獲得的三項大獎，到塑造全球頂尖時尚屋願景的比利時設計師，再到安琪兒和司徒邁響徹各洲的獨特嗓音，我們的藝術家正在證明創意無國界。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“Belgium may be a small country,” adds Belgian ambassador to the UK Jeroen Cooreman, “but it’s a country of <span class="word-general" data-word="remarkable">remarkable</span> creativity. From Tomorrowland, which has become one of the world's most iconic music festivals, to EVS, whose live video production technology helps bring major international events such as the Olympic Games, the UEFA Champions League, Wimbledon and Formula 1 to audiences around the world, Belgian innovation and talent continue to make an impact far beyond our region.”</p>
+			<p class="para-translation">「比利時或許是個小國，」比利時駐英國大使 Jeroen Cooreman 補充道，「但它是一個擁有非凡創造力的國家。從已成為全球最具代表性音樂節之一的 Tomorrowland，到其現場視訊製作技術協助將奧運、歐冠聯賽、溫布頓和 F1 等重大國際賽事帶給全球觀眾的 EVS，比利時的創新與人才持續在我們地區之外產生影響。」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Dig into what went down at the design-focused panels below.</p>
+			<p class="para-translation">深入了解下方以設計為重點的小組討論內容。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">From lab to impact: translating <span class="word-term" data-word="immersive">immersive</span> research into real-world adoption</h3>
+			<h3 class="para-translation">從實驗室到影響力：將沉浸式研究轉化為現實世界的應用</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The opening panel explored how <span class="word-term" data-word="immersive">immersive</span> research can make the leap from innovation labs into everyday cultural experiences. Bringing together speakers from XR4Europe, Digital Catapult and Eirmersive, the conversation centred on <span class="word-highfreq" data-word="collaboration">collaboration</span> across Europe, digital sovereignty and the role immersive technologies can play across sectors ranging from culture to healthcare. According to Camille Donegan (CEO of Eirmersive and director of XR4Europe), what bridges the gap between research and adoption is the core idea that “<span class="word-highfreq" data-word="narrative">narrative</span>-driven experiences stick. We resonate with other humans.”</p>
+			<p class="para-translation">開場小組討論探討了沉浸式研究如何從創新實驗室躍進到日常文化體驗中。匯集了來自 XR4Europe、Digital Catapult 和 Eirmersive 的講者，對話集中在歐洲各地的合作、數位主權，以及沉浸式技術在從文化到醫療保健等各個領域所扮演的角色。根據 Eirmersive 執行長兼 XR4Europe 總監 Camille Donegan 的說法，橋接研究與應用之間的鴻溝之核心概念是：「敘事驅動的體驗會留下深刻印象。我們與他人產生共鳴。」</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">From screen to stepping inside: turning global <span class="word-term" data-word="IP">IP</span> into living worlds</h3>
+			<h3 class="para-translation">從螢幕到走入其中：將全球 IP 轉化為生動的世界</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The next discussion segued into fandom, partic<span class="word-term" data-word="IP">ip</span>atory experiences and the future of storytelling as an elevated experience. Among the speakers was Etienne Sainton from Belgian experience design company Alterface, whose work with Mycotoo on <em>Stranger Things: The Experience</em> demonstrates how interactive design can transform familiar intellectual property into physical environments. Dawn Foot, from Katapult and TEA EME Division, shared a few eye-opening statistics on <span class="word-term" data-word="immersive">immersive</span> experiences: that 65 per cent of people imagine themselves in a TV show and 72 per cent of people want more enjoyment in their lives – reinforcing the growing <span class="word-general" data-word="appetite">appetite</span> for immersive experiences that feel <span class="word-highfreq" data-word="personal">personal</span> rather than passive.</p>
+			<p class="para-translation">接下來的討論轉向粉絲文化、參與式體驗以及敘事作為一種提升體驗的未來。講者包括來自比利時體驗設計公司 Alterface 的 Etienne Sainton，他與 Mycotoo 在《怪奇物語：體驗》中的合作，展示了互動設計如何將熟悉的知識產權轉化為實體環境。來自 Katapult 和 TEA EME 分部的 Dawn Foot 分享了一些關於沉浸式體驗的驚人數據：65% 的人想像自己身處電視節目中，72% 的人希望生活中能有更多樂趣——這加深了人們對感受到個人化而非被動沉浸式體驗的日益增長的渴望。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Beyond Van Gogh: rethinking the future of <span class="word-term" data-word="immersive">immersive</span> experiences</h3>
+			<h3 class="para-translation">超越梵谷：重新思考沉浸式體驗的未來</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The final panel explored how <span class="word-term" data-word="immersive">immersive</span> exhibitions can be revealing and <span class="word-highfreq" data-word="meaningful">meaningful</span> experiences rather than ones driven purely by <span class="word-general" data-word="spectacle">spectacle</span>. Moderated by Marie du Chastel of Kikk Festival and Ikii studio, the discussion questioned how <span class="word-highfreq" data-word="commercial">commercial</span> investment is shaping the sector, and whether experiences driven primarily by return on investment leave enough room for artistic risk. “What do we lose in terms of <span class="word-highfreq" data-word="diversity">diversity</span>, <span class="word-general" data-word="boldness">boldness</span> and artistic vision?” du Chastel asked, a question that resonated far beyond immersive exhibitions alone.</p>
+			<p class="para-translation">最後的小組討論探討了沉浸式展覽如何成為具啟發性且有意義的體驗，而非純粹由奇觀驅動。由 Kikk Festival 和 Ikii studio 的 Marie du Chastel 主持，討論質疑了商業投資如何塑造該產業，以及主要由投資報酬率驅動的體驗是否為藝術風險留下了足夠空間。「我們在多樣性、大膽程度和藝術視野方面失去了什麼？」du Chastel 問道，這個問題引發的共鳴遠不止於沉浸式展覽本身。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">GalleryCopyright © J. Van Belle - WBI</h2>
+			<h2 class="para-translation">圖庫版權所有 © J. Van Belle - WBI</h2>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Kanal-Centre Pompidou</h3>
+			<h3 class="para-translation">卡納爾-龐畢度中心</h3>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Belgium House also offered attendees an early look at one of Brussels’ biggest cultural developments. Set to open in November 2026, Kanal-Centre Pompidou will transform a former Citroën factory into one of Europe’s largest museums dedicated to modern and contemporary art, housing works on loan from Paris’ Centre Pompidou while establishing its own programme rooted in Brussels’ cultural landscape.</p>
+			<p class="para-translation">比利時館也讓與會者得以搶先一睹布魯塞爾最大的文化發展項目之一。卡納爾-龐畢度中心預計於 2026 年 11 月開幕，將把前雪鐵龍工廠轉變為歐洲最大的現代與當代藝術博物館之一，館內將展出從巴黎龐畢度中心租借的作品，同時建立紮根於布魯塞爾文化景觀的自有計畫。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Taken together, the conversations at Belgium House reflected a region thinking beyond individual creative disc<span class="word-term" data-word="IP">ip</span>lines. Whether through <span class="word-term" data-word="immersive">immersive</span> technology, exhibition-making or music, the focus remained on creating <span class="word-highfreq" data-word="meaningful">meaningful</span> connections between people, ideas and industries.</p>
+			<p class="para-translation">總結來說，比利時館的對話反映了一個超越單一創意學科的地區。無論是透過沉浸式技術、展覽製作還是音樂，焦點始終在於建立人、想法與產業之間的有意義連結。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As Jeroen Cooreman put it, the event was ultimately about “bringing together creative minds, innovators, entrepreneurs and decision-makers to exchange ideas, build new partnersh<span class="word-term" data-word="IP">ip</span>s and <span class="word-highfreq" data-word="strengthen">strengthen</span> the ties between Belgium and the United Kingdom” – and, in turn, making a case for creative <span class="word-highfreq" data-word="collaboration">collaboration</span> across Europe.</p>
+			<p class="para-translation">正如 Jeroen Cooreman 所言，這次活動最終目的是「匯聚創意人才、創新者、企業家和決策者，交流想法、建立新的合作夥伴關係並加強比利時與英國之間的聯繫」——進而為全歐洲的創意協作提供實證。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Wallonia-Brussels presents Belgium House 2026 - the one-day creative collision bringing together <span class="word-highfreq" data-word="influential">influential</span> innovators across art, media, tech, and science to transform the Shoreditch Arts Club into a hub of <span class="word-term" data-word="immersive">immersive</span> innovation, cutting-edge talks, and <span class="word-highfreq" data-word="meaningful">meaningful</span> networking.</p>
+			<p class="para-translation">瓦隆-布魯塞爾呈現 2026 比利時館——這場為期一天的創意碰撞匯集了藝術、媒體、科技和科學領域具影響力的創新者，將肖迪奇藝術俱樂部轉變為沉浸式創新、前沿演講和有意義社交的中心。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">wallonia-brussels.co.uk</p>
+			<p class="para-translation">wallonia-brussels.co.uk</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">instagram.com/wbintheuk/</p>
+			<p class="para-translation">instagram.com/wbintheuk/</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This article was written by the It’s Nice That team. To find our editors and writers, please head over to our Contact page.</p>
+			<p class="para-translation">本文由 It’s Nice That 團隊撰寫。欲了解我們的編輯和作者，請前往我們的聯繫頁面。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">At Warsaw’s The Poster Festival, a new school of artists emerge alongside an overlooked history of graphic design</h3>
+			<h3 class="para-translation">在華沙海報節，新一代藝術家隨著被忽視的平面設計歷史一同展現</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Daisy Chain, Jazz Grant, Lily Kong and Alfie Whiteman: Tickets now available for July’s Nicer Tuesdays!</h3>
+			<h3 class="para-translation">Daisy Chain, Jazz Grant, Lily Kong 與 Alfie Whiteman：七月「美好星期二」門票現正熱賣中！</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Sebastian Curi, How&amp;How, Minute Shorts, Canva: Tickets now available for Cannes Nicer Tuesdays!</h3>
+			<h3 class="para-translation">Sebastian Curi, How&How, Minute Shorts, Canva：坎城「美好星期二」門票現正熱賣中！</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">DEMO Fest 2027, starring… you? Submit your motion design for a chance to be screened worldwide</h3>
+			<h3 class="para-translation">2027 DEMO 節，主角是……你？提交你的動態設計，就有機會在世界各地放映</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Robert Beatty on retro Photoshop, creative friction and designing album covers that feel almost primeval</h3>
+			<h3 class="para-translation">Robert Beatty 談復古 Photoshop、創意摩擦以及設計感覺幾乎是原始的專輯封面</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">This browser-based generative tool allows musicians to create their own visualisers with tr<span class="word-term" data-word="IP">ip</span>py geometry</h3>
+			<h3 class="para-translation">這款基於瀏覽器的生成工具允許音樂家利用迷幻的幾何圖形創建自己的視覺化效果</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">Figma’s Loredana Crisan talks taste, last-minute decisions and the art of prioritisation</h3>
+			<h3 class="para-translation">Figma 的 Loredana Crisan 談論品味、最後一刻的決定以及優先排序的藝術</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h3 class="para-original">The “glitchy, jittery” visuals of this Pitchfork designer are made with serend<span class="word-term" data-word="IP">ip</span>ity and his new favourite motion software</h3>
+			<h3 class="para-translation">這位 Pitchfork 設計師的「故障、抖動」視覺效果是利用機緣巧合和他最喜歡的新動態軟體製作的</h3>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">It's Nice That Newsletters</h2>
+			<h2 class="para-translation">It's Nice That 電子報</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Fancy a bit of It's Nice That in your inbox? Sign up to our newsletters and we'll keep you in the loop with everything good going on in the creative world.</p>
+			<p class="para-translation">想要在收件匣中收到一點 It's Nice That 的內容嗎？訂閱我們的電子報，我們將讓您隨時掌握創意世界中發生的一切好事。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-28-morning.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">Inside the making of the category-busting Nike Air Zoom Hyperslide</span>
+			</a>
+			<a class="related-card" href="2026-07-26-morning.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Google basically confirms the Pixel 11 is getting a price hike</span>
+			</a>
+			<a class="related-card" href="2026-07-23-morning.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: NASA’s new space telescope and OpenAI’s autonomous hacker</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "influential", "type": "highfreq", "pos": "adj.", "ipa": "/ˌɪn.fluˈen.ʃəl/", "definition_zh": "具影響力的", "example": "This influential industry event brought together leaders and innovators."}, {"word": "legacy", "type": "highfreq", "pos": "n.", "ipa": "/ˈleɡ.ə.si/", "definition_zh": "傳承、遺產", "example": "Today, this legacy is expanding within Southern Belgium’s burgeoning cultural hub."}, {"word": "collaboration", "type": "highfreq", "pos": "n.", "ipa": "/kəˌlæb.əˈreɪ.ʃən/", "definition_zh": "協作、合作", "example": "the region’s creative industries are being shaped by collaboration as much as craft."}, {"word": "inaugural", "type": "highfreq", "pos": "adj.", "ipa": "/ɪˈnɔː.ɡjə.rəl/", "definition_zh": "首屆的、開幕的", "example": "which returned to London’s Shoreditch Arts Club following its inaugural edition last year."}, {"word": "narrative", "type": "highfreq", "pos": "n.", "ipa": "/ˈnær.ə.tɪv/", "definition_zh": "敘事、故事", "example": "what bridges the gap between research and adoption is the core idea that “narrative-driven experiences stick.”"}, {"word": "personal", "type": "highfreq", "pos": "adj.", "ipa": "/ˈpɜː.sən.əl/", "definition_zh": "個人化的、私人的", "example": "reinforcing the growing appetite for immersive experiences that feel personal rather than passive."}, {"word": "commercial", "type": "highfreq", "pos": "adj.", "ipa": "/kəˈmɜː.ʃəl/", "definition_zh": "商業的", "example": "the discussion questioned how commercial investment is shaping the sector."}, {"word": "diversity", "type": "highfreq", "pos": "n.", "ipa": "/daɪˈvɜː.sə.ti/", "definition_zh": "多樣性", "example": "What do we lose in terms of diversity, boldness and artistic vision?"}, {"word": "strengthen", "type": "highfreq", "pos": "v.", "ipa": "/ˈstreŋ.θən/", "definition_zh": "加強、強化", "example": "to exchange ideas, build new partnerships and strengthen the ties between Belgium and the United Kingdom."}, {"word": "meaningful", "type": "highfreq", "pos": "adj.", "ipa": "/ˈmiː.nɪŋ.fəl/", "definition_zh": "有意義的", "example": "the focus remained on creating meaningful connections between people, ideas and industries."}, {"word": "burgeoning", "type": "general", "pos": "adj.", "ipa": "/ˈbɜː.dʒən.ɪŋ/", "definition_zh": "蓬勃發展的", "example": "Today, this legacy is expanding within Southern Belgium’s burgeoning cultural hub."}, {"word": "intertwining", "type": "general", "pos": "n.", "ipa": "/ˌɪn.təˈtwaɪ.nɪŋ/", "definition_zh": "交織、糾纏", "example": "a territory emerging as a hub for the intertwining of design, technology and creative entrepreneurship."}, {"word": "novelty", "type": "general", "pos": "n.", "ipa": "/ˈnɒv.əl.ti/", "definition_zh": "新鮮感、新奇事物", "example": "how immersive technologies can move beyond novelty."}, {"word": "participation", "type": "general", "pos": "n.", "ipa": "/pɑːˌtɪs.ɪˈpeɪ.ʃən/", "definition_zh": "參與", "example": "how storytelling evolves through participation."}, {"word": "integral", "type": "general", "pos": "adj.", "ipa": "/ˈɪn.tɪ.ɡrəl/", "definition_zh": "不可或缺的", "example": "which have been integral to building the ecosystem of artists."}, {"word": "remarkable", "type": "general", "pos": "adj.", "ipa": "/rɪˈmɑː.kə.bəl/", "definition_zh": "非凡的、卓越的", "example": "but it’s a country of remarkable creativity."}, {"word": "appetite", "type": "general", "pos": "n.", "ipa": "/ˈæp.ə.taɪt/", "definition_zh": "渴求、胃口", "example": "reinforcing the growing appetite for immersive experiences."}, {"word": "spectacle", "type": "general", "pos": "n.", "ipa": "/ˈspek.tə.kəl/", "definition_zh": "奇觀、壯觀場面", "example": "meaningful experiences rather than ones driven purely by spectacle."}, {"word": "boldness", "type": "general", "pos": "n.", "ipa": "/ˈboʊld.nəs/", "definition_zh": "大膽、勇敢", "example": "What do we lose in terms of diversity, boldness and artistic vision?"}, {"word": "immersive", "type": "term", "pos": "adj.", "ipa": "/ɪˈmɜː.sɪv/", "definition_zh": "沉浸式的", "example": "the importance of keeping designers at the centre of conversations about immersive tech."}, {"word": "IP", "type": "term", "pos": "n.", "ipa": "/ˌaɪˈpiː/", "definition_zh": "知識產權 (Intellectual Property)", "example": "how interactive design can transform familiar intellectual property into physical environments."}, {"word": "set the pace", "type": "phrase", "pos": "", "ipa": "/set ðə peɪs/", "definition_zh": "引領速度、設定節奏", "example": "Belgium is setting the pace for Europe’s next creative wave."}, {"word": "bridge the gap", "type": "phrase", "pos": "", "ipa": "/brɪdʒ ðə ɡæp/", "definition_zh": "彌合差距、消除隔閡", "example": "what bridges the gap between research and adoption."}, {"word": "know no borders", "type": "phrase", "pos": "", "ipa": "/noʊ noʊ ˈbɔːrdərz/", "definition_zh": "無國界、不分國界", "example": "our artists are proving that creativity knows no borders."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The professor is highly ____ in the scientific community due to her groundbreaking research.", "sentence_zh": "由於她的突破性研究，這位教授在科學界極具影響力。", "answer": "influential", "options": ["influential", "legacy", "burgeoning", "immersive"]}, {"sentence": "The late artist left behind a powerful ____ that continues to inspire young painters today.", "sentence_zh": "這位已故藝術家留下了強大的傳承，至今仍持續啟發著年輕畫家。", "answer": "legacy", "options": ["legacy", "personal", "commercial", "diversity"]}, {"sentence": "Silicon Valley remains a ____ hub for global technology and innovation.", "sentence_zh": "矽谷仍然是全球科技與創新的蓬勃發展中心。", "answer": "burgeoning", "options": ["burgeoning", "meaningful", "integral", "remarkable"]}, {"sentence": "The video game provides an ____ world where players can interact with every object.", "sentence_zh": "這款電子遊戲提供了一個沉浸式世界，玩家可以與每一個物品互動。", "answer": "immersive", "options": ["immersive", "novelty", "participation", "appetite"]}, {"sentence": "The ____ of the new smartphone soon wore off as people got used to its features.", "sentence_zh": "隨著人們習慣了它的功能，這款新智慧型手機的新鮮感很快就消失了。", "answer": "novelty", "options": ["novelty", "spectacle", "boldness", "IP"]}, {"sentence": "Her ability to solve complex mathematical problems in seconds is truly ____.", "sentence_zh": "她在幾秒鐘內解決複雜數學問題的能力確實非常卓越。", "answer": "remarkable", "options": ["remarkable", "strengthen", "inaugural", "narrative"]}, {"sentence": "The government is looking for ways to ____ the relationship between the two countries.", "sentence_zh": "政府正在尋找方法來加強兩國之間的關係。", "answer": "strengthen", "options": ["strengthen", "collaboration", "bridge the gap", "know no borders"]}, {"sentence": "As a market leader, the company continues to ____ for the rest of the industry.", "sentence_zh": "作為市場領導者，這間公司繼續為產業的其他公司設定發展節奏。", "answer": "set the pace", "options": ["set the pace", "bridge the gap", "know no borders", "influential"]}, {"sentence": "The charity works hard to ____ between the rich and the poor through education.", "sentence_zh": "該慈善機構努力透過教育來彌合貧富差距。", "answer": "bridge the gap", "options": ["bridge the gap", "set the pace", "know no borders", "legacy"]}, {"sentence": "Teamwork is an ____ part of achieving success in any large-scale project.", "sentence_zh": "團隊合作是在任何大型計畫中取得成功不可或缺的一部分。", "answer": "integral", "options": ["integral", "commercial", "diversity", "meaningful"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
