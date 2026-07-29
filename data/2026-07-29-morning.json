@@ -1,0 +1,352 @@
+{
+	"date": "2026-07-29",
+	"slot": "morning",
+	"tag": "AI",
+	"title": "These bills could make it easier to tell when influencers and AI are shilling for politicians",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91580195/democrat-bill-update-election-advertising-laws-ai?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "Political advertising disclosures in the U.S. used to be fairly simple. Since 2002, campaigns recorded commercials for television and radio that have been required to include information about who paid for them along with language that they approve this message. Political advertising today isn’t always that straightforward.",
+			"translation": "美國的政治廣告揭露過去相當簡單。自 2002 年以來，競選活動為電視和廣播錄製的廣告，都被要求包含關於誰付費的資訊，以及他們認可該訊息的聲明。現今的政治廣告並不總是那麼直接。"
+		},
+		{
+			"tag": "p",
+			"text": "Thanks to AI and paid influencers, plenty of political ads don’t follow that standard script anymore, leaving voters in the dark that what they’re seeing. Instead of just paid traditional ads slotted between commercial breaks on TV or in between songs on the radio that clearly identify themselves as advertising, it’s also digital content designed to stop you mid-scroll on social media. This content isn’t always real, and it certainly doesn’t always say who’s paying for it.",
+			"translation": "由於人工智慧和受薪影響者，許多政治廣告不再遵循那套標準劇本，讓選民對所見內容一無所知。這類內容不再只是穿插在電視廣告時段或廣播歌曲之間、明確標示為廣告的傳統付費廣告，還包括旨在讓你在社交媒體滑動時停下來的數位內容。這些內容並不總是真實的，也當然不總是標明由誰付費。"
+		},
+		{
+			"tag": "p",
+			"text": "A pair of bills introduced this week by a trio of California Democrats looks to change that.",
+			"translation": "本週由三位加州民主黨人提出的兩項法案旨在改變這一現狀。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>A new era of political ads</strong>",
+			"translation": "<strong>政治廣告的新時代</strong>"
+		},
+		{
+			"tag": "p",
+			"text": "California has faced these new, unconventional forms of political advertising during its primaries this year. During the Los Angeles mayor’s race, former reality TV star Spencer Pratt got traction from dramatic AI-made videos he reposted to social media, not traditional TV ads. (In one of the AI-generated videos, which was Batman themed, the former reality TV villain portrayed himself as the hero.)",
+			"translation": "加州在今年的初選中面臨了這些新型、非傳統形式的政治廣告。在洛杉磯市長競選期間，前實境秀明星 Spencer Pratt 透過他轉發到社交媒體上極具戲劇性的 AI 製作影片獲得關注，而非傳統的電視廣告。（在其中一段以蝙蝠俠為主題的 AI 生成影片中，這位前實境秀反派將自己描繪成英雄。）"
+		},
+		{
+			"tag": "p",
+			"text": "Meanwhile in the state’s governors race, billionaire and former gubernatorial candidate Tom Steyer is facing a complaint with the Fair Political Practices Commission that the influencers he paid to post about his campaign didn’t disclose they were posting paid political ads.",
+			"translation": "與此同時，在該州的州長競選中，億萬富翁及前州長參選人 Tom Steyer 正面臨公平政治實踐委員會的投訴，指控他付錢請來發布競選相關內容的影響者並未透露他們發布的是付費政治廣告。"
+		},
+		{
+			"tag": "p",
+			"text": "Sen. Adam Schiff on Monday introduced the AI Ads Act, which would ban fraudulent AI in political ads, and the Promoting Authenticity with Influencer Disclaimer (PAID) Act, which would require influencers to disclose who prominently who paid them to post. The bills, first reported by Semafor, could help modernize political advertising law at a time when political communications is rapidly changing.",
+			"translation": "參議員 Adam Schiff 週一提出了《人工智慧廣告法案》，該法案將禁止政治廣告中具欺詐性的人工智慧內容；以及《透過影響者免責聲明促進真實性法案》（PAID 法案），該法案將要求影響者明確揭露是誰付錢請他們發文。這些法案由 Semafor 率先報導，有助於在政治傳播迅速變化之際，使政治廣告法律現代化。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "straightforward",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˌstreɪtˈfɔːrwərd/",
+			"definition_zh": "簡單易懂的；直接的",
+			"example": "Political advertising today isn’t always that straightforward."
+		},
+		{
+			"word": "standard",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈstændərd/",
+			"definition_zh": "標準的；規範的",
+			"example": "plenty of political ads don’t follow that standard script anymore"
+		},
+		{
+			"word": "identify",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/aɪˈdentɪfaɪ/",
+			"definition_zh": "識別；確認",
+			"example": "clearly identify themselves as advertising"
+		},
+		{
+			"word": "ban",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/bæn/",
+			"definition_zh": "禁止",
+			"example": "which would ban fraudulent AI in political ads"
+		},
+		{
+			"word": "require",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈkwaɪər/",
+			"definition_zh": "要求；規定",
+			"example": "have been required to include information about who paid for them"
+		},
+		{
+			"word": "dramatic",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/drəˈmætɪk/",
+			"definition_zh": "戲劇性的；引人注目的",
+			"example": "got traction from dramatic AI-made videos he reposted"
+		},
+		{
+			"word": "portray",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/pɔːrˈtreɪ/",
+			"definition_zh": "描繪；呈現",
+			"example": "the former reality TV villain portrayed himself as the hero."
+		},
+		{
+			"word": "disclose",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪsˈkloʊz/",
+			"definition_zh": "透露；公開",
+			"example": "didn’t disclose they were posting paid political ads."
+		},
+		{
+			"word": "rapidly",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈræpɪdli/",
+			"definition_zh": "迅速地",
+			"example": "at a time when political communications is rapidly changing."
+		},
+		{
+			"word": "simple",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈsɪmpl/",
+			"definition_zh": "簡單的",
+			"example": "Political advertising disclosures in the U.S. used to be fairly simple."
+		},
+		{
+			"word": "primary",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈpraɪmeri/",
+			"definition_zh": "（政黨）初選",
+			"example": "faced these new, unconventional forms of political advertising during its primaries this year."
+		},
+		{
+			"word": "modernize",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈmɑːdərnaɪz/",
+			"definition_zh": "使現代化",
+			"example": "could help modernize political advertising law"
+		},
+		{
+			"word": "disclosure",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dɪsˈkloʊʒər/",
+			"definition_zh": "揭露；公開",
+			"example": "Political advertising disclosures in the U.S. used to be fairly simple."
+		},
+		{
+			"word": "unconventional",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌʌnkənˈvenʃənl/",
+			"definition_zh": "非傳統的",
+			"example": "California has faced these new, unconventional forms of political advertising"
+		},
+		{
+			"word": "traction",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈtrækʃn/",
+			"definition_zh": "影響力；拉動力",
+			"example": "Spencer Pratt got traction from dramatic AI-made videos"
+		},
+		{
+			"word": "complaint",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/kəmˈpleɪnt/",
+			"definition_zh": "投訴；控訴",
+			"example": "Tom Steyer is facing a complaint with the Fair Political Practices Commission"
+		},
+		{
+			"word": "prominent",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈpɑːmɪnənt/",
+			"definition_zh": "顯著的；重要的",
+			"example": "require influencers to disclose who prominently who paid them"
+		},
+		{
+			"word": "authenticity",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌɔːθenˈtɪsəti/",
+			"definition_zh": "真實性",
+			"example": "the Promoting Authenticity with Influencer Disclaimer (PAID) Act"
+		},
+		{
+			"word": "era",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪərə/",
+			"definition_zh": "時代",
+			"example": "A new era of political ads"
+		},
+		{
+			"word": "commercial",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/kəˈmɜːrʃl/",
+			"definition_zh": "（電視或廣播）廣告",
+			"example": "campaigns recorded commercials for television and radio"
+		},
+		{
+			"word": "influencer",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈɪnfluənsər/",
+			"definition_zh": "網紅；影響者",
+			"example": "Thanks to AI and paid influencers"
+		},
+		{
+			"word": "fraudulent",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˈfrɔːdʒələnt/",
+			"definition_zh": "欺詐的",
+			"example": "which would ban fraudulent AI in political ads"
+		},
+		{
+			"word": "in the dark",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɪn ðə dɑːrk/",
+			"definition_zh": "蒙在鼓裡；不知情",
+			"example": "leaving voters in the dark that what they’re seeing."
+		},
+		{
+			"word": "look to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lʊk tuː/",
+			"definition_zh": "旨在；計畫",
+			"example": "looks to change that."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The instructions were not very ____, so I had to ask for clarification.",
+			"sentence_zh": "這些說明不太簡單易懂，所以我不得不要求進一步解釋。",
+			"answer": "straightforward",
+			"options": [
+				"straightforward",
+				"disclosure",
+				"ban",
+				"traction"
+			]
+		},
+		{
+			"sentence": "The government decided to ____ the use of certain harmful chemicals in farming.",
+			"sentence_zh": "政府決定禁止在農業中使用某些有害化學物質。",
+			"answer": "ban",
+			"options": [
+				"ban",
+				"identify",
+				"require",
+				"dramatic"
+			]
+		},
+		{
+			"sentence": "The new marketing campaign is starting to gain ____ among younger consumers.",
+			"sentence_zh": "新的行銷活動開始在年輕消費者中產生影響力。",
+			"answer": "traction",
+			"options": [
+				"traction",
+				"portray",
+				"disclose",
+				"simple"
+			]
+		},
+		{
+			"sentence": "He was kept ____ about the secret party his friends were planning.",
+			"sentence_zh": "對於朋友們正在籌劃的秘密派對，他完全被蒙在鼓裡。",
+			"answer": "in the dark",
+			"options": [
+				"in the dark",
+				"look to",
+				"prominent",
+				"era"
+			]
+		},
+		{
+			"sentence": "The tech giant will ____ expand its operations into European markets next year.",
+			"sentence_zh": "這家科技巨頭計畫明年將其業務擴展至歐洲市場。",
+			"answer": "look to",
+			"options": [
+				"look to",
+				"in the dark",
+				"modernize",
+				"primary"
+			]
+		},
+		{
+			"sentence": "All employees are ____ to wear a safety helmet on the construction site.",
+			"sentence_zh": "所有員工在建築工地都被要求佩戴安全帽。",
+			"answer": "require",
+			"options": [
+				"require",
+				"unconventional",
+				"authenticity",
+				"rapidly"
+			]
+		},
+		{
+			"sentence": "The artist used bright colors to ____ the beauty of the sunrise.",
+			"sentence_zh": "藝術家用鮮豔的色彩來描繪日出的美麗。",
+			"answer": "portray",
+			"options": [
+				"portray",
+				"identify",
+				"standard",
+				"influencer"
+			]
+		},
+		{
+			"sentence": "She filed a formal ____ against her neighbor regarding the constant loud noise.",
+			"sentence_zh": "她針對鄰居持續不斷的噪音提出了正式投訴。",
+			"answer": "complaint",
+			"options": [
+				"complaint",
+				"commercial",
+				"straightforward",
+				"disclosure"
+			]
+		},
+		{
+			"sentence": "The software detected a ____ transaction and blocked the account immediately.",
+			"sentence_zh": "該軟體偵測到一筆欺詐性交易，並立即封鎖了帳戶。",
+			"answer": "fraudulent",
+			"options": [
+				"fraudulent",
+				"ban",
+				"dramatic",
+				"simple"
+			]
+		},
+		{
+			"sentence": "The government mandated full financial ____ for all public officials to ensure transparency.",
+			"sentence_zh": "政府強制要求所有公職人員進行全面的財務揭露，以確保透明度。",
+			"answer": "disclosure",
+			"options": [
+				"disclosure",
+				"complaint",
+				"authenticity",
+				"traction"
+			]
+		}
+	]
+}

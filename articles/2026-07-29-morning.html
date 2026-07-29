@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>These bills could make it easier to tell when influencers and AI are shilling for politicians — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-29</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">AI</span></div>
+	<h1 class="article-title">These bills could make it easier to tell when influencers and AI are shilling for politicians</h1>
+	<div class="article-meta">
+		2026-07-29 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91580195/democrat-bill-update-election-advertising-laws-ai?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="straightforward" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">straightforward</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌstreɪtˈfɔːrwərd/</span>
+				<span class="vocab-def">簡單易懂的；直接的</span>
+			</div>
+			<div class="vocab-card" data-word="standard" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">standard</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈstændərd/</span>
+				<span class="vocab-def">標準的；規範的</span>
+			</div>
+			<div class="vocab-card" data-word="identify" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">identify</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/aɪˈdentɪfaɪ/</span>
+				<span class="vocab-def">識別；確認</span>
+			</div>
+			<div class="vocab-card" data-word="ban" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ban</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/bæn/</span>
+				<span class="vocab-def">禁止</span>
+			</div>
+			<div class="vocab-card" data-word="require" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">require</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈkwaɪər/</span>
+				<span class="vocab-def">要求；規定</span>
+			</div>
+			<div class="vocab-card" data-word="dramatic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">dramatic</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/drəˈmætɪk/</span>
+				<span class="vocab-def">戲劇性的；引人注目的</span>
+			</div>
+			<div class="vocab-card" data-word="portray" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">portray</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/pɔːrˈtreɪ/</span>
+				<span class="vocab-def">描繪；呈現</span>
+			</div>
+			<div class="vocab-card" data-word="disclose" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">disclose</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪsˈkloʊz/</span>
+				<span class="vocab-def">透露；公開</span>
+			</div>
+			<div class="vocab-card" data-word="rapidly" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">rapidly</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˈræpɪdli/</span>
+				<span class="vocab-def">迅速地</span>
+			</div>
+			<div class="vocab-card" data-word="simple" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">simple</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsɪmpl/</span>
+				<span class="vocab-def">簡單的</span>
+			</div>
+			<div class="vocab-card" data-word="primary" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">primary</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈpraɪmeri/</span>
+				<span class="vocab-def">（政黨）初選</span>
+			</div>
+			<div class="vocab-card" data-word="modernize" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">modernize</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈmɑːdərnaɪz/</span>
+				<span class="vocab-def">使現代化</span>
+			</div>
+			<div class="vocab-card" data-word="disclosure" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">disclosure</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/dɪsˈkloʊʒər/</span>
+				<span class="vocab-def">揭露；公開</span>
+			</div>
+			<div class="vocab-card" data-word="unconventional" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">unconventional</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌʌnkənˈvenʃənl/</span>
+				<span class="vocab-def">非傳統的</span>
+			</div>
+			<div class="vocab-card" data-word="traction" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">traction</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈtrækʃn/</span>
+				<span class="vocab-def">影響力；拉動力</span>
+			</div>
+			<div class="vocab-card" data-word="complaint" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">complaint</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəmˈpleɪnt/</span>
+				<span class="vocab-def">投訴；控訴</span>
+			</div>
+			<div class="vocab-card" data-word="prominent" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">prominent</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈpɑːmɪnənt/</span>
+				<span class="vocab-def">顯著的；重要的</span>
+			</div>
+			<div class="vocab-card" data-word="authenticity" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">authenticity</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌɔːθenˈtɪsəti/</span>
+				<span class="vocab-def">真實性</span>
+			</div>
+			<div class="vocab-card" data-word="era" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">era</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪərə/</span>
+				<span class="vocab-def">時代</span>
+			</div>
+			<div class="vocab-card" data-word="commercial" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">commercial</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəˈmɜːrʃl/</span>
+				<span class="vocab-def">（電視或廣播）廣告</span>
+			</div>
+			<div class="vocab-card" data-word="influencer" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">influencer</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪnfluənsər/</span>
+				<span class="vocab-def">網紅；影響者</span>
+			</div>
+			<div class="vocab-card" data-word="fraudulent" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fraudulent</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈfrɔːdʒələnt/</span>
+				<span class="vocab-def">欺詐的</span>
+			</div>
+			<div class="vocab-card" data-word="in the dark" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in the dark</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɪn ðə dɑːrk/</span>
+				<span class="vocab-def">蒙在鼓裡；不知情</span>
+			</div>
+			<div class="vocab-card" data-word="look to" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">look to</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/lʊk tuː/</span>
+				<span class="vocab-def">旨在；計畫</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">Political advertising <span class="word-gen<span class="word-general" data-word="era">era</span>l" data-word="disclosure">disclosure</span>s in the U.S. used to be fairly <span class="word-highfreq" data-word="simple">simple</span>. Since 2002, campaigns recorded <span class="word-general" data-word="commercial">commercial</span>s for television and radio that have been <span class="word-highfreq" data-word="require">require</span>d to include information about who paid for them along with language that they approve this message. Political advertising today isn’t always that <span class="word-highfreq" data-word="straightforward">straightforward</span>.</p>
+			<p class="para-translation">美國的政治廣告揭露過去相當簡單。自 2002 年以來，競選活動為電視和廣播錄製的廣告，都被要求包含關於誰付費的資訊，以及他們認可該訊息的聲明。現今的政治廣告並不總是那麼直接。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Thanks to AI and paid <span class="word-term" data-word="influencer">influencer</span>s, plenty of political ads don’t follow that <span class="word-highfreq" data-word="standard">standard</span> script anymore, leaving voters <span class="word-phrase" data-word="in the dark">in the dark</span> that what they’re seeing. Instead of just paid traditional ads slotted between <span class="word-gen<span class="word-general" data-word="era">era</span>l" data-word="commercial">commercial</span> breaks on TV or in between songs on the radio that clearly <span class="word-highfreq" data-word="identify">identify</span> themselves as advertising, it’s also digital content designed to stop you mid-scroll on social media. This content isn’t always real, and it certainly doesn’t always say who’s paying for it.</p>
+			<p class="para-translation">由於人工智慧和受薪影響者，許多政治廣告不再遵循那套標準劇本，讓選民對所見內容一無所知。這類內容不再只是穿插在電視廣告時段或廣播歌曲之間、明確標示為廣告的傳統付費廣告，還包括旨在讓你在社交媒體滑動時停下來的數位內容。這些內容並不總是真實的，也當然不總是標明由誰付費。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">A pair of bills introduced this week by a trio of California Democrats looks to change that.</p>
+			<p class="para-translation">本週由三位加州民主黨人提出的兩項法案旨在改變這一現狀。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><strong>A new <span class="word-general" data-word="era">era</span> of political ads</strong></p>
+			<p class="para-translation"><strong>政治廣告的新時代</strong></p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">California has faced these new, <span class="word-gen<span class="word-general" data-word="era">era</span>l" data-word="unconventional">unconventional</span> forms of political advertising during its primaries this year. During the Los Angeles mayor’s race, former reality TV star Spencer Pratt got <span class="word-general" data-word="traction">traction</span> from <span class="word-highfreq" data-word="dramatic">dramatic</span> AI-made videos he reposted to social media, not traditional TV ads. (In one of the AI-generated videos, which was Batman themed, the former reality TV villain <span class="word-highfreq" data-word="portray">portray</span>ed himself as the hero.)</p>
+			<p class="para-translation">加州在今年的初選中面臨了這些新型、非傳統形式的政治廣告。在洛杉磯市長競選期間，前實境秀明星 Spencer Pratt 透過他轉發到社交媒體上極具戲劇性的 AI 製作影片獲得關注，而非傳統的電視廣告。（在其中一段以蝙蝠俠為主題的 AI 生成影片中，這位前實境秀反派將自己描繪成英雄。）</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Meanwhile in the state’s governors race, billionaire and former gubernatorial candidate Tom Steyer is facing a <span class="word-gen<span class="word-general" data-word="era">era</span>l" data-word="complaint">complaint</span> with the Fair Political Practices Commission that the <span class="word-term" data-word="influencer">influencer</span>s he paid to post about his campaign didn’t <span class="word-highfreq" data-word="disclose">disclose</span> they were posting paid political ads.</p>
+			<p class="para-translation">與此同時，在該州的州長競選中，億萬富翁及前州長參選人 Tom Steyer 正面臨公平政治實踐委員會的投訴，指控他付錢請來發布競選相關內容的影響者並未透露他們發布的是付費政治廣告。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Sen. Adam Schiff on Monday introduced the AI Ads Act, which would <span class="word-highfreq" data-word="ban">ban</span> <span class="word-term" data-word="fraudulent">fraudulent</span> AI in political ads, and the Promoting <span class="word-gen<span class="word-general" data-word="era">era</span>l" data-word="authenticity">Authenticity</span> with <span class="word-term" data-word="influencer">Influencer</span> Disclaimer (PAID) Act, which would <span class="word-highfreq" data-word="require">require</span> influencers to <span class="word-highfreq" data-word="disclose">disclose</span> who <span class="word-general" data-word="prominent">prominent</span>ly who paid them to post. The bills, first reported by Semafor, could help <span class="word-highfreq" data-word="modernize">modernize</span> political advertising law at a time when political communications is <span class="word-highfreq" data-word="rapidly">rapidly</span> changing.</p>
+			<p class="para-translation">參議員 Adam Schiff 週一提出了《人工智慧廣告法案》，該法案將禁止政治廣告中具欺詐性的人工智慧內容；以及《透過影響者免責聲明促進真實性法案》（PAID 法案），該法案將要求影響者明確揭露是誰付錢請他們發文。這些法案由 Semafor 率先報導，有助於在政治傳播迅速變化之際，使政治廣告法律現代化。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-27-evening.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Nvidia, Microsoft launch open AI security alliance — without OpenAI, Google, or Anthropic</span>
+			</a>
+			<a class="related-card" href="2026-07-24-noon.html">
+				<span class="related-source">The Verge</span>
+				<span class="related-title">Alexa Plus is getting an AI update to handle more complicated instructions</span>
+			</a>
+			<a class="related-card" href="2026-07-22-noon.html">
+				<span class="related-source">MIT Technology Review</span>
+				<span class="related-title">The Download: Chinese AI divides the White House, and a record copyright payout</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "straightforward", "type": "highfreq", "pos": "adj.", "ipa": "/ˌstreɪtˈfɔːrwərd/", "definition_zh": "簡單易懂的；直接的", "example": "Political advertising today isn’t always that straightforward."}, {"word": "standard", "type": "highfreq", "pos": "adj.", "ipa": "/ˈstændərd/", "definition_zh": "標準的；規範的", "example": "plenty of political ads don’t follow that standard script anymore"}, {"word": "identify", "type": "highfreq", "pos": "v.", "ipa": "/aɪˈdentɪfaɪ/", "definition_zh": "識別；確認", "example": "clearly identify themselves as advertising"}, {"word": "ban", "type": "highfreq", "pos": "v.", "ipa": "/bæn/", "definition_zh": "禁止", "example": "which would ban fraudulent AI in political ads"}, {"word": "require", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈkwaɪər/", "definition_zh": "要求；規定", "example": "have been required to include information about who paid for them"}, {"word": "dramatic", "type": "highfreq", "pos": "adj.", "ipa": "/drəˈmætɪk/", "definition_zh": "戲劇性的；引人注目的", "example": "got traction from dramatic AI-made videos he reposted"}, {"word": "portray", "type": "highfreq", "pos": "v.", "ipa": "/pɔːrˈtreɪ/", "definition_zh": "描繪；呈現", "example": "the former reality TV villain portrayed himself as the hero."}, {"word": "disclose", "type": "highfreq", "pos": "v.", "ipa": "/dɪsˈkloʊz/", "definition_zh": "透露；公開", "example": "didn’t disclose they were posting paid political ads."}, {"word": "rapidly", "type": "highfreq", "pos": "adv.", "ipa": "/ˈræpɪdli/", "definition_zh": "迅速地", "example": "at a time when political communications is rapidly changing."}, {"word": "simple", "type": "highfreq", "pos": "adj.", "ipa": "/ˈsɪmpl/", "definition_zh": "簡單的", "example": "Political advertising disclosures in the U.S. used to be fairly simple."}, {"word": "primary", "type": "highfreq", "pos": "n.", "ipa": "/ˈpraɪmeri/", "definition_zh": "（政黨）初選", "example": "faced these new, unconventional forms of political advertising during its primaries this year."}, {"word": "modernize", "type": "highfreq", "pos": "v.", "ipa": "/ˈmɑːdərnaɪz/", "definition_zh": "使現代化", "example": "could help modernize political advertising law"}, {"word": "disclosure", "type": "general", "pos": "n.", "ipa": "/dɪsˈkloʊʒər/", "definition_zh": "揭露；公開", "example": "Political advertising disclosures in the U.S. used to be fairly simple."}, {"word": "unconventional", "type": "general", "pos": "adj.", "ipa": "/ˌʌnkənˈvenʃənl/", "definition_zh": "非傳統的", "example": "California has faced these new, unconventional forms of political advertising"}, {"word": "traction", "type": "general", "pos": "n.", "ipa": "/ˈtrækʃn/", "definition_zh": "影響力；拉動力", "example": "Spencer Pratt got traction from dramatic AI-made videos"}, {"word": "complaint", "type": "general", "pos": "n.", "ipa": "/kəmˈpleɪnt/", "definition_zh": "投訴；控訴", "example": "Tom Steyer is facing a complaint with the Fair Political Practices Commission"}, {"word": "prominent", "type": "general", "pos": "adj.", "ipa": "/ˈpɑːmɪnənt/", "definition_zh": "顯著的；重要的", "example": "require influencers to disclose who prominently who paid them"}, {"word": "authenticity", "type": "general", "pos": "n.", "ipa": "/ˌɔːθenˈtɪsəti/", "definition_zh": "真實性", "example": "the Promoting Authenticity with Influencer Disclaimer (PAID) Act"}, {"word": "era", "type": "general", "pos": "n.", "ipa": "/ˈɪərə/", "definition_zh": "時代", "example": "A new era of political ads"}, {"word": "commercial", "type": "general", "pos": "n.", "ipa": "/kəˈmɜːrʃl/", "definition_zh": "（電視或廣播）廣告", "example": "campaigns recorded commercials for television and radio"}, {"word": "influencer", "type": "term", "pos": "n.", "ipa": "/ˈɪnfluənsər/", "definition_zh": "網紅；影響者", "example": "Thanks to AI and paid influencers"}, {"word": "fraudulent", "type": "term", "pos": "adj.", "ipa": "/ˈfrɔːdʒələnt/", "definition_zh": "欺詐的", "example": "which would ban fraudulent AI in political ads"}, {"word": "in the dark", "type": "phrase", "pos": "", "ipa": "/ɪn ðə dɑːrk/", "definition_zh": "蒙在鼓裡；不知情", "example": "leaving voters in the dark that what they’re seeing."}, {"word": "look to", "type": "phrase", "pos": "", "ipa": "/lʊk tuː/", "definition_zh": "旨在；計畫", "example": "looks to change that."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The instructions were not very ____, so I had to ask for clarification.", "sentence_zh": "這些說明不太簡單易懂，所以我不得不要求進一步解釋。", "answer": "straightforward", "options": ["straightforward", "disclosure", "ban", "traction"]}, {"sentence": "The government decided to ____ the use of certain harmful chemicals in farming.", "sentence_zh": "政府決定禁止在農業中使用某些有害化學物質。", "answer": "ban", "options": ["ban", "identify", "require", "dramatic"]}, {"sentence": "The new marketing campaign is starting to gain ____ among younger consumers.", "sentence_zh": "新的行銷活動開始在年輕消費者中產生影響力。", "answer": "traction", "options": ["traction", "portray", "disclose", "simple"]}, {"sentence": "He was kept ____ about the secret party his friends were planning.", "sentence_zh": "對於朋友們正在籌劃的秘密派對，他完全被蒙在鼓裡。", "answer": "in the dark", "options": ["in the dark", "look to", "prominent", "era"]}, {"sentence": "The tech giant will ____ expand its operations into European markets next year.", "sentence_zh": "這家科技巨頭計畫明年將其業務擴展至歐洲市場。", "answer": "look to", "options": ["look to", "in the dark", "modernize", "primary"]}, {"sentence": "All employees are ____ to wear a safety helmet on the construction site.", "sentence_zh": "所有員工在建築工地都被要求佩戴安全帽。", "answer": "require", "options": ["require", "unconventional", "authenticity", "rapidly"]}, {"sentence": "The artist used bright colors to ____ the beauty of the sunrise.", "sentence_zh": "藝術家用鮮豔的色彩來描繪日出的美麗。", "answer": "portray", "options": ["portray", "identify", "standard", "influencer"]}, {"sentence": "She filed a formal ____ against her neighbor regarding the constant loud noise.", "sentence_zh": "她針對鄰居持續不斷的噪音提出了正式投訴。", "answer": "complaint", "options": ["complaint", "commercial", "straightforward", "disclosure"]}, {"sentence": "The software detected a ____ transaction and blocked the account immediately.", "sentence_zh": "該軟體偵測到一筆欺詐性交易，並立即封鎖了帳戶。", "answer": "fraudulent", "options": ["fraudulent", "ban", "dramatic", "simple"]}, {"sentence": "The government mandated full financial ____ for all public officials to ensure transparency.", "sentence_zh": "政府強制要求所有公職人員進行全面的財務揭露，以確保透明度。", "answer": "disclosure", "options": ["disclosure", "complaint", "authenticity", "traction"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
