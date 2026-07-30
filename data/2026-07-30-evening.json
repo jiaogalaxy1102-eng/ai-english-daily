@@ -1,0 +1,363 @@
+{
+	"date": "2026-07-30",
+	"slot": "evening",
+	"tag": "科技",
+	"title": "The architects behind planned Kansas City Chiefs stadium want it to be as noisy as possible",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91581355/kansas-city-chiefs-planned-stadium-2031-sound-design?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "The Kansas City Chiefs were taking on the New England Patriots on September 29, 2014, when, with just eight seconds to go in the first quarter, the volume of the crowd’s roar reached 142.2 decibels. That’s about as loud as a jet engine taking off, and good enough to break the Guinness World Record for loudest crowd roar at a sports stadium.",
+			"translation": "2014年9月29日，堪薩斯城酋長隊正在對陣新英格蘭愛國者隊，就在第一節僅剩八秒時，現場群眾的歡呼聲量達到了142.2分貝。這大約相當於噴射機引擎起飛時的音量，足以打破體育場內最響亮群眾歡呼聲的金氏世界紀錄。"
+		},
+		{
+			"tag": "p",
+			"text": "A new Chiefs stadium might help them break it again.",
+			"translation": "一座新的酋長隊體育場可能會幫助他們再次打破這項紀錄。"
+		},
+		{
+			"tag": "p",
+			"text": "The Chiefs previously set the record for loudest crowd in 2013 at 137.5 decibels, which was broken later that year when the crowd at Seattle’s CenturyLink Field reached 137.6 decibels. But since 2014’s game, when the Chiefs handed out earplugs to fans beforehand, the record has remained untouched.",
+			"translation": "酋長隊先前在2013年創下了137.5分貝的最響亮群眾紀錄，但該紀錄在同年晚些時候被西雅圖世紀互聯體育場（CenturyLink Field）的群眾以137.6分貝打破。但自2014年的那場比賽（當時酋長隊事先向球迷發放了耳塞）以來，該紀錄一直未被動搖。"
+		},
+		{
+			"tag": "p",
+			"text": "When the team’s planned $3 billion stadium opens in 2031, though, that record could be at risk again. The lead architectural firm behind the stadium says it is designed to be as loud as possible by containing the sound through the actual size, shape, and roof geometry of the venue.",
+			"translation": "然而，當球隊計畫耗資30億美元的體育場於2031年啟用時，該紀錄可能會再次受到威脅。負責該體育場的主要建築事務所表示，其設計旨在透過場館的實際尺寸、形狀和屋頂幾何結構來鎖住聲音，從而達到盡可能大的音量。"
+		},
+		{
+			"tag": "p",
+			"text": "“We carefully designed the layout of the seating environment, the roof, and the concourse areas to contain the sound inside the seating environment, much more than the existing Arrowhead stadium does today,” David Manica, owner of Manica Architecture, tells <em>Fast Company</em>.",
+			"translation": "Manica Architecture 的負責人 David Manica 告訴《Fast Company》：「我們精心設計了座位環境、屋頂和廣場區域的佈局，將聲音鎖在座位區域內，這比現有的箭頭體育場（Arrowhead stadium）做得更多。」"
+		},
+		{
+			"tag": "p",
+			"text": "Manica, the Kansas City-based firm behind venues like Allegiant Stadium in Las Vegas and the Oklahoma City Arena in Oklahoma City, designed the stadium, and HNTB, another Kansas City firm, is the lead design architect.",
+			"translation": "Manica 是這家總部位於堪薩斯城的公司，曾設計過拉斯維加斯的忠誠體育場（Allegiant Stadium）和奧克拉荷馬城的奧克拉荷馬城體育館（Oklahoma City Arena），負責該體育場的設計；而另一家堪薩斯城公司 HNTB 則是首席設計建築師。"
+		},
+		{
+			"tag": "p",
+			"text": "The team says the stadium was designed to prioritize fan experiences like tailgating, with parking lot infrastructure big enough to hold more than 20,000 parking spots, and the pre-game flyover, by using 400,000 square feet of translucent panels for a clear view through its fully enclosed roof. When it comes to maxing out the volume inside the stadium, the entire venue’s shape was optimized for loudness.",
+			"translation": "球隊表示，體育場的設計優先考慮了賽前派對等球迷體驗，其停車場基礎設施規模足以容納超過20,000個車位，並透過使用40萬平方英尺的半透明面板，讓全封閉式屋頂下也能清晰看到賽前的飛機衝場表演。當涉及到將體育場內的音量最大化時，整個場館的形狀都針對響度進行了優化。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/i-2-91581355-kansas-city-loud-stadium.jpg",
+			"alt": "",
+			"after_paragraph": 2
+		},
+		{
+			"src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/i-1-91581355-kansas-city-loud-stadium.jpg",
+			"alt": "",
+			"after_paragraph": 4
+		}
+	],
+	"vocab": [
+		{
+			"word": "volume",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈvɑːljuːm/",
+			"definition_zh": "音量；體積",
+			"example": "the volume of the crowd’s roar reached 142.2 decibels."
+		},
+		{
+			"word": "roar",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/rɔːr/",
+			"definition_zh": "吼叫聲；轟鳴聲",
+			"example": "the volume of the crowd’s roar reached 142.2 decibels."
+		},
+		{
+			"word": "record",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈrekərd/",
+			"definition_zh": "紀錄",
+			"example": "good enough to break the Guinness World Record."
+		},
+		{
+			"word": "firm",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/fɜːrm/",
+			"definition_zh": "公司；事務所",
+			"example": "The lead architectural firm behind the stadium says it is designed to be as loud as possible."
+		},
+		{
+			"word": "contain",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kənˈteɪn/",
+			"definition_zh": "包含；容納；控制",
+			"example": "designed to be as loud as possible by containing the sound."
+		},
+		{
+			"word": "layout",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈleɪaʊt/",
+			"definition_zh": "佈局；設計",
+			"example": "We carefully designed the layout of the seating environment."
+		},
+		{
+			"word": "existing",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪɡˈzɪstɪŋ/",
+			"definition_zh": "現有的",
+			"example": "much more than the existing Arrowhead stadium does today."
+		},
+		{
+			"word": "prioritize",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/praɪˈɔːrətaɪz/",
+			"definition_zh": "優先考慮",
+			"example": "the stadium was designed to prioritize fan experiences."
+		},
+		{
+			"word": "infrastructure",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈɪnfrəstrʌktʃər/",
+			"definition_zh": "基礎設施",
+			"example": "with parking lot infrastructure big enough to hold more than 20,000 parking spots."
+		},
+		{
+			"word": "lead",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/liːd/",
+			"definition_zh": "領先的；主要的",
+			"example": "HNTB, another Kansas City firm, is the lead design architect."
+		},
+		{
+			"word": "venue",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈvenjuː/",
+			"definition_zh": "場地；場館",
+			"example": "the actual size, shape, and roof geometry of the venue."
+		},
+		{
+			"word": "decibel",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈdesɪbel/",
+			"definition_zh": "分貝",
+			"example": "the volume of the crowd’s roar reached 142.2 decibels."
+		},
+		{
+			"word": "geometry",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/dʒiˈɑːmətri/",
+			"definition_zh": "幾何形狀；幾何學",
+			"example": "the actual size, shape, and roof geometry of the venue."
+		},
+		{
+			"word": "concourse",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkɑːŋkɔːrs/",
+			"definition_zh": "（機場、車站等的）大廳",
+			"example": "the roof, and the concourse areas to contain the sound."
+		},
+		{
+			"word": "tailgating",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈteɪlɡeɪtɪŋ/",
+			"definition_zh": "車尾派對",
+			"example": "designed to prioritize fan experiences like tailgating."
+		},
+		{
+			"word": "architectural",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌɑːrkɪˈtektʃərəl/",
+			"definition_zh": "建築的",
+			"example": "The lead architectural firm behind the stadium says it is designed."
+		},
+		{
+			"word": "enclosed",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ɪnˈkloʊzd/",
+			"definition_zh": "封閉的",
+			"example": "clear view through its fully enclosed roof."
+		},
+		{
+			"word": "untouched",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ʌnˈtʌtʃt/",
+			"definition_zh": "未受影響的；原封未動的",
+			"example": "the record has remained untouched."
+		},
+		{
+			"word": "optimized",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈɑːptɪmaɪzd/",
+			"definition_zh": "優化過的",
+			"example": "the entire venue’s shape was optimized for loudness."
+		},
+		{
+			"word": "translucent",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/trænsˈluːsnt/",
+			"definition_zh": "半透明的",
+			"example": "using 400,000 square feet of translucent panels."
+		},
+		{
+			"word": "take on",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/teɪk ɑːn/",
+			"definition_zh": "對抗；挑戰",
+			"example": "The Kansas City Chiefs were taking on the New England Patriots."
+		},
+		{
+			"word": "at risk",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/æt rɪsk/",
+			"definition_zh": "處於危險中；受到威脅",
+			"example": "that record could be at risk again."
+		},
+		{
+			"word": "hand out",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/hænd aʊt/",
+			"definition_zh": "分發",
+			"example": "when the Chiefs handed out earplugs to fans beforehand."
+		},
+		{
+			"word": "when it comes to",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/wen ɪt kʌmz tuː/",
+			"definition_zh": "說到；涉及到",
+			"example": "When it comes to maxing out the volume inside the stadium."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The speaker turned up the ____ so everyone in the hall could hear the music.",
+			"sentence_zh": "講者調高了音量，好讓大廳裡的每個人都能聽到音樂。",
+			"answer": "volume",
+			"options": [
+				"volume",
+				"record",
+				"firm",
+				"layout"
+			]
+		},
+		{
+			"sentence": "She trained hard for years to finally break the world ____ in the marathon.",
+			"sentence_zh": "她苦練多年，終於打破了馬拉松的世界紀錄。",
+			"answer": "record",
+			"options": [
+				"record",
+				"venue",
+				"prioritize",
+				"decibel"
+			]
+		},
+		{
+			"sentence": "He works for a prestigious law ____ that specializes in international business.",
+			"sentence_zh": "他在一家專門從事國際業務的知名法律事務所工作。",
+			"answer": "firm",
+			"options": [
+				"firm",
+				"architectural",
+				"existing",
+				"infrastructure"
+			]
+		},
+		{
+			"sentence": "The designer spent weeks planning the ____ of the new office to maximize space.",
+			"sentence_zh": "設計師花了數週規劃新辦公室的佈局，以最大化空間利用。",
+			"answer": "layout",
+			"options": [
+				"layout",
+				"geometry",
+				"enclosed",
+				"translucent"
+			]
+		},
+		{
+			"sentence": "In this busy week, I need to ____ my tasks to finish the most urgent ones first.",
+			"sentence_zh": "在這忙碌的一週，我需要對任務進行優先排序，先完成最緊急的。",
+			"answer": "prioritize",
+			"options": [
+				"prioritize",
+				"contain",
+				"take on",
+				"hand out"
+			]
+		},
+		{
+			"sentence": "The wedding ____ was a beautiful garden overlooking the ocean.",
+			"sentence_zh": "婚禮場地是一個俯瞰大海的美麗花園。",
+			"answer": "venue",
+			"options": [
+				"venue",
+				"roar",
+				"at risk",
+				"when it comes to"
+			]
+		},
+		{
+			"sentence": "Prolonged exposure to any sound over 85 ____ can cause permanent hearing loss.",
+			"sentence_zh": "長期暴露在任何超過 85 分貝的聲音中都可能導致永久性聽力損失。",
+			"answer": "decibel",
+			"options": [
+				"decibel",
+				"untouched",
+				"optimized",
+				"concourse"
+			]
+		},
+		{
+			"sentence": "The city is famous for its unique ____ style, blending modern and classic designs.",
+			"sentence_zh": "這座城市以其獨特的建築風格聞名，融合了現代與經典設計。",
+			"answer": "architectural",
+			"options": [
+				"architectural",
+				"layout",
+				"infrastructure",
+				"firm"
+			]
+		},
+		{
+			"sentence": "Our local soccer team is ready to ____ their biggest rivals this weekend.",
+			"sentence_zh": "我們的當地足球隊準備在本週末對陣他們最大的對手。",
+			"answer": "take on",
+			"options": [
+				"take on",
+				"hand out",
+				"at risk",
+				"volume"
+			]
+		},
+		{
+			"sentence": "Without immediate action, the survival of this endangered species remains ____.",
+			"sentence_zh": "如果不立即採取行動，這個瀕危物種的生存仍面臨風險。",
+			"answer": "at risk",
+			"options": [
+				"at risk",
+				"record",
+				"venue",
+				"prioritize"
+			]
+		}
+	]
+}
