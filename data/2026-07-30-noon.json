@@ -1,0 +1,348 @@
+{
+	"date": "2026-07-30",
+	"slot": "noon",
+	"tag": "AI",
+	"title": "Microsoft confirms Copilot ‘super app’ coming this year",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/tech/972927/microsoft-copilot-super-app-confirmed",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "The app will merge Copilot’s chat, coding, and agentic features.",
+			"translation": "此應用程式將合併 Copilot 的聊天、程式編寫及代理功能。"
+		},
+		{
+			"tag": "p",
+			"text": "Microsoft is working on an AI “super app” that combines Copilot’s chat, coding, and agentic capabilities. During an earnings call on Wednesday, Microsoft CEO Satya Nadella said the app will span “both consumer and commercial experiences” when it launches this year.",
+			"translation": "微軟正在開發一款 AI「超級應用程式」，該程式結合了 Copilot 的聊天、程式編寫及代理能力。在週三的財報電話會議上，微軟執行長薩提亞·納德拉表示，這款應用程式在今年推出時，將涵蓋「消費端與商業端的體驗」。"
+		},
+		{
+			"tag": "p",
+			"text": "“Copilot is evolving rapidly from chat to Cowork to Autopilots,” Nadella said. “This quarter, we are bringing these Copilot experiences together, including code, in one super app… This is a major step forward, and I look forward to sharing more soon.”",
+			"translation": "納德拉表示：「Copilot 正在從聊天迅速進化到協作（Cowork）再到自動駕駛（Autopilots）。本季，我們正在將這些 Copilot 的體驗整合在一起，包括程式碼在內，變成一個超級應用程式……這是向前邁出的重大一步，我期待很快能分享更多資訊。」"
+		},
+		{
+			"tag": "p",
+			"text": "Nadella’s confirmation comes months after a report from <em>Fortune</em> revealed that Microsoft is working on a super app that blends its Copilot chatbot, GitHub Copilot coding assistant, Copilot Cowork, and its agentic Autopilot system. Along with Microsoft, OpenAI recently revealed its new ChatGPT Work app, which combines ChatGPT and its AI coding tool Codex.",
+			"translation": "納德拉的證實是在《財富》雜誌的一篇報導揭露微軟正在開發一款混合其 Copilot 聊天機器人、GitHub Copilot 程式編寫助手、Copilot Cowork 以及其代理式 Autopilot 系統的超級應用程式幾個月後發布的。除了微軟之外，OpenAI 最近也展示了其新的 ChatGPT Work 應用程式，該程式結合了 ChatGPT 及其 AI 程式編寫工具 Codex。"
+		},
+		{
+			"tag": "p",
+			"text": "Microsoft’s revenue jumped to $90 billion over the past quarter, with its AI and cloud businesses driving the increase.",
+			"translation": "微軟上一季的營收躍升至 900 億美元，其 AI 和雲端業務推動了這一增長。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK259_MICROSOFT_COPILOT_3__D.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+			"alt": "STK259 MICROSOFT COPILOT",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "merge",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/mɜːrdʒ/",
+			"definition_zh": "合併；融合",
+			"example": "The app will merge Copilot’s chat, coding, and agentic features."
+		},
+		{
+			"word": "combine",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kəmˈbaɪn/",
+			"definition_zh": "結合；聯合",
+			"example": "Microsoft is working on an AI “super app” that combines Copilot’s chat, coding, and agentic capabilities."
+		},
+		{
+			"word": "capability",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌkeɪpəˈbɪləti/",
+			"definition_zh": "能力；功能",
+			"example": "Microsoft is working on an AI “super app” that combines Copilot’s chat, coding, and agentic capabilities."
+		},
+		{
+			"word": "span",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/spæn/",
+			"definition_zh": "跨越；涵蓋",
+			"example": "the app will span “both consumer and commercial experiences” when it launches this year."
+		},
+		{
+			"word": "launch",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/lɔːntʃ/",
+			"definition_zh": "發行；推出",
+			"example": "the app will span “both consumer and commercial experiences” when it launches this year."
+		},
+		{
+			"word": "evolve",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪˈvɒlv/",
+			"definition_zh": "進化；演變",
+			"example": "“Copilot is evolving rapidly from chat to Cowork to Autopilots,” Nadella said."
+		},
+		{
+			"word": "rapidly",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈræpɪdli/",
+			"definition_zh": "迅速地",
+			"example": "“Copilot is evolving rapidly from chat to Cowork to Autopilots,” Nadella said."
+		},
+		{
+			"word": "major",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈmeɪdʒər/",
+			"definition_zh": "重大的；主要的",
+			"example": "“This is a major step forward, and I look forward to sharing more soon.”"
+		},
+		{
+			"word": "share",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ʃeər/",
+			"definition_zh": "分享；交流",
+			"example": "“This is a major step forward, and I look forward to sharing more soon.”"
+		},
+		{
+			"word": "reveal",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈviːl/",
+			"definition_zh": "揭露；顯示",
+			"example": "Nadella’s confirmation comes months after a report from Fortune revealed that Microsoft is working on a super app..."
+		},
+		{
+			"word": "jump",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dʒʌmp/",
+			"definition_zh": "驟增；猛漲",
+			"example": "Microsoft’s revenue jumped to $90 billion over the past quarter"
+		},
+		{
+			"word": "drive",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/draɪv/",
+			"definition_zh": "推動；驅使",
+			"example": "with its AI and cloud businesses driving the increase."
+		},
+		{
+			"word": "confirm",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/kənˈfɜːrm/",
+			"definition_zh": "證實；確認",
+			"example": "Microsoft confirms Copilot ‘super app’ coming this year"
+		},
+		{
+			"word": "commercial",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/kəˈmɜːrʃl/",
+			"definition_zh": "商業的；商務的",
+			"example": "the app will span “both consumer and commercial experiences”"
+		},
+		{
+			"word": "quarter",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkwɔːrtər/",
+			"definition_zh": "季度",
+			"example": "“This quarter, we are bringing these Copilot experiences together...”"
+		},
+		{
+			"word": "confirmation",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌkɒnfəˈmeɪʃn/",
+			"definition_zh": "證實；確認",
+			"example": "Nadella’s confirmation comes months after a report from Fortune revealed..."
+		},
+		{
+			"word": "blend",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/blend/",
+			"definition_zh": "混合；融合",
+			"example": "Microsoft is working on a super app that blends its Copilot chatbot..."
+		},
+		{
+			"word": "assistant",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/əˈsɪstənt/",
+			"definition_zh": "助手；助理",
+			"example": "...GitHub Copilot coding assistant, Copilot Cowork..."
+		},
+		{
+			"word": "increase",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈkriːs/",
+			"definition_zh": "增加；增長",
+			"example": "with its AI and cloud businesses driving the increase."
+		},
+		{
+			"word": "revenue",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈrevənjuː/",
+			"definition_zh": "收益；營收",
+			"example": "Microsoft’s revenue jumped to $90 billion over the past quarter"
+		},
+		{
+			"word": "agentic",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/eɪˈdʒen.tɪk/",
+			"definition_zh": "代理的；具代理性的",
+			"example": "The app will merge Copilot’s chat, coding, and agentic features."
+		},
+		{
+			"word": "chatbot",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈtʃæt.bɒt/",
+			"definition_zh": "聊天機器人",
+			"example": "Microsoft is working on a super app that blends its Copilot chatbot..."
+		},
+		{
+			"word": "earnings call",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈɜːrnɪŋz kɔːl/",
+			"definition_zh": "財報電話會議",
+			"example": "During an earnings call on Wednesday, Microsoft CEO Satya Nadella said..."
+		},
+		{
+			"word": "step forward",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/step ˈfɔːrwərd/",
+			"definition_zh": "向前邁進；進展",
+			"example": "“This is a major step forward, and I look forward to sharing more soon.”"
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company decided to ____ the two departments to improve efficiency.",
+			"sentence_zh": "公司決定合併這兩個部門以提高效率。",
+			"answer": "merge",
+			"options": [
+				"merge",
+				"launch",
+				"revenue",
+				"blend"
+			]
+		},
+		{
+			"sentence": "Our sales have increased significantly during the third ____ of the year.",
+			"sentence_zh": "我們的銷售額在今年的第三季度顯著增長。",
+			"answer": "quarter",
+			"options": [
+				"quarter",
+				"major",
+				"chatbot",
+				"span"
+			]
+		},
+		{
+			"sentence": "The new bridge will ____ the entire river, connecting the two cities.",
+			"sentence_zh": "這座新橋將橫跨整條河流，連接這兩座城市。",
+			"answer": "span",
+			"options": [
+				"span",
+				"reveal",
+				"increase",
+				"commercial"
+			]
+		},
+		{
+			"sentence": "The simple software began to ____ into a complex system over time.",
+			"sentence_zh": "隨著時間推移，這個簡單的軟體開始進化成一個複雜的系統。",
+			"answer": "evolve",
+			"options": [
+				"evolve",
+				"confirm",
+				"jump",
+				"assistant"
+			]
+		},
+		{
+			"sentence": "Apple is expected to ____ its new iPhone models in September.",
+			"sentence_zh": "蘋果預計將在九月推出其新款 iPhone 機型。",
+			"answer": "launch",
+			"options": [
+				"launch",
+				"combine",
+				"drive",
+				"share"
+			]
+		},
+		{
+			"sentence": "The population of the city has been growing ____ in recent years.",
+			"sentence_zh": "近年來，這個城市的人口一直迅速增長。",
+			"answer": "rapidly",
+			"options": [
+				"rapidly",
+				"major",
+				"capability",
+				"agentic"
+			]
+		},
+		{
+			"sentence": "The government is looking for new ways to increase tax ____.",
+			"sentence_zh": "政府正在尋找增加稅收收益的新方法。",
+			"answer": "revenue",
+			"options": [
+				"revenue",
+				"confirmation",
+				"blend",
+				"increase"
+			]
+		},
+		{
+			"sentence": "Completing this project on time is a huge ____ for our team.",
+			"sentence_zh": "準時完成這個專案對我們團隊來說是一個巨大的進展。",
+			"answer": "step forward",
+			"options": [
+				"step forward",
+				"earnings call",
+				"launch",
+				"share"
+			]
+		},
+		{
+			"sentence": "The investigation did not ____ any evidence of wrongdoing.",
+			"sentence_zh": "調查並未揭露任何違法行為的證據。",
+			"answer": "reveal",
+			"options": [
+				"reveal",
+				"confirm",
+				"drive",
+				"jump"
+			]
+		},
+		{
+			"sentence": "The chef likes to ____ traditional flavors with modern techniques.",
+			"sentence_zh": "這位廚師喜歡將傳統風味與現代技法混合在一起。",
+			"answer": "blend",
+			"options": [
+				"blend",
+				"merge",
+				"assistant",
+				"commercial"
+			]
+		}
+	]
+}
