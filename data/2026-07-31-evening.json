@@ -1,0 +1,368 @@
+{
+	"date": "2026-07-31",
+	"slot": "evening",
+	"tag": "科技",
+	"title": "YouTube is on a major decluttering mission",
+	"source_name": "Fast Company",
+	"url": "https://www.fastcompany.com/91580299/youtube-is-on-a-major-decluttering-mission?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "YouTube has ballooned from a small selection of low-resolution videos in 2005 to a total library of more than 20 billion videos uploaded. Over the course of two decades, it has introduced a bevy of new features including YouTube Premium, Shorts, and YouTube Shopping. Today, it has billions of logged-in monthly users.",
+			"translation": "YouTube 從 2005 年僅有的少數低解析度影片，擴張至今已上傳超過 200 億部影片。在二十年的發展過程中，它推出了包括 YouTube Premium、Shorts 和 YouTube Shopping 在內的一系列新功能。如今，它每月擁有數十億的登入用戶。"
+		},
+		{
+			"tag": "p",
+			"text": "But as YouTube’s user base and content have expanded exponentially, the platform’s actual design has struggled to keep pace. Historically, YouTube’s product team was guided by boosting traditional KPIs without any clear design infrastructure, resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience.",
+			"translation": "但隨著 YouTube 的用戶群和內容呈指數級增長，平台的實際設計卻難以跟上腳步。歷史上，YouTube 的產品團隊一直是以提升傳統關鍵績效指標（KPI）為導向，缺乏明確的設計基礎架構，導致介面混亂、彈出視窗干擾、圖示不統一，以及整體的用戶體驗笨重。"
+		},
+		{
+			"tag": "p",
+			"text": "Now, for more than a year, the company—headed by design lead Jonathan Terleski—has been quietly working behind the scenes on what Terleski calls the “most significant design overhaul in YouTube history.” Terleski’s team is working to cut back YouTube’s unnecessary features and replace them with a streamlined design that includes fewer buttons, clearer user and creator homepages, and a better viewing experience.",
+			"translation": "現在，由設計負責人 Jonathan Terleski 領導的公司，已在幕後悄悄進行 Terleski 所稱的「YouTube 歷史上最重要的設計大改版」一年多了。Terleski 的團隊正致力於裁減 YouTube 不必要的功能，並以精簡的設計取而代之，包括更少的按鈕、更清晰的用戶與創作者首頁，以及更好的觀看體驗。"
+		},
+		{
+			"tag": "p",
+			"text": "“We’re at a pretty incredible scale, and as part of that, many of our surfaces have become noisy, less clear, and less simple than they otherwise could be,” Terleski says. “What I’m trying to do here is really step back and say, ‘Let’s look holistically at this. If we were designing all the things that we now know as YouTube, how might we have done it differently?’”",
+			"translation": "Terleski 表示：「我們的規模非常驚人，正因如此，我們的許多介面變得雜亂、不夠清晰，且不如原本應有的簡約。我在這裡想做的是退後一步，全盤思考：『如果我們重新設計現在所熟知的 YouTube，我們會有什麼不同的做法？』」"
+		},
+		{
+			"tag": "p",
+			"text": "The resulting changes are evidence that often it’s the least obvious features that make the biggest impact on user experience. And, Terleski hopes, they’re also a key “business lever” that will keep viewers coming back for decades to come.",
+			"translation": "最終的改變證明了，往往是那些最不起眼的功能對用戶體驗產生最大的影響。Terleski 希望，這些改變也是一個關鍵的「業務槓桿」，能吸引觀看者在未來的幾十年裡持續回歸。"
+		},
+		{
+			"tag": "h2",
+			"text": "YouTube’s new design culture",
+			"translation": "YouTube 的新設計文化"
+		},
+		{
+			"tag": "p",
+			"text": "The first step in YouTube’s design decluttering didn’t actually have anything to do with the platform’s visuals—it started with the company’s culture and organization.",
+			"translation": "YouTube 設計去蕪存菁的第一步實際上與平台的視覺效果無關，而是從公司的文化和組織開始。"
+		},
+		{
+			"tag": "p",
+			"text": "Before Terleski’s major initiative, YouTube’s design was handled with a fairly siloed approach. Teams dedicated to different components of the platform, like the YouTube Music and YouTube Living Room teams, would be responsible for owning the design of their products.",
+			"translation": "在 Terleski 的重大計畫之前，YouTube 的設計是採用相當孤立的方式處理的。致力於平台不同組件的團隊（如 YouTube Music 和 YouTube Living Room 團隊）負責各自產品的設計。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/i-6-91580299-youtube-redesign.jpg",
+			"alt": "",
+			"after_paragraph": 3
+		},
+		{
+			"src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit/wp-cms-2/2026/07/i-9-91580299-youtube-redesign.jpg",
+			"alt": "",
+			"after_paragraph": 5
+		}
+	],
+	"vocab": [
+		{
+			"word": "ballooned",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/bəˈluːnd/",
+			"definition_zh": "迅速增加；激增",
+			"example": "YouTube has ballooned from a small selection of low-resolution videos in 2005 to a total library of more than 20 billion videos uploaded."
+		},
+		{
+			"word": "selection",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/səˈlek.ʃən/",
+			"definition_zh": "挑選；選集",
+			"example": "YouTube has ballooned from a small selection of low-resolution videos in 2005..."
+		},
+		{
+			"word": "resolution",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌrez.əˈluː.ʃən/",
+			"definition_zh": "解析度",
+			"example": "...a small selection of low-resolution videos in 2005..."
+		},
+		{
+			"word": "exponentially",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˌek.spoʊˈnen.ʃəl.i/",
+			"definition_zh": "呈指數級地；倍增地",
+			"example": "But as YouTube’s user base and content have expanded exponentially, the platform’s actual design has struggled to keep pace."
+		},
+		{
+			"word": "infrastructure",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪn.frəˌstrʌk.tʃər/",
+			"definition_zh": "基礎架構；底層設施",
+			"example": "...without any clear design infrastructure, resulting in cluttered interfaces..."
+		},
+		{
+			"word": "cluttered",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈklʌt.ərd/",
+			"definition_zh": "凌亂的；擁擠的",
+			"example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."
+		},
+		{
+			"word": "iconography",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌaɪ.kəˈnɒɡ.rə.fi/",
+			"definition_zh": "圖示體系；圖解",
+			"example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."
+		},
+		{
+			"word": "clunky",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈklʌŋ.ki/",
+			"definition_zh": "笨重的；不靈活的",
+			"example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."
+		},
+		{
+			"word": "overhaul",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈoʊ.vər.hɔːl/",
+			"definition_zh": "徹底檢修；大改版",
+			"example": "...on what Terleski calls the “most significant design overhaul in YouTube history.”"
+		},
+		{
+			"word": "streamlined",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈstriːm.laɪnd/",
+			"definition_zh": "精簡的；效率高的",
+			"example": "...replace them with a streamlined design that includes fewer buttons..."
+		},
+		{
+			"word": "scale",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/skeɪl/",
+			"definition_zh": "規模；範圍",
+			"example": "“We’re at a pretty incredible scale...”"
+		},
+		{
+			"word": "holistically",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/hoʊˈlɪs.tɪ.kəl.i/",
+			"definition_zh": "全面地；整體地",
+			"example": "“What I’m trying to do here is really step back and say, ‘Let’s look holistically at this.’”"
+		},
+		{
+			"word": "evidence",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈev.ɪ.dəns/",
+			"definition_zh": "證據；證明",
+			"example": "The resulting changes are evidence that often it’s the least obvious features that make the biggest impact on user experience."
+		},
+		{
+			"word": "impact",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈɪm.pækt/",
+			"definition_zh": "影響；衝擊",
+			"example": "...make the biggest impact on user experience."
+		},
+		{
+			"word": "decluttering",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌdiːˈklʌt.ər.ɪŋ/",
+			"definition_zh": "清理；去蕪存菁",
+			"example": "The first step in YouTube’s design decluttering didn’t actually have anything to do with the platform’s visuals..."
+		},
+		{
+			"word": "initiative",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪˈnɪʃ.ə.tɪv/",
+			"definition_zh": "主動行動；計畫",
+			"example": "Before Terleski’s major initiative, YouTube’s design was handled with a fairly siloed approach."
+		},
+		{
+			"word": "siloed",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˈsaɪ.loʊd/",
+			"definition_zh": "孤立的；各自為政的",
+			"example": "Before Terleski’s major initiative, YouTube’s design was handled with a fairly siloed approach."
+		},
+		{
+			"word": "component",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/kəmˈpoʊ.nənt/",
+			"definition_zh": "組件；構成要素",
+			"example": "Teams dedicated to different components of the platform..."
+		},
+		{
+			"word": "significant",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/sɪɡˈnɪf.ɪ.kənt/",
+			"definition_zh": "重大的；顯著的",
+			"example": "...what Terleski calls the “most significant design overhaul in YouTube history.”"
+		},
+		{
+			"word": "guide",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɡaɪd/",
+			"definition_zh": "引導；指導",
+			"example": "Historically, YouTube’s product team was guided by boosting traditional KPIs..."
+		},
+		{
+			"word": "bevy of",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈbev.i əv/",
+			"definition_zh": "一大群；許多",
+			"example": "...it has introduced a bevy of new features including YouTube Premium..."
+		},
+		{
+			"word": "behind the scenes",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/bɪˈhaɪnd ðə siːnz/",
+			"definition_zh": "幕後地；私下地",
+			"example": "...has been quietly working behind the scenes on what Terleski calls..."
+		},
+		{
+			"word": "keep pace",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/kiːp peɪs/",
+			"definition_zh": "跟上步伐；並駕齊驅",
+			"example": "...the platform’s actual design has struggled to keep pace."
+		},
+		{
+			"word": "step back",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/step bæk/",
+			"definition_zh": "退後一步；重新思考",
+			"example": "“What I’m trying to do here is really step back and say...”"
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company's profits have ____ since the launch of their new product line.",
+			"sentence_zh": "自從新產品線推出以來，公司的利潤已經迅速增加。",
+			"answer": "ballooned",
+			"options": [
+				"ballooned",
+				"siloed",
+				"cluttered",
+				"streamlined"
+			]
+		},
+		{
+			"sentence": "The demand for renewable energy is growing ____ as global temperatures rise.",
+			"sentence_zh": "隨著全球氣溫升高，對再生能源的需求正呈指數級地增長。",
+			"answer": "exponentially",
+			"options": [
+				"holistically",
+				"exponentially",
+				"behind the scenes",
+				"significant"
+			]
+		},
+		{
+			"sentence": "The website was so ____ with ads that it was impossible to read the article.",
+			"sentence_zh": "網站上充斥著廣告，內容雜亂到根本無法閱讀文章。",
+			"answer": "cluttered",
+			"options": [
+				"cluttered",
+				"streamlined",
+				"impact",
+				"resolution"
+			]
+		},
+		{
+			"sentence": "The government is planning a major ____ of the current education system.",
+			"sentence_zh": "政府正計畫對現行的教育體制進行一次重大改版。",
+			"answer": "overhaul",
+			"options": [
+				"overhaul",
+				"initiative",
+				"infrastructure",
+				"selection"
+			]
+		},
+		{
+			"sentence": "The new management team introduced a ____ production process to reduce waste.",
+			"sentence_zh": "新的管理團隊引進了精簡的生產流程以減少浪費。",
+			"answer": "streamlined",
+			"options": [
+				"streamlined",
+				"clunky",
+				"significant",
+				"siloed"
+			]
+		},
+		{
+			"sentence": "Doctors should treat patients ____, considering both mental and physical health.",
+			"sentence_zh": "醫生應該全面地治療病人，同時考慮心理與生理健康。",
+			"answer": "holistically",
+			"options": [
+				"holistically",
+				"exponentially",
+				"clunky",
+				"decluttering"
+			]
+		},
+		{
+			"sentence": "The new environmental ____ aims to plant one million trees by the end of the year.",
+			"sentence_zh": "這項新的環保計畫旨在年底前種植一百萬棵樹。",
+			"answer": "initiative",
+			"options": [
+				"initiative",
+				"overhaul",
+				"scale",
+				"component"
+			]
+		},
+		{
+			"sentence": "Communication failed because each department remained ____ and didn't share information.",
+			"sentence_zh": "溝通失敗是因為各部門仍然各自為政，不分享資訊。",
+			"answer": "siloed",
+			"options": [
+				"siloed",
+				"streamlined",
+				"cluttered",
+				"ballooned"
+			]
+		},
+		{
+			"sentence": "While the actors get the credit, many people work ____ to make the movie.",
+			"sentence_zh": "雖然演員獲得功勞，但許多人在幕後地努力才完成了電影製作。",
+			"answer": "behind the scenes",
+			"options": [
+				"behind the scenes",
+				"step back",
+				"keep pace",
+				"bevy of"
+			]
+		},
+		{
+			"sentence": "Traditional bookstores must adapt to ____ with online retailers.",
+			"sentence_zh": "傳統書店必須做出調整以跟上網購平台的步伐。",
+			"answer": "keep pace",
+			"options": [
+				"keep pace",
+				"step back",
+				"guide",
+				"evidence"
+			]
+		}
+	]
+}

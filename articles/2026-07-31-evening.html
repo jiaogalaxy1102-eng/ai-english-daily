@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>YouTube is on a major decluttering mission — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-07-31</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Fast Company<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">YouTube is on a major decluttering mission</h1>
+	<div class="article-meta">
+		2026-07-31 &nbsp;·&nbsp; <a href="https://www.fastcompany.com/91580299/youtube-is-on-a-major-decluttering-mission?partner=rss&amp;utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss+fastcompany&amp;utm_content=rss" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="ballooned" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ballooned</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/bəˈluːnd/</span>
+				<span class="vocab-def">迅速增加；激增</span>
+			</div>
+			<div class="vocab-card" data-word="selection" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">selection</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/səˈlek.ʃən/</span>
+				<span class="vocab-def">挑選；選集</span>
+			</div>
+			<div class="vocab-card" data-word="resolution" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">resolution</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌrez.əˈluː.ʃən/</span>
+				<span class="vocab-def">解析度</span>
+			</div>
+			<div class="vocab-card" data-word="exponentially" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">exponentially</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˌek.spoʊˈnen.ʃəl.i/</span>
+				<span class="vocab-def">呈指數級地；倍增地</span>
+			</div>
+			<div class="vocab-card" data-word="infrastructure" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">infrastructure</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪn.frəˌstrʌk.tʃər/</span>
+				<span class="vocab-def">基礎架構；底層設施</span>
+			</div>
+			<div class="vocab-card" data-word="cluttered" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">cluttered</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈklʌt.ərd/</span>
+				<span class="vocab-def">凌亂的；擁擠的</span>
+			</div>
+			<div class="vocab-card" data-word="iconography" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">iconography</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌaɪ.kəˈnɒɡ.rə.fi/</span>
+				<span class="vocab-def">圖示體系；圖解</span>
+			</div>
+			<div class="vocab-card" data-word="clunky" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">clunky</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈklʌŋ.ki/</span>
+				<span class="vocab-def">笨重的；不靈活的</span>
+			</div>
+			<div class="vocab-card" data-word="overhaul" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">overhaul</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈoʊ.vər.hɔːl/</span>
+				<span class="vocab-def">徹底檢修；大改版</span>
+			</div>
+			<div class="vocab-card" data-word="streamlined" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">streamlined</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈstriːm.laɪnd/</span>
+				<span class="vocab-def">精簡的；效率高的</span>
+			</div>
+			<div class="vocab-card" data-word="scale" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">scale</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/skeɪl/</span>
+				<span class="vocab-def">規模；範圍</span>
+			</div>
+			<div class="vocab-card" data-word="holistically" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">holistically</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/hoʊˈlɪs.tɪ.kəl.i/</span>
+				<span class="vocab-def">全面地；整體地</span>
+			</div>
+			<div class="vocab-card" data-word="evidence" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">evidence</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈev.ɪ.dəns/</span>
+				<span class="vocab-def">證據；證明</span>
+			</div>
+			<div class="vocab-card" data-word="impact" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">impact</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪm.pækt/</span>
+				<span class="vocab-def">影響；衝擊</span>
+			</div>
+			<div class="vocab-card" data-word="decluttering" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">decluttering</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌdiːˈklʌt.ər.ɪŋ/</span>
+				<span class="vocab-def">清理；去蕪存菁</span>
+			</div>
+			<div class="vocab-card" data-word="initiative" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">initiative</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪˈnɪʃ.ə.tɪv/</span>
+				<span class="vocab-def">主動行動；計畫</span>
+			</div>
+			<div class="vocab-card" data-word="siloed" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">siloed</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsaɪ.loʊd/</span>
+				<span class="vocab-def">孤立的；各自為政的</span>
+			</div>
+			<div class="vocab-card" data-word="component" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">component</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/kəmˈpoʊ.nənt/</span>
+				<span class="vocab-def">組件；構成要素</span>
+			</div>
+			<div class="vocab-card" data-word="significant" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">significant</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/sɪɡˈnɪf.ɪ.kənt/</span>
+				<span class="vocab-def">重大的；顯著的</span>
+			</div>
+			<div class="vocab-card" data-word="guide" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">guide</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ɡaɪd/</span>
+				<span class="vocab-def">引導；指導</span>
+			</div>
+			<div class="vocab-card" data-word="bevy of" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">bevy of</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈbev.i əv/</span>
+				<span class="vocab-def">一大群；許多</span>
+			</div>
+			<div class="vocab-card" data-word="behind the scenes" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">behind the scenes</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/bɪˈhaɪnd ðə siːnz/</span>
+				<span class="vocab-def">幕後地；私下地</span>
+			</div>
+			<div class="vocab-card" data-word="keep pace" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">keep pace</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/kiːp peɪs/</span>
+				<span class="vocab-def">跟上步伐；並駕齊驅</span>
+			</div>
+			<div class="vocab-card" data-word="step back" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">step back</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/step bæk/</span>
+				<span class="vocab-def">退後一步；重新思考</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">YouTube has <span class="word-highfreq" data-word="ballooned">ballooned</span> from a small <span class="word-highfreq" data-word="selection">selection</span> of low-<span class="word-term" data-word="resolution">resolution</span> videos in 2005 to a total library of more than 20 billion videos uploaded. Over the course of two decades, it has introduced a <span class="word-phrase" data-word="bevy of">bevy of</span> new features including YouTube Premium, Shorts, and YouTube Shopping. Today, it has billions of logged-in monthly users.</p>
+			<p class="para-translation">YouTube 從 2005 年僅有的少數低解析度影片，擴張至今已上傳超過 200 億部影片。在二十年的發展過程中，它推出了包括 YouTube Premium、Shorts 和 YouTube Shopping 在內的一系列新功能。如今，它每月擁有數十億的登入用戶。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">But as YouTube’s user base and content have expanded <span class="word-highfreq" data-word="exponentially">exponentially</span>, the platform’s actual design has struggled to <span class="word-phrase" data-word="keep pace">keep pace</span>. Historically, YouTube’s product team was <span class="word-highfreq" data-word="guide">guide</span>d by boosting traditional KPIs without any clear design <span class="word-general" data-word="infrastructure">infrastructure</span>, resulting in <span class="word-highfreq" data-word="cluttered">cluttered</span> interfaces, distracting pop-ups, inconsistent <span class="word-general" data-word="iconography">iconography</span>, and an overall <span class="word-highfreq" data-word="clunky">clunky</span> user experience.</p>
+			<p class="para-translation">但隨著 YouTube 的用戶群和內容呈指數級增長，平台的實際設計卻難以跟上腳步。歷史上，YouTube 的產品團隊一直是以提升傳統關鍵績效指標（KPI）為導向，缺乏明確的設計基礎架構，導致介面混亂、彈出視窗干擾、圖示不統一，以及整體的用戶體驗笨重。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Now, for more than a year, the company—headed by design lead Jonathan Terleski—has been quietly working <span class="word-phrase" data-word="behind the scenes">behind the scenes</span> on what Terleski calls the “most <span class="word-highfreq" data-word="significant">significant</span> design <span class="word-general" data-word="overhaul">overhaul</span> in YouTube history.” Terleski’s team is working to cut back YouTube’s unnecessary features and replace them with a <span class="word-general" data-word="streamlined">streamlined</span> design that includes fewer buttons, clearer user and creator homepages, and a better viewing experience.</p>
+			<p class="para-translation">現在，由設計負責人 Jonathan Terleski 領導的公司，已在幕後悄悄進行 Terleski 所稱的「YouTube 歷史上最重要的設計大改版」一年多了。Terleski 的團隊正致力於裁減 YouTube 不必要的功能，並以精簡的設計取而代之，包括更少的按鈕、更清晰的用戶與創作者首頁，以及更好的觀看體驗。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024/wp-cms-2/2026/07/i-6-91580299-youtube-redesign.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">“We’re at a pretty incredible <span class="word-highfreq" data-word="scale">scale</span>, and as part of that, many of our surfaces have become noisy, less clear, and less simple than they otherwise could be,” Terleski says. “What I’m trying to do here is really <span class="word-phrase" data-word="step back">step back</span> and say, ‘Let’s look <span class="word-general" data-word="holistically">holistically</span> at this. If we were designing all the things that we now know as YouTube, how might we have done it differently?’”</p>
+			<p class="para-translation">Terleski 表示：「我們的規模非常驚人，正因如此，我們的許多介面變得雜亂、不夠清晰，且不如原本應有的簡約。我在這裡想做的是退後一步，全盤思考：『如果我們重新設計現在所熟知的 YouTube，我們會有什麼不同的做法？』」</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The resulting changes are <span class="word-highfreq" data-word="evidence">evidence</span> that often it’s the least obvious features that make the biggest <span class="word-highfreq" data-word="impact">impact</span> on user experience. And, Terleski hopes, they’re also a key “business lever” that will keep viewers coming back for decades to come.</p>
+			<p class="para-translation">最終的改變證明了，往往是那些最不起眼的功能對用戶體驗產生最大的影響。Terleski 希望，這些改變也是一個關鍵的「業務槓桿」，能吸引觀看者在未來的幾十年裡持續回歸。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit/wp-cms-2/2026/07/i-9-91580299-youtube-redesign.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block heading-block">
+			<h2 class="para-original">YouTube’s new design culture</h2>
+			<h2 class="para-translation">YouTube 的新設計文化</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The first step in YouTube’s design <span class="word-general" data-word="decluttering">decluttering</span> didn’t actually have anything to do with the platform’s visuals—it started with the company’s culture and organization.</p>
+			<p class="para-translation">YouTube 設計去蕪存菁的第一步實際上與平台的視覺效果無關，而是從公司的文化和組織開始。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Before Terleski’s major <span class="word-general" data-word="initiative">initiative</span>, YouTube’s design was handled with a fairly <span class="word-term" data-word="siloed">siloed</span> approach. Teams dedicated to different <span class="word-highfreq" data-word="component">component</span>s of the platform, like the YouTube Music and YouTube Living Room teams, would be responsible for owning the design of their products.</p>
+			<p class="para-translation">在 Terleski 的重大計畫之前，YouTube 的設計是採用相當孤立的方式處理的。致力於平台不同組件的團隊（如 YouTube Music 和 YouTube Living Room 團隊）負責各自產品的設計。</p>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-30-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">The architects behind planned Kansas City Chiefs stadium want it to be as noisy as possible</span>
+			</a>
+			<a class="related-card" href="2026-07-28-noon.html">
+				<span class="related-source">It&#x27;s Nice That</span>
+				<span class="related-title">What we learned about immersive tech, fan experiences and storytelling at Belgium House</span>
+			</a>
+			<a class="related-card" href="2026-07-28-morning.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">Inside the making of the category-busting Nike Air Zoom Hyperslide</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "ballooned", "type": "highfreq", "pos": "v.", "ipa": "/bəˈluːnd/", "definition_zh": "迅速增加；激增", "example": "YouTube has ballooned from a small selection of low-resolution videos in 2005 to a total library of more than 20 billion videos uploaded."}, {"word": "selection", "type": "highfreq", "pos": "n.", "ipa": "/səˈlek.ʃən/", "definition_zh": "挑選；選集", "example": "YouTube has ballooned from a small selection of low-resolution videos in 2005..."}, {"word": "resolution", "type": "term", "pos": "n.", "ipa": "/ˌrez.əˈluː.ʃən/", "definition_zh": "解析度", "example": "...a small selection of low-resolution videos in 2005..."}, {"word": "exponentially", "type": "highfreq", "pos": "adv.", "ipa": "/ˌek.spoʊˈnen.ʃəl.i/", "definition_zh": "呈指數級地；倍增地", "example": "But as YouTube’s user base and content have expanded exponentially, the platform’s actual design has struggled to keep pace."}, {"word": "infrastructure", "type": "general", "pos": "n.", "ipa": "/ˈɪn.frəˌstrʌk.tʃər/", "definition_zh": "基礎架構；底層設施", "example": "...without any clear design infrastructure, resulting in cluttered interfaces..."}, {"word": "cluttered", "type": "highfreq", "pos": "adj.", "ipa": "/ˈklʌt.ərd/", "definition_zh": "凌亂的；擁擠的", "example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."}, {"word": "iconography", "type": "general", "pos": "n.", "ipa": "/ˌaɪ.kəˈnɒɡ.rə.fi/", "definition_zh": "圖示體系；圖解", "example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."}, {"word": "clunky", "type": "highfreq", "pos": "adj.", "ipa": "/ˈklʌŋ.ki/", "definition_zh": "笨重的；不靈活的", "example": "...resulting in cluttered interfaces, distracting pop-ups, inconsistent iconography, and an overall clunky user experience."}, {"word": "overhaul", "type": "general", "pos": "n.", "ipa": "/ˈoʊ.vər.hɔːl/", "definition_zh": "徹底檢修；大改版", "example": "...on what Terleski calls the “most significant design overhaul in YouTube history.”"}, {"word": "streamlined", "type": "general", "pos": "adj.", "ipa": "/ˈstriːm.laɪnd/", "definition_zh": "精簡的；效率高的", "example": "...replace them with a streamlined design that includes fewer buttons..."}, {"word": "scale", "type": "highfreq", "pos": "n.", "ipa": "/skeɪl/", "definition_zh": "規模；範圍", "example": "“We’re at a pretty incredible scale...”"}, {"word": "holistically", "type": "general", "pos": "adv.", "ipa": "/hoʊˈlɪs.tɪ.kəl.i/", "definition_zh": "全面地；整體地", "example": "“What I’m trying to do here is really step back and say, ‘Let’s look holistically at this.’”"}, {"word": "evidence", "type": "highfreq", "pos": "n.", "ipa": "/ˈev.ɪ.dəns/", "definition_zh": "證據；證明", "example": "The resulting changes are evidence that often it’s the least obvious features that make the biggest impact on user experience."}, {"word": "impact", "type": "highfreq", "pos": "n.", "ipa": "/ˈɪm.pækt/", "definition_zh": "影響；衝擊", "example": "...make the biggest impact on user experience."}, {"word": "decluttering", "type": "general", "pos": "n.", "ipa": "/ˌdiːˈklʌt.ər.ɪŋ/", "definition_zh": "清理；去蕪存菁", "example": "The first step in YouTube’s design decluttering didn’t actually have anything to do with the platform’s visuals..."}, {"word": "initiative", "type": "general", "pos": "n.", "ipa": "/ɪˈnɪʃ.ə.tɪv/", "definition_zh": "主動行動；計畫", "example": "Before Terleski’s major initiative, YouTube’s design was handled with a fairly siloed approach."}, {"word": "siloed", "type": "term", "pos": "adj.", "ipa": "/ˈsaɪ.loʊd/", "definition_zh": "孤立的；各自為政的", "example": "Before Terleski’s major initiative, YouTube’s design was handled with a fairly siloed approach."}, {"word": "component", "type": "highfreq", "pos": "n.", "ipa": "/kəmˈpoʊ.nənt/", "definition_zh": "組件；構成要素", "example": "Teams dedicated to different components of the platform..."}, {"word": "significant", "type": "highfreq", "pos": "adj.", "ipa": "/sɪɡˈnɪf.ɪ.kənt/", "definition_zh": "重大的；顯著的", "example": "...what Terleski calls the “most significant design overhaul in YouTube history.”"}, {"word": "guide", "type": "highfreq", "pos": "v.", "ipa": "/ɡaɪd/", "definition_zh": "引導；指導", "example": "Historically, YouTube’s product team was guided by boosting traditional KPIs..."}, {"word": "bevy of", "type": "phrase", "pos": "", "ipa": "/ˈbev.i əv/", "definition_zh": "一大群；許多", "example": "...it has introduced a bevy of new features including YouTube Premium..."}, {"word": "behind the scenes", "type": "phrase", "pos": "", "ipa": "/bɪˈhaɪnd ðə siːnz/", "definition_zh": "幕後地；私下地", "example": "...has been quietly working behind the scenes on what Terleski calls..."}, {"word": "keep pace", "type": "phrase", "pos": "", "ipa": "/kiːp peɪs/", "definition_zh": "跟上步伐；並駕齊驅", "example": "...the platform’s actual design has struggled to keep pace."}, {"word": "step back", "type": "phrase", "pos": "", "ipa": "/step bæk/", "definition_zh": "退後一步；重新思考", "example": "“What I’m trying to do here is really step back and say...”"}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The company's profits have ____ since the launch of their new product line.", "sentence_zh": "自從新產品線推出以來，公司的利潤已經迅速增加。", "answer": "ballooned", "options": ["ballooned", "siloed", "cluttered", "streamlined"]}, {"sentence": "The demand for renewable energy is growing ____ as global temperatures rise.", "sentence_zh": "隨著全球氣溫升高，對再生能源的需求正呈指數級地增長。", "answer": "exponentially", "options": ["holistically", "exponentially", "behind the scenes", "significant"]}, {"sentence": "The website was so ____ with ads that it was impossible to read the article.", "sentence_zh": "網站上充斥著廣告，內容雜亂到根本無法閱讀文章。", "answer": "cluttered", "options": ["cluttered", "streamlined", "impact", "resolution"]}, {"sentence": "The government is planning a major ____ of the current education system.", "sentence_zh": "政府正計畫對現行的教育體制進行一次重大改版。", "answer": "overhaul", "options": ["overhaul", "initiative", "infrastructure", "selection"]}, {"sentence": "The new management team introduced a ____ production process to reduce waste.", "sentence_zh": "新的管理團隊引進了精簡的生產流程以減少浪費。", "answer": "streamlined", "options": ["streamlined", "clunky", "significant", "siloed"]}, {"sentence": "Doctors should treat patients ____, considering both mental and physical health.", "sentence_zh": "醫生應該全面地治療病人，同時考慮心理與生理健康。", "answer": "holistically", "options": ["holistically", "exponentially", "clunky", "decluttering"]}, {"sentence": "The new environmental ____ aims to plant one million trees by the end of the year.", "sentence_zh": "這項新的環保計畫旨在年底前種植一百萬棵樹。", "answer": "initiative", "options": ["initiative", "overhaul", "scale", "component"]}, {"sentence": "Communication failed because each department remained ____ and didn't share information.", "sentence_zh": "溝通失敗是因為各部門仍然各自為政，不分享資訊。", "answer": "siloed", "options": ["siloed", "streamlined", "cluttered", "ballooned"]}, {"sentence": "While the actors get the credit, many people work ____ to make the movie.", "sentence_zh": "雖然演員獲得功勞，但許多人在幕後地努力才完成了電影製作。", "answer": "behind the scenes", "options": ["behind the scenes", "step back", "keep pace", "bevy of"]}, {"sentence": "Traditional bookstores must adapt to ____ with online retailers.", "sentence_zh": "傳統書店必須做出調整以跟上網購平台的步伐。", "answer": "keep pace", "options": ["keep pace", "step back", "guide", "evidence"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
