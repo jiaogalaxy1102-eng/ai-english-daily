@@ -1,0 +1,562 @@
+{
+	"date": "2026-07-31",
+	"slot": "morning",
+	"tag": "科學",
+	"title": "Montana’s plan to become an experimental medical hub just pushed forward",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/30/1140942/montana-experimental-medical-hub-pushed-forward-right-to-try/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "As of this week in Montana, any biotech company with an experimental drug has a clear path to selling it to consumers. Companies whose drugs have been through preliminary testing—sometimes in as few as 10 healthy people—can pay $12,500 to apply to a newly established review board for approval. Once its treatment is rubber-stamped, the company can set the price of the drug and sell it via experimental treatment clinics, the first of which is likely to be up and running around the end of this year.",
+			"translation": "截至本週，在蒙大拿州，任何擁有實驗性藥物的生物技術公司都有一條向消費者銷售藥物的明確路徑。藥物經過初步測試（有時僅在 10 名健康受試者身上測試過）的公司，可以支付 12,500 美元向新成立的審查委員會申請批准。一旦其療法獲得蓋章認可，該公司就可以設定藥物價格，並透過實驗性治療診所進行銷售，第一家診所很可能在今年年底左右開始營運。"
+		},
+		{
+			"tag": "p",
+			"text": "Montana’s latest right-to-try legislation is unique. While other jurisdictions with similar laws limit access to drugs to people with terminal illness, in Montana access is theoretically available to anyone who gives informed consent and can pay. That includes people desperate for treatments for rare diseases. It also includes those who are interested in longevity and want to try out drugs pitched as preventive therapies.",
+			"translation": "蒙大拿州最新的「試用權」（right-to-try）立法是獨一無二的。雖然其他擁有類似法律的司法管轄區將藥物使用權限制在末期疾病患者，但在蒙大拿州，理論上任何提供知情同意並能支付費用的人都可以獲得藥物。這包括渴望治療罕見疾病的人，也包括那些對長壽感興趣並想嘗試被宣傳為預防性療法的藥物的人。"
+		},
+		{
+			"tag": "p",
+			"text": "The state’s Department of Health and Human Services recently finalized rules to implement the law. The rules stipulate that patient consumers provide fully informed consent and that each application be reviewed by a board that includes a Montana-certified doctor, expert scientists, and an ethicist. Supporters of the law stress that they want the process to be responsible. “It will be done in a very rigorous way, with qualified medical professionals and appropriate oversight,” says Matt Kaeberlein, a scientist on the first board, which was formed independently of the state health department.",
+			"translation": "該州衛生與公共服務部最近敲定了實施該法律的規則。規則規定，患者消費者必須提供充分的知情同意，且每份申請都必須由一個包括蒙大拿州認證醫生、專家科學家和倫理學家在內的委員會審查。該法律的支持者強調，他們希望這一過程是負責任的。首個獨立於州衛生部成立的委員會成員、科學家 Matt Kaeberlein 表示：「這將以非常嚴謹的方式進行，並配備合格的醫療專業人員和適當的監督。」"
+		},
+		{
+			"tag": "p",
+			"text": "But other experts are worried about the potential for harm in selling unproven treatments to people without oversight from the US Food and Drug Administration. “I would be concerned,” says Aaron Kesselheim, a professor of medicine at Harvard Medical School with expertise in health policy and drug regulation.",
+			"translation": "但其他專家擔心，在沒有美國食品藥物管理局（FDA）監督的情況下，向民眾銷售未經證實的療法可能會造成傷害。哈佛醫學院醫學教授、健康政策與藥物監管專家 Aaron Kesselheim 表示：「我會感到擔憂。」"
+		},
+		{
+			"tag": "p",
+			"text": "There has been a growing movement to make unapproved drugs more accessible in the US. But the story of Montana’s law is unique. It’s been driven and drafted by longevity enthusiasts instead of the usual libertarian and patient groups.",
+			"translation": "在美國，讓未經批准的藥物更容易獲得的運動日益壯大。但蒙大拿州法律的故事很獨特。它是由長壽愛好者驅動和起草的，而不是通常的自由意志主義者和患者團體。"
+		},
+		{
+			"tag": "h3",
+			"text": "An unusual origin story",
+			"translation": "一段不尋常的起源故事"
+		},
+		{
+			"tag": "p",
+			"text": "Montana first passed a right-to-try law in 2015. In 2023, with the support of state senator Ken Bogner, the state expanded the law to include all patients, not those just with terminal disease. Last year, Bogner told <em>MIT Technology Review</em> that his vision was to focus “more on preventative medicine” rather than “just treating diseases once they show up.”",
+			"translation": "蒙大拿州於 2015 年首次通過了「試用權」法。2023 年，在州參議員 Ken Bogner 的支持下，該州將法律擴大到涵蓋所有患者，而不僅僅是末期疾病患者。去年，Bogner 告訴《麻省理工科技評論》，他的願景是更多地關注「預防醫學」，而不是「僅在疾病出現後才進行治療」。"
+		},
+		{
+			"tag": "p",
+			"text": "Bogner says he had “started working on a bill” that would become the 2023 law when the Alliance for Longevity Initiatives (A4LI), a nonprofit “dedicated to advancing legislation and policies aimed at increasing healthy human lifespan,” got in touch. A4LI connected Bogner with others who helped draft the bill and testified in support of it.",
+			"translation": "Bogner 表示，當「長壽倡議聯盟」（A4LI）聯繫他時，他已經「開始著手起草一項法案」，該法案後來成為 2023 年的法律。A4LI 是一個致力於「推動旨在增加人類健康壽命的立法和政策」的非營利組織。A4LI 聯繫了 Bogner 與其他幫助起草法案並出庭支持該法案的人。"
+		},
+		{
+			"tag": "p",
+			"text": "Once that law was in place, the tech entrepreneur and longevity enthusiast Niklas Anzinger got involved. Anzinger has been working to establish a jurisdiction to fast-track the search for drugs that might deliver radical life extension. He is based in Próspera—a private city and “special economic zone” in Roatán, Honduras, which is already home to a separate clinic that sells experimental stem-cell and gene therapies. Anzinger founded a community there called Infinita City; he has also founded an investment company and a “service providing” company, both of which include the name Infinita.",
+			"translation": "該法律生效後，科技企業家兼長壽愛好者 Niklas Anzinger 也參與其中。Anzinger 一直致力於建立一個司法管轄區，以快速尋找可能實現激進壽命延長的藥物。他常駐宏都拉斯羅阿坦島的 Próspera——這是一個私營城市和「特別經濟區」，那裡已經有一家銷售實驗性幹細胞和基因療法的診所。Anzinger 在那裡創立了一個名為 Infinita City 的社區；他還創立了一家投資公司和一家「服務提供」公司，兩者的名稱中都包含 Infinita。"
+		},
+		{
+			"tag": "p",
+			"text": "Over the last couple of years, Anzinger has switched his focus to the US. “Now we think that Montana is a better model, because it’s building on … existing regulatory precedents,” he says. Once Montana’s 2023 law was passed, he adds, he worked with a handful of unnamed biotech companies to draft a second bill—one that laid out the specific terms under which clinics can offer unapproved drugs. That law was passed in April 2025 and adopted the following month.",
+			"translation": "在過去的幾年裡，Anzinger 將重心轉向了美國。他說：「現在我們認為蒙大拿州是一個更好的模式，因為它是建立在……現有的監管先例之上的。」他補充說，一旦蒙大拿州 2023 年的法律通過，他就與幾家未具名的生物技術公司合作起草了第二項法案——該法案規定了診所可以提供未經批准藥物的具體條款。該法律於 2025 年 4 月通過，並於次月採納。"
+		},
+		{
+			"tag": "p",
+			"text": "Since then, Anzinger, Bogner, and others have been waiting for the state’s Department of Health and Human Services to finalize specific rules for treatment centers—a set of operational guidelines and requirements that any clinic offering treatments unapproved by the FDA must meet under Montana’s law. “The rules have been taking a very long time,” says Anzinger. “Then on Friday, we heard they were effective … from Saturday [July 25].” The rules have since been published online.",
+			"translation": "從那時起，Anzinger、Bogner 和其他人一直在等待州衛生與公共服務部敲定治療中心的具體規則——這是一套根據蒙大拿州法律，任何提供未經 FDA 批准療法的診所都必須遵守的操作指南和要求。Anzinger 說：「規則制定花了很長時間。然後在週五，我們聽說它們從週六（7 月 25 日）起生效。」這些規則隨後在網上發布。"
+		},
+		{
+			"tag": "p",
+			"text": "With the new rules in hand, Anzinger and his colleague Stephen Martin, Infinita’s US lead, got to work. The first step was to establish an independent experimental treatment review board—a panel of five experts to evaluate applications for access. Anzinger and Martin started recruiting candidates months ago.",
+			"translation": "拿到新規則後，Anzinger 和他的同事、Infinita 的美國負責人 Stephen Martin 開始投入工作。第一步是成立一個獨立的實驗性治療審查委員會——一個由五名專家組成的評審小組，負責評估獲取申請。Anzinger 和 Martin 幾個月前就開始招募候選人。"
+		},
+		{
+			"tag": "p",
+			"text": "The state’s first board, named the Montana ETRB, was officially announced by Infinita earlier this week. For the time being, it is the state’s only review board, although Anzinger says that other groups are free to establish their own. After Bogner raised concerns that the board’s website wrongly implied that it was an official state body, the site was updated to note that “It is a private service run by Montana Governance Services Inc.” That company is “a local Montana registered entity, but it is under the Infinita umbrella,” says Anzinger.",
+			"translation": "該州的第一個委員會名為蒙大拿州 ETRB，由 Infinita 於本週早些時候正式宣布。目前它是該州唯一的審查委員會，儘管 Anzinger 表示其他團體可以自由建立自己的委員會。在 Bogner 對該委員會網站錯誤地暗示其為官方州政府機構表示擔憂後，網站進行了更新，註明「這是一項由蒙大拿治理服務公司運營的私人服務」。Anzinger 表示，該公司是「一家蒙大拿州註冊的在地實體，但在 Infinita 的旗下」。"
+		},
+		{
+			"tag": "p",
+			"text": "Infinita will pay board members a flat fee, funded by the $12,500 companies will have to pay to have their applications reviewed. Anzinger stresses that the board members, and their decisions, will be independent of Infinita.",
+			"translation": "Infinita 將向委員會成員支付固定費用，資金來源於各公司為審查申請而必須支付的 12,500 美元。Anzinger 強調，委員會成員及其決定將獨立於 Infinita。"
+		},
+		{
+			"tag": "p",
+			"text": "In accordance with the rules, the board includes a Montana-licensed doctor: James Burke, an oncologist. It also includes a bioethicist: Jessica Flanigan, a libertarian who is known for her strong views in support of self-medication and her book <em>Pharmaceutical Freedom.</em>",
+			"translation": "根據規定，委員會包括一名在蒙大拿州執業的醫生：腫瘤學家 James Burke。它還包括一名生物倫理學家：Jessica Flanigan，她是一位自由意志主義者，以其支持自我用藥的強烈觀點以及她的著作《製藥自由》而聞名。"
+		},
+		{
+			"tag": "p",
+			"text": "The other three members are familiar faces in the longevity community—all of whom are well respected in the field. “When we looked at our own network, these were some of the best guys,” says Martin. They include Felipe Sierra, who formerly held a senior role at the National Institutes of Health’s arm focused on aging. More recently, Sierra served as chief scientific officer at Hevolution Foundation, a nonprofit that funds research into extending healthy lifespan with the support of the government of Saudi Arabia.",
+			"translation": "另外三位成員是長壽界的熟面孔，在該領域都備受推崇。Martin 說：「當我們查看自己的網絡時，這些人就是其中最優秀的。」其中包括 Felipe Sierra，他曾任職於美國國家衛生研究院專注於衰老研究的分支機構。最近，Sierra 擔任 Hevolution 基金會的首席科學官，這是一家在沙烏地阿拉伯政府支持下，資助延長健康壽命研究的非營利組織。"
+		},
+		{
+			"tag": "p",
+			"text": "Matt Kaeberlein, who formerly led the Dog Aging Project and has studied the potential for rapamycin as a longevity therapeutic, also features. So does Jamie Justice, a gerontologist who is also executive director of the X Prize Healthspan competition, which has $101 million in prize money up for grabs for researchers who find ways to treat the signs of aging.",
+			"translation": "Matt Kaeberlein 也位列其中，他曾領導「犬類衰老計畫」，並研究過雷帕黴素作為長壽療法的潛力。還有老年學家 Jamie Justice，她也是 X Prize Healthspan 競賽的執行董事，該競賽為找到治療衰老跡象方法的研發人員提供了 1.01 億美元的獎金。"
+		},
+		{
+			"tag": "p",
+			"text": "“I saw an opportunity to help build a safe, transparent, and scientifically rigorous process for implementing Montana's newly expanded right-to-try legislation, particularly as it applies to longevity medicines and aging-related interventions,” says Justice. “Science is moving quickly, and I wanted to help ensure that as it develops, it does so with real rigor and accountability.”",
+			"translation": "Justice 說：「我看到了一個機會，可以幫助建立一個安全、透明且科學嚴謹的流程，來實施蒙大拿州新擴大的『試用權』立法，特別是當它應用於長壽藥物和與衰老相關的干預措施時。科學發展迅速，我想幫助確保在它發展的同時，具備真正的嚴謹性和問責制。」"
+		},
+		{
+			"tag": "p",
+			"text": "Kaeberlein, who has a prominent media presence, has long raised his own concerns about access to other unproven treatments, including peptides and stem-cell therapies. He sees Montana’s setup as offering a more regulated environment—one that offers scientific oversight, ensures informed consent, and allows for data collection.",
+			"translation": "Kaeberlein 具有很高的媒體知名度，長期以來他一直對獲取其他未經證實的療法表示擔憂，包括胜肽和幹細胞療法。他認為蒙大拿州的架構提供了一個更受監管的環境——一個提供科學監督、確保知情同意並允許數據收集的環境。"
+		},
+		{
+			"tag": "h3",
+			"text": "Applications incoming",
+			"translation": "申請即將湧入"
+		},
+		{
+			"tag": "p",
+			"text": "While many of the bill’s original supporters were interested in longevity, the initial interest in making drugs more accessible in Montana is coming from companies and individuals looking to treat specific diseases.",
+			"translation": "雖然該法案的許多原始支持者對長壽感興趣，但蒙大拿州最初對提高藥物獲取性的興趣來自於尋求治療特定疾病的公司和個人。"
+		},
+		{
+			"tag": "p",
+			"text": "“We were actually surprised that much of the interest … is actually more from oncology [and] neurodegenerative disease,” says Anzinger. This focus, he says, is “very compatible” with Infinita’s mission. “We’re not trying to convince everyone … to support radical life extension,” he says. Anything that extends health and human life, including treating cancer and neurodegenerative disease, is part of what longevity means to him, he says.",
+			"translation": "Anzinger 說：「我們實際上很驚訝，大部分的興趣……實際上更多來自腫瘤學和神經退行性疾病。」他說，這一重點與 Infinita 的使命「非常契合」。他說：「我們並不是試圖說服每個人……支持激進的壽命延長。」他說，任何延長健康和人類生命的行為，包括治療癌症和神經退行性疾病，都是長壽對他而言的一部分意義。"
+		},
+		{
+			"tag": "p",
+			"text": "Martin says that two applications have already been submitted to the newly formed review board. They’ve come from biotech companies that are developing drugs for neuropathy and hearing loss, he says. “I expect we’re going to get started on them this week,” he says.",
+			"translation": "Martin 表示，兩份申請已經提交給新成立的審查委員會。他說，這些申請來自正在研發神經病變和聽力損失藥物的生物技術公司。他說：「我預計我們本週就會開始處理這些申請。」"
+		},
+		{
+			"tag": "p",
+			"text": "One of the applications was submitted by Stanley Kim, CEO of WinSanTor. His company is developing a treatment for peripheral neuropathy, a painful nerve condition that can be a consequence of cancer treatment or diabetes. The drug is currently in phase II trials, but Kim says he regularly receives messages from people who are desperate to access it, to the point of being suicidal. He hopes that not only will he be able to make the drug accessible to those people, but he’ll also be able to collect data from them—data that might help accelerate the drug’s approval process.",
+			"translation": "其中一份申請是由 WinSanTor 的執行長 Stanley Kim 提交的。他的公司正在開發一種治療周邊神經病變的方法，這是一種由癌症治療或糖尿病引起的痛苦神經疾病。該藥物目前正處於二期臨床試驗階段，但 Kim 說他經常收到渴望獲得該藥物的人的信息，甚至有人絕望到想自殺。他希望不僅能讓這些人獲得藥物，還能從中收集數據——這些數據可能有助於加速藥物的審批過程。"
+		},
+		{
+			"tag": "p",
+			"text": "“We have a newsletter [that is sent to] around 15,000 patients,” says Kim. “Not all of them will be able to go to Montana, but many of them, I think, will.” His company still plans to continue with regular clinical trials as well.",
+			"translation": "Kim 說：「我們有一份發送給大約 15,000 名患者的電子報。並非所有人都能去蒙大拿州，但我認為很多人會去。」他的公司仍計劃繼續進行常規臨床試驗。"
+		},
+		{
+			"tag": "p",
+			"text": "But not all biotech companies with early-stage drugs feel comfortable submitting an application—at least not yet. Thomas Joudinaud, CEO of a French biotechnology company called Ceres Brain Therapeutics, has fielded a request from a person keen to access the company’s experimental drug in Montana. He says that while Montana’s system is “very interesting and very pragmatic” and “suitable for our drug,” he won’t be submitting an application for the time being. He is concerned that if anything goes wrong in Montana, it may jeopardize the company’s standing with the FDA, which wields the power to approve or reject the sale of its treatments to broader populations.",
+			"translation": "但並非所有擁有早期藥物的生物技術公司都感到可以放心提交申請——至少現在還不行。一家名為 Ceres Brain Therapeutics 的法國生物技術公司執行長 Thomas Joudinaud 接到了一個人的請求，希望能到蒙大拿州獲得該公司的實驗性藥物。他說，雖然蒙大拿州的系統「非常有趣且非常務實」，並且「適合我們的藥物」，但他目前不會提交申請。他擔心如果蒙大拿州出現任何問題，可能會危及公司在 FDA 的地位，而 FDA 掌握著批准或拒絕其療法向更廣大群體銷售的權力。"
+		},
+		{
+			"tag": "p",
+			"text": "Martin and others have asked the FDA for some kind of assurance that biotech companies participating in Montana’s program won’t be penalized later on. But the agency hasn’t provided them with more than a restatement of the federal Right to Try Act.",
+			"translation": "Martin 和其他人曾要求 FDA 提供某種保證，確保參與蒙大拿州計畫的生物技術公司以後不會受到懲罰。但該機構除了重申聯邦《試用權法》之外，並未提供更多信息。"
+		},
+		{
+			"tag": "p",
+			"text": "“As a matter of policy, the FDA does not comment on state legislation,” an FDA spokesperson wrote in response to a request for clarification from <em>MIT Technology Review</em>.",
+			"translation": "一位 FDA 發言人在回覆《麻省理工科技評論》的澄清請求時寫道：「作為一項政策，FDA 不對州立法發表評論。」"
+		},
+		{
+			"tag": "p",
+			"text": "Even if the FDA were to provide some kind of assurance, it wouldn’t necessarily protect biotech companies in the long term, cautions Chris Robertson, a specialist in health law at Boston University. The FDA’s position could change with a new presidential administration, he says: “I wouldn’t bet on anything that the FDA is saying today being applicable when the rubber hits the road later.”",
+			"translation": "波士頓大學健康法專家 Chris Robertson 警告說，即使 FDA 提供某種保證，也不一定能長期保護生物技術公司。他說，FDA 的立場可能會隨著新政府的上台而改變：「我不會把賭注押在 FDA 今天所說的任何話上，到了以後真正面臨考驗時是否依然適用。」"
+		},
+		{
+			"tag": "p",
+			"text": "Companies that want to stay on good terms with the FDA would be safest taking the expanded-access route, says Robertson. That’s the pathway the FDA already uses for people who are seriously or terminally ill, have run out of options, and want to try experimental drugs that have not yet been through clinical trials. The FDA approves over 99% of these applications, says Harvard’s Kesselheim.",
+			"translation": "Robertson 說，想要與 FDA 保持良好關係的公司，最安全的方法是採取「擴大近用」（expanded-access）途徑。這是 FDA 已經為患有嚴重或末期疾病、已無計可施並想嘗試尚未經過臨床試驗的實驗性藥物的人所使用的途徑。哈佛大學的 Kesselheim 說，FDA 批准了超過 99% 的此類申請。"
+		},
+		{
+			"tag": "p",
+			"text": "“The FDA isn’t a bottleneck but in fact exists to help ensure that expanded-access programs are aboveboard and that patients who receive [the drugs] are able to contribute knowledge about [them],” says Kesselheim. He says he doesn’t think that any “legitimate manufacturer” should fear having to go through the FDA’s expanded-access process, which the agency says takes “less than 45 minutes” to fill out.",
+			"translation": "Kesselheim 說：「FDA 不是瓶頸，事實上它的存在是為了幫助確保擴大近用計畫是公開透明的，並且接受藥物的患者能夠貢獻有關藥物的知識。」他表示，他不認為任何「合法製造商」應該害怕通過 FDA 的擴大近用流程，該機構稱填寫該流程只需「不到 45 分鐘」。"
+		},
+		{
+			"tag": "h3",
+			"text": "The cost of experimenting",
+			"translation": "實驗的代價"
+		},
+		{
+			"tag": "p",
+			"text": "There are some key differences between expanded access, which allows seriously ill people to apply for access to experimental drugs that might not have been through any human trials, and Montana’s approach. In theory, a person doesn’t need to be seriously ill to access experimental drugs in Montana.",
+			"translation": "「擴大近用」與蒙大拿州的方法之間存在一些關鍵區別。「擴大近用」允許重病患者申請獲取可能尚未經過任何人體試驗的實驗性藥物。理論上，在蒙大拿州，一個人不需要身患重病也可以獲得實驗性藥物。"
+		},
+		{
+			"tag": "p",
+			"text": "“In Montana, patients may be eligible for preventive or earlier-stage interventions if they provide informed consent and meet the program’s requirements, so the breadth of potential therapies and situations is much broader,” says Kaeberlein, the Montana ETRB member, who is an affiliate professor at the University of Washington in Seattle.",
+			"translation": "蒙大拿州 ETRB 成員、西雅圖華盛頓大學附屬教授 Kaeberlein 說：「在蒙大拿州，如果患者提供知情同意並符合計畫要求，他們可能有資格獲得預防性或更早期的干預措施，因此潛在療法和情境的廣度要大得多。」"
+		},
+		{
+			"tag": "p",
+			"text": "Kaeberlein also highlights another key difference, which is cost. Companies that make their treatments available through expanded access are only able to charge for the costs of making, transporting, and monitoring the drug, and they must justify the eventual price to the FDA. In Montana, they can charge whatever price they want. Stanley of WinSanTor says he plans to sell his drugs “at cost.” But Ceres’s Joudinaud says that he’d be more interested in selling his at a market price. When asked what that might be, he hinted that the prices of new drugs for rare diseases can be high. In recent years, the median price of such drugs was $218,872.",
+			"translation": "Kaeberlein 還強調了另一個關鍵區別，即成本。通過「擴大近用」途徑提供療法的公司只能收取製造、運輸和監測藥物的費用，並且必須向 FDA 證明最終價格的合理性。在蒙大拿州，他們可以收取任何他們想要的價格。WinSanTor 的 Stanley 表示，他計劃「按成本價」銷售他的藥物。但 Ceres 的 Joudinaud 表示，他更有興趣以市場價格銷售他的藥物。當被問及價格可能是多少時，他暗示罕見疾病新藥的價格可能很高。近年來，此類藥物的平均價格為 218,872 美元。"
+		},
+		{
+			"tag": "p",
+			"text": "“Instead of simply creating a legal pathway for patients, it also creates a business model that companies may actually be willing to use,” says Kaeberlein.",
+			"translation": "Kaeberlein 說：「這不僅僅是為患者建立了一條法律路徑，還創造了一種公司可能真的願意使用的商業模式。」"
+		},
+		{
+			"tag": "p",
+			"text": "Beyond the financial cost, there will be risks associated with any experimental drug. Phase I trials don’t conclusively reveal whether a drug is safe. Around 17% of drugs are found to be inadequately safe during <em>phase III </em>trials. “The idea that a drug has been proven safe because it’s been subject to a phase I study is very, very wrong,” says Kesselheim. Bioethicists have raised concerns about the ethics of promoting and selling unproven treatments and the risk of harm should something go wrong.",
+			"translation": "除了經濟成本外，任何實驗性藥物都會存在風險。一期臨床試驗並不能最終揭示藥物是否安全。大約 17% 的藥物在三期臨床試驗中被發現安全性不足。Kesselheim 說：「認為藥物因為經過了一期研究就被證明是安全的觀點是非常、非常錯誤的。」生物倫理學家對推廣和銷售未經證實的療法的倫理問題，以及一旦出錯可能造成的傷害風險表示擔憂。"
+		},
+		{
+			"tag": "p",
+			"text": "But the moment when people start spending money on these treatments is already fast approaching. While Montana’s first ETRB prepares to review its first applications, clinics that hope to be part of the program are busy addressing the requirements laid out in the state’s new rules. Treatment rooms are being outfitted. Medical directors are being hired. And experimental treatments should be reaching patients in the coming months.",
+			"translation": "但人們開始在這些療法上花錢的時刻已經迅速臨近。在蒙大拿州第一個 ETRB 準備審查首批申請的同時，希望參與該計畫的診所正忙於應對該州新規則中規定的要求。治療室正在佈置。醫療總監正在招聘。實驗性療法應該會在未來幾個月內送達患者手中。"
+		},
+		{
+			"tag": "h3",
+			"text": "Biotechnology and health",
+			"translation": "生物技術與健康"
+		},
+		{
+			"tag": "h3",
+			"text": "China has approved the world’s first invasive brain-computer chip—here’s what’s next",
+			"translation": "中國已批准全球首款侵入式腦機晶片——接下來會發生什麼"
+		},
+		{
+			"tag": "p",
+			"text": "The country wants to become a global leader in brain implants. Strong government support is expected to help accelerate that process.",
+			"translation": "該國希望成為大腦植入物的全球領導者。政府的大力支持預計將有助於加速這一進程。"
+		},
+		{
+			"tag": "h3",
+			"text": "The “steroid olympics” were a circus—and a window into our culture",
+			"translation": "「類固醇奧運會」是一場鬧劇，也是觀察我們文化的一扇窗戶"
+		},
+		{
+			"tag": "p",
+			"text": "Dozens of athletes on performance-enhancing drugs competed in the Enhanced Games. Organizers hope it'll sell a lot of peptides and other supplements.",
+			"translation": "數十名使用性能增強藥物的運動員參加了「增強運動會」。主辦方希望這能帶動胜肽和其他補充劑的銷量。"
+		},
+		{
+			"tag": "h3",
+			"text": "Sperm donors need limits, says a European fertility group",
+			"translation": "歐洲生育組織表示，捐精者需要受到限制"
+		},
+		{
+			"tag": "p",
+			"text": "Some donor-conceived people are finding hundreds of siblings. An international cap on donations could help prevent that.",
+			"translation": "一些由捐贈受孕的人發現自己有數百名兄弟姐妹。對捐贈數量進行國際上限限制可能有助於防止這種情況發生。"
+		},
+		{
+			"tag": "h3",
+			"text": "Inside interoception: The hidden sense of how you feel inside",
+			"translation": "走進「內感」：關於你內在感受的隱藏感官"
+		},
+		{
+			"tag": "p",
+			"text": "Researchers are decoding how signals move between body and brain, with implications for how we understand and treat conditions from obesity to anxiety.",
+			"translation": "研究人員正在解碼信號如何在身體和大腦之間移動，這對我們理解和治療從肥胖到焦慮的各種疾病都有影響。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "獲取來自《麻省理工科技評論》的最新資訊"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "探索特別優惠、熱門故事、即將舉行的活動等。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "preliminary",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/prɪˈlɪm.ɪ.nər.i/",
+			"definition_zh": "初步的、起始的",
+			"example": "Companies whose drugs have been through preliminary testing—sometimes in as few as 10 healthy people—can pay $12,500 to apply to a newly established review board for approval."
+		},
+		{
+			"word": "establish",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪˈstæb.lɪʃ/",
+			"definition_zh": "建立、設立",
+			"example": "Anzinger has been working to establish a jurisdiction to fast-track the search for drugs that might deliver radical life extension."
+		},
+		{
+			"word": "implement",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈɪm.plɪ.ment/",
+			"definition_zh": "實施、執行",
+			"example": "The state’s Department of Health and Human Services recently finalized rules to implement the law."
+		},
+		{
+			"word": "oversight",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈoʊ.vɚ.saɪt/",
+			"definition_zh": "監督、監管",
+			"example": "But other experts are worried about the potential for harm in selling unproven treatments to people without oversight from the US Food and Drug Administration."
+		},
+		{
+			"word": "legislation",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌledʒ.ɪˈsleɪ.ʃən/",
+			"definition_zh": "法律、立法",
+			"example": "Montana’s latest right-to-try legislation is unique."
+		},
+		{
+			"word": "ensure",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ɪnˈʃʊər/",
+			"definition_zh": "確保、保證",
+			"example": "“Science is moving quickly, and I wanted to help ensure that as it develops, it does so with real rigor and accountability.”"
+		},
+		{
+			"word": "provide",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/prəˈvaɪd/",
+			"definition_zh": "提供",
+			"example": "The rules stipulate that patient consumers provide fully informed consent and that each application be reviewed by a board..."
+		},
+		{
+			"word": "clinical",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈklɪn.ɪ.kəl/",
+			"definition_zh": "臨床的",
+			"example": "His company still plans to continue with regular clinical trials as well."
+		},
+		{
+			"word": "appropriate",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/əˈproʊ.pri.ət/",
+			"definition_zh": "適當的、恰當的",
+			"example": "“It will be done in a very rigorous way, with qualified medical professionals and appropriate oversight,” says Matt Kaeberlein."
+		},
+		{
+			"word": "accountable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/əˈkaʊn.tə.bəl/",
+			"definition_zh": "應負責任的",
+			"example": "“Science is moving quickly, and I wanted to help ensure that as it develops, it does so with real rigor and accountability.”"
+		},
+		{
+			"word": "rubber-stamped",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌrʌb.ɚˈstæmpt/",
+			"definition_zh": "例行公事地批准的",
+			"example": "Once its treatment is rubber-stamped, the company can set the price of the drug and sell it via experimental treatment clinics..."
+		},
+		{
+			"word": "jurisdiction",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌdʒʊə.rɪsˈdɪk.ʃən/",
+			"definition_zh": "司法管轄權、管轄區",
+			"example": "While other jurisdictions with similar laws limit access to drugs to people with terminal illness, in Montana access is theoretically available to anyone..."
+		},
+		{
+			"word": "terminal",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈtɝː.mə.nəl/",
+			"definition_zh": "末期的、晚期的",
+			"example": "While other jurisdictions with similar laws limit access to drugs to people with terminal illness, in Montana access is theoretically available..."
+		},
+		{
+			"word": "longevity",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/lɒnˈdʒev.ə.ti/",
+			"definition_zh": "長壽",
+			"example": "It also includes those who are interested in longevity and want to try out drugs pitched as preventive therapies."
+		},
+		{
+			"word": "libertarian",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌlɪb.ərˈter.i.ən/",
+			"definition_zh": "自由意志主義者",
+			"example": "It’s been driven and drafted by longevity enthusiasts instead of the usual libertarian and patient groups."
+		},
+		{
+			"word": "enthusiast",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈθuː.zi.æst/",
+			"definition_zh": "愛好者、熱衷者",
+			"example": "Once that law was in place, the tech entrepreneur and longevity enthusiast Niklas Anzinger got involved."
+		},
+		{
+			"word": "precedent",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈpres.ɪ.dənt/",
+			"definition_zh": "先例、慣例",
+			"example": "“Now we think that Montana is a better model, because it’s building on … existing regulatory precedents,” he says."
+		},
+		{
+			"word": "bottleneck",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈbɒt.əl.nek/",
+			"definition_zh": "瓶頸、障礙",
+			"example": "“The FDA isn’t a bottleneck but in fact exists to help ensure that expanded-access programs are aboveboard...”"
+		},
+		{
+			"word": "jeopardize",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈdʒep.ə.daɪz/",
+			"definition_zh": "危及、損害",
+			"example": "He is concerned that if anything goes wrong in Montana, it may jeopardize the company’s standing with the FDA..."
+		},
+		{
+			"word": "bioethicist",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌbaɪ.oʊˈeθ.ɪ.sɪst/",
+			"definition_zh": "生物倫理學家",
+			"example": "It also includes a bioethicist: Jessica Flanigan, a libertarian who is known for her strong views in support of self-medication..."
+		},
+		{
+			"word": "neurodegenerative",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˌnjʊə.roʊ.dɪˈdʒen.ər.ə.tɪv/",
+			"definition_zh": "神經退化性的",
+			"example": "“We were actually surprised that much of the interest … is actually more from oncology [and] neurodegenerative disease,” says Anzinger."
+		},
+		{
+			"word": "at cost",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/æt kɒst/",
+			"definition_zh": "按成本價",
+			"example": "Stanley of WinSanTor says he plans to sell his drugs “at cost.”"
+		},
+		{
+			"word": "fast-track",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˌfɑːst ˈtræk/",
+			"definition_zh": "加速處理、快速通道",
+			"example": "Anzinger has been working to establish a jurisdiction to fast-track the search for drugs that might deliver radical life extension."
+		},
+		{
+			"word": "when the rubber hits the road",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/wen ðə ˈrʌb.ɚ hɪts ðə roʊd/",
+			"definition_zh": "關鍵時刻、付諸實行時",
+			"example": "“I wouldn’t bet on anything that the FDA is saying today being applicable when the rubber hits the road later.”"
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The researchers conducted a ____ investigation before launching the full-scale study.",
+			"sentence_zh": "研究人員在展開全面研究之前，先進行了初步調查。",
+			"answer": "preliminary",
+			"options": [
+				"preliminary",
+				"jeopardize",
+				"bottleneck",
+				"longevity"
+			]
+		},
+		{
+			"sentence": "The government plans to ____ new tax reforms starting next month.",
+			"sentence_zh": "政府計畫從下個月開始實施新的稅制改革。",
+			"answer": "implement",
+			"options": [
+				"implement",
+				"establish",
+				"oversight",
+				"jeopardize"
+			]
+		},
+		{
+			"sentence": "Without proper ____, the project is likely to exceed its budget.",
+			"sentence_zh": "如果沒有適當的監督，該專案很可能會超出預算。",
+			"answer": "oversight",
+			"options": [
+				"oversight",
+				"legislation",
+				"bottleneck",
+				"precedent"
+			]
+		},
+		{
+			"sentence": "Scientists are studying diet and exercise to unlock the secrets of ____.",
+			"sentence_zh": "科學家正在研究飲食和運動，以揭開長壽的秘密。",
+			"answer": "longevity",
+			"options": [
+				"longevity",
+				"jurisdiction",
+				"radical",
+				"terminal"
+			]
+		},
+		{
+			"sentence": "Different states have different laws, so you must know which ____ you are in.",
+			"sentence_zh": "不同州有不同的法律，所以你必須知道你身處哪個司法管轄區。",
+			"answer": "jurisdiction",
+			"options": [
+				"jurisdiction",
+				"legislation",
+				"bottleneck",
+				"oversight"
+			]
+		},
+		{
+			"sentence": "The company decided to take ____ measures to save itself from bankruptcy.",
+			"sentence_zh": "公司決定採取激進措施以自救於破產。",
+			"answer": "radical",
+			"options": [
+				"radical",
+				"terminal",
+				"clinical",
+				"preliminary"
+			]
+		},
+		{
+			"sentence": "One bad decision could ____ the entire mission's success.",
+			"sentence_zh": "一個錯誤的決定可能會危及整個任務的成功。",
+			"answer": "jeopardize",
+			"options": [
+				"jeopardize",
+				"ensure",
+				"provide",
+				"implement"
+			]
+		},
+		{
+			"sentence": "Lack of funding has become a major ____ in the development of the new vaccine.",
+			"sentence_zh": "資金短缺已成為新疫苗研發的主要瓶頸。",
+			"answer": "bottleneck",
+			"options": [
+				"bottleneck",
+				"precedent",
+				"oversight",
+				"legislation"
+			]
+		},
+		{
+			"sentence": "The non-profit organization provides basic medical supplies to refugees ____.",
+			"sentence_zh": "該非營利組織按成本價向難民提供基礎醫療物資。",
+			"answer": "at cost",
+			"options": [
+				"at cost",
+				"fast-track",
+				"when the rubber hits the road",
+				"preliminary"
+			]
+		},
+		{
+			"sentence": "The agency decided to ____ the approval process for the life-saving medication.",
+			"sentence_zh": "該機構決定加速這款救命藥物的審批流程。",
+			"answer": "fast-track",
+			"options": [
+				"fast-track",
+				"jeopardize",
+				"implement",
+				"ensure"
+			]
+		}
+	]
+}
