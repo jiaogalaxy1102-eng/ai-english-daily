@@ -1,0 +1,543 @@
+{
+	"date": "2026-07-31",
+	"slot": "noon",
+	"tag": "AI",
+	"title": "The Download: tricking LLMs, and reviving geothermal plants",
+	"source_name": "MIT Technology Review",
+	"url": "https://www.technologyreview.com/2026/07/30/1140936/the-download-tricking-llms-reviving-geothermal/",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "<em>This is today's edition of </em><em>The Download</em>, <em>our weekday newsletter that provides a daily dose of what's going on in the world of technology.</em>",
+			"translation": "這是今日版的 The Download，我們的平日通訊，為您提供科技界每日動態。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>A fundamental flaw leaves LLMs strikingly vulnerable to attack </strong>",
+			"translation": "一個基本缺陷讓大型語言模型極易遭受攻擊"
+		},
+		{
+			"tag": "p",
+			"text": "It is impossible to make large language models fully secure against hacks because of a fundamental flaw in how they work, a team of researchers argue in a paper presented at a top AI conference earlier this month.",
+			"translation": "一組研究人員在本月早些時候於一場頂尖 AI 會議上發表的論文中指出，由於大型語言模型（LLM）的運作方式存在基本缺陷，因此不可能讓其完全免受駭客攻擊。"
+		},
+		{
+			"tag": "p",
+			"text": "The flaw concerns how LLMs identify who or what is giving them instructions. By taking advantage of it, the researchers were able to make popular LLMs spit out information they had been trained not to provide, such as how to synthesize cocaine and how to sabotage a commercial aircraft’s navigation system.",
+			"translation": "該缺陷涉及 LLM 如何辨別是誰或什麼在向其發出指令。透過利用這個缺陷，研究人員能夠讓熱門的 LLM 吐出原本被訓練不應提供的資訊，例如如何合成古柯鹼以及如何破壞商業飛機的導航系統。"
+		},
+		{
+			"tag": "p",
+			"text": "Read our story about the flaw the researchers found, its implications—and why it may never be fixed.",
+			"translation": "閱讀我們關於研究人員發現的缺陷及其影響的故事，以及為什麼它可能永遠無法被修復。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Will Douglas Heaven</em>",
+			"translation": "—Will Douglas Heaven"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>How an overlooked geothermal plant got a second chance </strong>",
+			"translation": "一家被忽視的地熱發電廠如何獲得重生"
+		},
+		{
+			"tag": "p",
+			"text": "In June 2024, a small company called Zanskar purchased a geothermal power plant in New Mexico that was failing fast. The water coming from the underground reservoir was getting colder by the day, making the plant uneconomical to run.",
+			"translation": "2024 年 6 月，一家名為 Zanskar 的小公司購買了新墨西哥州一家正迅速衰落的地熱發電廠。來自地下儲層的水一天比一天冷，使得該發電廠的運作變得不合經濟效益。"
+		},
+		{
+			"tag": "p",
+			"text": "Now, two years later, that plant is running at full capacity again, thanks to a new well. With the help of advanced modeling and modern drilling technology, the company was able to identify a better well site, drill down thousands of feet, and revive the entire operation.",
+			"translation": "兩年後的現在，得益於一口新井，該發電廠再次全速運轉。在先進建模和現代鑽探技術的幫助下，該公司能夠識別出更好的井址，向下鑽探數千英尺，並使整個運作重新煥發生機。"
+		},
+		{
+			"tag": "p",
+			"text": "As the world looks for more sources of emissions-free electricity that are available 24-7, Lightning Dock shows there’s still hidden potential deep beneath our feet. Read the full story.",
+			"translation": "隨著世界尋找更多可 24 小時運作的無排放電力來源，Lightning Dock 展示了我們腳下深處仍有隱藏的潛力。閱讀全文。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Casey Crownhart</em>",
+			"translation": "—Casey Crownhart"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>This story is from The Spark, our weekly climate tech newsletter. Sign up to receive it in your inbox every Wednesday.</strong>",
+			"translation": "這個故事來自 The Spark，我們的每週氣候科技通訊。註冊以在每週三的收件匣中接收它。"
+		},
+		{
+			"tag": "h3",
+			"text": "<strong>MIT Technology Review Narrated: South Korea’s hottest new bachelors are chip workers </strong>",
+			"translation": "MIT Technology Review 語音版：南韓最熱門的新單身漢是晶片工人"
+		},
+		{
+			"tag": "p",
+			"text": "Baek, a 35-year-old manager at the South Korean semiconductor titan SK Hynix, was enrolled in a matchmaking company a year ago. In a move typical of anxious South Korean parents, his mother signed him up, hoping to find a good wife for her son.",
+			"translation": "Baek 是南韓半導體巨頭 SK 海力士（SK Hynix）的一名 35 歲經理，他在一年前註冊了一家相親公司。這在焦慮的南韓父母中是很典型的舉動，他的母親幫他報了名，希望能為兒子找到一位好妻子。"
+		},
+		{
+			"tag": "p",
+			"text": "Lately, says Baek, he and his coworkers are having better luck finding dates—perhaps because of the dazzling bonuses they just got. Flush with eye-popping profits from the AI chip boom, SK Hynix agreed to pay 10% of operating profits to employees, which translates to an extra $476,000 per employee this year.",
+			"translation": "Baek 說，最近他和同事們在找對象方面運氣更好了——或許是因為他們剛拿到的驚人獎金。由於 AI 晶片繁榮帶來的驚人利潤，SK 海力士同意將營業利潤的 10% 支付給員工，這相當於今年每位員工可額外獲得 476,000 美元。"
+		},
+		{
+			"tag": "p",
+			"text": "Read our story about how chip workers like Baek have become the most sought-after bachelors and bachelorettes in South Korea.",
+			"translation": "閱讀我們的故事，了解像 Baek 這樣的晶片工人如何成為南韓最受追捧的單身男女。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Michelle Kim</em>",
+			"translation": "—Michelle Kim"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>This is our latest story to be turned into an MIT Technology Review Narrated podcast, which we publish each week on Spotify and Apple Podcasts. Just navigate to MIT Technology Review Narrated on either platform, and follow us to get all our new content as it’s released.</strong>",
+			"translation": "這是我們最新被製作成 MIT Technology Review Narrated 播客的故事，我們每週在 Spotify 和 Apple Podcasts 上發布。只需在任一平台上導航至 MIT Technology Review Narrated 並關注我們，即可在內容發布時獲取所有新內容。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>The must-reads</strong>",
+			"translation": "必讀內容"
+		},
+		{
+			"tag": "p",
+			"text": "<em>I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.</em>",
+			"translation": "我搜遍了互聯網，為您尋找今天最有趣、最重要、最可怕或最迷人的科技故事。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>1 The US government has just banned Roombas</strong> It’s not just Chinese humanoids—robot vacuum cleaners are included in a new FCC ban too. (The Verge $) + <em>Who wins and who loses from the ban on foreign robots?</em> (Ars Technica) + <em>China says it will retaliate.</em> (CNBC) <strong>2 The ongoing fires in Europe are breaking modern records</strong> And there’s likely even more destruction coming. (NYT $) + <em>Thousands of people have just been evacuated on the Greek island of Crete.</em> (BBC) <strong>3 Google DeepMind has dismantled its Nobel-winning AlphaFold team</strong> It reflects a broader industry move away from specialist tools towards more general, AI-powered agents for science. (FT$) + <em>Google I/O showed how the path for AI-driven science is shifting.</em> (MIT Technology Review) <strong>4 Data centers are easy to build. To run? Not so much</strong> For that, you need time and money to invest in grid infrastructure, like new transmission lines. (404 Media $) <em>+ The power line that could reshape New York’s grid is hitting snags.</em> (MIT Technology Review) + <em>AI companies are hiring thousands of electricians and carpenters to get data centers up and running.</em> (NYT $) <strong>5 DoorDash plans to launch a drone delivery program</strong> It’ll be a while before we get to make use of it, though. (TechCrunch) + <em>The US may be heading toward a drone-filled future</em>. (MIT Technology Review) <strong>6 AI is accelerating global digital inequality</strong> Money, infrastructure and talent are pooling in a relatively small number of places. (IEEE Spectrum) <strong>7 Quantum computers promise mathematical superpowers </strong> And it feels like we’re inching closer to a commercial machine. (The Economist $) + <em>PsiQuantum has a plan to make a massive quantum computer out of light.</em> (MIT Technology Review)",
+			"translation": "1. 美國政府剛剛禁止了 Roombas。不僅是中國的人形機器人，掃地機器人也被納入了 FCC 的新禁令。（The Verge $）+ 誰從外國機器人禁令中獲益，誰又是輸家？（Ars Technica）+ 中國表示將進行反擊。（CNBC）2. 歐洲持續的火災正打破現代紀錄，且可能會有更多的破壞降臨。（紐約時報 $）+ 希臘克里特島已有數千人被疏散。（BBC）3. Google DeepMind 拆解了其獲得諾貝爾獎的 AlphaFold 團隊。這反映了業界更廣泛的趨勢，即從專業工具轉向更通用的 AI 驅動科學代理。（金融時報 $）+ Google I/O 展示了 AI 驅動科學的路徑正在發生轉變。（MIT Technology Review）4. 數據中心很容易建造，但要運行呢？沒那麼簡單。為此，你需要投入時間和金錢來投資電網基礎設施，例如新的輸電線路。（404 Media $）+ 可能重塑紐約電網的輸電線路正遭遇阻礙。（MIT Technology Review）+ AI 公司正在僱用成千上萬的電工和木工來啟動並運行數據中心。（紐約時報 $）5. DoorDash 計劃啟動無人機送貨計劃。不過，我們還需要一段時間才能使用它。（TechCrunch）+ 美國可能正朝著充滿無人機的未來邁進。（MIT Technology Review）6. AI 正在加速全球數位不平等。資金、基礎設施和人才正集中在少數幾個地方。（IEEE Spectrum）7. 量子計算機承諾具備數學超能力，感覺我們正離商業化機器越來越近。（經濟學人 $）+ PsiQuantum 有計劃利用光製造大型量子計算機。（MIT Technology Review）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>8 Anxious Chinese students are using AI for university admissions</strong> It’s common to pay private coaches to help navigate this high-stakes decision, but AI companies now offer the service for free. (Rest of World) + <em>How DeepSeek became a fortune teller for China’s youth. </em>(MIT Technology Review) <strong>9 Boomers keep giving their grandkids AI-generated slop books</strong> And it’s driving millennial parents mad. (Wired $) <strong>10 Minecraft is helping children to redesign their cities</strong> It just goes to show how creativity can still flourish, even amid war. (NYT $)",
+			"translation": "8. 焦慮的中國學生正使用 AI 進行大學申請。支付私人教練來幫助導航這項高風險決策是很常見的，但 AI 公司現在免費提供這項服務。（Rest of World）+ DeepSeek 如何成為中國青年的算命先生。（MIT Technology Review）9. 戰後嬰兒潮一代不斷給孫輩送 AI 生成的劣質（slop）書籍，這讓千禧世代的父母感到抓狂。（Wired $）10.《當個創世神》（Minecraft）正幫助孩子們重新設計他們的城市。這說明即使在戰爭中，創意依然可以蓬勃發展。（紐約時報 $）"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Quote of the day</strong>",
+			"translation": "今日語錄"
+		},
+		{
+			"tag": "h2",
+			"text": "“I want to see the blood, sweat, and tears that went into it.”",
+			"translation": "「我想看到投入其中的血、汗與淚。」"
+		},
+		{
+			"tag": "p",
+			"text": "—Ray Slater Berry, founder of marketing agency dslx, tells Wired why he’s drawn to text written by humans.",
+			"translation": "—行銷代理機構 dslx 的創辦人 Ray Slater Berry 告訴《Wired》，為什麼他會被人類撰寫的文字所吸引。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>One More Thing</strong>",
+			"translation": "還有一件事"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Europe’s drone-filled vision for the future of war </strong>",
+			"translation": "歐洲對未來戰爭充滿無人機的願景"
+		},
+		{
+			"tag": "p",
+			"text": "Europe has started testing an invisible automated intelligence network, known as a “digital targeting web,” conceived under the name Project ASGARD. Its purpose is to connect everything that looks for targets—“sensors,” in military lingo—and everything that fires on them (“shooters”) to a single, shared wireless electronic brain.",
+			"translation": "歐洲已開始測試一個名為「數位目標網」（digital targeting web）的隱形自動化情報網絡，該項目以 Project ASGARD 之名構思。其目的是將所有尋找目標的東西（軍語中稱為「感測器」）和所有向其開火的東西（「射手」）連接到單個共享的無線電子大腦。"
+		},
+		{
+			"tag": "p",
+			"text": "Eighty years after total war last transformed the continent, the system signals a brutal new calculus of European defense. “The Russians are knocking on the door,” says Sven Weizenegger, the head of the German military’s Cyber Innovation Hub.",
+			"translation": "在全面戰爭上一次改變歐洲大陸八十年後，該系統標誌著歐洲國防的一種殘酷新算計。德國聯邦國防軍網路創新中心負責人 Sven Weizenegger 說：「俄羅斯人正在敲門。」"
+		},
+		{
+			"tag": "p",
+			"text": "Read our story about how strategists and policymakers are counting on increasingly automated battlefield gadgetry to keep them from bursting through.",
+			"translation": "閱讀我們的故事，了解戰略家和決策者如何依靠日益自動化的戰場裝置來阻止他們闖入。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>—Arthur Holland Michel</em>",
+			"translation": "—Arthur Holland Michel"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>We can still have nice things</strong>",
+			"translation": "我們仍能擁有美好的事物"
+		},
+		{
+			"tag": "p",
+			"text": "<em>A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? </em><em>Drop me a line</em><em>.)</em>",
+			"translation": "一個提供舒適、趣味和消遣，為您的一天增添光彩的地方。（有任何想法嗎？請寫信給我。）"
+		},
+		{
+			"tag": "p",
+			"text": "+ Love this story about the studio accident that birthed the 1980s ‘gated reverb’ drum sound. + Wewere.online turns solitary web browsing into a multiplayer experience by rendering live cursor trails of other visitors. + Imagine how relaxed you’d get staying in this coastal cabin in Tasmania. + Why do cats always land on their feet? It’s thanks to their amazingly flexible spines.",
+			"translation": "+ 喜歡這個關於錄音室意外誕生了 1980 年代「門控混響」鼓聲的故事。+ Wewere.online 透過渲染其他訪客的即時光標軌跡，將孤獨的網頁瀏覽轉化為多人體驗。+ 想像一下住在塔斯馬尼亞這座沿海小屋裡會有多放鬆。+ 為什麼貓總能四足著地？這歸功於它們驚人靈活的脊椎。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: Claude’s inner workings and OpenAI’s “super app”",
+			"translation": "The Download：Claude 的內部運作與 OpenAI 的「超級應用程式」"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: OpenAI has unveiled its long-awaited \"super app.\"",
+			"translation": "加上：OpenAI 展示了其期待已久的「超級應用程式」。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: Claude’s inner workings, and the future of world models",
+			"translation": "The Download：Claude 的內部運作，以及世界模型的未來"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: New York has become the first state to enact a data center moratorium.",
+			"translation": "加上：紐約州成為第一個頒布數據中心暫停令的州。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: the future of chipmaking and Anthropic’s government clash",
+			"translation": "The Download：晶片製造的未來與 Anthropic 的政府衝突"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Meta is pausing an AI training program that tracks workers’ keystrokes.",
+			"translation": "加上：Meta 正在暫停一項追蹤工人按鍵情況的 AI 培訓計畫。"
+		},
+		{
+			"tag": "h3",
+			"text": "The Download: AI hacking beyond Mythos, and chatbots’ impact on our brains",
+			"translation": "The Download：超越 Mythos 的 AI 駭客行為，以及聊天機器人對我們大腦的影響"
+		},
+		{
+			"tag": "p",
+			"text": "Plus: Anthropic has called for a global slowdown in AI development.",
+			"translation": "加上：Anthropic 呼籲全球放慢 AI 的發展速度。"
+		},
+		{
+			"tag": "h2",
+			"text": "Get the latest updates from MIT Technology Review",
+			"translation": "從 MIT Technology Review 獲取最新動態"
+		},
+		{
+			"tag": "p",
+			"text": "Discover special offers, top stories, upcoming events, and more.",
+			"translation": "探索特別優惠、熱門故事、即將舉行的活動等。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://wp.technologyreview.com/wp-content/uploads/2025/12/Helsing_CA-1_Europa_design_study_2.jpg?w=840",
+			"alt": "fighter drone in a dark hanger",
+			"after_paragraph": 26
+		}
+	],
+	"vocab": [
+		{
+			"word": "vulnerable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈvʌlnərəbl/",
+			"definition_zh": "易受攻擊的；脆弱的",
+			"example": "A fundamental flaw leaves LLMs strikingly vulnerable to attack."
+		},
+		{
+			"word": "flaw",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/flɔː/",
+			"definition_zh": "缺陷；瑕疵",
+			"example": "It is impossible to make large language models fully secure against hacks because of a fundamental flaw in how they work."
+		},
+		{
+			"word": "implications",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌɪmplɪˈkeɪʃənz/",
+			"definition_zh": "可能後的影響；含義",
+			"example": "Read our story about the flaw the researchers found, its implications—and why it may never be fixed."
+		},
+		{
+			"word": "reservoir",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈrezəvwɑːr/",
+			"definition_zh": "儲層；蓄水池",
+			"example": "The water coming from the underground reservoir was getting colder by the day."
+		},
+		{
+			"word": "uneconomical",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˌʌniːkəˈnɒmɪkl/",
+			"definition_zh": "不經濟的；不划算的",
+			"example": "The water coming from the underground reservoir was getting colder by the day, making the plant uneconomical to run."
+		},
+		{
+			"word": "revive",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈvaɪv/",
+			"definition_zh": "使重生；使復甦",
+			"example": "With the help of advanced modeling and modern drilling technology, the company was able to ... revive the entire operation."
+		},
+		{
+			"word": "potential",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/pəˈtenʃl/",
+			"definition_zh": "潛力；可能性",
+			"example": "Lightning Dock shows there’s still hidden potential deep beneath our feet."
+		},
+		{
+			"word": "semiconductor",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌsemikənˈdʌktər/",
+			"definition_zh": "半導體",
+			"example": "Baek, a 35-year-old manager at the South Korean semiconductor titan SK Hynix."
+		},
+		{
+			"word": "titan",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈtaɪtn/",
+			"definition_zh": "巨頭；巨人",
+			"example": "Baek, a 35-year-old manager at the South Korean semiconductor titan SK Hynix."
+		},
+		{
+			"word": "sought-after",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈsɔːt ˌæftər/",
+			"definition_zh": "受歡迎的；趨之若鶩的",
+			"example": "Read our story about how chip workers like Baek have become the most sought-after bachelors."
+		},
+		{
+			"word": "retaliate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈtælieɪt/",
+			"definition_zh": "報復；反擊",
+			"example": "China says it will retaliate."
+		},
+		{
+			"word": "dismantle",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪsˈmæntl/",
+			"definition_zh": "拆除；解散",
+			"example": "Google DeepMind has dismantled its Nobel-winning AlphaFold team."
+		},
+		{
+			"word": "infrastructure",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈɪnfrəstrʌktʃər/",
+			"definition_zh": "基礎設施",
+			"example": "For that, you need time and money to invest in grid infrastructure."
+		},
+		{
+			"word": "inequality",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌɪnɪˈkwɒləti/",
+			"definition_zh": "不平等",
+			"example": "AI is accelerating global digital inequality."
+		},
+		{
+			"word": "slop",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/slɒp/",
+			"definition_zh": "劣質作品；泥水",
+			"example": "Boomers keep giving their grandkids AI-generated slop books."
+		},
+		{
+			"word": "calculus",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈkælkjələs/",
+			"definition_zh": "計算；衡量方式",
+			"example": "the system signals a brutal new calculus of European defense."
+		},
+		{
+			"word": "gadgetry",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɡædʒɪtri/",
+			"definition_zh": "小裝置；器械",
+			"example": "relying on increasingly automated battlefield gadgetry to keep them from bursting through."
+		},
+		{
+			"word": "geothermal",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ˌdʒiːəʊˈθɜːml/",
+			"definition_zh": "地熱的",
+			"example": "Zanskar purchased a geothermal power plant in New Mexico."
+		},
+		{
+			"word": "synthesize",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈsɪnθəsaɪz/",
+			"definition_zh": "合成",
+			"example": "such as how to synthesize cocaine."
+		},
+		{
+			"word": "sabotage",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈsæbətɑːʒ/",
+			"definition_zh": "蓄意破壞",
+			"example": "and how to sabotage a commercial aircraft’s navigation system."
+		},
+		{
+			"word": "take advantage of",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/teɪk ədˈvɑːntɪdʒ ɒv/",
+			"definition_zh": "利用",
+			"example": "By taking advantage of it, the researchers were able to make popular LLMs spit out information."
+		},
+		{
+			"word": "flush with",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/flʌʃ wɪð/",
+			"definition_zh": "富有；充滿（錢財）",
+			"example": "Flush with eye-popping profits from the AI chip boom."
+		},
+		{
+			"word": "drop me a line",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/drɒp miː ə laɪn/",
+			"definition_zh": "寫信給我",
+			"example": "Got any ideas? Drop me a line."
+		},
+		{
+			"word": "knocking on the door",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈnɒkɪŋ ɒn ðə dɔːr/",
+			"definition_zh": "迫在眉睫；找上門來",
+			"example": "“The Russians are knocking on the door,” says Sven Weizenegger."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The security system had a major ____ that allowed hackers to access private files.",
+			"sentence_zh": "安全系統有一個重大缺陷，讓駭客得以存取私人文件。",
+			"answer": "flaw",
+			"options": [
+				"flaw",
+				"infrastructure",
+				"reservoir",
+				"titan"
+			]
+		},
+		{
+			"sentence": "Elderly people are often more ____ to online scams than younger generations.",
+			"sentence_zh": "比起年輕一代，年長者往往更容易受網路詐騙攻擊。",
+			"answer": "vulnerable",
+			"options": [
+				"sought-after",
+				"vulnerable",
+				"uneconomical",
+				"synthesize"
+			]
+		},
+		{
+			"sentence": "The company decided to ____ the old factory after moving all operations to the new site.",
+			"sentence_zh": "公司在將所有業務搬遷到新址後，決定拆除舊工廠。",
+			"answer": "dismantle",
+			"options": [
+				"retaliate",
+				"dismantle",
+				"revive",
+				"sabotage"
+			]
+		},
+		{
+			"sentence": "If you have any feedback regarding our service, please ____.",
+			"sentence_zh": "如果您對我們的服務有任何反饋，請寫信給我。",
+			"answer": "drop me a line",
+			"options": [
+				"take advantage of",
+				"flush with",
+				"knocking on the door",
+				"drop me a line"
+			]
+		},
+		{
+			"sentence": "The new energy policy has significant ____ for the country's economy.",
+			"sentence_zh": "新的能源政策對該國經濟具有重大影響。",
+			"answer": "implications",
+			"options": [
+				"gadgetry",
+				"implications",
+				"calculus",
+				"inequality"
+			]
+		},
+		{
+			"sentence": "After the investment, the startup is now ____ cash and ready to expand.",
+			"sentence_zh": "在獲得投資後，這家新創公司現在資金充裕，準備擴張。",
+			"answer": "flush with",
+			"options": [
+				"flush with",
+				"take advantage of",
+				"sought-after",
+				"potential"
+			]
+		},
+		{
+			"sentence": "Scientists are trying to ____ a new material that is stronger than steel but lighter.",
+			"sentence_zh": "科學家正試圖合成一種比鋼更強但更輕的新材料。",
+			"answer": "synthesize",
+			"options": [
+				"retaliate",
+				"revive",
+				"synthesize",
+				"sabotage"
+			]
+		},
+		{
+			"sentence": "The government is investing billions to improve the country's transportation ____.",
+			"sentence_zh": "政府正投入數十億資金來改善國家的交通基礎設施。",
+			"answer": "infrastructure",
+			"options": [
+				"infrastructure",
+				"slop",
+				"calculus",
+				"geothermal"
+			]
+		},
+		{
+			"sentence": "The detective realized the criminal tried to ____ the evidence by starting a fire.",
+			"sentence_zh": "偵探意識到犯罪分子試圖透過放火來蓄意破壞證據。",
+			"answer": "sabotage",
+			"options": [
+				"dismantle",
+				"sabotage",
+				"revive",
+				"retaliate"
+			]
+		},
+		{
+			"sentence": "Renewable energy like solar and ____ power is becoming more popular.",
+			"sentence_zh": "太陽能和地熱能等再生能源正變得越來越受歡迎。",
+			"answer": "geothermal",
+			"options": [
+				"semiconductor",
+				"geothermal",
+				"titan",
+				"reservoir"
+			]
+		}
+	]
+}
