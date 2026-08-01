@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>With Switch 2, iPhone, and laptop tricks, the Sharge Disk Pro 2 is finally a worthy EDC — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=11">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-08-01</span>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">The Verge<span class="tag-badge">科技</span></div>
+	<h1 class="article-title">With Switch 2, iPhone, and laptop tricks, the Sharge Disk Pro 2 is finally a worthy EDC</h1>
+	<div class="article-meta">
+		2026-08-01 &nbsp;·&nbsp; <a href="https://www.theverge.com/gadgets/973886/sharge-disk-pro-2-hands-on-switch-2-hdmi-usb-c-dock" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="vocab-section content-block">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="impressive" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">impressive</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪmˈpresɪv/</span>
+				<span class="vocab-def">令人印象深刻的</span>
+			</div>
+			<div class="vocab-card" data-word="recommend" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">recommend</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌrekəˈmend/</span>
+				<span class="vocab-def">推薦</span>
+			</div>
+			<div class="vocab-card" data-word="simultaneous" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">simultaneous</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌsaɪmlˈteɪniəs/</span>
+				<span class="vocab-def">同時發生的</span>
+			</div>
+			<div class="vocab-card" data-word="achieve" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">achieve</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈtʃiːv/</span>
+				<span class="vocab-def">達成、實現</span>
+			</div>
+			<div class="vocab-card" data-word="solution" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">solution</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/səˈluːʃn/</span>
+				<span class="vocab-def">解決方案</span>
+			</div>
+			<div class="vocab-card" data-word="tweak" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">tweak</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/twiːk/</span>
+				<span class="vocab-def">微調、調整</span>
+			</div>
+			<div class="vocab-card" data-word="typical" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">typical</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈtɪpɪkl/</span>
+				<span class="vocab-def">典型的、通常的</span>
+			</div>
+			<div class="vocab-card" data-word="solid" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">solid</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈsɒlɪd/</span>
+				<span class="vocab-def">穩靠的、固體的</span>
+			</div>
+			<div class="vocab-card" data-word="current" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">current</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈkʌrənt/</span>
+				<span class="vocab-def">目前的</span>
+			</div>
+			<div class="vocab-card" data-word="portable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">portable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈpɔːrtəbl/</span>
+				<span class="vocab-def">可攜帶的</span>
+			</div>
+			<div class="vocab-card" data-word="delightful" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">delightful</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/dɪˈlaɪtfl/</span>
+				<span class="vocab-def">令人愉快的、精緻的</span>
+			</div>
+			<div class="vocab-card" data-word="source" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">source</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/sɔːrs/</span>
+				<span class="vocab-def">來源</span>
+			</div>
+			<div class="vocab-card" data-word="average" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">average</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈævərɪdʒ/</span>
+				<span class="vocab-def">平均為</span>
+			</div>
+			<div class="vocab-card" data-word="tricky" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">tricky</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈtɪki/</span>
+				<span class="vocab-def">棘手的、複雜的</span>
+			</div>
+			<div class="vocab-card" data-word="explicitly" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">explicitly</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ɪkˈsplɪsɪtli/</span>
+				<span class="vocab-def">明確地</span>
+			</div>
+			<div class="vocab-card" data-word="occasional" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">occasional</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/əˈk eɪʒənl/</span>
+				<span class="vocab-def">偶爾的</span>
+			</div>
+			<div class="vocab-card" data-word="bulky" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">bulky</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˈbʌlki/</span>
+				<span class="vocab-def">笨重的、體積大的</span>
+			</div>
+			<div class="vocab-card" data-word="detachable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">detachable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/dɪˈtætʃəbl/</span>
+				<span class="vocab-def">可拆卸的</span>
+			</div>
+			<div class="vocab-card" data-word="enclosure" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">enclosure</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪnˈkləʊʒə(r)/</span>
+				<span class="vocab-def">外接盒、外殼</span>
+			</div>
+			<div class="vocab-card" data-word="firmware" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">firmware</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈfɜːmweə(r)/</span>
+				<span class="vocab-def">韌體</span>
+			</div>
+			<div class="vocab-card" data-word="Swiss Army Knife" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">Swiss Army Knife</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˌswɪs ˌɑːmi ˈnaɪf/</span>
+				<span class="vocab-def">多功能工具(瑞士刀)</span>
+			</div>
+			<div class="vocab-card" data-word="nothing to sneeze at" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">nothing to sneeze at</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ˈnʌθɪŋ tə sniːz æt/</span>
+				<span class="vocab-def">不容小覷、值得重視</span>
+			</div>
+			<div class="vocab-card" data-word="hit and miss" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hit and miss</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/hɪt ənd mɪs/</span>
+				<span class="vocab-def">優劣參半、時好時壞</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block">
+	
+		<div class="para-block">
+			<p class="para-original">One <span class="word-general" data-word="portable">portable</span> magnetic USB-C-to-HDMI dock to rule them all?</p>
+			<p class="para-translation">一款磁吸式的 USB-C 轉 HDMI 多功能底座，能否稱霸全場？</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="verge-sharge-disk-pro-2-sean-hollister-1" loading="lazy">
+			<figcaption>verge-sharge-disk-pro-2-sean-hollister-1</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Sharge, the company that makes <span class="word-general" data-word="delightful">delightful</span> retro Mac-shaped chargers and see-inside batteries, is finally impressing me with a <span class="word-general" data-word="portable">portable</span> SSD. I couldn’t <span class="word-highfreq" data-word="recommend">recommend</span> the Sharge Disk, Disk Plus, or even the Disk Pro, but I’d be happy to own the new Disk Pro 2 Ultra.</p>
+			<p class="para-translation">Sharge 這家公司以推出設計精巧、復古 Mac 造型的充電器及透明外殼電池聞名，而這次他們終於用一款可攜式 SSD 讓我刮目相看。我原本無法推薦 Sharge Disk、Disk Plus，甚至是 Disk Pro，但我很樂意擁有一台新的 Disk Pro 2 Ultra。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This isn’t just a drive. It’s a 4K HDMI dock and a USB-C hub too. It’s a veritable USB-C <span class="word-phrase" data-word="Swiss Army Knife">Swiss Army Knife</span> for all your main gadgets: laptop, tablet, phone, Steam Deck, even the Nintendo Switch and Switch 2.</p>
+			<p class="para-translation">這不只是一個硬碟，它同時也是一個 4K HDMI 擴充塢與 USB-C 集線器。對於你所有的主力裝置——筆記型電腦、平板、手機、Steam Deck，甚至是 Nintendo Switch 和 Switch 2 來說，它簡直是 USB-C 界的「瑞士刀」。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">And this USB multitool has built-in MagSafe pattern magnets to stick it to your iPhone, Pixel, or anything where you’re willing to stick a magnetic ring. (One stick-on ring is included.)</p>
+			<p class="para-translation">這款 USB 多功能工具內建了 MagSafe 規格的磁鐵，可以吸附在你的 iPhone、Pixel，或任何你願意貼上磁環的裝置上。（產品內附一個貼片磁環。）</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">In total, this pack-of-playing-cards-sized gadget adds one 4K 144Hz HDMI 2.1 video output, a 5Gbps USB-A port, SD and microSD card readers, plus USB-C passthrough charging — plus a slot to add up to 8TB of <span class="word-highfreq" data-word="solid">solid</span>-state storage with a full-sized M.2 2280 (or smaller M.2 2242 and 2230) stick SSDs.</p>
+			<p class="para-translation">總結來說，這個尺寸僅如一副撲克牌的小裝置增加了：一個 4K 144Hz HDMI 2.1 影片輸出埠、一個 5Gbps USB-A 埠、SD 與 microSD 讀卡機、以及 USB-C 供電傳輸功能——此外還有一個插槽，可放入全長尺寸的 M.2 2280（或較小的 M.2 2242 與 2230）固態硬碟，提供最高達 8TB 的儲存空間。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">By plugging in a single cord, I gave my MacBook Pro a second external monitor, <em>four</em> <span class="word-highfreq" data-word="simultaneous">simultaneous</span> <span class="word-general" data-word="source">source</span>s of storage (SSD, USB flash drive, SD, microSD), and 80W of USB-C PD juice.</p>
+			<p class="para-translation">只要插上一條線，我就能讓我的 MacBook Pro 擁有第二台外接顯示器、四個同步儲存來源（SSD、USB 隨身碟、SD、microSD），以及 80W 的 USB-C PD 電力支援。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">And when I plugged in my Android phone and a USB-C iPhone, both of them saw the SSD and showed up on my HDMI screen. It also unlocked 4K60 ProRes video recording on the iPhone… more on that in a minute.</p>
+			<p class="para-translation">當我插上我的 Android 手機和 USB-C iPhone 時，兩者都能偵測到 SSD 並且在我的 HDMI 螢幕上顯示畫面。它甚至解鎖了 iPhone 上的 4K60 ProRes 錄影功能……這點稍後詳談。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Some of these features exist together in other gadgets, and this 10Gbps external SSD <span class="word-term" data-word="enclosure">enclosure</span> certainly isn’t the fastest in town now that 40Gbps and 80Gbps enclosures exist. With big 100GB and 195GB transfers, my write speeds with a budget 1TB Lexar NM710 in the Disk Pro 2 <span class="word-general" data-word="average">average</span>d around 700MB/s.</p>
+			<p class="para-translation">雖然有些功能也存在於其他裝置中，且考慮到市面上已有 40Gbps 和 80Gbps 的硬碟外接盒，這款 10Gbps 的外接盒肯定不是目前最快的。在傳輸 100GB 和 195GB 的大型檔案時，使用平價的 1TB Lexar NM710 裝在 Disk Pro 2 裡，我的平均寫入速度約為 700MB/s。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1-3.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="I stuck a magnetic ring to my MacBook so I could hang the Disk Pro 2 on the back of its lid." loading="lazy">
+			<figcaption>I stuck a magnetic ring to my MacBook so I could hang the Disk Pro 2 on the back of its lid.</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">But that’s still <span class="word-phrase" data-word="nothing to sneeze at">nothing to sneeze at</span>, and how many <span class="word-term" data-word="enclosure">enclosure</span>s double as USB-C HDMI docks, let alone ones that speak Nintendo’s language and magnetically attach to your phone? How many have a built-in fan to keep them cool? And how many are low-power enough that you can power the HDMI and USB ports from your phone or laptop, no need for a power cord?</p>
+			<p class="para-translation">但這速度仍是不容小覷的，而且有多少外接盒能兼任 USB-C HDMI 擴充塢，更別提還支援任天堂系統且能磁吸在手機上的？有多少內建風扇來散熱？又有多少功耗低到可以僅靠手機或筆電帶動 HDMI 和 USB 埠，而不需要額外插電源線？</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Things get a little <span class="word-general" data-word="tricky">tricky</span> with the low wattage, though.</p>
+			<p class="para-translation">不過，在低瓦數運作下，情況會變得有點複雜。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">First, Sharge is selling <em>two</em> models of the Disk Pro 2, the “Ultra” that requires at least 1.5W of USB-C bus power, and and the “Lite” which needs 5W for its more power-hungry chips (and only does 4K60 over HDMI 2.0, instead of 4K144 over HDMI 2.1).</p>
+			<p class="para-translation">首先，Sharge 販售兩種型號的 Disk Pro 2：一種是需要至少 1.5W USB-C 匯流排供電的「Ultra」版；另一種是「Lite」版，其耗電量較高的晶片需要 5W（且 HDMI 2.0 僅支援 4K60，而非 HDMI 2.1 的 4K144）。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Second, to <span class="word-highfreq" data-word="achieve">achieve</span> such low power draw on the Ultra, it can only route 3W of power from your laptop or phone to a connected SSD, Sharge marketing manager Leo H. tells me. Reviews show my borrowed Lexar NM710 draws more than that during writes — and sure enough, the Disk Pro 2 shut down right after I started ProRes video recording on an iPhone 15 Pro or a big transfer on my Galaxy S25.</p>
+			<p class="para-translation">第二，Sharge 的行銷經理 Leo H. 告訴我，為了讓 Ultra 版達成如此低的功耗，它從筆電或手機引導至連接 SSD 的電力僅有 3W。測試顯示我借來的 Lexar NM710 在寫入時的功耗超過此數值——果不其然，當我在 iPhone 15 Pro 上開始 ProRes 錄影，或在 Galaxy S25 上進行大型檔案傳輸時，Disk Pro 2 就斷電關機了。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">(There’s a simple <span class="word-highfreq" data-word="solution">solution</span>: just plug an external USB-C battery or charger into the Disk Pro 2. When I did that, I recorded over five minutes of 4K60 ProRes video, no problem. You could instead try to find a lower-power SSD.)</p>
+			<p class="para-translation">（有個簡單的解決方案：只要將外接 USB-C 行動電源或充電器插進 Disk Pro 2 即可。當我這樣做時，錄製超過五分鐘— 4K60 ProRes 影片完全沒問題。或者你也可以嘗試找一款功耗較低的 SSD。）</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1-2.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="The main HDMI, USB-A, and USB-C charger port are all on one edge." loading="lazy">
+			<figcaption>The main HDMI, USB-A, and USB-C charger port are all on one edge.</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Third, while the HDMI dock does work with both my Switch 2 and my original Switch, Nintendo’s handhelds <span class="word-general" data-word="explicitly">explicitly</span> check for a relatively specific external power <span class="word-general" data-word="source">source</span> before docking. Sharge is still <span class="word-highfreq" data-word="tweak">tweak</span>ing the <span class="word-term" data-word="firmware">firmware</span>, but says I <span class="word-highfreq" data-word="current">current</span>ly need a 85W or higher USB-C PD charger plugged in for Switch 2 in particular.</p>
+			<p class="para-translation">第三，雖然 HDMI 擴充塢確實能搭配我的 Switch 2 和原版 Switch 使用，但任天堂的手持裝置在進入底座模式前，會明確檢查是否連接了特定規格的外接電源。Sharge 仍在調整韌體，但表示目前特別針對 Switch 2，我需要插上 85W 或更高功率的 USB-C PD 充電器。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">You should also know there’s a long pause before the Nintendo Switch and Switch 2 appear on a connected TV, like some other third-party docks, and you won’t get variable refresh rate (VRR) with a Steam Deck or other PC handhelds. It does 4K144 and 4K120 with HDR, but the Steam Deck claims my VRR TV is not VRR-capable with the Disk Pro 2 as a go-between.</p>
+			<p class="para-translation">你也應該知道，在連接電視後，畫面要過好一陣子才會出現在 Nintendo Switch 或 Switch 2 上，就像其他副廠擴充塢一樣，而且搭配 Steam Deck 或其他掌機時無法獲得可變刷新率（VRR）。它支援 4K144 和 4K120 HDR，但 Steam Deck 顯示我的 VRR 電視在透過 Disk Pro 2 轉接時不具備 VRR 功能。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">And while I successfully worked with a mouse, keyboard, headset, monitor, webcam, and more plugged into the Disk Pro 2 for several days — by daisy-chaining an extra USB hub — I did <span class="word-general" data-word="occasional">occasional</span>ly see the monitor go dark for a minute, roughly once a day.</p>
+			<p class="para-translation">雖然我成功地在 Disk Pro 2 上插著滑鼠、鍵盤、耳機、螢幕、視訊鏡頭等裝置工作了好幾天——透過串接另一個 USB 集線器——但我確實偶爾會遇到螢幕黑掉約一分鐘的情況，大概一天發生一次。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">There’s still work for Sharge to do. But it’s the first drive from the company that I’d happily add to my go bag.</p>
+			<p class="para-translation">Sharge 還有進步空間。但這是該公司第一款讓我願意放進隨身包的硬碟。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1-4.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="Sharge Disk (yellow), Disk Plus (silver), Disk Pro (fixed cable), and Disk Pro 2 (detachable cable)." loading="lazy">
+			<figcaption>Sharge Disk (yellow), Disk Plus (silver), Disk Pro (fixed cable), and Disk Pro 2 (detachable cable).</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">The original Sharge Disk was a <span class="word-general" data-word="bulky">bulky</span> dongle with a ridiculously noisy tiny fan. The Disk Plus marketed itself as barely-there stylishly thin SSD <span class="word-term" data-word="enclosure">enclosure</span> that magnetically attaches to your phone, but the magnets were actually a stick-on accessory that made the drive much thicker. The first Sharge Disk Pro had a power port so tiny and recessed that most charging cables wouldn’t fit, and buttons that could actually cut power to the drive mid-transfer.</p>
+			<p class="para-translation">第一代 Sharge Disk 是一個笨重的轉接器，配有一個吵死人的微型風扇。Disk Plus 主打超薄時尚、可磁吸手機的硬碟盒，但磁鐵其實是貼上去的配件，讓硬碟厚度大增。第一代 Sharge Disk Pro 的電源孔深陷且窄小，多數充電線都插不進去，按鈕甚至可能在傳輸中途切斷硬碟電源。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1-5.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="IMO, Sharge should’ve done more user testing before releasing these predecessors." loading="lazy">
+			<figcaption>IMO, Sharge should’ve done more user testing before releasing these predecessors.</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">The Disk Pro 2 fixes all that. The included cable is now <span class="word-general" data-word="detachable">detachable</span>, the magnets are built-in, the ports are no longer weirdly recessed, the fan isn’t noisy by default, you can turn off that fan entirely, the switch doesn’t cut power to the drive, and the drive has a larger airflow path. Plus, you can bring your own SSD — though I’d prefer toolless swaps to the <span class="word-highfreq" data-word="current">current</span> screws.</p>
+			<p class="para-translation">Disk Pro 2 修正了這一切。附贈的線材現在是可拆卸的，磁鐵改為內建，連接埠不再深陷，風扇預設不再吵鬧，且可以完全關閉風扇，開關不會誤切電源，且通風路徑更大。此外，你可以自備 SSD——雖然我更希望是免工具拆裝而非現在的螺絲固定。</p>
+		</div>
+		<figure class="article-image">
+			<img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/verge-sharge-disk-pro-2-sean-hollister-1-6.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" alt="No more heavily recessed USB ports." loading="lazy">
+			<figcaption>No more heavily recessed USB ports.</figcaption>
+		</figure>
+		<div class="para-block">
+			<p class="para-original">You won’t always see much higher transfer speeds turning that fan on full blast. My 195GB transfer took 4 minutes and 55 seconds with the fan on full power, and 5 minutes 5 seconds with it off — a difference of just 10 seconds, even though I let it cool between tests. The real difference is the one I felt when trying to pick up the Disk Pro 2 afterwards. Without fan, the metal sides were burning hot to the touch.</p>
+			<p class="para-translation">把風扇開到最強並不總是能看到極高的傳輸速度。我的 195GB 傳輸在風扇全開時耗時 4 分 55 秒，關閉時為 5 分 5 秒——僅差 10 秒，儘管我在測試間隔讓它降溫了。真正的差別在於事後拿起 Disk Pro 2 的手感：沒開風扇時，金屬側面燙得嚇人。</p>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The Disk Pro 2 Ultra is $75 on Kickstarter for early bird and will be $89 full retail. While the <span class="word-highfreq" data-word="typical">typical</span> caveats apply with Kickstarter projects, Sharge has a very <span class="word-highfreq" data-word="solid">solid</span> track record for shipping (even if it’s <span class="word-phrase" data-word="hit and miss">hit and miss</span> on design).</p>
+			<p class="para-translation">Disk Pro 2 Ultra 在 Kickstarter 上的早鳥價為 75 美元，正式零售價將為 89 美元。雖然 Kickstarter 專案通常需注意風險，但 Sharge 在出貨方面紀錄良好（即使設計水準偶爾不穩）。</p>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">More in: It’s clearly time: all the news about the transparent tech renaissance</h2>
+			<h2 class="para-translation">更多內容見於：顯然時候到了：關於透明科技復興的所有新聞。</h2>
+		</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-07-31-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">YouTube is on a major decluttering mission</span>
+			</a>
+			<a class="related-card" href="2026-07-30-evening.html">
+				<span class="related-source">Fast Company</span>
+				<span class="related-title">The architects behind planned Kansas City Chiefs stadium want it to be as noisy as possible</span>
+			</a>
+			<a class="related-card" href="2026-07-28-noon.html">
+				<span class="related-source">It&#x27;s Nice That</span>
+				<span class="related-title">What we learned about immersive tech, fan experiences and storytelling at Belgium House</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "impressive", "type": "highfreq", "pos": "adj.", "ipa": "/ɪmˈpresɪv/", "definition_zh": "令人印象深刻的", "example": "is finally impressing me with a portable SSD."}, {"word": "recommend", "type": "highfreq", "pos": "v.", "ipa": "/ˌrekəˈmend/", "definition_zh": "推薦", "example": "I couldn’t recommend the Sharge Disk, Disk Plus, or even the Disk Pro"}, {"word": "simultaneous", "type": "highfreq", "pos": "adj.", "ipa": "/ˌsaɪmlˈteɪniəs/", "definition_zh": "同時發生的", "example": "four simultaneous sources of storage"}, {"word": "achieve", "type": "highfreq", "pos": "v.", "ipa": "/əˈtʃiːv/", "definition_zh": "達成、實現", "example": "Second, to achieve such low power draw on the Ultra"}, {"word": "solution", "type": "highfreq", "pos": "n.", "ipa": "/səˈluːʃn/", "definition_zh": "解決方案", "example": "There’s a simple solution: just plug an external USB-C battery"}, {"word": "tweak", "type": "highfreq", "pos": "v.", "ipa": "/twiːk/", "definition_zh": "微調、調整", "example": "Sharge is still tweaking the firmware"}, {"word": "typical", "type": "highfreq", "pos": "adj.", "ipa": "/ˈtɪpɪkl/", "definition_zh": "典型的、通常的", "example": "While the typical caveats apply with Kickstarter projects"}, {"word": "solid", "type": "highfreq", "pos": "adj.", "ipa": "/ˈsɒlɪd/", "definition_zh": "穩靠的、固體的", "example": "Sharge has a very solid track record for shipping"}, {"word": "current", "type": "highfreq", "pos": "adj.", "ipa": "/ˈkʌrənt/", "definition_zh": "目前的", "example": "I’d prefer toolless swaps to the current screws."}, {"word": "portable", "type": "general", "pos": "adj.", "ipa": "/ˈpɔːrtəbl/", "definition_zh": "可攜帶的", "example": "One portable magnetic USB-C-to-HDMI dock to rule them all?"}, {"word": "delightful", "type": "general", "pos": "adj.", "ipa": "/dɪˈlaɪtfl/", "definition_zh": "令人愉快的、精緻的", "example": "the company that makes delightful retro Mac-shaped chargers"}, {"word": "source", "type": "general", "pos": "n.", "ipa": "/sɔːrs/", "definition_zh": "來源", "example": "check for a relatively specific external power source"}, {"word": "average", "type": "general", "pos": "v.", "ipa": "/ˈævərɪdʒ/", "definition_zh": "平均為", "example": "my write speeds with a budget 1TB Lexar NM710 in the Disk Pro 2 averaged around 700MB/s."}, {"word": "tricky", "type": "general", "pos": "adj.", "ipa": "/ˈtɪki/", "definition_zh": "棘手的、複雜的", "example": "Things get a little tricky with the low wattage, though."}, {"word": "explicitly", "type": "general", "pos": "adv.", "ipa": "/ɪkˈsplɪsɪtli/", "definition_zh": "明確地", "example": "Nintendo’s handhelds explicitly check for a relatively specific external power source"}, {"word": "occasional", "type": "general", "pos": "adj.", "ipa": "/əˈk eɪʒənl/", "definition_zh": "偶爾的", "example": "I did occasionally see the monitor go dark for a minute"}, {"word": "bulky", "type": "general", "pos": "adj.", "ipa": "/ˈbʌlki/", "definition_zh": "笨重的、體積大的", "example": "The original Sharge Disk was a bulky dongle"}, {"word": "detachable", "type": "general", "pos": "adj.", "ipa": "/dɪˈtætʃəbl/", "definition_zh": "可拆卸的", "example": "The included cable is now detachable"}, {"word": "enclosure", "type": "term", "pos": "n.", "ipa": "/ɪnˈkləʊʒə(r)/", "definition_zh": "外接盒、外殼", "example": "this 10Gbps external SSD enclosure certainly isn’t the fastest"}, {"word": "firmware", "type": "term", "pos": "n.", "ipa": "/ˈfɜːmweə(r)/", "definition_zh": "韌體", "example": "Sharge is still tweaking the firmware"}, {"word": "Swiss Army Knife", "type": "phrase", "pos": "", "ipa": "/ˌswɪs ˌɑːmi ˈnaɪf/", "definition_zh": "多功能工具(瑞士刀)", "example": "It’s a veritable USB-C Swiss Army Knife for all your main gadgets"}, {"word": "nothing to sneeze at", "type": "phrase", "pos": "", "ipa": "/ˈnʌθɪŋ tə sniːz æt/", "definition_zh": "不容小覷、值得重視", "example": "But that’s still nothing to sneeze at"}, {"word": "hit and miss", "type": "phrase", "pos": "", "ipa": "/hɪt ənd mɪs/", "definition_zh": "優劣參半、時好時壞", "example": "even if it’s hit and miss on design"}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	// quiz
+	const quizData = [{"sentence": "The singer's ____ performance earned her a standing ovation from the entire audience.", "sentence_zh": "這位歌手令人印象深刻的表演贏得了全場觀眾的起立鼓掌。", "answer": "impressive", "options": ["impressive", "bulky", "tricky", "solid"]}, {"sentence": "Can you ____ a good restaurant in this neighborhood for our anniversary dinner?", "sentence_zh": "你能推薦這附近適合慶祝週年晚餐的好餐廳嗎？", "answer": "recommend", "options": ["achieve", "recommend", "tweak", "average"]}, {"sentence": "The new software allows for ____ translation of several languages during the meeting.", "sentence_zh": "這款新軟體允許在會議期間同時進行多種語言的翻譯。", "answer": "simultaneous", "options": ["occasional", "typical", "simultaneous", "detachable"]}, {"sentence": "You need to work hard and stay focused if you want to ____ your career goals.", "sentence_zh": "如果你想達成你的職業目標，你需要努力工作並保持專注。", "answer": "achieve", "options": ["achieve", "tweak", "recommend", "average"]}, {"sentence": "The engineering team is working late to find a permanent ____ to the technical glitch.", "sentence_zh": "工程團隊正加班工作，試圖為這個技術故障找到永久的解決方案。", "answer": "solution", "options": ["enclosure", "firmware", "source", "solution"]}, {"sentence": "The designer decided to ____ the logo slightly to make it look more modern.", "sentence_zh": "設計師決定微調一下標誌，讓它看起來更具現代感。", "answer": "tweak", "options": ["tweak", "impressive", "bulky", "solid"]}, {"sentence": "This ____ speaker is small enough to fit in your pocket but still delivers great sound.", "sentence_zh": "這款可攜式喇叭小到可以放進口袋，但依然能提供很棒的音質。", "answer": "portable", "options": ["portable", "bulky", "detachable", "typical"]}, {"sentence": "The journalist refused to reveal the ____ of her information to protect their privacy.", "sentence_zh": "為了保護隱私，記者拒絕透露她的資訊來源。", "answer": "source", "options": ["solution", "source", "firmware", "enclosure"]}, {"sentence": "Finding a balance between work and family life can be very ____ at times.", "sentence_zh": "有時候，在工作與家庭生活之間取得平衡可能會非常棘手。", "answer": "tricky", "options": ["impressive", "solid", "tricky", "simultaneous"]}, {"sentence": "The teacher ____ forbade the students from using their mobile phones during the exam.", "sentence_zh": "老師明確地禁止學生在考試期間使用手機。", "answer": "explicitly", "options": ["explicitly", "occasional", "delightful", "current"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
