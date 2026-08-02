@@ -14,11 +14,11 @@ from bs4 import BeautifulSoup, NavigableString
 
 from template import (
 	FIXED_TAGS,
-	SLOT_ORDER,
 	build_entry,
 	entry_filename,
 	render_article,
 	render_index,
+	render_vocab_page,
 	sort_entries,
 )
 
@@ -29,9 +29,19 @@ ARTICLES_DIR = BASE_DIR / "articles"
 DATA_DIR = BASE_DIR / "data"
 SOURCES_FILE = BASE_DIR / "sources.json"
 INDEX_FILE = BASE_DIR / "index.html"
+VOCAB_FILE = BASE_DIR / "vocab.html"
 
 MAX_PARAGRAPHS = 80
 MAX_CHARS = 45000
+# 一天只發一篇，寧可換一篇也不要拿太短的東西充數。Simon Willison 這類個人
+# 部落格會混進「一段話 + 一個連結」的短貼文，那種東西撐不起一次閱讀。
+MIN_PARAGRAPHS = 6
+MIN_CHARS = 1200
+
+USER_AGENT = (
+	"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+	"(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+)
 
 
 def load_sources():
@@ -39,7 +49,7 @@ def load_sources():
 		return json.load(f)
 
 
-def existing_slots():
+def existing_dates():
 	return {p.stem for p in ARTICLES_DIR.glob("*.html")}
 
 
@@ -64,33 +74,71 @@ def used_urls():
 	return urls
 
 
-def pick_article(entries, used):
-	for entry in entries:
-		if entry.get("link", "") not in used:
-			return entry
-	return None
+# 頁面雜訊：訂閱提示、留言按鈕、分享列、記者聯絡方式、活動廣告。這些只在文章
+# 的開頭或結尾出現，所以只從兩端修剪 —— 中段一律不碰，否則正文裡剛好提到
+# "subscribe" 的句子會被誤殺。
+NOISE_PATTERNS = [
+	r"\bsign up\b", r"\bsubscribe\b", r"\bnewsletter\b", r"\byour inbox\b",
+	r"\bfollow us\b", r"\bshare this\b", r"\bread later\b", r"\bsave article\b",
+	r"^comments?\b", r"\bcomments?$", r"\bthanks for reading\b",
+	r"\bsee you (next week|tomorrow)\b", r"^more in:", r"^see all\b",
+	r"\bemail digest\b", r"\byou can contact\b", r"\bverify outreach\b",
+	r"\bdiscover special offers\b", r"\bupcoming events\b",
+	r"\ball rights reserved\b", r"\bcopyright\b",
+	r"[\w.+-]+@[\w-]+\.(com|org|net|co)\b",
+]
+NOISE_RE = re.compile("|".join(NOISE_PATTERNS), re.I)
+
+# 最多從每一端修掉幾段。設上限是為了讓「規則寫錯」的後果有天花板 —— 就算
+# 某個來源的正文開頭剛好連續命中，也不可能把整篇吃掉。
+MAX_TRIM_PER_END = 5
 
 
-def fetch_article_content(url):
-	headers = {"User-Agent": "Mozilla/5.0"}
-	resp = requests.get(url, headers=headers, timeout=15)
-	resp.raise_for_status()
-	soup = BeautifulSoup(resp.text, "lxml")
+def strip_tags(s):
+	return re.sub(r"<[^>]+>", "", s)
 
-	# remove nav, header, footer, aside, script, style
+
+def is_noise(paragraph):
+	text = strip_tags(paragraph["text"])
+	if paragraph["tag"] in ("pre", "table"):
+		return False
+	return bool(NOISE_RE.search(text))
+
+
+def trim_chrome(paragraphs):
+	"""從頭尾兩端修掉導覽/訂閱/留言之類的非內文段落。
+
+	回傳 (保留的段落, 從開頭修掉幾段)。開頭修掉的數量必須回報，因為圖片的
+	after_paragraph 是段落索引，前面少了幾段就要跟著平移幾格。
+	"""
+	start, end = 0, len(paragraphs)
+	while start < end and start < MAX_TRIM_PER_END and is_noise(paragraphs[start]):
+		start += 1
+	trimmed = 0
+	while end > start and trimmed < MAX_TRIM_PER_END and is_noise(paragraphs[end - 1]):
+		end -= 1
+		trimmed += 1
+	return paragraphs[start:end], start
+
+
+def extract_content(soup, base_url):
+	"""把一份已經 parse 好的 soup 變成 (paragraphs, images)。
+
+	同一套邏輯要能吃兩種輸入：實際爬到的文章頁，以及 RSS 裡附的全文 HTML。
+	所以這裡不做任何網路存取，呼叫端負責準備 soup。
+	"""
 	for tag in soup(["nav", "header", "footer", "aside", "script", "style", "form"]):
 		tag.decompose()
 
-	# remove native ad / sponsored content blocks (e.g. Vox Media's data-native-ad-id containers)
 	for tag in soup.select('[data-native-ad-id], [class*="native-ad"], [class*="sponsor"], [class*="advertisement"]'):
 		tag.decompose()
 
-	# find main content area
 	content = (
 		soup.find("article")
 		or soup.find("main")
 		or soup.find(class_=re.compile(r"post|article|content|entry", re.I))
 		or soup.find("body")
+		or soup
 	)
 
 	paragraphs = []
@@ -220,7 +268,7 @@ def fetch_article_content(url):
 					src = "https:" + src
 				elif src.startswith("/"):
 					from urllib.parse import urlparse
-					parsed = urlparse(url)
+					parsed = urlparse(base_url)
 					src = f"{parsed.scheme}://{parsed.netloc}{src}"
 				if src not in seen_srcs and not is_avatar(elem, src, alt):
 					seen_srcs.add(src)
@@ -276,6 +324,71 @@ def fetch_article_content(url):
 	return paragraphs, images
 
 
+def rss_fulltext_html(entry):
+	"""RSS 裡附的全文 HTML。可能在 content（多數 Atom）也可能在 summary
+	（Fast Company 那種把整篇塞進 description 的 RSS），取比較長的那個。"""
+	candidates = []
+	if entry.get("content"):
+		candidates.append(entry.content[0].get("value", ""))
+	if entry.get("summary"):
+		candidates.append(entry.summary)
+	return max(candidates, key=len) if candidates else ""
+
+
+def total_chars(paragraphs):
+	return sum(len(p["text"]) for p in paragraphs)
+
+
+def fetch_article_content(url, rss_html=""):
+	"""抓文章內文。頁面與 RSS 全文兩邊都試，取內容比較完整的那一份。
+
+	為什麼不是「RSS 優先」：實測 Ars Technica / 404 Media / Rest of World /
+	Simon Willison 的 RSS 都只有節錄，爬蟲反而抓得更多。但 Fast Company 相反
+	—— 頁面只吐得出前 34%，全文在 RSS 裡。哪一邊比較完整沒有定則，所以兩邊
+	都抓、比字數。這同時讓「頁面被截斷」這種 bug 自動被 RSS 補起來。
+	"""
+	page_paras, page_imgs = [], []
+	try:
+		resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=20)
+		resp.raise_for_status()
+		page_paras, page_imgs = extract_content(BeautifulSoup(resp.text, "lxml"), url)
+	except Exception as e:
+		print(f"  頁面抓取失敗（{e}），改看 RSS 全文")
+
+	rss_paras, rss_imgs = [], []
+	if rss_html:
+		try:
+			rss_paras, rss_imgs = extract_content(BeautifulSoup(rss_html, "lxml"), url)
+		except Exception as e:
+			print(f"  RSS 全文解析失敗：{e}")
+
+	page_n, rss_n = total_chars(page_paras), total_chars(rss_paras)
+	if rss_n > page_n:
+		print(f"  採用 RSS 全文（{rss_n} 字）而非頁面（{page_n} 字）")
+		paragraphs, images = rss_paras, rss_imgs
+	else:
+		paragraphs, images = page_paras, page_imgs
+
+	before = len(paragraphs)
+	paragraphs, head_removed = trim_chrome(paragraphs)
+	removed = before - len(paragraphs)
+	if removed:
+		print(f"  頭尾修掉 {removed} 段雜訊（開頭 {head_removed}）")
+		images = reindex_images(images, head_removed, len(paragraphs))
+
+	return paragraphs, images
+
+
+def reindex_images(images, head_removed, kept_count):
+	"""段落被修剪後修正圖片位置，並丟掉落在保留範圍外的圖。"""
+	out = []
+	for img in images:
+		pos = img["after_paragraph"] - head_removed
+		if 0 <= pos <= kept_count:
+			out.append({**img, "after_paragraph": pos})
+	return out
+
+
 def call_gemini(source_name, title, url, paragraphs):
 	from google import genai
 	client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
@@ -285,6 +398,7 @@ def call_gemini(source_name, title, url, paragraphs):
 	)
 
 	tag_list = "、".join(FIXED_TAGS)
+	last_index = len(paragraphs) - 1
 
 	prompt = f"""你是一個英文學習助手。以下是一篇來自 {source_name} 的文章：
 標題：{title}
@@ -297,6 +411,16 @@ def call_gemini(source_name, title, url, paragraphs):
 
 {{
   "tag": "從清單中選一個最符合這篇文章主題的分類",
+  "summary_en": "3-4 句英文導讀，用比原文簡單的字彙，讓讀者在讀全文前先建立預期",
+  "summary_zh": "整篇文章的繁體中文摘要（3-4 句）",
+  "conclusion_index": 0,
+  "scan_questions": [
+    {{
+      "question": "一個英文問題，答案必須能在文章中找到具體事實",
+      "answer_zh": "該問題的繁體中文答案",
+      "paragraph_index": 0
+    }}
+  ],
   "paragraphs": [
     {{
       "index": 0,
@@ -327,6 +451,9 @@ def call_gemini(source_name, title, url, paragraphs):
 - paragraphs 陣列長度必須與輸入段落數一致
 - 每段前面括號標示的是該段的結構類型（p/h2/h3/h4/li/blockquote/pre/table）。除了 pre（程式碼區塊）和 table（表格，內容已是 HTML）以外，每種類型都要正常翻譯成繁體中文。pre 和 table 的 translation 請設為空字串 ""，不要翻譯程式碼或表格內容
 - tag 必須是以下其中一個，不可自創：{tag_list}
+- summary_en 是給「還沒讀全文的人」看的導讀，不要暴雷結論，用字要比原文淺
+- conclusion_index 是「整篇結論所在段落」的編號，範圍 0 到 {last_index}。通常在文章後段，但如果這篇沒有明顯結論段，就填 {last_index}
+- scan_questions 請出 3 題。問題用英文、答案用繁體中文，paragraph_index 標明答案出現在第幾段。問題要問具體事實（誰、多少、什麼技術、造成什麼結果），不要問感想或推論
 - vocab 陣列請挑選共 20-24 個單字，比例約為：
   - type "highfreq"（常見但實用的詞，如動詞/形容詞/副詞）約 50%
   - type "general"（值得學習、但不算高頻也不算專業術語的單字）約 40%
@@ -354,15 +481,36 @@ def call_gemini(source_name, title, url, paragraphs):
 				raise
 
 
-def build_article_data(source_name, title, url, date_str, slot, tag, paragraphs, images, gemini_data):
+def clamp_index(value, hi, default):
+	try:
+		i = int(value)
+	except (TypeError, ValueError):
+		return default
+	return i if 0 <= i <= hi else default
+
+
+def build_article_data(source_name, title, url, date_str, tag, paragraphs, images, gemini_data):
 	translations = {p["index"]: p["translation"] for p in gemini_data["paragraphs"]}
+	last = len(paragraphs) - 1
+
+	questions = []
+	for q in gemini_data.get("scan_questions", []):
+		questions.append({
+			"question": q.get("question", ""),
+			"answer_zh": q.get("answer_zh", ""),
+			"paragraph_index": clamp_index(q.get("paragraph_index"), last, 0),
+		})
+
 	return {
 		"date": date_str,
-		"slot": slot,
 		"tag": tag,
 		"title": title,
 		"source_name": source_name,
 		"url": url,
+		"summary_en": gemini_data.get("summary_en", ""),
+		"summary_zh": gemini_data.get("summary_zh", ""),
+		"conclusion_index": clamp_index(gemini_data.get("conclusion_index"), last, last),
+		"scan_questions": questions,
 		"paragraphs": [
 			{"tag": p["tag"], "text": p["text"], "translation": translations.get(i, "")}
 			for i, p in enumerate(paragraphs)
@@ -373,58 +521,82 @@ def build_article_data(source_name, title, url, date_str, slot, tag, paragraphs,
 	}
 
 
-def main():
-	DATA_DIR.mkdir(exist_ok=True)
-	sources = load_sources()
-	done = existing_slots()
-	today = os.environ.get("DATE_OVERRIDE") or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+def gather_candidates(sources, used):
+	"""把所有來源的未使用文章收成一張候選清單。
 
-	time_slot = os.environ.get("TIME_SLOT", "morning")
-	if time_slot not in SLOT_ORDER:
-		print(f"Unknown TIME_SLOT '{time_slot}', falling back to 'morning'.")
-		time_slot = "morning"
-
-	today_slot = f"{today}-{time_slot}"
-	if today_slot in done:
-		print(f"Article for {today_slot} already exists, skipping.")
-		sys.exit(0)
-
-	random.shuffle(sources)
-	used = used_urls()
-	selected_entry = None
-	selected_source = None
-
+	舊版是「隨機挑一個來源、拿它的第一篇」，來源掛掉就默默 continue ——
+	VentureBeat 的 RSS 死掉半個月都沒人發現就是這樣來的。現在改成先全部收集，
+	並且記錄有幾個來源失敗，讓 main() 能在全掛的時候讓 workflow 紅燈。
+	"""
+	candidates = []
+	failures = []
 	for source in sources:
 		try:
-			feed_entries = fetch_feed(source["rss"])
-			entry = pick_article(feed_entries, used)
-			if entry:
-				selected_entry = entry
-				selected_source = source
-				break
+			entries = fetch_feed(source["rss"])
 		except Exception as e:
-			print(f"Failed to fetch {source['name']}: {e}")
+			failures.append(f"{source['name']}: {e}")
 			continue
+		if not entries:
+			failures.append(f"{source['name']}: RSS 沒有任何文章")
+			continue
+		for entry in entries:
+			link = entry.get("link", "")
+			if link and link not in used:
+				candidates.append((source, entry))
+	return candidates, failures
 
-	if not selected_entry:
-		print(f"No unused article found from any source for {today_slot}, skipping.")
+
+def main():
+	DATA_DIR.mkdir(exist_ok=True)
+	ARTICLES_DIR.mkdir(exist_ok=True)
+	sources = load_sources()
+	done = existing_dates()
+	today = os.environ.get("DATE_OVERRIDE") or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+
+	if today in done:
+		print(f"Article for {today} already exists, skipping.")
 		sys.exit(0)
 
-	title = html.unescape(selected_entry.get("title", "Untitled"))
-	url = selected_entry.get("link", "")
-	source_name = selected_source["name"]
+	used = used_urls()
+	random.shuffle(sources)
+	candidates, failures = gather_candidates(sources, used)
 
-	print(f"Processing: {title} ({source_name})")
+	for msg in failures:
+		print(f"來源失敗 — {msg}")
 
-	try:
-		paragraphs, images = fetch_article_content(url)
-	except Exception as e:
-		print(f"Failed to fetch article content: {e}")
+	if failures and len(failures) == len(sources):
+		print("所有來源都抓不到，這不是正常狀況，讓 workflow 失敗以便追查。")
 		sys.exit(1)
 
-	if not paragraphs:
-		print("No paragraphs extracted.")
-		sys.exit(1)
+	if not candidates:
+		print("所有來源都沒有未使用的新文章，今天跳過。")
+		sys.exit(0)
+
+	# 同一個來源的文章會連在一起，打散避免連續好幾天都同一家
+	random.shuffle(candidates)
+
+	selected = None
+	for source, entry in candidates[:12]:
+		title = html.unescape(entry.get("title", "Untitled"))
+		url = entry.get("link", "")
+		print(f"嘗試：{title} （{source['name']}）")
+		try:
+			paragraphs, images = fetch_article_content(url, rss_fulltext_html(entry))
+		except Exception as e:
+			print(f"  抓取失敗：{e}")
+			continue
+		if len(paragraphs) < MIN_PARAGRAPHS or total_chars(paragraphs) < MIN_CHARS:
+			print(f"  太短（{len(paragraphs)} 段 / {total_chars(paragraphs)} 字），換下一篇")
+			continue
+		selected = (source["name"], title, url, paragraphs, images)
+		break
+
+	if not selected:
+		print("候選文章都太短或抓不到內容，今天跳過。")
+		sys.exit(0)
+
+	source_name, title, url, paragraphs, images = selected
+	print(f"採用：{title}（{source_name}，{len(paragraphs)} 段 / {total_chars(paragraphs)} 字）")
 
 	try:
 		gemini_data = call_gemini(source_name, title, url, paragraphs)
@@ -434,12 +606,12 @@ def main():
 
 	tag = gemini_data.get("tag")
 	if tag not in FIXED_TAGS:
-		print(f"Unexpected tag '{tag}' from Gemini, falling back to '科技'.")
-		tag = "科技"
+		print(f"Unexpected tag '{tag}' from Gemini, falling back to '產品與應用'.")
+		tag = "產品與應用"
 
-	data = build_article_data(source_name, title, url, today, time_slot, tag, paragraphs, images, gemini_data)
+	data = build_article_data(source_name, title, url, today, tag, paragraphs, images, gemini_data)
 
-	data_path = DATA_DIR / f"{today_slot}.json"
+	data_path = DATA_DIR / f"{today}.json"
 	data_path.write_text(json.dumps(data, ensure_ascii=False, indent="\t"), encoding="utf-8")
 	print(f"Written: {data_path}")
 
@@ -450,6 +622,7 @@ def main():
 	print(f"Written: {out_path}")
 
 	INDEX_FILE.write_text(render_index(entries), encoding="utf-8")
+	VOCAB_FILE.write_text(render_vocab_page(), encoding="utf-8")
 	print("Done.")
 
 

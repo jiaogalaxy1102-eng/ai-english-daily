@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我的單字 — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="style.css?v=12">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="assets/settings.js" defer></script>
+</head>
+<body>
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 我的單字</span>
+</header>
+
+<div class="container">
+	<div class="deck-toolbar">
+		<div class="deck-count" id="deck-count"></div>
+		<div class="deck-actions">
+			<button class="btn-primary" onclick="exportDeck()">匯出給 Anki</button>
+			<button class="btn-quiet" onclick="clearDeck()">全部清空</button>
+		</div>
+	</div>
+
+	<details class="deck-help">
+		<summary>第一次匯入 Anki 要怎麼設定</summary>
+		<ol>
+			<li>按「匯出給 Anki」下載 <code>anki-vocab.txt</code>（TSV 格式）。</li>
+			<li>Anki 選「檔案 → 匯入」，挑這個檔案。</li>
+			<li>欄位分隔選 <strong>Tab</strong>，勾選「允許在欄位中使用 HTML」。</li>
+			<li>欄位順序是：單字 / 音標 / 詞性 / 中文 / 例句 / 出處。對應到你的筆記類型後按匯入。</li>
+			<li>之後 Anki 會記住這組設定，下次直接選檔案就好。</li>
+		</ol>
+		<p class="deck-note">單字存在這台瀏覽器裡，換裝置或清除瀏覽資料就會消失，記得定期匯出。</p>
+	</details>
+
+	<div class="deck-list" id="deck-list"></div>
+</div>
+
+<script>
+	const ANKI_KEY = "anki-deck";
+
+	function loadDeck() {
+		try { return JSON.parse(localStorage.getItem(ANKI_KEY) || "[]"); }
+		catch (e) { return []; }
+	}
+
+	function saveDeck(deck) {
+		localStorage.setItem(ANKI_KEY, JSON.stringify(deck));
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s == null ? "" : s;
+		return div.innerHTML;
+	}
+
+	function render() {
+		const deck = loadDeck();
+		document.getElementById("deck-count").textContent =
+			deck.length ? `收集了 ${deck.length} 個單字` : "還沒有收集任何單字";
+
+		const list = document.getElementById("deck-list");
+		if (!deck.length) {
+			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入 Anki」就會出現在這裡。</p>';
+			return;
+		}
+		list.innerHTML = deck.map((c, i) => `
+			<div class="deck-card">
+				<button class="deck-remove" onclick="removeCard(${i})" aria-label="移除">×</button>
+				<div class="deck-word">${escapeHtml(c.word)}</div>
+				<div class="deck-meta">${escapeHtml(c.ipa)} ${escapeHtml(c.pos)}</div>
+				<div class="deck-def">${escapeHtml(c.definition_zh)}</div>
+				<div class="deck-example">${escapeHtml(c.example)}</div>
+				<div class="deck-source">${escapeHtml(c.date)} · ${escapeHtml(c.article)}</div>
+			</div>`).join("");
+	}
+
+	function removeCard(i) {
+		const deck = loadDeck();
+		deck.splice(i, 1);
+		saveDeck(deck);
+		render();
+	}
+
+	function clearDeck() {
+		if (!confirm("確定要清空全部收集的單字嗎？這個動作沒辦法復原。")) return;
+		saveDeck([]);
+		render();
+	}
+
+	// TSV 的欄位分隔是 tab、列分隔是換行，所以欄位內容裡的 tab / 換行必須先
+	// 換掉，否則一個例句就能把整張表的欄位錯開。
+	function tsvCell(s) {
+		return String(s == null ? "" : s).replace(/[\t\r\n]+/g, " ").trim();
+	}
+
+	function exportDeck() {
+		const deck = loadDeck();
+		if (!deck.length) { alert("還沒有收集任何單字。"); return; }
+		const rows = deck.map(c => [
+			c.word, c.ipa, c.pos, c.definition_zh, c.example,
+			`${c.date} ${c.article}`
+		].map(tsvCell).join("\t"));
+		const blob = new Blob([rows.join("\n")], { type: "text/plain;charset=utf-8" });
+		const a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = "anki-vocab.txt";
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		URL.revokeObjectURL(a.href);
+	}
+
+	render();
+</script>
+
+</body>
+</html>

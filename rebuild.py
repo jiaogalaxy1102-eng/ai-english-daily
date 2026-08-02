@@ -1,12 +1,20 @@
 import json
 from pathlib import Path
 
-from template import build_entry, entry_filename, render_article, render_index, sort_entries
+from template import (
+	build_entry,
+	entry_filename,
+	render_article,
+	render_index,
+	render_vocab_page,
+	sort_entries,
+)
 
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 ARTICLES_DIR = BASE_DIR / "articles"
 INDEX_FILE = BASE_DIR / "index.html"
+VOCAB_FILE = BASE_DIR / "vocab.html"
 
 
 def main():
@@ -24,6 +32,9 @@ def main():
 
 	INDEX_FILE.write_text(render_index(entries), encoding="utf-8")
 	print(f"Rendered: {INDEX_FILE}")
+
+	VOCAB_FILE.write_text(render_vocab_page(), encoding="utf-8")
+	print(f"Rendered: {VOCAB_FILE}")
 
 
 if __name__ == "__main__":

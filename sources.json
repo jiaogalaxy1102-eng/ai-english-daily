@@ -1,22 +1,18 @@
 [
 	{
-		"name": "The Verge",
-		"rss": "https://www.theverge.com/rss/index.xml"
+		"name": "Ars Technica",
+		"rss": "https://feeds.arstechnica.com/arstechnica/index"
 	},
 	{
-		"name": "MIT Technology Review",
-		"rss": "https://www.technologyreview.com/feed/"
+		"name": "404 Media",
+		"rss": "https://www.404media.co/rss/"
 	},
 	{
-		"name": "Fast Company",
-		"rss": "https://www.fastcompany.com/co-design/rss"
+		"name": "Rest of World",
+		"rss": "https://restofworld.org/feed/latest/"
 	},
 	{
-		"name": "It's Nice That",
-		"rss": "https://www.itsnicethat.com/articles.rss"
-	},
-	{
-		"name": "VentureBeat",
-		"rss": "https://venturebeat.com/category/ai/feed/"
+		"name": "Simon Willison",
+		"rss": "https://simonwillison.net/atom/everything/"
 	}
 ]

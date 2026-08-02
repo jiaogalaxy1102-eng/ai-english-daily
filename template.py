@@ -3,11 +3,16 @@ import json
 import random
 import re
 
-CSS_VERSION = 11
+CSS_VERSION = 12
 
-FIXED_TAGS = ["AI", "科技", "商業與新創", "科學", "社會與文化", "生活與心理", "觀點評論"]
-
-SLOT_ORDER = {"morning": 0, "noon": 1, "evening": 2}
+FIXED_TAGS = [
+	"模型與研究",
+	"產品與應用",
+	"產業與商業",
+	"政策與倫理",
+	"資安與隱私",
+	"觀點評論",
+]
 
 VOCAB_TYPE_INFO = {
 	"highfreq": ("word-highfreq", "badge-highfreq", "高頻詞"),
@@ -73,19 +78,18 @@ SETTINGS_PANEL_HTML = """
 	</div>
 </div>"""
 
+# 前端存單字用的 localStorage key。文章頁（加入）跟 vocab.html（匯出）共用，
+# 改名字要兩邊一起改，否則已收集的單字會突然消失。
+ANKI_STORAGE_KEY = "anki-deck"
+
 
 def entry_filename(d):
-	"""Reconstruct an article's HTML filename from its data dict.
-	Articles generated before the multi-slot schedule have no "slot" key
-	and keep the plain {date}.html filename they were already published under."""
-	slot = d.get("slot")
-	return f"{d['date']}-{slot}.html" if slot else f"{d['date']}.html"
+	return f"{d['date']}.html"
 
 
 def build_entry(d):
 	return {
 		"date": d["date"],
-		"slot": d.get("slot"),
 		"title": d["title"],
 		"source_name": d["source_name"],
 		"filename": entry_filename(d),
@@ -94,12 +98,8 @@ def build_entry(d):
 
 
 def sort_entries(entries):
-	"""Newest first; within the same date, evening > noon > morning."""
-	return sorted(
-		entries,
-		key=lambda e: (e["date"], SLOT_ORDER.get(e.get("slot"), -1)),
-		reverse=True,
-	)
+	"""Newest first."""
+	return sorted(entries, key=lambda e: e["date"], reverse=True)
 
 
 def pick_related(current_filename, current_tag, all_entries, n=3):
@@ -111,6 +111,76 @@ def pick_related(current_filename, current_tag, all_entries, n=3):
 		random.shuffle(pool)
 		chosen += pool[: n - len(chosen)]
 	return chosen
+
+
+# 句號不等於句子結束。這幾類是實際會誤切的來源：頭銜與縮寫（Mr. / Inc.）、
+# 姓名縮寫（J. Smith）、小數（3.5）。清單不可能窮盡，遇到怪切法就往這裡加。
+ABBREVIATIONS = {
+	"mr", "mrs", "ms", "dr", "prof", "st", "vs", "etc", "inc", "ltd", "co",
+	"corp", "jr", "sr", "u.s", "u.k", "e.g", "i.e", "a.m", "p.m", "approx",
+	"dept", "est", "fig", "gen", "gov", "sen", "rep", "vol", "no", "al",
+	"ph.d", "d.c", "a.i",
+}
+
+SENTENCE_BREAK_RE = re.compile(r'(?<=[.!?])["”\'\)\]]*\s+')
+
+# 只用來擋退化情況（"Short." 這種一個詞的句子當凸點沒有意義，寧可併下一句）。
+# 縮寫誤切是由下面的 token 檢查擋的，不要用長度來擋 —— 訂太高會把
+# "Dr. Chen led the study." 這種合法的短句也濾掉，整段原封不動吐回來。
+MIN_SENTENCE_CHARS = 12
+
+
+def strip_tags(text):
+	return re.sub(r"<[^>]+>", "", text)
+
+
+def first_sentence(text, max_chars=220):
+	"""抓一段的第一句，給凸點預覽用。
+
+	不存進 data/*.json —— 這是呈現層的事，演算法改了跑 rebuild.py 就好，
+	不用重新生成資料。
+	"""
+	plain = re.sub(r"\s+", " ", strip_tags(text)).strip()
+	plain = htmllib.unescape(plain)
+	for m in SENTENCE_BREAK_RE.finditer(plain):
+		candidate = plain[: m.start()].strip()
+		if len(candidate) < MIN_SENTENCE_CHARS:
+			continue
+		last = re.search(r"(\S+)$", candidate)
+		token = last.group(1).rstrip(".\"”')]").lower() if last else ""
+		if token in ABBREVIATIONS:
+			continue
+		if re.fullmatch(r"[a-z]", token):  # 姓名縮寫 J. Smith
+			continue
+		if re.fullmatch(r"[\d.,]+", token):  # 小數 3.5
+			continue
+		nxt = plain[m.end():]
+		if nxt and not (nxt[0].isupper() or nxt[0].isdigit() or nxt[0] in '"“'):
+			continue
+		return candidate
+	if len(plain) <= max_chars:
+		return plain
+	return plain[:max_chars].rsplit(" ", 1)[0] + "…"
+
+
+# 只有這幾個行內標籤允許出現在 AI 產出的文字裡。爬蟲抓下來的英文原文在
+# extract_content() 就已經處理過，這裡管的是 Gemini 回傳的翻譯與詞彙欄位。
+ALLOWED_INLINE_TAGS = ("em", "strong", "code")
+
+
+def safe_inline(text):
+	"""把 AI 產出的文字放進 HTML 之前先跳脫，只放行少數行內標籤。
+
+	為什麼需要：文章內文是從第三方網站爬來的，會原封不動進 Gemini 的 prompt。
+	一篇惡意文章可以在內文裡夾帶指令，誘導 Gemini 把 <script> 寫進翻譯欄位，
+	那段東西會被 GitHub Actions 自動 commit 並發佈到公開網站上，全程沒有人看
+	過。跳脫是這條鏈上唯一的關卡。
+	"""
+	escaped = htmllib.escape(text or "", quote=False)
+	for tag in ALLOWED_INLINE_TAGS:
+		escaped = escaped.replace(f"&lt;{tag}&gt;", f"<{tag}>")
+		escaped = escaped.replace(f"&lt;/{tag}&gt;", f"</{tag}>")
+	return escaped
 
 
 def highlight(text, vocab_map):
@@ -129,11 +199,93 @@ def highlight(text, vocab_map):
 	return text
 
 
+def build_bumps_html(data):
+	"""凸點預覽：AI 英文導讀 + 每段首句 + 標出結論段。
+
+	目的是讀全文前先看到骨架，所以這一階段全部維持英文 —— 中文摘要留到
+	第三階段（驗證）才出現，不然「先看骨架」就變成「先看翻譯」。
+	"""
+	paragraphs = data["paragraphs"]
+	conclusion_index = data.get("conclusion_index", len(paragraphs) - 1)
+
+	rows = ""
+	for i, p in enumerate(paragraphs):
+		tag = p["tag"]
+		if tag in ("pre", "table", "li"):
+			continue
+		if tag in ("h2", "h3", "h4"):
+			rows += f'\n\t\t<div class="bump bump-heading">{htmllib.escape(strip_tags(p["text"]))}</div>'
+			continue
+		sentence = first_sentence(p["text"])
+		if not sentence:
+			continue
+		is_conclusion = i == conclusion_index
+		cls = "bump bump-conclusion" if is_conclusion else "bump"
+		label = '<span class="bump-label">結論</span>' if is_conclusion else ""
+		rows += f'\n\t\t<div class="{cls}">{label}{htmllib.escape(sentence)}</div>'
+
+	summary_en = data.get("summary_en", "")
+	summary_html = ""
+	if summary_en:
+		summary_html = f"""
+	<div class="bumps-summary">
+		<div class="bumps-summary-label">What this is about</div>
+		<p>{htmllib.escape(summary_en)}</p>
+	</div>"""
+
+	return f"""
+<section class="stage stage-bumps content-block" id="stage-bumps">
+	<div class="stage-hint">先看骨架，建立預期再讀全文</div>{summary_html}
+	<div class="bumps-list">{rows}
+	</div>
+	<div class="stage-actions">
+		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
+		<button class="btn-quiet" onclick="goStage('verify')">直接看全文與翻譯</button>
+	</div>
+</section>"""
+
+
+def build_scan_questions_html(data):
+	questions = data.get("scan_questions") or []
+	if not questions:
+		return "", ""
+
+	items = ""
+	for i, q in enumerate(questions):
+		items += f"""
+		<li class="scan-question">
+			<span class="scan-q-num">{i + 1}</span>
+			<span class="scan-q-text">{htmllib.escape(q.get("question", ""))}</span>
+		</li>"""
+	pinned = f"""
+<section class="scan-panel content-block" id="scan-panel">
+	<div class="scan-panel-label">邊讀邊找這幾件事</div>
+	<ul class="scan-list">{items}
+	</ul>
+</section>"""
+
+	answers = ""
+	for i, q in enumerate(questions):
+		answers += f"""
+		<li class="scan-answer">
+			<span class="scan-q-num">{i + 1}</span>
+			<div>
+				<div class="scan-a-question">{htmllib.escape(q.get("question", ""))}</div>
+				<div class="scan-a-text">{htmllib.escape(q.get("answer_zh", ""))}</div>
+			</div>
+		</li>"""
+	answers_html = f"""
+	<div class="scan-answers">
+		<div class="section-label">掃讀問題解答</div>
+		<ul class="scan-answer-list">{answers}
+		</ul>
+	</div>"""
+	return pinned, answers_html
+
+
 def render_article(data, all_entries=None):
-	"""data: dict with keys date, title, source_name, url, paragraphs, images, vocab
-	(see data/{date}.json for the on-disk shape).
-	all_entries: list of entries (see build_entry) for every published article,
-	used to populate the "related articles" section at the bottom of the page."""
+	"""data: 一篇文章的 dict（見 data/{date}.json）。
+	all_entries: 全部已發布文章的 entry 清單，用來產生底部的延伸閱讀。"""
 	all_entries = all_entries or []
 	vocab = data["vocab"]
 	vocab_map = {v["word"].lower(): v for v in vocab}
@@ -160,6 +312,8 @@ def render_article(data, all_entries=None):
 			{caption}
 		</figure>"""
 
+	reveal_btn = '<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>'
+
 	# build paragraphs HTML
 	# after_paragraph == 0 means the image appeared before any paragraph
 	# (e.g. a lead image), so it goes before the loop below
@@ -181,7 +335,7 @@ def render_article(data, all_entries=None):
 			while i < len(all_paras) and all_paras[i]["tag"] == "li" and all_paras[i].get("list_type") == list_type:
 				p = all_paras[i]
 				items_html += f"""
-				<li>{highlight(p["text"], vocab_map)}<span class="li-translation">{p.get("translation", "")}</span></li>"""
+				<li>{highlight(p["text"], vocab_map)}<span class="li-translation">{safe_inline(p.get("translation", ""))}</span></li>"""
 				for img in images_by_para.get(i + 1, []):
 					items_html += image_figure(img)
 				i += 1
@@ -189,12 +343,13 @@ def render_article(data, all_entries=None):
 		<div class="para-block list-block">
 			<{list_type} class="para-original">{items_html}
 			</{list_type}>
+			{reveal_btn}
 		</div>"""
 			continue
 
 		if tag in ("h2", "h3", "h4"):
 			original_highlighted = highlight(para["text"], vocab_map)
-			translation = para.get("translation", "")
+			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block heading-block">
 			<{tag} class="para-original">{original_highlighted}</{tag}>
@@ -202,15 +357,16 @@ def render_article(data, all_entries=None):
 		</div>"""
 		elif tag == "blockquote":
 			original_highlighted = highlight(para["text"], vocab_map)
-			translation = para.get("translation", "")
+			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block quote-block">
 			<blockquote class="para-original">{original_highlighted}</blockquote>
 			<blockquote class="para-translation">{translation}</blockquote>
+			{reveal_btn}
 		</div>"""
 		elif tag == "pre":
 			# code isn't translated or vocab-highlighted; text is already
-			# HTML-escaped at scrape time (see fetch_article_content)
+			# HTML-escaped at scrape time (see extract_content)
 			paras_html += f"""
 		<div class="para-block code-block">
 			<pre class="para-original"><code>{para["text"]}</code></pre>
@@ -224,11 +380,12 @@ def render_article(data, all_entries=None):
 		</div>"""
 		else:
 			original_highlighted = highlight(para["text"], vocab_map)
-			translation = para.get("translation", "")
+			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block">
 			<p class="para-original">{original_highlighted}</p>
 			<p class="para-translation">{translation}</p>
+			{reveal_btn}
 		</div>"""
 
 		for img in images_by_para.get(i + 1, []):
@@ -244,10 +401,10 @@ def render_article(data, all_entries=None):
 		pos_html = f'<span class="vocab-pos">{htmllib.escape(pos)}</span>' if pos else ""
 		vocab_summary += f"""
 			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
-				<span class="vocab-word">{v['word']}</span>
+				<span class="vocab-word">{htmllib.escape(v['word'])}</span>
 				<span class="badge {badge_class}">{badge_label}</span>{pos_html}
-				<span class="vocab-ipa">{v['ipa']}</span>
-				<span class="vocab-def">{v['definition_zh']}</span>
+				<span class="vocab-ipa">{htmllib.escape(v['ipa'])}</span>
+				<span class="vocab-def">{htmllib.escape(v['definition_zh'])}</span>
 			</div>"""
 
 	title_html = htmllib.escape(data["title"])
@@ -257,6 +414,18 @@ def render_article(data, all_entries=None):
 
 	tag = data.get("tag", "")
 	tag_html = f'<span class="tag-badge">{htmllib.escape(tag)}</span>' if tag else ""
+
+	bumps_html = build_bumps_html(data)
+	scan_panel_html, scan_answers_html = build_scan_questions_html(data)
+
+	summary_zh = data.get("summary_zh", "")
+	summary_zh_html = ""
+	if summary_zh:
+		summary_zh_html = f"""
+	<div class="summary-zh">
+		<div class="section-label">整篇摘要</div>
+		<p>{htmllib.escape(summary_zh)}</p>
+	</div>"""
 
 	related = pick_related(entry_filename(data), tag, all_entries, n=3)
 	related_html = ""
@@ -303,13 +472,14 @@ def render_article(data, all_entries=None):
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
-<body>
+<body data-stage="bumps">
 
 {SETTINGS_PANEL_HTML}
 
 <header class="site-header site-header--nav">
 	<a href="../index.html">AI English Daily</a>
 	<span class="breadcrumb-date">/ {date_str}</span>
+	<a class="nav-vocab" href="../vocab.html">我的單字</a>
 </header>
 
 <div class="article-header content-block">
@@ -320,7 +490,16 @@ def render_article(data, all_entries=None):
 	</div>
 </div>
 
-<div class="vocab-section content-block">
+<div class="stage-track" id="stage-track">
+	<button class="stage-step" data-step="bumps" onclick="goStage('bumps')">① 凸點</button>
+	<button class="stage-step" data-step="full" onclick="goStage('full')">② 全文</button>
+	<button class="stage-step" data-step="verify" onclick="goStage('verify')">③ 驗證</button>
+</div>
+
+{bumps_html}
+{scan_panel_html}
+
+<div class="vocab-section content-block" id="vocab-section">
 	<button class="vocab-toggle" onclick="toggleVocab(this)">
 		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
 	</button>
@@ -329,8 +508,16 @@ def render_article(data, all_entries=None):
 	</div>
 </div>
 
-<div class="article-body content-block">
+<div class="article-body content-block" id="article-body">
 	{paras_html}
+	<div class="stage-actions stage-actions--end" id="to-verify">
+		<button class="btn-primary" onclick="goStage('verify')">讀完了，顯示翻譯與解答 →</button>
+	</div>
+</div>
+
+<div class="verify-block content-block" id="verify-block">
+	{summary_zh_html}
+	{scan_answers_html}
 </div>
 {quiz_html}
 {related_html}
@@ -346,6 +533,7 @@ def render_article(data, all_entries=None):
 		<div class="popup-example" id="popup-example"></div>
 		<div class="popup-actions">
 			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入 Anki</button>
 		</div>
 	</div>
 </div>
@@ -355,12 +543,90 @@ def render_article(data, all_entries=None):
 	const vocabMap = {{}};
 	vocabData.forEach(v => {{ vocabMap[v.word.toLowerCase()] = v; }});
 
+	const articleMeta = {{
+		title: {json.dumps(data["title"], ensure_ascii=False)},
+		date: {json.dumps(date_str, ensure_ascii=False)},
+		source: {json.dumps(data["source_name"], ensure_ascii=False)}
+	}};
+
 	const badgeInfo = {{
 		highfreq: ["badge-highfreq", "高頻詞"],
 		general: ["badge-general", "學習詞"],
 		term: ["badge-term", "術語"],
 		phrase: ["badge-phrase", "片語"],
 	}};
+
+	// ---- 三階段閱讀 ----
+	// 階段只影響「這次瀏覽」，不寫進 localStorage —— 刻意的：如果記住上次
+	// 選擇，跳過一次就等於永久關掉這個功能。
+	function goStage(stage) {{
+		document.body.setAttribute("data-stage", stage);
+		document.querySelectorAll(".stage-step").forEach(b => {{
+			b.classList.toggle("is-active", b.dataset.step === stage);
+		}});
+		window.scrollTo({{ top: 0, behavior: "smooth" }});
+	}}
+
+	function revealPara(btn) {{
+		btn.closest(".para-block").classList.add("revealed");
+	}}
+
+	// ---- Anki 單字收集 ----
+	const ANKI_KEY = {json.dumps(ANKI_STORAGE_KEY)};
+
+	function loadDeck() {{
+		try {{ return JSON.parse(localStorage.getItem(ANKI_KEY) || "[]"); }}
+		catch (e) {{ return []; }}
+	}}
+
+	function saveDeck(deck) {{
+		try {{ localStorage.setItem(ANKI_KEY, JSON.stringify(deck)); }}
+		catch (e) {{ alert("瀏覽器儲存空間已滿，無法再加入單字。"); }}
+	}}
+
+	function inDeck(word) {{
+		return loadDeck().some(c => c.word.toLowerCase() === word.toLowerCase());
+	}}
+
+	function toggleAnki() {{
+		if (!currentWord) return;
+		const entry = vocabMap[currentWord.toLowerCase()];
+		if (!entry) return;
+		let deck = loadDeck();
+		const idx = deck.findIndex(c => c.word.toLowerCase() === currentWord.toLowerCase());
+		if (idx >= 0) {{
+			deck.splice(idx, 1);
+		}} else {{
+			deck.push({{
+				word: entry.word,
+				pos: entry.pos || "",
+				ipa: entry.ipa || "",
+				definition_zh: entry.definition_zh || "",
+				example: entry.example || "",
+				article: articleMeta.title,
+				date: articleMeta.date,
+				added: new Date().toISOString().slice(0, 10)
+			}});
+		}}
+		saveDeck(deck);
+		syncAnkiButton();
+		markCollectedWords();
+	}}
+
+	function syncAnkiButton() {{
+		const btn = document.getElementById("btn-anki");
+		if (!currentWord) return;
+		const has = inDeck(currentWord);
+		btn.textContent = has ? "已加入 ✓" : "加入 Anki";
+		btn.classList.toggle("is-added", has);
+	}}
+
+	function markCollectedWords() {{
+		const deck = loadDeck().map(c => c.word.toLowerCase());
+		document.querySelectorAll("[data-word]").forEach(el => {{
+			el.classList.toggle("is-collected", deck.includes(el.dataset.word.toLowerCase()));
+		}});
+	}}
 
 	let currentWord = null;
 
@@ -380,6 +646,7 @@ def render_article(data, all_entries=None):
 		badge.innerHTML = `<span class="badge ${{badgeClass}}">${{badgeLabel}}</span>`;
 
 		document.getElementById("popup-pos").textContent = entry.pos || "";
+		syncAnkiButton();
 
 		document.getElementById("popup-overlay").classList.add("open");
 	}}
@@ -414,6 +681,9 @@ def render_article(data, all_entries=None):
 
 	// close on Escape
 	document.addEventListener("keydown", e => {{ if (e.key === "Escape") closePopup(); }});
+
+	markCollectedWords();
+	goStage("bumps");
 
 	// quiz
 	const quizData = {quiz_json};
@@ -501,8 +771,7 @@ def render_article(data, all_entries=None):
 
 
 def render_index(entries):
-	"""entries: list of dicts with keys date, title, source_name, filename,
-	already sorted newest-first."""
+	"""entries: build_entry() 產生的 dict 清單，已依日期由新到舊排好。"""
 	if entries:
 		items = "\n".join(
 			f'\t\t\t<li><a href="articles/{e["filename"]}">{e["date"]} — '
@@ -530,7 +799,8 @@ def render_index(entries):
 
 <header class="site-header">
 	<h1>AI English Daily</h1>
-	<p>每日一篇 AI 領域英文文章，雙語對照 + 互動詞彙學習</p>
+	<p>每天一篇 AI 與科技英文長文，三階段引導閱讀 + 單字收集</p>
+	<a class="nav-vocab" href="vocab.html">我的單字 →</a>
 </header>
 
 <div class="container">
@@ -539,6 +809,136 @@ def render_index(entries):
 {items}
 	</ul>
 </div>
+
+</body>
+</html>
+"""
+
+
+def render_vocab_page():
+	"""「我的單字」頁。內容完全來自瀏覽器 localStorage，沒有伺服器端資料 ——
+	所以這頁不需要在每次發文時重新產生內容，只是要跟著模板一起更新。"""
+	return f"""<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我的單字 — AI English Daily</title>
+	{SETTINGS_INIT_SCRIPT}
+	<link rel="stylesheet" href="style.css?v={CSS_VERSION}">
+	<link rel="stylesheet" href="{WENKAI_FONT_CSS}">
+	<script src="assets/settings.js" defer></script>
+</head>
+<body>
+
+{SETTINGS_PANEL_HTML}
+
+<header class="site-header site-header--nav">
+	<a href="index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 我的單字</span>
+</header>
+
+<div class="container">
+	<div class="deck-toolbar">
+		<div class="deck-count" id="deck-count"></div>
+		<div class="deck-actions">
+			<button class="btn-primary" onclick="exportDeck()">匯出給 Anki</button>
+			<button class="btn-quiet" onclick="clearDeck()">全部清空</button>
+		</div>
+	</div>
+
+	<details class="deck-help">
+		<summary>第一次匯入 Anki 要怎麼設定</summary>
+		<ol>
+			<li>按「匯出給 Anki」下載 <code>anki-vocab.txt</code>（TSV 格式）。</li>
+			<li>Anki 選「檔案 → 匯入」，挑這個檔案。</li>
+			<li>欄位分隔選 <strong>Tab</strong>，勾選「允許在欄位中使用 HTML」。</li>
+			<li>欄位順序是：單字 / 音標 / 詞性 / 中文 / 例句 / 出處。對應到你的筆記類型後按匯入。</li>
+			<li>之後 Anki 會記住這組設定，下次直接選檔案就好。</li>
+		</ol>
+		<p class="deck-note">單字存在這台瀏覽器裡，換裝置或清除瀏覽資料就會消失，記得定期匯出。</p>
+	</details>
+
+	<div class="deck-list" id="deck-list"></div>
+</div>
+
+<script>
+	const ANKI_KEY = {json.dumps(ANKI_STORAGE_KEY)};
+
+	function loadDeck() {{
+		try {{ return JSON.parse(localStorage.getItem(ANKI_KEY) || "[]"); }}
+		catch (e) {{ return []; }}
+	}}
+
+	function saveDeck(deck) {{
+		localStorage.setItem(ANKI_KEY, JSON.stringify(deck));
+	}}
+
+	function escapeHtml(s) {{
+		const div = document.createElement("div");
+		div.textContent = s == null ? "" : s;
+		return div.innerHTML;
+	}}
+
+	function render() {{
+		const deck = loadDeck();
+		document.getElementById("deck-count").textContent =
+			deck.length ? `收集了 ${{deck.length}} 個單字` : "還沒有收集任何單字";
+
+		const list = document.getElementById("deck-list");
+		if (!deck.length) {{
+			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入 Anki」就會出現在這裡。</p>';
+			return;
+		}}
+		list.innerHTML = deck.map((c, i) => `
+			<div class="deck-card">
+				<button class="deck-remove" onclick="removeCard(${{i}})" aria-label="移除">×</button>
+				<div class="deck-word">${{escapeHtml(c.word)}}</div>
+				<div class="deck-meta">${{escapeHtml(c.ipa)}} ${{escapeHtml(c.pos)}}</div>
+				<div class="deck-def">${{escapeHtml(c.definition_zh)}}</div>
+				<div class="deck-example">${{escapeHtml(c.example)}}</div>
+				<div class="deck-source">${{escapeHtml(c.date)}} · ${{escapeHtml(c.article)}}</div>
+			</div>`).join("");
+	}}
+
+	function removeCard(i) {{
+		const deck = loadDeck();
+		deck.splice(i, 1);
+		saveDeck(deck);
+		render();
+	}}
+
+	function clearDeck() {{
+		if (!confirm("確定要清空全部收集的單字嗎？這個動作沒辦法復原。")) return;
+		saveDeck([]);
+		render();
+	}}
+
+	// TSV 的欄位分隔是 tab、列分隔是換行，所以欄位內容裡的 tab / 換行必須先
+	// 換掉，否則一個例句就能把整張表的欄位錯開。
+	function tsvCell(s) {{
+		return String(s == null ? "" : s).replace(/[\\t\\r\\n]+/g, " ").trim();
+	}}
+
+	function exportDeck() {{
+		const deck = loadDeck();
+		if (!deck.length) {{ alert("還沒有收集任何單字。"); return; }}
+		const rows = deck.map(c => [
+			c.word, c.ipa, c.pos, c.definition_zh, c.example,
+			`${{c.date}} ${{c.article}}`
+		].map(tsvCell).join("\\t"));
+		const blob = new Blob([rows.join("\\n")], {{ type: "text/plain;charset=utf-8" }});
+		const a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = "anki-vocab.txt";
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		URL.revokeObjectURL(a.href);
+	}}
+
+	render();
+</script>
 
 </body>
 </html>

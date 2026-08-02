@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Here&#x27;s how engineers plan to save the satellite sent to save NASA — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=12">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+	<script>
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body data-stage="bumps">
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-08-02</span>
+	<a class="nav-vocab" href="../vocab.html">我的單字</a>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Ars Technica<span class="tag-badge">產業與商業</span></div>
+	<h1 class="article-title">Here&#x27;s how engineers plan to save the satellite sent to save NASA</h1>
+	<div class="article-meta">
+		2026-08-02 &nbsp;·&nbsp; <a href="https://arstechnica.com/space/2026/08/heres-how-engineers-plan-to-save-the-satellite-sent-to-save-nasa/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="stage-track" id="stage-track">
+	<button class="stage-step" data-step="bumps" onclick="goStage('bumps')">① 凸點</button>
+	<button class="stage-step" data-step="full" onclick="goStage('full')">② 全文</button>
+	<button class="stage-step" data-step="verify" onclick="goStage('verify')">③ 驗證</button>
+</div>
+
+
+<section class="stage stage-bumps content-block" id="stage-bumps">
+	<div class="stage-hint">先看骨架，建立預期再讀全文</div>
+	<div class="bumps-summary">
+		<div class="bumps-summary-label">What this is about</div>
+		<p>A small satellite called Link was sent to rescue an aging NASA space telescope. On its way there, it began spinning out of control and lost two of the three wheels it uses to point itself. Engineers on the ground are now using its electric engines to slow the spin down. The article follows the team as they work out what went wrong and whether the mission can still go ahead.</p>
+	</div>
+	<div class="bumps-list">
+		<div class="bump">One week ago, more than 200 miles above the Earth, a refrigerator-size satellite making its way toward an attempted rescue of NASA’s $500 million Swift gamma-ray observatory suddenly spun out of control.</div>
+		<div class="bump">It didn’t look good.</div>
+		<div class="bump">The Link satellite is built, owned, and operated by Katalyst Space Technologies, a satellite servicing startup that won a $30 million contract from NASA to fly up to the Swift observatory, grab onto it, and boost its…</div>
+		<div class="bump">The clock is ticking.</div>
+		<div class="bump">“When this happened, it was during one of the passes without comms,” said Ghonhee Lee, CEO of Katalyst, said in an interview with Ars.</div>
+		<div class="bump">Katalyst’s ground team, working from a control center near Denver, hurried to find a fix and recover the Link satellite.</div>
+		<div class="bump">Ars spoke with Lee, Katalyst’s chief executive, on Friday afternoon as the company’s ground team worked to stabilize the spacecraft.</div>
+		<div class="bump">Link’s electric propulsion system is efficient but low in thrust, meaning it takes time to generate enough of an impulse to regain full control of the satellite’s pointing.</div>
+		<div class="bump">“We’ve been able to use the thrusters to point in the opposite direction of the rotation rate and affect the attitude control that way, which has been highly effective,” Lee said.</div>
+		<div class="bump">This has worked well so far.</div>
+		<div class="bump">“Once we are in a more stable configuration, with much more high-bandwidth comms, we’ll be able to use that to downlink all the rich data (about the condition of the spacecraft),” Lee said.</div>
+		<div class="bump">Katalyst may eventually be able to recover the satellite’s two inoperable reaction wheels, but the team’s priority is restoring control by uplinking a new algorithm to manage its orientation through a combination of its…</div>
+		<div class="bump">Engineers aren’t sure yet what caused the emergency with the Link spacecraft last weekend.</div>
+		<div class="bump">Whatever the cause, Katalyst’s mission control team lost contact with Link for more than 24 hours after it spun out of control.</div>
+		<div class="bump">“This was built-in fault protection logic saying, “Hey, if I haven’t heard from anybody in 24 hours, there must be something wrong.</div>
+		<div class="bump">“Basically, there was a big thermal spike that came about as a result of this that over-temperatured the upstream electronic circuits that control the reaction wheels, which ultimately led them to being inoperable,” Lee…</div>
+		<div class="bump">The problem with the spacecraft’s cold gas thrusters seems to be a “separate issue,” Lee said.</div>
+		<div class="bump">“These things all happened at once, so it’s hard to delineate between what contributed to creating the situation and what was the consequence of the situation, and that’s something we’ll have to investigate with all the…</div>
+		<div class="bump">Nevertheless, Lee said Katalyst still aims to move Link toward NASA’s Swift observatory, perhaps around the end of August.</div>
+		<div class="bump">“We’re very committed to pursuing this mission,” Lee said.</div>
+		<div class="bump bump-conclusion"><span class="bump-label">結論</span>“It’s not the original mode that we expected to control the spacecraft with, but it seems like we will have sufficient stability and controllability of the spacecraft,” Lee said.</div>
+	</div>
+	<div class="stage-actions">
+		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
+		<button class="btn-quiet" onclick="goStage('verify')">直接看全文與翻譯</button>
+	</div>
+</section>
+
+<section class="scan-panel content-block" id="scan-panel">
+	<div class="scan-panel-label">邊讀邊找這幾件事</div>
+	<ul class="scan-list">
+		<li class="scan-question">
+			<span class="scan-q-num">1</span>
+			<span class="scan-q-text">How much is the NASA contract that Katalyst won for this mission?</span>
+		</li>
+		<li class="scan-question">
+			<span class="scan-q-num">2</span>
+			<span class="scan-q-text">By Friday, how much had the ground team managed to slow the satellite&#x27;s spin?</span>
+		</li>
+		<li class="scan-question">
+			<span class="scan-q-num">3</span>
+			<span class="scan-q-text">What made the two reaction wheels stop working?</span>
+		</li>
+	</ul>
+</section>
+
+<div class="vocab-section content-block" id="vocab-section">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="rescue" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">rescue</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈres.kjuː/</span>
+				<span class="vocab-def">救援、搶救</span>
+			</div>
+			<div class="vocab-card" data-word="reliable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">reliable</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/rɪˈlaɪ.ə.bəl/</span>
+				<span class="vocab-def">可靠的、穩定的</span>
+			</div>
+			<div class="vocab-card" data-word="complicating" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">complicating</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈkɑːm.plɪ.keɪ.tɪŋ/</span>
+				<span class="vocab-def">使複雜、使更棘手</span>
+			</div>
+			<div class="vocab-card" data-word="discovered" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">discovered</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈskʌv.ɚd/</span>
+				<span class="vocab-def">發現</span>
+			</div>
+			<div class="vocab-card" data-word="hurried" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">hurried</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈhɝː.id/</span>
+				<span class="vocab-def">趕忙、急著做</span>
+			</div>
+			<div class="vocab-card" data-word="gradually" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">gradually</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ˈɡrædʒ.u.ə.li/</span>
+				<span class="vocab-def">逐漸地</span>
+			</div>
+			<div class="vocab-card" data-word="efficient" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">efficient</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈfɪʃ.ənt/</span>
+				<span class="vocab-def">有效率的</span>
+			</div>
+			<div class="vocab-card" data-word="approximately" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">approximately</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/əˈprɑːk.sə.mət.li/</span>
+				<span class="vocab-def">大約</span>
+			</div>
+			<div class="vocab-card" data-word="restoring" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">restoring</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/rɪˈstɔːr.ɪŋ/</span>
+				<span class="vocab-def">恢復、復原</span>
+			</div>
+			<div class="vocab-card" data-word="priority" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">priority</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/praɪˈɔːr.ə.ti/</span>
+				<span class="vocab-def">優先事項</span>
+			</div>
+			<div class="vocab-card" data-word="sufficient" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sufficient</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/səˈfɪʃ.ənt/</span>
+				<span class="vocab-def">足夠的</span>
+			</div>
+			<div class="vocab-card" data-word="observatory" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">observatory</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/əbˈzɝː.və.tɔːr.i/</span>
+				<span class="vocab-def">觀測站、天文台</span>
+			</div>
+			<div class="vocab-card" data-word="arrest" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">arrest</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/əˈrest/</span>
+				<span class="vocab-def">阻止、遏止</span>
+			</div>
+			<div class="vocab-card" data-word="sporadic" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">sporadic</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/spəˈræd.ɪk/</span>
+				<span class="vocab-def">斷斷續續的</span>
+			</div>
+			<div class="vocab-card" data-word="succumbing" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">succumbing</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/səˈkʌm.ɪŋ/</span>
+				<span class="vocab-def">屈服、抵擋不住</span>
+			</div>
+			<div class="vocab-card" data-word="pursuit" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">pursuit</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/pɚˈsuːt/</span>
+				<span class="vocab-def">追趕、追求</span>
+			</div>
+			<div class="vocab-card" data-word="impulse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">impulse</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪm.pʌls/</span>
+				<span class="vocab-def">衝量、推力累積</span>
+			</div>
+			<div class="vocab-card" data-word="inoperable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">inoperable</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ɪˈnɑː.pɚ.ə.bəl/</span>
+				<span class="vocab-def">無法運作的</span>
+			</div>
+			<div class="vocab-card" data-word="delineate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">delineate</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈlɪn.i.eɪt/</span>
+				<span class="vocab-def">劃分、區分清楚</span>
+			</div>
+			<div class="vocab-card" data-word="assessment" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">assessment</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/əˈses.mənt/</span>
+				<span class="vocab-def">評估</span>
+			</div>
+			<div class="vocab-card" data-word="propulsion" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">propulsion</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/prəˈpʌl.ʃən/</span>
+				<span class="vocab-def">推進、推進系統</span>
+			</div>
+			<div class="vocab-card" data-word="rendezvous" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">rendezvous</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈrɑːn.deɪ.vuː/</span>
+				<span class="vocab-def">太空會合</span>
+			</div>
+			<div class="vocab-card" data-word="spun out of control" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">spun out of control</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/spʌn aʊt əv kənˈtroʊl/</span>
+				<span class="vocab-def">失控翻滾、局面失控</span>
+			</div>
+			<div class="vocab-card" data-word="in the cards" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in the cards</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɪn ðə kɑːrdz/</span>
+				<span class="vocab-def">很有可能發生</span>
+			</div>
+			<div class="vocab-card" data-word="side by side" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">side by side</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/saɪd baɪ saɪd/</span>
+				<span class="vocab-def">並肩、一起</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block" id="article-body">
+	
+		<div class="para-block">
+			<p class="para-original">One week ago, more than 200 miles above the Earth, a refrigerator-size satellite making its way toward an attempted <span class="word-highfreq" data-word="rescue">rescue</span> of NASA’s $500 million Swift gamma-ray <span class="word-general" data-word="observatory">observatory</span> suddenly <span class="word-phrase" data-word="spun out of control">spun out of control</span>.</p>
+			<p class="para-translation">一週前，在地球上方 200 多英里處，一顆冰箱大小的衛星正前往執行一項救援任務，目標是 NASA 那座價值 5 億美元的 Swift 伽瑪射線觀測衛星，卻突然失控翻滾。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">It didn’t look good. The spacecraft, named Link, was rotating on multiple axes, rendering it unable to maintain a <span class="word-highfreq" data-word="reliable">reliable</span> communications link with the ground and <span class="word-highfreq" data-word="complicating">complicating</span> efforts to <span class="word-general" data-word="arrest">arrest</span> the spin. Two of the satellite’s three reaction wheels, used for pointing, also stopped working. Through <span class="word-general" data-word="sporadic">sporadic</span> radio contact, engineers <span class="word-highfreq" data-word="discovered">discovered</span> a problem with some of the spacecraft’s cold gas thrusters used for finer attitude control.</p>
+			<p class="para-translation">情況看起來不妙。這顆名為 Link 的太空船沿著多個軸向旋轉，導致它無法與地面維持穩定的通訊連線，也讓止住旋轉的作業變得更棘手。衛星三個用來指向的反作用輪中，有兩個也停止運作。透過斷斷續續的無線電聯繫，工程師發現部分用於精細姿態控制的冷氣推進器出了問題。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The Link satellite is built, owned, and operated by Katalyst Space Technologies, a satellite servicing startup that won a $30 million contract from NASA to fly up to the Swift <span class="word-general" data-word="observatory">observatory</span>, grab onto it, and boost its orbit before <span class="word-general" data-word="succumbing">succumbing</span> to aerodynamic drag and burning up int he atmosphere.</p>
+			<p class="para-translation">Link 衛星由 Katalyst Space Technologies 建造、擁有並操作，這是一家衛星維修新創公司，拿下 NASA 一紙 3000 萬美元的合約，任務是飛到 Swift 觀測衛星旁、抓住它，並在它因大氣阻力墜落燒毀之前把軌道推高。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The clock is ticking. In a few months, Swift will be too low for Katalyst to complete the <span class="word-highfreq" data-word="rescue">rescue</span>. This is the first time NASA has contracted with a commercial company to service one of its satellites. The space agency gave Katalyst less than a year to put the mission together. The Link satellite launched July 3 to begin the <span class="word-general" data-word="pursuit">pursuit</span> of Swift, and the mission proceeded mostly according to plan until last Saturday.</p>
+			<p class="para-translation">時間正在倒數。再過幾個月，Swift 的軌道就會低到讓 Katalyst 無法完成這次救援。這是 NASA 第一次委託商業公司維修自家衛星。太空總署給 Katalyst 不到一年的時間把整個任務組起來。Link 衛星於 7 月 3 日發射、開始追趕 Swift，任務原本大致照計畫進行，直到上週六為止。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“When this happened, it was during one of the passes without comms,” said Ghonhee Lee, CEO of Katalyst, said in an interview with Ars. “We were, immediately prior, in a very stable configuration.”</p>
+			<p class="para-translation">「事情發生的時候，剛好是在一次沒有通訊的過境期間，」Katalyst 執行長 Ghonhee Lee 在接受 Ars 訪問時說。「就在那之前，我們還處在非常穩定的狀態。」</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Katalyst’s ground team, working from a control center near Denver, <span class="word-highfreq" data-word="hurried">hurried</span> to find a fix and recover the Link satellite. The good news was the spacecraft’s other systems remained healthy, including its power supply, three xenon-fueled electric thrusters, and the <span class="word-term" data-word="rendezvous">rendezvous</span> and robotics hardware the Link satellite needs to capture Swift.</p>
+			<p class="para-translation">Katalyst 的地面團隊在丹佛附近的控制中心趕著找出解法、搶救 Link 衛星。好消息是這艘太空船的其他系統都還健康，包括電力供應、三具氙氣電推進器，以及 Link 捕捉 Swift 所需的會合與機器手臂硬體。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Ars spoke with Lee, Katalyst’s chief executive, on Friday afternoon as the company’s ground team worked to stabilize the spacecraft. The first step involves using the satellite’s plasma engines to <span class="word-highfreq" data-word="gradually">gradually</span> slow the spin. The engines are primarily designed for orbit-raising, but they’re also suitable for attitude control because they can vector their thrust with a two-axis gimbal.</p>
+			<p class="para-translation">Ars 在週五下午與 Katalyst 執行長 Lee 通話，當時公司的地面團隊正努力穩定這艘太空船。第一步是利用衛星的電漿引擎逐步減慢自轉。這些引擎主要是設計來提升軌道的，但因為能透過雙軸萬向架調整推力方向，也適合拿來做姿態控制。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Link’s electric <span class="word-term" data-word="propulsion">propulsion</span> system is <span class="word-highfreq" data-word="efficient">efficient</span> but low in thrust, meaning it takes time to generate enough of an <span class="word-general" data-word="impulse">impulse</span> to regain full control of the satellite’s pointing.</p>
+			<p class="para-translation">Link 的電推進系統效率高但推力小，意思是它需要時間才能累積出足夠的衝量，重新完全掌控衛星的指向。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“We’ve been able to use the thrusters to point in the opposite direction of the rotation rate and affect the attitude control that way, which has been highly effective,” Lee said.</p>
+			<p class="para-translation">「我們已經能夠用推進器朝自轉的反方向出力，藉此影響姿態控制，效果非常好，」Lee 說。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">This has worked well so far. As of Friday, the spacecraft had cut its spin rate in half, from about 9 degrees per second to <span class="word-highfreq" data-word="approximately">approximately</span> 4 degrees per second. Officials hope to further reduce the spin rate, allowing Katalyst to improve communications with the spacecraft.</p>
+			<p class="para-translation">目前為止這招很有效。到週五為止，這艘太空船已經把自轉速度減半，從每秒約 9 度降到每秒約 4 度。官方希望能進一步降低自轉速度，好讓 Katalyst 改善與太空船之間的通訊。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“Once we are in a more stable configuration, with much more high-bandwidth comms, we’ll be able to use that to downlink all the rich data (about the condition of the spacecraft),” Lee said. “We do know the states of the reaction wheels and the thrusters and things like that. So our GNC team—guidance, navigation, and control team—has been very hard at work with NASA, essentially remapping all of the control algorithms to be able to have an updated controller ready to go for when we are able to stabilize the spacecraft.”</p>
+			<p class="para-translation">「一旦我們進入比較穩定的狀態、有頻寬高很多的通訊，就能用它把所有豐富的資料（關於太空船狀況的）下傳，」Lee 說。「我們確實知道反作用輪、推進器這些東西的狀態。所以我們的 GNC 團隊——導航、導引與控制團隊——一直和 NASA 密切合作，基本上就是把所有控制演算法重新對應一遍，好讓我們一穩住太空船，就有一套更新過的控制器可以直接上場。」</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<figure class="article-image">
+			<img src="https://cdn.arstechnica.net/wp-content/uploads/2026/08/1783980228007.jpg" alt="" loading="lazy">
+			
+		</figure>
+		<div class="para-block">
+			<p class="para-original">Katalyst may eventually be able to recover the satellite’s two <span class="word-general" data-word="inoperable">inoperable</span> reaction wheels, but the team’s <span class="word-highfreq" data-word="priority">priority</span> is <span class="word-highfreq" data-word="restoring">restoring</span> control by uplinking a new algorithm to manage its orientation through a combination of its one remaining reaction wheel and thrusters.</p>
+			<p class="para-translation">Katalyst 最終或許有機會救回衛星那兩個失效的反作用輪，但團隊目前的優先事項是上傳一套新的演算法，靠剩下的那一個反作用輪加上推進器來管理衛星的姿態，藉此恢復控制。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Engineers aren’t sure yet what caused the emergency with the Link spacecraft last weekend. It could have been an internal problem with the satellite or a collision with space junk. Lee said two cameras on the satellite will look for signs of damage after ground teams stabilize it.</p>
+			<p class="para-translation">工程師還不確定上週末 Link 太空船的緊急狀況是什麼造成的。可能是衛星內部的問題，也可能是撞上太空垃圾。Lee 說，等地面團隊把它穩住之後，衛星上的兩具相機會去尋找受損的跡象。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Whatever the cause, Katalyst’s mission control team lost contact with Link for more than 24 hours after it <span class="word-phrase" data-word="spun out of control">spun out of control</span>. The satellite then automatically reset itself, just as it was supposed to do.</p>
+			<p class="para-translation">不管原因是什麼，Link 失控翻滾之後，Katalyst 的任務控制團隊有超過 24 小時失去與它的聯繫。之後衛星自動重置了自己，就跟它原本被設計的行為一樣。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“This was built-in fault protection logic saying, “Hey, if I haven’t heard from anybody in 24 hours, there must be something wrong. I’m going to toggle the power, turn it on and off again,'” Lee said. “It’s just built in. However, that shutdown mode is ungraceful. It basically pulls the plug on everything, and that creates some downstream effects for sensitive systems such as the reaction wheels.</p>
+			<p class="para-translation">「這是內建的故障保護邏輯在說：『欸，如果我 24 小時都沒收到任何人的消息，那一定有哪裡不對勁。我要切換電源，關掉再打開一次。』」Lee 說。「這是內建的。不過那個關機模式很粗暴。它基本上就是把所有東西的插頭拔掉，而這會對反作用輪這類敏感系統造成一些連帶影響。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“Basically, there was a big thermal spike that came about as a result of this that over-temperatured the upstream electronic circuits that control the reaction wheels, which ultimately led them to being <span class="word-general" data-word="inoperable">inoperable</span>,” Lee said.</p>
+			<p class="para-translation">「基本上，這件事引發了一次很大的溫度飆升，讓控制反作用輪的上游電子電路過熱，最終導致它們失效，」Lee 說。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">The problem with the spacecraft’s cold gas thrusters seems to be a “separate issue,” Lee said. But engineers don’t have all the data in hand to make a final determination.</p>
+			<p class="para-translation">至於太空船冷氣推進器的問題，Lee 說看起來是「另一個獨立的問題」。但工程師手上還沒有全部的資料，無法做出最終判定。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“These things all happened at once, so it’s hard to <span class="word-general" data-word="delineate">delineate</span> between what contributed to creating the situation and what was the consequence of the situation, and that’s something we’ll have to investigate with all the data,” Lee said.</p>
+			<p class="para-translation">「這些事全部同時發生，所以很難區分哪些是造成這個狀況的原因、哪些是這個狀況帶來的後果，這得等我們拿到所有資料才能調查，」Lee 說。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Nevertheless, Lee said Katalyst still aims to move Link toward NASA’s Swift <span class="word-general" data-word="observatory">observatory</span>, perhaps around the end of August.</p>
+			<p class="para-translation">儘管如此，Lee 說 Katalyst 仍然打算讓 Link 朝 NASA 的 Swift 觀測衛星前進，時間可能落在八月底前後。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“We’re very committed to pursuing this mission,” Lee said. “We’re working <span class="word-phrase" data-word="side by side">side by side</span> with NASA. I just came from a technical working meeting with their controls team, where we’re reviewing the algorithms. It seems like there’s nothing that is preventing us from reestablishing three-axis control of the spacecraft with the remaining reaction wheel, with the remaining thrusters, as well as the electric <span class="word-term" data-word="propulsion">propulsion</span>.</p>
+			<p class="para-translation">「我們非常堅定要完成這項任務，」Lee 說。「我們和 NASA 並肩合作。我剛從他們控制團隊的技術工作會議出來，我們在那裡檢視演算法。看起來沒有什麼能阻止我們用剩下的反作用輪、剩下的推進器，加上電推進系統，重新建立太空船的三軸控制。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“It’s not the original mode that we expected to control the spacecraft with, but it seems like we will have <span class="word-highfreq" data-word="sufficient">sufficient</span> stability and controllability of the spacecraft,” Lee said. “With this, we believe we’ll be able to do the <span class="word-term" data-word="rendezvous">rendezvous</span> with Swift. We believe that we’ll be able to go and do things like the inspection of Swift within a close approach of a few dozen meters. And as it stands right now, we have not made a formal <span class="word-general" data-word="assessment">assessment</span>, but we believe that a capture of Swift, an attempted capture of Swift, is very much <span class="word-phrase" data-word="in the cards">in the cards</span>.”</p>
+			<p class="para-translation">「這不是我們原本預期用來控制太空船的模式，但看起來我們會擁有足夠的穩定度與可控性，」Lee 說。「有了這個，我們相信能夠完成與 Swift 的會合。我們相信能夠做到像是在幾十公尺的近距離內檢視 Swift 這類的事。而就目前而言，我們還沒有做出正式評估，但我們相信捕捉 Swift、或者說嘗試捕捉 Swift，是很有機會的。」</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+	<div class="stage-actions stage-actions--end" id="to-verify">
+		<button class="btn-primary" onclick="goStage('verify')">讀完了，顯示翻譯與解答 →</button>
+	</div>
+</div>
+
+<div class="verify-block content-block" id="verify-block">
+	
+	<div class="summary-zh">
+		<div class="section-label">整篇摘要</div>
+		<p>Katalyst Space Technologies 的 Link 衛星負責一項 3000 萬美元的 NASA 合約，要抓住並推升即將墜落的 Swift 伽瑪射線觀測衛星。出發後一週，Link 突然失控翻滾，三個反作用輪壞了兩個，冷氣推進器也出問題。地面團隊改用電推進器把自轉速度減半，並重寫控制演算法，準備只靠剩下的一個反作用輪重建三軸控制。故障原因尚未確定，但團隊仍計畫在八月底前朝 Swift 前進。</p>
+	</div>
+	
+	<div class="scan-answers">
+		<div class="section-label">掃讀問題解答</div>
+		<ul class="scan-answer-list">
+		<li class="scan-answer">
+			<span class="scan-q-num">1</span>
+			<div>
+				<div class="scan-a-question">How much is the NASA contract that Katalyst won for this mission?</div>
+				<div class="scan-a-text">3000 萬美元。這是 NASA 第一次把自家衛星的維修工作外包給商業公司。</div>
+			</div>
+		</li>
+		<li class="scan-answer">
+			<span class="scan-q-num">2</span>
+			<div>
+				<div class="scan-a-question">By Friday, how much had the ground team managed to slow the satellite&#x27;s spin?</div>
+				<div class="scan-a-text">從每秒約 9 度降到每秒約 4 度，大約減半。</div>
+			</div>
+		</li>
+		<li class="scan-answer">
+			<span class="scan-q-num">3</span>
+			<div>
+				<div class="scan-a-question">What made the two reaction wheels stop working?</div>
+				<div class="scan-a-text">衛星自動斷電重啟的方式很粗暴，造成一次劇烈的溫度飆升，讓控制反作用輪的上游電路過熱，最後導致它們失效。</div>
+			</div>
+		</li>
+		</ul>
+	</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入 Anki</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "rescue", "type": "highfreq", "pos": "n.", "ipa": "/ˈres.kjuː/", "definition_zh": "救援、搶救", "example": "a satellite making its way toward an attempted rescue of NASA's Swift observatory"}, {"word": "reliable", "type": "highfreq", "pos": "adj.", "ipa": "/rɪˈlaɪ.ə.bəl/", "definition_zh": "可靠的、穩定的", "example": "rendering it unable to maintain a reliable communications link with the ground"}, {"word": "complicating", "type": "highfreq", "pos": "v.", "ipa": "/ˈkɑːm.plɪ.keɪ.tɪŋ/", "definition_zh": "使複雜、使更棘手", "example": "complicating efforts to arrest the spin"}, {"word": "discovered", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈskʌv.ɚd/", "definition_zh": "發現", "example": "engineers discovered a problem with some of the spacecraft's cold gas thrusters"}, {"word": "hurried", "type": "highfreq", "pos": "v.", "ipa": "/ˈhɝː.id/", "definition_zh": "趕忙、急著做", "example": "Katalyst's ground team hurried to find a fix and recover the Link satellite."}, {"word": "gradually", "type": "highfreq", "pos": "adv.", "ipa": "/ˈɡrædʒ.u.ə.li/", "definition_zh": "逐漸地", "example": "using the satellite's plasma engines to gradually slow the spin"}, {"word": "efficient", "type": "highfreq", "pos": "adj.", "ipa": "/ɪˈfɪʃ.ənt/", "definition_zh": "有效率的", "example": "Link's electric propulsion system is efficient but low in thrust"}, {"word": "approximately", "type": "highfreq", "pos": "adv.", "ipa": "/əˈprɑːk.sə.mət.li/", "definition_zh": "大約", "example": "from about 9 degrees per second to approximately 4 degrees per second"}, {"word": "restoring", "type": "highfreq", "pos": "v.", "ipa": "/rɪˈstɔːr.ɪŋ/", "definition_zh": "恢復、復原", "example": "the team's priority is restoring control by uplinking a new algorithm"}, {"word": "priority", "type": "highfreq", "pos": "n.", "ipa": "/praɪˈɔːr.ə.ti/", "definition_zh": "優先事項", "example": "the team's priority is restoring control by uplinking a new algorithm"}, {"word": "sufficient", "type": "highfreq", "pos": "adj.", "ipa": "/səˈfɪʃ.ənt/", "definition_zh": "足夠的", "example": "we will have sufficient stability and controllability of the spacecraft"}, {"word": "observatory", "type": "general", "pos": "n.", "ipa": "/əbˈzɝː.və.tɔːr.i/", "definition_zh": "觀測站、天文台", "example": "NASA's $500 million Swift gamma-ray observatory"}, {"word": "arrest", "type": "general", "pos": "v.", "ipa": "/əˈrest/", "definition_zh": "阻止、遏止", "example": "complicating efforts to arrest the spin"}, {"word": "sporadic", "type": "general", "pos": "adj.", "ipa": "/spəˈræd.ɪk/", "definition_zh": "斷斷續續的", "example": "Through sporadic radio contact, engineers discovered a problem."}, {"word": "succumbing", "type": "general", "pos": "v.", "ipa": "/səˈkʌm.ɪŋ/", "definition_zh": "屈服、抵擋不住", "example": "before succumbing to aerodynamic drag and burning up in the atmosphere"}, {"word": "pursuit", "type": "general", "pos": "n.", "ipa": "/pɚˈsuːt/", "definition_zh": "追趕、追求", "example": "The Link satellite launched July 3 to begin the pursuit of Swift."}, {"word": "impulse", "type": "general", "pos": "n.", "ipa": "/ˈɪm.pʌls/", "definition_zh": "衝量、推力累積", "example": "it takes time to generate enough of an impulse to regain full control"}, {"word": "inoperable", "type": "general", "pos": "adj.", "ipa": "/ɪˈnɑː.pɚ.ə.bəl/", "definition_zh": "無法運作的", "example": "Katalyst may eventually be able to recover the satellite's two inoperable reaction wheels"}, {"word": "delineate", "type": "general", "pos": "v.", "ipa": "/dɪˈlɪn.i.eɪt/", "definition_zh": "劃分、區分清楚", "example": "it's hard to delineate between what contributed to creating the situation"}, {"word": "assessment", "type": "general", "pos": "n.", "ipa": "/əˈses.mənt/", "definition_zh": "評估", "example": "we have not made a formal assessment"}, {"word": "propulsion", "type": "term", "pos": "n.", "ipa": "/prəˈpʌl.ʃən/", "definition_zh": "推進、推進系統", "example": "Link's electric propulsion system is efficient but low in thrust."}, {"word": "rendezvous", "type": "term", "pos": "n.", "ipa": "/ˈrɑːn.deɪ.vuː/", "definition_zh": "太空會合", "example": "the rendezvous and robotics hardware the Link satellite needs to capture Swift"}, {"word": "spun out of control", "type": "phrase", "pos": "", "ipa": "/spʌn aʊt əv kənˈtroʊl/", "definition_zh": "失控翻滾、局面失控", "example": "a refrigerator-size satellite suddenly spun out of control"}, {"word": "in the cards", "type": "phrase", "pos": "", "ipa": "/ɪn ðə kɑːrdz/", "definition_zh": "很有可能發生", "example": "an attempted capture of Swift is very much in the cards"}, {"word": "side by side", "type": "phrase", "pos": "", "ipa": "/saɪd baɪ saɪd/", "definition_zh": "並肩、一起", "example": "We're working side by side with NASA."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const articleMeta = {
+		title: "Here's how engineers plan to save the satellite sent to save NASA",
+		date: "2026-08-02",
+		source: "Ars Technica"
+	};
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	// ---- 三階段閱讀 ----
+	// 階段只影響「這次瀏覽」，不寫進 localStorage —— 刻意的：如果記住上次
+	// 選擇，跳過一次就等於永久關掉這個功能。
+	function goStage(stage) {
+		document.body.setAttribute("data-stage", stage);
+		document.querySelectorAll(".stage-step").forEach(b => {
+			b.classList.toggle("is-active", b.dataset.step === stage);
+		});
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+	function revealPara(btn) {
+		btn.closest(".para-block").classList.add("revealed");
+	}
+
+	// ---- Anki 單字收集 ----
+	const ANKI_KEY = "anki-deck";
+
+	function loadDeck() {
+		try { return JSON.parse(localStorage.getItem(ANKI_KEY) || "[]"); }
+		catch (e) { return []; }
+	}
+
+	function saveDeck(deck) {
+		try { localStorage.setItem(ANKI_KEY, JSON.stringify(deck)); }
+		catch (e) { alert("瀏覽器儲存空間已滿，無法再加入單字。"); }
+	}
+
+	function inDeck(word) {
+		return loadDeck().some(c => c.word.toLowerCase() === word.toLowerCase());
+	}
+
+	function toggleAnki() {
+		if (!currentWord) return;
+		const entry = vocabMap[currentWord.toLowerCase()];
+		if (!entry) return;
+		let deck = loadDeck();
+		const idx = deck.findIndex(c => c.word.toLowerCase() === currentWord.toLowerCase());
+		if (idx >= 0) {
+			deck.splice(idx, 1);
+		} else {
+			deck.push({
+				word: entry.word,
+				pos: entry.pos || "",
+				ipa: entry.ipa || "",
+				definition_zh: entry.definition_zh || "",
+				example: entry.example || "",
+				article: articleMeta.title,
+				date: articleMeta.date,
+				added: new Date().toISOString().slice(0, 10)
+			});
+		}
+		saveDeck(deck);
+		syncAnkiButton();
+		markCollectedWords();
+	}
+
+	function syncAnkiButton() {
+		const btn = document.getElementById("btn-anki");
+		if (!currentWord) return;
+		const has = inDeck(currentWord);
+		btn.textContent = has ? "已加入 ✓" : "加入 Anki";
+		btn.classList.toggle("is-added", has);
+	}
+
+	function markCollectedWords() {
+		const deck = loadDeck().map(c => c.word.toLowerCase());
+		document.querySelectorAll("[data-word]").forEach(el => {
+			el.classList.toggle("is-collected", deck.includes(el.dataset.word.toLowerCase()));
+		});
+	}
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+		syncAnkiButton();
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	markCollectedWords();
+	goStage("bumps");
+
+	// quiz
+	const quizData = [{"sentence": "The old bridge was closed because it was no longer ____ in bad weather.", "sentence_zh": "這座舊橋因為在惡劣天氣下不再可靠而封閉了。", "answer": "reliable", "options": ["reliable", "sporadic", "efficient", "inoperable"]}, {"sentence": "Adding three more people to the meeting only ended up ____ the decision.", "sentence_zh": "會議多加三個人進來，結果只是讓這個決定變得更複雜。", "answer": "complicating", "options": ["restoring", "complicating", "delineating", "arresting"]}, {"sentence": "She ____ home after hearing that her flight had been moved up two hours.", "sentence_zh": "她聽說班機提前兩小時之後就趕忙回家了。", "answer": "hurried", "options": ["hurried", "discovered", "succumbing", "approximately"]}, {"sentence": "The paint fades ____ , so you won't notice the change for months.", "sentence_zh": "油漆是逐漸褪色的，所以好幾個月你都不會注意到變化。", "answer": "gradually", "options": ["approximately", "gradually", "sufficient", "sporadic"]}, {"sentence": "Fixing the leak is our top ____ before we think about repainting.", "sentence_zh": "在考慮重新粉刷之前，修好漏水是我們的第一優先事項。", "answer": "priority", "options": ["assessment", "pursuit", "priority", "impulse"]}, {"sentence": "Two hours of sleep is not ____ if you are driving a long distance.", "sentence_zh": "如果你要開長途，睡兩個小時是不夠的。", "answer": "sufficient", "options": ["efficient", "sufficient", "reliable", "inoperable"]}, {"sentence": "The internet here is ____ , so video calls keep dropping.", "sentence_zh": "這裡的網路斷斷續續的，所以視訊通話一直斷線。", "answer": "sporadic", "options": ["sporadic", "gradually", "sufficient", "delineate"]}, {"sentence": "It is hard to ____ where his job ends and mine begins.", "sentence_zh": "很難區分清楚他的工作到哪裡結束、我的工作從哪裡開始。", "answer": "delineate", "options": ["arrest", "delineate", "restoring", "succumbing"]}, {"sentence": "After the interview went well, a second round is very much ____ .", "sentence_zh": "面試進行得很順利之後，第二輪面試是很有可能發生的。", "answer": "in the cards", "options": ["in the cards", "side by side", "spun out of control", "pursuit"]}, {"sentence": "The two teams worked ____ for six months to finish the project.", "sentence_zh": "這兩個團隊並肩合作了六個月才完成這個專案。", "answer": "side by side", "options": ["spun out of control", "in the cards", "side by side", "impulse"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>

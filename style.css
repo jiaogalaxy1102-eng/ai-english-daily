@@ -640,7 +640,335 @@ h2.para-translation, h3.para-translation, h4.para-translation { font-size: 1rem;
 	text-align: center;
 }
 
+/* ══ 三階段引導閱讀 ══
+   body[data-stage] 是唯一的開關，三個階段各自決定哪些區塊看得見。
+   翻譯預設一律藏起來 —— 這是整個設計的重點，不要為了「方便」拿掉。 */
+
+.stage-track {
+	max-width: 760px;
+	margin: 28px auto 0;
+	padding: 0 24px;
+	display: flex;
+	gap: 8px;
+}
+.stage-step {
+	flex: 1;
+	padding: 8px 4px;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	background: var(--color-surface);
+	color: var(--color-muted);
+	font-size: 0.8125rem;
+	font-family: var(--font-zh);
+	cursor: pointer;
+	transition: color 0.15s, border-color 0.15s;
+}
+.stage-step:hover { color: var(--color-brown); }
+.stage-step.is-active {
+	color: var(--color-brown-deep);
+	border-color: var(--color-tan);
+	background: var(--color-bg);
+	font-weight: 600;
+}
+
+.stage { margin-top: 28px; }
+.stage-hint {
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	margin-bottom: 20px;
+}
+
+.bumps-summary {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 16px 18px;
+	margin-bottom: 24px;
+}
+.bumps-summary-label {
+	font-size: 0.6875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--color-muted);
+	margin-bottom: 8px;
+	font-family: var(--font-en);
+}
+.bumps-summary p {
+	font-family: var(--font-en);
+	color: var(--color-dark);
+	line-height: 1.7;
+}
+
+.bumps-list { border-left: 2px solid var(--color-border); padding-left: 18px; }
+.bump {
+	position: relative;
+	font-family: var(--font-en);
+	color: var(--color-brown);
+	line-height: 1.65;
+	margin-bottom: 16px;
+	font-size: 0.9375rem;
+}
+.bump::before {
+	content: "";
+	position: absolute;
+	left: -23px;
+	top: 0.6em;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--color-tan);
+}
+.bump-heading {
+	color: var(--color-dark);
+	font-weight: 700;
+	font-size: 1.0625rem;
+	margin-top: 24px;
+}
+.bump-conclusion { color: var(--color-dark); font-weight: 500; }
+.bump-label {
+	display: inline-block;
+	font-family: var(--font-zh);
+	font-size: 0.6875rem;
+	background: var(--badge-bg-term);
+	color: var(--color-term);
+	border-radius: 4px;
+	padding: 1px 6px;
+	margin-right: 8px;
+	vertical-align: 1px;
+}
+
+.stage-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin-top: 32px;
+}
+.stage-actions--end { margin-top: 40px; }
+.btn-primary {
+	padding: 11px 20px;
+	border: none;
+	border-radius: 8px;
+	background: var(--color-brown-deep);
+	color: var(--color-bg);
+	font-size: 0.9375rem;
+	font-family: var(--font-zh);
+	cursor: pointer;
+}
+.btn-primary:hover { background: var(--color-brown); }
+.btn-quiet {
+	padding: 11px 4px;
+	border: none;
+	background: none;
+	color: var(--color-muted);
+	font-size: 0.8125rem;
+	font-family: var(--font-zh);
+	cursor: pointer;
+	text-decoration: underline;
+}
+.btn-quiet:hover { color: var(--color-brown); }
+
+/* 掃讀問題：第二階段釘在文章上方 */
+.scan-panel {
+	margin-top: 24px;
+	margin-bottom: 8px;
+}
+.scan-panel-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	color: var(--color-muted);
+	margin-bottom: 10px;
+}
+.scan-list, .scan-answer-list { list-style: none; }
+.scan-question, .scan-answer {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	padding: 8px 0;
+	border-bottom: 1px dashed var(--color-border);
+}
+.scan-answer:last-child, .scan-question:last-child { border-bottom: none; }
+.scan-q-num {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--color-border);
+	color: var(--color-brown);
+	font-size: 0.6875rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2px;
+}
+.scan-q-text, .scan-a-question {
+	font-family: var(--font-en);
+	color: var(--color-dark);
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+.scan-a-text {
+	color: var(--color-brown);
+	font-size: 0.875rem;
+	margin-top: 4px;
+}
+.scan-answers { margin-bottom: 32px; }
+.summary-zh { margin-bottom: 32px; }
+.summary-zh p { color: var(--color-brown); line-height: 1.8; }
+
+/* 逐段「看中文」按鈕 */
+.para-reveal {
+	display: block;
+	margin-top: 6px;
+	padding: 4px 10px;
+	border: 1px dashed var(--color-border);
+	border-radius: 6px;
+	background: none;
+	color: var(--color-muted);
+	font-size: 0.75rem;
+	font-family: var(--font-zh);
+	cursor: pointer;
+}
+.para-reveal:hover { color: var(--color-brown); border-color: var(--color-tan); }
+
+/* ── 各階段顯示什麼 ── */
+body[data-stage="bumps"] .scan-panel,
+body[data-stage="bumps"] .vocab-section,
+body[data-stage="bumps"] .article-body,
+body[data-stage="bumps"] .verify-block,
+body[data-stage="bumps"] .quiz-section { display: none; }
+
+body[data-stage="full"] .stage-bumps,
+body[data-stage="full"] .verify-block,
+body[data-stage="full"] .quiz-section { display: none; }
+
+body[data-stage="verify"] .stage-bumps,
+body[data-stage="verify"] .scan-panel,
+body[data-stage="verify"] #to-verify { display: none; }
+
+/* 翻譯的顯示規則：預設藏起來；第三階段全開；個別段落按過「看中文」就開。 */
+.para-translation, .li-translation { display: none; }
+body[data-stage="verify"] .para-translation,
+body[data-stage="verify"] .li-translation,
+.para-block.revealed .para-translation,
+.para-block.revealed .li-translation { display: block; }
+body[data-stage="verify"] .para-reveal,
+.para-block.revealed .para-reveal { display: none; }
+
+/* ══ 我的單字（Anki 收集） ══ */
+.nav-vocab {
+	margin-left: auto;
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	text-decoration: none;
+	font-family: var(--font-zh);
+}
+.nav-vocab:hover { color: var(--color-brown); text-decoration: underline; }
+.site-header .nav-vocab { display: inline-block; margin-top: 12px; }
+
+.btn-anki {
+	padding: 7px 14px;
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+	background: var(--color-bg);
+	color: var(--color-brown);
+	font-size: 0.8125rem;
+	font-family: var(--font-zh);
+	cursor: pointer;
+}
+.btn-anki.is-added {
+	background: var(--badge-bg-general);
+	color: var(--color-general);
+	border-color: var(--word-line-general);
+}
+/* 已收集的字在文章裡留一個很輕的記號，不搶走詞性標色 */
+.vocab-card.is-collected .vocab-word::after {
+	content: "✓";
+	color: var(--color-general);
+	margin-left: 6px;
+	font-size: 0.75em;
+}
+
+.deck-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.deck-count { font-size: 0.9375rem; color: var(--color-brown); }
+.deck-actions { display: flex; gap: 10px; align-items: center; }
+.deck-help {
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 12px 16px;
+	margin-bottom: 24px;
+	font-size: 0.875rem;
+	color: var(--color-brown);
+}
+.deck-help summary { cursor: pointer; color: var(--color-muted); }
+.deck-help ol { margin: 12px 0 0 20px; line-height: 1.9; }
+.deck-help code {
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.8125rem;
+	background: var(--color-surface);
+	padding: 1px 5px;
+	border-radius: 4px;
+}
+.deck-note { margin-top: 12px; color: var(--color-muted); font-size: 0.8125rem; }
+
+.deck-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.deck-card {
+	position: relative;
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 14px 16px;
+	background: var(--color-surface);
+}
+.deck-remove {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	border: none;
+	background: none;
+	color: var(--color-muted);
+	font-size: 1.125rem;
+	line-height: 1;
+	cursor: pointer;
+}
+.deck-remove:hover { color: var(--color-term); }
+.deck-word {
+	font-family: var(--font-en);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	color: var(--color-dark);
+	padding-right: 20px;
+}
+.deck-meta { font-size: 0.75rem; color: var(--color-muted); margin-top: 2px; }
+.deck-def { font-size: 0.875rem; color: var(--color-brown); margin-top: 6px; }
+.deck-example {
+	font-family: var(--font-en);
+	font-size: 0.8125rem;
+	color: var(--color-muted);
+	margin-top: 6px;
+	line-height: 1.5;
+}
+.deck-source { font-size: 0.6875rem; color: var(--color-muted); margin-top: 8px; }
+
 @media (max-width: 768px) {
+	.stage-track { padding: 0 16px; gap: 6px; }
+	.stage-step { font-size: 0.75rem; padding: 8px 2px; }
+	.bumps-list { padding-left: 14px; }
+	.bump::before { left: -19px; }
+	.stage-actions { flex-direction: column; align-items: stretch; }
+	.btn-primary { width: 100%; }
+	.deck-list { grid-template-columns: 1fr; }
+	.deck-toolbar { flex-direction: column; align-items: stretch; }
+	.deck-actions { justify-content: space-between; }
+
 	body { font-size: 1rem; }
 	.article-title { font-size: 1.3125rem; }
 

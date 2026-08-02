@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .claude/settings.local.json
+
+# 開發筆記只留本機，不進版控
+NOTES.md
