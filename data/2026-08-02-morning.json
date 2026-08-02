@@ -1,0 +1,338 @@
+{
+	"date": "2026-08-02",
+	"slot": "morning",
+	"tag": "科技",
+	"title": "Pixel 11 specs and price leak with no surprises",
+	"source_name": "The Verge",
+	"url": "https://www.theverge.com/tech/974238/pixel-11-specs-and-price-leak",
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "More confirmation that price hikes and RAM cuts are coming our way.",
+			"translation": "更多證據顯示，價格上漲和記憶體縮減即將到來。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>Android Headlines</em> claims to have the specs and price for the entire Pixel 11 lineup. What the site shared basically lines up with everything else that we’ve heard in the lead-up to the August 12th event. The Pixel 11 is expected to get a $100 price hike, starting at $899, but will come with 256GB of storage instead of 128GB in the base model. While the entire lineup will sport the new Tensor G6 and Titan M3 chips, the base model Pixel 11 Pro and Pixel 11 Pro XL are both getting that rumored RAM cut to just 12GB, along with price increases to $1,099 and $1,299, respectively.",
+			"translation": "《Android Headlines》宣稱已掌握整個 Pixel 11 系列的規格與價格。該網站分享的資訊基本上與我們在 8 月 12 日發表會前所聽到的一切相符。Pixel 11 預計將調漲 100 美元，起售價為 899 美元，但基礎型號的儲存空間將從 128GB 增加到 256GB。雖然整個系列都將搭載全新的 Tensor G6 和 Titan M3 晶片，但基礎款的 Pixel 11 Pro 和 Pixel 11 Pro XL 記憶體據傳都將縮減至僅 12GB，且價格將分別調漲至 1,099 美元和 1,299 美元。"
+		},
+		{
+			"tag": "p",
+			"text": "The Pixel 11 will supposedly ditch the telephoto lens and settle for a dual rear camera setup instead. The pro models appear like they’ll keep the same camera setup from the Pixel 10 lineup. The displays also seem to be largely unchanged from the previous generation. The Pixel 11 Pro Fold wasn’t immune to RAMageddon, either, and will also start with 12GB of RAM and a new price of $1,899.",
+			"translation": "Pixel 11 據稱將捨棄望遠鏡頭，改用雙後置鏡頭配置。Pro 型號的鏡頭配置似乎將維持與 Pixel 10 系列相同。螢幕顯示方面也與前代產品基本保持不變。Pixel 11 Pro Fold 也無法免於這場「記憶體末日」，同樣將以 128GB 的記憶體起跳，且新售價為 1,899 美元。"
+		}
+	],
+	"images": [
+		{
+			"src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/videoframe_16661.png?quality=90&strip=all&crop=7.8454332552693%2C0%2C84.309133489461%2C100&w=2400",
+			"alt": "videoframe_16661",
+			"after_paragraph": 1
+		}
+	],
+	"vocab": [
+		{
+			"word": "confirmation",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌkɒnfəˈmeɪʃən/",
+			"definition_zh": "確認、證實",
+			"example": "More confirmation that price hikes and RAM cuts are coming our way."
+		},
+		{
+			"word": "hike",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/haɪk/",
+			"definition_zh": "大幅上漲、增加",
+			"example": "The Pixel 11 is expected to get a $100 price hike, starting at $899."
+		},
+		{
+			"word": "claims",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kleɪmz/",
+			"definition_zh": "聲稱、主張",
+			"example": "Android Headlines claims to have the specs and price for the entire Pixel 11 lineup."
+		},
+		{
+			"word": "lineup",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈlaɪn.ʌp/",
+			"definition_zh": "系列產品、陣容",
+			"example": "Android Headlines claims to have the specs and price for the entire Pixel 11 lineup."
+		},
+		{
+			"word": "storage",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈstɔː.rɪdʒ/",
+			"definition_zh": "儲存空間",
+			"example": "Pixel 11 will come with 256GB of storage instead of 128GB."
+		},
+		{
+			"word": "base",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/beɪs/",
+			"definition_zh": "基礎的、底層的",
+			"example": "256GB of storage instead of 128GB in the base model."
+		},
+		{
+			"word": "sport",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/spɔːt/",
+			"definition_zh": "搭載、配備、穿戴",
+			"example": "While the entire lineup will sport the new Tensor G6 and Titan M3 chips."
+		},
+		{
+			"word": "rumored",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ˈruː.məd/",
+			"definition_zh": "傳聞的、謠傳的",
+			"example": "Pixel 11 Pro and Pixel 11 Pro XL are both getting that rumored RAM cut."
+		},
+		{
+			"word": "respectively",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/rɪˈspek.tɪv.li/",
+			"definition_zh": "分別地、依次地",
+			"example": "price increases to $1,099 and $1,299, respectively."
+		},
+		{
+			"word": "supposedly",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/səˈpəʊ.zɪd.li/",
+			"definition_zh": "據說、據稱",
+			"example": "The Pixel 11 will supposedly ditch the telephoto lens."
+		},
+		{
+			"word": "ditch",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/dɪtʃ/",
+			"definition_zh": "捨棄、拋棄",
+			"example": "The Pixel 11 will supposedly ditch the telephoto lens."
+		},
+		{
+			"word": "setup",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈset.ʌp/",
+			"definition_zh": "配置、結構、設定",
+			"example": "settle for a dual rear camera setup instead."
+		},
+		{
+			"word": "largely",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈlɑːdʒ.li/",
+			"definition_zh": "很大程度上、主要地",
+			"example": "The displays also seem to be largely unchanged from the previous generation."
+		},
+		{
+			"word": "unchanged",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ʌnˈtʃeɪndʒd/",
+			"definition_zh": "未改變的、維持原狀的",
+			"example": "The displays also seem to be largely unchanged from the previous generation."
+		},
+		{
+			"word": "immune",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ɪˈmjuːn/",
+			"definition_zh": "免疫的、不受影響的",
+			"example": "The Pixel 11 Pro Fold wasn’t immune to RAMageddon."
+		},
+		{
+			"word": "entire",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ɪnˈtaɪər/",
+			"definition_zh": "全部的、整個的",
+			"example": "Android Headlines claims to have the specs and price for the entire Pixel 11 lineup."
+		},
+		{
+			"word": "specs",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/speks/",
+			"definition_zh": "規格 (縮寫)",
+			"example": "Android Headlines claims to have the specs and price for the entire Pixel 11 lineup."
+		},
+		{
+			"word": "model",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈmɒd.əl/",
+			"definition_zh": "型號、模型",
+			"example": "256GB of storage instead of 128GB in the base model."
+		},
+		{
+			"word": "generation",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌdʒen.əˈreɪ.ʃən/",
+			"definition_zh": "世代、一代",
+			"example": "largely unchanged from the previous generation."
+		},
+		{
+			"word": "rear",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/rɪər/",
+			"definition_zh": "後面的、背部的",
+			"example": "settle for a dual rear camera setup instead."
+		},
+		{
+			"word": "lines up with",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/laɪnz ʌp wɪð/",
+			"definition_zh": "與...一致、相符",
+			"example": "What the site shared basically lines up with everything else that we’ve heard."
+		},
+		{
+			"word": "coming our way",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈkʌm.ɪŋ aʊər weɪ/",
+			"definition_zh": "即將到來",
+			"example": "More confirmation that price hikes and RAM cuts are coming our way."
+		},
+		{
+			"word": "lead-up",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈliːd.ʌp/",
+			"definition_zh": "準備期、前奏",
+			"example": "everything else that we’ve heard in the lead-up to the August 12th event."
+		},
+		{
+			"word": "settle for",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈset.əl fɔːr/",
+			"definition_zh": "滿足於、勉強接受",
+			"example": "The Pixel 11 will supposedly ditch the telephoto lens and settle for a dual rear camera setup instead."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company decided to ____ its outdated software and start from scratch.",
+			"sentence_zh": "公司決定捨棄過時的軟體並從頭開始。",
+			"answer": "ditch",
+			"options": [
+				"ditch",
+				"hike",
+				"immune",
+				"specs"
+			]
+		},
+		{
+			"sentence": "The two brothers were born in 1995 and 1998, ____.",
+			"sentence_zh": "這兩兄弟分別出生於 1995 年和 1998 年。",
+			"answer": "respectively",
+			"options": [
+				"respectively",
+				"largely",
+				"entire",
+				"claims"
+			]
+		},
+		{
+			"sentence": "A sudden ____ in electricity costs has made many families worried about their bills.",
+			"sentence_zh": "電費的突然大幅上漲讓許多家庭擔心他們的帳單。",
+			"answer": "hike",
+			"options": [
+				"hike",
+				"base",
+				"setup",
+				"rear"
+			]
+		},
+		{
+			"sentence": "Even the most stable economies are not ____ to the impact of a global crisis.",
+			"sentence_zh": "即使是最穩定的經濟體也無法免於全球危機的影響。",
+			"answer": "immune",
+			"options": [
+				"immune",
+				"supposedly",
+				"rumored",
+				"model"
+			]
+		},
+		{
+			"sentence": "The witness's testimony ____ the evidence found at the scene.",
+			"sentence_zh": "證人的證詞與現場發現的證據一致。",
+			"answer": "lines up with",
+			"options": [
+				"lines up with",
+				"settle for",
+				"coming our way",
+				"lead-up"
+			]
+		},
+		{
+			"sentence": "The new manager is ____ very strict, but he was actually quite kind today.",
+			"sentence_zh": "據說新經理非常嚴格，但他今天其實挺親切的。",
+			"answer": "supposedly",
+			"options": [
+				"supposedly",
+				"respectively",
+				"largely",
+				"unchanged"
+			]
+		},
+		{
+			"sentence": "The local residents' health is ____ affected by the pollution from the nearby factory.",
+			"sentence_zh": "當地居民的健康在很大程度上受到附近工廠污染的影響。",
+			"answer": "largely",
+			"options": [
+				"largely",
+				"supposedly",
+				"entire",
+				"base"
+			]
+		},
+		{
+			"sentence": "You should check the technical ____ of the camera before making a purchase.",
+			"sentence_zh": "購買前你應該檢查相機的技術規格。",
+			"answer": "specs",
+			"options": [
+				"specs",
+				"storage",
+				"setup",
+				"model"
+			]
+		},
+		{
+			"sentence": "Despite the fierce debate, the original plan remained ____.",
+			"sentence_zh": "儘管爭論激烈，原定計劃仍維持不變。",
+			"answer": "unchanged",
+			"options": [
+				"unchanged",
+				"rumored",
+				"immune",
+				"entire"
+			]
+		},
+		{
+			"sentence": "If you don't have enough cloud ____, you won't be able to back up your photos.",
+			"sentence_zh": "如果你沒有足夠的雲端儲存空間，你就無法備份照片。",
+			"answer": "storage",
+			"options": [
+				"storage",
+				"specs",
+				"hike",
+				"confirmation"
+			]
+		}
+	]
+}
