@@ -121,6 +121,60 @@ def trim_chrome(paragraphs):
 	return paragraphs[start:end], start
 
 
+def normalize_for_compare(text):
+	"""比對用的正規化：去標籤、轉小寫、只留字母數字與空白。
+
+	彎引號與直引號、標點差異都會讓字面比對失效，所以全部抹平再比。
+	"""
+	plain = re.sub(r"<[^>]+>", " ", text)
+	plain = html.unescape(plain).lower()
+	plain = re.sub(r"[^a-z0-9\s]", " ", plain)
+	return re.sub(r"\s+", " ", plain).strip()
+
+
+# 比對用的前綴長度。pull quote 通常是內文句子的前半段，比對開頭就夠判斷，
+# 整段比反而會因為 pull quote 後面接了署名（"— 某某某, senior fellow"）而失敗。
+PULL_QUOTE_PREFIX = 60
+PULL_QUOTE_NEIGHBOR_RANGE = 3
+
+
+def drop_pull_quotes(paragraphs, images):
+	"""移除「引述放大框」——內容抄自鄰近內文的 blockquote。
+
+	這種東西在版面上是設計元素，抓下來卻變成一段幾乎一樣的文字：讀者在全文
+	階段會連看同一句話兩次，凸點清單也會連續出現兩條重複的骨架。
+	"""
+	drop = set()
+	for i, p in enumerate(paragraphs):
+		if p["tag"] != "blockquote":
+			continue
+		quote = normalize_for_compare(p["text"])
+		if len(quote) < 20:
+			continue
+		prefix = quote[:PULL_QUOTE_PREFIX]
+		lo = max(0, i - PULL_QUOTE_NEIGHBOR_RANGE)
+		hi = min(len(paragraphs), i + PULL_QUOTE_NEIGHBOR_RANGE + 1)
+		for j in range(lo, hi):
+			if j == i or paragraphs[j]["tag"] == "blockquote":
+				continue
+			if prefix and prefix in normalize_for_compare(paragraphs[j]["text"]):
+				drop.add(i)
+				break
+
+	if not drop:
+		return paragraphs, images
+
+	print(f"  移除 {len(drop)} 段引述放大框（內容與鄰近段落重複）")
+	kept = [p for i, p in enumerate(paragraphs) if i not in drop]
+	# after_paragraph 是「到這裡為止收了幾段」，前面每少一段就要往前移一格
+	new_images = []
+	for img in images:
+		pos = img["after_paragraph"]
+		pos -= sum(1 for i in drop if i < pos)
+		new_images.append({**img, "after_paragraph": pos})
+	return kept, new_images
+
+
 def extract_content(soup, base_url):
 	"""把一份已經 parse 好的 soup 變成 (paragraphs, images)。
 
@@ -386,6 +440,8 @@ def fetch_article_content(url, rss_html=""):
 	if removed:
 		print(f"  頭尾修掉 {removed} 段雜訊（開頭 {head_removed}）")
 		images = reindex_images(images, head_removed, len(paragraphs))
+
+	paragraphs, images = drop_pull_quotes(paragraphs, images)
 
 	return paragraphs, images
 

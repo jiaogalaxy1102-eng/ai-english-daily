@@ -6,22 +6,22 @@
 	"url": "https://restofworld.org/2026/china-moonshot-kimi-k3-free-sovereign-ai/",
 	"summary_en": "China's Moonshot AI has released its strongest chatbot, Kimi K3, for anyone to download and run for free. This matters most to governments that have spent heavily on their own AI hardware but still pay U.S. companies for the software. The article looks at who might actually switch, and why free has not been enough so far. It also asks what a country really owns when it downloads a model.",
 	"summary_zh": "中國 Moonshot AI 在 7 月 27 日免費釋出最強聊天機器人 Kimi K3 的模型權重，任何政府、公司或個人都能在自己的機器上執行並重新訓練。這對已經砸大錢買硬體、卻還要付錢租用美國 AI 軟體的國家衝擊最大。但免費不等於會被採用——過去一年多的免費中國模型，至今沒有任何國家拿來當國家級 AI 專案的基礎。更根本的限制是晶片：跑得動 Kimi K3 的先進晶片由美國決定賣給誰，下載了模型也只是拿到軟體而已。",
-	"conclusion_index": 21,
+	"conclusion_index": 20,
 	"scan_questions": [
 		{
 			"question": "Where does Kimi K3 rank on Artificial Analysis's index, and which systems are above it?",
 			"answer_zh": "第三名。排在它前面的是 Anthropic 的 Claude Fable 5 和 OpenAI 的 GPT-5.6 Sol Max，這兩個都要付費。",
-			"paragraph_index": 5
+			"paragraph_index": 4
 		},
 		{
 			"question": "According to the Sovereign AI Index, which free model did governments actually pick most often?",
 			"answer_zh": "Meta 的 Llama，十個裡面有四個選它。沒有任何一個國家選 DeepSeek 或 Moonshot 先前的聊天機器人，即使那些也免費、評價也高。",
-			"paragraph_index": 14
+			"paragraph_index": 13
 		},
 		{
 			"question": "What does a country still not get, even after downloading Kimi K3 for free?",
 			"answer_zh": "晶片、資料中心，以及之後的下一代模型。跑得動這種規模模型的先進晶片由美國決定賣給誰，所以下載到的只有軟體本身。",
-			"paragraph_index": 20
+			"paragraph_index": 19
 		}
 	],
 	"paragraphs": [
@@ -39,11 +39,6 @@
 			"tag": "p",
 			"text": "Nations are spending billions of dollars to run sovereign systems or AI on their own soil so that citizen data stays within their borders and can’t be accessed by foreign companies or governments. Most countries own the machines but lease the computing power and software from U.S. companies such as Microsoft, Google, and Amazon, which count on the rent continuing for years. Kimi K3 offers those governments a way out.",
 			"translation": "各國正花費數十億美元建立主權系統，也就是在自己國土上運作的 AI，好讓國民資料留在國界內、不被外國公司或政府取用。多數國家擁有機器，但向微軟、Google、亞馬遜這些美國公司租用運算資源與軟體，而這些公司預期租金會持續收上好幾年。Kimi K3 給了這些政府一條出路。"
-		},
-		{
-			"tag": "blockquote",
-			"text": "An open, high-quality model like Kimi K3 does change the calculation for governments.” Mohammed Soliman, senior fellow, Middle East Institute",
-			"translation": "「像 Kimi K3 這樣開放又高品質的模型，確實改變了各國政府的算盤。」——中東研究所資深研究員 Mohammed Soliman"
 		},
 		{
 			"tag": "p",

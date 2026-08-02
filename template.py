@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 12
+CSS_VERSION = 13
 
 FIXED_TAGS = [
 	"模型與研究",
@@ -183,6 +183,54 @@ def safe_inline(text):
 	return escaped
 
 
+# 邏輯路標：告訴讀者這一段跟上一段是什麼關係的詞。略讀時看到它們就能推斷
+# 文章的論證怎麼走，不用讀完整段。
+#
+# 只比對「句首」是刻意的 —— 真正有導航作用的是開頭那個詞。把句中每個 but
+# 都標起來只會變成滿頁螢光筆，反而看不出結構。少數幾個逗號後的轉折詞例外
+# （", yet" 這種），那些同樣是在轉折。
+SIGNPOSTS_SENTENCE_START = [
+	"notably absent", "the one surprising note", "whatever the cause",
+	"on the other hand", "in contrast", "as a result", "in addition",
+	"at the same time", "even so", "that said", "in fact", "indeed",
+	"however", "nevertheless", "nonetheless", "still", "yet", "but",
+	"although", "though", "despite", "while", "whereas", "instead",
+	"therefore", "thus", "consequently", "meanwhile", "moreover",
+	"furthermore", "besides", "notably", "importantly", "crucially",
+	"surprisingly", "admittedly", "finally", "eventually", "then",
+]
+
+SIGNPOSTS_MID = [", yet", ", but", ", however", ", although", ", though", ", while"]
+
+_START_RE = re.compile(
+	r'^(["“\']?)(' + "|".join(sorted((re.escape(s) for s in SIGNPOSTS_SENTENCE_START), key=len, reverse=True)) + r')\b',
+	re.IGNORECASE,
+)
+_MID_RE = re.compile(
+	"(" + "|".join(sorted((re.escape(s) for s in SIGNPOSTS_MID), key=len, reverse=True)) + r')\b',
+	re.IGNORECASE,
+)
+
+
+def mark_signposts(escaped_sentence):
+	"""在已經跳脫過的句子裡標出邏輯路標。輸入必須是跳脫後的文字。"""
+	def wrap(m):
+		lead = m.group(1)
+		word = m.group(2)
+		return f'{lead}<span class="signpost">{word}</span>'
+
+	out, n = _START_RE.subn(wrap, escaped_sentence, count=1)
+	if n:
+		return out
+
+	def wrap_mid(m):
+		token = m.group(1)
+		punct, word = token[0], token[1:].lstrip()
+		return f'{punct} <span class="signpost">{word}</span>'
+
+	return _MID_RE.sub(wrap_mid, escaped_sentence, count=1)
+
+
 def highlight(text, vocab_map):
 	# sort by length descending to match longer phrases first
 	all_words = sorted(vocab_map.keys(), key=len, reverse=True)
@@ -211,7 +259,9 @@ def build_bumps_html(data):
 	rows = ""
 	for i, p in enumerate(paragraphs):
 		tag = p["tag"]
-		if tag in ("pre", "table", "li"):
+		# blockquote 排除在骨架之外：那是被引用者說的話，不是作者的論證脈絡。
+		# 混進來會把邏輯線打斷（實例：07-31 有 3/11 條骨架其實是信件原文）。
+		if tag in ("pre", "table", "li", "blockquote"):
 			continue
 		if tag in ("h2", "h3", "h4"):
 			rows += f'\n\t\t<div class="bump bump-heading">{htmllib.escape(strip_tags(p["text"]))}</div>'
@@ -222,16 +272,14 @@ def build_bumps_html(data):
 		is_conclusion = i == conclusion_index
 		cls = "bump bump-conclusion" if is_conclusion else "bump"
 		label = '<span class="bump-label">結論</span>' if is_conclusion else ""
-		rows += f'\n\t\t<div class="{cls}">{label}{htmllib.escape(sentence)}</div>'
+		body = mark_signposts(htmllib.escape(sentence))
+		rows += f'\n\t\t<div class="{cls}">{label}{body}</div>'
 
 	summary_en = data.get("summary_en", "")
 	summary_html = ""
 	if summary_en:
 		summary_html = f"""
-	<div class="bumps-summary">
-		<div class="bumps-summary-label">What this is about</div>
-		<p>{htmllib.escape(summary_en)}</p>
-	</div>"""
+	<p class="bumps-summary">{htmllib.escape(summary_en)}</p>"""
 
 	return f"""
 <section class="stage stage-bumps content-block" id="stage-bumps">

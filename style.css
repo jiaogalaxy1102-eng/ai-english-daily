@@ -678,42 +678,38 @@ h2.para-translation, h3.para-translation, h4.para-translation { font-size: 1rem;
 	margin-bottom: 20px;
 }
 
+/* 摘要是輔助，骨架才是這一階段的主體 —— 摘要做得比骨架搶眼的話，讀者會
+   停在「AI 給的結論」，不會去看文章自己的結構。 */
 .bumps-summary {
-	background: var(--color-surface);
-	border: 1px solid var(--color-border);
-	border-radius: 10px;
-	padding: 16px 18px;
-	margin-bottom: 24px;
-}
-.bumps-summary-label {
-	font-size: 0.6875rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
+	font-family: var(--font-en);
 	color: var(--color-muted);
-	margin-bottom: 8px;
-	font-family: var(--font-en);
-}
-.bumps-summary p {
-	font-family: var(--font-en);
-	color: var(--color-dark);
-	line-height: 1.7;
+	font-size: 0.875rem;
+	line-height: 1.65;
+	margin-bottom: 26px;
+	padding-left: 12px;
+	border-left: 2px solid var(--color-border);
 }
 
-.bumps-list { border-left: 2px solid var(--color-border); padding-left: 18px; }
+.bumps-list { border-left: 2px solid var(--color-tan); padding-left: 18px; }
 .bump {
 	position: relative;
 	font-family: var(--font-en);
-	color: var(--color-brown);
-	line-height: 1.65;
-	margin-bottom: 16px;
-	font-size: 0.9375rem;
+	color: var(--color-dark);
+	line-height: 1.7;
+	margin-bottom: 18px;
+	font-size: 1.0625rem;
+}
+/* 邏輯路標：標出這一段跟上一段的關係，略讀時靠它推論論證怎麼走 */
+.signpost {
+	font-weight: 700;
+	color: var(--color-term);
+	border-bottom: 2px solid var(--word-line-term);
 }
 .bump::before {
 	content: "";
 	position: absolute;
 	left: -23px;
-	top: 0.6em;
+	top: 0.65em;
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
@@ -725,7 +721,7 @@ h2.para-translation, h3.para-translation, h4.para-translation { font-size: 1rem;
 	font-size: 1.0625rem;
 	margin-top: 24px;
 }
-.bump-conclusion { color: var(--color-dark); font-weight: 500; }
+.bump-conclusion { font-weight: 600; }
 .bump-label {
 	display: inline-block;
 	font-family: var(--font-zh);
