@@ -1,0 +1,399 @@
+{
+	"date": "2026-07-31",
+	"tag": "政策與倫理",
+	"title": "Open letters about AI development",
+	"source_name": "Simon Willison",
+	"url": "https://simonwillison.net/2026/Aug/2/open-letters/",
+	"summary_en": "Over a few weeks, three open letters set out very different views on how open AI models should be. One, backed by Microsoft and hundreds of companies, argues that keeping models closed is not automatically safer. Anthropic replied with its own position a few days later. A third letter, signed by more than a thousand people who build these systems, asks governments to slow the pace down.",
+	"summary_zh": "作者整理了近幾週三封關於 AI 發展的公開信。第一封由微軟主導、235 家公司連署，主張封閉模型不必然更安全，並罕見地公開支持「蒸餾」這種技術。Anthropic 沒有連署，三天後發表自己的立場，強調威權政府與濫用風險，呼籲取締工業規模的蒸餾操作，但也聲明從未主張禁止開放權重模型。第三封《Pacing the Frontier》由 1,324 名前沿 AI 公司員工連署，包括 OpenAI 和 Anthropic 的高層，要求美國政府支持國際合作，刻意放慢自動化 AI 研發的速度。",
+	"conclusion_index": 10,
+	"scan_questions": [
+		{
+			"question": "How many companies signed the Microsoft-shepherded letter, and which major AI lab was missing?",
+			"answer_zh": "235 家公司連署，包括 NVIDIA、Amazon、Y Combinator、Linux 基金會，OpenAI 是後來才加入的。缺席的是 Anthropic。",
+			"paragraph_index": 2
+		},
+		{
+			"question": "What was the surprising position the first letter took?",
+			"answer_zh": "它公開支持「蒸餾」——也就是用一個模型的輸出來訓練或改進另一個模型，並主張政策制定者不該把這種正當的開發技術跟不當挪用混為一談。",
+			"paragraph_index": 5
+		},
+		{
+			"question": "What exactly does the Pacing the Frontier letter ask the U.S. government to do?",
+			"answer_zh": "支持一項國際合作，發展出必要的技術與治理工具，以刻意放慢自動化 AI 研發的前沿推進速度。",
+			"paragraph_index": 9
+		}
+	],
+	"paragraphs": [
+		{
+			"tag": "h4",
+			"text": "Open letters about AI development",
+			"translation": "關於 AI 發展的幾封公開信"
+		},
+		{
+			"tag": "p",
+			"text": "<em>I wrote this summary of the past few weeks of open letters as a section of my sponsors-only newsletter but I've decided to share it here as well.</em>",
+			"translation": "我原本是把近幾週這些公開信的整理寫成我贊助者專屬電子報裡的一個段落，但我決定也在這裡分享出來。"
+		},
+		{
+			"tag": "p",
+			"text": "<strong>Open Weights and American AI Leadership</strong> was shepherded by Microsoft, dated July 24th, and signed by 235 AI-adjacent companies including NVIDIA, Amazon, Y Combinator, The Linux Foundation and (a later signer) OpenAI.",
+			"translation": "《開放權重與美國 AI 領導地位》由微軟主導推動，日期是 7 月 24 日，共有 235 家與 AI 相關的公司連署，包括 NVIDIA、Amazon、Y Combinator、Linux 基金會，以及後來才加入的 OpenAI。"
+		},
+		{
+			"tag": "p",
+			"text": "It's clearly an argument designed to counter any instincts by the current US government to ban or limit open weight models over \"safety\" concerns - a reasonable consideration given what happened to Claude Fable 5!",
+			"translation": "這顯然是一份刻意設計來反制的論述，針對的是現任美國政府可能出於「安全」疑慮而想禁止或限制開放權重模型的直覺反應——考量到 Claude Fable 5 發生過的事，這種疑慮並非沒有道理！"
+		},
+		{
+			"tag": "blockquote",
+			"text": "Relying solely on closed models is not inherently safe: they can be breached, misused, or fail in ways that outsiders cannot detect. And concentrating advanced AI capabilities behind a small number of closed models compounds that risk. It results in a small number of single points of failure, weakens competition, and leaves critical technology in the hands of a few providers. Open weight models, on the other hand, allow a broad community of researchers and developers to examine their behavior, identify vulnerabilities, develop safeguards, and improve them over time.",
+			"translation": "「只依賴封閉模型本質上並不安全：它們可能被入侵、被濫用，或以外界察覺不到的方式失效。而把先進 AI 能力集中在少數幾個封閉模型手上，只會讓這個風險更嚴重。結果就是形成少數幾個單點故障、削弱競爭，並且把關鍵技術留在少數幾家供應商手中。相對地，開放權重模型讓廣大的研究者與開發者社群能夠檢視它們的行為、找出漏洞、發展防護措施，並隨時間逐步改進它們。」"
+		},
+		{
+			"tag": "p",
+			"text": "The one surprising note in the letter is that it comes out in support of distillation, where models train on output from other models:",
+			"translation": "這封信裡唯一令人意外的一點，是它公開表態支持蒸餾——也就是讓模型用其他模型的輸出來訓練："
+		},
+		{
+			"tag": "blockquote",
+			"text": "In shaping this ecosystem, policymakers should be careful not to conflate legitimate model-development techniques with misappropriation. Distillation, or the practice of using one model’s outputs to help train or improve another, is a widely used technique for model improvement, evaluation, and validation. It reflects a long tradition of learning from, building upon, and improving existing technologies, a tradition that has helped drive innovation since the rise of the open-source software movement.",
+			"translation": "「在形塑這個生態系的過程中，政策制定者應當謹慎，不要把正當的模型開發技術與不當挪用混為一談。蒸餾，也就是使用某個模型的輸出來協助訓練或改進另一個模型的做法，是一種被廣泛使用的技術，用於模型改進、評估與驗證。它反映的是一個悠久的傳統——向既有技術學習、在其之上建構並加以改進，而這個傳統自開源軟體運動興起以來，一直在推動創新。」"
+		},
+		{
+			"tag": "p",
+			"text": "Notably absent from the signatures: Anthropic, who published their own response Our position on open-weights models three days later. CEO Dario Amodei doubled down on the risk of authoritarian governments building \"AI models that are more powerful than those built by the US\", and models being \"misused to carry out cyberattacks or biological attacks\", and called for \"a crack down on industrial-scale distillation operations\", while also stating that \"Anthropic has never advocated for a ban on open-weights models\".",
+			"translation": "連署名單中明顯缺席的是 Anthropic，他們在三天後發表了自己的回應《我們對開放權重模型的立場》。執行長 Dario Amodei 加碼強調威權政府打造出「比美國所建更強大的 AI 模型」的風險，以及模型被「濫用來執行網路攻擊或生物攻擊」的風險，並呼籲「取締工業規模的蒸餾操作」，同時也聲明「Anthropic 從未主張禁止開放權重模型」。"
+		},
+		{
+			"tag": "p",
+			"text": "Then on July 28th Pacing the Frontier was published, featuring signatures from \"1,324 employees of frontier AI companies\" - with names like Jakub Pachocki (Chief Scientist, OpenAI), Ilya Sutskever (Safe Superintelligence Inc, previously OpenAI), Dario Amodei (Anthropic), Jack Clark (Anthropic) and more. Their core message:",
+			"translation": "接著在 7 月 28 日，《為前沿定速》發表了，連署名單包含「1,324 名前沿 AI 公司的員工」——當中有 Jakub Pachocki（OpenAI 首席科學家）、Ilya Sutskever（Safe Superintelligence Inc，前 OpenAI）、Dario Amodei（Anthropic）、Jack Clark（Anthropic）等人。他們的核心訴求是："
+		},
+		{
+			"tag": "blockquote",
+			"text": "We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development.",
+			"translation": "「我們要求美國政府支持一項國際性的努力，發展出必要的技術與治理工具，以刻意放慢自動化 AI 研發的前沿推進速度。」"
+		},
+		{
+			"tag": "p",
+			"text": "Their concern is intense competitive pressure combined with accelerated AI progress caused by automated AI research - and given that Anthropic produce 80% of their code with Claude Code, OpenAI had Sol reduce their end-to-end serving costs by 20%, and Kimi K3 designed a chip to serve a nano model built on its own architecture, you can see why people are taking that risk more seriously right now.",
+			"translation": "他們擔心的是激烈的競爭壓力，加上自動化 AI 研究所帶來的加速進展——而考量到 Anthropic 有 80% 的程式碼是用 Claude Code 產出的、OpenAI 讓 Sol 把端到端的服務成本降低了 20%、而 Kimi K3 設計出一款晶片來執行建構在它自己架構上的 nano 模型，你就看得出為什麼現在有人更認真看待這個風險。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "designed",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈzaɪnd/",
+			"definition_zh": "刻意設計的",
+			"example": "It's clearly an argument designed to counter any instincts by the current US government."
+		},
+		{
+			"word": "counter",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈkaʊn.tɚ/",
+			"definition_zh": "反制、駁斥",
+			"example": "an argument designed to counter any instincts by the current US government"
+		},
+		{
+			"word": "concerns",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/kənˈsɝːnz/",
+			"definition_zh": "疑慮、擔憂",
+			"example": "to ban or limit open weight models over \"safety\" concerns"
+		},
+		{
+			"word": "solely",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈsoʊl.li/",
+			"definition_zh": "僅僅、只",
+			"example": "Relying solely on closed models is not inherently safe."
+		},
+		{
+			"word": "support",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/səˈpɔːrt/",
+			"definition_zh": "支持",
+			"example": "it comes out in support of distillation"
+		},
+		{
+			"word": "surprising",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/sɚˈpraɪ.zɪŋ/",
+			"definition_zh": "令人意外的",
+			"example": "The one surprising note in the letter is that it comes out in support of distillation."
+		},
+		{
+			"word": "absent",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈæb.sənt/",
+			"definition_zh": "缺席的",
+			"example": "Notably absent from the signatures: Anthropic."
+		},
+		{
+			"word": "published",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈpʌb.lɪʃt/",
+			"definition_zh": "發表、公布",
+			"example": "Anthropic, who published their own response three days later"
+		},
+		{
+			"word": "powerful",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈpaʊ.ɚ.fəl/",
+			"definition_zh": "強大的",
+			"example": "AI models that are more powerful than those built by the US"
+		},
+		{
+			"word": "request",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/rɪˈkwest/",
+			"definition_zh": "要求、請求",
+			"example": "We request that the U.S. government support an international effort."
+		},
+		{
+			"word": "effort",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈef.ɚt/",
+			"definition_zh": "努力、行動",
+			"example": "support an international effort to develop the technical and governance tools"
+		},
+		{
+			"word": "shepherded",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈʃep.ɚ.dɪd/",
+			"definition_zh": "主導推動、引導促成",
+			"example": "Open Weights and American AI Leadership was shepherded by Microsoft."
+		},
+		{
+			"word": "instincts",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈɪn.stɪŋkts/",
+			"definition_zh": "直覺反應、本能",
+			"example": "an argument designed to counter any instincts by the current US government"
+		},
+		{
+			"word": "breached",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/briːtʃt/",
+			"definition_zh": "被攻破、被入侵",
+			"example": "they can be breached, misused, or fail in ways that outsiders cannot detect"
+		},
+		{
+			"word": "compounds",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/kəmˈpaʊndz/",
+			"definition_zh": "使加劇、使更嚴重",
+			"example": "concentrating advanced AI capabilities behind a small number of closed models compounds that risk"
+		},
+		{
+			"word": "vulnerabilities",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌvʌl.nɚ.əˈbɪl.ə.tiz/",
+			"definition_zh": "漏洞、弱點",
+			"example": "allow a broad community of researchers and developers to identify vulnerabilities"
+		},
+		{
+			"word": "safeguards",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈseɪf.ɡɑːrdz/",
+			"definition_zh": "防護措施",
+			"example": "examine their behavior, identify vulnerabilities, develop safeguards"
+		},
+		{
+			"word": "conflate",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/kənˈfleɪt/",
+			"definition_zh": "混為一談",
+			"example": "policymakers should be careful not to conflate legitimate model-development techniques with misappropriation"
+		},
+		{
+			"word": "misappropriation",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌmɪs.əˌproʊ.priˈeɪ.ʃən/",
+			"definition_zh": "不當挪用、盜用",
+			"example": "not to conflate legitimate model-development techniques with misappropriation"
+		},
+		{
+			"word": "deliberately",
+			"type": "general",
+			"pos": "adv.",
+			"ipa": "/dɪˈlɪb.ɚ.ət.li/",
+			"definition_zh": "刻意地",
+			"example": "the tools needed to deliberately pace the frontier of automated AI development"
+		},
+		{
+			"word": "distillation",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌdɪs.təˈleɪ.ʃən/",
+			"definition_zh": "蒸餾（用模型輸出訓練另一模型）",
+			"example": "it comes out in support of distillation, where models train on output from other models"
+		},
+		{
+			"word": "open weight models",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈoʊ.pən weɪt ˈmɑː.dəlz/",
+			"definition_zh": "開放權重模型",
+			"example": "any instincts by the current US government to ban or limit open weight models"
+		},
+		{
+			"word": "doubled down",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈdʌb.əld daʊn/",
+			"definition_zh": "加碼堅持、更強硬地重申",
+			"example": "CEO Dario Amodei doubled down on the risk of authoritarian governments."
+		},
+		{
+			"word": "crack down",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/kræk daʊn/",
+			"definition_zh": "取締、嚴加打擊",
+			"example": "called for a crack down on industrial-scale distillation operations"
+		},
+		{
+			"word": "single points of failure",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈsɪŋ.ɡəl pɔɪnts əv ˈfeɪl.jɚ/",
+			"definition_zh": "單點故障（壞一個就全垮）",
+			"example": "It results in a small number of single points of failure."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The new packaging was ____ to survive a two-meter drop.",
+			"sentence_zh": "這款新包裝是刻意設計來承受兩公尺墜落的。",
+			"answer": "designed",
+			"options": [
+				"designed",
+				"published",
+				"breached",
+				"shepherded"
+			]
+		},
+		{
+			"sentence": "Judging a book ____ by its cover will mislead you most of the time.",
+			"sentence_zh": "只憑封面判斷一本書，多數時候會誤導你。",
+			"answer": "solely",
+			"options": [
+				"deliberately",
+				"solely",
+				"absent",
+				"surprising"
+			]
+		},
+		{
+			"sentence": "Three of the five members were ____ from the vote.",
+			"sentence_zh": "五名成員中有三位在這次投票中缺席。",
+			"answer": "absent",
+			"options": [
+				"absent",
+				"designed",
+				"powerful",
+				"published"
+			]
+		},
+		{
+			"sentence": "Skipping breakfast only ____ the problem when you already sleep badly.",
+			"sentence_zh": "在你本來就睡不好的情況下，不吃早餐只會讓問題更嚴重。",
+			"answer": "compounds",
+			"options": [
+				"counter",
+				"compounds",
+				"conflate",
+				"request"
+			]
+		},
+		{
+			"sentence": "The security team found two serious ____ in the login system.",
+			"sentence_zh": "資安團隊在登入系統裡找到兩個嚴重的漏洞。",
+			"answer": "vulnerabilities",
+			"options": [
+				"safeguards",
+				"vulnerabilities",
+				"instincts",
+				"concerns"
+			]
+		},
+		{
+			"sentence": "People often ____ being busy with being productive.",
+			"sentence_zh": "人們常常把「忙碌」跟「有生產力」混為一談。",
+			"answer": "conflate",
+			"options": [
+				"conflate",
+				"counter",
+				"compounds",
+				"breached"
+			]
+		},
+		{
+			"sentence": "She walked slowly and ____ , making sure everyone could follow.",
+			"sentence_zh": "她刻意放慢腳步走，確保每個人都跟得上。",
+			"answer": "deliberately",
+			"options": [
+				"solely",
+				"deliberately",
+				"surprising",
+				"absent"
+			]
+		},
+		{
+			"sentence": "The lab added several ____ after the first accident.",
+			"sentence_zh": "第一次意外之後，實驗室加了好幾道防護措施。",
+			"answer": "safeguards",
+			"options": [
+				"vulnerabilities",
+				"instincts",
+				"safeguards",
+				"concerns"
+			]
+		},
+		{
+			"sentence": "Instead of apologizing, he ____ and repeated the claim louder.",
+			"sentence_zh": "他非但沒有道歉，反而加碼堅持，把那個說法講得更大聲。",
+			"answer": "doubled down",
+			"options": [
+				"doubled down",
+				"crack down",
+				"single points of failure",
+				"distillation"
+			]
+		},
+		{
+			"sentence": "Having one key for the whole building creates ____ .",
+			"sentence_zh": "整棟樓只用一把鑰匙，會造成單點故障的風險。",
+			"answer": "single points of failure",
+			"options": [
+				"crack down",
+				"doubled down",
+				"single points of failure",
+				"misappropriation"
+			]
+		}
+	]
+}

@@ -19,12 +19,6 @@
 	<link rel="stylesheet" href="../style.css?v=12">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
 	<script src="../assets/settings.js" defer></script>
-	<script>
-		window.MathJax = {
-			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
-		};
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
 <body data-stage="bumps">
 
@@ -463,6 +457,19 @@
 	<div class="quiz-result" id="quiz-result"></div>
 </div>
 
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-08-01.html">
+				<span class="related-source">Rest of World</span>
+				<span class="related-title">With Moonshot&#x27;s free Kimi K3, China changes the sovereign AI equation</span>
+			</a>
+			<a class="related-card" href="2026-07-31.html">
+				<span class="related-source">Simon Willison</span>
+				<span class="related-title">Open letters about AI development</span>
+			</a>
+	</div>
+</div>
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
 	<div class="popup-card" id="popup-card">
@@ -628,7 +635,7 @@
 	goStage("bumps");
 
 	// quiz
-	const quizData = [{"sentence": "The old bridge was closed because it was no longer ____ in bad weather.", "sentence_zh": "這座舊橋因為在惡劣天氣下不再可靠而封閉了。", "answer": "reliable", "options": ["reliable", "sporadic", "efficient", "inoperable"]}, {"sentence": "Adding three more people to the meeting only ended up ____ the decision.", "sentence_zh": "會議多加三個人進來，結果只是讓這個決定變得更複雜。", "answer": "complicating", "options": ["restoring", "complicating", "delineating", "arresting"]}, {"sentence": "She ____ home after hearing that her flight had been moved up two hours.", "sentence_zh": "她聽說班機提前兩小時之後就趕忙回家了。", "answer": "hurried", "options": ["hurried", "discovered", "succumbing", "approximately"]}, {"sentence": "The paint fades ____ , so you won't notice the change for months.", "sentence_zh": "油漆是逐漸褪色的，所以好幾個月你都不會注意到變化。", "answer": "gradually", "options": ["approximately", "gradually", "sufficient", "sporadic"]}, {"sentence": "Fixing the leak is our top ____ before we think about repainting.", "sentence_zh": "在考慮重新粉刷之前，修好漏水是我們的第一優先事項。", "answer": "priority", "options": ["assessment", "pursuit", "priority", "impulse"]}, {"sentence": "Two hours of sleep is not ____ if you are driving a long distance.", "sentence_zh": "如果你要開長途，睡兩個小時是不夠的。", "answer": "sufficient", "options": ["efficient", "sufficient", "reliable", "inoperable"]}, {"sentence": "The internet here is ____ , so video calls keep dropping.", "sentence_zh": "這裡的網路斷斷續續的，所以視訊通話一直斷線。", "answer": "sporadic", "options": ["sporadic", "gradually", "sufficient", "delineate"]}, {"sentence": "It is hard to ____ where his job ends and mine begins.", "sentence_zh": "很難區分清楚他的工作到哪裡結束、我的工作從哪裡開始。", "answer": "delineate", "options": ["arrest", "delineate", "restoring", "succumbing"]}, {"sentence": "After the interview went well, a second round is very much ____ .", "sentence_zh": "面試進行得很順利之後，第二輪面試是很有可能發生的。", "answer": "in the cards", "options": ["in the cards", "side by side", "spun out of control", "pursuit"]}, {"sentence": "The two teams worked ____ for six months to finish the project.", "sentence_zh": "這兩個團隊並肩合作了六個月才完成這個專案。", "answer": "side by side", "options": ["spun out of control", "in the cards", "side by side", "impulse"]}];
+	const quizData = [{"sentence": "The old bridge was closed because it was no longer ____ in bad weather.", "sentence_zh": "這座舊橋因為在惡劣天氣下不再可靠而封閉了。", "answer": "reliable", "options": ["reliable", "sporadic", "efficient", "inoperable"]}, {"sentence": "Adding three more people to the meeting only ended up ____ the decision.", "sentence_zh": "會議多加三個人進來，結果只是讓這個決定變得更複雜。", "answer": "complicating", "options": ["restoring", "complicating", "succumbing", "arrest"]}, {"sentence": "She ____ home after hearing that her flight had been moved up two hours.", "sentence_zh": "她聽說班機提前兩小時之後就趕忙回家了。", "answer": "hurried", "options": ["hurried", "discovered", "succumbing", "approximately"]}, {"sentence": "The paint fades ____ , so you won't notice the change for months.", "sentence_zh": "油漆是逐漸褪色的，所以好幾個月你都不會注意到變化。", "answer": "gradually", "options": ["approximately", "gradually", "sufficient", "sporadic"]}, {"sentence": "Fixing the leak is our top ____ before we think about repainting.", "sentence_zh": "在考慮重新粉刷之前，修好漏水是我們的第一優先事項。", "answer": "priority", "options": ["assessment", "pursuit", "priority", "impulse"]}, {"sentence": "Two hours of sleep is not ____ if you are driving a long distance.", "sentence_zh": "如果你要開長途，睡兩個小時是不夠的。", "answer": "sufficient", "options": ["efficient", "sufficient", "reliable", "inoperable"]}, {"sentence": "The internet here is ____ , so video calls keep dropping.", "sentence_zh": "這裡的網路斷斷續續的，所以視訊通話一直斷線。", "answer": "sporadic", "options": ["sporadic", "gradually", "sufficient", "delineate"]}, {"sentence": "It is hard to ____ where his job ends and mine begins.", "sentence_zh": "很難區分清楚他的工作到哪裡結束、我的工作從哪裡開始。", "answer": "delineate", "options": ["arrest", "delineate", "restoring", "succumbing"]}, {"sentence": "After the interview went well, a second round is very much ____ .", "sentence_zh": "面試進行得很順利之後，第二輪面試是很有可能發生的。", "answer": "in the cards", "options": ["in the cards", "side by side", "spun out of control", "pursuit"]}, {"sentence": "The two teams worked ____ for six months to finish the project.", "sentence_zh": "這兩個團隊並肩合作了六個月才完成這個專案。", "answer": "side by side", "options": ["spun out of control", "in the cards", "side by side", "impulse"]}];
 	let quizIndex = 0;
 	let quizScore = 0;
 	let quizAnswered = false;

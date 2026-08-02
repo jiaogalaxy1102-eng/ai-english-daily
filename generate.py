@@ -133,6 +133,17 @@ def extract_content(soup, base_url):
 	for tag in soup.select('[data-native-ad-id], [class*="native-ad"], [class*="sponsor"], [class*="advertisement"]'):
 		tag.decompose()
 
+	# 行內浮層與 UI 裝飾。這些藏在段落「中間」，不是頭尾雜訊，trim_chrome 抓
+	# 不到 —— 它們會被壓平成文字混進句子裡。實例：Rest of World 的名詞解釋
+	# widget 把「The Alibaba-backed developer」變成「The Alibabai Alibaba,
+	# founded in 1999 by ... Tmall.READ MORE-backed developer」。
+	for tag in soup.select(
+		'[class*="explainer"] [class*="description"], [class*="tooltip"], [class*="popover"], '
+		'[class*="info-icon"], [class*="read-more"], '
+		'.screen-reader-text, .sr-only, .visually-hidden'
+	):
+		tag.decompose()
+
 	content = (
 		soup.find("article")
 		or soup.find("main")
@@ -489,6 +500,49 @@ def clamp_index(value, hi, default):
 	return i if 0 <= i <= hi else default
 
 
+def validate_quiz(quiz, vocab):
+	"""確保每題的答案與 4 個選項都真的存在於這篇的 vocab 裡。
+
+	prompt 已經要求過這件事，但 Gemini 每天跑、沒有人會看產出。實際踩過的
+	情況是選項給了 vocab 裡沒有的詞形（vocab 收 arrest，選項寫 arresting），
+	前端要靠 vocab 查該選項的中文意思，查不到那一行就空掉 —— 不會壞掉，只
+	會默默變難看，所以這裡自動修掉而不是讓整個流程失敗。
+	"""
+	by_word = {v["word"] for v in vocab}
+	pool = [v["word"] for v in vocab]
+	cleaned = []
+
+	for i, q in enumerate(quiz):
+		answer = q.get("answer", "")
+		if answer not in by_word:
+			print(f"  測驗第 {i + 1} 題的答案 '{answer}' 不在 vocab 裡，捨棄這題")
+			continue
+
+		raw = q.get("options", [])
+		options = [o for o in raw if o in by_word]
+		dropped = len(raw) - len(options)
+		# 去重但保留順序
+		options = list(dict.fromkeys(options))
+		if answer not in options:
+			options.insert(0, answer)
+
+		if len(options) < 4:
+			fillers = [w for w in pool if w not in options]
+			random.shuffle(fillers)
+			missing = 4 - len(options)
+			options += fillers[:missing]
+			why = f"{dropped} 個選項不在 vocab" if dropped else "選項重複或不足"
+			print(f"  測驗第 {i + 1} 題{why}，補了 {missing} 個")
+
+		options = options[:4]
+		if answer not in options:  # 截斷後答案被切掉的極端情況
+			options[-1] = answer
+		random.shuffle(options)
+		cleaned.append({**q, "options": options})
+
+	return cleaned
+
+
 def build_article_data(source_name, title, url, date_str, tag, paragraphs, images, gemini_data):
 	translations = {p["index"]: p["translation"] for p in gemini_data["paragraphs"]}
 	last = len(paragraphs) - 1
@@ -517,7 +571,7 @@ def build_article_data(source_name, title, url, date_str, tag, paragraphs, image
 		],
 		"images": images,
 		"vocab": gemini_data["vocab"],
-		"quiz": gemini_data.get("quiz", []),
+		"quiz": validate_quiz(gemini_data.get("quiz", []), gemini_data["vocab"]),
 	}
 
 

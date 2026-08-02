@@ -465,12 +465,6 @@ def render_article(data, all_entries=None):
 	<link rel="stylesheet" href="../style.css?v={CSS_VERSION}">
 	<link rel="stylesheet" href="{WENKAI_FONT_CSS}">
 	<script src="../assets/settings.js" defer></script>
-	<script>
-		window.MathJax = {{
-			tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }}
-		}};
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
 <body data-stage="bumps">
 
