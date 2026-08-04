@@ -1,0 +1,411 @@
+{
+	"date": "2026-08-04",
+	"tag": "政策與倫理",
+	"title": "After noise complaints, judge orders Waymo to stop overnight charging in Santa Monica",
+	"source_name": "Ars Technica",
+	"url": "https://arstechnica.com/tech-policy/2026/08/after-noise-complaints-judge-orders-waymo-to-stop-overnight-charging-in-santa-monica/",
+	"summary_en": "A judge in Santa Monica has ordered the self-driving car company Waymo to stop charging its vehicles at night. This decision comes after many neighbors complained about the loud noise and bright lights coming from the charging stations. We will look at how this ruling affects the local community and what Waymo's next steps are in this legal battle.",
+	"summary_zh": "聖塔莫尼卡的一名法官裁定，Waymo 必須停止在夜間進行車輛充電，因為居民抱怨充電站造成的噪音與光害。這項禁令源於一場長期的公眾妨害訴訟，當地居民對此結果表示歡迎。Waymo 目前已提出上訴，法律訴訟仍持續進行中。",
+	"conclusion_index": 13,
+	"scan_questions": [
+		{
+			"question": "Between what specific hours is Waymo forbidden from operating its charging lots?",
+			"answer_zh": "晚上 11 點至凌晨 6 點之間",
+			"paragraph_index": 4
+		},
+		{
+			"question": "When did Waymo first start using these charging facilities in Santa Monica?",
+			"answer_zh": "2025 年 1 月",
+			"paragraph_index": 12
+		},
+		{
+			"question": "When is the next court hearing for this case scheduled to take place?",
+			"answer_zh": "2026 年 10 月",
+			"paragraph_index": 13
+		}
+	],
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "A local judge has ruled that Waymo can no longer use its side-by-side charging facilities overnight in Santa Monica, California, as these may pose a “public nuisance.”",
+			"translation": "一位當地法官裁定，Waymo 不得再於加州聖塔莫尼卡隔夜使用其並排充電設施，因為這些設施可能構成「公眾妨害」。"
+		},
+		{
+			"tag": "p",
+			"text": "Los Angeles Superior Court Judge Bradley S. Phillips granted this week the City of Santa Monica’s motion for a preliminary injunction in the city’s ongoing public nuisance lawsuit against the autonomous vehicle giant.",
+			"translation": "洛杉磯高等法院法官 Bradley S. Phillips 本週批准了聖塔莫尼卡市的初步禁制令動議，該動議源於該市針對這家自動駕駛巨頭持續進行的公眾妨害訴訟。"
+		},
+		{
+			"tag": "p",
+			"text": "City officials and neighbors assert that the constant stream of vehicles at the charging stations create light and sound pollution and cause undue traffic congestion on the streets and nearby alleys, creating a collective bother and disruption.",
+			"translation": "市府官員和鄰居斷言，充電站源源不絕的車流造成了光害與噪音污染，並在街道和附近巷弄導致不必要的交通擁塞，造成集體的困擾與干擾。"
+		},
+		{
+			"tag": "p",
+			"text": "“The constant ‘beep beep beep’ sound as the autonomous vehicles back out of their spaces (in their own lots) is an incessant disturbance that hinders both our tranquillity during the day and our peace during the night,” wrote Christopher Potter, a man who says he lives right next to the lots.",
+			"translation": "自稱住在充電場旁邊的 Christopher Potter 寫道：「當自動駕駛車輛從（自家停車場的）車位倒車時，持續不斷的『嗶嗶嗶』聲是一種不間斷的干擾，阻礙了我們白天的寧靜與夜晚的和平。」"
+		},
+		{
+			"tag": "p",
+			"text": "Under the new order, Waymo is forbidden from operating the charging lots on Broadway at 12th and Euclid Streets between 11 pm and 6 am. The Broadway charging stations sit directly across the street from a private school. Apartment buildings and other residences are also nearby, and some residents have complained consistently for over a year.",
+			"translation": "根據新命令，Waymo 被禁止在晚上 11 點至凌晨 6 點之間，於 Broadway 街交 12 街與 Euclid 街處營運充電場。Broadway 充電站正對著一所私立學校。公寓大樓和其他住宅也在附近，部分居民已持續投訴超過一年。"
+		},
+		{
+			"tag": "p",
+			"text": "With the order in place, neighbors already notice a difference.",
+			"translation": "隨著命令生效，鄰居們已經察覺到了差異。"
+		},
+		{
+			"tag": "p",
+			"text": "“I took a walk around last night, and gosh, it’s amazing,” Dylan Moore told Ars. Moore lives down the block from these Waymo lots and previously created the WaymoProblems.org website. “You can hear the crickets, you can hear your thoughts, it’s not a fleet of locusts descending on the neighborhood, it’s incredible.”",
+			"translation": "Dylan Moore 告訴 Ars：「我昨晚繞了一圈，天啊，太神奇了。」Moore 住在這些 Waymo 充電場的同個街區，先前還創建了 WaymoProblems.org 網站。「你可以聽到蟋蟀聲，可以聽到自己的思緒，這不再是一群降臨在社區的蝗蟲，這太不可思議了。」"
+		},
+		{
+			"tag": "p",
+			"text": "Another neighbor, who wished to remain anonymous for fear of reprisal and described himself as a “night owl,” said that he is thrilled that Waymo has abided by the court order.",
+			"translation": "另一位因擔心報復而希望匿名並自稱為「夜貓子」的鄰居表示，他對 Waymo 遵守法院命令感到非常興奮。"
+		},
+		{
+			"tag": "p",
+			"text": "“At 2 am when the bars let out, that’s when [they had been] full bore,” he said. “My apartment faces Broadway. The sound of the Waymos, yes, but the acceleration and deceleration sound that EVs have, makes it sounds like you have Tron outside your window. It [was] one after another!”",
+			"translation": "他說：「凌晨 2 點酒吧散場時，正是（他們過去）全力運作的時候。我的公寓面向 Broadway。除了 Waymo 的聲音，電動車加減速的聲音聽起來就像 Tron（創：光速戰記）就在你窗外。一個接一個！」"
+		},
+		{
+			"tag": "p",
+			"text": "Santa Monica leadership also trumpeted the success.",
+			"translation": "聖塔莫尼卡領導層也宣揚了這項成功。"
+		},
+		{
+			"tag": "p",
+			"text": "“Our residents’ ability to sleep peacefully in their own homes is not negotiable,” Mayor Caroline Torosis said in a statement. “This ruling affirms what our neighbors have been telling us for more than a year, and it delivers relief while the case moves forward.”",
+			"translation": "市長 Caroline Torosis 在一份聲明中表示：「我們的居民在自己家中安睡的能力是不容談判的。這項裁決肯定了我們的鄰居一年多來一直告訴我們的事情，並在案件推進期間提供了救濟。」"
+		},
+		{
+			"tag": "p",
+			"text": "Waymo has appealed the ruling. It did not immediately respond to questions from Ars Technica.",
+			"translation": "Waymo 已對該裁決提出上訴。它沒有立即回應來自 Ars Technica 的提問。"
+		},
+		{
+			"tag": "p",
+			"text": "Waymo began using these charging facilities in January 2025. After numerous complaints and an online petition, the City of Santa Monica ordered the company to halt overnight operations. It eventually sued Waymo over the issue in November 2025 in a case that is still ongoing. (Waymo has also counter-sued.)",
+			"translation": "Waymo 於 2025 年 1 月開始使用這些充電設施。在眾多投訴和一份網路連署書後，聖塔莫尼卡市命令該公司停止隔夜營運。該市最終於 2025 年 11 月就此問題控告 Waymo，案件目前仍在審理中。（Waymo 也提出了反訴。）"
+		},
+		{
+			"tag": "p",
+			"text": "The next court hearing in the case is scheduled for October 2026.",
+			"translation": "該案的下一次法庭聽證會定於 2026 年 10 月舉行。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>Updated on August 1 to note that Waymo has appealed this ruling.</em>",
+			"translation": "於 8 月 1 日更新，註明 Waymo 已對此裁決提出上訴。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "rule",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ruːl/",
+			"definition_zh": "裁定；判定",
+			"example": "A local judge has ruled that Waymo can no longer use its side-by-side charging facilities overnight."
+		},
+		{
+			"word": "facility",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/fəˈsɪl.ə.ti/",
+			"definition_zh": "設施；場所",
+			"example": "Waymo can no longer use its side-by-side charging facilities overnight in Santa Monica."
+		},
+		{
+			"word": "nuisance",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈnjuː.səns/",
+			"definition_zh": "妨害；討厭的人事物",
+			"example": "as these may pose a “public nuisance.”"
+		},
+		{
+			"word": "injunction",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈdʒʌŋk.ʃən/",
+			"definition_zh": "禁制令；指令",
+			"example": "granted this week the City of Santa Monica’s motion for a preliminary injunction."
+		},
+		{
+			"word": "motion",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈməʊ.ʃən/",
+			"definition_zh": "動議；請求",
+			"example": "granted this week the City of Santa Monica’s motion for a preliminary injunction."
+		},
+		{
+			"word": "constant",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈkɒn.stənt/",
+			"definition_zh": "持續不斷的",
+			"example": "City officials and neighbors assert that the constant stream of vehicles at the charging stations create light and sound pollution."
+		},
+		{
+			"word": "congestion",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/kənˈdʒes.tʃən/",
+			"definition_zh": "擁塞；堵塞",
+			"example": "and cause undue traffic congestion on the streets and nearby alleys."
+		},
+		{
+			"word": "disruption",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/dɪsˈrʌp.ʃən/",
+			"definition_zh": "干擾；中斷",
+			"example": "creating a collective bother and disruption."
+		},
+		{
+			"word": "tranquility",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/træŋˈkwɪl.ə.ti/",
+			"definition_zh": "寧靜；平靜",
+			"example": "an incessant disturbance that hinders both our tranquillity during the day."
+		},
+		{
+			"word": "incessant",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/ɪnˈses.ənt/",
+			"definition_zh": "不停的；連續的",
+			"example": "The constant ‘beep beep beep’ sound... is an incessant disturbance."
+		},
+		{
+			"word": "forbidden",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/fəˈbɪd.ən/",
+			"definition_zh": "禁止的",
+			"example": "Waymo is forbidden from operating the charging lots on Broadway."
+		},
+		{
+			"word": "operate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈɒp.ər.eɪt/",
+			"definition_zh": "營運；操作",
+			"example": "Waymo is forbidden from operating the charging lots on Broadway."
+		},
+		{
+			"word": "anonymous",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/əˈnɒn.ɪ.məs/",
+			"definition_zh": "匿名的",
+			"example": "Another neighbor, who wished to remain anonymous for fear of reprisal."
+		},
+		{
+			"word": "reprisal",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/rɪˈpraɪ.zəl/",
+			"definition_zh": "報復",
+			"example": "Another neighbor, who wished to remain anonymous for fear of reprisal."
+		},
+		{
+			"word": "relief",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/rɪˈliːf/",
+			"definition_zh": "緩解；救濟",
+			"example": "it delivers relief while the case moves forward."
+		},
+		{
+			"word": "appeal",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/əˈpiːl/",
+			"definition_zh": "上訴；呼籲",
+			"example": "Waymo has appealed the ruling."
+		},
+		{
+			"word": "ongoing",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈɒnˌɡəʊ.ɪŋ/",
+			"definition_zh": "持續進行中的",
+			"example": "in a case that is still ongoing."
+		},
+		{
+			"word": "autonomous",
+			"type": "term",
+			"pos": "adj.",
+			"ipa": "/ɔːˈtɒn.ə.məs/",
+			"definition_zh": "自動駕駛的；自治的",
+			"example": "lawsuit against the autonomous vehicle giant."
+		},
+		{
+			"word": "fleet",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/fliːt/",
+			"definition_zh": "車隊；機群",
+			"example": "it’s not a fleet of locusts descending on the neighborhood."
+		},
+		{
+			"word": "resident",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈrez.ɪ.dənt/",
+			"definition_zh": "居民",
+			"example": "some residents have complained consistently for over a year."
+		},
+		{
+			"word": "side-by-side",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈsaɪdbaɪˈsaɪd/",
+			"definition_zh": "並排的",
+			"example": "Waymo can no longer use its side-by-side charging facilities overnight."
+		},
+		{
+			"word": "full bore",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/fʊl bɔːr/",
+			"definition_zh": "全力以赴地；最高速地",
+			"example": "At 2 am when the bars let out, that’s when [they had been] full bore."
+		},
+		{
+			"word": "abided by",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/əˈbaɪdɪd baɪ/",
+			"definition_zh": "遵守；依從",
+			"example": "he is thrilled that Waymo has abided by the court order."
+		},
+		{
+			"word": "take a walk",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/teɪk ə wɔːk/",
+			"definition_zh": "散步",
+			"example": "I took a walk around last night, and gosh, it’s amazing."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The school strict policies have ____ students from using smartphones during classes.",
+			"sentence_zh": "學校嚴格的政策已禁止學生在課堂上使用智慧型手機。",
+			"answer": "forbidden",
+			"options": [
+				"ongoing",
+				"resident",
+				"relief",
+				"forbidden"
+			]
+		},
+		{
+			"sentence": "The city is building a new sports ____ to host the upcoming international games.",
+			"sentence_zh": "這座城市正在建設一座新的體育設施，以舉辦即將到來的國際賽事。",
+			"answer": "facility",
+			"options": [
+				"motion",
+				"reprisal",
+				"facility",
+				"nuisance"
+			]
+		},
+		{
+			"sentence": "After the long trial, the lawyer decided to ____ the judge's decision to a higher court.",
+			"sentence_zh": "在漫長的審判後，律師決定向更高一級的法院對法官的裁決提出上訴。",
+			"answer": "appeal",
+			"options": [
+				"operate",
+				"autonomous",
+				"appeal",
+				"rule"
+			]
+		},
+		{
+			"sentence": "The heavy rain caused severe traffic ____ in the downtown area this morning.",
+			"sentence_zh": "今天早上的豪雨導致市中心地區嚴重的交通擁塞。",
+			"answer": "congestion",
+			"options": [
+				"tranquility",
+				"fleet",
+				"congestion",
+				"disruption"
+			]
+		},
+		{
+			"sentence": "The neighbor filed a complaint because the loud music was a public ____.",
+			"sentence_zh": "鄰居提出了投訴，因為大聲的音樂構成了一種公眾妨害。",
+			"answer": "nuisance",
+			"options": [
+				"anonymous",
+				"constant",
+				"nuisance",
+				"injunction"
+			]
+		},
+		{
+			"sentence": "The logistics company manages a large ____ of delivery trucks across the country.",
+			"sentence_zh": "這家物流公司管理著遍布全國的大型貨車車隊。",
+			"answer": "fleet",
+			"options": [
+				"fleet",
+				"motion",
+				"resident",
+				"facility"
+			]
+		},
+		{
+			"sentence": "If you don't follow the safety protocols, you are not allowed to ____ this heavy machinery.",
+			"sentence_zh": "如果你不遵循安全協議，你就不被允許操作這台重型機械。",
+			"answer": "operate",
+			"options": [
+				"incessant",
+				"appeal",
+				"operate",
+				"rule"
+			]
+		},
+		{
+			"sentence": "The local ____ are happy about the new park because it provides a place for exercise.",
+			"sentence_zh": "當地居民對新公園感到很高興，因為它提供了一個運動的地方。",
+			"answer": "resident",
+			"options": [
+				"injunction",
+				"tranquility",
+				"relief",
+				"resident"
+			]
+		},
+		{
+			"sentence": "During the exam, students are required to maintain absolute ____ and silence.",
+			"sentence_zh": "考試期間，學生被要求保持絕對的寧靜與沈默。",
+			"answer": "tranquility",
+			"options": [
+				"congestion",
+				"disruption",
+				"reprisal",
+				"tranquility"
+			]
+		},
+		{
+			"sentence": "The construction crew worked ____ to finish the bridge before the deadline.",
+			"sentence_zh": "施工團隊全力以赴地工作，以便在截止日期前完成大橋。",
+			"answer": "full bore",
+			"options": [
+				"abided by",
+				"side-by-side",
+				"full bore",
+				"take a walk"
+			]
+		}
+	]
+}
