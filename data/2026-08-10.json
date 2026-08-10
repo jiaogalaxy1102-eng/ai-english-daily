@@ -1,0 +1,436 @@
+{
+	"date": "2026-08-10",
+	"tag": "資安與隱私",
+	"title": "Explosive drone found hovering near Ukrainian cargo aircraft at German airport",
+	"source_name": "Ars Technica",
+	"url": "https://arstechnica.com/gadgets/2026/08/germany-disarms-explosive-drone-found-at-airport-hunts-possible-second-drone/",
+	"summary_en": "German police recently found a drone carrying explosives near Ukrainian cargo planes at an airport. They had to close the airport for several hours to investigate the threat. Authorities are now looking for a second drone that may have hit another airplane in the air.",
+	"summary_zh": "德國警方在萊比錫機場發現一架攜帶炸藥的無人機，該機當時停留在烏克蘭貨機附近，幸好因引爆器故障未釀成災難。此次事件導致機場一度關閉，並引發了針對俄羅斯可能發動「混合威脅」攻擊的反恐調查。目前歐洲各國正面臨日益增加的無人機入侵風險，但整體的防禦體系仍未完善。",
+	"conclusion_index": 16,
+	"scan_questions": [
+		{
+			"question": "What type of substance was the drone's explosive package believed to be?",
+			"answer_zh": "這種物質被認為是塑膠炸藥 Semtex。",
+			"paragraph_index": 2
+		},
+		{
+			"question": "How did the bus driver stop the flying drone?",
+			"answer_zh": "這名巴士司機設法踢了飛行中的無人機，導致其墜毀。",
+			"paragraph_index": 3
+		},
+		{
+			"question": "How many flights were forced to divert due to the airport closure?",
+			"answer_zh": "共有 19 架航班被迫轉降其他機場。",
+			"paragraph_index": 6
+		}
+	],
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "German police disarmed a drone carrying explosives after it was discovered near Ukrainian cargo aircraft parked at Leipzig airport—and authorities are looking into the possibility of a second drone after an approaching aircraft collided with something midair.",
+			"translation": "德國警方在萊比錫機場停放的烏克蘭貨機附近發現一架攜帶炸藥的無人機後將其拆除，且當局在一架接近的飛機於空中與某物碰撞後，正在調查出現第二架無人機的可能性。"
+		},
+		{
+			"tag": "p",
+			"text": "The drone, first spotted by an airport employee, was hovering close to the ground between two parked An-124 cargo aircraft owned by Ukraine’s Antonov Airlines shortly before midnight on August 4, according to The Guardian. It had apparently been modified to help avoid detection by the airport’s drone defense sensors, said Alexander Dobrindt, federal minister of the interior for Germany, during a press conference.",
+			"translation": "根據《衛報》報導，這架無人機最早由一名機場員工發現，於 8 月 4 日午夜前不久，在烏克蘭安東諾夫航空（Antonov Airlines）擁有的兩架停放的 An-124 貨機之間低空盤旋。德國聯邦內政部長亞歷山大·多布林特（Alexander Dobrindt）在新聞發布會上表示，這架無人機顯然經過改裝，以避開機場無人機防禦感測器的偵測。"
+		},
+		{
+			"tag": "p",
+			"text": "Dobrindt described the drone as carrying a fist-sized package of a substance believed to be the plastic explosive Semtex. Only a failed detonator prevented the drone from exploding near the Ukrainian cargo aircraft, he said.",
+			"translation": "多布林特描述該無人機攜帶一個拳頭大小的包裹，內容物被認為是塑膠炸藥 Semtex。他說，僅因引爆器失效，才阻止了無人機在烏克蘭貨機附近爆炸。"
+		},
+		{
+			"tag": "p",
+			"text": "A bus driver managed to kick the flying drone and caused it to crash, according to Detlef Seif, a lawmaker and member of the German parliament’s interior committee. In an interview with Reuters, Seif described the driver’s actions as “very daring and courageous, but also very dangerous,” while acknowledging that “it is possible that his intervention prevented the intended attack.”",
+			"translation": "根據德國國會內政委員會成員、國會議員德特勒夫·塞夫（Detlef Seif）的說法，一名巴士司機設法踢了飛行中的無人機並導致其墜毀。塞夫在接受路透社採訪時，形容該司機的行為「非常大膽且勇敢，但也非常危險」，同時承認「他的干預有可能阻止了預謀的攻擊」。"
+		},
+		{
+			"tag": "p",
+			"text": "German police used a bomb disposal robot to help disarm the drone and later carried out a controlled explosion, according to BBC News.",
+			"translation": "根據英國廣播公司（BBC）報導，德國警方使用拆彈機器人協助拆除無人機，隨後進行了受控引爆。"
+		},
+		{
+			"tag": "p",
+			"text": "Contrary to some media reports, the German Interior Ministry has denied that the apparently targeted Ukrainian cargo aircraft were carrying weapons or other munitions for delivery to Ukraine, according to Deutsche Welle. Instead, government officials described the aircraft as having been empty at the time of the drone incident.",
+			"translation": "根據德國之聲報導，德國內政部否認了部分媒體的說法，否認這些顯然成為目標的烏克蘭貨機當時正載運要交付給烏克蘭的武器或其他軍火。相反地，政府官員形容這些飛機在無人機事件發生時是空的。"
+		},
+		{
+			"tag": "p",
+			"text": "The incident forced Leipzig/Halle airport—one of Europe’s largest air cargo hubs—to close to all air traffic for several hours. That forced 19 flights to divert away from the airport, including a Boeing 757 operated by the shipping company DHL that was forced to abort its landing approach, according to the flight tracking service Flightradar24.",
+			"translation": "此次事件迫使歐洲最大的航空貨運樞紐之一——萊比錫/哈雷機場關閉所有空中交通數小時。根據航班追蹤服務機構 Flightradar24 的數據，這導致 19 架航班被迫轉降，其中包括一架由 DHL 貨運公司營運、被迫放棄降落進場的波音 757 飛機。"
+		},
+		{
+			"tag": "p",
+			"text": "As the DHL-operated aircraft started climbing again, it collided with another flying object midair and diverted to land at Hanover airport with minor damage, German police reported in a statement. German authorities are looking into the possibility that the object was a second drone.",
+			"translation": "德國警方在一份聲明中報告，當這架由 DHL 營運的飛機重新開始爬升時，在空中與另一個飛行物體相撞，隨後帶著輕微損壞轉降漢諾威機場。德國當局正在調查該物體是第二架無人機的可能性。"
+		},
+		{
+			"tag": "h2",
+			"text": "The possible culprit and motive",
+			"translation": "可能的罪魁禍首與動機"
+		},
+		{
+			"tag": "p",
+			"text": "German officials have not officially named a suspect behind the attempted attack but have opened a counterterrorism investigation. Dobrindt acknowledged that “we are dealing with a contest here that possibly involves foreign powers,” and described the incident as a “hybrid threat scenario.”",
+			"translation": "德國官員尚未正式點名這起企圖攻擊案背後的嫌疑人，但已展開反恐調查。多布林特承認「我們正處於一場可能涉及外國勢力的競賽中」，並將此事件描述為「混合威脅情境」。"
+		},
+		{
+			"tag": "p",
+			"text": "The incident has already spurred Roderich Kiesewetter, a lawmaker and member of the German parliament’s intelligence committee, to more directly describe Russia as being responsible for the “attempted act of terrorism.”",
+			"translation": "此事件已促使德國國會情報委員會成員、國會議員羅德里希·基塞維特（Roderich Kiesewetter）更直接地將俄羅斯描述為這起「恐怖主義企圖」的負責方。"
+		},
+		{
+			"tag": "p",
+			"text": "As a major hub for air cargo, Leipzig/Halle airport frequently oversees the transit of shipments for NATO and the German military. It is also the current home base for Ukraine’s Antonov Airlines, which operates a charter cargo service fleet that includes the world’s largest operational cargo aircraft, the Antonov An-124 Ruslan.",
+			"translation": "作為主要的航空貨運樞紐，萊比錫/哈雷機場經常監管北約（NATO）和德國軍隊物資的過境運輸。它也是烏克蘭安東諾夫航空目前的基地，該公司營運著一支包機貨運機隊，其中包括世界上體積最大的現役貨機安東諾夫 An-124 魯斯蘭（Ruslan）。"
+		},
+		{
+			"tag": "p",
+			"text": "The incident also evoked a potentially telling reaction from Alexander Sosnowski, a pro-Kremlin propagandist who regularly appears as a guest on Russian state television. In a short video posted on Telegram, Sosnowski clearly assumed the attempted attack was a Russian operation targeting the Ukrainian aircraft and expressed disappointment that it had failed, according to The Bild, a German tabloid newspaper.",
+			"translation": "根據德國小報《圖片報》（The Bild）報導，此事件還引發了親克里姆林宮的宣傳員亞歷山大·索斯諾夫斯基（Alexander Sosnowski）耐人尋味的反應，他經常以嘉賓身份出現在俄羅斯國家電視台。在 Telegram 上發布的一段短片中，索斯諾夫斯基顯然認為這次企圖攻擊是針對烏克蘭飛機的俄羅斯行動，並對其失敗表示失望。"
+		},
+		{
+			"tag": "h2",
+			"text": "Repeated drone incursions and missing defenses",
+			"translation": "重複的無人機入侵與缺失的防禦"
+		},
+		{
+			"tag": "p",
+			"text": "These latest incidents follow dozens of drone sightings over other European airports, along with military bases, ports, and energy and industrial facilities, since 2024. In May, Munich airport in Germany closed twice within 24 hours following possible drone sightings.",
+			"translation": "這些最新的事件發生在自 2024 年以來，數十起無人機出現在其他歐洲機場、軍事基地、港口以及能源和工業設施之後。今年 5 月，德國慕尼黑機場在發現疑似無人機後，曾在 24 小時內兩度關閉。"
+		},
+		{
+			"tag": "p",
+			"text": "Drone incursions have become especially more frequent in Northern and Eastern Europe, given their closer proximity to Russia and the ongoing war in Ukraine. Those incursions have forced fighter jets to scramble repeatedly in response and have led to a building fire and injuries in Romania following a Russian drone crash.",
+			"translation": "考慮到北歐和東歐與俄羅斯的距離以及烏克蘭正在進行的戰爭，無人機入侵在這些地區變得尤為頻繁。這些入侵已多次迫使戰鬥機緊急起飛應對，並曾在俄羅斯無人機於羅馬尼亞墜毀後導致建築物起火和人員受傷。"
+		},
+		{
+			"tag": "p",
+			"text": "But the long-promised European Drone Defence Initiative that was supposed to create the equivalent of a “drone wall” to provide counter-drone surveillance and defenses has yet to materialize in any meaningful way, said Ulrike Franke, a senior policy fellow at the European Council on Foreign Relations, in an article for World Politics Review. Instead, individual European countries such as Poland have been building their own national counter-drone systems.",
+			"translation": "但歐洲外交關係委員會高級政策研究員烏爾麗克·弗蘭克（Ulrike Franke）在為《世界政治評論》撰寫的文章中表示，原本預計要建立相當於「無人機牆」以提供反無人機監控和防禦的歐洲無人機防禦倡議，至今尚未以任何有意義的方式實現。相反地，像波蘭這樣的歐洲國家一直在建立自己的國家反無人機系統。"
+		},
+		{
+			"tag": "p",
+			"text": "Germany has already provided about $118 billion to support Ukraine since Russia launched a full-scale invasion of Ukraine in 2022, according to Deutsche Welle. Beyond supplying weapons and humanitarian aid, Germany has also trained more than 24,000 Ukrainian soldiers and is hosting more than 1 million Ukrainian refugees.",
+			"translation": "根據德國之聲報導，自 2022 年俄羅斯對烏克蘭發動全面入侵以來，德國已提供約 1180 億美元支持烏克蘭。除了提供武器和人道主義援助外，德國還培訓了超過 24,000 名烏克蘭士兵，並收容了超過 100 萬名烏克蘭難民。"
+		},
+		{
+			"tag": "p",
+			"text": "Some of Germany’s latest cooperative ventures with Ukraine have involved joint production of new military drones. Ars recently covered a $100 million deal—reportedly funded by Germany—that is equipping the Ukrainian military with drones capable of performing AI target tracking.",
+			"translation": "德國與烏克蘭最新的一些合作項目涉及聯合生產新型軍用無人機。Ars 最近報導了一項價值 1 億美元的交易——據稱由德國資助——該交易正為烏克蘭軍隊配備具備人工智慧目標追蹤能力的無人機。"
+		},
+		{
+			"tag": "p",
+			"text": "<em>This story was updated on August 7, 2026 to include details on the bus driver credited with taking down the drone.</em>",
+			"translation": "這則新聞於 2026 年 8 月 7 日更新，加入了關於被認為擊落無人機的巴士司機的細節。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "disarm",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪsˈɑːrm/",
+			"definition_zh": "解除炸彈的引信；武裝",
+			"example": "German police disarmed a drone carrying explosives."
+		},
+		{
+			"word": "hover",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˈhʌvər/",
+			"definition_zh": "（在空中）盤旋",
+			"example": "The drone was hovering close to the ground."
+		},
+		{
+			"word": "collide",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/kəˈlaɪd/",
+			"definition_zh": "碰撞；相撞",
+			"example": "an approaching aircraft collided with something midair."
+		},
+		{
+			"word": "detection",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/dɪˈtekʃn/",
+			"definition_zh": "偵測；察覺",
+			"example": "It had apparently been modified to help avoid detection."
+		},
+		{
+			"word": "substance",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈsʌbstəns/",
+			"definition_zh": "物質",
+			"example": "Dobrindt described the drone as carrying a fist-sized package of a substance."
+		},
+		{
+			"word": "daring",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˈderɪŋ/",
+			"definition_zh": "大膽的；勇敢的",
+			"example": "Seif described the driver’s actions as “very daring and courageous.”"
+		},
+		{
+			"word": "intervention",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˌɪntərˈvenʃn/",
+			"definition_zh": "干預；介入",
+			"example": "it is possible that his intervention prevented the intended attack."
+		},
+		{
+			"word": "divert",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/daɪˈvɜːrt/",
+			"definition_zh": "使轉向；繞道",
+			"example": "That forced 19 flights to divert away from the airport."
+		},
+		{
+			"word": "suspect",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈsʌspekt/",
+			"definition_zh": "嫌疑犯",
+			"example": "German officials have not officially named a suspect."
+		},
+		{
+			"word": "frequently",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ˈfriːkwəntli/",
+			"definition_zh": "頻繁地",
+			"example": "Leipzig/Halle airport frequently oversees the transit of shipments."
+		},
+		{
+			"word": "explosive",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪkˈsploʊsɪv/",
+			"definition_zh": "炸藥；爆炸物",
+			"example": "German police disarmed a drone carrying explosives."
+		},
+		{
+			"word": "detonator",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈdetəneɪtər/",
+			"definition_zh": "引爆器",
+			"example": "Only a failed detonator prevented the drone from exploding."
+		},
+		{
+			"word": "courageous",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/kəˈreɪdʒəs/",
+			"definition_zh": "勇敢的",
+			"example": "Seif described the driver’s actions as “very daring and courageous.”"
+		},
+		{
+			"word": "munitions",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/mjuːˈnɪʃnz/",
+			"definition_zh": "軍火；彈藥",
+			"example": "the aircraft were carrying weapons or other munitions."
+		},
+		{
+			"word": "incursion",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ɪnˈkɜːrʒn/",
+			"definition_zh": "入侵；侵犯",
+			"example": "These latest incidents follow dozens of drone sightings over other European airports."
+		},
+		{
+			"word": "proximity",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/prɑːkˈsɪməti/",
+			"definition_zh": "接近；鄰近",
+			"example": "given their closer proximity to Russia."
+		},
+		{
+			"word": "scramble",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈskræmbl/",
+			"definition_zh": "（戰機）緊急起飛",
+			"example": "Those incursions have forced fighter jets to scramble repeatedly."
+		},
+		{
+			"word": "materialize",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/məˈtɪriəlaɪz/",
+			"definition_zh": "實現；成形",
+			"example": "defenses has yet to materialize in any meaningful way."
+		},
+		{
+			"word": "counterterrorism",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌkaʊntərˈterərɪzəm/",
+			"definition_zh": "反恐",
+			"example": "but have opened a counterterrorism investigation."
+		},
+		{
+			"word": "hybrid threat",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈhaɪbrɪd θret/",
+			"definition_zh": "混合威脅",
+			"example": "described the incident as a “hybrid threat scenario.”"
+		},
+		{
+			"word": "cargo hub",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈkɑːrɡoʊ hʌb/",
+			"definition_zh": "貨運樞紐",
+			"example": "one of Europe’s largest air cargo hubs."
+		},
+		{
+			"word": "look into",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/lʊk ˈɪntuː/",
+			"definition_zh": "調查",
+			"example": "authorities are looking into the possibility of a second drone."
+		},
+		{
+			"word": "carry out",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ˈkæri aʊt/",
+			"definition_zh": "執行；進行",
+			"example": "later carried out a controlled explosion."
+		},
+		{
+			"word": "deal with",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/diːl wɪð/",
+			"definition_zh": "處理；應對",
+			"example": "we are dealing with a contest here."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The police had to ____ the bomb before anyone got hurt.",
+			"sentence_zh": "警方必須在有人受傷之前拆除炸彈的引信。",
+			"answer": "disarm",
+			"options": [
+				"scramble",
+				"disarm",
+				"collide",
+				"hover"
+			]
+		},
+		{
+			"sentence": "The detective is going to ____ the cause of the mysterious fire.",
+			"sentence_zh": "偵探將調查這場神祕火災的原因。",
+			"answer": "look into",
+			"options": [
+				"materialize",
+				"carry out",
+				"deal with",
+				"look into"
+			]
+		},
+		{
+			"sentence": "The new security system was designed for the early ____ of intruders.",
+			"sentence_zh": "這套新的安全系統是為了儘早偵測入侵者而設計的。",
+			"answer": "detection",
+			"options": [
+				"substance",
+				"detection",
+				"intervention",
+				"proximity"
+			]
+		},
+		{
+			"sentence": "Due to the storm, our flight had to ____ to a different city.",
+			"sentence_zh": "由於風暴，我們的航班必須轉降另一個城市。",
+			"answer": "divert",
+			"options": [
+				"scramble",
+				"hover",
+				"disarm",
+				"divert"
+			]
+		},
+		{
+			"sentence": "The firefighter showed ____ bravery when he entered the burning building.",
+			"sentence_zh": "消防員進入著火的建築物時展現了非凡的勇氣。",
+			"answer": "courageous",
+			"options": [
+				"frequently",
+				"daring",
+				"courageous",
+				"explosive"
+			]
+		},
+		{
+			"sentence": "The government needs to ____ the problem of rising inflation immediately.",
+			"sentence_zh": "政府需要立即處理通貨膨脹上升的問題。",
+			"answer": "deal with",
+			"options": [
+				"carry out",
+				"deal with",
+				"materialize",
+				"look into"
+			]
+		},
+		{
+			"sentence": "A strange ____ was found on the floor of the chemistry lab.",
+			"sentence_zh": "在化學實驗室的地板上發現了一種奇怪的物質。",
+			"answer": "substance",
+			"options": [
+				"suspect",
+				"incursion",
+				"substance",
+				"detonator"
+			]
+		},
+		{
+			"sentence": "Military jets had to ____ to intercept the unidentified aircraft.",
+			"sentence_zh": "軍用飛機必須緊急起飛以攔截那架不明飛行器。",
+			"answer": "scramble",
+			"options": [
+				"disarm",
+				"hover",
+				"collide",
+				"scramble"
+			]
+		},
+		{
+			"sentence": "The scientist hopes her research will soon ____ into a real product.",
+			"sentence_zh": "科學家希望她的研究很快就能轉化為真正的產品。",
+			"answer": "materialize",
+			"options": [
+				"divert",
+				"scramble",
+				"hover",
+				"materialize"
+			]
+		},
+		{
+			"sentence": "The scientists will ____ a series of experiments to test the new drug.",
+			"sentence_zh": "科學家將進行一系列實驗來測試這種新藥。",
+			"answer": "carry out",
+			"options": [
+				"carry out",
+				"look into",
+				"deal with",
+				"disarm"
+			]
+		}
+	]
+}
