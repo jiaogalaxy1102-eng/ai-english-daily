@@ -1,0 +1,456 @@
+{
+	"date": "2026-08-11",
+	"tag": "產業與商業",
+	"title": "With new open models, Meta pitches another reboot of its struggling AI strategy",
+	"source_name": "Ars Technica",
+	"url": "https://arstechnica.com/ai/2026/08/with-new-open-models-meta-pitches-another-reboot-of-its-struggling-ai-strategy/",
+	"summary_en": "Meta is changing its AI strategy by focusing on 'open-weight' models that anyone can use. CEO Mark Zuckerberg believes that AI should be shared widely instead of being controlled by only a few big companies. The company recently released a new model called Muse Glimmer that can run directly on a person's own computer. This move helps Meta compete with other tech giants by offering more flexible and cheaper AI options.",
+	"summary_zh": "Meta 宣佈將人工智慧策略重心轉向「開放權重」模型，並發佈了可在個人電腦運行的 Muse Glimmer。執行長祖克柏發表長文批評封閉式模型的壟斷現狀，主張 AI 應去中心化且符合個人需求，而非僅由少數公司控管。這標誌著 Meta 在 AI 競爭中試圖透過更開放、平價的定位，來挽回先前落後於 OpenAI 與 Anthropic 的局面。",
+	"conclusion_index": 23,
+	"scan_questions": [
+		{
+			"question": "What are the technical specifications of the Muse Glimmer model?",
+			"answer_zh": "Muse Glimmer 是一個擁有 300 億參數的模型，預設具備 128,000 個 token 的上下文視窗。",
+			"paragraph_index": 2
+		},
+		{
+			"question": "Who replaced Yann LeCun as the head of Meta's AI division last year?",
+			"answer_zh": "前 Scale AI 執行長 Alexandr Wang 接替了 Yann LeCun 擔任 Meta AI 主管。",
+			"paragraph_index": 20
+		},
+		{
+			"question": "What is the name of the coding agent released alongside Muse Spark 1.2?",
+			"answer_zh": "隨 Muse Spark 1.2 一併發佈的終端編碼代理工具名稱為 Muse Code。",
+			"paragraph_index": 3
+		}
+	],
+	"paragraphs": [
+		{
+			"tag": "p",
+			"text": "Meta has announced its intention to focus on open-weight large language models. Additionally, the company announced the release of an open model called Muse Glimmer and a promise to open the weights for Muse Spark 1.2, its more powerful model, in the next few weeks.",
+			"translation": "Meta 已宣佈其專注於開放權重大型語言模型的意圖。此外，該公司宣佈發佈名為 Muse Glimmer 的開放模型，並承諾在未來幾週內開放其更強大模型 Muse Spark 1.2 的權重。"
+		},
+		{
+			"tag": "p",
+			"text": "Alongside these announcements, Meta CEO Mark Zuckerberg published a more than 6,000-word essay outlining the company’s philosophy about AI systems and governance moving forward. The essay aims to differentiate Meta from companies like OpenAI and Anthropic, which develop proprietary models and which have lobbied the US government for help competing against large-scale distillation—which involves using an existing model to train a new one—or open-weight models by Chinese labs.",
+			"translation": "在這些公告發佈的同時，Meta 執行長馬克·祖克柏發表了一篇超過 6,000 字的文章，闡述了公司未來關於 AI 系統與治理的哲學。該文章旨在將 Meta 與 OpenAI 和 Anthropic 等公司區分開來，後者開發專有模型，並遊說美國政府尋求幫助，以對抗大規模蒸餾（即使用現有模型訓練新模型）或中國實驗室的開放權重模型。"
+		},
+		{
+			"tag": "p",
+			"text": "Muse Glimmer is a 30 billion parameter model with a 128,000-token context window by default. It is distilled from Muse Spark, the larger and more capable model that Meta launched earlier this year. Glimmer is meant to run on users’ local machines, rather than via a cloud service or an API. Glimmer’s weights are open source under the Apache 2.0 license.",
+			"translation": "Muse Glimmer 是一個擁有 300 億參數的模型，預設具有 128,000 個 token 的上下文視窗。它是從 Muse Spark 蒸餾而來的，後者是 Meta 今年早些時候推出的更大、功能更強的模型。Glimmer 旨在用戶的本地機器上運行，而不是透過雲端服務或 API。Glimmer 的權重在 Apache 2.0 許可下開源。"
+		},
+		{
+			"tag": "p",
+			"text": "Muse Spark was introduced in April as a closed, proprietary, frontier-class model—Meta’s first major model release after a significant shake-up of the company’s AI teams last year, and a departure from its focus on models that are, by some definition, open. When Meta released Muse Spark 1.1 in July, it introduced its first paid service—again, a departure from its previous strategy. Muse Spark 1.2 was released on August 5 and was accompanied by Muse Code, a terminal coding agent.",
+			"translation": "Muse Spark 在 4 月份作為一個封閉的、專有的、前沿級模型推出——這是 Meta 在去年對其 AI 團隊進行重大重組後首次發佈的主要模型，也背離了其對某種定義上的開放模型的關注。當 Meta 在 7 月發佈 Muse Spark 1.1 時，它推出了首個付費服務——這再次背離了之前的策略。Muse Spark 1.2 於 8 月 5 日發佈，並隨附了終端編碼代理工具 Muse Code。"
+		},
+		{
+			"tag": "p",
+			"text": "Developers have generally found that Muse Code doesn’t quite match the frontier models from Anthropic or OpenAI in capability, but it competes well on cost—meaning it has similar positioning to many open-weight models from Chinese labs.",
+			"translation": "開發者普遍發現 Muse Code 的能力與 Anthropic 或 OpenAI 的前沿模型並不完全匹配，但它在成本上具有很好的競爭力——這意味著它的定位與許多中國實驗室的開放權重模型相似。"
+		},
+		{
+			"tag": "p",
+			"text": "As a smaller model designed to run on consumer GPUs, Muse Glimmer won’t compete on that level at all—but it reflects a growing movement to bring some inference to local devices to reduce reliance and spending on the models produced by the big labs like Anthropic and OpenAI.",
+			"translation": "作為一個設計用於在消費級 GPU 上運行的較小模型，Muse Glimmer 根本不會在那個層面上競爭——但它反映了一種日益增長的趨勢，即將部分推理帶到本地設備，以減少對 Anthropic 和 OpenAI 等大實驗室產生的模型的依賴和支出。"
+		},
+		{
+			"tag": "h2",
+			"text": "Open weights, open access",
+			"translation": "開放權重，開放獲取"
+		},
+		{
+			"tag": "p",
+			"text": "Alongside the model releases, Mark Zuckerberg is credited as the author of a lengthy open letter that details Meta’s corporate strategy with AI, and a broader argument for how AI should be developed, distributed, and regulated.",
+			"translation": "隨著模型的發佈，馬克·祖克柏被列為一篇冗長公開信的作者，該信詳細介紹了 Meta 在 AI 方面的公司策略，以及關於 AI 應如何開發、分發和監管的更廣泛論點。"
+		},
+		{
+			"tag": "p",
+			"text": "It follows several statements by other Big Tech and AI company leaders debating the merits of open-weight models, proprietary labs, and the practice of distillation—something that some Chinese labs have reportedly done to build models that compete with the latest efforts from Anthropic and others.",
+			"translation": "在此之前，其他大型科技公司和 AI 公司領導人也發表了幾份聲明，辯論開放權重模型、專有實驗室以及蒸餾實踐的優劣——據報導，一些中國實驗室已採用蒸餾技術來構建能與 Anthropic 等公司的最新成果競爭的模型。"
+		},
+		{
+			"tag": "p",
+			"text": "On July 24, several companies including Nvidia, Hugging Face, Meta, Mistral, Mozilla, OpenAI and others co-signed an open letter titled “Open Weights and American AI Leadership” that argued for the value of open-weight models as opposed—or at least in addition—to proprietary ones, and defended distillation as a legitimate practice, even as it carved out a distinction for “unlawful efforts to extract value from closed models.” It advocated for “targeted legal and commercial frameworks rather than sweeping restrictions on techniques that play an important role in AI innovation.”",
+			"translation": "7 月 24 日，包括 Nvidia、Hugging Face、Meta、Mistral、Mozilla、OpenAI 等在內的幾家公司共同簽署了一封題為《開放權重與美國 AI 領導力》的公開信，主張開放權重模型相對於（或至少是補充）專有模型的價值，並為蒸餾作為一種合法實踐進行辯護，儘管信中也區分了「從封閉模型中提取價值的非法行為」。它提倡「針對性的法律和商業框架，而不是對在 AI 創新中發揮重要作用的技術進行全面限制」。"
+		},
+		{
+			"tag": "p",
+			"text": "On the topic of distillation, Meta and Zuckerberg wrote:",
+			"translation": "關於蒸餾的主題，Meta 和祖克柏寫道："
+		},
+		{
+			"tag": "blockquote",
+			"text": "The ability for models to learn from other models is an important principle of how the open source ecosystem works. All AI models are derived from human knowledge. Some have tried to frame distillation as harmful, but I think it is important to protect the principle that you can learn from anything you can observe.",
+			"translation": "「模型從其他模型中學習的能力是開源生態系統運作的重要原則。所有 AI 模型都源於人類知識。有些人試圖將蒸餾框定為有害的，但我認為保護『你可以從任何能觀察到的事物中學習』這一原則是很重要的。」"
+		},
+		{
+			"tag": "p",
+			"text": "However, the majority of the essay focused on the notion of decentralized AI systems that are distributed widely. It also directly aims at arguments that tightly controlled, proprietary AI models and systems are needed because of concerns about existential threats or catastrophic misalignment:",
+			"translation": "然而，這篇文章的大部分內容都聚焦於去中心化、廣泛分佈的 AI 系統這一概念。它還直接針對了那些認為由於對生存威脅或災難性失調的擔憂，需要嚴格控制、專有的 AI 模型和系統的論點："
+		},
+		{
+			"tag": "blockquote",
+			"text": "It is surprising that the discourse from many developing AI is so filled with doom. I do not understand why anyone who believes that AI will eliminate most jobs and much of humanity’s relevance would rush to build that future. The notion that AI is so dangerous that the only safe path is an extreme concentration of power seems inherently problematic.",
+			"translation": "「令人驚訝的是，許多開發 AI 的言論充滿了末日感。我不明白為什麼任何相信 AI 將消除大多數工作和大部分人類相關性的人，會急於構建那樣的未來。認為 AI 如此危險以至於唯一的安全途徑是權力極端集中的想法，本身似乎就有問題。」"
+		},
+		{
+			"tag": "p",
+			"text": "Zuckerberg wrote that the view of alignment taken by companies like Anthropic—which claims that it is trying to train singular and broad foundation models with operational parameters and guardrails that will ensure they benefit humanity broadly—is “fundamentally flawed.”",
+			"translation": "祖克柏寫道，像 Anthropic 這樣的公司所採取的對齊觀點——該公司聲稱正試圖訓練具有運作參數和護欄的單一且廣泛的基礎模型，以確保它們廣泛造福人類——是「從根本上有缺陷的」。"
+		},
+		{
+			"tag": "p",
+			"text": "“People’s diverse values represent different tradeoffs they would make on important issues. There is no technological solution that can align with everyone’s opposing interests and values at once,” the essay says. “Any singular superintelligence would have to prioritize some values over others and in the process would be incapable of being benevolent to everyone.”",
+			"translation": "「人們多元的價值觀代表了他們在重要問題上會做出的不同權衡。沒有一種技術解決方案能同時與每個人的對立利益和價值觀對齊，」文章指出。「任何單一的超級智慧都必須優先考慮某些價值觀而捨棄其他價值觀，在此過程中，它將無法對每個人都保持仁慈。」"
+		},
+		{
+			"tag": "p",
+			"text": "Instead, Meta argues here that models should be personalized to the needs and values of individuals or groups of individuals. It also claims that decentralization will make everyone safer, because it will give the benefits and advantages of “superintelligence” to everyone equally, instead of privileging “a small number of individuals, businesses, governments, or AI itself.”",
+			"translation": "相反，Meta 在這裡主張模型應該根據個人或群體的需要和價值觀進行個性化。它還聲稱去中心化將使每個人都更安全，因為它將把「超級智慧」的利益和優勢平等地賦予每個人，而不是特權化「少數個人、企業、政府或 AI 本身」。"
+		},
+		{
+			"tag": "h2",
+			"text": "A public recalibration",
+			"translation": "一次公開的重新調整"
+		},
+		{
+			"tag": "p",
+			"text": "Meta has been lagging behind other big tech companies and major frontier labs for foundation models. Its models haven’t seen the kind of adoption that those developed by OpenAI or Anthropic have.",
+			"translation": "Meta 在基礎模型方面一直落後於其他大型科技公司和主要的前沿實驗室。其模型的採用率尚未達到 OpenAI 或 Anthropic 開發的模型那樣的水平。"
+		},
+		{
+			"tag": "p",
+			"text": "OpenAI and Anthropic have aggressively targeted enterprise customers, releasing powerful models and harnesses for knowledge work tasks like software development, and they have made significant inroads and generated substantial revenue from this strategy. Meta has not seen the same level of success.",
+			"translation": "OpenAI 和 Anthropic 積極針對企業客戶，發佈了強大的模型和用於軟體開發等知識型工作任務的工具鏈，他們在這一策略上取得了重大進展並產生了可觀的收入。Meta 尚未取得相同程度的成功。"
+		},
+		{
+			"tag": "p",
+			"text": "Meta also saw a total overhaul of its AI division last year, when former Meta AI chief scientist Yann LeCun was replaced by former Scale AI CEO Alexandr Wang. The reset led to a change in focus.",
+			"translation": "Meta 去年也經歷了 AI 部門的全面調整，當時前 Meta AI 首席科學家 Yann LeCun 被前 Scale AI 執行長 Alexandr Wang 取代。這次重置導致了重點的轉移。"
+		},
+		{
+			"tag": "p",
+			"text": "In recent months, the debate around open-weight models and distillation has increased in volume as recent Chinese models like Alibaba’s Qwen3.8-Max and Moonshot’s Kimi K3 have been shown to rival Anthropic and OpenAI at the frontier. Those models may perform slightly worse in coding benchmarks, for example, but they are generally cheaper to use.",
+			"translation": "最近幾個月，圍繞開放權重模型和蒸餾的辯論聲量日益增大，因為最近的中國模型（如阿里巴巴的 Qwen3.8-Max 和 Moonshot 的 Kimi K3）已被證明在前沿領域能與 Anthropic 和 OpenAI 匹敵。例如，這些模型在編碼基準測試中的表現可能略差，但它們通常使用成本更低。"
+		},
+		{
+			"tag": "p",
+			"text": "In a sense, Meta seems to be positioning itself as a US alternative to Alibaba, Moonshot, or DeepSeek—not quite as frontier-facing as Anthropic or OpenAI, but more open, customizable, and affordable. It is also orienting itself—at least with these public statements—more toward personal use as opposed to large-scale enterprise deployments, at least for now.",
+			"translation": "從某種意義上說，Meta 似乎正把自己定位為阿里巴巴、Moonshot 或 DeepSeek 的美國替代方案——不像 Anthropic 或 OpenAI 那樣全然面向前沿，但更開放、可自訂且更負擔得起。它也正將自己——至少透過這些公開聲明——更多地導向個人用途，而非大規模的企業部署，至少目前如此。"
+		},
+		{
+			"tag": "p",
+			"text": "That is a retreat from some of its earlier ambitions, in a way, as the company takes advantage of changing winds to try to plot a new course.",
+			"translation": "在某種程度上，這是一種對早期野心的撤退，因為該公司正利用變幻的風向試圖規劃出一條新航線。"
+		}
+	],
+	"images": [],
+	"vocab": [
+		{
+			"word": "intention",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ɪnˈtenʃn/",
+			"definition_zh": "意圖、打算",
+			"example": "Meta has announced its intention to focus on open-weight large language models."
+		},
+		{
+			"word": "philosophy",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/fəˈlɒsəfi/",
+			"definition_zh": "哲學、理念",
+			"example": "Zuckerberg published a more than 6,000-word essay outlining the company’s philosophy."
+		},
+		{
+			"word": "differentiate",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/ˌdɪfəˈrenʃieɪt/",
+			"definition_zh": "區分、區別",
+			"example": "The essay aims to differentiate Meta from companies like OpenAI and Anthropic."
+		},
+		{
+			"word": "proprietary",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/prəˈpraɪətri/",
+			"definition_zh": "專有的、專利的",
+			"example": "OpenAI and Anthropic, which develop proprietary models."
+		},
+		{
+			"word": "lobby",
+			"type": "general",
+			"pos": "v.",
+			"ipa": "/ˈlɒbi/",
+			"definition_zh": "遊說",
+			"example": "They have lobbied the US government for help."
+		},
+		{
+			"word": "distillation",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˌdɪstɪˈleɪʃn/",
+			"definition_zh": "蒸餾（模型提煉技術）",
+			"example": "which involves using an existing model to train a new one—or open-weight models by Chinese labs."
+		},
+		{
+			"word": "inference",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈɪnfərəns/",
+			"definition_zh": "推理（AI 運行過程）",
+			"example": "bring some inference to local devices to reduce reliance."
+		},
+		{
+			"word": "distribute",
+			"type": "highfreq",
+			"pos": "v.",
+			"ipa": "/dɪˈstrɪbjuːt/",
+			"definition_zh": "分發、分配",
+			"example": "how AI should be developed, distributed, and regulated."
+		},
+		{
+			"word": "legitimate",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/lɪˈdʒɪtɪmət/",
+			"definition_zh": "合法的、正當的",
+			"example": "defended distillation as a legitimate practice."
+		},
+		{
+			"word": "principle",
+			"type": "highfreq",
+			"pos": "n.",
+			"ipa": "/ˈprɪnsəpl/",
+			"definition_zh": "原則、原理",
+			"example": "The ability for models to learn from other models is an important principle."
+		},
+		{
+			"word": "notion",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈnəʊʃn/",
+			"definition_zh": "觀念、想法",
+			"example": "The majority of the essay focused on the notion of decentralized AI systems."
+		},
+		{
+			"word": "discourse",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈdɪskɔːs/",
+			"definition_zh": "論述、言論",
+			"example": "It is surprising that the discourse from many developing AI is so filled with doom."
+		},
+		{
+			"word": "inherently",
+			"type": "highfreq",
+			"pos": "adv.",
+			"ipa": "/ɪnˈhɪərəntli/",
+			"definition_zh": "內在心地、固有地",
+			"example": "The notion... seems inherently problematic."
+		},
+		{
+			"word": "fundamental",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/ˌfʌndəˈmentl/",
+			"definition_zh": "基本的、根本的",
+			"example": "the view of alignment taken by companies like Anthropic... is 'fundamentally flawed.'"
+		},
+		{
+			"word": "diverse",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/daɪˈvɜːs/",
+			"definition_zh": "多元的、不同的",
+			"example": "People’s diverse values represent different tradeoffs."
+		},
+		{
+			"word": "benevolent",
+			"type": "general",
+			"pos": "adj.",
+			"ipa": "/bəˈnevələnt/",
+			"definition_zh": "仁慈的、善意的",
+			"example": "it would be incapable of being benevolent to everyone."
+		},
+		{
+			"word": "recalibration",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˌriːˌkælɪˈbreɪʃn/",
+			"definition_zh": "重新調整、校準",
+			"example": "A public recalibration"
+		},
+		{
+			"word": "overhaul",
+			"type": "general",
+			"pos": "n.",
+			"ipa": "/ˈəʊvəhɔːl/",
+			"definition_zh": "徹底改革、翻修",
+			"example": "Meta also saw a total overhaul of its AI division last year."
+		},
+		{
+			"word": "benchmark",
+			"type": "term",
+			"pos": "n.",
+			"ipa": "/ˈbentʃmɑːk/",
+			"definition_zh": "基準測試",
+			"example": "Those models may perform slightly worse in coding benchmarks."
+		},
+		{
+			"word": "affordable",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/əˈfɔːdəbl/",
+			"definition_zh": "負擔得起的、平價的",
+			"example": "but more open, customizable, and affordable."
+		},
+		{
+			"word": "ambitious",
+			"type": "highfreq",
+			"pos": "adj.",
+			"ipa": "/æmˈbɪʃəs/",
+			"definition_zh": "雄心勃勃的",
+			"example": "That is a retreat from some of its earlier ambitions."
+		},
+		{
+			"word": "lag behind",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/læɡ bɪˈhaɪnd/",
+			"definition_zh": "落後於",
+			"example": "Meta has been lagging behind other big tech companies."
+		},
+		{
+			"word": "in a sense",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/ɪn ə sens/",
+			"definition_zh": "從某種意義上說",
+			"example": "In a sense, Meta seems to be positioning itself as a US alternative."
+		},
+		{
+			"word": "take advantage of",
+			"type": "phrase",
+			"pos": "",
+			"ipa": "/teɪk ədˈvɑːntɪdʒ əv/",
+			"definition_zh": "利用、佔便宜",
+			"example": "as the company takes advantage of changing winds to try to plot a new course."
+		}
+	],
+	"quiz": [
+		{
+			"sentence": "The company’s ____ technology is not available for public use because it is a trade secret.",
+			"sentence_zh": "該公司的專有技術不對公眾開放使用，因為那是商業機密。",
+			"answer": "proprietary",
+			"options": [
+				"benevolent",
+				"proprietary",
+				"diverse",
+				"affordable"
+			]
+		},
+		{
+			"sentence": "To remain competitive, the startup had to ____ itself from larger corporations.",
+			"sentence_zh": "為了保持競爭力，這家初創公司必須將自己與大公司區分開來。",
+			"answer": "differentiate",
+			"options": [
+				"differentiate",
+				"distribute",
+				"overhaul",
+				"lobby"
+			]
+		},
+		{
+			"sentence": "Our sales have started to ____ the competitors, so we need a new marketing plan.",
+			"sentence_zh": "我們的銷售額已經開始落後於競爭對手，所以我們需要一個新的行銷計劃。",
+			"answer": "lag behind",
+			"options": [
+				"lag behind",
+				"take advantage of",
+				"in a sense",
+				"inference"
+			]
+		},
+		{
+			"sentence": "The teacher explained that the ____ of honesty is essential in every relationship.",
+			"sentence_zh": "老師解釋說，誠實的原則在每一段關係中都是不可或缺的。",
+			"answer": "principle",
+			"options": [
+				"principle",
+				"notion",
+				"philosophy",
+				"discourse"
+			]
+		},
+		{
+			"sentence": "They tried to ____ the city council to approve the new park project.",
+			"sentence_zh": "他們試圖遊說市議會批准新的公園項目。",
+			"answer": "lobby",
+			"options": [
+				"differentiate",
+				"lobby",
+				"ambitious",
+				"distribute"
+			]
+		},
+		{
+			"sentence": "The manager decided to ____ the entire system to improve efficiency.",
+			"sentence_zh": "經理決定徹底改革整個系統以提高效率。",
+			"answer": "overhaul",
+			"options": [
+				"intention",
+				"overhaul",
+				"recalibration",
+				"discourse"
+			]
+		},
+		{
+			"sentence": "The new smartphone is surprisingly ____, making it popular among students.",
+			"sentence_zh": "這款新智慧型手機的價格出奇地實惠，使其在學生中非常受歡迎。",
+			"answer": "affordable",
+			"options": [
+				"proprietary",
+				"inherently",
+				"fundamental",
+				"affordable"
+			]
+		},
+		{
+			"sentence": "He had no ____ of hurting anyone with his comments.",
+			"sentence_zh": "他並沒有打算用他的言論傷害任何人。",
+			"answer": "intention",
+			"options": [
+				"benchmark",
+				"distillation",
+				"intention",
+				"notion"
+			]
+		},
+		{
+			"sentence": "We should ____ the sunny weather and go for a hike today.",
+			"sentence_zh": "我們今天應該利用晴朗的天氣去健行。",
+			"answer": "take advantage of",
+			"options": [
+				"take advantage of",
+				"lag behind",
+				"distribute",
+				"in a sense"
+			]
+		},
+		{
+			"sentence": "The student has an ____ plan to finish three degrees in five years.",
+			"sentence_zh": "這個學生有一個雄心勃勃的計劃，要在五年內完成三個學位。",
+			"answer": "ambitious",
+			"options": [
+				"diverse",
+				"benevolent",
+				"ambitious",
+				"legitimate"
+			]
+		}
+	]
+}

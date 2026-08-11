@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>With new open models, Meta pitches another reboot of its struggling AI strategy — AI English Daily</title>
+	<script>
+(function() {
+	try {
+		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
+		var html = document.documentElement;
+		if (s.palette) html.setAttribute("data-palette", s.palette);
+		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
+		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
+		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
+	} catch (e) {}
+})();
+</script>
+	<link rel="stylesheet" href="../style.css?v=13">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
+	<script src="../assets/settings.js" defer></script>
+</head>
+<body data-stage="bumps">
+
+
+<button class="settings-trigger" id="settings-trigger" onclick="toggleSettings()" aria-label="顯示設定">⋯</button>
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
+	<div class="settings-panel" id="settings-panel">
+		<div class="settings-row">
+			<div class="settings-label">配色</div>
+			<div class="palette-swatches">
+				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
+				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
+				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
+				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
+				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
+				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			</div>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">中文字體</div>
+			<select id="font-zh-select" onchange="setFontZh(this.value)">
+				<option value="default">系統預設</option>
+				<option value="wenkai">霞鶩文楷 TC</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">英文字體</div>
+			<select id="font-en-select" onchange="setFontEn(this.value)">
+				<option value="default">系統預設</option>
+				<option value="georgia">Georgia（襯線體）</option>
+				<option value="nanum">Nanum Pen Script（手寫體）</option>
+			</select>
+		</div>
+		<div class="settings-row">
+			<div class="settings-label">字級</div>
+			<div class="font-size-control">
+				<button type="button" onclick="adjustFontSize(-1)" aria-label="縮小字級">A-</button>
+				<span id="font-size-display">100%</span>
+				<button type="button" onclick="adjustFontSize(1)" aria-label="放大字級">A+</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="site-header site-header--nav">
+	<a href="../index.html">AI English Daily</a>
+	<span class="breadcrumb-date">/ 2026-08-11</span>
+	<a class="nav-vocab" href="../vocab.html">我的單字</a>
+</header>
+
+<div class="article-header content-block">
+	<div class="article-source">Ars Technica<span class="tag-badge">產業與商業</span></div>
+	<h1 class="article-title">With new open models, Meta pitches another reboot of its struggling AI strategy</h1>
+	<div class="article-meta">
+		2026-08-11 &nbsp;·&nbsp; <a href="https://arstechnica.com/ai/2026/08/with-new-open-models-meta-pitches-another-reboot-of-its-struggling-ai-strategy/" target="_blank" rel="noopener">原文連結</a>
+	</div>
+</div>
+
+<div class="stage-track" id="stage-track">
+	<button class="stage-step" data-step="bumps" onclick="goStage('bumps')">① 凸點</button>
+	<button class="stage-step" data-step="full" onclick="goStage('full')">② 全文</button>
+	<button class="stage-step" data-step="verify" onclick="goStage('verify')">③ 驗證</button>
+</div>
+
+
+<section class="stage stage-bumps content-block" id="stage-bumps">
+	<div class="stage-hint">先看骨架，建立預期再讀全文</div>
+	<p class="bumps-summary">Meta is changing its AI strategy by focusing on &#x27;open-weight&#x27; models that anyone can use. CEO Mark Zuckerberg believes that AI should be shared widely instead of being controlled by only a few big companies. The company recently released a new model called Muse Glimmer that can run directly on a person&#x27;s own computer. This move helps Meta compete with other tech giants by offering more flexible and cheaper AI options.</p>
+	<div class="bumps-list">
+		<div class="bump">Meta has announced its intention to focus on open-weight large language models.</div>
+		<div class="bump">Alongside these announcements, Meta CEO Mark Zuckerberg published a more than 6,000-word essay outlining the company’s philosophy about AI systems and governance moving forward.</div>
+		<div class="bump">Muse Glimmer is a 30 billion parameter model with a 128,000-token context window by default.</div>
+		<div class="bump">Muse Spark was introduced in April as a closed, proprietary, frontier-class model—Meta’s first major model release after a significant shake-up of the company’s AI teams last year, and a departure from its focus on models that are, by some definition, open.</div>
+		<div class="bump">Developers have generally found that Muse Code doesn’t quite match the frontier models from Anthropic or OpenAI in capability, <span class="signpost">but</span> it competes well on cost—meaning it has similar positioning to many open-weight models…</div>
+		<div class="bump">As a smaller model designed to run on consumer GPUs, Muse Glimmer won’t compete on that level at all—but it reflects a growing movement to bring some inference to local devices to reduce reliance and spending on the…</div>
+		<div class="bump bump-heading">Open weights, open access</div>
+		<div class="bump">Alongside the model releases, Mark Zuckerberg is credited as the author of a lengthy open letter that details Meta’s corporate strategy with AI, and a broader argument for how AI should be developed, distributed, and…</div>
+		<div class="bump">It follows several statements by other Big Tech and AI company leaders debating the merits of open-weight models, proprietary labs, and the practice of distillation—something that some Chinese labs have reportedly done…</div>
+		<div class="bump">On July 24, several companies including Nvidia, Hugging Face, Meta, Mistral, Mozilla, OpenAI and others co-signed an open letter titled “Open Weights and American AI Leadership” that argued for the value of open-weight models as opposed—or at least in addition—to proprietary ones, and defended distillation as a legitimate practice, even as it carved out a distinction for “unlawful efforts to extract value from closed models.</div>
+		<div class="bump">On the topic of distillation, Meta and Zuckerberg wrote:</div>
+		<div class="bump"><span class="signpost">However</span>, the majority of the essay focused on the notion of decentralized AI systems that are distributed widely.</div>
+		<div class="bump">Zuckerberg wrote that the view of alignment taken by companies like Anthropic—which claims that it is trying to train singular and broad foundation models with operational parameters and guardrails that will ensure they…</div>
+		<div class="bump">“People’s diverse values represent different tradeoffs they would make on important issues.</div>
+		<div class="bump"><span class="signpost">Instead</span>, Meta argues here that models should be personalized to the needs and values of individuals or groups of individuals.</div>
+		<div class="bump bump-heading">A public recalibration</div>
+		<div class="bump">Meta has been lagging behind other big tech companies and major frontier labs for foundation models.</div>
+		<div class="bump">OpenAI and Anthropic have aggressively targeted enterprise customers, releasing powerful models and harnesses for knowledge work tasks like software development, and they have made significant inroads and generated substantial revenue from this strategy.</div>
+		<div class="bump">Meta also saw a total overhaul of its AI division last year, when former Meta AI chief scientist Yann LeCun was replaced by former Scale AI CEO Alexandr Wang.</div>
+		<div class="bump">In recent months, the debate around open-weight models and distillation has increased in volume as recent Chinese models like Alibaba’s Qwen3.8-Max and Moonshot’s Kimi K3 have been shown to rival Anthropic and OpenAI at the frontier.</div>
+		<div class="bump">In a sense, Meta seems to be positioning itself as a US alternative to Alibaba, Moonshot, or DeepSeek—not quite as frontier-facing as Anthropic or OpenAI, <span class="signpost">but</span> more open, customizable, and affordable.</div>
+		<div class="bump bump-conclusion"><span class="bump-label">結論</span>That is a retreat from some of its earlier ambitions, in a way, as the company takes advantage of changing winds to try to plot a new course.</div>
+	</div>
+	<div class="stage-actions">
+		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
+		<button class="btn-quiet" onclick="goStage('verify')">直接看全文與翻譯</button>
+	</div>
+</section>
+
+<section class="scan-panel content-block" id="scan-panel">
+	<div class="scan-panel-label">邊讀邊找這幾件事</div>
+	<ul class="scan-list">
+		<li class="scan-question">
+			<span class="scan-q-num">1</span>
+			<span class="scan-q-text">What are the technical specifications of the Muse Glimmer model?</span>
+		</li>
+		<li class="scan-question">
+			<span class="scan-q-num">2</span>
+			<span class="scan-q-text">Who replaced Yann LeCun as the head of Meta&#x27;s AI division last year?</span>
+		</li>
+		<li class="scan-question">
+			<span class="scan-q-num">3</span>
+			<span class="scan-q-text">What is the name of the coding agent released alongside Muse Spark 1.2?</span>
+		</li>
+	</ul>
+</section>
+
+<div class="vocab-section content-block" id="vocab-section">
+	<button class="vocab-toggle" onclick="toggleVocab(this)">
+		<span>今日詞彙表</span><span class="toggle-arrow">▼</span>
+	</button>
+	<div class="vocab-grid" id="vocab-grid">
+		
+			<div class="vocab-card" data-word="intention" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">intention</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ɪnˈtenʃn/</span>
+				<span class="vocab-def">意圖、打算</span>
+			</div>
+			<div class="vocab-card" data-word="philosophy" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">philosophy</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/fəˈlɒsəfi/</span>
+				<span class="vocab-def">哲學、理念</span>
+			</div>
+			<div class="vocab-card" data-word="differentiate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">differentiate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˌdɪfəˈrenʃieɪt/</span>
+				<span class="vocab-def">區分、區別</span>
+			</div>
+			<div class="vocab-card" data-word="proprietary" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">proprietary</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/prəˈpraɪətri/</span>
+				<span class="vocab-def">專有的、專利的</span>
+			</div>
+			<div class="vocab-card" data-word="lobby" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">lobby</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/ˈlɒbi/</span>
+				<span class="vocab-def">遊說</span>
+			</div>
+			<div class="vocab-card" data-word="distillation" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distillation</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌdɪstɪˈleɪʃn/</span>
+				<span class="vocab-def">蒸餾（模型提煉技術）</span>
+			</div>
+			<div class="vocab-card" data-word="inference" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">inference</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈɪnfərəns/</span>
+				<span class="vocab-def">推理（AI 運行過程）</span>
+			</div>
+			<div class="vocab-card" data-word="distribute" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">distribute</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+				<span class="vocab-ipa">/dɪˈstrɪbjuːt/</span>
+				<span class="vocab-def">分發、分配</span>
+			</div>
+			<div class="vocab-card" data-word="legitimate" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">legitimate</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/lɪˈdʒɪtɪmət/</span>
+				<span class="vocab-def">合法的、正當的</span>
+			</div>
+			<div class="vocab-card" data-word="principle" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">principle</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈprɪnsəpl/</span>
+				<span class="vocab-def">原則、原理</span>
+			</div>
+			<div class="vocab-card" data-word="notion" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">notion</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈnəʊʃn/</span>
+				<span class="vocab-def">觀念、想法</span>
+			</div>
+			<div class="vocab-card" data-word="discourse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">discourse</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈdɪskɔːs/</span>
+				<span class="vocab-def">論述、言論</span>
+			</div>
+			<div class="vocab-card" data-word="inherently" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">inherently</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+				<span class="vocab-ipa">/ɪnˈhɪərəntli/</span>
+				<span class="vocab-def">內在心地、固有地</span>
+			</div>
+			<div class="vocab-card" data-word="fundamental" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">fundamental</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/ˌfʌndəˈmentl/</span>
+				<span class="vocab-def">基本的、根本的</span>
+			</div>
+			<div class="vocab-card" data-word="diverse" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">diverse</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/daɪˈvɜːs/</span>
+				<span class="vocab-def">多元的、不同的</span>
+			</div>
+			<div class="vocab-card" data-word="benevolent" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">benevolent</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/bəˈnevələnt/</span>
+				<span class="vocab-def">仁慈的、善意的</span>
+			</div>
+			<div class="vocab-card" data-word="recalibration" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">recalibration</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˌriːˌkælɪˈbreɪʃn/</span>
+				<span class="vocab-def">重新調整、校準</span>
+			</div>
+			<div class="vocab-card" data-word="overhaul" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">overhaul</span>
+				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈəʊvəhɔːl/</span>
+				<span class="vocab-def">徹底改革、翻修</span>
+			</div>
+			<div class="vocab-card" data-word="benchmark" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">benchmark</span>
+				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+				<span class="vocab-ipa">/ˈbentʃmɑːk/</span>
+				<span class="vocab-def">基準測試</span>
+			</div>
+			<div class="vocab-card" data-word="affordable" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">affordable</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/əˈfɔːdəbl/</span>
+				<span class="vocab-def">負擔得起的、平價的</span>
+			</div>
+			<div class="vocab-card" data-word="ambitious" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">ambitious</span>
+				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+				<span class="vocab-ipa">/æmˈbɪʃəs/</span>
+				<span class="vocab-def">雄心勃勃的</span>
+			</div>
+			<div class="vocab-card" data-word="lag behind" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">lag behind</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/læɡ bɪˈhaɪnd/</span>
+				<span class="vocab-def">落後於</span>
+			</div>
+			<div class="vocab-card" data-word="in a sense" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">in a sense</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/ɪn ə sens/</span>
+				<span class="vocab-def">從某種意義上說</span>
+			</div>
+			<div class="vocab-card" data-word="take advantage of" onclick="showPopup(this.dataset.word)">
+				<span class="vocab-word">take advantage of</span>
+				<span class="badge badge-phrase">片語</span>
+				<span class="vocab-ipa">/teɪk ədˈvɑːntɪdʒ əv/</span>
+				<span class="vocab-def">利用、佔便宜</span>
+			</div>
+	</div>
+</div>
+
+<div class="article-body content-block" id="article-body">
+	
+		<div class="para-block">
+			<p class="para-original">Meta has announced its <span class="word-highfreq" data-word="intention">intention</span> to focus on open-weight large language models. Additionally, the company announced the release of an open model called Muse Glimmer and a promise to open the weights for Muse Spark 1.2, its more powerful model, in the next few weeks.</p>
+			<p class="para-translation">Meta 已宣佈其專注於開放權重大型語言模型的意圖。此外，該公司宣佈發佈名為 Muse Glimmer 的開放模型，並承諾在未來幾週內開放其更強大模型 Muse Spark 1.2 的權重。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Alongside these announcements, Meta CEO Mark Zuckerberg published a more than 6,000-word essay outlining the company’s <span class="word-highfreq" data-word="philosophy">philosophy</span> about AI systems and governance moving forward. The essay aims to <span class="word-highfreq" data-word="differentiate">differentiate</span> Meta from companies like OpenAI and Anthropic, which develop <span class="word-general" data-word="proprietary">proprietary</span> models and which have lobbied the US government for help competing against large-scale <span class="word-term" data-word="distillation">distillation</span>—which involves using an existing model to train a new one—or open-weight models by Chinese labs.</p>
+			<p class="para-translation">在這些公告發佈的同時，Meta 執行長馬克·祖克柏發表了一篇超過 6,000 字的文章，闡述了公司未來關於 AI 系統與治理的哲學。該文章旨在將 Meta 與 OpenAI 和 Anthropic 等公司區分開來，後者開發專有模型，並遊說美國政府尋求幫助，以對抗大規模蒸餾（即使用現有模型訓練新模型）或中國實驗室的開放權重模型。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Muse Glimmer is a 30 billion parameter model with a 128,000-token context window by default. It is distilled from Muse Spark, the larger and more capable model that Meta launched earlier this year. Glimmer is meant to run on users’ local machines, rather than via a cloud service or an API. Glimmer’s weights are open source under the Apache 2.0 license.</p>
+			<p class="para-translation">Muse Glimmer 是一個擁有 300 億參數的模型，預設具有 128,000 個 token 的上下文視窗。它是從 Muse Spark 蒸餾而來的，後者是 Meta 今年早些時候推出的更大、功能更強的模型。Glimmer 旨在用戶的本地機器上運行，而不是透過雲端服務或 API。Glimmer 的權重在 Apache 2.0 許可下開源。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Muse Spark was introduced in April as a closed, <span class="word-general" data-word="proprietary">proprietary</span>, frontier-class model—Meta’s first major model release after a significant shake-up of the company’s AI teams last year, and a departure from its focus on models that are, by some definition, open. When Meta released Muse Spark 1.1 in July, it introduced its first paid service—again, a departure from its previous strategy. Muse Spark 1.2 was released on August 5 and was accompanied by Muse Code, a terminal coding agent.</p>
+			<p class="para-translation">Muse Spark 在 4 月份作為一個封閉的、專有的、前沿級模型推出——這是 Meta 在去年對其 AI 團隊進行重大重組後首次發佈的主要模型，也背離了其對某種定義上的開放模型的關注。當 Meta 在 7 月發佈 Muse Spark 1.1 時，它推出了首個付費服務——這再次背離了之前的策略。Muse Spark 1.2 於 8 月 5 日發佈，並隨附了終端編碼代理工具 Muse Code。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Developers have generally found that Muse Code doesn’t quite match the frontier models from Anthropic or OpenAI in capability, but it competes well on cost—meaning it has similar positioning to many open-weight models from Chinese labs.</p>
+			<p class="para-translation">開發者普遍發現 Muse Code 的能力與 Anthropic 或 OpenAI 的前沿模型並不完全匹配，但它在成本上具有很好的競爭力——這意味著它的定位與許多中國實驗室的開放權重模型相似。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">As a smaller model designed to run on consumer GPUs, Muse Glimmer won’t compete on that level at all—but it reflects a growing movement to bring some <span class="word-term" data-word="inference">inference</span> to local devices to reduce reliance and spending on the models produced by the big labs like Anthropic and OpenAI.</p>
+			<p class="para-translation">作為一個設計用於在消費級 GPU 上運行的較小模型，Muse Glimmer 根本不會在那個層面上競爭——但它反映了一種日益增長的趨勢，即將部分推理帶到本地設備，以減少對 Anthropic 和 OpenAI 等大實驗室產生的模型的依賴和支出。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">Open weights, open access</h2>
+			<h2 class="para-translation">開放權重，開放獲取</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Alongside the model releases, Mark Zuckerberg is credited as the author of a lengthy open letter that details Meta’s corporate strategy with AI, and a broader argument for how AI should be developed, <span class="word-highfreq" data-word="distribute">distribute</span>d, and regulated.</p>
+			<p class="para-translation">隨著模型的發佈，馬克·祖克柏被列為一篇冗長公開信的作者，該信詳細介紹了 Meta 在 AI 方面的公司策略，以及關於 AI 應如何開發、分發和監管的更廣泛論點。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">It follows several statements by other Big Tech and AI company leaders debating the merits of open-weight models, <span class="word-general" data-word="proprietary">proprietary</span> labs, and the practice of <span class="word-term" data-word="distillation">distillation</span>—something that some Chinese labs have reportedly done to build models that compete with the latest efforts from Anthropic and others.</p>
+			<p class="para-translation">在此之前，其他大型科技公司和 AI 公司領導人也發表了幾份聲明，辯論開放權重模型、專有實驗室以及蒸餾實踐的優劣——據報導，一些中國實驗室已採用蒸餾技術來構建能與 Anthropic 等公司的最新成果競爭的模型。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">On July 24, several companies including Nvidia, Hugging Face, Meta, Mistral, Mozilla, OpenAI and others co-signed an open letter titled “Open Weights and American AI Leadership” that argued for the value of open-weight models as opposed—or at least in addition—to <span class="word-general" data-word="proprietary">proprietary</span> ones, and defended <span class="word-term" data-word="distillation">distillation</span> as a <span class="word-highfreq" data-word="legitimate">legitimate</span> practice, even as it carved out a distinction for “unlawful efforts to extract value from closed models.” It advocated for “targeted legal and commercial frameworks rather than sweeping restrictions on techniques that play an important role in AI innovation.”</p>
+			<p class="para-translation">7 月 24 日，包括 Nvidia、Hugging Face、Meta、Mistral、Mozilla、OpenAI 等在內的幾家公司共同簽署了一封題為《開放權重與美國 AI 領導力》的公開信，主張開放權重模型相對於（或至少是補充）專有模型的價值，並為蒸餾作為一種合法實踐進行辯護，儘管信中也區分了「從封閉模型中提取價值的非法行為」。它提倡「針對性的法律和商業框架，而不是對在 AI 創新中發揮重要作用的技術進行全面限制」。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">On the topic of <span class="word-term" data-word="distillation">distillation</span>, Meta and Zuckerberg wrote:</p>
+			<p class="para-translation">關於蒸餾的主題，Meta 和祖克柏寫道：</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block quote-block">
+			<blockquote class="para-original">The ability for models to learn from other models is an important <span class="word-highfreq" data-word="principle">principle</span> of how the open source ecosystem works. All AI models are derived from human knowledge. Some have tried to frame <span class="word-term" data-word="distillation">distillation</span> as harmful, but I think it is important to protect the principle that you can learn from anything you can observe.</blockquote>
+			<blockquote class="para-translation">「模型從其他模型中學習的能力是開源生態系統運作的重要原則。所有 AI 模型都源於人類知識。有些人試圖將蒸餾框定為有害的，但我認為保護『你可以從任何能觀察到的事物中學習』這一原則是很重要的。」</blockquote>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">However, the majority of the essay focused on the <span class="word-general" data-word="notion">notion</span> of decentralized AI systems that are <span class="word-highfreq" data-word="distribute">distribute</span>d widely. It also directly aims at arguments that tightly controlled, <span class="word-general" data-word="proprietary">proprietary</span> AI models and systems are needed because of concerns about existential threats or catastrophic misalignment:</p>
+			<p class="para-translation">然而，這篇文章的大部分內容都聚焦於去中心化、廣泛分佈的 AI 系統這一概念。它還直接針對了那些認為由於對生存威脅或災難性失調的擔憂，需要嚴格控制、專有的 AI 模型和系統的論點：</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block quote-block">
+			<blockquote class="para-original">It is surprising that the <span class="word-general" data-word="discourse">discourse</span> from many developing AI is so filled with doom. I do not understand why anyone who believes that AI will eliminate most jobs and much of humanity’s relevance would rush to build that future. The <span class="word-general" data-word="notion">notion</span> that AI is so dangerous that the only safe path is an extreme concentration of power seems <span class="word-highfreq" data-word="inherently">inherently</span> problematic.</blockquote>
+			<blockquote class="para-translation">「令人驚訝的是，許多開發 AI 的言論充滿了末日感。我不明白為什麼任何相信 AI 將消除大多數工作和大部分人類相關性的人，會急於構建那樣的未來。認為 AI 如此危險以至於唯一的安全途徑是權力極端集中的想法，本身似乎就有問題。」</blockquote>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Zuckerberg wrote that the view of alignment taken by companies like Anthropic—which claims that it is trying to train singular and broad foundation models with operational parameters and guardrails that will ensure they benefit humanity broadly—is “<span class="word-highfreq" data-word="fundamental">fundamental</span>ly flawed.”</p>
+			<p class="para-translation">祖克柏寫道，像 Anthropic 這樣的公司所採取的對齊觀點——該公司聲稱正試圖訓練具有運作參數和護欄的單一且廣泛的基礎模型，以確保它們廣泛造福人類——是「從根本上有缺陷的」。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">“People’s <span class="word-highfreq" data-word="diverse">diverse</span> values represent different tradeoffs they would make on important issues. There is no technological solution that can align with everyone’s opposing interests and values at once,” the essay says. “Any singular superintelligence would have to prioritize some values over others and in the process would be incapable of being <span class="word-general" data-word="benevolent">benevolent</span> to everyone.”</p>
+			<p class="para-translation">「人們多元的價值觀代表了他們在重要問題上會做出的不同權衡。沒有一種技術解決方案能同時與每個人的對立利益和價值觀對齊，」文章指出。「任何單一的超級智慧都必須優先考慮某些價值觀而捨棄其他價值觀，在此過程中，它將無法對每個人都保持仁慈。」</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Instead, Meta argues here that models should be personalized to the needs and values of individuals or groups of individuals. It also claims that decentralization will make everyone safer, because it will give the benefits and advantages of “superintelligence” to everyone equally, instead of privileging “a small number of individuals, businesses, governments, or AI itself.”</p>
+			<p class="para-translation">相反，Meta 在這裡主張模型應該根據個人或群體的需要和價值觀進行個性化。它還聲稱去中心化將使每個人都更安全，因為它將把「超級智慧」的利益和優勢平等地賦予每個人，而不是特權化「少數個人、企業、政府或 AI 本身」。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block heading-block">
+			<h2 class="para-original">A public <span class="word-general" data-word="recalibration">recalibration</span></h2>
+			<h2 class="para-translation">一次公開的重新調整</h2>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Meta has been lagging behind other big tech companies and major frontier labs for foundation models. Its models haven’t seen the kind of adoption that those developed by OpenAI or Anthropic have.</p>
+			<p class="para-translation">Meta 在基礎模型方面一直落後於其他大型科技公司和主要的前沿實驗室。其模型的採用率尚未達到 OpenAI 或 Anthropic 開發的模型那樣的水平。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">OpenAI and Anthropic have aggressively targeted enterprise customers, releasing powerful models and harnesses for knowledge work tasks like software development, and they have made significant inroads and generated substantial revenue from this strategy. Meta has not seen the same level of success.</p>
+			<p class="para-translation">OpenAI 和 Anthropic 積極針對企業客戶，發佈了強大的模型和用於軟體開發等知識型工作任務的工具鏈，他們在這一策略上取得了重大進展並產生了可觀的收入。Meta 尚未取得相同程度的成功。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">Meta also saw a total <span class="word-general" data-word="overhaul">overhaul</span> of its AI division last year, when former Meta AI chief scientist Yann LeCun was replaced by former Scale AI CEO Alexandr Wang. The reset led to a change in focus.</p>
+			<p class="para-translation">Meta 去年也經歷了 AI 部門的全面調整，當時前 Meta AI 首席科學家 Yann LeCun 被前 Scale AI 執行長 Alexandr Wang 取代。這次重置導致了重點的轉移。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">In recent months, the debate around open-weight models and <span class="word-term" data-word="distillation">distillation</span> has increased in volume as recent Chinese models like Alibaba’s Qwen3.8-Max and Moonshot’s Kimi K3 have been shown to rival Anthropic and OpenAI at the frontier. Those models may perform slightly worse in coding <span class="word-term" data-word="benchmark">benchmark</span>s, for example, but they are generally cheaper to use.</p>
+			<p class="para-translation">最近幾個月，圍繞開放權重模型和蒸餾的辯論聲量日益增大，因為最近的中國模型（如阿里巴巴的 Qwen3.8-Max 和 Moonshot 的 Kimi K3）已被證明在前沿領域能與 Anthropic 和 OpenAI 匹敵。例如，這些模型在編碼基準測試中的表現可能略差，但它們通常使用成本更低。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original"><span class="word-phrase" data-word="in a sense">In a sense</span>, Meta seems to be positioning itself as a US alternative to Alibaba, Moonshot, or DeepSeek—not quite as frontier-facing as Anthropic or OpenAI, but more open, customizable, and <span class="word-highfreq" data-word="affordable">affordable</span>. It is also orienting itself—at least with these public statements—more toward personal use as opposed to large-scale enterprise deployments, at least for now.</p>
+			<p class="para-translation">從某種意義上說，Meta 似乎正把自己定位為阿里巴巴、Moonshot 或 DeepSeek 的美國替代方案——不像 Anthropic 或 OpenAI 那樣全然面向前沿，但更開放、可自訂且更負擔得起。它也正將自己——至少透過這些公開聲明——更多地導向個人用途，而非大規模的企業部署，至少目前如此。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+		<div class="para-block">
+			<p class="para-original">That is a retreat from some of its earlier ambitions, in a way, as the company takes advantage of changing winds to try to plot a new course.</p>
+			<p class="para-translation">在某種程度上，這是一種對早期野心的撤退，因為該公司正利用變幻的風向試圖規劃出一條新航線。</p>
+			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
+		</div>
+	<div class="stage-actions stage-actions--end" id="to-verify">
+		<button class="btn-primary" onclick="goStage('verify')">讀完了，顯示翻譯與解答 →</button>
+	</div>
+</div>
+
+<div class="verify-block content-block" id="verify-block">
+	
+	<div class="summary-zh">
+		<div class="section-label">整篇摘要</div>
+		<p>Meta 宣佈將人工智慧策略重心轉向「開放權重」模型，並發佈了可在個人電腦運行的 Muse Glimmer。執行長祖克柏發表長文批評封閉式模型的壟斷現狀，主張 AI 應去中心化且符合個人需求，而非僅由少數公司控管。這標誌著 Meta 在 AI 競爭中試圖透過更開放、平價的定位，來挽回先前落後於 OpenAI 與 Anthropic 的局面。</p>
+	</div>
+	
+	<div class="scan-answers">
+		<div class="section-label">掃讀問題解答</div>
+		<ul class="scan-answer-list">
+		<li class="scan-answer">
+			<span class="scan-q-num">1</span>
+			<div>
+				<div class="scan-a-question">What are the technical specifications of the Muse Glimmer model?</div>
+				<div class="scan-a-text">Muse Glimmer 是一個擁有 300 億參數的模型，預設具備 128,000 個 token 的上下文視窗。</div>
+			</div>
+		</li>
+		<li class="scan-answer">
+			<span class="scan-q-num">2</span>
+			<div>
+				<div class="scan-a-question">Who replaced Yann LeCun as the head of Meta&#x27;s AI division last year?</div>
+				<div class="scan-a-text">前 Scale AI 執行長 Alexandr Wang 接替了 Yann LeCun 擔任 Meta AI 主管。</div>
+			</div>
+		</li>
+		<li class="scan-answer">
+			<span class="scan-q-num">3</span>
+			<div>
+				<div class="scan-a-question">What is the name of the coding agent released alongside Muse Spark 1.2?</div>
+				<div class="scan-a-text">隨 Muse Spark 1.2 一併發佈的終端編碼代理工具名稱為 Muse Code。</div>
+			</div>
+		</li>
+		</ul>
+	</div>
+</div>
+
+<div class="quiz-section content-block" id="quiz-section">
+	<div class="section-label">單字測驗（10 題）</div>
+	<div class="quiz-progress" id="quiz-progress"></div>
+	<div class="quiz-sentence" id="quiz-sentence"></div>
+	<div class="quiz-options" id="quiz-options"></div>
+	<div class="quiz-feedback" id="quiz-feedback"></div>
+	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
+	<div class="quiz-result" id="quiz-result"></div>
+</div>
+
+<div class="related-section content-block">
+	<div class="section-label">延伸閱讀</div>
+	<div class="related-grid">
+			<a class="related-card" href="2026-08-09.html">
+				<span class="related-source">Rest of World</span>
+				<span class="related-title">Arizona wants Taiwan’s investors to think beyond chips</span>
+			</a>
+			<a class="related-card" href="2026-08-08.html">
+				<span class="related-source">Ars Technica</span>
+				<span class="related-title">Volkswagen plans to win America back with a pickup, report says</span>
+			</a>
+			<a class="related-card" href="2026-08-02.html">
+				<span class="related-source">Ars Technica</span>
+				<span class="related-title">Here&#x27;s how engineers plan to save the satellite sent to save NASA</span>
+			</a>
+	</div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+	<div class="popup-card" id="popup-card">
+		<button class="btn-close" onclick="closePopup()">×</button>
+		<div class="popup-word" id="popup-word"></div>
+		<div class="popup-ipa" id="popup-ipa"></div>
+		<div class="popup-badge" id="popup-badge"></div>
+		<div class="popup-pos" id="popup-pos"></div>
+		<div class="popup-def" id="popup-def"></div>
+		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-actions">
+			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
+			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入 Anki</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	const vocabData = [{"word": "intention", "type": "highfreq", "pos": "n.", "ipa": "/ɪnˈtenʃn/", "definition_zh": "意圖、打算", "example": "Meta has announced its intention to focus on open-weight large language models."}, {"word": "philosophy", "type": "highfreq", "pos": "n.", "ipa": "/fəˈlɒsəfi/", "definition_zh": "哲學、理念", "example": "Zuckerberg published a more than 6,000-word essay outlining the company’s philosophy."}, {"word": "differentiate", "type": "highfreq", "pos": "v.", "ipa": "/ˌdɪfəˈrenʃieɪt/", "definition_zh": "區分、區別", "example": "The essay aims to differentiate Meta from companies like OpenAI and Anthropic."}, {"word": "proprietary", "type": "general", "pos": "adj.", "ipa": "/prəˈpraɪətri/", "definition_zh": "專有的、專利的", "example": "OpenAI and Anthropic, which develop proprietary models."}, {"word": "lobby", "type": "general", "pos": "v.", "ipa": "/ˈlɒbi/", "definition_zh": "遊說", "example": "They have lobbied the US government for help."}, {"word": "distillation", "type": "term", "pos": "n.", "ipa": "/ˌdɪstɪˈleɪʃn/", "definition_zh": "蒸餾（模型提煉技術）", "example": "which involves using an existing model to train a new one—or open-weight models by Chinese labs."}, {"word": "inference", "type": "term", "pos": "n.", "ipa": "/ˈɪnfərəns/", "definition_zh": "推理（AI 運行過程）", "example": "bring some inference to local devices to reduce reliance."}, {"word": "distribute", "type": "highfreq", "pos": "v.", "ipa": "/dɪˈstrɪbjuːt/", "definition_zh": "分發、分配", "example": "how AI should be developed, distributed, and regulated."}, {"word": "legitimate", "type": "highfreq", "pos": "adj.", "ipa": "/lɪˈdʒɪtɪmət/", "definition_zh": "合法的、正當的", "example": "defended distillation as a legitimate practice."}, {"word": "principle", "type": "highfreq", "pos": "n.", "ipa": "/ˈprɪnsəpl/", "definition_zh": "原則、原理", "example": "The ability for models to learn from other models is an important principle."}, {"word": "notion", "type": "general", "pos": "n.", "ipa": "/ˈnəʊʃn/", "definition_zh": "觀念、想法", "example": "The majority of the essay focused on the notion of decentralized AI systems."}, {"word": "discourse", "type": "general", "pos": "n.", "ipa": "/ˈdɪskɔːs/", "definition_zh": "論述、言論", "example": "It is surprising that the discourse from many developing AI is so filled with doom."}, {"word": "inherently", "type": "highfreq", "pos": "adv.", "ipa": "/ɪnˈhɪərəntli/", "definition_zh": "內在心地、固有地", "example": "The notion... seems inherently problematic."}, {"word": "fundamental", "type": "highfreq", "pos": "adj.", "ipa": "/ˌfʌndəˈmentl/", "definition_zh": "基本的、根本的", "example": "the view of alignment taken by companies like Anthropic... is 'fundamentally flawed.'"}, {"word": "diverse", "type": "highfreq", "pos": "adj.", "ipa": "/daɪˈvɜːs/", "definition_zh": "多元的、不同的", "example": "People’s diverse values represent different tradeoffs."}, {"word": "benevolent", "type": "general", "pos": "adj.", "ipa": "/bəˈnevələnt/", "definition_zh": "仁慈的、善意的", "example": "it would be incapable of being benevolent to everyone."}, {"word": "recalibration", "type": "general", "pos": "n.", "ipa": "/ˌriːˌkælɪˈbreɪʃn/", "definition_zh": "重新調整、校準", "example": "A public recalibration"}, {"word": "overhaul", "type": "general", "pos": "n.", "ipa": "/ˈəʊvəhɔːl/", "definition_zh": "徹底改革、翻修", "example": "Meta also saw a total overhaul of its AI division last year."}, {"word": "benchmark", "type": "term", "pos": "n.", "ipa": "/ˈbentʃmɑːk/", "definition_zh": "基準測試", "example": "Those models may perform slightly worse in coding benchmarks."}, {"word": "affordable", "type": "highfreq", "pos": "adj.", "ipa": "/əˈfɔːdəbl/", "definition_zh": "負擔得起的、平價的", "example": "but more open, customizable, and affordable."}, {"word": "ambitious", "type": "highfreq", "pos": "adj.", "ipa": "/æmˈbɪʃəs/", "definition_zh": "雄心勃勃的", "example": "That is a retreat from some of its earlier ambitions."}, {"word": "lag behind", "type": "phrase", "pos": "", "ipa": "/læɡ bɪˈhaɪnd/", "definition_zh": "落後於", "example": "Meta has been lagging behind other big tech companies."}, {"word": "in a sense", "type": "phrase", "pos": "", "ipa": "/ɪn ə sens/", "definition_zh": "從某種意義上說", "example": "In a sense, Meta seems to be positioning itself as a US alternative."}, {"word": "take advantage of", "type": "phrase", "pos": "", "ipa": "/teɪk ədˈvɑːntɪdʒ əv/", "definition_zh": "利用、佔便宜", "example": "as the company takes advantage of changing winds to try to plot a new course."}];
+	const vocabMap = {};
+	vocabData.forEach(v => { vocabMap[v.word.toLowerCase()] = v; });
+
+	const articleMeta = {
+		title: "With new open models, Meta pitches another reboot of its struggling AI strategy",
+		date: "2026-08-11",
+		source: "Ars Technica"
+	};
+
+	const badgeInfo = {
+		highfreq: ["badge-highfreq", "高頻詞"],
+		general: ["badge-general", "學習詞"],
+		term: ["badge-term", "術語"],
+		phrase: ["badge-phrase", "片語"],
+	};
+
+	// ---- 三階段閱讀 ----
+	// 階段只影響「這次瀏覽」，不寫進 localStorage —— 刻意的：如果記住上次
+	// 選擇，跳過一次就等於永久關掉這個功能。
+	function goStage(stage) {
+		document.body.setAttribute("data-stage", stage);
+		document.querySelectorAll(".stage-step").forEach(b => {
+			b.classList.toggle("is-active", b.dataset.step === stage);
+		});
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+	function revealPara(btn) {
+		btn.closest(".para-block").classList.add("revealed");
+	}
+
+	// ---- Anki 單字收集 ----
+	const ANKI_KEY = "anki-deck";
+
+	function loadDeck() {
+		try { return JSON.parse(localStorage.getItem(ANKI_KEY) || "[]"); }
+		catch (e) { return []; }
+	}
+
+	function saveDeck(deck) {
+		try { localStorage.setItem(ANKI_KEY, JSON.stringify(deck)); }
+		catch (e) { alert("瀏覽器儲存空間已滿，無法再加入單字。"); }
+	}
+
+	function inDeck(word) {
+		return loadDeck().some(c => c.word.toLowerCase() === word.toLowerCase());
+	}
+
+	function toggleAnki() {
+		if (!currentWord) return;
+		const entry = vocabMap[currentWord.toLowerCase()];
+		if (!entry) return;
+		let deck = loadDeck();
+		const idx = deck.findIndex(c => c.word.toLowerCase() === currentWord.toLowerCase());
+		if (idx >= 0) {
+			deck.splice(idx, 1);
+		} else {
+			deck.push({
+				word: entry.word,
+				pos: entry.pos || "",
+				ipa: entry.ipa || "",
+				definition_zh: entry.definition_zh || "",
+				example: entry.example || "",
+				article: articleMeta.title,
+				date: articleMeta.date,
+				added: new Date().toISOString().slice(0, 10)
+			});
+		}
+		saveDeck(deck);
+		syncAnkiButton();
+		markCollectedWords();
+	}
+
+	function syncAnkiButton() {
+		const btn = document.getElementById("btn-anki");
+		if (!currentWord) return;
+		const has = inDeck(currentWord);
+		btn.textContent = has ? "已加入 ✓" : "加入 Anki";
+		btn.classList.toggle("is-added", has);
+	}
+
+	function markCollectedWords() {
+		const deck = loadDeck().map(c => c.word.toLowerCase());
+		document.querySelectorAll("[data-word]").forEach(el => {
+			el.classList.toggle("is-collected", deck.includes(el.dataset.word.toLowerCase()));
+		});
+	}
+
+	let currentWord = null;
+
+	function showPopup(word) {
+		const entry = vocabMap[word.toLowerCase()];
+		if (!entry) return;
+		currentWord = entry.word;
+
+		document.getElementById("popup-word").textContent = entry.word;
+		document.getElementById("popup-ipa").textContent = entry.ipa;
+		document.getElementById("popup-def").textContent = entry.definition_zh;
+		document.getElementById("popup-example").textContent = entry.example || "";
+
+		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
+		const badge = document.getElementById("popup-badge");
+		badge.className = "popup-badge";
+		badge.innerHTML = `<span class="badge ${badgeClass}">${badgeLabel}</span>`;
+
+		document.getElementById("popup-pos").textContent = entry.pos || "";
+		syncAnkiButton();
+
+		document.getElementById("popup-overlay").classList.add("open");
+	}
+
+	function closePopup() {
+		document.getElementById("popup-overlay").classList.remove("open");
+		currentWord = null;
+	}
+
+	function closePopupOnOverlay(e) {
+		if (e.target === document.getElementById("popup-overlay")) closePopup();
+	}
+
+	function speakWord() {
+		if (!currentWord) return;
+		speechSynthesis.cancel();
+		const utter = new SpeechSynthesisUtterance(currentWord);
+		utter.lang = "en-US";
+		speechSynthesis.speak(utter);
+	}
+
+	function toggleVocab(btn) {
+		const grid = document.getElementById("vocab-grid");
+		grid.classList.toggle("open");
+		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
+	}
+
+	// wire up highlighted words
+	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
+		el.addEventListener("click", () => showPopup(el.dataset.word));
+	});
+
+	// close on Escape
+	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+
+	markCollectedWords();
+	goStage("bumps");
+
+	// quiz
+	const quizData = [{"sentence": "The company’s ____ technology is not available for public use because it is a trade secret.", "sentence_zh": "該公司的專有技術不對公眾開放使用，因為那是商業機密。", "answer": "proprietary", "options": ["benevolent", "proprietary", "diverse", "affordable"]}, {"sentence": "To remain competitive, the startup had to ____ itself from larger corporations.", "sentence_zh": "為了保持競爭力，這家初創公司必須將自己與大公司區分開來。", "answer": "differentiate", "options": ["differentiate", "distribute", "overhaul", "lobby"]}, {"sentence": "Our sales have started to ____ the competitors, so we need a new marketing plan.", "sentence_zh": "我們的銷售額已經開始落後於競爭對手，所以我們需要一個新的行銷計劃。", "answer": "lag behind", "options": ["lag behind", "take advantage of", "in a sense", "inference"]}, {"sentence": "The teacher explained that the ____ of honesty is essential in every relationship.", "sentence_zh": "老師解釋說，誠實的原則在每一段關係中都是不可或缺的。", "answer": "principle", "options": ["principle", "notion", "philosophy", "discourse"]}, {"sentence": "They tried to ____ the city council to approve the new park project.", "sentence_zh": "他們試圖遊說市議會批准新的公園項目。", "answer": "lobby", "options": ["differentiate", "lobby", "ambitious", "distribute"]}, {"sentence": "The manager decided to ____ the entire system to improve efficiency.", "sentence_zh": "經理決定徹底改革整個系統以提高效率。", "answer": "overhaul", "options": ["intention", "overhaul", "recalibration", "discourse"]}, {"sentence": "The new smartphone is surprisingly ____, making it popular among students.", "sentence_zh": "這款新智慧型手機的價格出奇地實惠，使其在學生中非常受歡迎。", "answer": "affordable", "options": ["proprietary", "inherently", "fundamental", "affordable"]}, {"sentence": "He had no ____ of hurting anyone with his comments.", "sentence_zh": "他並沒有打算用他的言論傷害任何人。", "answer": "intention", "options": ["benchmark", "distillation", "intention", "notion"]}, {"sentence": "We should ____ the sunny weather and go for a hike today.", "sentence_zh": "我們今天應該利用晴朗的天氣去健行。", "answer": "take advantage of", "options": ["take advantage of", "lag behind", "distribute", "in a sense"]}, {"sentence": "The student has an ____ plan to finish three degrees in five years.", "sentence_zh": "這個學生有一個雄心勃勃的計劃，要在五年內完成三個學位。", "answer": "ambitious", "options": ["diverse", "benevolent", "ambitious", "legitimate"]}];
+	let quizIndex = 0;
+	let quizScore = 0;
+	let quizAnswered = false;
+
+	function renderQuiz() {
+		if (quizIndex >= quizData.length) {
+			document.getElementById("quiz-sentence").style.display = "none";
+			document.getElementById("quiz-options").style.display = "none";
+			document.getElementById("quiz-feedback").textContent = "";
+			document.getElementById("quiz-next").style.display = "none";
+			document.getElementById("quiz-progress").textContent = "";
+			document.getElementById("quiz-result").textContent = `答對 ${quizScore} / ${quizData.length} 題`;
+			return;
+		}
+		quizAnswered = false;
+		const q = quizData[quizIndex];
+		document.getElementById("quiz-progress").textContent = `第 ${quizIndex + 1} / ${quizData.length} 題`;
+		document.getElementById("quiz-sentence").textContent = q.sentence;
+		document.getElementById("quiz-feedback").textContent = "";
+		document.getElementById("quiz-next").style.display = "none";
+		document.getElementById("quiz-result").textContent = "";
+		const optionsEl = document.getElementById("quiz-options");
+		optionsEl.innerHTML = "";
+		q.options.forEach(opt => {
+			const optBtn = document.createElement("button");
+			optBtn.className = "quiz-option";
+			optBtn.textContent = opt;
+			optBtn.onclick = () => answerQuiz(opt, optBtn);
+			optionsEl.appendChild(optBtn);
+		});
+	}
+
+	function escapeHtml(s) {
+		const div = document.createElement("div");
+		div.textContent = s;
+		return div.innerHTML;
+	}
+
+	function answerQuiz(selected, btn) {
+		if (quizAnswered) return;
+		quizAnswered = true;
+		const q = quizData[quizIndex];
+		const correct = selected === q.answer;
+		if (correct) quizScore++;
+		document.querySelectorAll(".quiz-option").forEach(b => {
+			b.disabled = true;
+			if (b.textContent === q.answer) b.classList.add("correct");
+			else if (b === btn) b.classList.add("wrong");
+		});
+
+		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${escapeHtml(q.answer)}`;
+		const zhLine = q.sentence_zh
+			? `<div class="quiz-feedback-zh">${escapeHtml(q.sentence_zh)}</div>`
+			: "";
+		const optionsList = q.options.map(opt => {
+			const entry = vocabMap[opt.toLowerCase()];
+			const def = entry ? entry.definition_zh : "";
+			const isAnswer = opt === q.answer;
+			return `<li class="quiz-feedback-option${isAnswer ? " is-answer" : ""}">`
+				+ `<span class="quiz-feedback-word">${escapeHtml(opt)}</span>`
+				+ (def ? ` — ${escapeHtml(def)}` : "")
+				+ `</li>`;
+		}).join("");
+
+		document.getElementById("quiz-feedback").innerHTML =
+			`<div class="quiz-feedback-result">${resultLine}</div>`
+			+ zhLine
+			+ `<ul class="quiz-feedback-options">${optionsList}</ul>`;
+		document.getElementById("quiz-next").style.display = "inline-block";
+	}
+
+	function nextQuiz() {
+		quizIndex++;
+		renderQuiz();
+	}
+
+	if (quizData.length) renderQuiz();
+</script>
+
+</body>
+</html>
