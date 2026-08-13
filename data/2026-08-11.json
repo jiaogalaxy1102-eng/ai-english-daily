@@ -154,7 +154,13 @@
 			"pos": "n.",
 			"ipa": "/ɪnˈtenʃn/",
 			"definition_zh": "意圖、打算",
-			"example": "Meta has announced its intention to focus on open-weight large language models."
+			"definition_en": "What you plan to do.",
+			"synonyms": [
+				"plan",
+				"aim",
+				"purpose"
+			],
+			"example": "He had no intention of leaving early."
 		},
 		{
 			"word": "philosophy",
@@ -162,7 +168,13 @@
 			"pos": "n.",
 			"ipa": "/fəˈlɒsəfi/",
 			"definition_zh": "哲學、理念",
-			"example": "Zuckerberg published a more than 6,000-word essay outlining the company’s philosophy."
+			"definition_en": "A set of beliefs that guides how you act.",
+			"synonyms": [
+				"belief",
+				"outlook",
+				"principles"
+			],
+			"example": "Simple design is the company's philosophy."
 		},
 		{
 			"word": "differentiate",
@@ -170,7 +182,13 @@
 			"pos": "v.",
 			"ipa": "/ˌdɪfəˈrenʃieɪt/",
 			"definition_zh": "區分、區別",
-			"example": "The essay aims to differentiate Meta from companies like OpenAI and Anthropic."
+			"definition_en": "To show how one thing is different from another.",
+			"synonyms": [
+				"distinguish",
+				"separate",
+				"tell apart"
+			],
+			"example": "Good service differentiates the shop from rivals."
 		},
 		{
 			"word": "proprietary",
@@ -178,7 +196,13 @@
 			"pos": "adj.",
 			"ipa": "/prəˈpraɪətri/",
 			"definition_zh": "專有的、專利的",
-			"example": "OpenAI and Anthropic, which develop proprietary models."
+			"definition_en": "Owned by one company and kept private.",
+			"synonyms": [
+				"private",
+				"exclusive",
+				"closed"
+			],
+			"example": "The app runs on proprietary software."
 		},
 		{
 			"word": "lobby",
@@ -186,7 +210,13 @@
 			"pos": "v.",
 			"ipa": "/ˈlɒbi/",
 			"definition_zh": "遊說",
-			"example": "They have lobbied the US government for help."
+			"definition_en": "To try to persuade officials to make a decision.",
+			"synonyms": [
+				"campaign",
+				"push",
+				"petition"
+			],
+			"example": "Parents lobbied the city for a new park."
 		},
 		{
 			"word": "distillation",
@@ -194,7 +224,13 @@
 			"pos": "n.",
 			"ipa": "/ˌdɪstɪˈleɪʃn/",
 			"definition_zh": "蒸餾（模型提煉技術）",
-			"example": "which involves using an existing model to train a new one—or open-weight models by Chinese labs."
+			"definition_en": "Taking the key part out of something larger.",
+			"synonyms": [
+				"extraction",
+				"refining",
+				"condensing"
+			],
+			"example": "Distillation turns a huge model into a small one."
 		},
 		{
 			"word": "inference",
@@ -202,7 +238,13 @@
 			"pos": "n.",
 			"ipa": "/ˈɪnfərəns/",
 			"definition_zh": "推理（AI 運行過程）",
-			"example": "bring some inference to local devices to reduce reliance."
+			"definition_en": "Reaching a result from what you already know.",
+			"synonyms": [
+				"reasoning",
+				"deduction",
+				"conclusion"
+			],
+			"example": "Each user question adds inference cost."
 		},
 		{
 			"word": "distribute",
@@ -210,7 +252,13 @@
 			"pos": "v.",
 			"ipa": "/dɪˈstrɪbjuːt/",
 			"definition_zh": "分發、分配",
-			"example": "how AI should be developed, distributed, and regulated."
+			"definition_en": "To give or send things out to many people.",
+			"synonyms": [
+				"hand out",
+				"share",
+				"deliver"
+			],
+			"example": "They distribute free samples at the door."
 		},
 		{
 			"word": "legitimate",
@@ -218,7 +266,13 @@
 			"pos": "adj.",
 			"ipa": "/lɪˈdʒɪtɪmət/",
 			"definition_zh": "合法的、正當的",
-			"example": "defended distillation as a legitimate practice."
+			"definition_en": "Allowed by law, or clearly reasonable.",
+			"synonyms": [
+				"lawful",
+				"valid",
+				"genuine"
+			],
+			"example": "She had a legitimate reason to be late."
 		},
 		{
 			"word": "principle",
@@ -226,7 +280,13 @@
 			"pos": "n.",
 			"ipa": "/ˈprɪnsəpl/",
 			"definition_zh": "原則、原理",
-			"example": "The ability for models to learn from other models is an important principle."
+			"definition_en": "A basic rule or belief that guides action.",
+			"synonyms": [
+				"rule",
+				"standard",
+				"belief"
+			],
+			"example": "Honesty is his first principle."
 		},
 		{
 			"word": "notion",
@@ -234,7 +294,13 @@
 			"pos": "n.",
 			"ipa": "/ˈnəʊʃn/",
 			"definition_zh": "觀念、想法",
-			"example": "The majority of the essay focused on the notion of decentralized AI systems."
+			"definition_en": "An idea or belief about something.",
+			"synonyms": [
+				"idea",
+				"concept",
+				"thought"
+			],
+			"example": "I reject the notion that talent is fixed."
 		},
 		{
 			"word": "discourse",
@@ -242,15 +308,27 @@
 			"pos": "n.",
 			"ipa": "/ˈdɪskɔːs/",
 			"definition_zh": "論述、言論",
-			"example": "It is surprising that the discourse from many developing AI is so filled with doom."
+			"definition_en": "Serious public discussion about a topic.",
+			"synonyms": [
+				"debate",
+				"discussion",
+				"dialogue"
+			],
+			"example": "Social media shapes political discourse."
 		},
 		{
 			"word": "inherently",
 			"type": "highfreq",
 			"pos": "adv.",
 			"ipa": "/ɪnˈhɪərəntli/",
-			"definition_zh": "內在心地、固有地",
-			"example": "The notion... seems inherently problematic."
+			"definition_zh": "內在地、固有地",
+			"definition_en": "In a way that is part of something's nature.",
+			"synonyms": [
+				"naturally",
+				"essentially",
+				"by nature"
+			],
+			"example": "Climbing without ropes is inherently risky."
 		},
 		{
 			"word": "fundamental",
@@ -258,7 +336,13 @@
 			"pos": "adj.",
 			"ipa": "/ˌfʌndəˈmentl/",
 			"definition_zh": "基本的、根本的",
-			"example": "the view of alignment taken by companies like Anthropic... is 'fundamentally flawed.'"
+			"definition_en": "Forming the base that everything else rests on.",
+			"synonyms": [
+				"basic",
+				"essential",
+				"core"
+			],
+			"example": "Trust is fundamental to good teamwork."
 		},
 		{
 			"word": "diverse",
@@ -266,7 +350,13 @@
 			"pos": "adj.",
 			"ipa": "/daɪˈvɜːs/",
 			"definition_zh": "多元的、不同的",
-			"example": "People’s diverse values represent different tradeoffs."
+			"definition_en": "Made up of many different kinds.",
+			"synonyms": [
+				"varied",
+				"mixed",
+				"wide-ranging"
+			],
+			"example": "The class has a diverse group of students."
 		},
 		{
 			"word": "benevolent",
@@ -274,7 +364,13 @@
 			"pos": "adj.",
 			"ipa": "/bəˈnevələnt/",
 			"definition_zh": "仁慈的、善意的",
-			"example": "it would be incapable of being benevolent to everyone."
+			"definition_en": "Kind and wanting to help other people.",
+			"synonyms": [
+				"kind",
+				"generous",
+				"caring"
+			],
+			"example": "A benevolent neighbor paid the bill."
 		},
 		{
 			"word": "recalibration",
@@ -282,7 +378,13 @@
 			"pos": "n.",
 			"ipa": "/ˌriːˌkælɪˈbreɪʃn/",
 			"definition_zh": "重新調整、校準",
-			"example": "A public recalibration"
+			"definition_en": "Adjusting something again to a better setting.",
+			"synonyms": [
+				"adjustment",
+				"rethink",
+				"fine-tuning"
+			],
+			"example": "The plan needs a recalibration after the loss."
 		},
 		{
 			"word": "overhaul",
@@ -290,7 +392,13 @@
 			"pos": "n.",
 			"ipa": "/ˈəʊvəhɔːl/",
 			"definition_zh": "徹底改革、翻修",
-			"example": "Meta also saw a total overhaul of its AI division last year."
+			"definition_en": "A complete change made to fix something.",
+			"synonyms": [
+				"revamp",
+				"rebuild",
+				"reform"
+			],
+			"example": "The website got a full overhaul."
 		},
 		{
 			"word": "benchmark",
@@ -298,7 +406,13 @@
 			"pos": "n.",
 			"ipa": "/ˈbentʃmɑːk/",
 			"definition_zh": "基準測試",
-			"example": "Those models may perform slightly worse in coding benchmarks."
+			"definition_en": "A standard test used to compare things.",
+			"synonyms": [
+				"standard",
+				"yardstick",
+				"reference point"
+			],
+			"example": "The phone scored well on every benchmark."
 		},
 		{
 			"word": "affordable",
@@ -306,7 +420,13 @@
 			"pos": "adj.",
 			"ipa": "/əˈfɔːdəbl/",
 			"definition_zh": "負擔得起的、平價的",
-			"example": "but more open, customizable, and affordable."
+			"definition_en": "Cheap enough for most people to buy.",
+			"synonyms": [
+				"reasonable",
+				"low-cost",
+				"budget-friendly"
+			],
+			"example": "We finally found an affordable flat."
 		},
 		{
 			"word": "ambitious",
@@ -314,7 +434,13 @@
 			"pos": "adj.",
 			"ipa": "/æmˈbɪʃəs/",
 			"definition_zh": "雄心勃勃的",
-			"example": "That is a retreat from some of its earlier ambitions."
+			"definition_en": "Aiming high, or needing great effort to reach.",
+			"synonyms": [
+				"bold",
+				"driven",
+				"far-reaching"
+			],
+			"example": "Their plan is ambitious but possible."
 		},
 		{
 			"word": "lag behind",
@@ -322,7 +448,13 @@
 			"pos": "",
 			"ipa": "/læɡ bɪˈhaɪnd/",
 			"definition_zh": "落後於",
-			"example": "Meta has been lagging behind other big tech companies."
+			"definition_en": "To move or develop more slowly than others.",
+			"synonyms": [
+				"fall behind",
+				"trail",
+				"be slower"
+			],
+			"example": "Sales lag behind last year's numbers."
 		},
 		{
 			"word": "in a sense",
@@ -330,7 +462,13 @@
 			"pos": "",
 			"ipa": "/ɪn ə sens/",
 			"definition_zh": "從某種意義上說",
-			"example": "In a sense, Meta seems to be positioning itself as a US alternative."
+			"definition_en": "In one way of looking at it.",
+			"synonyms": [
+				"in a way",
+				"to some extent",
+				"sort of"
+			],
+			"example": "In a sense, we both won."
 		},
 		{
 			"word": "take advantage of",
@@ -338,119 +476,13 @@
 			"pos": "",
 			"ipa": "/teɪk ədˈvɑːntɪdʒ əv/",
 			"definition_zh": "利用、佔便宜",
-			"example": "as the company takes advantage of changing winds to try to plot a new course."
-		}
-	],
-	"quiz": [
-		{
-			"sentence": "The company’s ____ technology is not available for public use because it is a trade secret.",
-			"sentence_zh": "該公司的專有技術不對公眾開放使用，因為那是商業機密。",
-			"answer": "proprietary",
-			"options": [
-				"benevolent",
-				"proprietary",
-				"diverse",
-				"affordable"
-			]
-		},
-		{
-			"sentence": "To remain competitive, the startup had to ____ itself from larger corporations.",
-			"sentence_zh": "為了保持競爭力，這家初創公司必須將自己與大公司區分開來。",
-			"answer": "differentiate",
-			"options": [
-				"differentiate",
-				"distribute",
-				"overhaul",
-				"lobby"
-			]
-		},
-		{
-			"sentence": "Our sales have started to ____ the competitors, so we need a new marketing plan.",
-			"sentence_zh": "我們的銷售額已經開始落後於競爭對手，所以我們需要一個新的行銷計劃。",
-			"answer": "lag behind",
-			"options": [
-				"lag behind",
-				"take advantage of",
-				"in a sense",
-				"inference"
-			]
-		},
-		{
-			"sentence": "The teacher explained that the ____ of honesty is essential in every relationship.",
-			"sentence_zh": "老師解釋說，誠實的原則在每一段關係中都是不可或缺的。",
-			"answer": "principle",
-			"options": [
-				"principle",
-				"notion",
-				"philosophy",
-				"discourse"
-			]
-		},
-		{
-			"sentence": "They tried to ____ the city council to approve the new park project.",
-			"sentence_zh": "他們試圖遊說市議會批准新的公園項目。",
-			"answer": "lobby",
-			"options": [
-				"differentiate",
-				"lobby",
-				"ambitious",
-				"distribute"
-			]
-		},
-		{
-			"sentence": "The manager decided to ____ the entire system to improve efficiency.",
-			"sentence_zh": "經理決定徹底改革整個系統以提高效率。",
-			"answer": "overhaul",
-			"options": [
-				"intention",
-				"overhaul",
-				"recalibration",
-				"discourse"
-			]
-		},
-		{
-			"sentence": "The new smartphone is surprisingly ____, making it popular among students.",
-			"sentence_zh": "這款新智慧型手機的價格出奇地實惠，使其在學生中非常受歡迎。",
-			"answer": "affordable",
-			"options": [
-				"proprietary",
-				"inherently",
-				"fundamental",
-				"affordable"
-			]
-		},
-		{
-			"sentence": "He had no ____ of hurting anyone with his comments.",
-			"sentence_zh": "他並沒有打算用他的言論傷害任何人。",
-			"answer": "intention",
-			"options": [
-				"benchmark",
-				"distillation",
-				"intention",
-				"notion"
-			]
-		},
-		{
-			"sentence": "We should ____ the sunny weather and go for a hike today.",
-			"sentence_zh": "我們今天應該利用晴朗的天氣去健行。",
-			"answer": "take advantage of",
-			"options": [
-				"take advantage of",
-				"lag behind",
-				"distribute",
-				"in a sense"
-			]
-		},
-		{
-			"sentence": "The student has an ____ plan to finish three degrees in five years.",
-			"sentence_zh": "這個學生有一個雄心勃勃的計劃，要在五年內完成三個學位。",
-			"answer": "ambitious",
-			"options": [
-				"diverse",
-				"benevolent",
-				"ambitious",
-				"legitimate"
-			]
+			"definition_en": "To make use of a chance, or to use someone unfairly.",
+			"synonyms": [
+				"make use of",
+				"exploit",
+				"benefit from"
+			],
+			"example": "Take advantage of the free trial."
 		}
 	]
 }

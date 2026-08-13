@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 14
+CSS_VERSION = 15
 
 FIXED_TAGS = [
 	"模型與研究",
@@ -81,6 +81,15 @@ SETTINGS_PANEL_HTML = """
 # 前端存單字用的 localStorage key。文章頁（加入）跟 vocab.html（匯出）共用，
 # 改名字要兩邊一起改，否則已收集的單字會突然消失。
 ANKI_STORAGE_KEY = "anki-deck"
+
+# 單字卡上的發音圖示（直接播，不開彈窗）
+SPEAKER_ICON = (
+	'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">'
+	'<path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/>'
+	'<path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+	'd="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/>'
+	"</svg>"
+)
 
 
 def entry_filename(d):
@@ -444,9 +453,6 @@ def render_article(data, all_entries=None):
 	# escape JSON for embedding in HTML — prevent </script> from breaking the tag
 	vocab_json = json.dumps(vocab, ensure_ascii=False).replace("</script>", r"<\/script>")
 
-	quiz = data.get("quiz") or []
-	quiz_json = json.dumps(quiz, ensure_ascii=False).replace("</script>", r"<\/script>")
-
 	# group images by after_paragraph index
 	images_by_para = {}
 	for img in data["images"]:
@@ -561,6 +567,7 @@ def render_article(data, all_entries=None):
 		pos_html = f'<span class="vocab-pos">{htmllib.escape(pos)}</span>' if pos else ""
 		vocab_summary += f"""
 			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
+				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 {word_attr} 的發音" title="發音">{SPEAKER_ICON}</button>
 				<span class="vocab-word">{htmllib.escape(v['word'])}</span>
 				<span class="badge {badge_class}">{badge_label}</span>{pos_html}
 				<span class="vocab-ipa">{htmllib.escape(v['ipa'])}</span>
@@ -600,19 +607,6 @@ def render_article(data, all_entries=None):
 	<div class="section-label">延伸閱讀</div>
 	<div class="related-grid">{related_cards}
 	</div>
-</div>"""
-
-	quiz_html = ""
-	if quiz:
-		quiz_html = f"""
-<div class="quiz-section content-block" id="quiz-section">
-	<div class="section-label">單字測驗（{len(quiz)} 題）</div>
-	<div class="quiz-progress" id="quiz-progress"></div>
-	<div class="quiz-sentence" id="quiz-sentence"></div>
-	<div class="quiz-options" id="quiz-options"></div>
-	<div class="quiz-feedback" id="quiz-feedback"></div>
-	<button class="quiz-next" id="quiz-next" onclick="nextQuiz()" style="display:none;">下一題</button>
-	<div class="quiz-result" id="quiz-result"></div>
 </div>"""
 
 	return f"""<!DOCTYPE html>
@@ -673,7 +667,6 @@ def render_article(data, all_entries=None):
 	{summary_zh_html}
 	{scan_answers_html}
 </div>
-{quiz_html}
 {related_html}
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
@@ -684,10 +677,20 @@ def render_article(data, all_entries=None):
 		<div class="popup-badge" id="popup-badge"></div>
 		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
-		<div class="popup-example" id="popup-example"></div>
+		<div class="popup-field" id="popup-def-en-row">
+			<span class="popup-field-label">英英釋義</span>
+			<span class="popup-def-en" id="popup-def-en"></span>
+		</div>
+		<div class="popup-field" id="popup-syn-row">
+			<span class="popup-field-label">近義字</span>
+			<span class="popup-syn" id="popup-syn"></span>
+		</div>
+		<div class="popup-field" id="popup-example-row">
+			<span class="popup-field-label">例句</span>
+			<span class="popup-example" id="popup-example"></span>
+		</div>
 		<div class="popup-actions">
-			<button class="btn-speak" id="btn-speak" onclick="speakWord()">發音</button>
-			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入 Anki</button>
+			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入單字庫</button>
 		</div>
 	</div>
 </div>
@@ -771,7 +774,7 @@ def render_article(data, all_entries=None):
 		const btn = document.getElementById("btn-anki");
 		if (!currentWord) return;
 		const has = inDeck(currentWord);
-		btn.textContent = has ? "已加入 ✓" : "加入 Anki";
+		btn.textContent = has ? "已加入 ✓" : "加入單字庫";
 		btn.classList.toggle("is-added", has);
 	}}
 
@@ -784,6 +787,11 @@ def render_article(data, all_entries=None):
 
 	let currentWord = null;
 
+	function setField(id, value) {{
+		document.getElementById(id).textContent = value;
+		document.getElementById(id + "-row").style.display = value ? "" : "none";
+	}}
+
 	function showPopup(word) {{
 		const entry = vocabMap[word.toLowerCase()];
 		if (!entry) return;
@@ -792,7 +800,11 @@ def render_article(data, all_entries=None):
 		document.getElementById("popup-word").textContent = entry.word;
 		document.getElementById("popup-ipa").textContent = entry.ipa;
 		document.getElementById("popup-def").textContent = entry.definition_zh;
-		document.getElementById("popup-example").textContent = entry.example || "";
+
+		// 舊文章的 JSON 沒有 definition_en / synonyms，缺欄位就整行不顯示
+		setField("popup-def-en", entry.definition_en || "");
+		setField("popup-syn", (entry.synonyms || []).join("、"));
+		setField("popup-example", entry.example || "");
 
 		const [badgeClass, badgeLabel] = badgeInfo[entry.type] || badgeInfo.highfreq;
 		const badge = document.getElementById("popup-badge");
@@ -814,12 +826,18 @@ def render_article(data, all_entries=None):
 		if (e.target === document.getElementById("popup-overlay")) closePopup();
 	}}
 
-	function speakWord() {{
-		if (!currentWord) return;
+	function speak(word) {{
+		if (!word) return;
 		speechSynthesis.cancel();
-		const utter = new SpeechSynthesisUtterance(currentWord);
+		const utter = new SpeechSynthesisUtterance(word);
 		utter.lang = "en-US";
 		speechSynthesis.speak(utter);
+	}}
+
+	// 卡片本身點了會開彈窗，所以喇叭圖示要擋掉冒泡，只發音不開窗
+	function speakFromCard(e, btn) {{
+		e.stopPropagation();
+		speak(btn.closest("[data-word]").dataset.word);
 	}}
 
 	function toggleVocab(btn) {{
@@ -839,85 +857,6 @@ def render_article(data, all_entries=None):
 	markCollectedWords();
 	goStage("bumps");
 
-	// quiz
-	const quizData = {quiz_json};
-	let quizIndex = 0;
-	let quizScore = 0;
-	let quizAnswered = false;
-
-	function renderQuiz() {{
-		if (quizIndex >= quizData.length) {{
-			document.getElementById("quiz-sentence").style.display = "none";
-			document.getElementById("quiz-options").style.display = "none";
-			document.getElementById("quiz-feedback").textContent = "";
-			document.getElementById("quiz-next").style.display = "none";
-			document.getElementById("quiz-progress").textContent = "";
-			document.getElementById("quiz-result").textContent = `答對 ${{quizScore}} / ${{quizData.length}} 題`;
-			return;
-		}}
-		quizAnswered = false;
-		const q = quizData[quizIndex];
-		document.getElementById("quiz-progress").textContent = `第 ${{quizIndex + 1}} / ${{quizData.length}} 題`;
-		document.getElementById("quiz-sentence").textContent = q.sentence;
-		document.getElementById("quiz-feedback").textContent = "";
-		document.getElementById("quiz-next").style.display = "none";
-		document.getElementById("quiz-result").textContent = "";
-		const optionsEl = document.getElementById("quiz-options");
-		optionsEl.innerHTML = "";
-		q.options.forEach(opt => {{
-			const optBtn = document.createElement("button");
-			optBtn.className = "quiz-option";
-			optBtn.textContent = opt;
-			optBtn.onclick = () => answerQuiz(opt, optBtn);
-			optionsEl.appendChild(optBtn);
-		}});
-	}}
-
-	function escapeHtml(s) {{
-		const div = document.createElement("div");
-		div.textContent = s;
-		return div.innerHTML;
-	}}
-
-	function answerQuiz(selected, btn) {{
-		if (quizAnswered) return;
-		quizAnswered = true;
-		const q = quizData[quizIndex];
-		const correct = selected === q.answer;
-		if (correct) quizScore++;
-		document.querySelectorAll(".quiz-option").forEach(b => {{
-			b.disabled = true;
-			if (b.textContent === q.answer) b.classList.add("correct");
-			else if (b === btn) b.classList.add("wrong");
-		}});
-
-		const resultLine = correct ? "答對了！" : `答錯了，正確答案：${{escapeHtml(q.answer)}}`;
-		const zhLine = q.sentence_zh
-			? `<div class="quiz-feedback-zh">${{escapeHtml(q.sentence_zh)}}</div>`
-			: "";
-		const optionsList = q.options.map(opt => {{
-			const entry = vocabMap[opt.toLowerCase()];
-			const def = entry ? entry.definition_zh : "";
-			const isAnswer = opt === q.answer;
-			return `<li class="quiz-feedback-option${{isAnswer ? " is-answer" : ""}}">`
-				+ `<span class="quiz-feedback-word">${{escapeHtml(opt)}}</span>`
-				+ (def ? ` — ${{escapeHtml(def)}}` : "")
-				+ `</li>`;
-		}}).join("");
-
-		document.getElementById("quiz-feedback").innerHTML =
-			`<div class="quiz-feedback-result">${{resultLine}}</div>`
-			+ zhLine
-			+ `<ul class="quiz-feedback-options">${{optionsList}}</ul>`;
-		document.getElementById("quiz-next").style.display = "inline-block";
-	}}
-
-	function nextQuiz() {{
-		quizIndex++;
-		renderQuiz();
-	}}
-
-	if (quizData.length) renderQuiz();
 </script>
 
 </body>
@@ -1041,7 +980,7 @@ def render_vocab_page():
 
 		const list = document.getElementById("deck-list");
 		if (!deck.length) {{
-			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入 Anki」就會出現在這裡。</p>';
+			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入單字庫」就會出現在這裡。</p>';
 			return;
 		}}
 		list.innerHTML = deck.map((c, i) => `

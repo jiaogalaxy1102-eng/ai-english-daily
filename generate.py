@@ -522,15 +522,9 @@ def call_gemini(source_name, title, url, paragraphs):
       "pos": "詞性縮寫，如 n. / v. / adj. / adv. / prep. / conj.",
       "ipa": "/發音/",
       "definition_zh": "中文釋義（15字以內）",
-      "example": "從文章中包含此詞的原句"
-    }}
-  ],
-  "quiz": [
-    {{
-      "sentence": "一句全新造的英文例句，不可取自文章原文，句中把要考的單字/片語挖空，用 ____ 表示",
-      "sentence_zh": "該英文例句的繁體中文翻譯（挖空處請填入正確答案後再整句翻譯，不要翻成「____」）",
-      "answer": "被挖空的單字或片語，必須與 vocab 陣列中某個 word 完全一致",
-      "options": ["4 個選項字串，其中一個等於 answer，其餘 3 個是從 vocab 陣列中挑的其他單字/片語，順序打散"]
+      "definition_en": "英英釋義：用比這個字更簡單的英文解釋它，一句話、20字以內",
+      "synonyms": ["近義字或近義片語，2-3 個"],
+      "example": "自己造的簡短英文例句，含這個字，15字以內，不可取自文章"
     }}
   ]
 }}
@@ -547,7 +541,7 @@ def call_gemini(source_name, title, url, paragraphs):
 - flow 不要挑 blockquote（那是受訪者說的話，不是作者的論證）、pre 或 table 段落
 - 以下段落的句首有作者自己寫的邏輯路標（However / Instead / As a result 之類），通常正好是論證轉折處，優先考慮但不必全選：{signpost_hint}
 - noise_indices 填「不屬於文章正文」的段落編號：作者自我推銷、訂閱或追蹤呼籲、贊助商訊息、編按、相關文章連結列表。這些段落會整段不顯示，所以判斷不確定就不要填，寧可漏掉也不要誤刪正文。沒有就給空陣列 []
-- 被列入 noise_indices 的段落不會顯示給讀者，所以 flow、vocab 的 example、scan_questions 都不可以取自這些段落（例句取自看不到的段落，讀者會找不到那個字）
+- 被列入 noise_indices 的段落不會顯示給讀者，所以 flow 與 scan_questions 都不可以取自這些段落
 - scan_questions 請出 3 題。問題用英文、答案用繁體中文，paragraph_index 標明答案出現在第幾段。問題要問具體事實（誰、多少、什麼技術、造成什麼結果），不要問感想或推論
 - vocab 陣列請挑選共 20-24 個單字，比例約為：
   - type "highfreq"（常見但實用的詞，如動詞/形容詞/副詞）約 50%
@@ -556,7 +550,9 @@ def call_gemini(source_name, title, url, paragraphs):
 - 另外額外挑 2-4 個實用片語或慣用語，type 設為 "phrase"，pos 留空字串 ""
 - 除了 type "phrase" 以外，每個單字都要標注 pos（詞性縮寫）
 - ipa 使用標準 IPA
-- quiz 陣列請從 vocab 陣列中挑 10 個不同的單字/片語出題（各類型都可能考），每題的 4 個選項不可重複、且都要來自 vocab 陣列
+- definition_en 是給中級英文學習者看的英英釋義，只能用比該單字更簡單常見的英文；不可以在釋義裡再用該單字本身或它的變化形
+- synonyms 給 2-3 個真的能替換的近義字（片語類型就給近義片語）。想不到夠貼切的就給空陣列 []，不要硬湊
+- example 是你自己造的短句，句子要簡單、日常、能一眼看懂該單字怎麼用，不可以從文章裡抄句子
 - 只輸出 JSON，不加任何說明"""
 
 	for attempt in range(3):
@@ -582,49 +578,6 @@ def clamp_index(value, hi, default):
 	except (TypeError, ValueError):
 		return default
 	return i if 0 <= i <= hi else default
-
-
-def validate_quiz(quiz, vocab):
-	"""確保每題的答案與 4 個選項都真的存在於這篇的 vocab 裡。
-
-	prompt 已經要求過這件事，但 Gemini 每天跑、沒有人會看產出。實際踩過的
-	情況是選項給了 vocab 裡沒有的詞形（vocab 收 arrest，選項寫 arresting），
-	前端要靠 vocab 查該選項的中文意思，查不到那一行就空掉 —— 不會壞掉，只
-	會默默變難看，所以這裡自動修掉而不是讓整個流程失敗。
-	"""
-	by_word = {v["word"] for v in vocab}
-	pool = [v["word"] for v in vocab]
-	cleaned = []
-
-	for i, q in enumerate(quiz):
-		answer = q.get("answer", "")
-		if answer not in by_word:
-			print(f"  測驗第 {i + 1} 題的答案 '{answer}' 不在 vocab 裡，捨棄這題")
-			continue
-
-		raw = q.get("options", [])
-		options = [o for o in raw if o in by_word]
-		dropped = len(raw) - len(options)
-		# 去重但保留順序
-		options = list(dict.fromkeys(options))
-		if answer not in options:
-			options.insert(0, answer)
-
-		if len(options) < 4:
-			fillers = [w for w in pool if w not in options]
-			random.shuffle(fillers)
-			missing = 4 - len(options)
-			options += fillers[:missing]
-			why = f"{dropped} 個選項不在 vocab" if dropped else "選項重複或不足"
-			print(f"  測驗第 {i + 1} 題{why}，補了 {missing} 個")
-
-		options = options[:4]
-		if answer not in options:  # 截斷後答案被切掉的極端情況
-			options[-1] = answer
-		random.shuffle(options)
-		cleaned.append({**q, "options": options})
-
-	return cleaned
 
 
 FLOW_ROLES = ("context", "claim", "turn", "evidence", "conclusion")
@@ -743,7 +696,6 @@ def build_article_data(source_name, title, url, date_str, tag, paragraphs, image
 		],
 		"images": images,
 		"vocab": gemini_data["vocab"],
-		"quiz": validate_quiz(gemini_data.get("quiz", []), gemini_data["vocab"]),
 	}
 
 

@@ -37,7 +37,7 @@ python check_source.py <rss網址> [...]     # 檢查候選來源
 內容與呈現拆成三段:
 
 1. **`generate.py`**——每日流水線。從 `sources.json` 的所有來源收集未使用過的文章(`gather_candidates`),依序嘗試爬取(`fetch_article_content`)直到拿到夠長的一篇,把段落送給 Gemini(`call_gemini`,模型由 `GEMINI_MODEL` 決定)做繁中翻譯、單字擷取、摘要與掃讀問題,組成純 dict(`build_article_data`)寫入 `data/{date}.json`,再呼叫 `template.py` 渲染 `articles/{date}.html`,最後重建 `index.html` 與 `vocab.html`。
-2. **`data/{date}.json`**——已發佈文章的唯一真實來源(source of truth):標題、來源、網址、`summary_en`/`summary_zh`、`conclusion_index`、`scan_questions`、`paragraphs`(原文 + 翻譯,依序)、`images`(含 `after_paragraph` 位置)、`vocab`、`quiz`。這裡的內容不做 HTML 跳脫、不預先標記單字——那是 `template.py` 的工作。
+2. **`data/{date}.json`**——已發佈文章的唯一真實來源(source of truth):標題、來源、網址、`summary_en`/`summary_zh`、`conclusion_index`、`scan_questions`、`paragraphs`(原文 + 翻譯,依序)、`images`(含 `after_paragraph` 位置)、`vocab`。這裡的內容不做 HTML 跳脫、不預先標記單字——那是 `template.py` 的工作。
 3. **`template.py`**——純渲染。`render_article(data)` 把一篇文章 dict 變成完整 HTML 頁;`render_index(entries)` 產生 `index.html`;`render_vocab_page()` 產生 `vocab.html`。三者同時被 `generate.py`(每日、增量)和 `rebuild.py`(整批)呼叫。
 
 **要改網站設計或文章版型**:改 `template.py`(和 `style.css`),然後跑 `python rebuild.py` 讓所有既有文章套用,不是只有未來的文章。GitHub Actions 也有手動觸發的 `Rebuild Site` workflow(`.github/workflows/rebuild.yml`)在 CI 做同樣的事。
@@ -48,7 +48,7 @@ python check_source.py <rss網址> [...]     # 檢查候選來源
 
 1. **凸點(bumps)**——只顯示 AI 英文導讀 + 每段首句 + 標出的結論段。全英文,不出現中文。
 2. **全文**——展開英文正文,翻譯藏起來,頂部釘住 3 題掃讀問題。個別段落可按「看中文」單獨展開。
-3. **驗證**——顯示全部翻譯、中文摘要、掃讀問題解答,以及單字測驗。
+3. **驗證**——顯示全部翻譯、中文摘要、掃讀問題解答。
 
 實作上三個階段的內容全部渲染在同一頁,靠 `<body data-stage>` + CSS 決定哪些看得見(規則在 `style.css` 的「三階段引導閱讀」段落)。**翻譯預設隱藏是整個設計的重點**,不要為了「方便」把 `.para-translation { display: none }` 拿掉。
 

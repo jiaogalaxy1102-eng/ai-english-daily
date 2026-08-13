@@ -16,7 +16,7 @@
 	} catch (e) {}
 })();
 </script>
-	<link rel="stylesheet" href="style.css?v=14">
+	<link rel="stylesheet" href="style.css?v=15">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
 	<script src="assets/settings.js" defer></script>
 </head>
@@ -117,7 +117,7 @@
 
 		const list = document.getElementById("deck-list");
 		if (!deck.length) {
-			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入 Anki」就會出現在這裡。</p>';
+			list.innerHTML = '<p class="empty-state">在文章裡點開單字彈窗，按「加入單字庫」就會出現在這裡。</p>';
 			return;
 		}
 		list.innerHTML = deck.map((c, i) => `

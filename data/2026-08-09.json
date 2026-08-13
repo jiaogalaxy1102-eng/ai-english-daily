@@ -99,7 +99,13 @@
 			"pos": "adj.",
 			"ipa": "/pækt/",
 			"definition_zh": "擠滿人的；塞滿的",
-			"example": "In July, I sat among roughly 100 people in a packed conference room in Taipei."
+			"definition_en": "Completely full of people or things.",
+			"synonyms": [
+				"crowded",
+				"jammed",
+				"full"
+			],
+			"example": "The small café was packed at lunchtime."
 		},
 		{
 			"word": "highlighted",
@@ -107,7 +113,13 @@
 			"pos": "v.",
 			"ipa": "/ˈhaɪˌlaɪtɪd/",
 			"definition_zh": "強調；突出",
-			"example": "a speaker highlighted the industrial parks and tax rates of an American city."
+			"definition_en": "Drew attention to something important.",
+			"synonyms": [
+				"emphasized",
+				"stressed",
+				"pointed out"
+			],
+			"example": "She highlighted the main risk in her report."
 		},
 		{
 			"word": "trend",
@@ -115,7 +127,13 @@
 			"pos": "n.",
 			"ipa": "/trɛnd/",
 			"definition_zh": "趨勢；傾向",
-			"example": "This trend will continue for the next 20 to 30 years."
+			"definition_en": "The general direction in which things are changing.",
+			"synonyms": [
+				"tendency",
+				"direction",
+				"movement"
+			],
+			"example": "Working from home is a growing trend."
 		},
 		{
 			"word": "transformation",
@@ -123,7 +141,13 @@
 			"pos": "n.",
 			"ipa": "/ˌtrænsfərˈmeɪʃən/",
 			"definition_zh": "轉變；徹底改變",
-			"example": "the desert city that is undergoing a huge economic transformation."
+			"definition_en": "A complete change in form or character.",
+			"synonyms": [
+				"change",
+				"shift",
+				"makeover"
+			],
+			"example": "The old factory went through a full transformation."
 		},
 		{
 			"word": "investment",
@@ -131,7 +155,13 @@
 			"pos": "n.",
 			"ipa": "/ɪnˈvɛstmənt/",
 			"definition_zh": "投資；投入",
-			"example": "the largest single foreign investment project in U.S. history."
+			"definition_en": "Money put into something to gain more later.",
+			"synonyms": [
+				"funding",
+				"capital",
+				"stake"
+			],
+			"example": "They made a large investment in solar power."
 		},
 		{
 			"word": "diversify",
@@ -139,7 +169,13 @@
 			"pos": "v.",
 			"ipa": "/daɪˈvɜrsəˌfaɪ/",
 			"definition_zh": "多樣化；分散投資",
-			"example": "it’s been keen to diversify the roster of investors beyond tech companies."
+			"definition_en": "To add more kinds so you do not rely on one.",
+			"synonyms": [
+				"vary",
+				"broaden",
+				"spread out"
+			],
+			"example": "Farmers diversify to survive a bad season."
 		},
 		{
 			"word": "appreciation",
@@ -147,7 +183,13 @@
 			"pos": "n.",
 			"ipa": "/əˌpriːʃiˈeɪʃən/",
 			"definition_zh": "增值；漲價",
-			"example": "if only tech companies are building there while we ignore the appreciation in land values."
+			"definition_en": "A rise in the value of something over time.",
+			"synonyms": [
+				"increase",
+				"growth",
+				"rise"
+			],
+			"example": "House prices saw steady appreciation last year."
 		},
 		{
 			"word": "steadily",
@@ -155,7 +197,13 @@
 			"pos": "adv.",
 			"ipa": "/ˈstɛdɪli/",
 			"definition_zh": "穩定地；持續地",
-			"example": "TSMC has steadily expanded its Arizona plans."
+			"definition_en": "At a regular pace, without stopping.",
+			"synonyms": [
+				"consistently",
+				"gradually",
+				"constantly"
+			],
+			"example": "Her English improved steadily all year."
 		},
 		{
 			"word": "potential",
@@ -163,7 +211,13 @@
 			"pos": "n.",
 			"ipa": "/pəˈtɛnʃəl/",
 			"definition_zh": "潛力；可能性",
-			"example": "Tapping into the U.S. market offers huge potential."
+			"definition_en": "The ability to grow or succeed in the future.",
+			"synonyms": [
+				"promise",
+				"capacity",
+				"possibility"
+			],
+			"example": "This young player has great potential."
 		},
 		{
 			"word": "personal",
@@ -171,7 +225,13 @@
 			"pos": "adj.",
 			"ipa": "/ˈpɜrsənəl/",
 			"definition_zh": "個人的；私人的",
-			"example": "For some other attendees, the future of Arizona was much more personal."
+			"definition_en": "Belonging to one person, not shared.",
+			"synonyms": [
+				"private",
+				"individual",
+				"own"
+			],
+			"example": "Please keep your personal items with you."
 		},
 		{
 			"word": "scale",
@@ -179,7 +239,13 @@
 			"pos": "n.",
 			"ipa": "/skeɪl/",
 			"definition_zh": "規模；程度",
-			"example": "her firm was probably too small to invest on that scale."
+			"definition_en": "The size or level of something.",
+			"synonyms": [
+				"size",
+				"extent",
+				"magnitude"
+			],
+			"example": "No one expected a project on this scale."
 		},
 		{
 			"word": "ribbon-cutting",
@@ -187,7 +253,12 @@
 			"pos": "adj.",
 			"ipa": "/ˈrɪbənˌkʌtɪŋ/",
 			"definition_zh": "剪綵的",
-			"example": "There are ribbon-cutting ceremonies almost every week."
+			"definition_en": "Relating to the opening ceremony of a new place.",
+			"synonyms": [
+				"opening",
+				"inaugural"
+			],
+			"example": "The mayor attended the ribbon-cutting event."
 		},
 		{
 			"word": "desert",
@@ -195,7 +266,13 @@
 			"pos": "n.",
 			"ipa": "/ˈdɛzərt/",
 			"definition_zh": "沙漠",
-			"example": "the desert city that is undergoing a huge economic transformation."
+			"definition_en": "A dry area of land with very little rain.",
+			"synonyms": [
+				"wasteland",
+				"dry land",
+				"wilderness"
+			],
+			"example": "Few plants can grow in the desert."
 		},
 		{
 			"word": "fabrication",
@@ -203,7 +280,13 @@
 			"pos": "n.",
 			"ipa": "/ˌfæbrɪˈkeɪʃən/",
 			"definition_zh": "製造；（晶圓）代工",
-			"example": "announced its plans to construct fabrication plants in Arizona."
+			"definition_en": "The process of making parts or products in a plant.",
+			"synonyms": [
+				"manufacturing",
+				"production",
+				"assembly"
+			],
+			"example": "Chip fabrication needs extremely clean rooms."
 		},
 		{
 			"word": "roster",
@@ -211,7 +294,13 @@
 			"pos": "n.",
 			"ipa": "/ˈrɒstər/",
 			"definition_zh": "名單；花名冊",
-			"example": "it’s been keen to diversify the roster of investors beyond tech companies."
+			"definition_en": "A list of the people who belong to a group.",
+			"synonyms": [
+				"list",
+				"lineup",
+				"register"
+			],
+			"example": "Two new names joined the team roster."
 		},
 		{
 			"word": "infrastructure",
@@ -219,7 +308,13 @@
 			"pos": "n.",
 			"ipa": "/ˈɪnfrəˌstrʌktʃər/",
 			"definition_zh": "基礎建設",
-			"example": "invest in the support infrastructure — warehouses, logistics centers, hotels."
+			"definition_en": "The basic systems a place needs, like roads and power.",
+			"synonyms": [
+				"facilities",
+				"framework",
+				"utilities"
+			],
+			"example": "The city spent years fixing its infrastructure."
 		},
 		{
 			"word": "logistics",
@@ -227,7 +322,13 @@
 			"pos": "n.",
 			"ipa": "/ləˈdʒɪstɪks/",
 			"definition_zh": "物流；後勤",
-			"example": "needed for the growing network of suppliers following TSMC to the desert."
+			"definition_en": "The work of moving and storing goods.",
+			"synonyms": [
+				"shipping",
+				"distribution",
+				"freight"
+			],
+			"example": "Holiday sales put pressure on logistics."
 		},
 		{
 			"word": "hospitality",
@@ -235,7 +336,13 @@
 			"pos": "n.",
 			"ipa": "/ˌhɒspɪˈtælɪti/",
 			"definition_zh": "服務業；餐飲旅遊業",
-			"example": "it’s an opportunity for everyone, including investors in hospitality."
+			"definition_en": "The business of hotels, restaurants and travel.",
+			"synonyms": [
+				"tourism",
+				"catering",
+				"service industry"
+			],
+			"example": "She works in hospitality at a beach hotel."
 		},
 		{
 			"word": "delegation",
@@ -243,7 +350,13 @@
 			"pos": "n.",
 			"ipa": "/ˌdɛlɪˈɡeɪʃən/",
 			"definition_zh": "代表團；考察團",
-			"example": "they plan to join investment delegation trips to Arizona soon."
+			"definition_en": "A group of people sent to represent others.",
+			"synonyms": [
+				"mission",
+				"party",
+				"team of representatives"
+			],
+			"example": "A delegation from Japan visited the factory."
 		},
 		{
 			"word": "semiconductor",
@@ -251,7 +364,12 @@
 			"pos": "n.",
 			"ipa": "/ˌsɛmikənˈdʌktər/",
 			"definition_zh": "半導體",
-			"example": "U.S. efforts to reshore semiconductor manufacturing."
+			"definition_en": "A material used to make computer chips.",
+			"synonyms": [
+				"chip material",
+				"silicon"
+			],
+			"example": "Phones depend on a steady semiconductor supply."
 		},
 		{
 			"word": "reshore",
@@ -259,7 +377,13 @@
 			"pos": "v.",
 			"ipa": "/ˌriːˈʃɔːr/",
 			"definition_zh": "將（生產）遷回國內",
-			"example": "U.S. efforts to reshore semiconductor manufacturing."
+			"definition_en": "To bring production back to your own country.",
+			"synonyms": [
+				"bring back",
+				"onshore",
+				"relocate home"
+			],
+			"example": "The brand decided to reshore its factories."
 		},
 		{
 			"word": "venture capital",
@@ -267,7 +391,12 @@
 			"pos": "n.",
 			"ipa": "/ˈvɛntʃər ˈkæpɪtəl/",
 			"definition_zh": "風險投資",
-			"example": "Several venture capital and family office representatives seemed excited."
+			"definition_en": "Money invested in young companies that may grow fast.",
+			"synonyms": [
+				"startup funding",
+				"risk capital"
+			],
+			"example": "The app raised venture capital in its first year."
 		},
 		{
 			"word": "once-in-a-lifetime",
@@ -275,7 +404,13 @@
 			"pos": "",
 			"ipa": "/wʌns ɪn ə ˈlaɪftaɪm/",
 			"definition_zh": "一生一次的；極其難得的",
-			"example": "we’ll be missing a once-in-a-lifetime opportunity."
+			"definition_en": "Happening only once and unlikely to happen again.",
+			"synonyms": [
+				"rare",
+				"unique",
+				"one-off"
+			],
+			"example": "Meeting her hero was a once-in-a-lifetime moment."
 		},
 		{
 			"word": "tapping into",
@@ -283,7 +418,13 @@
 			"pos": "",
 			"ipa": "/ˈtæpɪŋ ˈɪntuː/",
 			"definition_zh": "開發；利用（資源或市場）",
-			"example": "Tapping into the U.S. market offers huge potential."
+			"definition_en": "Starting to make use of a source of value or supply.",
+			"synonyms": [
+				"making use of",
+				"drawing on",
+				"accessing"
+			],
+			"example": "The brand is tapping into the teen market."
 		},
 		{
 			"word": "red tape",
@@ -291,119 +432,13 @@
 			"pos": "",
 			"ipa": "/rɛd teɪp/",
 			"definition_zh": "繁文縟節；官僚程序",
-			"example": "investors still have to consider a tricky web of taxes, regulations, and red tape."
-		}
-	],
-	"quiz": [
-		{
-			"sentence": "The concert hall was ____ with fans waiting for the superstar to appear.",
-			"sentence_zh": "音樂廳擠滿了等待巨星出現的粉絲。",
-			"answer": "packed",
-			"options": [
-				"packed",
-				"potential",
-				"transformation",
-				"red tape"
-			]
-		},
-		{
-			"sentence": "To reduce risk, investors are advised to ____ their portfolios across different industries.",
-			"sentence_zh": "為了降低風險，建議投資者將其投資組合分散到不同的產業中。",
-			"answer": "diversify",
-			"options": [
-				"infrastructure",
-				"roster",
-				"steadily",
-				"diversify"
-			]
-		},
-		{
-			"sentence": "The government is spending billions on ____ like bridges and new roads.",
-			"sentence_zh": "政府正斥資數十億美元於橋樑和新道路等基礎建設上。",
-			"answer": "infrastructure",
-			"options": [
-				"steadily",
-				"investment",
-				"infrastructure",
-				"fabrication"
-			]
-		},
-		{
-			"sentence": "The city is famous for its ____, offering the best hotels and restaurants to visitors.",
-			"sentence_zh": "這座城市以其服務業聞名，為遊客提供最好的飯店和餐廳。",
-			"answer": "hospitality",
-			"options": [
-				"delegation",
-				"semiconductor",
-				"hospitality",
-				"highlighted"
-			]
-		},
-		{
-			"sentence": "This new technology has the ____ to completely change how we communicate.",
-			"sentence_zh": "這項新技術具有徹底改變我們溝通方式的潛力。",
-			"answer": "potential",
-			"options": [
-				"scale",
-				"reshore",
-				"personal",
-				"potential"
-			]
-		},
-		{
-			"sentence": "A ____ of experts was sent to the international summit to discuss climate change.",
-			"sentence_zh": "一組專家代表團被派往國際峰會討論氣候變遷問題。",
-			"answer": "delegation",
-			"options": [
-				"logistics",
-				"trend",
-				"appreciation",
-				"delegation"
-			]
-		},
-		{
-			"sentence": "It took several months to get the business permit because of all the ____.",
-			"sentence_zh": "因為種種繁文縟節，花了幾個月才拿到營業執照。",
-			"answer": "red tape",
-			"options": [
-				"once-in-a-lifetime",
-				"red tape",
-				"desert",
-				"tapping into"
-			]
-		},
-		{
-			"sentence": "Winning the lottery is a ____ experience for most people.",
-			"sentence_zh": "對大多數人來說，中彩券是一生一次的難得經驗。",
-			"answer": "once-in-a-lifetime",
-			"options": [
-				"roster",
-				"hospitality",
-				"packed",
-				"once-in-a-lifetime"
-			]
-		},
-		{
-			"sentence": "The CEO ____ the importance of teamwork during her speech yesterday.",
-			"sentence_zh": "執行長在昨天的演講中強調了團隊合作的重要性。",
-			"answer": "highlighted",
-			"options": [
-				"highlighted",
-				"diversify",
-				"scale",
-				"investment"
-			]
-		},
-		{
-			"sentence": "The old factory underwent a complete ____ and is now a modern art museum.",
-			"sentence_zh": "這家老工廠經歷了徹底的轉型，現在是一座現代藝術博物館。",
-			"answer": "transformation",
-			"options": [
-				"transformation",
-				"trend",
-				"fabrication",
-				"personal"
-			]
+			"definition_en": "Official rules and paperwork that slow things down.",
+			"synonyms": [
+				"bureaucracy",
+				"paperwork",
+				"formalities"
+			],
+			"example": "Red tape delayed the permit for months."
 		}
 	]
 }
