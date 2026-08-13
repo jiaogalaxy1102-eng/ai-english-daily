@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 15
+CSS_VERSION = 16
 
 FIXED_TAGS = [
 	"模型與研究",
@@ -29,7 +29,9 @@ SETTINGS_INIT_SCRIPT = """<script>
 	try {
 		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
 		var html = document.documentElement;
-		if (s.palette) html.setAttribute("data-palette", s.palette);
+		// 沒有 data-theme 就交給 CSS 的 prefers-color-scheme 決定
+		var theme = s.theme || (s.palette ? (s.palette === "night" ? "dark" : "light") : "");
+		if (theme === "dark" || theme === "light") html.setAttribute("data-theme", theme);
 		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
 		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
 		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
@@ -42,14 +44,11 @@ SETTINGS_PANEL_HTML = """
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
 	<div class="settings-panel" id="settings-panel">
 		<div class="settings-row">
-			<div class="settings-label">配色</div>
-			<div class="palette-swatches">
-				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
-				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
-				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
-				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
-				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
-				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			<div class="settings-label" id="theme-label">主題</div>
+			<div class="theme-toggle" role="group" aria-labelledby="theme-label">
+				<button type="button" class="theme-btn" data-theme="auto" onclick="setTheme('auto')" aria-pressed="false">跟隨系統</button>
+				<button type="button" class="theme-btn" data-theme="light" onclick="setTheme('light')" aria-pressed="false">亮色</button>
+				<button type="button" class="theme-btn" data-theme="dark" onclick="setTheme('dark')" aria-pressed="false">暗色</button>
 			</div>
 		</div>
 		<div class="settings-row">
@@ -103,6 +102,8 @@ def build_entry(d):
 		"source_name": d["source_name"],
 		"filename": entry_filename(d),
 		"tag": d.get("tag", ""),
+		# 首頁 hero 用的英文導讀。舊的 entry 沒有這個 key，取用處都要有預設值。
+		"summary_en": d.get("summary_en", ""),
 	}
 
 
@@ -262,8 +263,10 @@ def highlight(text, vocab_map):
 		css_class = VOCAB_TYPE_INFO.get(entry["type"], VOCAB_TYPE_INFO["highfreq"])[0]
 		word_attr = htmllib.escape(entry["word"], quote=True)
 		pattern = re.compile(re.escape(word), re.IGNORECASE)
+		# span 而不是 button：button 在瀏覽器裡是 inline-block，長片語遇到換行
+		# 會整塊擠到下一行。加 role + tabindex 讓鍵盤與讀螢幕當它是按鈕。
 		escaped_word = lambda m, c=css_class, a=word_attr: (
-			f'<span class="{c}" data-word="{a}">'
+			f'<span class="{c}" data-word="{a}" role="button" tabindex="0">'
 			f'{m.group()}</span>'
 		)
 		text = pattern.sub(escaped_word, text, count=1)
@@ -308,7 +311,7 @@ def flow_bumps(data):
 		rows += f"""
 		<li class="flow-step" data-role="{htmllib.escape(role, quote=True)}">
 			<span class="flow-role">{htmllib.escape(label)}</span>
-			<span class="flow-text">{body}</span>
+			<span class="flow-text" lang="en">{body}</span>
 		</li>"""
 	return rows
 
@@ -354,7 +357,7 @@ def all_paragraph_bumps(data):
 		if tag in ("pre", "table", "li", "blockquote"):
 			continue
 		if tag in ("h2", "h3", "h4"):
-			rows += f'\n\t\t<div class="bump bump-heading">{htmllib.escape(strip_tags(p["text"]))}</div>'
+			rows += f'\n\t\t<div class="bump bump-heading" lang="en">{htmllib.escape(strip_tags(p["text"]))}</div>'
 			continue
 		sentence = first_sentence(p["text"])
 		if not sentence:
@@ -365,8 +368,8 @@ def all_paragraph_bumps(data):
 
 def bump_row(sentence, is_conclusion):
 	cls = "bump bump-conclusion" if is_conclusion else "bump"
-	label = '<span class="bump-label">結論</span>' if is_conclusion else ""
-	return f'\n\t\t<div class="{cls}">{label}{mark_signposts(htmllib.escape(sentence))}</div>'
+	label = '<span class="bump-label" lang="zh-Hant">結論</span>' if is_conclusion else ""
+	return f'\n\t\t<div class="{cls}" lang="en">{label}{mark_signposts(htmllib.escape(sentence))}</div>'
 
 
 def build_bumps_html(data):
@@ -393,7 +396,7 @@ def build_bumps_html(data):
 	summary_html = ""
 	if summary_en:
 		summary_html = f"""
-	<p class="bumps-summary">{htmllib.escape(summary_en)}</p>"""
+	<p class="bumps-summary" lang="en">{htmllib.escape(summary_en)}</p>"""
 
 	return f"""
 <section class="stage stage-bumps content-block" id="stage-bumps">
@@ -415,7 +418,7 @@ def build_scan_questions_html(data):
 		items += f"""
 		<li class="scan-question">
 			<span class="scan-q-num">{i + 1}</span>
-			<span class="scan-q-text">{htmllib.escape(q.get("question", ""))}</span>
+			<span class="scan-q-text" lang="en">{htmllib.escape(q.get("question", ""))}</span>
 		</li>"""
 	pinned = f"""
 <section class="scan-panel content-block" id="scan-panel">
@@ -430,7 +433,7 @@ def build_scan_questions_html(data):
 		<li class="scan-answer">
 			<span class="scan-q-num">{i + 1}</span>
 			<div>
-				<div class="scan-a-question">{htmllib.escape(q.get("question", ""))}</div>
+				<div class="scan-a-question" lang="en">{htmllib.escape(q.get("question", ""))}</div>
 				<div class="scan-a-text">{htmllib.escape(q.get("answer_zh", ""))}</div>
 			</div>
 		</li>"""
@@ -463,9 +466,13 @@ def render_article(data, all_entries=None):
 		src_e = htmllib.escape(img['src'], quote=True)
 		alt_e = htmllib.escape(img['alt'], quote=True)
 		caption = f'<figcaption>{htmllib.escape(img["alt"])}</figcaption>' if img['alt'] else ''
+		# 有尺寸就寫出來：瀏覽器會先照比例把空間佔住，圖載入時版面不會往下跳。
+		# 舊文章的 JSON 沒有這兩個 key，維持原本的行為。
+		w, h = img.get("width"), img.get("height")
+		size_attrs = f' width="{w}" height="{h}"' if w and h else ""
 		return f"""
 		<figure class="article-image">
-			<img src="{src_e}" alt="{alt_e}" loading="lazy">
+			<img src="{src_e}" alt="{alt_e}" loading="lazy"{size_attrs}>
 			{caption}
 		</figure>"""
 
@@ -507,7 +514,7 @@ def render_article(data, all_entries=None):
 				i += 1
 			paras_html += f"""
 		<div class="para-block list-block">
-			<{list_type} class="para-original">{items_html}
+			<{list_type} class="para-original" lang="en">{items_html}
 			</{list_type}>
 			{reveal_btn}
 		</div>"""
@@ -518,7 +525,7 @@ def render_article(data, all_entries=None):
 			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block heading-block">
-			<{tag} class="para-original">{original_highlighted}</{tag}>
+			<{tag} class="para-original" lang="en">{original_highlighted}</{tag}>
 			<{tag} class="para-translation">{translation}</{tag}>
 		</div>"""
 		elif tag == "blockquote":
@@ -526,7 +533,7 @@ def render_article(data, all_entries=None):
 			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block quote-block">
-			<blockquote class="para-original">{original_highlighted}</blockquote>
+			<blockquote class="para-original" lang="en">{original_highlighted}</blockquote>
 			<blockquote class="para-translation">{translation}</blockquote>
 			{reveal_btn}
 		</div>"""
@@ -535,7 +542,7 @@ def render_article(data, all_entries=None):
 			# HTML-escaped at scrape time (see extract_content)
 			paras_html += f"""
 		<div class="para-block code-block">
-			<pre class="para-original"><code>{para["text"]}</code></pre>
+			<pre class="para-original" lang="en"><code>{para["text"]}</code></pre>
 		</div>"""
 		elif tag == "table":
 			# already-built, already-escaped <table>...</table> HTML from
@@ -549,7 +556,7 @@ def render_article(data, all_entries=None):
 			translation = safe_inline(para.get("translation", ""))
 			paras_html += f"""
 		<div class="para-block">
-			<p class="para-original">{original_highlighted}</p>
+			<p class="para-original" lang="en">{original_highlighted}</p>
 			<p class="para-translation">{translation}</p>
 			{reveal_btn}
 		</div>"""
@@ -566,12 +573,14 @@ def render_article(data, all_entries=None):
 		pos = v.get("pos", "")
 		pos_html = f'<span class="vocab-pos">{htmllib.escape(pos)}</span>' if pos else ""
 		vocab_summary += f"""
-			<div class="vocab-card" data-word="{word_attr}" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="{word_attr}">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">{htmllib.escape(v['word'])}</span>
+					<span class="badge {badge_class}">{badge_label}</span>{pos_html}
+					<span class="vocab-ipa">{htmllib.escape(v['ipa'])}</span>
+					<span class="vocab-def">{htmllib.escape(v['definition_zh'])}</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 {word_attr} 的發音" title="發音">{SPEAKER_ICON}</button>
-				<span class="vocab-word">{htmllib.escape(v['word'])}</span>
-				<span class="badge {badge_class}">{badge_label}</span>{pos_html}
-				<span class="vocab-ipa">{htmllib.escape(v['ipa'])}</span>
-				<span class="vocab-def">{htmllib.escape(v['definition_zh'])}</span>
 			</div>"""
 
 	title_html = htmllib.escape(data["title"])
@@ -600,7 +609,7 @@ def render_article(data, all_entries=None):
 		related_cards = "".join(f"""
 			<a class="related-card" href="{htmllib.escape(e['filename'], quote=True)}">
 				<span class="related-source">{htmllib.escape(e['source_name'])}</span>
-				<span class="related-title">{htmllib.escape(e['title'])}</span>
+				<span class="related-title" lang="en">{htmllib.escape(e['title'])}</span>
 			</a>""" for e in related)
 		related_html = f"""
 <div class="related-section content-block">
@@ -632,7 +641,7 @@ def render_article(data, all_entries=None):
 
 <div class="article-header content-block">
 	<div class="article-source">{source_html}{tag_html}</div>
-	<h1 class="article-title">{title_html}</h1>
+	<h1 class="article-title" lang="en">{title_html}</h1>
 	<div class="article-meta">
 		{date_str} &nbsp;·&nbsp; <a href="{url_html}" target="_blank" rel="noopener">原文連結</a>
 	</div>
@@ -670,24 +679,24 @@ def render_article(data, all_entries=None):
 {related_html}
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
-	<div class="popup-card" id="popup-card">
-		<button class="btn-close" onclick="closePopup()">×</button>
-		<div class="popup-word" id="popup-word"></div>
+	<div class="popup-card" id="popup-card" role="dialog" aria-modal="true" aria-labelledby="popup-word" tabindex="-1">
+		<button class="btn-close" onclick="closePopup()" aria-label="關閉">×</button>
+		<div class="popup-word" id="popup-word" lang="en"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
 		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-field" id="popup-def-en-row">
 			<span class="popup-field-label">英英釋義</span>
-			<span class="popup-def-en" id="popup-def-en"></span>
+			<span class="popup-def-en" id="popup-def-en" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-syn-row">
 			<span class="popup-field-label">近義字</span>
-			<span class="popup-syn" id="popup-syn"></span>
+			<span class="popup-syn" id="popup-syn" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-example-row">
 			<span class="popup-field-label">例句</span>
-			<span class="popup-example" id="popup-example"></span>
+			<span class="popup-example" id="popup-example" lang="en"></span>
 		</div>
 		<div class="popup-actions">
 			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入單字庫</button>
@@ -792,9 +801,12 @@ def render_article(data, all_entries=None):
 		document.getElementById(id + "-row").style.display = value ? "" : "none";
 	}}
 
+	let lastFocused = null;
+
 	function showPopup(word) {{
 		const entry = vocabMap[word.toLowerCase()];
 		if (!entry) return;
+		lastFocused = document.activeElement;
 		currentWord = entry.word;
 
 		document.getElementById("popup-word").textContent = entry.word;
@@ -815,11 +827,17 @@ def render_article(data, all_entries=None):
 		syncAnkiButton();
 
 		document.getElementById("popup-overlay").classList.add("open");
+		document.getElementById("popup-card").focus();
 	}}
 
 	function closePopup() {{
-		document.getElementById("popup-overlay").classList.remove("open");
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		overlay.classList.remove("open");
 		currentWord = null;
+		// 焦點還給剛才點的那個字，不然會掉回頁面最上面
+		if (lastFocused && lastFocused.focus) lastFocused.focus();
+		lastFocused = null;
 	}}
 
 	function closePopupOnOverlay(e) {{
@@ -846,13 +864,31 @@ def render_article(data, all_entries=None):
 		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
 	}}
 
-	// wire up highlighted words
+	// wire up highlighted words（span 加了 role="button"，鍵盤要自己接）
 	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {{
 		el.addEventListener("click", () => showPopup(el.dataset.word));
+		el.addEventListener("keydown", e => {{
+			if (e.key === "Enter" || e.key === " ") {{
+				e.preventDefault();
+				showPopup(el.dataset.word);
+			}}
+		}});
 	}});
 
-	// close on Escape
-	document.addEventListener("keydown", e => {{ if (e.key === "Escape") closePopup(); }});
+	document.addEventListener("keydown", e => {{
+		if (e.key === "Escape") {{ closePopup(); return; }}
+		if (e.key !== "Tab") return;
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		const items = overlay.querySelectorAll("button");
+		if (!items.length) return;
+		const first = items[0];
+		const last = items[items.length - 1];
+		const onFirst = document.activeElement === first
+			|| document.activeElement === document.getElementById("popup-card");
+		if (e.shiftKey && onFirst) {{ e.preventDefault(); last.focus(); }}
+		else if (!e.shiftKey && document.activeElement === last) {{ e.preventDefault(); first.focus(); }}
+	}});
 
 	markCollectedWords();
 	goStage("bumps");
@@ -863,15 +899,43 @@ def render_article(data, all_entries=None):
 </html>"""
 
 
+def build_hero_html(entry):
+	"""最新一篇獨立成一張卡：標題放大、附英文導讀第一句。
+
+	目前的文章 JSON 幾乎抓不到圖，所以 hero 走純文字 —— 用字級與留白做層級，
+	不要為了「有張圖」去塞無關的示意圖。
+	"""
+	lead = first_sentence(entry.get("summary_en", ""), max_chars=180)
+	lead_html = f'\n\t\t<p class="hero-lead" lang="en">{htmllib.escape(lead)}</p>' if lead else ""
+	tag = entry.get("tag", "")
+	tag_html = f'<span class="tag-badge">{htmllib.escape(tag)}</span>' if tag else ""
+	return f"""
+	<a class="hero" href="articles/{htmllib.escape(entry["filename"], quote=True)}">
+		<span class="hero-label">最新一篇</span>
+		<h2 class="hero-title" lang="en">{htmllib.escape(entry["title"])}</h2>{lead_html}
+		<div class="hero-meta">
+			<span>{entry["date"]}</span>
+			<span class="hero-source">{htmllib.escape(entry["source_name"])}</span>
+			{tag_html}
+			<span class="hero-cta">開始閱讀 →</span>
+		</div>
+	</a>"""
+
+
 def render_index(entries):
 	"""entries: build_entry() 產生的 dict 清單，已依日期由新到舊排好。"""
-	if entries:
+	hero_html = build_hero_html(entries[0]) if entries else ""
+	rest = entries[1:]
+	if rest:
 		items = "\n".join(
-			f'\t\t\t<li><a href="articles/{e["filename"]}">{e["date"]} — '
-			f'{htmllib.escape(e["title"])} '
-			f'<span class="source-tag">{htmllib.escape(e["source_name"])}</span></a></li>'
-			for e in entries
+			f'\t\t\t<li><a href="articles/{e["filename"]}">'
+			f'<span class="list-date">{e["date"]}</span>'
+			f'<span class="list-title" lang="en">{htmllib.escape(e["title"])}</span>'
+			f'<span class="source-tag" lang="en">{htmllib.escape(e["source_name"])}</span></a></li>'
+			for e in rest
 		)
+	elif entries:
+		items = '\t\t\t<li class="empty-state">還沒有更早的文章</li>'
 	else:
 		items = '\t\t\t<li class="empty-state">尚無文章</li>'
 
@@ -897,7 +961,8 @@ def render_index(entries):
 </header>
 
 <div class="container">
-	<div class="section-label">文章列表</div>
+{hero_html}
+	<div class="section-label">更早的文章</div>
 	<ul id="article-list">
 {items}
 	</ul>

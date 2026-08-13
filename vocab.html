@@ -9,14 +9,16 @@
 	try {
 		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
 		var html = document.documentElement;
-		if (s.palette) html.setAttribute("data-palette", s.palette);
+		// 沒有 data-theme 就交給 CSS 的 prefers-color-scheme 決定
+		var theme = s.theme || (s.palette ? (s.palette === "night" ? "dark" : "light") : "");
+		if (theme === "dark" || theme === "light") html.setAttribute("data-theme", theme);
 		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
 		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
 		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
 	} catch (e) {}
 })();
 </script>
-	<link rel="stylesheet" href="style.css?v=15">
+	<link rel="stylesheet" href="style.css?v=16">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
 	<script src="assets/settings.js" defer></script>
 </head>
@@ -27,14 +29,11 @@
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
 	<div class="settings-panel" id="settings-panel">
 		<div class="settings-row">
-			<div class="settings-label">配色</div>
-			<div class="palette-swatches">
-				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
-				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
-				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
-				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
-				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
-				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			<div class="settings-label" id="theme-label">主題</div>
+			<div class="theme-toggle" role="group" aria-labelledby="theme-label">
+				<button type="button" class="theme-btn" data-theme="auto" onclick="setTheme('auto')" aria-pressed="false">跟隨系統</button>
+				<button type="button" class="theme-btn" data-theme="light" onclick="setTheme('light')" aria-pressed="false">亮色</button>
+				<button type="button" class="theme-btn" data-theme="dark" onclick="setTheme('dark')" aria-pressed="false">暗色</button>
 			</div>
 		</div>
 		<div class="settings-row">

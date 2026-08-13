@@ -12,12 +12,20 @@ function saveSettings(settings) {
 	localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
 }
 
-function setPalette(palette) {
-	document.documentElement.setAttribute("data-palette", palette);
+// theme: "auto"（跟隨系統）/ "light" / "dark"
+function applyTheme(theme) {
+	const html = document.documentElement;
+	if (theme === "dark" || theme === "light") html.setAttribute("data-theme", theme);
+	else html.removeAttribute("data-theme");
+}
+
+function setTheme(theme) {
+	applyTheme(theme);
 	const settings = getSettings();
-	settings.palette = palette;
+	settings.theme = theme;
+	delete settings.palette;
 	saveSettings(settings);
-	updateActiveSwatch(palette);
+	updateActiveTheme(theme);
 }
 
 function setFontZh(value) {
@@ -44,9 +52,11 @@ function adjustFontSize(step) {
 	document.getElementById("font-size-display").textContent = scale + "%";
 }
 
-function updateActiveSwatch(palette) {
-	document.querySelectorAll(".swatch-btn").forEach(btn => {
-		btn.classList.toggle("active", btn.dataset.palette === palette);
+function updateActiveTheme(theme) {
+	document.querySelectorAll(".theme-btn").forEach(btn => {
+		const on = btn.dataset.theme === theme;
+		btn.classList.toggle("active", on);
+		btn.setAttribute("aria-pressed", on ? "true" : "false");
 	});
 }
 
@@ -62,7 +72,15 @@ function closeSettingsOnOverlay(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const settings = getSettings();
-	updateActiveSwatch(settings.palette || "coffee");
+	// 舊版存的是 6 選 1 的 palette，第一次載入時遷移成 light / dark
+	let theme = settings.theme;
+	if (!theme) {
+		theme = settings.palette ? (settings.palette === "night" ? "dark" : "light") : "auto";
+		settings.theme = theme;
+		delete settings.palette;
+		saveSettings(settings);
+	}
+	updateActiveTheme(theme);
 	if (settings.fontZh) document.getElementById("font-zh-select").value = settings.fontZh;
 	if (settings.fontEn) document.getElementById("font-en-select").value = settings.fontEn;
 	document.getElementById("font-size-display").textContent = (settings.fontScale || 100) + "%";

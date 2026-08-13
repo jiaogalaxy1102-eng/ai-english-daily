@@ -265,6 +265,11 @@ def extract_content(soup, base_url):
 			rows_html.append(f"<tr>{cells_html}</tr>")
 		return "<table>" + "".join(rows_html) + "</table>"
 
+	def int_attr(tag, name):
+		"""讀 img 的 width/height 屬性。值可能是 "600px" 或空字串，取不到就給 None。"""
+		raw = (tag.get(name) or "").strip().rstrip("px")
+		return int(raw) if raw.isdigit() and int(raw) > 0 else None
+
 	def is_avatar(img_tag, src, alt):
 		src_l = src.lower()
 		if any(k in src_l for k in [
@@ -341,7 +346,13 @@ def extract_content(soup, base_url):
 					src = f"{parsed.scheme}://{parsed.netloc}{src}"
 				if src not in seen_srcs and not is_avatar(elem, src, alt):
 					seen_srcs.add(src)
-					images.append({"src": src, "alt": alt, "after_paragraph": len(paragraphs)})
+					img = {"src": src, "alt": alt, "after_paragraph": len(paragraphs)}
+					# 原站有寫尺寸就留著，渲染時用 aspect-ratio 先把位置佔住，
+					# 圖載入時版面才不會往下跳（CLS）。沒有就照舊不寫。
+					w, h = int_attr(elem, "width"), int_attr(elem, "height")
+					if w and h:
+						img["width"], img["height"] = w, h
+					images.append(img)
 
 		elif elem.name in ("p", "h2", "h3", "h4"):
 			add_paragraph(extract_inline(elem), elem.name)

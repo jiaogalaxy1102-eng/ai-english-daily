@@ -9,14 +9,16 @@
 	try {
 		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
 		var html = document.documentElement;
-		if (s.palette) html.setAttribute("data-palette", s.palette);
+		// 沒有 data-theme 就交給 CSS 的 prefers-color-scheme 決定
+		var theme = s.theme || (s.palette ? (s.palette === "night" ? "dark" : "light") : "");
+		if (theme === "dark" || theme === "light") html.setAttribute("data-theme", theme);
 		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
 		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
 		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
 	} catch (e) {}
 })();
 </script>
-	<link rel="stylesheet" href="../style.css?v=15">
+	<link rel="stylesheet" href="../style.css?v=16">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
 	<script src="../assets/settings.js" defer></script>
 </head>
@@ -27,14 +29,11 @@
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
 	<div class="settings-panel" id="settings-panel">
 		<div class="settings-row">
-			<div class="settings-label">配色</div>
-			<div class="palette-swatches">
-				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
-				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
-				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
-				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
-				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
-				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			<div class="settings-label" id="theme-label">主題</div>
+			<div class="theme-toggle" role="group" aria-labelledby="theme-label">
+				<button type="button" class="theme-btn" data-theme="auto" onclick="setTheme('auto')" aria-pressed="false">跟隨系統</button>
+				<button type="button" class="theme-btn" data-theme="light" onclick="setTheme('light')" aria-pressed="false">亮色</button>
+				<button type="button" class="theme-btn" data-theme="dark" onclick="setTheme('dark')" aria-pressed="false">暗色</button>
 			</div>
 		</div>
 		<div class="settings-row">
@@ -71,7 +70,7 @@
 
 <div class="article-header content-block">
 	<div class="article-source">Ars Technica<span class="tag-badge">資安與隱私</span></div>
-	<h1 class="article-title">Explosive drone found hovering near Ukrainian cargo aircraft at German airport</h1>
+	<h1 class="article-title" lang="en">Explosive drone found hovering near Ukrainian cargo aircraft at German airport</h1>
 	<div class="article-meta">
 		2026-08-10 &nbsp;·&nbsp; <a href="https://arstechnica.com/gadgets/2026/08/germany-disarms-explosive-drone-found-at-airport-hunts-possible-second-drone/" target="_blank" rel="noopener">原文連結</a>
 	</div>
@@ -86,28 +85,28 @@
 
 <section class="stage stage-bumps content-block" id="stage-bumps">
 	<div class="stage-hint">先看骨架，建立預期再讀全文</div>
-	<p class="bumps-summary">German police recently found a drone carrying explosives near Ukrainian cargo planes at an airport. They had to close the airport for several hours to investigate the threat. Authorities are now looking for a second drone that may have hit another airplane in the air.</p>
+	<p class="bumps-summary" lang="en">German police recently found a drone carrying explosives near Ukrainian cargo planes at an airport. They had to close the airport for several hours to investigate the threat. Authorities are now looking for a second drone that may have hit another airplane in the air.</p>
 	<div class="bumps-list">
-		<div class="bump">German police disarmed a drone carrying explosives after it was discovered near Ukrainian cargo aircraft parked at Leipzig airport—and authorities are looking into the possibility of a second drone after an approaching…</div>
-		<div class="bump">The drone, first spotted by an airport employee, was hovering close to the ground between two parked An-124 cargo aircraft owned by Ukraine’s Antonov Airlines shortly before midnight on August 4, according to The Guardian.</div>
-		<div class="bump">Dobrindt described the drone as carrying a fist-sized package of a substance believed to be the plastic explosive Semtex.</div>
-		<div class="bump">A bus driver managed to kick the flying drone and caused it to crash, according to Detlef Seif, a lawmaker and member of the German parliament’s interior committee.</div>
-		<div class="bump">German police used a bomb disposal robot to help disarm the drone and later carried out a controlled explosion, according to BBC News.</div>
-		<div class="bump">Contrary to some media reports, the German Interior Ministry has denied that the apparently targeted Ukrainian cargo aircraft were carrying weapons or other munitions for delivery to Ukraine, according to Deutsche Welle.</div>
-		<div class="bump">The incident forced Leipzig/Halle airport—one of Europe’s largest air cargo hubs—to close to all air traffic for several hours.</div>
-		<div class="bump">As the DHL-operated aircraft started climbing again, it collided with another flying object midair and diverted to land at Hanover airport with minor damage, German police reported in a statement.</div>
-		<div class="bump bump-heading">The possible culprit and motive</div>
-		<div class="bump">German officials have not officially named a suspect behind the attempted attack but have opened a counterterrorism investigation.</div>
-		<div class="bump">The incident has already spurred Roderich Kiesewetter, a lawmaker and member of the German parliament’s intelligence committee, to more directly describe Russia as being responsible for the “attempted act of terrorism.”</div>
-		<div class="bump">As a major hub for air cargo, Leipzig/Halle airport frequently oversees the transit of shipments for NATO and the German military.</div>
-		<div class="bump">The incident also evoked a potentially telling reaction from Alexander Sosnowski, a pro-Kremlin propagandist who regularly appears as a guest on Russian state television.</div>
-		<div class="bump bump-heading">Repeated drone incursions and missing defenses</div>
-		<div class="bump">These latest incidents follow dozens of drone sightings over other European airports, along with military bases, ports, and energy and industrial facilities, since 2024. In May, Munich airport in Germany closed twice…</div>
-		<div class="bump">Drone incursions have become especially more frequent in Northern and Eastern Europe, given their closer proximity to Russia and the ongoing war in Ukraine.</div>
-		<div class="bump bump-conclusion"><span class="bump-label">結論</span><span class="signpost">But</span> the long-promised European Drone Defence Initiative that was supposed to create the equivalent of a “drone wall” to provide counter-drone surveillance and defenses has yet to materialize in any meaningful way, said Ulrike Franke, a senior policy fellow at the European Council on Foreign Relations, in an article for World Politics Review.</div>
-		<div class="bump">Germany has already provided about $118 billion to support Ukraine since Russia launched a full-scale invasion of Ukraine in 2022, according to Deutsche Welle.</div>
-		<div class="bump">Some of Germany’s latest cooperative ventures with Ukraine have involved joint production of new military drones.</div>
-		<div class="bump">This story was updated on August 7, 2026 to include details on the bus driver credited with taking down the drone.</div>
+		<div class="bump" lang="en">German police disarmed a drone carrying explosives after it was discovered near Ukrainian cargo aircraft parked at Leipzig airport—and authorities are looking into the possibility of a second drone after an approaching…</div>
+		<div class="bump" lang="en">The drone, first spotted by an airport employee, was hovering close to the ground between two parked An-124 cargo aircraft owned by Ukraine’s Antonov Airlines shortly before midnight on August 4, according to The Guardian.</div>
+		<div class="bump" lang="en">Dobrindt described the drone as carrying a fist-sized package of a substance believed to be the plastic explosive Semtex.</div>
+		<div class="bump" lang="en">A bus driver managed to kick the flying drone and caused it to crash, according to Detlef Seif, a lawmaker and member of the German parliament’s interior committee.</div>
+		<div class="bump" lang="en">German police used a bomb disposal robot to help disarm the drone and later carried out a controlled explosion, according to BBC News.</div>
+		<div class="bump" lang="en">Contrary to some media reports, the German Interior Ministry has denied that the apparently targeted Ukrainian cargo aircraft were carrying weapons or other munitions for delivery to Ukraine, according to Deutsche Welle.</div>
+		<div class="bump" lang="en">The incident forced Leipzig/Halle airport—one of Europe’s largest air cargo hubs—to close to all air traffic for several hours.</div>
+		<div class="bump" lang="en">As the DHL-operated aircraft started climbing again, it collided with another flying object midair and diverted to land at Hanover airport with minor damage, German police reported in a statement.</div>
+		<div class="bump bump-heading" lang="en">The possible culprit and motive</div>
+		<div class="bump" lang="en">German officials have not officially named a suspect behind the attempted attack but have opened a counterterrorism investigation.</div>
+		<div class="bump" lang="en">The incident has already spurred Roderich Kiesewetter, a lawmaker and member of the German parliament’s intelligence committee, to more directly describe Russia as being responsible for the “attempted act of terrorism.”</div>
+		<div class="bump" lang="en">As a major hub for air cargo, Leipzig/Halle airport frequently oversees the transit of shipments for NATO and the German military.</div>
+		<div class="bump" lang="en">The incident also evoked a potentially telling reaction from Alexander Sosnowski, a pro-Kremlin propagandist who regularly appears as a guest on Russian state television.</div>
+		<div class="bump bump-heading" lang="en">Repeated drone incursions and missing defenses</div>
+		<div class="bump" lang="en">These latest incidents follow dozens of drone sightings over other European airports, along with military bases, ports, and energy and industrial facilities, since 2024. In May, Munich airport in Germany closed twice…</div>
+		<div class="bump" lang="en">Drone incursions have become especially more frequent in Northern and Eastern Europe, given their closer proximity to Russia and the ongoing war in Ukraine.</div>
+		<div class="bump bump-conclusion" lang="en"><span class="bump-label" lang="zh-Hant">結論</span><span class="signpost">But</span> the long-promised European Drone Defence Initiative that was supposed to create the equivalent of a “drone wall” to provide counter-drone surveillance and defenses has yet to materialize in any meaningful way, said Ulrike Franke, a senior policy fellow at the European Council on Foreign Relations, in an article for World Politics Review.</div>
+		<div class="bump" lang="en">Germany has already provided about $118 billion to support Ukraine since Russia launched a full-scale invasion of Ukraine in 2022, according to Deutsche Welle.</div>
+		<div class="bump" lang="en">Some of Germany’s latest cooperative ventures with Ukraine have involved joint production of new military drones.</div>
+		<div class="bump" lang="en">This story was updated on August 7, 2026 to include details on the bus driver credited with taking down the drone.</div>
 	</div>
 	<div class="stage-actions">
 		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
@@ -120,15 +119,15 @@
 	<ul class="scan-list">
 		<li class="scan-question">
 			<span class="scan-q-num">1</span>
-			<span class="scan-q-text">What type of substance was the drone&#x27;s explosive package believed to be?</span>
+			<span class="scan-q-text" lang="en">What type of substance was the drone&#x27;s explosive package believed to be?</span>
 		</li>
 		<li class="scan-question">
 			<span class="scan-q-num">2</span>
-			<span class="scan-q-text">How did the bus driver stop the flying drone?</span>
+			<span class="scan-q-text" lang="en">How did the bus driver stop the flying drone?</span>
 		</li>
 		<li class="scan-question">
 			<span class="scan-q-num">3</span>
-			<span class="scan-q-text">How many flights were forced to divert due to the airport closure?</span>
+			<span class="scan-q-text" lang="en">How many flights were forced to divert due to the airport closure?</span>
 		</li>
 	</ul>
 </section>
@@ -139,173 +138,221 @@
 	</button>
 	<div class="vocab-grid" id="vocab-grid">
 		
-			<div class="vocab-card" data-word="disarm" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="disarm">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">disarm</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/dɪsˈɑːrm/</span>
+					<span class="vocab-def">解除炸彈的引信；武裝</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 disarm 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">disarm</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/dɪsˈɑːrm/</span>
-				<span class="vocab-def">解除炸彈的引信；武裝</span>
 			</div>
-			<div class="vocab-card" data-word="hover" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="hover">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">hover</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/ˈhʌvər/</span>
+					<span class="vocab-def">（在空中）盤旋</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 hover 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">hover</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/ˈhʌvər/</span>
-				<span class="vocab-def">（在空中）盤旋</span>
 			</div>
-			<div class="vocab-card" data-word="collide" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="collide">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">collide</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/kəˈlaɪd/</span>
+					<span class="vocab-def">碰撞；相撞</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 collide 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">collide</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/kəˈlaɪd/</span>
-				<span class="vocab-def">碰撞；相撞</span>
 			</div>
-			<div class="vocab-card" data-word="detection" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="detection">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">detection</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/dɪˈtekʃn/</span>
+					<span class="vocab-def">偵測；察覺</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 detection 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">detection</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/dɪˈtekʃn/</span>
-				<span class="vocab-def">偵測；察覺</span>
 			</div>
-			<div class="vocab-card" data-word="substance" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="substance">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">substance</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈsʌbstəns/</span>
+					<span class="vocab-def">物質</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 substance 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">substance</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈsʌbstəns/</span>
-				<span class="vocab-def">物質</span>
 			</div>
-			<div class="vocab-card" data-word="daring" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="daring">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">daring</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+					<span class="vocab-ipa">/ˈderɪŋ/</span>
+					<span class="vocab-def">大膽的；勇敢的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 daring 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">daring</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
-				<span class="vocab-ipa">/ˈderɪŋ/</span>
-				<span class="vocab-def">大膽的；勇敢的</span>
 			</div>
-			<div class="vocab-card" data-word="intervention" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="intervention">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">intervention</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌɪntərˈvenʃn/</span>
+					<span class="vocab-def">干預；介入</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 intervention 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">intervention</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌɪntərˈvenʃn/</span>
-				<span class="vocab-def">干預；介入</span>
 			</div>
-			<div class="vocab-card" data-word="divert" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="divert">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">divert</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/daɪˈvɜːrt/</span>
+					<span class="vocab-def">使轉向；繞道</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 divert 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">divert</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/daɪˈvɜːrt/</span>
-				<span class="vocab-def">使轉向；繞道</span>
 			</div>
-			<div class="vocab-card" data-word="suspect" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="suspect">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">suspect</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈsʌspekt/</span>
+					<span class="vocab-def">嫌疑犯</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 suspect 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">suspect</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈsʌspekt/</span>
-				<span class="vocab-def">嫌疑犯</span>
 			</div>
-			<div class="vocab-card" data-word="frequently" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="frequently">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">frequently</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+					<span class="vocab-ipa">/ˈfriːkwəntli/</span>
+					<span class="vocab-def">頻繁地</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 frequently 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">frequently</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
-				<span class="vocab-ipa">/ˈfriːkwəntli/</span>
-				<span class="vocab-def">頻繁地</span>
 			</div>
-			<div class="vocab-card" data-word="explosive" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="explosive">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">explosive</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ɪkˈsploʊsɪv/</span>
+					<span class="vocab-def">炸藥；爆炸物</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 explosive 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">explosive</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ɪkˈsploʊsɪv/</span>
-				<span class="vocab-def">炸藥；爆炸物</span>
 			</div>
-			<div class="vocab-card" data-word="detonator" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="detonator">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">detonator</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈdetəneɪtər/</span>
+					<span class="vocab-def">引爆器</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 detonator 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">detonator</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈdetəneɪtər/</span>
-				<span class="vocab-def">引爆器</span>
 			</div>
-			<div class="vocab-card" data-word="courageous" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="courageous">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">courageous</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+					<span class="vocab-ipa">/kəˈreɪdʒəs/</span>
+					<span class="vocab-def">勇敢的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 courageous 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">courageous</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
-				<span class="vocab-ipa">/kəˈreɪdʒəs/</span>
-				<span class="vocab-def">勇敢的</span>
 			</div>
-			<div class="vocab-card" data-word="munitions" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="munitions">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">munitions</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/mjuːˈnɪʃnz/</span>
+					<span class="vocab-def">軍火；彈藥</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 munitions 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">munitions</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/mjuːˈnɪʃnz/</span>
-				<span class="vocab-def">軍火；彈藥</span>
 			</div>
-			<div class="vocab-card" data-word="incursion" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="incursion">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">incursion</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ɪnˈkɜːrʒn/</span>
+					<span class="vocab-def">入侵；侵犯</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 incursion 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">incursion</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ɪnˈkɜːrʒn/</span>
-				<span class="vocab-def">入侵；侵犯</span>
 			</div>
-			<div class="vocab-card" data-word="proximity" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="proximity">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">proximity</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/prɑːkˈsɪməti/</span>
+					<span class="vocab-def">接近；鄰近</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 proximity 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">proximity</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/prɑːkˈsɪməti/</span>
-				<span class="vocab-def">接近；鄰近</span>
 			</div>
-			<div class="vocab-card" data-word="scramble" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="scramble">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">scramble</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/ˈskræmbl/</span>
+					<span class="vocab-def">（戰機）緊急起飛</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 scramble 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">scramble</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/ˈskræmbl/</span>
-				<span class="vocab-def">（戰機）緊急起飛</span>
 			</div>
-			<div class="vocab-card" data-word="materialize" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="materialize">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">materialize</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/məˈtɪriəlaɪz/</span>
+					<span class="vocab-def">實現；成形</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 materialize 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">materialize</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/məˈtɪriəlaɪz/</span>
-				<span class="vocab-def">實現；成形</span>
 			</div>
-			<div class="vocab-card" data-word="counterterrorism" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="counterterrorism">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">counterterrorism</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌkaʊntərˈterərɪzəm/</span>
+					<span class="vocab-def">反恐</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 counterterrorism 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">counterterrorism</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌkaʊntərˈterərɪzəm/</span>
-				<span class="vocab-def">反恐</span>
 			</div>
-			<div class="vocab-card" data-word="hybrid threat" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="hybrid threat">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">hybrid threat</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈhaɪbrɪd θret/</span>
+					<span class="vocab-def">混合威脅</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 hybrid threat 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">hybrid threat</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈhaɪbrɪd θret/</span>
-				<span class="vocab-def">混合威脅</span>
 			</div>
-			<div class="vocab-card" data-word="cargo hub" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="cargo hub">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">cargo hub</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈkɑːrɡoʊ hʌb/</span>
+					<span class="vocab-def">貨運樞紐</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 cargo hub 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">cargo hub</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈkɑːrɡoʊ hʌb/</span>
-				<span class="vocab-def">貨運樞紐</span>
 			</div>
-			<div class="vocab-card" data-word="look into" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="look into">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">look into</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/lʊk ˈɪntuː/</span>
+					<span class="vocab-def">調查</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 look into 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">look into</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/lʊk ˈɪntuː/</span>
-				<span class="vocab-def">調查</span>
 			</div>
-			<div class="vocab-card" data-word="carry out" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="carry out">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">carry out</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/ˈkæri aʊt/</span>
+					<span class="vocab-def">執行；進行</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 carry out 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">carry out</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/ˈkæri aʊt/</span>
-				<span class="vocab-def">執行；進行</span>
 			</div>
-			<div class="vocab-card" data-word="deal with" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="deal with">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">deal with</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/diːl wɪð/</span>
+					<span class="vocab-def">處理；應對</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 deal with 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">deal with</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/diːl wɪð/</span>
-				<span class="vocab-def">處理；應對</span>
 			</div>
 	</div>
 </div>
@@ -313,100 +360,100 @@
 <div class="article-body content-block" id="article-body">
 	
 		<div class="para-block">
-			<p class="para-original">German police <span class="word-highfreq" data-word="disarm">disarm</span>ed a drone carrying <span class="word-general" data-word="explosive">explosive</span>s after it was discovered near Ukrainian cargo aircraft parked at Leipzig airport—and authorities are looking into the possibility of a second drone after an approaching aircraft <span class="word-highfreq" data-word="collide">collide</span>d with something midair.</p>
+			<p class="para-original" lang="en">German police <span class="word-highfreq" data-word="disarm" role="button" tabindex="0">disarm</span>ed a drone carrying <span class="word-general" data-word="explosive" role="button" tabindex="0">explosive</span>s after it was discovered near Ukrainian cargo aircraft parked at Leipzig airport—and authorities are looking into the possibility of a second drone after an approaching aircraft <span class="word-highfreq" data-word="collide" role="button" tabindex="0">collide</span>d with something midair.</p>
 			<p class="para-translation">德國警方在萊比錫機場停放的烏克蘭貨機附近發現一架攜帶炸藥的無人機後將其拆除，且當局在一架接近的飛機於空中與某物碰撞後，正在調查出現第二架無人機的可能性。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">The drone, first spotted by an airport employee, was <span class="word-highfreq" data-word="hover">hover</span>ing close to the ground between two parked An-124 cargo aircraft owned by Ukraine’s Antonov Airlines shortly before midnight on August 4, according to The Guardian. It had apparently been modified to help avoid <span class="word-highfreq" data-word="detection">detection</span> by the airport’s drone defense sensors, said Alexander Dobrindt, federal minister of the interior for Germany, during a press conference.</p>
+			<p class="para-original" lang="en">The drone, first spotted by an airport employee, was <span class="word-highfreq" data-word="hover" role="button" tabindex="0">hover</span>ing close to the ground between two parked An-124 cargo aircraft owned by Ukraine’s Antonov Airlines shortly before midnight on August 4, according to The Guardian. It had apparently been modified to help avoid <span class="word-highfreq" data-word="detection" role="button" tabindex="0">detection</span> by the airport’s drone defense sensors, said Alexander Dobrindt, federal minister of the interior for Germany, during a press conference.</p>
 			<p class="para-translation">根據《衛報》報導，這架無人機最早由一名機場員工發現，於 8 月 4 日午夜前不久，在烏克蘭安東諾夫航空（Antonov Airlines）擁有的兩架停放的 An-124 貨機之間低空盤旋。德國聯邦內政部長亞歷山大·多布林特（Alexander Dobrindt）在新聞發布會上表示，這架無人機顯然經過改裝，以避開機場無人機防禦感測器的偵測。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Dobrindt described the drone as carrying a fist-sized package of a <span class="word-highfreq" data-word="substance">substance</span> believed to be the plastic <span class="word-general" data-word="explosive">explosive</span> Semtex. Only a failed <span class="word-general" data-word="detonator">detonator</span> prevented the drone from exploding near the Ukrainian cargo aircraft, he said.</p>
+			<p class="para-original" lang="en">Dobrindt described the drone as carrying a fist-sized package of a <span class="word-highfreq" data-word="substance" role="button" tabindex="0">substance</span> believed to be the plastic <span class="word-general" data-word="explosive" role="button" tabindex="0">explosive</span> Semtex. Only a failed <span class="word-general" data-word="detonator" role="button" tabindex="0">detonator</span> prevented the drone from exploding near the Ukrainian cargo aircraft, he said.</p>
 			<p class="para-translation">多布林特描述該無人機攜帶一個拳頭大小的包裹，內容物被認為是塑膠炸藥 Semtex。他說，僅因引爆器失效，才阻止了無人機在烏克蘭貨機附近爆炸。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">A bus driver managed to kick the flying drone and caused it to crash, according to Detlef Seif, a lawmaker and member of the German parliament’s interior committee. In an interview with Reuters, Seif described the driver’s actions as “very <span class="word-highfreq" data-word="daring">daring</span> and <span class="word-general" data-word="courageous">courageous</span>, but also very dangerous,” while acknowledging that “it is possible that his <span class="word-highfreq" data-word="intervention">intervention</span> prevented the intended attack.”</p>
+			<p class="para-original" lang="en">A bus driver managed to kick the flying drone and caused it to crash, according to Detlef Seif, a lawmaker and member of the German parliament’s interior committee. In an interview with Reuters, Seif described the driver’s actions as “very <span class="word-highfreq" data-word="daring" role="button" tabindex="0">daring</span> and <span class="word-general" data-word="courageous" role="button" tabindex="0">courageous</span>, but also very dangerous,” while acknowledging that “it is possible that his <span class="word-highfreq" data-word="intervention" role="button" tabindex="0">intervention</span> prevented the intended attack.”</p>
 			<p class="para-translation">根據德國國會內政委員會成員、國會議員德特勒夫·塞夫（Detlef Seif）的說法，一名巴士司機設法踢了飛行中的無人機並導致其墜毀。塞夫在接受路透社採訪時，形容該司機的行為「非常大膽且勇敢，但也非常危險」，同時承認「他的干預有可能阻止了預謀的攻擊」。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">German police used a bomb disposal robot to help <span class="word-highfreq" data-word="disarm">disarm</span> the drone and later carried out a controlled explosion, according to BBC News.</p>
+			<p class="para-original" lang="en">German police used a bomb disposal robot to help <span class="word-highfreq" data-word="disarm" role="button" tabindex="0">disarm</span> the drone and later carried out a controlled explosion, according to BBC News.</p>
 			<p class="para-translation">根據英國廣播公司（BBC）報導，德國警方使用拆彈機器人協助拆除無人機，隨後進行了受控引爆。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Contrary to some media reports, the German Interior Ministry has denied that the apparently targeted Ukrainian cargo aircraft were carrying weapons or other <span class="word-general" data-word="munitions">munitions</span> for delivery to Ukraine, according to Deutsche Welle. Instead, government officials described the aircraft as having been empty at the time of the drone incident.</p>
+			<p class="para-original" lang="en">Contrary to some media reports, the German Interior Ministry has denied that the apparently targeted Ukrainian cargo aircraft were carrying weapons or other <span class="word-general" data-word="munitions" role="button" tabindex="0">munitions</span> for delivery to Ukraine, according to Deutsche Welle. Instead, government officials described the aircraft as having been empty at the time of the drone incident.</p>
 			<p class="para-translation">根據德國之聲報導，德國內政部否認了部分媒體的說法，否認這些顯然成為目標的烏克蘭貨機當時正載運要交付給烏克蘭的武器或其他軍火。相反地，政府官員形容這些飛機在無人機事件發生時是空的。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">The incident forced Leipzig/Halle airport—one of Europe’s largest air <span class="word-term" data-word="cargo hub">cargo hub</span>s—to close to all air traffic for several hours. That forced 19 flights to <span class="word-highfreq" data-word="divert">divert</span> away from the airport, including a Boeing 757 operated by the shipping company DHL that was forced to abort its landing approach, according to the flight tracking service Flightradar24.</p>
+			<p class="para-original" lang="en">The incident forced Leipzig/Halle airport—one of Europe’s largest air <span class="word-term" data-word="cargo hub" role="button" tabindex="0">cargo hub</span>s—to close to all air traffic for several hours. That forced 19 flights to <span class="word-highfreq" data-word="divert" role="button" tabindex="0">divert</span> away from the airport, including a Boeing 757 operated by the shipping company DHL that was forced to abort its landing approach, according to the flight tracking service Flightradar24.</p>
 			<p class="para-translation">此次事件迫使歐洲最大的航空貨運樞紐之一——萊比錫/哈雷機場關閉所有空中交通數小時。根據航班追蹤服務機構 Flightradar24 的數據，這導致 19 架航班被迫轉降，其中包括一架由 DHL 貨運公司營運、被迫放棄降落進場的波音 757 飛機。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">As the DHL-operated aircraft started climbing again, it <span class="word-highfreq" data-word="collide">collide</span>d with another flying object midair and <span class="word-highfreq" data-word="divert">divert</span>ed to land at Hanover airport with minor damage, German police reported in a statement. German authorities are looking into the possibility that the object was a second drone.</p>
+			<p class="para-original" lang="en">As the DHL-operated aircraft started climbing again, it <span class="word-highfreq" data-word="collide" role="button" tabindex="0">collide</span>d with another flying object midair and <span class="word-highfreq" data-word="divert" role="button" tabindex="0">divert</span>ed to land at Hanover airport with minor damage, German police reported in a statement. German authorities are looking into the possibility that the object was a second drone.</p>
 			<p class="para-translation">德國警方在一份聲明中報告，當這架由 DHL 營運的飛機重新開始爬升時，在空中與另一個飛行物體相撞，隨後帶著輕微損壞轉降漢諾威機場。德國當局正在調查該物體是第二架無人機的可能性。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block heading-block">
-			<h2 class="para-original">The possible culprit and motive</h2>
+			<h2 class="para-original" lang="en">The possible culprit and motive</h2>
 			<h2 class="para-translation">可能的罪魁禍首與動機</h2>
 		</div>
 		<div class="para-block">
-			<p class="para-original">German officials have not officially named a <span class="word-highfreq" data-word="suspect">suspect</span> behind the attempted attack but have opened a <span class="word-term" data-word="counterterrorism">counterterrorism</span> investigation. Dobrindt acknowledged that “we are dealing with a contest here that possibly involves foreign powers,” and described the incident as a “<span class="word-term" data-word="hybrid threat">hybrid threat</span> scenario.”</p>
+			<p class="para-original" lang="en">German officials have not officially named a <span class="word-highfreq" data-word="suspect" role="button" tabindex="0">suspect</span> behind the attempted attack but have opened a <span class="word-term" data-word="counterterrorism" role="button" tabindex="0">counterterrorism</span> investigation. Dobrindt acknowledged that “we are dealing with a contest here that possibly involves foreign powers,” and described the incident as a “<span class="word-term" data-word="hybrid threat" role="button" tabindex="0">hybrid threat</span> scenario.”</p>
 			<p class="para-translation">德國官員尚未正式點名這起企圖攻擊案背後的嫌疑人，但已展開反恐調查。多布林特承認「我們正處於一場可能涉及外國勢力的競賽中」，並將此事件描述為「混合威脅情境」。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">The incident has already spurred Roderich Kiesewetter, a lawmaker and member of the German parliament’s intelligence committee, to more directly describe Russia as being responsible for the “attempted act of terrorism.”</p>
+			<p class="para-original" lang="en">The incident has already spurred Roderich Kiesewetter, a lawmaker and member of the German parliament’s intelligence committee, to more directly describe Russia as being responsible for the “attempted act of terrorism.”</p>
 			<p class="para-translation">此事件已促使德國國會情報委員會成員、國會議員羅德里希·基塞維特（Roderich Kiesewetter）更直接地將俄羅斯描述為這起「恐怖主義企圖」的負責方。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">As a major hub for air cargo, Leipzig/Halle airport <span class="word-highfreq" data-word="frequently">frequently</span> oversees the transit of shipments for NATO and the German military. It is also the current home base for Ukraine’s Antonov Airlines, which operates a charter cargo service fleet that includes the world’s largest operational cargo aircraft, the Antonov An-124 Ruslan.</p>
+			<p class="para-original" lang="en">As a major hub for air cargo, Leipzig/Halle airport <span class="word-highfreq" data-word="frequently" role="button" tabindex="0">frequently</span> oversees the transit of shipments for NATO and the German military. It is also the current home base for Ukraine’s Antonov Airlines, which operates a charter cargo service fleet that includes the world’s largest operational cargo aircraft, the Antonov An-124 Ruslan.</p>
 			<p class="para-translation">作為主要的航空貨運樞紐，萊比錫/哈雷機場經常監管北約（NATO）和德國軍隊物資的過境運輸。它也是烏克蘭安東諾夫航空目前的基地，該公司營運著一支包機貨運機隊，其中包括世界上體積最大的現役貨機安東諾夫 An-124 魯斯蘭（Ruslan）。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">The incident also evoked a potentially telling reaction from Alexander Sosnowski, a pro-Kremlin propagandist who regularly appears as a guest on Russian state television. In a short video posted on Telegram, Sosnowski clearly assumed the attempted attack was a Russian operation targeting the Ukrainian aircraft and expressed disappointment that it had failed, according to The Bild, a German tabloid newspaper.</p>
+			<p class="para-original" lang="en">The incident also evoked a potentially telling reaction from Alexander Sosnowski, a pro-Kremlin propagandist who regularly appears as a guest on Russian state television. In a short video posted on Telegram, Sosnowski clearly assumed the attempted attack was a Russian operation targeting the Ukrainian aircraft and expressed disappointment that it had failed, according to The Bild, a German tabloid newspaper.</p>
 			<p class="para-translation">根據德國小報《圖片報》（The Bild）報導，此事件還引發了親克里姆林宮的宣傳員亞歷山大·索斯諾夫斯基（Alexander Sosnowski）耐人尋味的反應，他經常以嘉賓身份出現在俄羅斯國家電視台。在 Telegram 上發布的一段短片中，索斯諾夫斯基顯然認為這次企圖攻擊是針對烏克蘭飛機的俄羅斯行動，並對其失敗表示失望。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block heading-block">
-			<h2 class="para-original">Repeated drone <span class="word-general" data-word="incursion">incursion</span>s and missing defenses</h2>
+			<h2 class="para-original" lang="en">Repeated drone <span class="word-general" data-word="incursion" role="button" tabindex="0">incursion</span>s and missing defenses</h2>
 			<h2 class="para-translation">重複的無人機入侵與缺失的防禦</h2>
 		</div>
 		<div class="para-block">
-			<p class="para-original">These latest incidents follow dozens of drone sightings over other European airports, along with military bases, ports, and energy and industrial facilities, since 2024. In May, Munich airport in Germany closed twice within 24 hours following possible drone sightings.</p>
+			<p class="para-original" lang="en">These latest incidents follow dozens of drone sightings over other European airports, along with military bases, ports, and energy and industrial facilities, since 2024. In May, Munich airport in Germany closed twice within 24 hours following possible drone sightings.</p>
 			<p class="para-translation">這些最新的事件發生在自 2024 年以來，數十起無人機出現在其他歐洲機場、軍事基地、港口以及能源和工業設施之後。今年 5 月，德國慕尼黑機場在發現疑似無人機後，曾在 24 小時內兩度關閉。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Drone <span class="word-general" data-word="incursion">incursion</span>s have become especially more frequent in Northern and Eastern Europe, given their closer <span class="word-general" data-word="proximity">proximity</span> to Russia and the ongoing war in Ukraine. Those incursions have forced fighter jets to <span class="word-general" data-word="scramble">scramble</span> repeatedly in response and have led to a building fire and injuries in Romania following a Russian drone crash.</p>
+			<p class="para-original" lang="en">Drone <span class="word-general" data-word="incursion" role="button" tabindex="0">incursion</span>s have become especially more frequent in Northern and Eastern Europe, given their closer <span class="word-general" data-word="proximity" role="button" tabindex="0">proximity</span> to Russia and the ongoing war in Ukraine. Those incursions have forced fighter jets to <span class="word-general" data-word="scramble" role="button" tabindex="0">scramble</span> repeatedly in response and have led to a building fire and injuries in Romania following a Russian drone crash.</p>
 			<p class="para-translation">考慮到北歐和東歐與俄羅斯的距離以及烏克蘭正在進行的戰爭，無人機入侵在這些地區變得尤為頻繁。這些入侵已多次迫使戰鬥機緊急起飛應對，並曾在俄羅斯無人機於羅馬尼亞墜毀後導致建築物起火和人員受傷。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">But the long-promised European Drone Defence Initiative that was supposed to create the equivalent of a “drone wall” to provide counter-drone surveillance and defenses has yet to <span class="word-general" data-word="materialize">materialize</span> in any meaningful way, said Ulrike Franke, a senior policy fellow at the European Council on Foreign Relations, in an article for World Politics Review. Instead, individual European countries such as Poland have been building their own national counter-drone systems.</p>
+			<p class="para-original" lang="en">But the long-promised European Drone Defence Initiative that was supposed to create the equivalent of a “drone wall” to provide counter-drone surveillance and defenses has yet to <span class="word-general" data-word="materialize" role="button" tabindex="0">materialize</span> in any meaningful way, said Ulrike Franke, a senior policy fellow at the European Council on Foreign Relations, in an article for World Politics Review. Instead, individual European countries such as Poland have been building their own national counter-drone systems.</p>
 			<p class="para-translation">但歐洲外交關係委員會高級政策研究員烏爾麗克·弗蘭克（Ulrike Franke）在為《世界政治評論》撰寫的文章中表示，原本預計要建立相當於「無人機牆」以提供反無人機監控和防禦的歐洲無人機防禦倡議，至今尚未以任何有意義的方式實現。相反地，像波蘭這樣的歐洲國家一直在建立自己的國家反無人機系統。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Germany has already provided about $118 billion to support Ukraine since Russia launched a full-scale invasion of Ukraine in 2022, according to Deutsche Welle. Beyond supplying weapons and humanitarian aid, Germany has also trained more than 24,000 Ukrainian soldiers and is hosting more than 1 million Ukrainian refugees.</p>
+			<p class="para-original" lang="en">Germany has already provided about $118 billion to support Ukraine since Russia launched a full-scale invasion of Ukraine in 2022, according to Deutsche Welle. Beyond supplying weapons and humanitarian aid, Germany has also trained more than 24,000 Ukrainian soldiers and is hosting more than 1 million Ukrainian refugees.</p>
 			<p class="para-translation">根據德國之聲報導，自 2022 年俄羅斯對烏克蘭發動全面入侵以來，德國已提供約 1180 億美元支持烏克蘭。除了提供武器和人道主義援助外，德國還培訓了超過 24,000 名烏克蘭士兵，並收容了超過 100 萬名烏克蘭難民。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Some of Germany’s latest cooperative ventures with Ukraine have involved joint production of new military drones. Ars recently covered a $100 million deal—reportedly funded by Germany—that is equipping the Ukrainian military with drones capable of performing AI target tracking.</p>
+			<p class="para-original" lang="en">Some of Germany’s latest cooperative ventures with Ukraine have involved joint production of new military drones. Ars recently covered a $100 million deal—reportedly funded by Germany—that is equipping the Ukrainian military with drones capable of performing AI target tracking.</p>
 			<p class="para-translation">德國與烏克蘭最新的一些合作項目涉及聯合生產新型軍用無人機。Ars 最近報導了一項價值 1 億美元的交易——據稱由德國資助——該交易正為烏克蘭軍隊配備具備人工智慧目標追蹤能力的無人機。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original"><em>This story was updated on August 7, 2026 to include details on the bus driver credited with taking down the drone.</em></p>
+			<p class="para-original" lang="en"><em>This story was updated on August 7, 2026 to include details on the bus driver credited with taking down the drone.</em></p>
 			<p class="para-translation">這則新聞於 2026 年 8 月 7 日更新，加入了關於被認為擊落無人機的巴士司機的細節。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
@@ -428,21 +475,21 @@
 		<li class="scan-answer">
 			<span class="scan-q-num">1</span>
 			<div>
-				<div class="scan-a-question">What type of substance was the drone&#x27;s explosive package believed to be?</div>
+				<div class="scan-a-question" lang="en">What type of substance was the drone&#x27;s explosive package believed to be?</div>
 				<div class="scan-a-text">這種物質被認為是塑膠炸藥 Semtex。</div>
 			</div>
 		</li>
 		<li class="scan-answer">
 			<span class="scan-q-num">2</span>
 			<div>
-				<div class="scan-a-question">How did the bus driver stop the flying drone?</div>
+				<div class="scan-a-question" lang="en">How did the bus driver stop the flying drone?</div>
 				<div class="scan-a-text">這名巴士司機設法踢了飛行中的無人機，導致其墜毀。</div>
 			</div>
 		</li>
 		<li class="scan-answer">
 			<span class="scan-q-num">3</span>
 			<div>
-				<div class="scan-a-question">How many flights were forced to divert due to the airport closure?</div>
+				<div class="scan-a-question" lang="en">How many flights were forced to divert due to the airport closure?</div>
 				<div class="scan-a-text">共有 19 架航班被迫轉降其他機場。</div>
 			</div>
 		</li>
@@ -455,34 +502,34 @@
 	<div class="related-grid">
 			<a class="related-card" href="2026-08-09.html">
 				<span class="related-source">Rest of World</span>
-				<span class="related-title">Arizona wants Taiwan’s investors to think beyond chips</span>
+				<span class="related-title" lang="en">Arizona wants Taiwan’s investors to think beyond chips</span>
 			</a>
 			<a class="related-card" href="2026-08-11.html">
 				<span class="related-source">Ars Technica</span>
-				<span class="related-title">With new open models, Meta pitches another reboot of its struggling AI strategy</span>
+				<span class="related-title" lang="en">With new open models, Meta pitches another reboot of its struggling AI strategy</span>
 			</a>
 	</div>
 </div>
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
-	<div class="popup-card" id="popup-card">
-		<button class="btn-close" onclick="closePopup()">×</button>
-		<div class="popup-word" id="popup-word"></div>
+	<div class="popup-card" id="popup-card" role="dialog" aria-modal="true" aria-labelledby="popup-word" tabindex="-1">
+		<button class="btn-close" onclick="closePopup()" aria-label="關閉">×</button>
+		<div class="popup-word" id="popup-word" lang="en"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
 		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-field" id="popup-def-en-row">
 			<span class="popup-field-label">英英釋義</span>
-			<span class="popup-def-en" id="popup-def-en"></span>
+			<span class="popup-def-en" id="popup-def-en" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-syn-row">
 			<span class="popup-field-label">近義字</span>
-			<span class="popup-syn" id="popup-syn"></span>
+			<span class="popup-syn" id="popup-syn" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-example-row">
 			<span class="popup-field-label">例句</span>
-			<span class="popup-example" id="popup-example"></span>
+			<span class="popup-example" id="popup-example" lang="en"></span>
 		</div>
 		<div class="popup-actions">
 			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入單字庫</button>
@@ -587,9 +634,12 @@
 		document.getElementById(id + "-row").style.display = value ? "" : "none";
 	}
 
+	let lastFocused = null;
+
 	function showPopup(word) {
 		const entry = vocabMap[word.toLowerCase()];
 		if (!entry) return;
+		lastFocused = document.activeElement;
 		currentWord = entry.word;
 
 		document.getElementById("popup-word").textContent = entry.word;
@@ -610,11 +660,17 @@
 		syncAnkiButton();
 
 		document.getElementById("popup-overlay").classList.add("open");
+		document.getElementById("popup-card").focus();
 	}
 
 	function closePopup() {
-		document.getElementById("popup-overlay").classList.remove("open");
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		overlay.classList.remove("open");
 		currentWord = null;
+		// 焦點還給剛才點的那個字，不然會掉回頁面最上面
+		if (lastFocused && lastFocused.focus) lastFocused.focus();
+		lastFocused = null;
 	}
 
 	function closePopupOnOverlay(e) {
@@ -641,13 +697,31 @@
 		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
 	}
 
-	// wire up highlighted words
+	// wire up highlighted words（span 加了 role="button"，鍵盤要自己接）
 	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
 		el.addEventListener("click", () => showPopup(el.dataset.word));
+		el.addEventListener("keydown", e => {
+			if (e.key === "Enter" || e.key === " ") {
+				e.preventDefault();
+				showPopup(el.dataset.word);
+			}
+		});
 	});
 
-	// close on Escape
-	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+	document.addEventListener("keydown", e => {
+		if (e.key === "Escape") { closePopup(); return; }
+		if (e.key !== "Tab") return;
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		const items = overlay.querySelectorAll("button");
+		if (!items.length) return;
+		const first = items[0];
+		const last = items[items.length - 1];
+		const onFirst = document.activeElement === first
+			|| document.activeElement === document.getElementById("popup-card");
+		if (e.shiftKey && onFirst) { e.preventDefault(); last.focus(); }
+		else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+	});
 
 	markCollectedWords();
 	goStage("bumps");

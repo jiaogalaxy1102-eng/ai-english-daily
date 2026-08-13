@@ -9,14 +9,16 @@
 	try {
 		var s = JSON.parse(localStorage.getItem("site-settings") || "{}");
 		var html = document.documentElement;
-		if (s.palette) html.setAttribute("data-palette", s.palette);
+		// 沒有 data-theme 就交給 CSS 的 prefers-color-scheme 決定
+		var theme = s.theme || (s.palette ? (s.palette === "night" ? "dark" : "light") : "");
+		if (theme === "dark" || theme === "light") html.setAttribute("data-theme", theme);
 		if (s.fontZh) html.setAttribute("data-font-zh", s.fontZh);
 		if (s.fontEn) html.setAttribute("data-font-en", s.fontEn);
 		if (s.fontScale) html.style.fontSize = s.fontScale + "%";
 	} catch (e) {}
 })();
 </script>
-	<link rel="stylesheet" href="../style.css?v=15">
+	<link rel="stylesheet" href="../style.css?v=16">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1/lxgwwenkaitc-regular.css">
 	<script src="../assets/settings.js" defer></script>
 </head>
@@ -27,14 +29,11 @@
 <div class="settings-overlay" id="settings-overlay" onclick="closeSettingsOnOverlay(event)">
 	<div class="settings-panel" id="settings-panel">
 		<div class="settings-row">
-			<div class="settings-label">配色</div>
-			<div class="palette-swatches">
-				<button class="swatch-btn" data-palette="coffee" style="background:#f8f6f1" onclick="setPalette('coffee')" aria-label="咖啡歐蕾"></button>
-				<button class="swatch-btn" data-palette="paper" style="background:#ffffff" onclick="setPalette('paper')" aria-label="純白經典"></button>
-				<button class="swatch-btn" data-palette="almond" style="background:#fbf3e7" onclick="setPalette('almond')" aria-label="溫柔杏米"></button>
-				<button class="swatch-btn" data-palette="sage" style="background:#e8f0e3" onclick="setPalette('sage')" aria-label="護眼豆沙綠"></button>
-				<button class="swatch-btn" data-palette="night" style="background:#1b1a17" onclick="setPalette('night')" aria-label="深夜暗色"></button>
-				<button class="swatch-btn" data-palette="slate" style="background:#eef1f4" onclick="setPalette('slate')" aria-label="手帳藍灰"></button>
+			<div class="settings-label" id="theme-label">主題</div>
+			<div class="theme-toggle" role="group" aria-labelledby="theme-label">
+				<button type="button" class="theme-btn" data-theme="auto" onclick="setTheme('auto')" aria-pressed="false">跟隨系統</button>
+				<button type="button" class="theme-btn" data-theme="light" onclick="setTheme('light')" aria-pressed="false">亮色</button>
+				<button type="button" class="theme-btn" data-theme="dark" onclick="setTheme('dark')" aria-pressed="false">暗色</button>
 			</div>
 		</div>
 		<div class="settings-row">
@@ -71,7 +70,7 @@
 
 <div class="article-header content-block">
 	<div class="article-source">Rest of World<span class="tag-badge">產業與商業</span></div>
-	<h1 class="article-title">Arizona wants Taiwan’s investors to think beyond chips</h1>
+	<h1 class="article-title" lang="en">Arizona wants Taiwan’s investors to think beyond chips</h1>
 	<div class="article-meta">
 		2026-08-09 &nbsp;·&nbsp; <a href="https://restofworld.org/2026/tsmc-arizona-investors/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">原文連結</a>
 	</div>
@@ -86,11 +85,11 @@
 
 <section class="stage stage-bumps content-block" id="stage-bumps">
 	<div class="stage-hint">先看骨架，建立預期再讀全文</div>
-	<p class="bumps-summary">Arizona is experiencing a major economic boom thanks to massive investments from TSMC. Local officials are now encouraging Taiwanese investors to look beyond the semiconductor industry and invest in local infrastructure like hotels and warehouses. While the potential for profit is high, international investors still face challenges with local laws and taxes.</p>
+	<p class="bumps-summary" lang="en">Arizona is experiencing a major economic boom thanks to massive investments from TSMC. Local officials are now encouraging Taiwanese investors to look beyond the semiconductor industry and invest in local infrastructure like hotels and warehouses. While the potential for profit is high, international investors still face challenges with local laws and taxes.</p>
 	<div class="bumps-list">
-		<div class="bump">In July, I sat among roughly 100 people in a packed conference room in Taipei as a speaker highlighted the industrial parks and tax rates of an American city nearly 7,000 miles away.</div>
-		<div class="bump">Tapping into the U.S. market offers huge potential, <span class="signpost">but</span> international investors still have to consider a tricky web of taxes, regulations, and red tape.</div>
-		<div class="bump bump-conclusion"><span class="bump-label">結論</span>“<span class="signpost">But</span> my son studies in Arizona now,” she said.</div>
+		<div class="bump" lang="en">In July, I sat among roughly 100 people in a packed conference room in Taipei as a speaker highlighted the industrial parks and tax rates of an American city nearly 7,000 miles away.</div>
+		<div class="bump" lang="en">Tapping into the U.S. market offers huge potential, <span class="signpost">but</span> international investors still have to consider a tricky web of taxes, regulations, and red tape.</div>
+		<div class="bump bump-conclusion" lang="en"><span class="bump-label" lang="zh-Hant">結論</span>“<span class="signpost">But</span> my son studies in Arizona now,” she said.</div>
 	</div>
 	<div class="stage-actions">
 		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
@@ -103,15 +102,15 @@
 	<ul class="scan-list">
 		<li class="scan-question">
 			<span class="scan-q-num">1</span>
-			<span class="scan-q-text">Who is the head of the Arizona Commerce Authority’s Taiwan office?</span>
+			<span class="scan-q-text" lang="en">Who is the head of the Arizona Commerce Authority’s Taiwan office?</span>
 		</li>
 		<li class="scan-question">
 			<span class="scan-q-num">2</span>
-			<span class="scan-q-text">What was the total trade value between Arizona and Taiwan in 2025?</span>
+			<span class="scan-q-text" lang="en">What was the total trade value between Arizona and Taiwan in 2025?</span>
 		</li>
 		<li class="scan-question">
 			<span class="scan-q-num">3</span>
-			<span class="scan-q-text">According to the Economic Daily News, how many Taiwanese suppliers have set up operations in the U.S.?</span>
+			<span class="scan-q-text" lang="en">According to the Economic Daily News, how many Taiwanese suppliers have set up operations in the U.S.?</span>
 		</li>
 	</ul>
 </section>
@@ -122,180 +121,230 @@
 	</button>
 	<div class="vocab-grid" id="vocab-grid">
 		
-			<div class="vocab-card" data-word="packed" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="packed">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">packed</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+					<span class="vocab-ipa">/pækt/</span>
+					<span class="vocab-def">擠滿人的；塞滿的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 packed 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">packed</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
-				<span class="vocab-ipa">/pækt/</span>
-				<span class="vocab-def">擠滿人的；塞滿的</span>
 			</div>
-			<div class="vocab-card" data-word="highlighted" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="highlighted">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">highlighted</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/ˈhaɪˌlaɪtɪd/</span>
+					<span class="vocab-def">強調；突出</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 highlighted 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">highlighted</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/ˈhaɪˌlaɪtɪd/</span>
-				<span class="vocab-def">強調；突出</span>
 			</div>
-			<div class="vocab-card" data-word="trend" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="trend">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">trend</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/trɛnd/</span>
+					<span class="vocab-def">趨勢；傾向</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 trend 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">trend</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/trɛnd/</span>
-				<span class="vocab-def">趨勢；傾向</span>
 			</div>
-			<div class="vocab-card" data-word="transformation" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="transformation">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">transformation</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌtrænsfərˈmeɪʃən/</span>
+					<span class="vocab-def">轉變；徹底改變</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 transformation 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">transformation</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌtrænsfərˈmeɪʃən/</span>
-				<span class="vocab-def">轉變；徹底改變</span>
 			</div>
-			<div class="vocab-card" data-word="investment" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="investment">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">investment</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ɪnˈvɛstmənt/</span>
+					<span class="vocab-def">投資；投入</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 investment 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">investment</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ɪnˈvɛstmənt/</span>
-				<span class="vocab-def">投資；投入</span>
 			</div>
-			<div class="vocab-card" data-word="diversify" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="diversify">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">diversify</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/daɪˈvɜrsəˌfaɪ/</span>
+					<span class="vocab-def">多樣化；分散投資</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 diversify 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">diversify</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/daɪˈvɜrsəˌfaɪ/</span>
-				<span class="vocab-def">多樣化；分散投資</span>
 			</div>
-			<div class="vocab-card" data-word="appreciation" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="appreciation">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">appreciation</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/əˌpriːʃiˈeɪʃən/</span>
+					<span class="vocab-def">增值；漲價</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 appreciation 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">appreciation</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/əˌpriːʃiˈeɪʃən/</span>
-				<span class="vocab-def">增值；漲價</span>
 			</div>
-			<div class="vocab-card" data-word="steadily" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="steadily">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">steadily</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
+					<span class="vocab-ipa">/ˈstɛdɪli/</span>
+					<span class="vocab-def">穩定地；持續地</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 steadily 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">steadily</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adv.</span>
-				<span class="vocab-ipa">/ˈstɛdɪli/</span>
-				<span class="vocab-def">穩定地；持續地</span>
 			</div>
-			<div class="vocab-card" data-word="potential" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="potential">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">potential</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/pəˈtɛnʃəl/</span>
+					<span class="vocab-def">潛力；可能性</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 potential 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">potential</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/pəˈtɛnʃəl/</span>
-				<span class="vocab-def">潛力；可能性</span>
 			</div>
-			<div class="vocab-card" data-word="personal" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="personal">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">personal</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
+					<span class="vocab-ipa">/ˈpɜrsənəl/</span>
+					<span class="vocab-def">個人的；私人的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 personal 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">personal</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">adj.</span>
-				<span class="vocab-ipa">/ˈpɜrsənəl/</span>
-				<span class="vocab-def">個人的；私人的</span>
 			</div>
-			<div class="vocab-card" data-word="scale" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="scale">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">scale</span>
+					<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/skeɪl/</span>
+					<span class="vocab-def">規模；程度</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 scale 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">scale</span>
-				<span class="badge badge-highfreq">高頻詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/skeɪl/</span>
-				<span class="vocab-def">規模；程度</span>
 			</div>
-			<div class="vocab-card" data-word="ribbon-cutting" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="ribbon-cutting">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">ribbon-cutting</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
+					<span class="vocab-ipa">/ˈrɪbənˌkʌtɪŋ/</span>
+					<span class="vocab-def">剪綵的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 ribbon-cutting 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">ribbon-cutting</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">adj.</span>
-				<span class="vocab-ipa">/ˈrɪbənˌkʌtɪŋ/</span>
-				<span class="vocab-def">剪綵的</span>
 			</div>
-			<div class="vocab-card" data-word="desert" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="desert">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">desert</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈdɛzərt/</span>
+					<span class="vocab-def">沙漠</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 desert 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">desert</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈdɛzərt/</span>
-				<span class="vocab-def">沙漠</span>
 			</div>
-			<div class="vocab-card" data-word="fabrication" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="fabrication">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">fabrication</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌfæbrɪˈkeɪʃən/</span>
+					<span class="vocab-def">製造；（晶圓）代工</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 fabrication 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">fabrication</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌfæbrɪˈkeɪʃən/</span>
-				<span class="vocab-def">製造；（晶圓）代工</span>
 			</div>
-			<div class="vocab-card" data-word="roster" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="roster">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">roster</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈrɒstər/</span>
+					<span class="vocab-def">名單；花名冊</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 roster 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">roster</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈrɒstər/</span>
-				<span class="vocab-def">名單；花名冊</span>
 			</div>
-			<div class="vocab-card" data-word="infrastructure" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="infrastructure">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">infrastructure</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈɪnfrəˌstrʌktʃər/</span>
+					<span class="vocab-def">基礎建設</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 infrastructure 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">infrastructure</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈɪnfrəˌstrʌktʃər/</span>
-				<span class="vocab-def">基礎建設</span>
 			</div>
-			<div class="vocab-card" data-word="logistics" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="logistics">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">logistics</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ləˈdʒɪstɪks/</span>
+					<span class="vocab-def">物流；後勤</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 logistics 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">logistics</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ləˈdʒɪstɪks/</span>
-				<span class="vocab-def">物流；後勤</span>
 			</div>
-			<div class="vocab-card" data-word="hospitality" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="hospitality">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">hospitality</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌhɒspɪˈtælɪti/</span>
+					<span class="vocab-def">服務業；餐飲旅遊業</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 hospitality 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">hospitality</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌhɒspɪˈtælɪti/</span>
-				<span class="vocab-def">服務業；餐飲旅遊業</span>
 			</div>
-			<div class="vocab-card" data-word="delegation" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="delegation">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">delegation</span>
+					<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌdɛlɪˈɡeɪʃən/</span>
+					<span class="vocab-def">代表團；考察團</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 delegation 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">delegation</span>
-				<span class="badge badge-general">學習詞</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌdɛlɪˈɡeɪʃən/</span>
-				<span class="vocab-def">代表團；考察團</span>
 			</div>
-			<div class="vocab-card" data-word="semiconductor" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="semiconductor">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">semiconductor</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˌsɛmikənˈdʌktər/</span>
+					<span class="vocab-def">半導體</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 semiconductor 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">semiconductor</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˌsɛmikənˈdʌktər/</span>
-				<span class="vocab-def">半導體</span>
 			</div>
-			<div class="vocab-card" data-word="reshore" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="reshore">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">reshore</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">v.</span>
+					<span class="vocab-ipa">/ˌriːˈʃɔːr/</span>
+					<span class="vocab-def">將（生產）遷回國內</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 reshore 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">reshore</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">v.</span>
-				<span class="vocab-ipa">/ˌriːˈʃɔːr/</span>
-				<span class="vocab-def">將（生產）遷回國內</span>
 			</div>
-			<div class="vocab-card" data-word="venture capital" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="venture capital">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">venture capital</span>
+					<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
+					<span class="vocab-ipa">/ˈvɛntʃər ˈkæpɪtəl/</span>
+					<span class="vocab-def">風險投資</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 venture capital 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">venture capital</span>
-				<span class="badge badge-term">術語</span><span class="vocab-pos">n.</span>
-				<span class="vocab-ipa">/ˈvɛntʃər ˈkæpɪtəl/</span>
-				<span class="vocab-def">風險投資</span>
 			</div>
-			<div class="vocab-card" data-word="once-in-a-lifetime" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="once-in-a-lifetime">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">once-in-a-lifetime</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/wʌns ɪn ə ˈlaɪftaɪm/</span>
+					<span class="vocab-def">一生一次的；極其難得的</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 once-in-a-lifetime 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">once-in-a-lifetime</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/wʌns ɪn ə ˈlaɪftaɪm/</span>
-				<span class="vocab-def">一生一次的；極其難得的</span>
 			</div>
-			<div class="vocab-card" data-word="tapping into" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="tapping into">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">tapping into</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/ˈtæpɪŋ ˈɪntuː/</span>
+					<span class="vocab-def">開發；利用（資源或市場）</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 tapping into 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">tapping into</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/ˈtæpɪŋ ˈɪntuː/</span>
-				<span class="vocab-def">開發；利用（資源或市場）</span>
 			</div>
-			<div class="vocab-card" data-word="red tape" onclick="showPopup(this.dataset.word)">
+			<div class="vocab-card" data-word="red tape">
+				<button class="vocab-card-main" onclick="showPopup(this.closest('[data-word]').dataset.word)">
+					<span class="vocab-word" lang="en">red tape</span>
+					<span class="badge badge-phrase">片語</span>
+					<span class="vocab-ipa">/rɛd teɪp/</span>
+					<span class="vocab-def">繁文縟節；官僚程序</span>
+				</button>
 				<button class="btn-speak-icon" onclick="speakFromCard(event, this)" aria-label="播放 red tape 的發音" title="發音"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a4.5 4.5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg></button>
-				<span class="vocab-word">red tape</span>
-				<span class="badge badge-phrase">片語</span>
-				<span class="vocab-ipa">/rɛd teɪp/</span>
-				<span class="vocab-def">繁文縟節；官僚程序</span>
 			</div>
 	</div>
 </div>
@@ -303,67 +352,67 @@
 <div class="article-body content-block" id="article-body">
 	
 		<div class="para-block">
-			<p class="para-original">In July, I sat among roughly 100 people in a <span class="word-highfreq" data-word="packed">packed</span> conference room in Taipei as a speaker <span class="word-highfreq" data-word="highlighted">highlighted</span> the industrial parks and tax rates of an American city nearly 7,000 miles away.</p>
+			<p class="para-original" lang="en">In July, I sat among roughly 100 people in a <span class="word-highfreq" data-word="packed" role="button" tabindex="0">packed</span> conference room in Taipei as a speaker <span class="word-highfreq" data-word="highlighted" role="button" tabindex="0">highlighted</span> the industrial parks and tax rates of an American city nearly 7,000 miles away.</p>
 			<p class="para-translation">七月時，我坐在台北一間擠滿人的會議室裡，大約有一百人聽著講者介紹一個近七千英里外的美國城市，其工業園區與稅率。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">“There are <span class="word-general" data-word="ribbon-cutting">ribbon-cutting</span> ceremonies almost every week. Everywhere you look, something is being built. This <span class="word-highfreq" data-word="trend">trend</span> will continue for the next 20 to 30 years.”</p>
+			<p class="para-original" lang="en">“There are <span class="word-general" data-word="ribbon-cutting" role="button" tabindex="0">ribbon-cutting</span> ceremonies almost every week. Everywhere you look, something is being built. This <span class="word-highfreq" data-word="trend" role="button" tabindex="0">trend</span> will continue for the next 20 to 30 years.”</p>
 			<p class="para-translation">「幾乎每週都有剪綵儀式。放眼望去，到處都在建設。這個趨勢將持續未來二十到三十年。」</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Steve Hsu, head of the Arizona Commerce Authority’s Taiwan office, was pitching real estate opportunities in Phoenix — the <span class="word-general" data-word="desert">desert</span> city that is undergoing a huge economic <span class="word-highfreq" data-word="transformation">transformation</span> known as the “TSMC effect.”</p>
+			<p class="para-original" lang="en">Steve Hsu, head of the Arizona Commerce Authority’s Taiwan office, was pitching real estate opportunities in Phoenix — the <span class="word-general" data-word="desert" role="button" tabindex="0">desert</span> city that is undergoing a huge economic <span class="word-highfreq" data-word="transformation" role="button" tabindex="0">transformation</span> known as the “TSMC effect.”</p>
 			<p class="para-translation">亞利桑那州商務廳（Arizona Commerce Authority）台灣辦事處處長徐竹先（Steve Hsu）正在推銷鳳凰城的房地產機會——這座沙漠城市正經歷被稱為「台積電效應」的巨大經濟轉型。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Taiwan <span class="word-term" data-word="semiconductor">Semiconductor</span> Manufacturing Company, the world’s leading chipmaker, had announced its plans to construct <span class="word-general" data-word="fabrication">fabrication</span> plants in Arizona in 2020. Today, the expanding TSMC project in the state represents the largest single foreign <span class="word-highfreq" data-word="investment">investment</span> project in U.S. history.</p>
+			<p class="para-original" lang="en">Taiwan <span class="word-term" data-word="semiconductor" role="button" tabindex="0">Semiconductor</span> Manufacturing Company, the world’s leading chipmaker, had announced its plans to construct <span class="word-general" data-word="fabrication" role="button" tabindex="0">fabrication</span> plants in Arizona in 2020. Today, the expanding TSMC project in the state represents the largest single foreign <span class="word-highfreq" data-word="investment" role="button" tabindex="0">investment</span> project in U.S. history.</p>
 			<p class="para-translation">全球領先的晶片製造商台積電（TSMC）於 2020 年宣布在亞利桑那州建造晶圓廠的計畫。如今，該公司在該州持續擴張的計畫代表了美國史上最大規模的單一外國投資案。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">As Arizona’s economic fortunes have become increasingly tied to TSMC and its chip supply chain, it’s been keen to <span class="word-highfreq" data-word="diversify">diversify</span> the <span class="word-general" data-word="roster">roster</span> of investors beyond tech companies.</p>
+			<p class="para-original" lang="en">As Arizona’s economic fortunes have become increasingly tied to TSMC and its chip supply chain, it’s been keen to <span class="word-highfreq" data-word="diversify" role="button" tabindex="0">diversify</span> the <span class="word-general" data-word="roster" role="button" tabindex="0">roster</span> of investors beyond tech companies.</p>
 			<p class="para-translation">隨著亞利桑那州的經濟命運與台積電及其晶片供應鏈的聯繫日益緊密，該州一直渴望將投資者名單擴展到科技公司之外。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">At the event, Hsu urged Taiwanese property developers and family offices to invest in the support <span class="word-general" data-word="infrastructure">infrastructure</span> — warehouses, <span class="word-general" data-word="logistics">logistics</span> centers, hotels, commercial buildings, and science parks — needed for the growing network of suppliers following TSMC to the <span class="word-general" data-word="desert">desert</span>.</p>
+			<p class="para-original" lang="en">At the event, Hsu urged Taiwanese property developers and family offices to invest in the support <span class="word-general" data-word="infrastructure" role="button" tabindex="0">infrastructure</span> — warehouses, <span class="word-general" data-word="logistics" role="button" tabindex="0">logistics</span> centers, hotels, commercial buildings, and science parks — needed for the growing network of suppliers following TSMC to the <span class="word-general" data-word="desert" role="button" tabindex="0">desert</span>.</p>
 			<p class="para-translation">在活動中，徐竹先敦促台灣房地產開發商和家族辦公室投資支撐性基礎建設——包括倉庫、物流中心、飯店、商業大樓和科學園區——這些是跟隨台積電來到沙漠的日益壯大的供應商網絡所需要的。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">“The <span class="word-highfreq" data-word="investment">investment</span> opportunity in Arizona is not just available for tech companies — it’s an opportunity for everyone, including investors in <span class="word-general" data-word="hospitality">hospitality</span>, family offices, and other industries,” Hsu told the room. “If only tech companies are building there while we ignore the <span class="word-highfreq" data-word="appreciation">appreciation</span> in land values, we’ll be missing a <span class="word-phrase" data-word="once-in-a-lifetime">once-in-a-lifetime</span> opportunity.”</p>
+			<p class="para-original" lang="en">“The <span class="word-highfreq" data-word="investment" role="button" tabindex="0">investment</span> opportunity in Arizona is not just available for tech companies — it’s an opportunity for everyone, including investors in <span class="word-general" data-word="hospitality" role="button" tabindex="0">hospitality</span>, family offices, and other industries,” Hsu told the room. “If only tech companies are building there while we ignore the <span class="word-highfreq" data-word="appreciation" role="button" tabindex="0">appreciation</span> in land values, we’ll be missing a <span class="word-phrase" data-word="once-in-a-lifetime" role="button" tabindex="0">once-in-a-lifetime</span> opportunity.”</p>
 			<p class="para-translation">「亞利桑那州的投資機會不只開放給科技公司——這對每個人來說都是機會，包括觀光餐飲業、家族辦公室和其他產業的投資者，」徐竹先對全場說。「如果只有科技公司在那裡建設，而我們忽視了土地價值的增值，我們將錯過一個一生一次的機會。」</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Driven by tariffs and U.S. efforts to <span class="word-term" data-word="reshore">reshore</span> <span class="word-term" data-word="semiconductor">semiconductor</span> manufacturing, TSMC has <span class="word-highfreq" data-word="steadily">steadily</span> expanded its Arizona plans. Earlier in July, the company announced an additional $100 billion <span class="word-highfreq" data-word="investment">investment</span>, bringing its planned U.S. spending to $265 billion across 12 facilities. At least 25 Taiwanese suppliers have established operations in the U.S. as they follow their biggest customer overseas, according to Taiwanese newspaper <em>Economic Daily News</em>.</p>
+			<p class="para-original" lang="en">Driven by tariffs and U.S. efforts to <span class="word-term" data-word="reshore" role="button" tabindex="0">reshore</span> <span class="word-term" data-word="semiconductor" role="button" tabindex="0">semiconductor</span> manufacturing, TSMC has <span class="word-highfreq" data-word="steadily" role="button" tabindex="0">steadily</span> expanded its Arizona plans. Earlier in July, the company announced an additional $100 billion <span class="word-highfreq" data-word="investment" role="button" tabindex="0">investment</span>, bringing its planned U.S. spending to $265 billion across 12 facilities. At least 25 Taiwanese suppliers have established operations in the U.S. as they follow their biggest customer overseas, according to Taiwanese newspaper <em>Economic Daily News</em>.</p>
 			<p class="para-translation">在關稅和美國重振半導體製造努力的推動下，台積電穩步擴大其亞利桑那州的計畫。七月初，該公司宣布追加 1,000 億美元投資，使其在美國的計畫支出達到 2,650 億美元，涵蓋 12 座設施。根據《經濟日報》報導，至少有 25 家台灣供應商跟隨其最大的客戶到海外，在美國建立了據點。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Arizona’s increasing focus on Taiwan comes as trade between the two jumped from $4.9 billion in 2024 to $21.2 billion in 2025. Last year, Taiwan bypassed Canada and China to become Arizona’s second-largest trading partner in terms of volume after Mexico, but top partner in terms of trading value.</p>
+			<p class="para-original" lang="en">Arizona’s increasing focus on Taiwan comes as trade between the two jumped from $4.9 billion in 2024 to $21.2 billion in 2025. Last year, Taiwan bypassed Canada and China to become Arizona’s second-largest trading partner in terms of volume after Mexico, but top partner in terms of trading value.</p>
 			<p class="para-translation">亞利桑那州對台灣的日益重視，正值雙方貿易額從 2024 年的 49 億美元跳升至 2025 年的 212 億美元。去年，台灣超越加拿大和中國，成為亞利桑那州交易量第二大的貿易夥伴，僅次於墨西哥，但在交易價值方面則是首位夥伴。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original"><span class="word-phrase" data-word="tapping into">Tapping into</span> the U.S. market offers huge <span class="word-highfreq" data-word="potential">potential</span>, but international investors still have to consider a tricky web of taxes, regulations, and <span class="word-phrase" data-word="red tape">red tape</span>.<strong> </strong>During the coffee break at the conference, I wandered around the room to ask attendees if they were actually planning to invest.</p>
+			<p class="para-original" lang="en"><span class="word-phrase" data-word="tapping into" role="button" tabindex="0">Tapping into</span> the U.S. market offers huge <span class="word-highfreq" data-word="potential" role="button" tabindex="0">potential</span>, but international investors still have to consider a tricky web of taxes, regulations, and <span class="word-phrase" data-word="red tape" role="button" tabindex="0">red tape</span>.<strong> </strong>During the coffee break at the conference, I wandered around the room to ask attendees if they were actually planning to invest.</p>
 			<p class="para-translation">進入美國市場具有巨大的潛力，但國際投資者仍必須考慮複雜的稅務、法規和繁文縟節。在會議的茶歇時間，我在會場巡視，詢問參與者是否真的計畫投資。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">Several <span class="word-term" data-word="venture capital">venture capital</span> and family office representatives seemed excited and told me they plan to join <span class="word-highfreq" data-word="investment">investment</span> <span class="word-general" data-word="delegation">delegation</span> trips to Arizona soon.</p>
+			<p class="para-original" lang="en">Several <span class="word-term" data-word="venture capital" role="button" tabindex="0">venture capital</span> and family office representatives seemed excited and told me they plan to join <span class="word-highfreq" data-word="investment" role="button" tabindex="0">investment</span> <span class="word-general" data-word="delegation" role="button" tabindex="0">delegation</span> trips to Arizona soon.</p>
 			<p class="para-translation">幾位風險投資和家族辦公室的代表似乎很興奮，並告訴我他們計畫近期參加赴亞利桑那州的投資考察團。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">For some other attendees, the future of Arizona was much more <span class="word-highfreq" data-word="personal">personal</span>. The chief financial officer of a Taiwanese real estate company told me her firm was probably too small to invest on that <span class="word-highfreq" data-word="scale">scale</span>.</p>
+			<p class="para-original" lang="en">For some other attendees, the future of Arizona was much more <span class="word-highfreq" data-word="personal" role="button" tabindex="0">personal</span>. The chief financial officer of a Taiwanese real estate company told me her firm was probably too small to invest on that <span class="word-highfreq" data-word="scale" role="button" tabindex="0">scale</span>.</p>
 			<p class="para-translation">對於其他一些參與者來說，亞利桑那州的未來更具個人色彩。一家台灣房地產公司的財務長告訴我，她的公司規模可能太小，無法進行那種規模的投資。</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
 		<div class="para-block">
-			<p class="para-original">“But my son studies in Arizona now,” she said. “I want to understand what the future for a Taiwanese person might look like over there if he decides to stay.”</p>
+			<p class="para-original" lang="en">“But my son studies in Arizona now,” she said. “I want to understand what the future for a Taiwanese person might look like over there if he decides to stay.”</p>
 			<p class="para-translation">「但我兒子現在在亞利桑那州讀書，」她說。「我想了解如果他決定留在那裡，對一個台灣人來說，那裡的未來會是什麼樣子。」</p>
 			<button class="para-reveal" onclick="revealPara(this)" aria-label="顯示中文">看中文</button>
 		</div>
@@ -385,21 +434,21 @@
 		<li class="scan-answer">
 			<span class="scan-q-num">1</span>
 			<div>
-				<div class="scan-a-question">Who is the head of the Arizona Commerce Authority’s Taiwan office?</div>
+				<div class="scan-a-question" lang="en">Who is the head of the Arizona Commerce Authority’s Taiwan office?</div>
 				<div class="scan-a-text">徐竹先 (Steve Hsu)</div>
 			</div>
 		</li>
 		<li class="scan-answer">
 			<span class="scan-q-num">2</span>
 			<div>
-				<div class="scan-a-question">What was the total trade value between Arizona and Taiwan in 2025?</div>
+				<div class="scan-a-question" lang="en">What was the total trade value between Arizona and Taiwan in 2025?</div>
 				<div class="scan-a-text">212 億美元</div>
 			</div>
 		</li>
 		<li class="scan-answer">
 			<span class="scan-q-num">3</span>
 			<div>
-				<div class="scan-a-question">According to the Economic Daily News, how many Taiwanese suppliers have set up operations in the U.S.?</div>
+				<div class="scan-a-question" lang="en">According to the Economic Daily News, how many Taiwanese suppliers have set up operations in the U.S.?</div>
 				<div class="scan-a-text">至少 25 家</div>
 			</div>
 		</li>
@@ -412,34 +461,34 @@
 	<div class="related-grid">
 			<a class="related-card" href="2026-08-11.html">
 				<span class="related-source">Ars Technica</span>
-				<span class="related-title">With new open models, Meta pitches another reboot of its struggling AI strategy</span>
+				<span class="related-title" lang="en">With new open models, Meta pitches another reboot of its struggling AI strategy</span>
 			</a>
 			<a class="related-card" href="2026-08-10.html">
 				<span class="related-source">Ars Technica</span>
-				<span class="related-title">Explosive drone found hovering near Ukrainian cargo aircraft at German airport</span>
+				<span class="related-title" lang="en">Explosive drone found hovering near Ukrainian cargo aircraft at German airport</span>
 			</a>
 	</div>
 </div>
 
 <div class="popup-overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
-	<div class="popup-card" id="popup-card">
-		<button class="btn-close" onclick="closePopup()">×</button>
-		<div class="popup-word" id="popup-word"></div>
+	<div class="popup-card" id="popup-card" role="dialog" aria-modal="true" aria-labelledby="popup-word" tabindex="-1">
+		<button class="btn-close" onclick="closePopup()" aria-label="關閉">×</button>
+		<div class="popup-word" id="popup-word" lang="en"></div>
 		<div class="popup-ipa" id="popup-ipa"></div>
 		<div class="popup-badge" id="popup-badge"></div>
 		<div class="popup-pos" id="popup-pos"></div>
 		<div class="popup-def" id="popup-def"></div>
 		<div class="popup-field" id="popup-def-en-row">
 			<span class="popup-field-label">英英釋義</span>
-			<span class="popup-def-en" id="popup-def-en"></span>
+			<span class="popup-def-en" id="popup-def-en" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-syn-row">
 			<span class="popup-field-label">近義字</span>
-			<span class="popup-syn" id="popup-syn"></span>
+			<span class="popup-syn" id="popup-syn" lang="en"></span>
 		</div>
 		<div class="popup-field" id="popup-example-row">
 			<span class="popup-field-label">例句</span>
-			<span class="popup-example" id="popup-example"></span>
+			<span class="popup-example" id="popup-example" lang="en"></span>
 		</div>
 		<div class="popup-actions">
 			<button class="btn-anki" id="btn-anki" onclick="toggleAnki()">加入單字庫</button>
@@ -544,9 +593,12 @@
 		document.getElementById(id + "-row").style.display = value ? "" : "none";
 	}
 
+	let lastFocused = null;
+
 	function showPopup(word) {
 		const entry = vocabMap[word.toLowerCase()];
 		if (!entry) return;
+		lastFocused = document.activeElement;
 		currentWord = entry.word;
 
 		document.getElementById("popup-word").textContent = entry.word;
@@ -567,11 +619,17 @@
 		syncAnkiButton();
 
 		document.getElementById("popup-overlay").classList.add("open");
+		document.getElementById("popup-card").focus();
 	}
 
 	function closePopup() {
-		document.getElementById("popup-overlay").classList.remove("open");
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		overlay.classList.remove("open");
 		currentWord = null;
+		// 焦點還給剛才點的那個字，不然會掉回頁面最上面
+		if (lastFocused && lastFocused.focus) lastFocused.focus();
+		lastFocused = null;
 	}
 
 	function closePopupOnOverlay(e) {
@@ -598,13 +656,31 @@
 		btn.querySelector(".toggle-arrow").textContent = grid.classList.contains("open") ? "▲" : "▼";
 	}
 
-	// wire up highlighted words
+	// wire up highlighted words（span 加了 role="button"，鍵盤要自己接）
 	document.querySelectorAll(".word-highfreq, .word-term, .word-general, .word-phrase").forEach(el => {
 		el.addEventListener("click", () => showPopup(el.dataset.word));
+		el.addEventListener("keydown", e => {
+			if (e.key === "Enter" || e.key === " ") {
+				e.preventDefault();
+				showPopup(el.dataset.word);
+			}
+		});
 	});
 
-	// close on Escape
-	document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+	document.addEventListener("keydown", e => {
+		if (e.key === "Escape") { closePopup(); return; }
+		if (e.key !== "Tab") return;
+		const overlay = document.getElementById("popup-overlay");
+		if (!overlay.classList.contains("open")) return;
+		const items = overlay.querySelectorAll("button");
+		if (!items.length) return;
+		const first = items[0];
+		const last = items[items.length - 1];
+		const onFirst = document.activeElement === first
+			|| document.activeElement === document.getElementById("popup-card");
+		if (e.shiftKey && onFirst) { e.preventDefault(); last.focus(); }
+		else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+	});
 
 	markCollectedWords();
 	goStage("bumps");
