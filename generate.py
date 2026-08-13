@@ -16,13 +16,17 @@ from template import (
 	FIXED_TAGS,
 	build_entry,
 	entry_filename,
+	first_sentence,
+	has_signpost,
 	render_article,
 	render_index,
 	render_vocab_page,
 	sort_entries,
 )
 
-GEMINI_MODEL = "gemini-3-flash-preview"
+# 2026-08-13：原本是 "gemini-3-flash-preview"，該端點開始回 403 Forbidden
+# （preview 版被下架），當天的排程整個失敗。改成 GA 名稱。
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3-flash")
 
 BASE_DIR = Path(__file__).parent
 ARTICLES_DIR = BASE_DIR / "articles"
@@ -467,6 +471,15 @@ def call_gemini(source_name, title, url, paragraphs):
 	tag_list = "、".join(FIXED_TAGS)
 	last_index = len(paragraphs) - 1
 
+	# 句首有邏輯路標的段落編號，當成提示給 Gemini。路標是文章作者自己寫的導航詞，
+	# 在「哪裡是轉折」這件事上比 AI 事後推論可靠，但只當提示不當答案 —— 有些文章
+	# 一個路標都沒有，有些整篇都是。
+	signpost_paras = [
+		i for i, p in enumerate(paragraphs)
+		if p["tag"] not in ("pre", "table", "blockquote") and has_signpost(first_sentence(p["text"]))
+	]
+	signpost_hint = ", ".join(str(i) for i in signpost_paras) if signpost_paras else "（這篇沒有）"
+
 	prompt = f"""你是一個英文學習助手。以下是一篇來自 {source_name} 的文章：
 標題：{title}
 網址：{url}
@@ -481,6 +494,14 @@ def call_gemini(source_name, title, url, paragraphs):
   "summary_en": "3-4 句英文導讀，用比原文簡單的字彙，讓讀者在讀全文前先建立預期",
   "summary_zh": "整篇文章的繁體中文摘要（3-4 句）",
   "conclusion_index": 0,
+  "flow": [
+    {{
+      "paragraph_index": 0,
+      "role": "context",
+      "text": "從該段落原文照抄的一個完整句子，一字不改"
+    }}
+  ],
+  "noise_indices": [],
   "scan_questions": [
     {{
       "question": "一個英文問題，答案必須能在文章中找到具體事實",
@@ -520,6 +541,13 @@ def call_gemini(source_name, title, url, paragraphs):
 - tag 必須是以下其中一個，不可自創：{tag_list}
 - summary_en 是給「還沒讀全文的人」看的導讀，不要暴雷結論，用字要比原文淺
 - conclusion_index 是「整篇結論所在段落」的編號，範圍 0 到 {last_index}。通常在文章後段，但如果這篇沒有明顯結論段，就填 {last_index}
+- flow 是這篇文章的「論證走向」，請挑 3-6 句，照文章順序排列，串起來要能讓還沒讀全文的人看出整篇是怎麼推進的（背景 → 主張 → 轉折 → 證據 → 結論）。這不是「挑最重要的幾段」，是「挑出能構成一條邏輯線的幾句」
+- flow 的 text 必須是原文中**逐字存在**的完整句子，一個字都不能改（會用字串比對驗證，對不上就整句丟掉）。不要自己造句、不要合併兩句、不要摘要、不要只取半句
+- flow 的 role 只能是這五個之一：context（背景/前提）、claim（作者的主張）、turn（轉折/反例/質疑）、evidence（數據或事實佐證）、conclusion（結論）。整條線至少要有一個 claim 和一個 conclusion
+- flow 不要挑 blockquote（那是受訪者說的話，不是作者的論證）、pre 或 table 段落
+- 以下段落的句首有作者自己寫的邏輯路標（However / Instead / As a result 之類），通常正好是論證轉折處，優先考慮但不必全選：{signpost_hint}
+- noise_indices 填「不屬於文章正文」的段落編號：作者自我推銷、訂閱或追蹤呼籲、贊助商訊息、編按、相關文章連結列表。這些段落會整段不顯示，所以判斷不確定就不要填，寧可漏掉也不要誤刪正文。沒有就給空陣列 []
+- 被列入 noise_indices 的段落不會顯示給讀者，所以 flow、vocab 的 example、scan_questions 都不可以取自這些段落（例句取自看不到的段落，讀者會找不到那個字）
 - scan_questions 請出 3 題。問題用英文、答案用繁體中文，paragraph_index 標明答案出現在第幾段。問題要問具體事實（誰、多少、什麼技術、造成什麼結果），不要問感想或推論
 - vocab 陣列請挑選共 20-24 個單字，比例約為：
   - type "highfreq"（常見但實用的詞，如動詞/形容詞/副詞）約 50%
@@ -599,6 +627,92 @@ def validate_quiz(quiz, vocab):
 	return cleaned
 
 
+FLOW_ROLES = ("context", "claim", "turn", "evidence", "conclusion")
+FLOW_MIN = 3
+FLOW_MAX = 6
+
+
+def validate_flow(flow, paragraphs):
+	"""確認 flow 的每一句都真的逐字出現在文章裡。
+
+	凸點階段直接把這些句子當「文章的骨架」呈現，讀者會以為那就是原文。Gemini
+	很容易把兩句縫成一句、或順手改個連接詞 —— 讀起來很順，但那句話文章裡並不
+	存在，後面讀全文時對不上。所以這裡用 `normalize_for_compare`（抹平大小寫與
+	標點）做子字串比對，對不上就丟掉那一句。
+
+	剩不到 FLOW_MIN 句就回傳空陣列，讓 `template.py` 退到第二層（路標篩選）——
+	殘缺的邏輯線比沒有更誤導。
+	"""
+	if not isinstance(flow, list):
+		return []
+
+	bodies = [normalize_for_compare(p["text"]) for p in paragraphs]
+	last = len(paragraphs) - 1
+	cleaned = []
+
+	for item in flow:
+		if not isinstance(item, dict):
+			continue
+		text = (item.get("text") or "").strip()
+		needle = normalize_for_compare(text)
+		if not needle:
+			continue
+
+		idx = clamp_index(item.get("paragraph_index"), last, -1)
+		# 先比 AI 指定的那一段，對不上再全篇找 —— 句子是真的、只是段號記錯，
+		# 這種情況救得回來，沒必要連句子一起丟。
+		if idx >= 0 and needle in bodies[idx]:
+			found = idx
+		else:
+			found = next((i for i, b in enumerate(bodies) if needle in b), -1)
+
+		if found < 0:
+			print(f"  骨架有一句在原文找不到，捨棄：{text[:60]}...")
+			continue
+
+		role = item.get("role")
+		if role not in FLOW_ROLES:
+			role = "conclusion" if found == last else "claim"
+
+		cleaned.append({"paragraph_index": found, "role": role, "text": text})
+
+	# 去重（同一段被挑兩次）並照文章順序排，AI 偶爾會亂序輸出
+	seen = set()
+	ordered = []
+	for item in sorted(cleaned, key=lambda x: x["paragraph_index"]):
+		key = normalize_for_compare(item["text"])
+		if key in seen:
+			continue
+		seen.add(key)
+		ordered.append(item)
+
+	if len(ordered) < FLOW_MIN:
+		print(f"  骨架只剩 {len(ordered)} 句，不足 {FLOW_MIN} 句，改用路標篩選")
+		return []
+	return ordered[:FLOW_MAX]
+
+
+# 一篇文章最多容許多少比例被判成雜訊。頭尾的推銷段落通常一兩段，超過兩成
+# 幾乎可以確定是 AI 誤判，寧可整批不採用。
+NOISE_MAX_RATIO = 0.2
+
+
+def validate_noise_indices(raw, paragraphs):
+	"""把 AI 標的雜訊段落編號濾成合法範圍內的整數。
+
+	這些段落會整段不顯示，所以設了 `NOISE_MAX_RATIO` 上限：AI 一旦誤判、
+	一口氣標掉半篇文章，寧可整批不採用，也不要讓讀者看到一篇缺角的文章。
+	"""
+	if not isinstance(raw, list):
+		return []
+	last = len(paragraphs) - 1
+	picked = sorted({i for i in raw if isinstance(i, int) and not isinstance(i, bool) and 0 <= i <= last})
+	if len(picked) > max(1, int(len(paragraphs) * NOISE_MAX_RATIO)):
+		print(f"  AI 標了 {len(picked)}/{len(paragraphs)} 段是雜訊，比例過高，整批不採用")
+		return []
+	return picked
+
+
 def build_article_data(source_name, title, url, date_str, tag, paragraphs, images, gemini_data):
 	translations = {p["index"]: p["translation"] for p in gemini_data["paragraphs"]}
 	last = len(paragraphs) - 1
@@ -620,6 +734,8 @@ def build_article_data(source_name, title, url, date_str, tag, paragraphs, image
 		"summary_en": gemini_data.get("summary_en", ""),
 		"summary_zh": gemini_data.get("summary_zh", ""),
 		"conclusion_index": clamp_index(gemini_data.get("conclusion_index"), last, last),
+		"flow": validate_flow(gemini_data.get("flow", []), paragraphs),
+		"noise_indices": validate_noise_indices(gemini_data.get("noise_indices", []), paragraphs),
 		"scan_questions": questions,
 		"paragraphs": [
 			{"tag": p["tag"], "text": p["text"], "translation": translations.get(i, "")}

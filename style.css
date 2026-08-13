@@ -734,6 +734,68 @@ h2.para-translation, h3.para-translation, h4.para-translation { font-size: 1rem;
 	vertical-align: 1px;
 }
 
+/* ══ 論證走向（flow）══
+   凸點的第一層：AI 從原文挑出的 3-6 句，串成一條看得見的邏輯線。
+   角色顏色沿用詞彙標色那組變數（highfreq/term/general/phrase），因為只有那組
+   在 6 個配色主題底下都定義過，自己新增顏色會在暗色主題破功。 */
+.flow-list {
+	list-style: none;
+	padding-left: 0;
+}
+.flow-step {
+	position: relative;
+	padding-left: 24px;
+	padding-bottom: 26px;
+}
+/* 節點：顏色由 role 決定，讀者掃一眼就看得出這條線在哪裡轉折 */
+.flow-step::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.35em;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--flow-color, var(--color-tan));
+}
+/* 連接線：最後一步不畫，線的終點就是結論 */
+.flow-step::after {
+	content: "";
+	position: absolute;
+	left: 4px;
+	top: 1.5em;
+	bottom: 0;
+	width: 2px;
+	background: var(--color-border);
+}
+.flow-step:last-child { padding-bottom: 0; }
+.flow-step:last-child::after { display: none; }
+
+.flow-role {
+	display: block;
+	font-family: var(--font-en);
+	font-size: 0.6875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--flow-color, var(--color-muted));
+	margin-bottom: 5px;
+}
+.flow-text {
+	display: block;
+	font-family: var(--font-en);
+	color: var(--color-dark);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+}
+
+.flow-step[data-role="context"] { --flow-color: var(--color-muted); }
+.flow-step[data-role="claim"] { --flow-color: var(--color-highfreq); }
+.flow-step[data-role="turn"] { --flow-color: var(--color-term); }
+.flow-step[data-role="evidence"] { --flow-color: var(--color-general); }
+.flow-step[data-role="conclusion"] { --flow-color: var(--color-phrase); }
+.flow-step[data-role="conclusion"] .flow-text { font-weight: 600; }
+
 .stage-actions {
 	display: flex;
 	flex-wrap: wrap;
@@ -959,6 +1021,7 @@ body[data-stage="verify"] .para-reveal,
 	.stage-step { font-size: 0.75rem; padding: 8px 2px; }
 	.bumps-list { padding-left: 14px; }
 	.bump::before { left: -19px; }
+	.flow-step { padding-left: 20px; padding-bottom: 22px; }
 	.stage-actions { flex-direction: column; align-items: stretch; }
 	.btn-primary { width: 100%; }
 	.deck-list { grid-template-columns: 1fr; }

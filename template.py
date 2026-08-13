@@ -3,7 +3,7 @@ import json
 import random
 import re
 
-CSS_VERSION = 13
+CSS_VERSION = 14
 
 FIXED_TAGS = [
 	"模型與研究",
@@ -231,6 +231,20 @@ def mark_signposts(escaped_sentence):
 	return _MID_RE.sub(wrap_mid, escaped_sentence, count=1)
 
 
+def has_signpost(sentence):
+	"""這一句的句首（或逗號後）有沒有邏輯路標。
+
+	`generate.py` 也會用它，把有路標的段落編號當提示送給 Gemini —— 路標是文章
+	作者自己寫的導航詞，在「哪裡是轉折」這件事上比事後推論可靠。
+	"""
+	s = re.sub(r"\s+", " ", strip_tags(sentence or "")).strip()
+	if s[:1] in ('"', "“", "'", "‘"):
+		# 受訪者說的話不算：08-09 的 "But my son studies in Arizona now," she
+		# said. 句首那個 But 屬於說話者，對文章的論證沒有導航作用。
+		return False
+	return bool(_START_RE.search(s) or _MID_RE.search(s))
+
+
 def highlight(text, vocab_map):
 	# sort by length descending to match longer phrases first
 	all_words = sorted(vocab_map.keys(), key=len, reverse=True)
@@ -247,17 +261,84 @@ def highlight(text, vocab_map):
 	return text
 
 
-def build_bumps_html(data):
-	"""凸點預覽：AI 英文導讀 + 每段首句 + 標出結論段。
+# 論證走向的五種角色。標籤維持英文 —— 凸點階段刻意不出現中文，中文摘要留到
+# 第三階段才給，不然「先看骨架」就變成「先看翻譯」。
+FLOW_ROLE_LABELS = {
+	"context": "Context",
+	"claim": "Claim",
+	"turn": "Turn",
+	"evidence": "Evidence",
+	"conclusion": "Conclusion",
+}
 
-	目的是讀全文前先看到骨架，所以這一階段全部維持英文 —— 中文摘要留到
-	第三階段（驗證）才出現，不然「先看骨架」就變成「先看翻譯」。
+
+def noise_indices(data):
+	"""AI 判定「不是文章內容」的段落編號（作者自我推銷、贊助商訊息之類）。
+
+	這些段落只被標記、不從 `paragraphs` 刪掉 —— 一刪索引就會平移，
+	conclusion_index / scan_questions / images.after_paragraph 三處對映全都要
+	重算。標記的另一個好處是事後還查得到 AI 判斷了什麼。
+	"""
+	return {i for i in (data.get("noise_indices") or []) if isinstance(i, int)}
+
+
+def flow_bumps(data):
+	"""第一層：Gemini 挑出的論證走向。
+
+	每條都是文章裡真的存在的句子（`generate.py` 的 `validate_flow` 已經用字串
+	比對確認過逐字相同），所以這裡直接渲染，不再驗證。
+	"""
+	rows = ""
+	for item in data.get("flow") or []:
+		sentence = item.get("text") or item.get("quote", "")
+		if not sentence:
+			continue
+		role = item.get("role", "claim")
+		label = FLOW_ROLE_LABELS.get(role, FLOW_ROLE_LABELS["claim"])
+		body = mark_signposts(htmllib.escape(sentence))
+		rows += f"""
+		<li class="flow-step" data-role="{htmllib.escape(role, quote=True)}">
+			<span class="flow-role">{htmllib.escape(label)}</span>
+			<span class="flow-text">{body}</span>
+		</li>"""
+	return rows
+
+
+def signpost_bumps(data):
+	"""第二層 fallback：沒有 flow 時，用句首邏輯路標篩段落。
+
+	實測 12 篇留下 2-6 條（平均 3.8），字數是「每段首句」的兩成。路標是作者
+	自己標的轉折，所以這一層不需要 AI，改規則跑 rebuild.py 就全站生效。
 	"""
 	paragraphs = data["paragraphs"]
+	skip = noise_indices(data)
+	conclusion_index = data.get("conclusion_index", len(paragraphs) - 1)
+
+	picked = []
+	for i, p in enumerate(paragraphs):
+		if i in skip or p["tag"] in ("pre", "table", "li", "blockquote", "h2", "h3", "h4"):
+			continue
+		sentence = first_sentence(p["text"])
+		if not sentence:
+			continue
+		if i == conclusion_index or has_signpost(sentence) or not picked:
+			picked.append((i, sentence, i == conclusion_index))
+
+	if len(picked) < 3:
+		return ""
+	return "".join(bump_row(s, is_conclusion) for _, s, is_conclusion in picked)
+
+
+def all_paragraph_bumps(data):
+	"""第三層 fallback：每段首句。改版前的做法，留給沒有 flow 也沒有路標的文章。"""
+	paragraphs = data["paragraphs"]
+	skip = noise_indices(data)
 	conclusion_index = data.get("conclusion_index", len(paragraphs) - 1)
 
 	rows = ""
 	for i, p in enumerate(paragraphs):
+		if i in skip:
+			continue
 		tag = p["tag"]
 		# blockquote 排除在骨架之外：那是被引用者說的話，不是作者的論證脈絡。
 		# 混進來會把邏輯線打斷（實例：07-31 有 3/11 條骨架其實是信件原文）。
@@ -269,11 +350,35 @@ def build_bumps_html(data):
 		sentence = first_sentence(p["text"])
 		if not sentence:
 			continue
-		is_conclusion = i == conclusion_index
-		cls = "bump bump-conclusion" if is_conclusion else "bump"
-		label = '<span class="bump-label">結論</span>' if is_conclusion else ""
-		body = mark_signposts(htmllib.escape(sentence))
-		rows += f'\n\t\t<div class="{cls}">{label}{body}</div>'
+		rows += bump_row(sentence, i == conclusion_index)
+	return rows
+
+
+def bump_row(sentence, is_conclusion):
+	cls = "bump bump-conclusion" if is_conclusion else "bump"
+	label = '<span class="bump-label">結論</span>' if is_conclusion else ""
+	return f'\n\t\t<div class="{cls}">{label}{mark_signposts(htmllib.escape(sentence))}</div>'
+
+
+def build_bumps_html(data):
+	"""凸點預覽：AI 英文導讀 + 文章的論證走向。
+
+	三層 fallback，一層失敗就往下退：
+	  1. `flow` —— Gemini 讀完整篇後挑出的 3-6 句走向，帶角色標籤
+	  2. 句首有邏輯路標的段落（純規則，不靠 AI）
+	  3. 每段首句（改版前的做法，長度等於半篇文章）
+	Gemini 每天跑、沒有人會看產出，所以不能只有第一層。
+	"""
+	flow_rows = flow_bumps(data)
+	if flow_rows:
+		body_html = f"""
+	<ol class="flow-list">{flow_rows}
+	</ol>"""
+	else:
+		rows = signpost_bumps(data) or all_paragraph_bumps(data)
+		body_html = f"""
+	<div class="bumps-list">{rows}
+	</div>"""
 
 	summary_en = data.get("summary_en", "")
 	summary_html = ""
@@ -283,9 +388,7 @@ def build_bumps_html(data):
 
 	return f"""
 <section class="stage stage-bumps content-block" id="stage-bumps">
-	<div class="stage-hint">先看骨架，建立預期再讀全文</div>{summary_html}
-	<div class="bumps-list">{rows}
-	</div>
+	<div class="stage-hint">先看骨架，建立預期再讀全文</div>{summary_html}{body_html}
 	<div class="stage-actions">
 		<button class="btn-primary" onclick="goStage('full')">開始讀全文 →</button>
 		<button class="btn-quiet" onclick="goStage('verify')">直接看全文與翻譯</button>
@@ -367,10 +470,19 @@ def render_article(data, all_entries=None):
 	# (e.g. a lead image), so it goes before the loop below
 	paras_html = "".join(image_figure(img) for img in images_by_para.get(0, []))
 	all_paras = data["paragraphs"]
+	skip_paras = noise_indices(data)
 	i = 0
 	while i < len(all_paras):
 		para = all_paras[i]
 		tag = para["tag"]
+
+		# AI 標記的非內文段落（作者自我推銷之類）。段落本身留在 JSON 裡，只是
+		# 不渲染；圖片照原位輸出，否則跳過一段就會連帶弄丟它後面的圖。
+		if i in skip_paras:
+			for img in images_by_para.get(i + 1, []):
+				paras_html += image_figure(img)
+			i += 1
+			continue
 
 		# after_paragraph is recorded as "how many paragraphs collected so far"
 		# at scrape time, which is i+1 once this (i-th, 0-indexed) paragraph is added
